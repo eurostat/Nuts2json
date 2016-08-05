@@ -1,8 +1,24 @@
-see https://github.com/mbostock/topojson
+TODO list:
+visualise results - https://bost.ocks.org/mike/map/ do generic stuff, with semantic zoom
+produce files for RG, BN, SEP, JOIN
+produce different generalisation levels
+check NUTS_ID attribute is preserved in topojson - remove other attributes
+produce geojson (with ogr2ogr)
+attributes table join?
+produce with several projections
+opencarto vector tiles
 
-geojson to topojson
+https://github.com/mbostock/topojson
 https://github.com/mbostock/topojson/wiki/Command-Line-Reference
-topojson --id-property CFSAUID -p name=PRNAME -p name -o output.topojson output.geojson
 
 http://teslabs.com/articles/topojson-catalonia/
+https://bost.ocks.org/mike/map/
 
+shp info
+ogrinfo -so -al myfile.shp
+
+Attributes:
+NUTS_ID: String (14.0)
+STAT_LEVL_: Integer (5.0)
+SHAPE_AREA: Real (19.11)
+SHAPE_LEN: Real (19.11)
