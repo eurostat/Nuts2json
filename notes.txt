@@ -1,0 +1,7 @@
+see https://github.com/mbostock/topojson
+
+conversion from shp to geojson
+ogr2ogr -f "GeoJSON" -s_srs EPSG:21781 -t_srs EPSG:4326 output.geojson input.shp
+
+geojson to topojson
+topojson --id-property CFSAUID -p name=PRNAME -p name -o output.topojson output.geojson
