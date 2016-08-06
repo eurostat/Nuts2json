@@ -1,7 +1,5 @@
 # Nuts2json
 
-If you want to make a map of Eurostat data on the web, Nuts2json is for you.
-
-Nuts2json provides various versions of Eurostat NUTS dataset as topojson and geojson format. In a way, it is a blank map of NUTS geometries to be reused with your own data and colors.
+Nuts2json supports the design of web maps with Eurostat data. It provides various reusable versions of Eurostat NUTS dataset as web formats such as <a href="http://geojson.org/">GeoJSON</a> and <a href="https://github.com/mbostock/topojson">TopoJSON</a>. In a way, it is a blank map of NUTS geometries ready for use with your own data and colors.
 
 <UNDER DEVELOPMENT>
