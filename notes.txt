@@ -1,11 +1,19 @@
 TODO list:
-visualise results - https://bost.ocks.org/mike/map/ do generic stuff, with semantic zoom
-produce files for RG, BN, SEP, JOIN
+produce different projections: - X, WM, LAEA
 produce different generalisation levels
+
+-s, --simplify precision threshold for Visvalingam simplification
+--simplify-proportion proportion of points to retain for Visvalingam simplification
+--cartesian assume Cartesian input coordinates
+--spherical assume spherical input coordinates
+-p, --properties feature properties to preserve; no name preserves all properties
+--shapefile-encoding character encoding for reading shapefile properties
+
+produce files for RG, BN, SEP, JOIN
 check NUTS_ID attribute is preserved in topojson - remove other attributes
+visualise results - https://bost.ocks.org/mike/map/ do generic stuff, with semantic zoom
 produce geojson (with ogr2ogr)
 attributes table join?
-produce with several projections
 opencarto vector tiles
 
 https://github.com/mbostock/topojson
