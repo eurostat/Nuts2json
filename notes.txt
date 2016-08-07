@@ -1,7 +1,6 @@
 TODO list:
-produce different projections: - X, WM, LAEA
 produce different generalisation levels
-
+include BN with RG ?
 -s, --simplify precision threshold for Visvalingam simplification
 --simplify-proportion proportion of points to retain for Visvalingam simplification
 --cartesian assume Cartesian input coordinates

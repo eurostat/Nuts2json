@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
 mkdir -p json/topojson
-for level in 0 1 2 3
+for proj in "etrs89" "laea" "wm"
 do
-    echo "Produce topojson for level $level"
-    topojson -o json/topojson/rg_lvl$level.json nutsrg=tmp/shpbylevel/rg_lvl$level.shp
+    for level in 0 1 2 3
+    do
+        echo "Produce topojson for level $level and projection $proj"
+        topojson -o "json/topojson/RG_lvl"$level"_"$proj".json" "nutsrg=tmp/"$proj"/RGbylevel/RG_lvl"$level".shp"
+        topojson -o "json/topojson/BN_lvl"$level"_"$proj".json" "nutsbn=tmp/"$proj"/BNbylevel/BN_lvl"$level".shp"
+    done
 done
