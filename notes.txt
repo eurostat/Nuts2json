@@ -22,3 +22,5 @@ NUTS_ID: String (14.0)
 STAT_LEVL_: Integer (5.0)
 SHAPE_AREA: Real (19.11)
 SHAPE_LEN: Real (19.11)
+
+use make instead of bash?
