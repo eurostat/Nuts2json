@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
 
-mkdir -p tmp/shpbylevel
-for level in 0 1 2 3
+for proj in "etrs89" "laea" "wm"
 do
-    echo "Extract nuts level $level"
-    ogr2ogr -overwrite -where STAT_LEVL_=$level tmp/shpbylevel/rg_lvl$level.shp shp/NUTS_RG_01M_2013.shp
+    echo "Projection "$proj
+    dir="tmp/"$proj"/RGbylevel"
+    mkdir -p $dir
+
+    for level in 0 1 2 3
+    do
+        echo "   Extract nuts level "$level
+        ogr2ogr -overwrite -where STAT_LEVL_=$level $dir"/RG_lvl"$level".shp" "tmp/"$proj"/RG.shp"
+    done
 done
