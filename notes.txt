@@ -1,9 +1,6 @@
 TODO list:
 produce different generalisation levels
-check BN extraction by level, in qgis
-include BN with RG ?
 -s, --simplify precision threshold for Visvalingam simplification
---simplify-proportion proportion of points to retain for Visvalingam simplification
 --cartesian assume Cartesian input coordinates
 --spherical assume spherical input coordinates
 -p, --properties feature properties to preserve; no name preserves all properties
