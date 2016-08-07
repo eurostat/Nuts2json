@@ -1,13 +1,17 @@
 TODO list:
-remove points
+
 visualise results - https://bost.ocks.org/mike/map/ do generic stuff, with semantic zoom
+
+do it for etrs89
+
+remove orphan points? use --filter?
 
 check NUTS_ID attribute is preserved in topojson - include other attributes
 --id-property name of feature property to promote to geometry id
 -p, --properties feature properties to preserve; no name preserves all properties
 --shapefile-encoding character encoding for reading shapefile properties
 
-produce geojson (with ogr2ogr)
+produce geojson (with ogr2ogr or https://www.npmjs.com/package/topo-geo-json-converter)
 produce files for SEP, JOIN ?
 attributes table join?
 opencarto vector tiles
