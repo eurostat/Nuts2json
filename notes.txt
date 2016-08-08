@@ -1,9 +1,19 @@
 TODO list:
 
 test: mkdir -p /var/spool/amavis/{var,tmp,virusmails,spamassassin}
-visualise results - https://bost.ocks.org/mike/map/ do generic stuff, with semantic zoom
+which ogr2ogr
+which topojson
+ogr2ogr \
+  -f GeoJSON \
 
-do it for etrs89
+visualise results
+https://bost.ocks.org/mike/map/
+http://teslabs.com/articles/topojson-catalonia/ (end)
+do generic stuff
+semantic zoom
+
+fix simplification. Do it for etrs89 projection
+See http://teslabs.com/articles/topojson-catalonia/
 
 remove orphan points? use --filter?
 
@@ -11,8 +21,23 @@ check NUTS_ID attribute is preserved in topojson - include other attributes
 --id-property name of feature property to promote to geometry id
 -p, --properties feature properties to preserve; no name preserves all properties
 --shapefile-encoding character encoding for reading shapefile properties
+ex:
+topojson \
+  -o uk.json \
+  --id-property SU_A3 \
+  --properties name=NAME \
+  -- \
+  subunits.json \
+  places.json
+
 
 produce geojson (with ogr2ogr or https://www.npmjs.com/package/topo-geo-json-converter)
+ex:
+ogr2ogr \
+  -f GeoJSON \
+  -where "ISO_A2 = 'GB' AND SCALERANK < 8" \
+  places.json \
+  ne_10m_populated_places.shp
 produce files for SEP, JOIN ?
 attributes table join?
 opencarto vector tiles
