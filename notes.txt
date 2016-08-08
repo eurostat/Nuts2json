@@ -13,7 +13,8 @@ do generic stuff
 semantic zoom
 
 fix simplification. Do it for etrs89 projection
-See http://teslabs.com/articles/topojson-catalonia/
+See http://teslabs.com/articles/topojson-catalonia/ section "Simplification and quantization"
+see code of https://bost.ocks.org/mike/simplify/ ?
 
 remove orphan points? use --filter?
 
