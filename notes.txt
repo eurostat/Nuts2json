@@ -1,5 +1,6 @@
 TODO list:
 
+test: mkdir -p /var/spool/amavis/{var,tmp,virusmails,spamassassin}
 visualise results - https://bost.ocks.org/mike/map/ do generic stuff, with semantic zoom
 
 do it for etrs89
