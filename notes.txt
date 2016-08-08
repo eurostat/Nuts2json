@@ -9,10 +9,12 @@ ogr2ogr \
 visualise results
 https://bost.ocks.org/mike/map/
 http://teslabs.com/articles/topojson-catalonia/ (end)
+center: http://bl.ocks.org/mbostock/4707858
 do generic stuff
 semantic zoom
 
 fix simplification. Do it for etrs89 projection
+http://teslabs.com/articles/topojson-catalonia/ - "Note that an area threshold of 10-8 sr has proved to deliver a good compromise after a few tries."
 See http://teslabs.com/articles/topojson-catalonia/ section "Simplification and quantization"
 see code of https://bost.ocks.org/mike/simplify/ ?
 

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style></style>
+
+<body>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+<script>
+//TODO v4
+
+var width = 700, height = 700;
+
+var svg = d3.select("body").append("svg")
+	.attr("width", width).attr("height", height);
+
+/*var projection = d3.geoProjection(function(x, y) { return [x,y]; })
+	.scale(0.005).translate([0, 700])
+;*/
+/*var projection = d3.geoMercator()
+.scale(400)
+.translate([width / 2, 400+height / 2])
+;*/
+
+/*var projection = d3.geoAlbers()
+.center([0, 55.4])
+.rotate([4.4, 0])
+.parallels([50, 60])
+.scale(6000)
+.translate([width / 2, height / 2]);*/
+
+//var path = d3.geoPath().projection(projection);
+var path = d3.geoPath().projection(null);
+
+
+var proj="laea", scale="60M", nutsLvl=0;
+
+//topojson new
+var filepath = "json/topojson/"+proj+"/RG_lvl"+nutsLvl+"_"+scale+".json";
+//topojson old
+//var filepath = "old/"+scale+"_RG_topo.json";
+//geojson old
+//var filepath = "old/"+scale+"_RG_LEV"+nutsLvl+".json";
+d3.json(filepath, function(error, nuts) {
+	if (error) return console.error(error);
+	//console.log(nuts);
+
+	//topojson new
+	var todraw = topojson.feature(nuts, nuts.objects.nutsrg);
+	//topojson old
+	//var todraw = topojson.feature(nuts, nuts.objects[scale+"_RG_LEV"+nutsLvl]);
+	//geojson old
+	//var todraw = nuts;
+
+	//console.log(todraw);
+
+	svg.append("path")
+    .datum(todraw)
+    .attr("d", path);
+
+	console.log("done.");
+});
+
+</script>
+</body>
