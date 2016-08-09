@@ -14,7 +14,7 @@ do
             if [ $proj = "etrs89" ]
             then
 
-            echo "ot supported yet"
+            echo "Not supported yet"
             #-s 1e-7
 
             #compute resolution

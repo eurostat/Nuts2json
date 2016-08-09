@@ -34,13 +34,16 @@
 		if (error) return console.error(error);
 		//console.log(nuts);
 
-		var rg = topojson.feature(nuts, nuts.objects.nutsrg);
-		console.log(rg);
-		svg.append("path").datum(rg).attr("class", "rg").attr("d", path);
+		//var rg = topojson.feature(nuts, nuts.objects.nutsrg);
+		//console.log(rg);
+		//svg.append("path").datum(rg).attr("class", "rg").attr("d", path);
 
-		var bn = topojson.feature(nuts, nuts.objects.nutsbn);
+		var bn = topojson.feature(nuts, nuts.objects.nutsbn).features;
 		console.log(bn);
-		svg.append("path").datum(bn).attr("class", "bn").attr("d", path);
+		svg.selectAll("path").data(bn).enter().append("path").attr("class", function(d){
+			//console.log(d);
+			return "bn";
+		}).attr("d", path);
 	});
 
 </script>
