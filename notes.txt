@@ -1,13 +1,10 @@
 TODO list:
 
-test: mkdir -p /var/spool/amavis/{var,tmp,virusmails,spamassassin}
-which ogr2ogr
-which topojson
-ogr2ogr \
-  -f GeoJSON \
-
-fix simplification. Do it for etrs89 projection
-http://teslabs.com/articles/topojson-catalonia/ - "Note that an area threshold of 10-8 sr has proved to deliver a good compromise after a few tries."
+fix simplification.
+Do it for etrs89 projection
+http://bl.ocks.org/mbostock/5557726
+http://teslabs.com/articles/topojson-catalonia/
+"Note that an area threshold of 10-8 sr has proved to deliver a good compromise after a few tries."
 See http://teslabs.com/articles/topojson-catalonia/ section "Simplification and quantization"
 see code of https://bost.ocks.org/mike/simplify/ ?
 
