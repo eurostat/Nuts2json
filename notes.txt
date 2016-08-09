@@ -6,21 +6,11 @@ http://teslabs.com/articles/topojson-catalonia/ (end)
 do generic stuff
 semantic zoom
 
-check NUTS_ID attribute is preserved in topojson - include other attributes
---id-property name of feature property to promote to geometry id
--p, --properties feature properties to preserve; no name preserves all properties
---shapefile-encoding character encoding for reading shapefile properties
-ex:
-topojson \
-  -o uk.json \
-  --id-property SU_A3 \
-  --properties name=NAME \
-  -- \
-  subunits.json \
-  places.json
-
 filter DOM-TOM
 remove orphan points? use --filter?
+
+include inset
+http://3.bp.blogspot.com/-_wT-OaVeqKU/T0reGgEG_pI/AAAAAAAAAfI/donWdhBBUNw/s1600/Map_of_GDP_per_capita_in_the_EU_in_2007_(NUTS_3).png
 
 simplification for etrs89 proj
 
@@ -40,18 +30,25 @@ https://github.com/mbostock/topojson/wiki/Command-Line-Reference
 
 http://teslabs.com/articles/topojson-catalonia/
 https://bost.ocks.org/mike/map/
+https://bost.ocks.org/mike/simplify/
+
+use make instead of bash?
+
 
 shp info
 ogrinfo -so -al myfile.shp
-
 Attributes:
 NUTS_ID: String (14.0)
 STAT_LEVL_: Integer (5.0)
 SHAPE_AREA: Real (19.11)
 SHAPE_LEN: Real (19.11)
 
-use make instead of bash?
+EU_FLAG: String (1.0)
+EFTA_FLAG: String (1.0)
+CC_FLAG: String (1.0)
+STAT_LEVL_: Integer (5.0)
+NUTS_BN_ID: Integer (10.0)
+COAS_FLAG: String (1.0)
+OTHR_CNTR_: String (1.0)
+SHAPE_LEN: Real (19.11)
 
-
-http://teslabs.com/articles/topojson-catalonia/
-https://bost.ocks.org/mike/simplify/

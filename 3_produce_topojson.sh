@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-margin=20
+margin=10
 for size in 300 500 700 1000 1200
 do
     for level in 0 1 2 3
@@ -13,6 +13,9 @@ do
 
             if [ $proj = "etrs89" ]
             then
+
+            echo "ot supported yet"
+            #-s 1e-7
 
             #compute resolution
             #res=0
@@ -28,19 +31,21 @@ do
             topojson -o \
                 $dir"/RG_lvl"$level".json" \
                 "nutsrg=tmp/"$proj"/RGbylevel/RG_lvl"$level".shp" \
+                -p id=NUTS_ID --id-property id \
                 --width $size --height $size --margin $margin \
                 -s 1
-                #-s 1e-7
-                #--id-property NUTS_ID  \
             topojson -o \
                 $dir"/BN_lvl"$level".json" \
                 "nutsbn=tmp/"$proj"/BNbylevel/BN_lvl"$level".shp" \
+                -p eu=EU_FLAG,efta=EFTA_FLAG,cc=CC_FLAG,lvl=STAT_LEVL_,cst=COAS_FLAG,oth=OTHR_CNTR_ \
                 --width $size --height $size --margin $margin \
                 -s 1
             topojson -o \
                 $dir"/RG_BN_lvl"$level".json" \
                 "nutsrg=tmp/"$proj"/RGbylevel/RG_lvl"$level".shp" \
                 "nutsbn=tmp/"$proj"/BNbylevel/BN_lvl"$level".shp" \
+                -p id=NUTS_ID,eu=EU_FLAG,efta=EFTA_FLAG,cc=CC_FLAG,lvl=STAT_LEVL_,cst=COAS_FLAG,oth=OTHR_CNTR_ \
+                --id-property id \
                 --width $size --height $size --margin $margin \
                 -s 1
             fi
