@@ -2,47 +2,56 @@
 <meta charset="utf-8">
 <style>
 
-	.rg {
-		fill: #77f;
-	}
+	#bck { fill: #efefef; }
 
-	.bn {
-		fill: none;
-		stroke: #eee;
-	}
+	.rg { fill: #555; }
+	.rg:hover { fill: darkred; }
+
+	.bn { fill: none; }
+	.bn_0 { stroke: #eee; stroke-width: 2px; }
+	.bn_1 { stroke: #eee; stroke-width: 1px; }
+	.bn_2 { stroke: #eee; stroke-width: 1px; }
+	.bn_3 { stroke: #bbb; stroke-width: 1px; }
+	.bn_cst { stroke: none; }
+	.bn_oth { stroke: #444; stroke-width: 1px; }
 
 </style>
 
 <body>
+<svg id="map"></svg>
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/topojson.v1.min.js"></script>
 <script>
 	//http://bl.ocks.org/mbostock/5557726
 
-	var size = 300;
-
-	var svg = d3.select("body").append("svg")
-			.attr("width", size).attr("height", size);
+	var size = 700;
+	var svg = d3.select("#map").attr("width", size).attr("height", size);
+	svg.append("rect").attr("id","bck").attr("x",0).attr("y",0).attr("width", size).attr("height", size);
 
 	var path = d3.geoPath().projection(null);
 
 
-	var proj="laea", nutsLvl=0;
+	var proj="laea", nutsLvl=2;
 	var filepath = "json/topojson/"+proj+"/"+size+"px/RG_BN_lvl"+nutsLvl+".json";
 	d3.json(filepath, function(error, nuts) {
 		if (error) return console.error(error);
 		//console.log(nuts);
 
-		//var rg = topojson.feature(nuts, nuts.objects.nutsrg);
+		var rg = topojson.feature(nuts, nuts.objects.nutsrg).features;
 		//console.log(rg);
-		//svg.append("path").datum(rg).attr("class", "rg").attr("d", path);
+		svg.append("g").selectAll("path").data(rg).enter().append("path")
+				.attr("class", "rg").attr("d", path);
 
 		var bn = topojson.feature(nuts, nuts.objects.nutsbn).features;
-		console.log(bn);
-		svg.selectAll("path").data(bn).enter().append("path").attr("class", function(d){
-			//console.log(d);
-			return "bn";
+		//console.log(bn);
+		svg.append("g").selectAll("path").data(bn).enter().append("path").attr("class", function(d){
+			d= d.properties;
+			//eu=EU_FLAG,efta=EFTA_FLAG,cc=CC_FLAG,lvl=STAT_LEVL_,cst=COAS_FLAG,oth=OTHR_CNTR_
+			var cl = ["bn","bn_"+d.lvl];
+			if(d.cst==="T") cl.push("bn_cst");
+			if(d.oth==="T") cl.push("bn_oth");
+			return cl.join(" ");
 		}).attr("d", path);
 	});
 

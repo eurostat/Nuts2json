@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-margin=10
-for size in 300 500 700 1000 1200
+margin=0
+for proj in "laea" "wm" "etrs89"
 do
-    for level in 0 1 2 3
+    for size in 900 700 500 300
     do
-        for proj in "laea" "wm" "etrs89"
+        for level in 0 1 2 3
         do
             #make directory
             dir="json/topojson/"$proj"/"$size"px"
@@ -33,13 +33,13 @@ do
                 "nutsrg=tmp/"$proj"/RGbylevel/RG_lvl"$level".shp" \
                 -p id=NUTS_ID --id-property id \
                 --width $size --height $size --margin $margin \
-                -s 1
+                -s 7
             topojson -o \
                 $dir"/BN_lvl"$level".json" \
                 "nutsbn=tmp/"$proj"/BNbylevel/BN_lvl"$level".shp" \
                 -p eu=EU_FLAG,efta=EFTA_FLAG,cc=CC_FLAG,lvl=STAT_LEVL_,cst=COAS_FLAG,oth=OTHR_CNTR_ \
                 --width $size --height $size --margin $margin \
-                -s 1
+                -s 7
             topojson -o \
                 $dir"/RG_BN_lvl"$level".json" \
                 "nutsrg=tmp/"$proj"/RGbylevel/RG_lvl"$level".shp" \
@@ -47,7 +47,7 @@ do
                 -p id=NUTS_ID,eu=EU_FLAG,efta=EFTA_FLAG,cc=CC_FLAG,lvl=STAT_LEVL_,cst=COAS_FLAG,oth=OTHR_CNTR_ \
                 --id-property id \
                 --width $size --height $size --margin $margin \
-                -s 1
+                -s 7
             fi
         done
     done
