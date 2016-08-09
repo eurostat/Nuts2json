@@ -4,4 +4,4 @@ Nuts2json supports the design of web maps with <a href="http://ec.europa.eu/euro
 
 http://jgaffuri.github.io/Nuts2json/overview.html
 
-<UNDER DEVELOPMENT>
+UNDER DEVELOPMENT
