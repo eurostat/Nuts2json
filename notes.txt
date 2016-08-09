@@ -1,21 +1,10 @@
 TODO list:
 
-fix simplification.
-Do it for etrs89 projection
-http://bl.ocks.org/mbostock/5557726
-http://teslabs.com/articles/topojson-catalonia/
-"Note that an area threshold of 10-8 sr has proved to deliver a good compromise after a few tries."
 See http://teslabs.com/articles/topojson-catalonia/ section "Simplification and quantization"
-see code of https://bost.ocks.org/mike/simplify/ ?
 
-visualise results
-https://bost.ocks.org/mike/map/
 http://teslabs.com/articles/topojson-catalonia/ (end)
-center: http://bl.ocks.org/mbostock/4707858
 do generic stuff
 semantic zoom
-
-remove orphan points? use --filter?
 
 check NUTS_ID attribute is preserved in topojson - include other attributes
 --id-property name of feature property to promote to geometry id
@@ -30,6 +19,10 @@ topojson \
   subunits.json \
   places.json
 
+filter DOM-TOM
+remove orphan points? use --filter?
+
+simplification for etrs89 proj
 
 produce geojson (with ogr2ogr or https://www.npmjs.com/package/topo-geo-json-converter)
 ex:
@@ -58,3 +51,7 @@ SHAPE_AREA: Real (19.11)
 SHAPE_LEN: Real (19.11)
 
 use make instead of bash?
+
+
+http://teslabs.com/articles/topojson-catalonia/
+https://bost.ocks.org/mike/simplify/
