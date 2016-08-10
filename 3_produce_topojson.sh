@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-margin=0
+margin=5
 for proj in "laea" "wm" "etrs89"
 do
     for size in 900 700 500 300
