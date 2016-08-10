@@ -6,29 +6,29 @@ For an example of such blank map, see <a href="http://jgaffuri.github.io/Nuts2js
 
 ## Supported formats
 
-The JSON files are available in the folder <a href="/json" target="_blank">json</a>. Each file path pattern is: 
+The JSON files are available in the folder <a href="/json" target="_blank">json</a> according to a predefined path pattern. For example, <a href="https://jgaffuri.github.io/Nuts2json/json/topojson/wm/500px/RG_lvl2.json" target="_blank">json/topojson/wm/500px/RG_lvl2.json</a> is the path to a topojson file of NUTS regions level 2 in projection web mercator, for a map size 500*500px.
 
-<b>/json/\<FORMAT\>/\<PROJECTION\>/\<SIZE\>/\<TYPE\>_lvl\<NUTS_LEVEL\>.json</b>
+The file path pattern is: <i>/json/\<FORMAT\>/\<PROJECTION\>/\<SIZE\>/\<TYPE\>_lvl\<NUTS_LEVEL\>.json</i>
 
-where
+where:
 
-- <b>FORMAT</b> is the file format. Currently, only <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a> is provided. <a href="http://geojson.org/" target="_blank">GeoJSON</a> format is to come.
-- <b>PROJECTION</b> is the map projection. Currently, European projection LAEA (<a href="http://spatialreference.org/ref/epsg/etrs89-etrs-laea/" target="_blank">EPSG 3035</a>) and Web Mercator (<a href="http://spatialreference.org/ref/sr-org/7483/" target="_blank">EPSG 3857</a>) are provided.
-- <b>SIZE</b> is the size of the map, in pixel.
-- <b>TYPE</b> is the type of objects: either the regions (TYPE=RG), the boundaries (TYPE=BN) or both (TYPE=RG_BN)
-- <b>NUTS_LEVEL</b> is the NUTS level to be shown on the map, from national level (NUTS_LEVEL=0) to province level (NUTS_LEVEL=3).
+- <i>FORMAT</i> is the file format. Currently, only <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a> is provided. <a href="http://geojson.org/" target="_blank">GeoJSON</a> format is to come.
+- <i>PROJECTION</i> is the map projection. Currently, European projection LAEA (<a href="http://spatialreference.org/ref/epsg/etrs89-etrs-laea/" target="_blank">EPSG 3035</a>) and Web Mercator (<a href="http://spatialreference.org/ref/sr-org/7483/" target="_blank">EPSG 3857</a>) are provided.
+- <i>SIZE</i> is the size of the map, in pixel.
+- <i>TYPE</i> is the type of objects: either the regions (TYPE=RG), the boundaries (TYPE=BN) or both (TYPE=RG_BN)
+- <i>NUTS_LEVEL</i> is the NUTS level to be shown on the map, from national level (NUTS_LEVEL=0) to province level (NUTS_LEVEL=3).
 
 ### Feature properties
 
-- Regions (TYPE=RG)
-  - <b>id</b>: The NUTS identifier
-- Boundaries (TYPE=BN)
-  - <b>lvl</b>: The NUTS level of the boundary, from 0 (national level) to 3 (provincial level).
-  - <b>cst</b>: T if the boundary is coastal, F otherwise.
-  - <b>eu</b>: T if the boundary separate two EU member states, F otherwise.
-  - <b>efta</b>: T if the boundary touches at least one EFTA country, F otherwise.
-  - <b>cc</b>: T if the boundary touches at least one Candidate Country, F otherwise.
-  - <b>oth</b>: T if the boundary touches a country wich is not EU, EFTA,CC. F otherwise.
+NUTS regions (TYPE=RG) have a single property: <i>id</i>, which is the NUTS identifier used to join statistical data to the regions.
+
+NUTS boundaries (TYPE=BN) have the following properties:
+  - <i>lvl</i>: The NUTS level of the boundary, from 0 (national level) to 3 (provincial level).
+  - <i>cst</i>: T if the boundary is coastal, F otherwise.
+  - <i>eu</i>: T if the boundary separate two EU member states, F otherwise.
+  - <i>efta</i>: T if the boundary touches at least one EFTA country, F otherwise.
+  - <i>cc</i>: T if the boundary touches at least one Candidate Country, F otherwise.
+  - <i>oth</i>: T if the boundary touches a country wich is not EU, EFTA,CC. F otherwise.
 
 ## Usage example
 
