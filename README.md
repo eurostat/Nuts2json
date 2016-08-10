@@ -2,7 +2,7 @@
 
 <a href="https://github.com/jgaffuri/Nuts2json">Nuts2json</a> supports the design of web maps of <a href="http://ec.europa.eu/eurostat/web/json-and-unicode-web-services/getting-started/rest-request" target="_blank">Eurostat data</a>. It provides various reusable versions of <a href="http://ec.europa.eu/eurostat/web/nuts/overview" target="_blank">Eurostat NUTS dataset</a> as web formats such as <a href="http://geojson.org/" target="_blank">GeoJSON</a> and <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a>. In a way, it provides a blank map of geometries ready for use with your own data and colors.
 
-For an example of such blank map, see <a href="http://jgaffuri.github.io/Nuts2json/overview.html?proj=laea&lvl=3$s=1000" target="_blank"><b>HERE</b></a>.
+For an example of such blank map, see <a href="http://jgaffuri.github.io/Nuts2json/overview.html?proj=laea&lvl=3&s=1000" target="_blank"><b>HERE</b></a>.
 
 file:///H:/workspace/Nuts2json/overview.html
 
