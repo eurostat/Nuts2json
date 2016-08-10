@@ -1,54 +1,67 @@
 <!DOCTYPE html>
+<html>
+<head>
 <meta charset="utf-8">
+<title>NUTS JSON overview</title>
 <style>
-	#bck { fill: #fcfcfc; }
+	#bck { fill: #f5f5f5; }
 	.rg { fill: #004494; }
 	.rg:hover { fill: darkred; }
 	.bn { fill: none; }
 	.bn_0 { stroke: #fff; stroke-width: 2px; }
 	.bn_1 { stroke: #ddd; stroke-width: 1px; }
 	.bn_2 { stroke: #ddd; stroke-width: 1px; }
-	.bn_3 { stroke: #bbb; stroke-width: 1px; }
+	.bn_3 { stroke: #888; stroke-width: 0.5px; }
 	.bn_cst { stroke: none; }
 	.bn_oth { stroke: #444; stroke-width: 1px; }
 </style>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+<script src="https://rawgit.com/jgaffuri/EurostatVisu/gh-pages/js/lib.js"></script>
+
+</head>
+
 <body>
 <svg id="map"></svg>
 
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="https://d3js.org/topojson.v1.min.js"></script>
 <script>
 	//http://bl.ocks.org/mbostock/5557726
 
-	var size = 700;
+	//get url parameters for projection, level and size
+	var proj = EstLib.getParameterByName("proj") || "laea";
+    var nutsLvl = EstLib.getParameterByName("lvl") || "2";
+	var size = EstLib.getParameterByName("s") || 700;
+
+	//build svg
 	var svg = d3.select("#map").attr("width", size).attr("height", size);
+	//background rectangle
 	svg.append("rect").attr("id","bck").attr("x",0).attr("y",0).attr("width", size).attr("height", size);
 
+	//path function
 	var path = d3.geoPath().projection(null);
 
-
-	var proj="laea", nutsLvl=2;
-	var filepath = "json/topojson/"+proj+"/"+size+"px/RG_BN_lvl"+nutsLvl+".json";
-	d3.json(filepath, function(error, nuts) {
+	//get data
+	d3.json("json/topojson/"+proj+"/"+size+"px/RG_BN_lvl"+nutsLvl+".json", function(error, nuts) {
 		if (error) return console.error(error);
-		//console.log(nuts);
 
 		var rg = topojson.feature(nuts, nuts.objects.nutsrg).features;
-		//console.log(rg);
-		svg.append("g").selectAll("path").data(rg).enter().append("path")
-				.attr("class", "rg").attr("d", path);
+		svg.append("g").selectAll("path").data(rg).enter()
+			.append("path").attr("d", path)
+			.attr("class", "rg");
 
 		var bn = topojson.feature(nuts, nuts.objects.nutsbn).features;
-		//console.log(bn);
-		svg.append("g").selectAll("path").data(bn).enter().append("path").attr("class", function(d){
+		svg.append("g").selectAll("path").data(bn).enter()
+			.append("path").attr("d", path)
+			.attr("class", function(d){
 			d= d.properties;
 			//eu=EU_FLAG,efta=EFTA_FLAG,cc=CC_FLAG,lvl=STAT_LEVL_,cst=COAS_FLAG,oth=OTHR_CNTR_
 			var cl = ["bn","bn_"+d.lvl];
 			if(d.cst==="T") cl.push("bn_cst");
 			if(d.oth==="T") cl.push("bn_oth");
 			return cl.join(" ");
-		}).attr("d", path);
+		});
 	});
 
 </script>

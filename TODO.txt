@@ -1,7 +1,7 @@
-use url parameters
 semantic zoom
 compress borders? check first with mouse over
 mouse over - show info div
+remove coastal boundaries
 
 Extract attribute data - show in info div
 -e, --external-properties CSV or TSV file to join properties (by id) to output features
@@ -13,6 +13,7 @@ size to width/height?
 
 filter DOM-TOM regions for level 0
 
+show more: SEP, JOIN, non EU countries + natural earth?
 include insets for:
 guadeloupe, martinique, guyane, reunion, mayotte, açores, madeire, canaries  -  malte, liechtenstein, islande
 FRA,FRA1,FRA2,FRA3,FRA4,FRA5,FRA10,FRA20,FRA30,FRA40,FRA50
@@ -29,7 +30,6 @@ ogr2ogr \
   ne_10m_populated_places.shp
 
 opencarto vector tiles
-show more: SEP, JOIN ? non EU countries?
 use make instead of bash?
 
 

@@ -3,7 +3,7 @@
 margin=5
 for proj in "laea" "wm" "etrs89"
 do
-    for size in 900 700 500 300
+    for size in 1200 1000 800 600 400
     do
         for level in 0 1 2 3
         do
