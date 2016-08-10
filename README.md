@@ -18,9 +18,13 @@ The JSON files are available in the folder <a href="/json" target="_blank">json<
 
 - Regions (TYPE=RG)
   - id: The NUTS identifier
-- Boundatires (TYPE=BN)
-  - aaa
-  - bbb
+- Boundaries (TYPE=BN)
+  - lvl: The NUTS level of the boundary, from 0 (national level) to 3 (provincial level).
+  - cst: T if the boundary is coastal, F otherwise.
+  - eu: T if the boundary separate two EU member states, F otherwise.
+  - efta: T if the boundary touches at least one EFTA country, F otherwise.
+  - cc: T if the boundary touches at least one Candidate Country, F otherwise.
+  - oth: T if the boundary touches a country wich is not EU, EFTA,CC. F otherwise.
 
 ## Technical details
 
