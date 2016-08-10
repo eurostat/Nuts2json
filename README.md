@@ -1,7 +1,21 @@
 # Nuts2json
 
-Nuts2json supports the design of web maps with <a href="http://ec.europa.eu/eurostat/web/json-and-unicode-web-services/getting-started/rest-request">Eurostat data</a>. It provides various reusable versions of <a href="http://ec.europa.eu/eurostat/web/nuts/overview">Eurostat NUTS dataset</a> as web formats such as <a href="http://geojson.org/">GeoJSON</a> and <a href="https://github.com/mbostock/topojson">TopoJSON</a>. In a way, it is a blank map of NUTS geometries ready for use with your own data and colors.
+Nuts2json supports the design of web maps of <a href="http://ec.europa.eu/eurostat/web/json-and-unicode-web-services/getting-started/rest-request" target="_blank">Eurostat data</a>. It provides various reusable versions of <a href="http://ec.europa.eu/eurostat/web/nuts/overview" target="_blank">Eurostat NUTS dataset</a> as web formats such as <a href="http://geojson.org/" target="_blank">GeoJSON</a> and <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a>. In a way, it provides a blank map of geometries ready for use with your own data and colors.
 
-http://jgaffuri.github.io/Nuts2json/overview.html
+For an example of such blank map, see <a href="http://jgaffuri.github.io/Nuts2json/overview.html" target="_blank">HERE</a>.
 
-UNDER DEVELOPMENT
+## Supported formats
+
+The JSON files are available in the folder <a href="/json" target="_blank">json</a>. Each file path pattern is:
+/json/<FORMAT>/<POJECTION>/<SIZE>/<TYPE>_lvl<NUTS_LEVEL>.json
+- FORMAT is the file format, currently only <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a> is provided. <a href="http://geojson.org/" target="_blank">GeoJSON</a> format is to come.
+- PROJECTION is the map projection. Currently, European projection LAEA (EPSG ) and Web Mercator (EPSG ) are provided.
+- SIZE is the size of the map, in pixel.
+- TYPE is the type of objects: either the regions (TYPE=RG), the boundaries (TYPE=BN) or both (TYPE=RG_BN)
+- NUTS_LEVEL is the NUTS level to be shown on the map, from national level (NUTS_LEVEL=0) to province level (NUTS_LEVEL=3).
+
+<b>Nuts2json is still under development. Other versions are to come !<b>
+
+## Technical details
+
+These files are produced from the NUTS SHP files provided on Eurostat website, <a href="http://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts" target="_blank">here</a>. These files are transformed using http://www.gdal.org/ <a href="" target="_blank">GDAL</a> and, of course, <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a> libraries. The processes are automated in Bash.
