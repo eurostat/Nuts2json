@@ -8,7 +8,7 @@ file:///H:/workspace/Nuts2json/overview.html
 
 ## Supported formats
 
-The JSON files are available in the folder <a href="/json" target="_blank">json</a> according to a predefined path pattern. For example, <a href="https://jgaffuri.github.io/Nuts2json/json/topojson/wm/600px/RG_lvl2.json" target="_blank">json/topojson/wm/600px/RG_lvl2.json</a> is the path to a topojson file of NUTS regions level 2 in projection web mercator, for a map size 600*600px.
+The JSON files are available in the folder <a href="/json" target="_blank">json</a> according to a predefined path pattern. For example, <a href="https://jgaffuri.github.io/Nuts2json/json/topojson/wm/600px/RG_lvl2.json" target="_blank">json/topojson/wm/600px/RG_lvl2.json</a> is the path to a TopoJSON file of NUTS regions level 2 in projection web mercator, for a map size 600*600px.
 
 The file path pattern is: <i>/json/\<FORMAT\>/\<PROJECTION\>/\<SIZE\>/\<TYPE\>_lvl\<NUTS_LEVEL\>.json</i>
 
@@ -17,7 +17,7 @@ where:
 - <i>FORMAT</i> is the file format. Currently, only <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a> is provided. <a href="http://geojson.org/" target="_blank">GeoJSON</a> format is to come.
 - <i>PROJECTION</i> is the map projection. Currently, European projection LAEA (<a href="http://spatialreference.org/ref/epsg/etrs89-etrs-laea/" target="_blank">EPSG 3035</a>) and Web Mercator (<a href="http://spatialreference.org/ref/sr-org/7483/" target="_blank">EPSG 3857</a>) are provided.
 - <i>SIZE</i> is the size of the map, in pixel. Currently, all maps are squared. The available sizes are 400, 600, 800, 1000 and 1200 pixels.
-- <i>TYPE</i> is the type of objects: either the regions (TYPE=RG), the boundaries (TYPE=BN) or both (TYPE=RG_BN)
+- <i>TYPE</i> is the type of objects: Either the regions (TYPE=RG), the boundaries (TYPE=BN) or both (TYPE=RG_BN).
 - <i>NUTS_LEVEL</i> is the NUTS level to be shown on the map, from national level (NUTS_LEVEL=0) to provincial level (NUTS_LEVEL=3).
 
 ### Feature properties
@@ -37,7 +37,7 @@ NUTS boundaries (TYPE=BN) have the following properties:
 
 ## Usage example
 
-[TODO: describe example, based on d3]
+[TODO: describe example, based on d3. Publish it in eurostatvisu]
 
 ## Technical details
 
