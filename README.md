@@ -14,7 +14,13 @@ The JSON files are available in the folder <a href="/json" target="_blank">json<
 - TYPE is the type of objects: either the regions (TYPE=RG), the boundaries (TYPE=BN) or both (TYPE=RG_BN)
 - NUTS_LEVEL is the NUTS level to be shown on the map, from national level (NUTS_LEVEL=0) to province level (NUTS_LEVEL=3).
 
-<b>Nuts2json is still under development. Other versions are to come !</b>
+### Feature properties
+
+- Regions (TYPE=RG)
+-- id: The NUTS identifier
+- Boundatires (TYPE=BN)
+-- aaa
+-- bbb
 
 ## Technical details
 
