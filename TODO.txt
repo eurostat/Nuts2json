@@ -1,4 +1,3 @@
-
 use url parameters
 semantic zoom
 compress borders? check first with mouse over
@@ -21,7 +20,7 @@ PT2,PT20,PT200,PT3,PT30,PT300
 ES7,ES70,ES701,ES702,ES703,ES704,ES705,ES706,ES707,ES708,ES709
 http://3.bp.blogspot.com/-_wT-OaVeqKU/T0reGgEG_pI/AAAAAAAAAfI/donWdhBBUNw/s1600/Map_of_GDP_per_capita_in_the_EU_in_2007_(NUTS_3).png
 
-produce geojson (with ogr2ogr or https://www.npmjs.com/package/topo-geo-json-converter)
+produce geojson (with topojsonJS/nodejs or ogr2ogr or https://www.npmjs.com/package/topo-geo-json-converter)
 ex:
 ogr2ogr \
   -f GeoJSON \
