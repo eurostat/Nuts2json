@@ -2,3 +2,5 @@ tmp/
 .idea/
 .settings/
 .project
+chrome.sh
+chrome.bat
