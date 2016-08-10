@@ -17,10 +17,10 @@ The JSON files are available in the folder <a href="/json" target="_blank">json<
 ### Feature properties
 
 - Regions (TYPE=RG)
--- id: The NUTS identifier
+  - id: The NUTS identifier
 - Boundatires (TYPE=BN)
--- aaa
--- bbb
+  - aaa
+  - bbb
 
 ## Technical details
 
