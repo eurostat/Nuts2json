@@ -62,13 +62,12 @@
 
 		if(nuts.objects.nutsbn){
 			var bn = topojson.feature(nuts, nuts.objects.nutsbn).features;
-			bn = bn.filter(function(bn){ return bn.properties.cst!=="T"; });
 			bn.sort(function(bn1,bn2){ return bn2.properties.lvl - bn1.properties.lvl; });
 			g.append("g").selectAll("path").data(bn).enter()
 				.append("path").attr("d", path)
 				.attr("class", function(bn){
 					bn = bn.properties;
-					//eu=EU_FLAG,efta=EFTA_FLAG,cc=CC_FLAG,lvl=STAT_LEVL_,cst=COAS_FLAG,oth=OTHR_CNTR_
+					//eu=EU_FLAG,efta=EFTA_FLAG,cc=CC_FLAG,lvl=STAT_LEVL_,oth=OTHR_CNTR_
 					var cl = ["bn","bn_"+bn.lvl];
 					if(bn.oth==="T") cl.push("bn_oth");
 					return cl.join(" ");

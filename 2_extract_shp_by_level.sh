@@ -20,7 +20,7 @@ do
 
         echo "   BN level "$level
         ogr2ogr -overwrite \
-            -sql "SELECT * FROM BN WHERE STAT_LEVL_<="$level \
+            -sql "SELECT * FROM BN WHERE STAT_LEVL_<="$level" AND COAS_FLAG <> 'T'" \
             $dirBN"/BN_lvl"$level".shp" \
             "tmp/"$proj"/BN.shp"
     done

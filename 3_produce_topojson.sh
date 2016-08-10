@@ -44,7 +44,7 @@ do
                 $dir"/RG_BN_lvl"$level".json" \
                 "nutsrg=tmp/"$proj"/RGbylevel/RG_lvl"$level".shp" \
                 "nutsbn=tmp/"$proj"/BNbylevel/BN_lvl"$level".shp" \
-                -p id=NUTS_ID,eu=EU_FLAG,efta=EFTA_FLAG,cc=CC_FLAG,lvl=STAT_LEVL_,cst=COAS_FLAG,oth=OTHR_CNTR_ \
+                -p id=NUTS_ID,eu=EU_FLAG,efta=EFTA_FLAG,cc=CC_FLAG,lvl=STAT_LEVL_,oth=OTHR_CNTR_ \
                 --id-property id \
                 --width $size --height $size --margin $margin \
                 -s 7
