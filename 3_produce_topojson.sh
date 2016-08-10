@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 margin=5
-for proj in "laea" "wm" "etrs89"
+for proj in "laea" "wm" #"etrs89"
 do
     for size in 1200 1000 800 600 400
     do
@@ -31,7 +31,9 @@ do
             topojson -o \
                 $dir"/RG_lvl"$level".json" \
                 "nutsrg=tmp/"$proj"/RGbylevel/RG_lvl"$level".shp" \
-                -p id=NUTS_ID --id-property id \
+                -p id=NUTS_ID,na=name \
+                --id-property NUTS_ID \
+                -e "shp/NUTS_AT_2013_prep.csv" \
                 --width $size --height $size --margin $margin \
                 -s 7
             topojson -o \
@@ -44,8 +46,9 @@ do
                 $dir"/RG_BN_lvl"$level".json" \
                 "nutsrg=tmp/"$proj"/RGbylevel/RG_lvl"$level".shp" \
                 "nutsbn=tmp/"$proj"/BNbylevel/BN_lvl"$level".shp" \
-                -p id=NUTS_ID,eu=EU_FLAG,efta=EFTA_FLAG,cc=CC_FLAG,lvl=STAT_LEVL_,oth=OTHR_CNTR_ \
-                --id-property id \
+                -p id=NUTS_ID,na=name,eu=EU_FLAG,efta=EFTA_FLAG,cc=CC_FLAG,lvl=STAT_LEVL_,oth=OTHR_CNTR_ \
+                --id-property NUTS_ID \
+                -e "shp/NUTS_AT_2013_prep.csv" \
                 --width $size --height $size --margin $margin \
                 -s 7
             fi

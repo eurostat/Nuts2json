@@ -22,7 +22,9 @@ where:
 
 ### Feature properties
 
-NUTS regions (TYPE=RG) have a single property, <i>id</i>, which is the NUTS identifier used to join statistical figures and then colors to the regions.
+NUTS regions (TYPE=RG) have two properties:
+  - <i>id</i>: The NUTS identifier to be used to join Eurostat statistical figures and then assign colors to the regions.
+  - <i>na</i>: The geographical name of the region.
 
 NUTS boundaries (TYPE=BN) have the following properties:
   - <i>lvl</i>: The NUTS level of the boundary, from 0 (national level) to 3 (provincial level).

@@ -1,6 +1,3 @@
-Extract attribute data - show in info div
--e, --external-properties CSV or TSV file to join properties (by id) to output features
-
 compress borders? check first with mouse over
 
 semantic zoom

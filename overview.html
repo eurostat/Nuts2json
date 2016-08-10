@@ -56,7 +56,7 @@
 			g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsrg).features).enter()
 			.append("path").attr("d", path)
 			.attr("class", "rg")
-            .on("mouseover", function(d) { infoDiv.html(d.properties.id); })
+            .on("mouseover", function(d) { infoDiv.html(d.properties.id+"<br>"+d.properties.na); })
             .on("mouseout", function() {infoDiv.text("");});
 		}
 
