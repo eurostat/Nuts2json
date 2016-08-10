@@ -1,4 +1,6 @@
+move and style infodiv
 compress borders? check first with mouse over
+example of stat map in eurostatvisu
 
 semantic zoom
 http://bl.ocks.org/mbostock/2a39a768b1d4bc00a09650edef75ad39
@@ -9,12 +11,15 @@ use only that?
 filter DOM-TOM regions for level 0
 
 show more: SEP, JOIN, non EU countries + natural earth?
+
 include insets for:
 guadeloupe, martinique, guyane, reunion, mayotte, açores, madeire, canaries  -  malte, liechtenstein, islande
 FRA,FRA1,FRA2,FRA3,FRA4,FRA5,FRA10,FRA20,FRA30,FRA40,FRA50
 PT2,PT20,PT200,PT3,PT30,PT300
 ES7,ES70,ES701,ES702,ES703,ES704,ES705,ES706,ES707,ES708,ES709
 http://3.bp.blogspot.com/-_wT-OaVeqKU/T0reGgEG_pI/AAAAAAAAAfI/donWdhBBUNw/s1600/Map_of_GDP_per_capita_in_the_EU_in_2007_(NUTS_3).png
+use custom projection like for https://github.com/seeschloss/francedom ?
+do for european communes (...) + other eurostat datasets?
 
 produce geojson (with topojsonJS/nodejs or ogr2ogr or https://www.npmjs.com/package/topo-geo-json-converter)
 ex:
