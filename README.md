@@ -7,7 +7,7 @@ For an example of such blank map, see <a href="http://jgaffuri.github.io/Nuts2js
 ## Supported formats
 
 The JSON files are available in the folder <a href="/json" target="_blank">json</a>. Each file path pattern is:
-/json/\<FORMAT\>/<PROJECTION>/<SIZE>/<TYPE>_lvl<NUTS_LEVEL>.json
+/json/\<FORMAT\>/\<PROJECTION\>/\<SIZE\>/\<TYPE\>_lvl\<NUTS_LEVEL\>.json
 - FORMAT is the file format, currently only <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a> is provided. <a href="http://geojson.org/" target="_blank">GeoJSON</a> format is to come.
 - PROJECTION is the map projection. Currently, European projection LAEA (EPSG ) and Web Mercator (EPSG ) are provided.
 - SIZE is the size of the map, in pixel.
