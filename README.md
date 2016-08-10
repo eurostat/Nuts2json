@@ -8,8 +8,8 @@ For an example of such blank map, see <a href="http://jgaffuri.github.io/Nuts2js
 
 The JSON files are available in the folder <a href="/json" target="_blank">json</a>. Each file path pattern is:
 /json/\<FORMAT\>/\<PROJECTION\>/\<SIZE\>/\<TYPE\>_lvl\<NUTS_LEVEL\>.json
-- FORMAT is the file format, currently only <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a> is provided. <a href="http://geojson.org/" target="_blank">GeoJSON</a> format is to come.
-- PROJECTION is the map projection. Currently, European projection LAEA (EPSG ) and Web Mercator (EPSG ) are provided.
+- FORMAT is the file format. Currently, only <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a> is provided. <a href="http://geojson.org/" target="_blank">GeoJSON</a> format is to come.
+- PROJECTION is the map projection. Currently, European projection LAEA (<a href="http://spatialreference.org/ref/epsg/etrs89-etrs-laea/" target="_blank">EPSG 3035</a>) and Web Mercator (<a href="http://spatialreference.org/ref/sr-org/7483/" target="_blank">EPSG 3857</a>) are provided.
 - SIZE is the size of the map, in pixel.
 - TYPE is the type of objects: either the regions (TYPE=RG), the boundaries (TYPE=BN) or both (TYPE=RG_BN)
 - NUTS_LEVEL is the NUTS level to be shown on the map, from national level (NUTS_LEVEL=0) to province level (NUTS_LEVEL=3).
