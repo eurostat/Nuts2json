@@ -32,7 +32,7 @@ NUTS boundaries (TYPE=BN) have the following properties:
 
 ## Usage example
 
-TODO
+[TODO: describe example, based on d3]
 
 ## Technical details
 
