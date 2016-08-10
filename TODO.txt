@@ -1,15 +1,13 @@
-semantic zoom
-compress borders? check first with mouse over
-mouse over - show info div
 remove coastal boundaries
-
+compress borders? check first with mouse over
 Extract attribute data - show in info div
 -e, --external-properties CSV or TSV file to join properties (by id) to output features
 
+semantic zoom
+http://bl.ocks.org/mbostock/2a39a768b1d4bc00a09650edef75ad39
+
 produce geo etrs89 (See end of http://teslabs.com/articles/topojson-catalonia/)
 use only that?
-
-size to width/height?
 
 filter DOM-TOM regions for level 0
 

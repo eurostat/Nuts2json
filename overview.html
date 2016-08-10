@@ -4,15 +4,15 @@
 <meta charset="utf-8">
 <title>NUTS JSON overview</title>
 <style>
+    body { font-family: "Myriad Pro", Myriad, MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", vegur, Vegur, Helvetica, Arial, sans-serif; }
 	#bck { fill: #f5f5f5; }
 	.rg { fill: #004494; }
 	.rg:hover { fill: darkred; }
-	.bn { fill: none; }
+	.bn { fill: none; stroke-linecap:round; stroke-linejoin:round }
 	.bn_0 { stroke: #fff; stroke-width: 2px; }
 	.bn_1 { stroke: #ddd; stroke-width: 1px; }
 	.bn_2 { stroke: #ddd; stroke-width: 1px; }
 	.bn_3 { stroke: #888; stroke-width: 0.5px; }
-	.bn_cst { stroke: none; }
 	.bn_oth { stroke: #444; stroke-width: 1px; }
 </style>
 
@@ -25,43 +25,65 @@
 
 <body>
 <svg id="map"></svg>
+<div id="info"></div>
 
 <script>
 	//http://bl.ocks.org/mbostock/5557726
 
 	//get url parameters for projection, level and size
-	var proj = EstLib.getParameterByName("proj") || "laea";
-    var nutsLvl = EstLib.getParameterByName("lvl") || "2";
-	var size = EstLib.getParameterByName("s") || 700;
+	var proj = EstLib.getParameterByName("proj") || "laea",
+    	nutsLvl = EstLib.getParameterByName("lvl") || "2",
+		size = EstLib.getParameterByName("s") || 700,
 
 	//build svg
-	var svg = d3.select("#map").attr("width", size).attr("height", size);
+	app = 0.87,
+	svg = d3.select("#map").attr("width", size).attr("height", size*app),
+	//drawing group
+	g = svg.append("g").attr("transform","translate(0,"+(-(size*45)/700)+")"),
 	//background rectangle
-	svg.append("rect").attr("id","bck").attr("x",0).attr("y",0).attr("width", size).attr("height", size);
+	bckRect = g.append("rect").attr("id","bck").attr("x",-2*size).attr("y",-2*size).attr("width", 5*size).attr("height", 5*size),
 
 	//path function
-	var path = d3.geoPath().projection(null);
+	path = d3.geoPath().projection(null),
+
+	infoDiv = d3.select("#info");
 
 	//get data
 	d3.json("json/topojson/"+proj+"/"+size+"px/RG_BN_lvl"+nutsLvl+".json", function(error, nuts) {
 		if (error) return console.error(error);
 
-		var rg = topojson.feature(nuts, nuts.objects.nutsrg).features;
-		svg.append("g").selectAll("path").data(rg).enter()
+		if(nuts.objects.nutsrg){
+			g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsrg).features).enter()
 			.append("path").attr("d", path)
-			.attr("class", "rg");
+			.attr("class", "rg")
+            .on("mouseover", function(d) { infoDiv.html(d.properties.id); })
+            .on("mouseout", function() {infoDiv.text("");});
+		}
 
-		var bn = topojson.feature(nuts, nuts.objects.nutsbn).features;
-		svg.append("g").selectAll("path").data(bn).enter()
-			.append("path").attr("d", path)
-			.attr("class", function(d){
-			d= d.properties;
-			//eu=EU_FLAG,efta=EFTA_FLAG,cc=CC_FLAG,lvl=STAT_LEVL_,cst=COAS_FLAG,oth=OTHR_CNTR_
-			var cl = ["bn","bn_"+d.lvl];
-			if(d.cst==="T") cl.push("bn_cst");
-			if(d.oth==="T") cl.push("bn_oth");
-			return cl.join(" ");
-		});
+		if(nuts.objects.nutsbn){
+			var bn = topojson.feature(nuts, nuts.objects.nutsbn).features;
+			bn = bn.filter(function(bn){ return bn.properties.cst!=="T"; });
+			bn.sort(function(bn1,bn2){ return bn2.properties.lvl - bn1.properties.lvl; });
+			g.append("g").selectAll("path").data(bn).enter()
+				.append("path").attr("d", path)
+				.attr("class", function(bn){
+					bn = bn.properties;
+					//eu=EU_FLAG,efta=EFTA_FLAG,cc=CC_FLAG,lvl=STAT_LEVL_,cst=COAS_FLAG,oth=OTHR_CNTR_
+					var cl = ["bn","bn_"+bn.lvl];
+					if(bn.oth==="T") cl.push("bn_oth");
+					return cl.join(" ");
+				});
+		}
+
+		//zoom behaviour
+		/*svg.append("rect").attr("width", size).attr("height", size).style("fill", "none").style("pointer-events", "all")
+		g.call(d3.zoom().scaleExtent([1,4]).on("zoom", function(){
+			console.log(this);
+			console.log(d3.event.transform);
+			tr = d3.event.transform;
+			g.attr("transform", d3.event.transform);
+		}));*/
+
 	});
 
 </script>
