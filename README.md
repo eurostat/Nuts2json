@@ -8,7 +8,7 @@ file:///H:/workspace/Nuts2json/overview.html
 
 ## Supported formats
 
-The JSON files are available in the folder <a href="/json" target="_blank">json</a> according to a predefined path pattern. For example, <a href="https://jgaffuri.github.io/Nuts2json/json/topojson/wm/500px/RG_lvl2.json" target="_blank">json/topojson/wm/500px/RG_lvl2.json</a> is the path to a topojson file of NUTS regions level 2 in projection web mercator, for a map size 500*500px.
+The JSON files are available in the folder <a href="/json" target="_blank">json</a> according to a predefined path pattern. For example, <a href="https://jgaffuri.github.io/Nuts2json/json/topojson/wm/500px/RG_lvl2.json" target="_blank">json/topojson/wm/600px/RG_lvl2.json</a> is the path to a topojson file of NUTS regions level 2 in projection web mercator, for a map size 600*600px.
 
 The file path pattern is: <i>/json/\<FORMAT\>/\<PROJECTION\>/\<SIZE\>/\<TYPE\>_lvl\<NUTS_LEVEL\>.json</i>
 
