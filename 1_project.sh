@@ -1,29 +1,19 @@
 #!/usr/bin/env bash
 
-# ETRS89:4258 WM:3857 LAEA:3035
-mkdir -p tmp/etrs89
-mkdir -p tmp/wm
-mkdir -p tmp/laea
+projs=("etrs89" "wm" "laea")
+epsgs=("4258" "3857" "3035")
 
-for type in "RG" "BN"
+for pi in ${!projs[@]}
 do
-    echo "Project $type"
-
-    echo "   to ETRS 89"
-    ogr2ogr -overwrite -f "ESRI Shapefile" \
-        "tmp/etrs89/"$type".shp" \
-        "shp/NUTS_"$type"_01M_2013.shp" \
-        -t_srs EPSG:4258 -s_srs EPSG:4258
-
-    echo "   to Web Mercator"
-    ogr2ogr -overwrite -f "ESRI Shapefile" \
-        "tmp/wm/"$type".shp" \
-        "shp/NUTS_"$type"_01M_2013.shp" \
-        -t_srs EPSG:3857 -s_srs EPSG:4258
-
-    echo "   to LAEA"
-    ogr2ogr -overwrite -f "ESRI Shapefile" \
-        "tmp/laea/"$type".shp" \
-        "shp/NUTS_"$type"_01M_2013.shp" \
-        -t_srs EPSG:3035 -s_srs EPSG:4258
+    proj=${projs[pi]}
+    epsg=${epsgs[pi]}
+    mkdir -p tmp/$proj
+    for type in "RG" "BN"
+    do
+        echo "Project $type to $proj"
+        ogr2ogr -overwrite -f "ESRI Shapefile" \
+            "tmp/"$proj"/"$type".shp" \
+            "shp/NUTS_"$type"_01M_2013.shp" \
+            -t_srs EPSG:$epsg -s_srs EPSG:4258
+    done
 done

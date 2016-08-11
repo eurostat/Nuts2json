@@ -1,4 +1,3 @@
-simplify bash with: http://stackoverflow.com/questions/1494178/how-to-define-hash-tables-in-bash
 test "clip" with ogr2ogr: ogr2ogr -f "ESRI Shapefile" output.shp input.shp -clipsrc <x_min> <y_min> <x_max> <y_max>
 filter DOM-TOM regions for level 0
 
