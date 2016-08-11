@@ -1,52 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>NUTS JSON overview</title>
-<style>
-    body { font-family: "Myriad Pro", Myriad, MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", vegur, Vegur, Helvetica, Arial, sans-serif; }
-	#bck { fill: #f5f5f5; }
-	.rg { fill: #004494; }
-	.rg:hover { fill: darkred; }
-	.bn { fill: none; stroke-linecap:round; stroke-linejoin:round }
-	.bn_0 { stroke: #fff; stroke-width: 1.5px; }
-	.bn_1 { stroke: #ddd; stroke-width: 1px; }
-	.bn_2 { stroke: #ddd; stroke-width: 1px; }
-	.bn_3 { stroke: #888; stroke-width: 0.5px; }
-	.bn_oth { stroke: #444; stroke-width: 1px; }
-</style>
+	<meta charset="utf-8">
+	<title>NUTS JSON overview</title>
+	<style>
+		body { font-family: "Myriad Pro", Myriad, MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", vegur, Vegur, Helvetica, Arial, sans-serif; }
+		#bck { fill: #f5f5f5; }
+		.rg { fill: #004494; }
+		.rg:hover { fill: darkred; }
+		.bn { fill: none; stroke-linecap:round; stroke-linejoin:round }
+		.bn_0 { stroke: #fff; stroke-width: 1.5px; }
+		.bn_1 { stroke: #ddd; stroke-width: 1px; }
+		.bn_2 { stroke: #ddd; stroke-width: 1px; }
+		.bn_3 { stroke: #888; stroke-width: 0.5px; }
+		.bn_oth { stroke: #444; stroke-width: 1px; }
+		.infoText { font-size: 13px; }
+	</style>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="https://d3js.org/topojson.v1.min.js"></script>
-<script src="https://rawgit.com/jgaffuri/EurostatVisu/gh-pages/js/lib.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="https://d3js.org/topojson.v1.min.js"></script>
+	<script src="https://rawgit.com/jgaffuri/EurostatVisu/gh-pages/js/lib.js"></script>
 
 </head>
 
 <body>
 <svg id="map"></svg>
-<div id="info"></div>
 
 <script>
 	//http://bl.ocks.org/mbostock/5557726
 
 	//get url parameters for projection, level and size
 	var proj = EstLib.getParameterByName("proj") || "laea",
-    	nutsLvl = EstLib.getParameterByName("lvl") || "2",
-		size = EstLib.getParameterByName("s") || 800,
+			nutsLvl = EstLib.getParameterByName("lvl") || "2",
+			size = EstLib.getParameterByName("s") || 800,
 
-	//build svg
-	app = 0.87,
-	svg = d3.select("#map").attr("width", size).attr("height", size*app),
-	//drawing group
-	g = svg.append("g").attr("transform","translate(0,"+(-(size*45)/700)+")"),
-	//background rectangle
-	bckRect = g.append("rect").attr("id","bck").attr("x",-2*size).attr("y",-2*size).attr("width", 5*size).attr("height", 5*size),
+			//build svg
+			app = 0.87,
+			svg = d3.select("#map").attr("width", size).attr("height", size*app),
+			//background rectangle
+			bckRect = svg.append("rect").attr("id","bck").attr("x",0).attr("y",0).attr("width", size).attr("height", size),
+			//drawing group
+			g = svg.append("g").attr("transform","translate(0,"+(-(size*45)/700)+")"),
+			//text
+			infoText = svg.append("text").attr("x",5).attr("y",20).attr("class","infoText");
 
-	//path function
-	path = d3.geoPath().projection(null),
-
-	infoDiv = d3.select("#info");
+			//path function
+			path = d3.geoPath().projection(null),
 
 	//get data
 	d3.json("json/topojson/"+proj+"/"+size+"px/RG_BN_lvl"+nutsLvl+".json", function(error, nuts) {
@@ -54,34 +54,34 @@
 
 		if(nuts.objects.nutsrg){
 			g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsrg).features).enter()
-			.append("path").attr("d", path)
-			.attr("class", "rg")
-            .on("mouseover", function(d) { infoDiv.html(d.properties.id+"<br>"+d.properties.na); })
-            .on("mouseout", function() {infoDiv.text("");});
+					.append("path").attr("d", path)
+					.attr("class", "rg")
+					.on("mouseover", function(d) { infoText.text(d.properties.id+" - "+d.properties.na); })
+					.on("mouseout", function() {infoText.text("");});
 		}
 
 		if(nuts.objects.nutsbn){
 			var bn = topojson.feature(nuts, nuts.objects.nutsbn).features;
 			bn.sort(function(bn1,bn2){ return bn2.properties.lvl - bn1.properties.lvl; });
 			g.append("g").selectAll("path").data(bn).enter()
-				.append("path").attr("d", path)
-				.attr("class", function(bn){
-					bn = bn.properties;
-					//eu=EU_FLAG,efta=EFTA_FLAG,cc=CC_FLAG,lvl=STAT_LEVL_,oth=OTHR_CNTR_
-					var cl = ["bn","bn_"+bn.lvl];
-					if(bn.oth==="T") cl.push("bn_oth");
-					return cl.join(" ");
-				});
+					.append("path").attr("d", path)
+					.attr("class", function(bn){
+						bn = bn.properties;
+						//eu=EU_FLAG,efta=EFTA_FLAG,cc=CC_FLAG,lvl=STAT_LEVL_,oth=OTHR_CNTR_
+						var cl = ["bn","bn_"+bn.lvl];
+						if(bn.oth==="T") cl.push("bn_oth");
+						return cl.join(" ");
+					});
 		}
 
 		//zoom behaviour
 		/*svg.append("rect").attr("width", size).attr("height", size).style("fill", "none").style("pointer-events", "all")
-		g.call(d3.zoom().scaleExtent([1,4]).on("zoom", function(){
-			console.log(this);
-			console.log(d3.event.transform);
-			tr = d3.event.transform;
-			g.attr("transform", d3.event.transform);
-		}));*/
+		 g.call(d3.zoom().scaleExtent([1,4]).on("zoom", function(){
+		 console.log(this);
+		 console.log(d3.event.transform);
+		 tr = d3.event.transform;
+		 g.attr("transform", d3.event.transform);
+		 }));*/
 
 	});
 
