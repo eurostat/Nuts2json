@@ -1,13 +1,16 @@
 move and style infodiv
-compress borders? check first with mouse over
-example of stat map in eurostatvisu
 
-semantic zoom
+semantic zoom. develop own based on svg-transform. use 
 http://bl.ocks.org/mbostock/2a39a768b1d4bc00a09650edef75ad39
+
+filter points (use --filter? Applies for lines?)
+compress borders? check first with mouse over
+make example of stat map in eurostatvisu
 
 produce geo etrs89 (See end of http://teslabs.com/articles/topojson-catalonia/)
 use only that?
 
+test "clip" with ogr2ogr (or other tool)
 filter DOM-TOM regions for level 0
 
 show more: SEP, JOIN, non EU countries + natural earth?
