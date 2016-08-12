@@ -1,3 +1,4 @@
+add non EU countries
 make example of stat map in eurostatvisu - example with zoom on a country
 do FR
 
@@ -12,7 +13,7 @@ pro: https://github.com/mbostock/topojson/wiki/Gallery
 produce geo etrs89 (See end of http://teslabs.com/articles/topojson-catalonia/)
 use only that one?
 
-show more: SEP, JOIN, non EU countries + natural earth?
+show more: SEP, JOIN + natural earth?
 
 produce insets. Use clipping to extract data for each inset. only one projection, one size. place it in svg with g.transform
 http://3.bp.blogspot.com/-_wT-OaVeqKU/T0reGgEG_pI/AAAAAAAAAfI/donWdhBBUNw/s1600/Map_of_GDP_per_capita_in_the_EU_in_2007_(NUTS_3).png
