@@ -6,6 +6,8 @@
 	<style>
 		body { font-family: "Myriad Pro", Myriad, MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", vegur, Vegur, Helvetica, Arial, sans-serif; }
 		#bck { fill: #f5f5f5; }
+		.cntrg { fill: lightgray; }
+		.cntbn { fill: none; stroke: white; stroke-linecap:round; stroke-linejoin:round }
 		.rg { fill: #004494; }
 		.rg:hover { fill: darkred; }
 		.bn { fill: none; stroke-linecap:round; stroke-linejoin:round }
@@ -16,18 +18,18 @@
 		.bn_oth { stroke: #444; stroke-width: 1px; }
 		.infoText { font-size: 13px; }
 
-        #info {
-            opacity: 0;
-            position: absolute;
-            padding: 5px;
-            width: 150px;
-            background: white;
-            border: 0px;
-            border-radius: 5px;
-            font: 14px;
-            pointer-events: none;
-            box-shadow: 5px 5px 5px grey;
-        }
+		#info {
+			opacity: 0;
+			position: absolute;
+			padding: 5px;
+			width: 150px;
+			background: white;
+			border: 0px;
+			border-radius: 5px;
+			font: 14px;
+			pointer-events: none;
+			box-shadow: 5px 5px 5px grey;
+		}
 
 	</style>
 
@@ -50,53 +52,57 @@
 			nutsLvl = EstLib.getParameterByName("lvl") || "2",
 			size = EstLib.getParameterByName("s") || 800,
 
-			//build svg
+	//build svg
 			app = 0.87,
 			svg = d3.select("#map").attr("width", size).attr("height", size*app),
-			//background rectangle
+	//background rectangle
 			bckRect = svg.append("rect").attr("id","bck").attr("x",0).attr("y",0).attr("width", size).attr("height", size),
-			//drawing group
+	//drawing group
 			g = svg.append("g").attr("transform","translate(0,"+(-(size*45)/700)+")"),
-			//text
+	//text
 			infoText = svg.append("text").attr("x",5).attr("y",20).attr("class","infoText");
 
-			//path function
-			path = d3.geoPath().projection(null),
-            //info
-            infoDiv = d3.select("#info")
-            ;
+	//path function
+	path = d3.geoPath().projection(null),
+		//info
+			infoDiv = d3.select("#info")
+	;
 
 	//get data
-	d3.json("json/topojson/"+proj+"/"+size+"px/RG_BN_lvl"+nutsLvl+".json", function(error, nuts) {
+	d3.json("json/topojson/"+proj+"/"+size+"px/NUTS_lvl"+nutsLvl+".json", function(error, nuts) {
 		if (error) return console.error(error);
 
-		if(nuts.objects.nutsrg){
-			g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsrg).features).enter()
-					.append("path").attr("d", path)
-					.attr("class", "rg")
-					.on("mouseover", function(d) {
-                        infoDiv.html(d.properties.na+"<br>"+d.properties.id)
-                        .style("left", (d3.event.pageX+30) + "px").style("top", (d3.event.pageY-20) + "px")
-                        .transition().duration(200).style("opacity",1);
-					})
-					.on("mouseout", function() {
-						infoDiv.transition().duration(200).style("opacity",0);
-					});
-		}
+		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntrg).features).enter()
+				.append("path").attr("d", path)
+				.attr("class", "cntrg");
 
-		if(nuts.objects.nutsbn){
-			var bn = topojson.feature(nuts, nuts.objects.nutsbn).features;
-			bn.sort(function(bn1,bn2){ return bn2.properties.lvl - bn1.properties.lvl; });
-			g.append("g").selectAll("path").data(bn).enter()
-					.append("path").attr("d", path)
-					.attr("class", function(bn){
-						bn = bn.properties;
-						//eu=EU_FLAG,efta=EFTA_FLAG,cc=CC_FLAG,lvl=STAT_LEVL_,oth=OTHR_CNTR_
-						var cl = ["bn","bn_"+bn.lvl];
-						if(bn.oth==="T") cl.push("bn_oth");
-						return cl.join(" ");
-					});
-		}
+		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntbn).features).enter()
+				.append("path").attr("d", path)
+				.attr("class", "cntbn");
+
+		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsrg).features).enter()
+				.append("path").attr("d", path)
+				.attr("class", "rg")
+				.on("mouseover", function(d) {
+					infoDiv.html(d.properties.na+"<br>"+d.properties.id)
+							.style("left", (d3.event.pageX+30) + "px").style("top", (d3.event.pageY-20) + "px")
+							.transition().duration(200).style("opacity",1);
+				})
+				.on("mouseout", function() {
+					infoDiv.transition().duration(200).style("opacity",0);
+				});
+
+		var bn = topojson.feature(nuts, nuts.objects.nutsbn).features;
+		bn.sort(function(bn1,bn2){ return bn2.properties.lvl - bn1.properties.lvl; });
+		g.append("g").selectAll("path").data(bn).enter()
+				.append("path").attr("d", path)
+				.attr("class", function(bn){
+					bn = bn.properties;
+					//eu=EU_FLAG,efta=EFTA_FLAG,cc=CC_FLAG,lvl=STAT_LEVL_,oth=OTHR_CNTR_
+					var cl = ["bn","bn_"+bn.lvl];
+					if(bn.oth==="T") cl.push("bn_oth");
+					return cl.join(" ");
+				});
 
 		//zoom behaviour
 		/*svg.append("rect").attr("width", size).attr("height", size).style("fill", "none").style("pointer-events", "all")
