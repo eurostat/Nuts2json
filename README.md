@@ -8,30 +8,36 @@ For an example of such blank map, see <a href="http://jgaffuri.github.io/Nuts2js
 
 The JSON files are available in the folder <a href="/json" target="_blank">json</a> according to a predefined path pattern. For example, <a href="https://jgaffuri.github.io/Nuts2json/json/topojson/wm/600px/RG_lvl2.json" target="_blank">json/topojson/wm/600px/RG_lvl2.json</a> is the path to a TopoJSON file of NUTS regions level 2 in projection web mercator, for a map size 600*600px.
 
-The file path pattern is: <i>/json/\<FORMAT\>/\<PROJECTION\>/\<SIZE\>/\<TYPE\>_lvl\<NUTS_LEVEL\>.json</i>
+The file path pattern is: <i>/json/\<FORMAT\>/\<PROJECTION\>/\<SIZE\>/\NUTS_lvl\<NUTS_LEVEL\>.json</i>
 
 where:
 
 - <i>FORMAT</i> is the file format. Currently, only <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a> is provided. <a href="http://geojson.org/" target="_blank">GeoJSON</a> format is to come.
 - <i>PROJECTION</i> is the map projection. Currently, European projection LAEA (<a href="http://spatialreference.org/ref/epsg/etrs89-etrs-laea/" target="_blank">EPSG 3035</a>) and Web Mercator (<a href="http://spatialreference.org/ref/sr-org/7483/" target="_blank">EPSG 3857</a>) are provided.
 - <i>SIZE</i> is the size of the map, in pixel. Currently, all maps are squared. The available sizes are 400, 600, 800, 1000 and 1200 pixels.
-- <i>TYPE</i> is the type of objects: Either the regions (TYPE=RG), the boundaries (TYPE=BN) or both (TYPE=RG_BN).
 - <i>NUTS_LEVEL</i> is the NUTS level to be shown on the map, from national level (NUTS_LEVEL=0) to provincial level (NUTS_LEVEL=3).
 
-### Feature properties
+### Features
 
-NUTS regions (TYPE=RG) have two properties:
+Each file provides 4 feature types with the following properties:
+
+NUTS regions (feature type <i>nutsrg</i>) have two properties:
   - <i>id</i>: The NUTS identifier to be used to join Eurostat statistical figures and then assign colors to the regions.
   - <i>na</i>: The geographical name of the region.
 
-NUTS boundaries (TYPE=BN) have the following properties:
+NUTS boundaries (feature type <i>nutsbn</i>) have the following properties:
   - <i>lvl</i>: The NUTS level of the boundary, from 0 (national level) to 3 (provincial level).
   - <i>eu</i>: T if the boundary separate two EU member states, F otherwise.
   - <i>efta</i>: T if the boundary touches at least one EFTA country, F otherwise.
   - <i>cc</i>: T if the boundary touches at least one Candidate Country, F otherwise.
   - <i>oth</i>: T if the boundary touches a country wich is not EU, EFTA,CC. F otherwise.
-
 <u>NB:</u> The coastal boundaries are not included.
+
+Non-european countries (feature type <i>cntrg</i>)
+[TODO describe]
+
+Non-european boundaries (feature type <i>cntbn</i>)
+[TODO describe]
 
 ## Usage example
 

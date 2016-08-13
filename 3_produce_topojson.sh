@@ -29,21 +29,7 @@ do
 
             echo "   Produce topojson - lvl"$level" - "$proj" - "$size"px"
             topojson -o \
-                $dir"/NUTS_RG_lvl"$level".json" \
-                "nutsrg=tmp/"$proj"/RGbylevel/RG_lvl"$level".shp" \
-                -p id=NUTS_ID,na=name \
-                --id-property NUTS_ID \
-                -e "shp/NUTS_AT_2013_prep.csv" \
-                --width $size --height $size --margin $margin \
-                -s 7
-            topojson -o \
-                $dir"/NUTS_BN_lvl"$level".json" \
-                "nutsbn=tmp/"$proj"/BNbylevel/BN_lvl"$level".shp" \
-                -p eu=EU_FLAG,efta=EFTA_FLAG,cc=CC_FLAG,lvl=STAT_LEVL_,cst=COAS_FLAG,oth=OTHR_CNTR_ \
-                --width $size --height $size --margin $margin \
-                -s 7
-            topojson -o \
-                $dir"/NUTS_RG_BN_lvl"$level".json" \
+                $dir"/NUTS_lvl"$level".json" \
                 "nutsrg=tmp/"$proj"/RGbylevel/RG_lvl"$level".shp" \
                 "nutsbn=tmp/"$proj"/BNbylevel/BN_lvl"$level".shp" \
                 "cntrg=tmp/"$proj"/CNTR_RG.shp" \

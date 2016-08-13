@@ -1,4 +1,6 @@
-add non EU countries
+exclude EU countries
+include properties
+
 make example of stat map in eurostatvisu - example with zoom on a country
 do FR
 
