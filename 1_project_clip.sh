@@ -11,9 +11,16 @@ mkdir -p tmp
 
 echo "Clip and filter country RG"
 ogr2ogr -overwrite -f "ESRI Shapefile" \
-   "tmp/CNTR_RG_03M_2014___.shp" \
+   "tmp/CNTR_RG_03M_2014_.shp" \
    "shp/CNTR_RG_03M_2014.shp" \
    -sql "SELECT * FROM CNTR_RG_03M_2014 WHERE CNTR_ID NOT IN ('PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME')" \
+   -clipsrc -179 -89 179 89
+
+echo "Join country RG attributes"
+ogr2ogr -overwrite -f "ESRI Shapefile" \
+   "tmp/CNTR_RG_03M_2014___.shp" \
+   "tmp/CNTR_RG_03M_2014_.shp" \
+   -sql "select CNTR_RG_03M_2014_.*, CNTR_AT_2014.* from CNTR_RG_03M_2014_ left join 'shp/CNTR_AT_2014.csv'.CNTR_AT_2014 on CNTR_RG_03M_2014_.CNTR_ID = CNTR_AT_2014.CNTR_ID" \
    -clipsrc -179 -89 179 89
 
 echo "Clip and filter country BN and select"

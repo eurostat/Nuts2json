@@ -34,7 +34,7 @@ do
                 "nutsbn=tmp/"$proj"/BNbylevel/BN_lvl"$level".shp" \
                 "cntrg=tmp/"$proj"/CNTR_RG.shp" \
                 "cntbn=tmp/"$proj"/CNTR_BN.shp" \
-                -p id=NUTS_ID,id=CNTR_ID,na=name,eu=EU_FLAG,efta=EFTA_FLAG,cc=CC_FLAG,lvl=STAT_LEVL_,oth=OTHR_CNTR_ \
+                -p id=NUTS_ID,na=name,eu=EU_FLAG,efta=EFTA_FLAG,cc=CC_FLAG,lvl=STAT_LEVL_,oth=OTHR_CNTR_,cid=CNTR_RG_03,cna=CNTR_AT__6 \
                 --id-property NUTS_ID \
                 -e "shp/NUTS_AT_2013_prep.csv" \
                 --width $size --height $size --margin $margin \

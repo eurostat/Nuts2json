@@ -76,7 +76,7 @@
 				.append("path").attr("d", path)
 				.attr("class", "cntrg")
 				.on("mouseover", function(rg) {
-					infoDiv.html(rg.properties.id)
+					infoDiv.html(rg.properties.cna+"<br>"+rg.properties.cid)
 							.style("left", (d3.event.pageX+30) + "px").style("top", (d3.event.pageY-20) + "px")
 							.transition().duration(200).style("opacity",1);
 				})
