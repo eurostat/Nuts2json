@@ -33,7 +33,7 @@ do
                 "nutsrg=tmp/"$proj"/RGbylevel/RG_lvl"$level".shp" \
                 "nutsbn=tmp/"$proj"/BNbylevel/BN_lvl"$level".shp" \
                 "cntrg=tmp/"$proj"/CNTR_RG.shp" \
-                "cntbn=tmp/"$proj"/CNTR_RG.shp" \
+                "cntbn=tmp/"$proj"/CNTR_BN.shp" \
                 -p id=NUTS_ID,na=name,eu=EU_FLAG,efta=EFTA_FLAG,cc=CC_FLAG,lvl=STAT_LEVL_,oth=OTHR_CNTR_ \
                 --id-property NUTS_ID \
                 -e "shp/NUTS_AT_2013_prep.csv" \
