@@ -34,14 +34,16 @@ NUTS boundaries (feature type <i>nutsbn</i>) have the following properties:
 <u>NB:</u> The coastal boundaries are not included.
 
 Non-european countries (feature type <i>cntrg</i>)
-[TODO describe]
+  - <i>cid</i>: The country identifier (2 letters code).
+  - <i>cna</i>: The country name.
 
-Non-european boundaries (feature type <i>cntbn</i>)
-[TODO describe]
+Non-european boundaries (feature type <i>cntbn</i>). Coastal boundaries are not included.
 
 ## Usage example
 
-[TODO: describe example, based on d3. Publish it in eurostatvisu]
+See <a href="http://jgaffuri.github.io/EurostatVisu/population_map.html">this example</a> on <a href="https://github.com/jgaffuri/EurostatVisu/blob/gh-pages/README.md"></a> project.
+
+[TODO: describe simple examples, based on d3.]
 
 ## Technical details
 
