@@ -8,14 +8,20 @@ xmax=(46.5 5200000 7512400)
 ymax=(73.9 11690000 5664600)
 
 mkdir -p tmp
-for type in "RG" "BN"
-do
-    echo "Clip country $type shp"
-    ogr2ogr -overwrite -f "ESRI Shapefile" \
-       "tmp/CNTR_"$type"_03M_2014___.shp" \
-       "shp/CNTR_"$type"_03M_2014.shp" \
-       -clipsrc -179 -89 179 89
-done
+
+echo "Clip and filter country RG"
+ogr2ogr -overwrite -f "ESRI Shapefile" \
+   "tmp/CNTR_RG_03M_2014___.shp" \
+   "shp/CNTR_RG_03M_2014.shp" \
+   -sql "SELECT * FROM CNTR_RG_03M_2014 WHERE CNTR_ID NOT IN ('PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME')" \
+   -clipsrc -179 -89 179 89
+
+echo "Clip and filter country BN and select"
+ogr2ogr -overwrite -f "ESRI Shapefile" \
+   "tmp/CNTR_BN_03M_2014___.shp" \
+   "shp/CNTR_BN_03M_2014.shp" \
+   -sql "SELECT * FROM CNTR_BN_03M_2014 WHERE COAS_FLAG='F' AND OTHR_CNTR_='T'" \
+   -clipsrc -179 -89 179 89
 
 for pi in ${!projs[@]}
 do
