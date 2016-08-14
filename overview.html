@@ -80,6 +80,9 @@
 							.style("left", (d3.event.pageX+30) + "px").style("top", (d3.event.pageY-20) + "px")
 							.transition().duration(200).style("opacity",1);
 				})
+				.on("mousemove", function() {
+					infoDiv.style("left", (d3.event.pageX+30) + "px").style("top", (d3.event.pageY-20) + "px");
+				})
 				.on("mouseout", function() {
 					infoDiv.transition().duration(200).style("opacity",0);
 				});
@@ -95,6 +98,9 @@
 					infoDiv.html(rg.properties.na+"<br>"+rg.properties.id)
 							.style("left", (d3.event.pageX+30) + "px").style("top", (d3.event.pageY-20) + "px")
 							.transition().duration(200).style("opacity",1);
+				})
+				.on("mousemove", function() {
+					infoDiv.style("left", (d3.event.pageX+30) + "px").style("top", (d3.event.pageY-20) + "px");
 				})
 				.on("mouseout", function() {
 					infoDiv.transition().duration(200).style("opacity",0);
