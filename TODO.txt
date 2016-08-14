@@ -1,9 +1,6 @@
-use bbox
-
+include country properties
 compress more
-exclude coastal borders of non-eu countries
-exclude EU countries
-include properties (cnt name)
+use bbox
 
 make example of stat map in eurostatvisu - example with zoom on a country
 do FR
