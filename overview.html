@@ -60,13 +60,13 @@
 	//drawing group
 			g = svg.append("g").attr("transform","translate(0,"+(-(size*45)/700)+")"),
 	//text
-			infoText = svg.append("text").attr("x",5).attr("y",20).attr("class","infoText");
+			infoText = svg.append("text").attr("x",5).attr("y",20).attr("class","infoText"),
 
 	//path function
-	path = d3.geoPath().projection(null),
-		//info
+			path = d3.geoPath().projection(null),
+	//info
 			infoDiv = d3.select("#info")
-	;
+			;
 
 	//get data
 	d3.json("json/topojson/"+proj+"/"+size+"px/NUTS_lvl"+nutsLvl+".json", function(error, nuts) {
