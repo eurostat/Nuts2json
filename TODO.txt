@@ -5,8 +5,6 @@ filter points (use --filter? Applies for lines?)
 
 use bbox?
 
-factorise infodiv, nutsmap (move to nuts2json)
-
 semantic zoom. develop own, based on svg-transform. use line style redimension with scale factor
 http://bl.ocks.org/mbostock/2a39a768b1d4bc00a09650edef75ad39
 
