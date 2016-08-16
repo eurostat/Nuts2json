@@ -8,7 +8,7 @@ use bbox?
 semantic zoom. develop own, based on svg-transform. use line style redimension with scale factor
 http://bl.ocks.org/mbostock/2a39a768b1d4bc00a09650edef75ad39
 
-pro: https://github.com/mbostock/topojson/wiki/Gallery
+pro: https://github.com/mbostock/topojson/wiki/Gallery + fr
 
 produce geo etrs89 (See end of http://teslabs.com/articles/topojson-catalonia/)
 use only that one?
