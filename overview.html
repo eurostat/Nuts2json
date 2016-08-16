@@ -18,19 +18,6 @@
 		.cntrg:hover { fill: darkred; }
 		.cntbn { fill: none; stroke: white; stroke-width: 1px; stroke-linecap:round; stroke-linejoin:round }
 		.infoText { font-size: 13px; }
-		#info {
-			opacity: 0;
-			position: absolute;
-			padding: 5px;
-			width: 150px;
-			background: white;
-			border: 0px;
-			border-radius: 5px;
-			font: 14px;
-			pointer-events: none;
-			box-shadow: 5px 5px 5px grey;
-		}
-
 	</style>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -42,7 +29,7 @@
 
 <body>
 <svg id="map"></svg>
-<div id="info"></div>
+<div id="tooltip"></div>
 
 <script>
 	//http://bl.ocks.org/mbostock/5557726
@@ -65,47 +52,33 @@
 	//path function
 			path = d3.geoPath().projection(null),
 	//info
-			infoDiv = d3.select("#info")
+			tooltip = EstLib.tooltip()
 			;
 
 	//get data
 	d3.json("json/topojson/"+proj+"/"+size+"px/NUTS_lvl"+nutsLvl+".json", function(error, nuts) {
 		if (error) return console.error(error);
 
+		//country
 		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntrg).features).enter()
 				.append("path").attr("d", path)
 				.attr("class", "cntrg")
-				.on("mouseover", function(rg) {
-					infoDiv.html(rg.properties.cna+"<br>"+rg.properties.cid)
-							.style("left", (d3.event.pageX+30) + "px").style("top", (d3.event.pageY-20) + "px")
-							.transition().duration(200).style("opacity",1);
-				})
-				.on("mousemove", function() {
-					infoDiv.style("left", (d3.event.pageX+30) + "px").style("top", (d3.event.pageY-20) + "px");
-				})
-				.on("mouseout", function() {
-					infoDiv.transition().duration(200).style("opacity",0);
-				});
-
+				.on("mouseover", function(rg) { tooltip.mouseover("<b>"+rg.properties.cna+"</b><br>"+rg.properties.cid); })
+				.on("mousemove", function() { tooltip.mousemove(); })
+				.on("mouseout", function() { tooltip.mouseout(); });
 		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntbn).features).enter()
 				.append("path").attr("d", path)
 				.attr("class", "cntbn");
 
+		//nuts regions
 		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsrg).features).enter()
 				.append("path").attr("d", path)
 				.attr("class", "rg")
-				.on("mouseover", function(rg) {
-					infoDiv.html(rg.properties.na+"<br>"+rg.properties.id)
-							.style("left", (d3.event.pageX+30) + "px").style("top", (d3.event.pageY-20) + "px")
-							.transition().duration(200).style("opacity",1);
-				})
-				.on("mousemove", function() {
-					infoDiv.style("left", (d3.event.pageX+30) + "px").style("top", (d3.event.pageY-20) + "px");
-				})
-				.on("mouseout", function() {
-					infoDiv.transition().duration(200).style("opacity",0);
-				});
+				.on("mouseover", function(rg) { tooltip.mouseover("<b>"+rg.properties.na+"</b><br>"+rg.properties.id); })
+				.on("mousemove", function() { tooltip.mousemove(); })
+				.on("mouseout", function() { tooltip.mouseout(); });
 
+		//nuts boundaries
 		var bn = topojson.feature(nuts, nuts.objects.nutsbn).features;
 		bn.sort(function(bn1,bn2){ return bn2.properties.lvl - bn1.properties.lvl; });
 		g.append("g").selectAll("path").data(bn).enter()
@@ -117,16 +90,6 @@
 					if(bn.oth==="T") cl.push("bn_oth");
 					return cl.join(" ");
 				});
-
-		//zoom behaviour
-		/*svg.append("rect").attr("width", size).attr("height", size).style("fill", "none").style("pointer-events", "all")
-		 g.call(d3.zoom().scaleExtent([1,4]).on("zoom", function(){
-		 console.log(this);
-		 console.log(d3.event.transform);
-		 tr = d3.event.transform;
-		 g.attr("transform", d3.event.transform);
-		 }));*/
-
 	});
 
 </script>
