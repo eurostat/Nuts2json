@@ -4,6 +4,8 @@ use -q
 filter points (use --filter? Applies for lines?)
 
 use bbox?
+"To include a bbox property in the generated topology that represents the bounding box of all contained features, use the --bbox argument. The bounding box array follows the same format as GeoJSON: [x0, y0, x1, y1]."
+
 
 semantic zoom. develop own, based on svg-transform. use line style redimension with scale factor
 http://bl.ocks.org/mbostock/2a39a768b1d4bc00a09650edef75ad39

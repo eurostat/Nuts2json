@@ -58,6 +58,7 @@
 	//get data
 	d3.json("json/topojson/"+proj+"/"+size+"px/NUTS_lvl"+nutsLvl+".json", function(error, nuts) {
 		if (error) return console.error(error);
+		//console.log(nuts);
 
 		//country
 		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntrg).features).enter()
