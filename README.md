@@ -51,3 +51,7 @@ See <a href="http://jgaffuri.github.io/EurostatVisu/population_map.html">this ma
 ## Technical details
 
 These files are produced from the NUTS SHP files provided on Eurostat website, <a href="http://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts" target="_blank">here</a>. The input SHP files are in the <a href="/shp" target="_blank">shp folder</a>. They are transformed using <a href="http://www.gdal.org/" target="_blank">GDAL</a> and, of course, <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a> libraries. The processes are automated in Bash files, which are also shared in this repository.
+
+## Copyright
+
+The <a href="http://ec.europa.eu/eurostat/web/nuts/overview" target="_blank">Eurostat NUTS dataset</a> is copyrighted. See the <a href="http://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts" target="_blank">Eurostat-GISCO</a> website for more information.
