@@ -2,7 +2,7 @@
 
 q0=6000
 q1=3000
-s=1.5
+s=3
 
 for proj in "laea" "wm" #"etrs89"
 do
