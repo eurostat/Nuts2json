@@ -1,6 +1,5 @@
-
 zoom-pan
-
+ajust simplification
 
 pro: https://github.com/mbostock/topojson/wiki/Gallery
 
