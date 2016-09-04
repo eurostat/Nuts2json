@@ -1,20 +1,5 @@
-compress more
-use -q
-"-q: maximum number of differentiable points along either dimension". -> take the map size in pixels? *10 ?
-"When you run topojson on the command line, it will output the quantization precision in meters along x and y"
-see pre-post-quantization parameters:
-"Pre-quantization occurs before the topology is constructed, and is controlled by --pre-quantization or --q0. Pre-quantization may produce simpler topologies from messy inputs, but should be disabled to preserve the input topology exactly."
-"Post-quantization occurs after the topology is created which, and is solely for producing smaller files (e.g., for web delivery). Post-quantization is controlled by --post-quantization or --q1"
-"When using Cartesian coordinates, the meaning of the simplification threshold changes to be in projected coordinates. In conjunction with the --width and --height arguments (described below), you can specify a simplification threshold in pixels, which is convenient!" -> take 1 pixel? or 0.1?
-'compress' borders? check first with mouse over
-filter points (use --filter? Applies for lines?)
 
-use bbox?
-"To include a bbox property in the generated topology that represents the bounding box of all contained features, use the --bbox argument. The bounding box array follows the same format as GeoJSON: [x0, y0, x1, y1]."
-
-semantic zoom. develop own, based on svg-transform. use line style redimension with scale factor
-http://bl.ocks.org/mbostock/2a39a768b1d4bc00a09650edef75ad39
-
+zoom-pan
 
 
 pro: https://github.com/mbostock/topojson/wiki/Gallery

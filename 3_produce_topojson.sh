@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-margin=5
+q0=6000
+q1=3000
+s=0.5
+
 for proj in "laea" "wm" #"etrs89"
 do
     for size in 1200 1000 800 600 400
@@ -37,8 +40,9 @@ do
                 -p id=NUTS_ID,na=name,eu=EU_FLAG,efta=EFTA_FLAG,cc=CC_FLAG,lvl=STAT_LEVL_,oth=OTHR_CNTR_,cid=CNTR_RG_03,cna=CNTR_AT__6 \
                 --id-property NUTS_ID \
                 -e "shp/NUTS_AT_2013_prep.csv" \
-                --width $size --height $size --margin $margin \
-                -s 7
+                --bbox --width $size --height $size \
+	            -s $s \
+	            --q0 $q0 --q1 $q1
             fi
         done
     done
