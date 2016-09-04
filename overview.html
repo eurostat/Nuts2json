@@ -4,7 +4,8 @@
 	<meta charset="utf-8">
 	<title>NUTS JSON overview</title>
 	<style>
-		body { font-family: "Myriad Pro", Myriad, MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", vegur, Vegur, Helvetica, Arial, sans-serif; }
+		html { height: 100%; margin:0; padding:0; }
+		body { height: 100%; margin:0; padding:0; font-family: "Myriad Pro", Myriad, MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", vegur, Vegur, Helvetica, Arial, sans-serif; }
 		#bck { fill: #f5f5f5; }
 		.rg { fill: #004494; }
 		.rg:hover { fill: darkred; }
@@ -39,26 +40,46 @@
 			nutsLvl = EstLib.getParameterByName("lvl") || "3",
 			size = EstLib.getParameterByName("s") || 800,
 
+	//build blank svg
+			width = "100%",
+			height = "100%",
 	//build svg
-			app = 0.87,
-			svg = d3.select("#map").attr("width", size).attr("height", size*app),
+			svg = d3.select("#map").attr("width", width).attr("height", height);
 	//background rectangle
-			bckRect = svg.append("rect").attr("id","bck").attr("x",0).attr("y",0).attr("width", size).attr("height", size),
+	svg.append("rect").attr("id","bck").attr("x",0).attr("y",0).attr("width", width).attr("height", height);
 	//drawing group
-			g = svg.append("g").attr("transform","translate(0,"+(-(size*45)/700)+")"),
-	//text
-			infoText = svg.append("text").attr("x",5).attr("y",20).attr("class","infoText"),
+	var g = svg.append("g").attr("transform","translate(0,0)");
 
-	//path function
-			path = d3.geoPath().projection(null),
-	//info
-			tooltip = EstLib.tooltip()
-			;
+	//zoom
+	var zoom;
+	svg.call(zoom=d3.zoom().scaleExtent([0.5,4]).on("zoom", function() {
+		var k = d3.event.transform.k;
+		d3.selectAll(".bn_0").style("stroke-width", (1.5/k)+"px");
+		d3.selectAll(".bn_1").style("stroke-width", (1/k)+"px");
+		d3.selectAll(".bn_2").style("stroke-width", (1/k)+"px");
+		d3.selectAll(".bn_3").style("stroke-width", (0.5/k)+"px");
+		d3.selectAll(".bn_oth").style("stroke-width", (1/k)+"px");
+		g.attr("transform", d3.event.transform);
+	}));
+
+	//tooltip element
+	var tooltip = EstLib.tooltip();
+
+	//loading image
+	var loadingDiv = EstLib.loadingImage({imgsrc:"img/loading.png"});
+
+	var path = d3.geoPath().projection(null);
 
 	//get data
 	d3.json("json/topojson/"+proj+"/"+size+"px/NUTS_lvl"+nutsLvl+".json", function(error, nuts) {
 		if (error) return console.error(error);
 		//console.log(nuts);
+
+		loadingDiv.hide();
+
+		//center
+		zoom.translateBy(svg,(-nuts.bbox[0]),(-nuts.bbox[1]));
+		//zoom.scaleBy(svg, 2);
 
 		//country
 		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntrg).features).enter()
