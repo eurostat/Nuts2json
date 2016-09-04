@@ -1,7 +1,5 @@
-zoom-pan
+zoom-pan for population map
 ajust simplification
-
-pro: https://github.com/mbostock/topojson/wiki/Gallery
 
 produce geo etrs89 (See end of http://teslabs.com/articles/topojson-catalonia/)
 use only that one?
