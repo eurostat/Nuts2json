@@ -1,4 +1,3 @@
-zoom-pan for population map
 ajust simplification
 
 produce geo etrs89 (See end of http://teslabs.com/articles/topojson-catalonia/)
