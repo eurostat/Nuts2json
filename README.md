@@ -1,15 +1,15 @@
 # Nuts2json
 
-<a href="https://github.com/jgaffuri/Nuts2json">Nuts2json</a> provides various reusable versions of <a href="http://ec.europa.eu/eurostat/web/nuts/overview" target="_blank">Eurostat NUTS dataset</a> as web formats such as <a href="http://geojson.org/" target="_blank">GeoJSON</a> and <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a>. It supports the design of statistical web maps of <a href="http://ec.europa.eu/eurostat/web/json-and-unicode-web-services/getting-started/rest-request" target="_blank">Eurostat data</a>. In a way, it provides a blank map of geometries ready for use with your own data and colors.
+<a href="https://github.com/eurostat/Nuts2json">Nuts2json</a> provides various reusable versions of <a href="http://ec.europa.eu/eurostat/web/nuts/overview" target="_blank">Eurostat NUTS dataset</a> as web formats such as <a href="http://geojson.org/" target="_blank">GeoJSON</a> and <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a>. It supports the design of statistical web maps of <a href="http://ec.europa.eu/eurostat/web/json-and-unicode-web-services/getting-started/rest-request" target="_blank">Eurostat data</a>. In a way, it provides a blank map of geometries ready for use with your own data and colors.
 
-For an example of such blank map, see <a href="http://jgaffuri.github.io/Nuts2json/overview.html?proj=laea&lvl=3&s=1000" target="_blank"><b>HERE</b></a> (the URL parameters can be changed).
+For an example of such blank map, see <a href="http://eurostat.github.io/Nuts2json/overview.html?proj=laea&lvl=3&s=1000" target="_blank"><b>HERE</b></a> (the URL parameters can be changed).
 
-For an example of thematic map, see <a href="http://jgaffuri.github.io/EurostatVisu/population_map.html"><b>this map</b></a> showing population in Europe.
+For an example of thematic map, see <a href="http://eurostat.github.io/EurostatVisu/population_map.html"><b>this map</b></a> showing population in Europe.
 
 
 ## Supported formats
 
-The JSON files are available in the folder <a href="/json" target="_blank">json</a> according to a predefined path pattern. For example, <a href="https://jgaffuri.github.io/Nuts2json/json/topojson/wm/600px/NUTS_lvl2.json" target="_blank">json/topojson/wm/600px/NUTS_lvl2.json</a> is the path to a TopoJSON file of NUTS regions level 2 in projection web mercator, for a map size 600*600px.
+The JSON files are available in the folder <a href="/json" target="_blank">json</a> according to a predefined path pattern. For example, <a href="https://eurostat.github.io/Nuts2json/json/topojson/wm/600px/NUTS_lvl2.json" target="_blank">json/topojson/wm/600px/NUTS_lvl2.json</a> is the path to a TopoJSON file of NUTS regions level 2 in projection web mercator, for a map size 600*600px.
 
 The file path pattern is: <i>/json/\<FORMAT\>/\<PROJECTION\>/\<SIZE\>/\NUTS_lvl\<NUTS_LEVEL\>.json</i>
 
@@ -44,7 +44,7 @@ Non-european boundaries (feature type <i>cntbn</i>). Coastal boundaries are not 
 
 ## Usage example
 
-See <a href="http://jgaffuri.github.io/EurostatVisu/population_map.html">this map</a> on <a href="https://github.com/jgaffuri/EurostatVisu/blob/gh-pages/README.md">EurostatVisu</a> project.
+See <a href="http://eurostat.github.io/EurostatVisu/population_map.html">this map</a> on <a href="https://github.com/eurostat/EurostatVisu/blob/gh-pages/README.md">EurostatVisu</a> project.
 
 [TODO: describe simple examples, based on d3.]
 
@@ -54,7 +54,7 @@ These files are produced from the NUTS SHP files provided on Eurostat website, <
 
 ## Support and contribution
 
-Feel free to [ask support](https://github.com/jgaffuri/Nuts2json/issues/new), fork the project or simply star it (it's always a pleasure).
+Feel free to [ask support](https://github.com/eurostat/Nuts2json/issues/new), fork the project or simply star it (it's always a pleasure).
 
 ## Copyright
 
