@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+years=("2013")
 projs=("etrs89" "wm" "laea")
 epsgs=("4258" "3857" "3035")
 xmin=(-12.5 -1490000 2434550)
@@ -11,23 +12,23 @@ mkdir -p tmp
 
 echo "Clip and filter country RG"
 ogr2ogr -overwrite -f "ESRI Shapefile" \
-   "tmp/CNTR_RG_03M_2014_.shp" \
-   "shp/CNTR_RG_03M_2014.shp" \
-   -sql "SELECT * FROM CNTR_RG_03M_2014 WHERE CNTR_ID NOT IN ('PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME')" \
+   "tmp/CNTR_RG_03M_2013_.shp" \
+   "shp/2013/CNTR_RG_03M_2013.shp" \
+   -sql "SELECT * FROM CNTR_RG_03M_2013 WHERE CNTR_ID NOT IN ('PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME')" \
    -clipsrc -179 -89 179 89
 
 echo "Join country RG attributes"
 ogr2ogr -overwrite -f "ESRI Shapefile" \
-   "tmp/CNTR_RG_03M_2014___.shp" \
-   "tmp/CNTR_RG_03M_2014_.shp" \
-   -sql "select CNTR_RG_03M_2014_.*, CNTR_AT_2014.* from CNTR_RG_03M_2014_ left join 'shp/CNTR_AT_2014.csv'.CNTR_AT_2014 on CNTR_RG_03M_2014_.CNTR_ID = CNTR_AT_2014.CNTR_ID" \
+   "tmp/CNTR_RG_03M_2013___.shp" \
+   "tmp/CNTR_RG_03M_2013_.shp" \
+   -sql "select CNTR_RG_03M_2013_.*, CNTR_AT_2013.* from CNTR_RG_03M_2013_ left join 'shp/2013/CNTR_AT_2013.csv'.CNTR_AT_2013 on CNTR_RG_03M_2013_.CNTR_ID = CNTR_AT_2013.CNTR_ID" \
    -clipsrc -179 -89 179 89
 
 echo "Clip and filter country BN and select"
 ogr2ogr -overwrite -f "ESRI Shapefile" \
-   "tmp/CNTR_BN_03M_2014___.shp" \
-   "shp/CNTR_BN_03M_2014.shp" \
-   -sql "SELECT * FROM CNTR_BN_03M_2014 WHERE COAS_FLAG='F' AND OTHR_CNTR_='T'" \
+   "tmp/CNTR_BN_03M_2013___.shp" \
+   "shp/2013/CNTR_BN_03M_2013.shp" \
+   -sql "SELECT * FROM CNTR_BN_03M_2013 WHERE COAS_FLAG='F' AND OTHR_CNTR_='T'" \
    -clipsrc -179 -89 179 89
 
 for pi in ${!projs[@]}
@@ -40,7 +41,7 @@ do
         echo "Project NUTS $type to $proj"
         ogr2ogr -overwrite -f "ESRI Shapefile" \
             "tmp/"$proj"/NUTS_"$type"_proj.shp" \
-            "shp/NUTS_"$type"_01M_2013.shp" \
+            "shp/2013/NUTS_"$type"_01M_2013.shp" \
             -t_srs EPSG:$epsg -s_srs EPSG:4258
 
         echo "Clip NUTS $type $proj"
@@ -52,7 +53,7 @@ do
         echo "Project country $type to $proj"
         ogr2ogr -overwrite -f "ESRI Shapefile" \
             "tmp/"$proj"/CNTR_"$type"_proj.shp" \
-            "tmp/CNTR_"$type"_03M_2014___.shp" \
+            "tmp/CNTR_"$type"_03M_2013___.shp" \
             -t_srs EPSG:$epsg -s_srs EPSG:4258
 
         echo "Clip country $type $proj"
