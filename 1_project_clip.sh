@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-years=("2013")
+years=("2016")
 projs=("etrs89" "wm" "laea")
 epsgs=("4258" "3857" "3035")
 xmin=(-12.5 -1490000 2434550)
