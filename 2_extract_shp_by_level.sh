@@ -17,14 +17,14 @@ do
     do
         echo "   NUTS "$year" RG level "$level
         ogr2ogr -overwrite \
-            -sql "SELECT * FROM NUTS_RG WHERE STAT_LEVL_="$level \
+            -sql "SELECT * FROM NUTS_RG WHERE LEVL_CODE="$level \
             $dirRG"/RG_lvl"$level".shp" \
             "tmp/"$year"/"$proj"/NUTS_RG.shp"
             #" AND NUTS_ID NOT IN ('FRA','FRA1','FRA2','FRA3','FRA4','FRA5','FRA10','FRA20','FRA30','FRA40','FRA50','PT2','PT20','PT200','PT3','PT30','PT300','ES7','ES70','ES701','ES702','ES703','ES704','ES705','ES706','ES707','ES708','ES709')"
 
         echo "   NUTS "$year" BN level "$level
         ogr2ogr -overwrite \
-            -sql "SELECT * FROM NUTS_BN WHERE STAT_LEVL_<="$level" AND COAS_FLAG <> 'T'" \
+            -sql "SELECT * FROM NUTS_BN WHERE LEVL_CODE<="$level" AND COAS_FLAG <> 'T'" \
             $dirBN"/BN_lvl"$level".shp" \
             "tmp/"$year"/"$proj"/NUTS_BN.shp"
     done
