@@ -17,12 +17,14 @@ year=${years[pi]}
 
 mkdir -p "tmp/"$year
 
-echo "Clip and filter country RG"
-ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
-   "tmp/"$year"/CNTR_RG.shp" \
-   "shp/"$year"/CNTR_RG_01M_"$year".shp" \
-   -sql "SELECT * FROM CNTR_RG_01M_"$year" WHERE CNTR_ID NOT IN ('PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME')" \
-   -clipsrc -179 -89 179 89
+#echo "Clip and filter country RG"
+#ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
+#   "tmp/"$year"/CNTR_RG.shp" \
+#   "shp/"$year"/CNTR_RG_01M_"$year".shp" \
+#   -sql "SELECT * FROM CNTR_RG_01M_"$year" WHERE CNTR_ID NOT IN ('PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME')" \
+#   -clipsrc -179 -89 179 89
+
+#CNTR_ID,CNTR_NAME,NAME_ASCI,NAME_ENGL,NAME_FREN,POLI_ORG_C,NAME_GAUL,ISO3_CODE,SVRG_UN,CAPT,CENT_MERI,LAT_ORIG,EFTA_TERR,CC_TERR,CNTR_CODE_,EU_TERR
 
 echo "Join country RG attributes"
 ogr2ogr -overwrite -f "ESRI Shapefile" \
