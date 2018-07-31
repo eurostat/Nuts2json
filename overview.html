@@ -38,6 +38,7 @@
 	var proj = EstLib.getParameterByName("proj") || "laea",
 			nutsLvl = EstLib.getParameterByName("lvl") || "3",
 			size = EstLib.getParameterByName("s") || 800,
+			year = EstLib.getParameterByName("y") || 2013,
 
 	//build blank svg
 			width = "100%",
@@ -70,7 +71,7 @@
 	var path = d3.geoPath().projection(null);
 
 	//get data
-	d3.json("json/topojson/"+proj+"/"+size+"px/NUTS_lvl"+nutsLvl+".json", function(error, nuts) {
+	d3.json("json/"+year+"/"+"topojson/"+proj+"/"+size+"px/NUTS_lvl"+nutsLvl+".json", function(error, nuts) {
 		if (error) return console.error(error);
 		//console.log(nuts);
 
