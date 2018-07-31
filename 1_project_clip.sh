@@ -31,12 +31,12 @@ ogr2ogr -overwrite -f "ESRI Shapefile" \
    -sql "select CNTR_RG_01M_"$year"_.*, CNTR_AT_"$year".* from CNTR_RG_01M_"$year"_ left join 'shp/"$year"/CNTR_AT_"$year".csv'.CNTR_AT_"$year" on CNTR_RG_01M_"$year"_.CNTR_ID = CNTR_AT_"$year".CNTR_ID" \
    -clipsrc -179 -89 179 89
 
-echo "Clip and filter country BN and select"
-ogr2ogr -overwrite -f "ESRI Shapefile" \
-   "tmp/"$year"/CNTR_BN_01M_"$year"___.shp" \
-   "shp/"$year"/CNTR_BN_01M_"$year".shp" \
-   -sql "SELECT * FROM CNTR_BN_01M_"$year" WHERE COAS_FLAG='F' AND OTHR_CNTR_='T'" \
-   -clipsrc -179 -89 179 89
+#echo "Clip and filter country BN and select"
+#ogr2ogr -overwrite -f "ESRI Shapefile" \
+#   "tmp/"$year"/CNTR_BN_01M_"$year"___.shp" \
+#   "shp/"$year"/CNTR_BN_01M_"$year".shp" \
+#   -sql "SELECT * FROM CNTR_BN_01M_"$year" WHERE COAS_FLAG='F' AND OTHR_CNTR_='T'" \
+#   -clipsrc -179 -89 179 89
 
 
 #for pi in ${!projs[@]}
