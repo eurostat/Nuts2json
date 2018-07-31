@@ -30,7 +30,7 @@ echo "Join country RG attributes"
 ogr2ogr -overwrite -f "ESRI Shapefile" \
    "tmp/"$year"/CNTR_RG___.shp" \
    "tmp/"$year"/CNTR_RG.shp" \
-   -sql "select CNTR_RG.*, CNTR_AT_"$year".* from CNTR_RG left join 'shp/"$year"/CNTR_AT_"$year".csv'.CNTR_AT_"$year" on CNTR_RG.CNTR_ID = CNTR_AT_"$year".CNTR_ID" \
+   -sql "select CNTR_RG.CNTR_ID as ID, CNTR_AT_"$year".CNTR_NAME as NAME from CNTR_RG left join 'shp/"$year"/CNTR_AT_"$year".csv'.CNTR_AT_"$year" on CNTR_RG.CNTR_ID = CNTR_AT_"$year".CNTR_ID" \
    -clipsrc -179 -89 179 89
 
 #echo "Clip and filter country BN and select"
