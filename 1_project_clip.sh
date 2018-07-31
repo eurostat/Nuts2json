@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-years=("2013")
+years=("2016")
 projs=("etrs89" "wm" "laea")
 epsgs=("4258" "3857" "3035")
 xmin=(-12.5 -1490000 2434550)
@@ -25,14 +25,14 @@ ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
    -clipsrc -179 -89 179 89
 
 echo "Country: Join RG attributes"
-ogr2ogr -overwrite -f "ESRI Shapefile" \
+ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
    "tmp/"$year"/CNTR_RG.shp" \
    "tmp/"$year"/CNTR_RG_.shp" \
    -sql "select CNTR_RG_.CNTR_ID as ID, CNTR_AT_"$year".CNTR_NAME as NAME from CNTR_RG_ left join 'shp/"$year"/CNTR_AT_"$year".csv'.CNTR_AT_"$year" on CNTR_RG_.CNTR_ID = CNTR_AT_"$year".CNTR_ID" \
    -clipsrc -179 -89 179 89
 
 echo "Country: Clip and filter BN"
-ogr2ogr -overwrite -f "ESRI Shapefile" \
+ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
    "tmp/"$year"/CNTR_BN.shp" \
    "shp/"$year"/CNTR_BN_01M_"$year".shp" \
    -sql "SELECT * FROM CNTR_BN_01M_"$year" WHERE COAS_FLAG='F' AND OTHR_FLAG='T'" \
