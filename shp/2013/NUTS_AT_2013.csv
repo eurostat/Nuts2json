@@ -1,1955 +1,1952 @@
-OBJECTID,CNTR_CODE,NUTS_ID,NAME_LATN,NUTS_NAME,NAME_ASCI,NAME_HTML
-1,AT,AT1,OST�STERREICH,OST�STERREICH,OSTOSTERREICH,OST&#x00D6;STERREICH
-2,AT,AT11,Burgenland (AT),Burgenland (AT),Burgenland (AT),Burgenland (AT)
-3,AT,AT111,Mittelburgenland,Mittelburgenland,Mittelburgenland,Mittelburgenland
-4,AT,AT112,Nordburgenland,Nordburgenland,Nordburgenland,Nordburgenland
-5,AT,AT113,S�dburgenland,S�dburgenland,Sudburgenland,S&#x00FC;dburgenland
-6,AT,AT12,Nieder�sterreich,Nieder�sterreich,Niederosterreich,Nieder&#x00F6;sterreich
-7,AT,AT121,Mostviertel-Eisenwurzen,Mostviertel-Eisenwurzen,Mostviertel-Eisenwurzen,Mostviertel-Eisenwurzen
-8,AT,AT122,Nieder�sterreich-S�d,Nieder�sterreich-S�d,Niederosterreich-Sud,Nieder&#x00F6;sterreich-S&#x00FC;d
-9,AT,AT123,Sankt P�lten,Sankt P�lten,Sankt Polten,Sankt P&#x00F6;lten
-10,AT,AT124,Waldviertel,Waldviertel,Waldviertel,Waldviertel
-11,AT,AT125,Weinviertel,Weinviertel,Weinviertel,Weinviertel
-12,AT,AT126,Wiener Umland/Nordteil,Wiener Umland/Nordteil,Wiener Umland/Nordteil,Wiener Umland/Nordteil
-13,AT,AT127,Wiener Umland/S�dteil,Wiener Umland/S�dteil,Wiener Umland/Sudteil,Wiener Umland/S&#x00FC;dteil
-14,AT,AT13,Wien,Wien,Wien,Wien
-15,AT,AT130,Wien,Wien,Wien,Wien
-16,AT,AT2,S�D�STERREICH,S�D�STERREICH,SUDOSTERREICH,S&#x00DC;D&#x00D6;STERREICH
-17,AT,AT21,K�rnten,K�rnten,Karnten,K&#x00E4;rnten
-18,AT,AT211,Klagenfurt-Villach,Klagenfurt-Villach,Klagenfurt-Villach,Klagenfurt-Villach
-19,AT,AT212,Oberk�rnten,Oberk�rnten,Oberkarnten,Oberk&#x00E4;rnten
-20,AT,AT213,Unterk�rnten,Unterk�rnten,Unterkarnten,Unterk&#x00E4;rnten
-21,AT,AT221,Graz,Graz,Graz,Graz
-22,AT,AT222,Liezen,Liezen,Liezen,Liezen
-23,AT,AT223,�stliche Obersteiermark,�stliche Obersteiermark,Ostliche Obersteiermark,&#x00D6;stliche Obersteiermark
-24,AT,AT225,West- und S�dsteiermark,West- und S�dsteiermark,West- und Sudsteiermark,West- und S&#x00FC;dsteiermark
-25,AT,AT226,Westliche Obersteiermark,Westliche Obersteiermark,Westliche Obersteiermark,Westliche Obersteiermark
-26,AT,AT31,Ober�sterreich,Ober�sterreich,Oberosterreich,Ober&#x00F6;sterreich
-27,AT,AT311,Innviertel,Innviertel,Innviertel,Innviertel
-28,AT,AT312,Linz-Wels,Linz-Wels,Linz-Wels,Linz-Wels
-29,AT,AT313,M�hlviertel,M�hlviertel,Muhlviertel,M&#x00FC;hlviertel
-30,AT,AT314,Steyr-Kirchdorf,Steyr-Kirchdorf,Steyr-Kirchdorf,Steyr-Kirchdorf
-31,AT,AT32,Salzburg,Salzburg,Salzburg,Salzburg
-32,AT,AT321,Lungau,Lungau,Lungau,Lungau
-33,AT,AT322,Pinzgau-Pongau,Pinzgau-Pongau,Pinzgau-Pongau,Pinzgau-Pongau
-34,AT,AT323,Salzburg und Umgebung,Salzburg und Umgebung,Salzburg Und Umgebung,Salzburg Und Umgebung
-35,AT,AT33,Tirol,Tirol,Tirol,Tirol
-36,AT,AT332,Innsbruck,Innsbruck,Innsbruck,Innsbruck
-37,AT,AT333,Osttirol,Osttirol,Osttirol,Osttirol
-38,AT,AT334,Tiroler Oberland,Tiroler Oberland,Tiroler Oberland,Tiroler Oberland
-39,AT,AT335,Tiroler Unterland,Tiroler Unterland,Tiroler Unterland,Tiroler Unterland
-40,AT,AT34,Vorarlberg,Vorarlberg,Vorarlberg,Vorarlberg
-41,AT,AT342,Rheintal-Bodenseegebiet,Rheintal-Bodenseegebiet,Rheintal-Bodenseegebiet,Rheintal-Bodenseegebiet
-42,BE,BE1,R�GION DE BRUXELLES-CAPITALE / BRUSSELS HOOFDSTEDELIJK GEWEST,R�GION DE BRUXELLES-CAPITALE / BRUSSELS HOOFDSTEDELIJK GEWEST,REGION DE BRUXELLES-CAPITALE / BRUSSELS HOOFDSTEDELIJK GEWEST,R&#x00C9;GION DE BRUXELLES-CAPITALE / BRUSSELS HOOFDSTEDELIJK GEWEST
-43,BE,BE100,Arr. de Bruxelles-Capitale / Arr. van Brussel-Hoofdstad,Arr. de Bruxelles-Capitale / Arr. van Brussel-Hoofdstad,Arr. de Bruxelles-Capitale / Arr. van Brussel-Hoofdstad,Arr. de Bruxelles-Capitale / Arr. van Brussel-Hoofdstad
-44,BE,BE2,VLAAMS GEWEST,VLAAMS GEWEST,VLAAMS GEWEST,VLAAMS GEWEST
-45,BE,BE21,Prov. Antwerpen,Prov. Antwerpen,Prov. Antwerpen,Prov. Antwerpen
-46,BE,BE211,Arr. Antwerpen,Arr. Antwerpen,Arr. Antwerpen,Arr. Antwerpen
-47,BE,BE212,Arr. Mechelen,Arr. Mechelen,Arr. Mechelen,Arr. Mechelen
-48,BE,BE213,Arr. Turnhout,Arr. Turnhout,Arr. Turnhout,Arr. Turnhout
-49,BE,BE22,Prov. Limburg (BE),Prov. Limburg (BE),Prov. Limburg (BE),Prov. Limburg (BE)
-50,BE,BE221,Arr. Hasselt,Arr. Hasselt,Arr. Hasselt,Arr. Hasselt
-51,BE,BE222,Arr. Maaseik,Arr. Maaseik,Arr. Maaseik,Arr. Maaseik
-52,BE,BE223,Arr. Tongeren,Arr. Tongeren,Arr. Tongeren,Arr. Tongeren
-53,BE,BE23,Prov. Oost-Vlaanderen,Prov. Oost-Vlaanderen,Prov. Oost-Vlaanderen,Prov. Oost-Vlaanderen
-54,BE,BE231,Arr. Aalst,Arr. Aalst,Arr. Aalst,Arr. Aalst
-55,BE,BE232,Arr. Dendermonde,Arr. Dendermonde,Arr. Dendermonde,Arr. Dendermonde
-56,BE,BE233,Arr. Eeklo,Arr. Eeklo,Arr. Eeklo,Arr. Eeklo
-57,BE,BE234,Arr. Gent,Arr. Gent,Arr. Gent,Arr. Gent
-58,BE,BE236,Arr. Sint-Niklaas,Arr. Sint-Niklaas,Arr. Sint-Niklaas,Arr. Sint-Niklaas
-59,BE,BE24,Prov. Vlaams-Brabant,Prov. Vlaams-Brabant,Prov. Vlaams-Brabant,Prov. Vlaams-Brabant
-60,BE,BE241,Arr. Halle-Vilvoorde,Arr. Halle-Vilvoorde,Arr. Halle-Vilvoorde,Arr. Halle-Vilvoorde
-61,BE,BE242,Arr. Leuven,Arr. Leuven,Arr. Leuven,Arr. Leuven
-62,BE,BE251,Arr. Brugge,Arr. Brugge,Arr. Brugge,Arr. Brugge
-63,BE,BE252,Arr. Diksmuide,Arr. Diksmuide,Arr. Diksmuide,Arr. Diksmuide
-64,BE,BE253,Arr. Ieper,Arr. Ieper,Arr. Ieper,Arr. Ieper
-65,BE,BE254,Arr. Kortrijk,Arr. Kortrijk,Arr. Kortrijk,Arr. Kortrijk
-66,BE,BE255,Arr. Oostende,Arr. Oostende,Arr. Oostende,Arr. Oostende
-67,BE,BE256,Arr. Roeselare,Arr. Roeselare,Arr. Roeselare,Arr. Roeselare
-68,BE,BE257,Arr. Tielt,Arr. Tielt,Arr. Tielt,Arr. Tielt
-69,BE,BE3,R�GION WALLONNE,R�GION WALLONNE,REGION WALLONNE,R&#x00C9;GION WALLONNE
-70,BE,BE31,Prov. Brabant Wallon,Prov. Brabant Wallon,Prov. Brabant Wallon,Prov. Brabant Wallon
-71,BE,BE310,Arr. Nivelles,Arr. Nivelles,Arr. Nivelles,Arr. Nivelles
-72,BE,BE321,Arr. Ath,Arr. Ath,Arr. Ath,Arr. Ath
-73,BE,BE322,Arr. Charleroi,Arr. Charleroi,Arr. Charleroi,Arr. Charleroi
-74,BE,BE323,Arr. Mons,Arr. Mons,Arr. Mons,Arr. Mons
-75,BE,BE324,Arr. Mouscron,Arr. Mouscron,Arr. Mouscron,Arr. Mouscron
-76,BE,BE325,Arr. Soignies,Arr. Soignies,Arr. Soignies,Arr. Soignies
-77,BE,BE327,Arr. Tournai,Arr. Tournai,Arr. Tournai,Arr. Tournai
-78,BE,BE33,Prov. Li�ge,Prov. Li�ge,Prov. Liege,Prov. Li&#x00E8;ge
-79,BE,BE331,Arr. Huy,Arr. Huy,Arr. Huy,Arr. Huy
-80,BE,BE334,Arr. Waremme,Arr. Waremme,Arr. Waremme,Arr. Waremme
-81,BE,BE335,Arr. Verviers - communes francophones,Arr. Verviers - communes francophones,Arr. Verviers - Communes francophones,Arr. Verviers - Communes fancophones
-82,BE,BE336,Bezirk Verviers - Deutschsprachige Gemeinschaft,Bezirk Verviers - Deutschsprachige Gemeinschaft,Bezirk Verviers - Deutschsprachige Gemeinschaft,Bezirk Verviers - Deutschsprachige Gemeinschaft
-83,BE,BE34,Prov. Luxembourg (BE),Prov. Luxembourg (BE),Prov. Luxembourg (BE),Prov. Luxembourg (BE)
-84,BE,BE341,Arr. Arlon,Arr. Arlon,Arr. Arlon,Arr. Arlon
-85,BE,BE342,Arr. Bastogne,Arr. Bastogne,Arr. Bastogne,Arr. Bastogne
-86,BE,BE343,Arr. Marche-en-Famenne,Arr. Marche-en-Famenne,Arr. Marche-en-Famenne,Arr. Marche-en-Famenne
-87,BE,BE344,Arr. Neufch�teau,Arr. Neufch�teau,Arr. Neufchateau,Arr. Neufch&#x00E2;teau
-88,BE,BE345,Arr. Virton,Arr. Virton,Arr. Virton,Arr. Virton
-89,BE,BE35,Prov. Namur,Prov. Namur,Prov. Namur,Prov. Namur
-90,BE,BE351,Arr. Dinant,Arr. Dinant,Arr. Dinant,Arr. Dinant
-91,BE,BE352,Arr. Namur,Arr. Namur,Arr. Namur,Arr. Namur
-92,BE,BE353,Arr. Philippeville,Arr. Philippeville,Arr. Philippeville,Arr. Philippeville
-93,BG,BG31,Severozapaden,?????????????,Severozapaden,&#x0421;&#x0435;&#x0432;&#x0435;&#x0440;&#x043E;&#x0437;&#x0430;&#x043F;&#x0430;&#x0434;&#x0435;&#x043D;
-94,BG,BG311,Vidin,?????,Vidin,&#x0412;&#x0438;&#x0434;&#x0438;&#x043D;
-95,BG,BG312,Montana,???????,Montana,&#x041C;&#x043E;&#x043D;&#x0442;&#x0430;&#x043D;&#x0430;
-96,BG,BG313,Vratsa,?????,Vratsa,&#x0412;&#x0440;&#x0430;&#x0446;&#x0430;
-97,BG,BG314,Pleven,??????,Pleven,&#x041F;&#x043B;&#x0435;&#x0432;&#x0435;&#x043D;
-98,BG,BG315,Lovech,?????,Lovech,&#x041B;&#x043E;&#x0432;&#x0435;&#x0447;
-99,BG,BG321,Veliko Tarnovo,?????? ???????,Veliko Tarnovo,&#x0412;&#x0435;&#x043B;&#x0438;&#x043A;&#x043E; &#x0422;&#x044A;&#x0440;&#x043D;&#x043E;&#x0432;&#x043E;
-100,BG,BG322,Gabrovo,???????,Gabrovo,&#x0413;&#x0430;&#x0431;&#x0440;&#x043E;&#x0432;&#x043E;
-101,BG,BG323,Ruse,????,Ruse,&#x0420;&#x0443;&#x0441;&#x0435;
-102,BG,BG324,Razgrad,???????,Razgrad,&#x0420;&#x0430;&#x0437;&#x0433;&#x0440;&#x0430;&#x0434;
-103,BG,BG33,Severoiztochen,?????????????,Severoiztochen,&#x0421;&#x0435;&#x0432;&#x0435;&#x0440;&#x043E;&#x0438;&#x0437;&#x0442;&#x043E;&#x0447;&#x0435;&#x043D;
-104,BG,BG332,Dobrich,??????,Dobrich,&#x0414;&#x043E;&#x0431;&#x0440;&#x0438;&#x0447;
-105,BG,BG333,Shumen,?????,Shumen,&#x0428;&#x0443;&#x043C;&#x0435;&#x043D;
-106,BG,BG34,Yugoiztochen,??????????,Yugoiztochen,&#x042E;&#x0433;&#x043E;&#x0438;&#x0437;&#x0442;&#x043E;&#x0447;&#x0435;&#x043D;
-107,BG,BG342,Sliven,??????,Sliven,&#x0421;&#x043B;&#x0438;&#x0432;&#x0435;&#x043D;
-108,BG,BG343,Yambol,?????,Yambol,&#x042F;&#x043C;&#x0431;&#x043E;&#x043B;
-109,BG,BG41,Yugozapaden,??????????,Yugozapaden,&#x042E;&#x0433;&#x043E;&#x0437;&#x0430;&#x043F;&#x0430;&#x0434;&#x0435;&#x043D;
-110,BG,BG411,Sofia (stolitsa),????? (???????),Sofia (stolitsa),&#x0421;&#x043E;&#x0444;&#x0438;&#x044F; (&#x0421;&#x0442;&#x043E;&#x043B;&#x0438;&#x0446;&#x0430;)
-111,BG,BG412,Sofia,?????,Sofia,&#x0421;&#x043E;&#x0444;&#x0438;&#x044F;
-112,BG,BG413,Blagoevgrad,???????????,Blagoevgrad,&#x0411;&#x043B;&#x0430;&#x0433;&#x043E;&#x0435;&#x0432;&#x0433;&#x0440;&#x0430;&#x0434;
-113,BG,BG414,Pernik,??????,Pernik,&#x041F;&#x0435;&#x0440;&#x043D;&#x0438;&#x043A;
-114,BG,BG415,Kyustendil,?????????,Kyustendil,&#x041A;&#x044E;&#x0441;&#x0442;&#x0435;&#x043D;&#x0434;&#x0438;&#x043B;
-115,BG,BG42,Yuzhen tsentralen,???? ?????????,Yuzhen tsentralen,&#x042E;&#x0436;&#x0435;&#x043D; &#x0426;&#x0435;&#x043D;&#x0442;&#x0440;&#x0430;&#x043B;&#x0435;&#x043D;
-116,BG,BG421,Plovdiv,???????,Plovdiv,&#x041F;&#x043B;&#x043E;&#x0432;&#x0434;&#x0438;&#x0432;
-117,BG,BG423,Pazardzhik,?????????,Pazardzhik,&#x041F;&#x0430;&#x0437;&#x0430;&#x0440;&#x0434;&#x0436;&#x0438;&#x043A;
-118,BG,BG425,Kardzhali,????????,Kardzhali,&#x041A;&#x044A;&#x0440;&#x0434;&#x0436;&#x0430;&#x043B;&#x0438;
-119,CH,CH0,SCHWEIZ/SUISSE/SVIZZERA,SCHWEIZ/SUISSE/SVIZZERA,SCHWEIZ/SUISSE/SVIZZERA,SCHWEIZ/SUISSE/SVIZZERA
-120,CH,CH011,Vaud,Vaud,Vaud,Vaud
-121,CH,CH012,Valais,Valais,Valais,Valais
-122,CH,CH013,Gen�ve,Gen�ve,Geneve,Gen&#x00E8;ve
-123,CH,CH02,Espace Mittelland,Espace Mittelland,Espace Mittelland,Espace Mittelland
-124,CH,CH021,Bern,Bern,Bern,Bern
-125,CH,CH022,Freiburg,Freiburg,Freiburg,Freiburg
-126,CH,CH023,Solothurn,Solothurn,Solothurn,Solothurn
-127,CH,CH024,Neuch�tel,Neuch�tel,Neuchatel,Neuch&#x00E2;tel
-128,CH,CH025,Jura,Jura,Jura,Jura
-129,CH,CH03,Nordwestschweiz,Nordwestschweiz,Nordwestschweiz,Nordwestschweiz
-130,CH,CH032,Basel-Landschaft,Basel-Landschaft,Basel-Landschaft,Basel-Landschaft
-131,CH,CH033,Aargau,Aargau,Aargau,Aargau
-132,CH,CH04,Z�rich,Z�rich,Zurich,Z&#x00FC;rich
-133,CH,CH040,Z�rich,Z�rich,Zurich,Z&#x00FC;rich
-134,CH,CH05,Ostschweiz,Ostschweiz,Ostschweiz,Ostschweiz
-135,CH,CH052,Schaffhausen,Schaffhausen,Schaffhausen,Schaffhausen
-136,CH,CH053,Appenzell Ausserrhoden,Appenzell Ausserrhoden,,
-",Appenzell Ausserrhoden,Appenzell Ausserrhoden",,,,,,
-137,CH,CH055,St. Gallen,St. Gallen,St. Gallen,St. Gallen
-138,CH,CH056,Graub�nden,Graub�nden,Graubunden,Graub&#x00FC;nden
-139,CH,CH057,Thurgau,Thurgau,Thurgau,Thurgau
-140,CH,CH06,Zentralschweiz,Zentralschweiz,Zentralschweiz,Zentralschweiz
-141,CH,CH061,Luzern,Luzern,Luzern,Luzern
-142,CH,CH062,Uri,Uri,Uri,Uri
-143,CH,CH063,Schwyz,Schwyz,Schwyz,Schwyz
-144,CH,CH064,Obwalden,Obwalden,Obwalden,Obwalden
-145,CH,CH065,Nidwalden,Nidwalden,Nidwalden,Nidwalden
-146,CH,CH066,Zug,Zug,Zug,Zug
-147,CH,CH07,Ticino,Ticino,Ticino,Ticino
-148,CH,CH070,Ticino,Ticino,Ticino,Ticino
-149,CY,CY0,K�PROS,??????,KYPROS,&#922;&#933;&#928;&#929;&#927;&#931;
-150,CY,CY00,K�pros,??????,,
-??????,,,,,,
-"??????""",Kypros,&#922;&#973;&#960;&#961;&#959;&#962;,,,,
-151,CY,CY000,K�pros,??????,Kypros,&#922;&#973;&#960;&#961;&#959;&#962;
-152,CZ,CZ0,CESK� REPUBLIKA,CESK� REPUBLIKA,CESKA REPUBLIKA,CESK&#x00C1; REPUBLIKA
-153,CZ,CZ01,Praha,Praha,Praha,Praha
-154,CZ,CZ010,Hlavn� mesto Praha,Hlavn� mesto Praha,Hlavni mesto Praha,Hlavn&#x00ED; mesto Praha
-155,CZ,CZ02,Stredn� Cechy,Stredn� Cechy,Stredni Cechy,Stredn&#x00ED; Cechy
-156,CZ,CZ020,Stredocesk� kraj,Stredocesk� kraj,Stredocesky kraj,Stredocesk&#x00FD; kraj
-157,CZ,CZ03,Jihoz�pad,Jihoz�pad,Jihozapad,Jihoz&#x00E1;pad
-158,CZ,CZ031,Jihocesk� kraj,Jihocesk� kraj,Jihocesky kraj,Jihocesk&#x00FD; kraj
-159,CZ,CZ032,Plzensk� kraj,Plzensk� kraj,Plzensky kraj,Plzensk&#x00FD; kraj
-160,CZ,CZ04,Severoz�pad,Severoz�pad,Severozapad,Severoz&#x00E1;pad
-161,CZ,CZ041,Karlovarsk� kraj,Karlovarsk� kraj,Karlovarsky kraj,Karlovarsk&#x00FD; kraj
-162,CZ,CZ042,�steck� kraj,�steck� kraj,Ustecky kraj,&#x00DA;steck&#x00FD; kraj
-163,CZ,CZ05,Severov�chod,Severov�chod,Severovychod,Severov&#x00FD;chod
-164,CZ,CZ052,Kr�lov�hradeck� kraj,Kr�lov�hradeck� kraj,Kralovehradecky kraj,Kr&#x00E1;lov&#x00E9;hradeck&#x00FD; kraj
-165,CZ,CZ053,Pardubick� kraj,Pardubick� kraj,Pardubicky kraj,Pardubick&#x00FD; kraj
-166,CZ,CZ063,Kraj Vysocina,Kraj Vysocina,Kraj Vysocina,Kraj Vysocina
-167,CZ,CZ064,Jihomoravsk� kraj,Jihomoravsk� kraj,Jihomoravsky kraj,Jihomoravsk&#x00FD; kraj
-168,CZ,CZ07,Stredn� Morava,Stredn� Morava,Stredni Morava,Stredn&#x00ED; Morava
-169,CZ,CZ072,Zl�nsk� kraj,Zl�nsk� kraj,Zlinsky kraj,Zl&#x00ED;nsk&#x00FD; kraj
-170,CZ,CZ08,Moravskoslezsko,Moravskoslezsko,Moravskoslezsko,Moravskoslezsko
-171,CZ,CZ080,Moravskoslezsk� kraj,Moravskoslezsk� kraj,Moravskoslezsky kraj,Moravskoslezsk&#x00FD; kraj
-172,DE,DE14,T�bingen,T�bingen,Tubingen,T&#x00FC;bingen
-173,DE,DE11,Stuttgart,Stuttgart,Stuttgart,Stuttgart
-174,DE,DE111,"Stuttgart, Stadtkreis","Stuttgart, Stadtkreis","Stuttgart, Stadtkreis","Stuttgart, Stadtkreis"
-175,DE,DE112,B�blingen,B�blingen,Boblingen,B&#x00F6;blingen
-176,DE,DE113,Esslingen,Esslingen,Esslingen,Esslingen
-177,DE,DE114,G�ppingen,G�ppingen,Goppingen,G&#x00F6;ppingen
-178,DE,DE115,Ludwigsburg,Ludwigsburg,Ludwigsburg,Ludwigsburg
-179,DE,DE117,"Heilbronn, Stadtkreis","Heilbronn, Stadtkreis","Heilbronn, Stadtkreis","Heilbronn, Stadtkreis"
-180,DE,DE118,"Heilbronn, Landkreis","Heilbronn, Landkreis","Heilbronn, Landkreis","Heilbronn, Landkreis"
-181,DE,DE119,Hohenlohekreis,Hohenlohekreis,Hohenlohekreis,Hohenlohekreis
-182,DE,DE11B,Main-Tauber-Kreis,Main-Tauber-Kreis,Main-Tauber-Kreis,Main-Tauber-Kreis
-183,DE,DE11C,Heidenheim,Heidenheim,Heidenheim,Heidenheim
-184,DE,DE11D,Ostalbkreis,Ostalbkreis,Ostalbkreis,Ostalbkreis
-185,DE,DE12,Karlsruhe,Karlsruhe,Karlsruhe,Karlsruhe
-186,DE,DE121,"Baden-Baden, Stadtkreis","Baden-Baden, Stadtkreis","Baden-Baden, Stadtkreis","Baden-Baden, Stadtkreis"
-187,DE,DE123,"Karlsruhe, Landkreis","Karlsruhe, Landkreis","Karlsruhe, Landkreis","Karlsruhe, Landkreis"
-188,DE,DE124,Rastatt,Rastatt,Rastatt,Rastatt
-189,DE,DE125,"Heidelberg, Stadtkreis","Heidelberg, Stadtkreis","Heidelberg, Stadtkreis","Heidelberg, Stadtkreis"
-190,DE,DE126,"Mannheim, Stadtkreis","Mannheim, Stadtkreis","Mannheim, Stadtkreis","Mannheim, Stadtkreis"
-191,DE,DE127,Neckar-Odenwald-Kreis,Neckar-Odenwald-Kreis,Neckar-Odenwald-Kreis,Neckar-Odenwald-Kreis
-192,DE,DE128,Rhein-Neckar-Kreis,Rhein-Neckar-Kreis,Rhein-Neckar-Kreis,Rhein-Neckar-Kreis
-193,DE,DE12A,Calw,Calw,Calw,Calw
-194,DE,DE12B,Enzkreis,Enzkreis,Enzkreis,Enzkreis
-195,DE,DE12C,Freudenstadt,Freudenstadt,Freudenstadt,Freudenstadt
-196,DE,DE13,Freiburg,Freiburg,Freiburg,Freiburg
-197,DE,DE131,"Freiburg im Breisgau, Stadtkreis","Freiburg im Breisgau, Stadtkreis","Freiburg im Breisgau, Stadtkreis","Freiburg im Breisgau, Stadtkreis"
-198,DE,DE132,Breisgau-Hochschwarzwald,Breisgau-Hochschwarzwald,Breisgau-Hochschwarzwald,Breisgau-Hochschwarzwald
-199,DE,DE134,Ortenaukreis,Ortenaukreis,Ortenaukreis,Ortenaukreis
-200,DE,DE135,Rottweil,Rottweil,Rottweil,Rottweil
-201,DE,DE136,Schwarzwald-Baar-Kreis,Schwarzwald-Baar-Kreis,Schwarzwald-Baar-Kreis,Schwarzwald-Baar-Kreis
-202,DE,DE137,Tuttlingen,Tuttlingen,Tuttlingen,Tuttlingen
-203,DE,DE139,L�rrach,L�rrach,Lorrach,L&#x00F6;rrach
-204,DE,DE13A,Waldshut,Waldshut,Waldshut,Waldshut
-205,DE,DE141,Reutlingen,Reutlingen,Reutlingen,Reutlingen
-206,DE,DE143,Zollernalbkreis,Zollernalbkreis,Zollernalbkreis,Zollernalbkreis
-207,DE,DE144,"Ulm, Stadtkreis","Ulm, Stadtkreis","Ulm, Stadtkreis","Ulm, Stadtkreis"
-208,DE,DE145,Alb-Donau-Kreis,Alb-Donau-Kreis,Alb-Donau-Kreis,Alb-Donau-Kreis
-209,DE,DE146,Biberach,Biberach,Biberach,Biberach
-210,DE,DE147,Bodenseekreis,Bodenseekreis,Bodenseekreis,Bodenseekreis
-211,DE,DE148,Ravensburg,Ravensburg,Ravensburg,Ravensburg
-212,DE,DE149,Sigmaringen,Sigmaringen,Sigmaringen,Sigmaringen
-213,DE,DE2,BAYERN,BAYERN,BAYERN,BAYERN
-214,DE,DE211,"Ingolstadt, Kreisfreie Stadt","Ingolstadt, Kreisfreie Stadt","Ingolstadt, Kreisfreie Stadt","Ingolstadt, Kreisfreie Stadt"
-215,DE,DE213,"Rosenheim, Kreisfreie Stadt","Rosenheim, Kreisfreie Stadt","Rosenheim, Kreisfreie Stadt","Rosenheim, Kreisfreie Stadt"
-216,DE,DE214,Alt�tting,Alt�tting,Altotting,Alt&#x00F6;tting
-217,DE,DE215,Berchtesgadener Land,Berchtesgadener Land,Berchtesgadener Land,Berchtesgadener Land
-218,DE,DE216,Bad T�lz-Wolfratshausen,Bad T�lz-Wolfratshausen,Bad Tolz-Wolfratshausen,Bad T&#x00F6;lz-Wolfratshausen
-219,DE,DE217,Dachau,Dachau,Dachau,Dachau
-220,DE,DE218,Ebersberg,Ebersberg,Ebersberg,Ebersberg
-221,DE,DE219,Eichst�tt,Eichst�tt,Eichstatt,Eichst&#x00E4;tt
-222,DE,DE21A,Erding,Erding,Erding,Erding
-223,DE,DE21B,Freising,Freising,Freising,Freising
-224,DE,DE21C,F�rstenfeldbruck,F�rstenfeldbruck,Furstenfeldbruck,F&#x00FC;rstenfeldbruck
-225,DE,DE21D,Garmisch-Partenkirchen,Garmisch-Partenkirchen,Garmisch-Partenkirchen,Garmisch-Partenkirchen
-226,DE,DE21E,Landsberg am Lech,Landsberg am Lech,Landsberg am Lech,Landsberg am Lech
-227,DE,DE21F,Miesbach,Miesbach,Miesbach,Miesbach
-228,DE,DE21G,M�hldorf a. Inn,M�hldorf a. Inn,Muhldorf a. Inn,M&#x00FC;hldorf a. Inn
-229,DE,DE21H,"M�nchen, Landkreis","M�nchen, Landkreis","Munchen, Landkreis","M&#x00FC;nchen, Landkreis"
-230,DE,DE21I,Neuburg-Schrobenhausen,Neuburg-Schrobenhausen,Neuburg-Schrobenhausen,Neuburg-Schrobenhausen
-231,DE,DE21J,Pfaffenhofen a. d. Ilm,Pfaffenhofen a. d. Ilm,Pfaffenhofen a. d. Ilm,Pfaffenhofen a. d. Ilm
-232,DE,DE21K,"Rosenheim, Landkreis","Rosenheim, Landkreis","Rosenheim, Landkreis","Rosenheim, Landkreis"
-233,DE,DE21L,Starnberg,Starnberg,Starnberg,Starnberg
-234,DE,DE21M,Traunstein,Traunstein,Traunstein,Traunstein
-235,DE,DE21N,Weilheim-Schongau,Weilheim-Schongau,Weilheim-Schongau,Weilheim-Schongau
-236,DE,DE22,Niederbayern,Niederbayern,Niederbayern,Niederbayern
-237,DE,DE221,"Landshut, Kreisfreie Stadt","Landshut, Kreisfreie Stadt","Landshut, Kreisfreie Stadt","Landshut, Kreisfreie Stadt"
-238,DE,DE222,"Passau, Kreisfreie Stadt","Passau, Kreisfreie Stadt","Passau, Kreisfreie Stadt","Passau, Kreisfreie Stadt"
-239,DE,DE223,"Straubing, Kreisfreie Stadt","Straubing, Kreisfreie Stadt","Straubing, Kreisfreie Stadt","Straubing, Kreisfreie Stadt"
-240,DE,DE224,Deggendorf,Deggendorf,Deggendorf,Deggendorf
-241,DE,DE225,Freyung-Grafenau,Freyung-Grafenau,Freyung-Grafenau,Freyung-Grafenau
-242,DE,DE226,Kelheim,Kelheim,Kelheim,Kelheim
-243,DE,DE228,"Passau, Landkreis","Passau, Landkreis","Passau, Landkreis","Passau, Landkreis"
-244,DE,DE229,Regen,Regen,Regen,Regen
-245,DE,DE22A,Rottal-Inn,Rottal-Inn,Rottal-Inn,Rottal-Inn
-246,DE,DE22B,Straubing-Bogen,Straubing-Bogen,Straubing-Bogen,Straubing-Bogen
-247,DE,DE22C,Dingolfing-Landau,Dingolfing-Landau,Dingolfing-Landau,Dingolfing-Landau
-248,DE,DE23,Oberpfalz,Oberpfalz,Oberpfalz,Oberpfalz
-249,DE,DE232,"Regensburg, Kreisfreie Stadt","Regensburg, Kreisfreie Stadt","Regensburg, Kreisfreie Stadt","Regensburg, Kreisfreie Stadt"
-250,DE,DE233,"Weiden i. d. Opf, Kreisfreie Stadt","Weiden i. d. Opf, Kreisfreie Stadt","Weiden i. d. Opf, Kreisfreie Stadt","Weiden i. d. Opf, Kreisfreie Stadt"
-251,DE,DE234,Amberg-Sulzbach,Amberg-Sulzbach,Amberg-Sulzbach,Amberg-Sulzbach
-252,DE,DE235,Cham,Cham,Cham,Cham
-253,DE,DE236,Neumarkt i. d. OPf.,Neumarkt i. d. OPf.,Neumarkt i. d. Opf.,Neumarkt i. d. Opf.
-254,DE,DE238,"Regensburg, Landkreis","Regensburg, Landkreis","Regensburg, Landkreis","Regensburg, Landkreis"
-255,DE,DE239,Schwandorf,Schwandorf,Schwandorf,Schwandorf
-256,DE,DE23A,Tirschenreuth,Tirschenreuth,Tirschenreuth,Tirschenreuth
-257,DE,DE24,Oberfranken,Oberfranken,Oberfranken,Oberfranken
-258,DE,DE241,"Bamberg, Kreisfreie Stadt","Bamberg, Kreisfreie Stadt","Bamberg, Kreisfreie Stadt","Bamberg, Kreisfreie Stadt"
-259,DE,DE242,"Bayreuth, Kreisfreie Stadt","Bayreuth, Kreisfreie Stadt","Bayreuth, Kreisfreie Stadt","Bayreuth, Kreisfreie Stadt"
-260,DE,DE244,"Hof, Kreisfreie Stadt","Hof, Kreisfreie Stadt","Hof, Kreisfreie Stadt","Hof, Kreisfreie Stadt"
-261,DE,DE245,"Bamberg, Landkreis","Bamberg, Landkreis","Bamberg, Landkreis","Bamberg, Landkreis"
-262,DE,DE246,"Bayreuth, Landkreis","Bayreuth, Landkreis","Bayreuth, Landkreis","Bayreuth, Landkreis"
-263,DE,DE247,"Coburg, Landkreis","Coburg, Landkreis","Coburg, Landkreis","Coburg, Landkreis"
-264,DE,DE248,Forchheim,Forchheim,Forchheim,Forchheim
-265,DE,DE249,"Hof, Landkreis","Hof, Landkreis","Hof, Landkreis","Hof, Landkreis"
-266,DE,DE24A,Kronach,Kronach,Kronach,Kronach
-267,DE,DE24C,Lichtenfels,Lichtenfels,Lichtenfels,Lichtenfels
-268,DE,DE24D,Wunsiedel i. Fichtelgebirge,Wunsiedel i. Fichtelgebirge,Wunsiedel i. Fichtelgebirge,Wunsiedel i. Fichtelgebirge
-269,DE,DE251,"Ansbach, Kreisfreie Stadt","Ansbach, Kreisfreie Stadt","Ansbach, Kreisfreie Stadt","Ansbach, Kreisfreie Stadt"
-270,DE,DE252,"Erlangen, Kreisfreie Stadt","Erlangen, Kreisfreie Stadt","Erlangen, Kreisfreie Stadt","Erlangen, Kreisfreie Stadt"
-271,DE,DE254,"N�rnberg, Kreisfreie Stadt","N�rnberg, Kreisfreie Stadt","Nurnberg, Kreisfreie Stadt","N&#x00FC;rnberg, Kreisfreie Stadt"
-272,DE,DE255,"Schwabach, Kreisfreie Stadt","Schwabach, Kreisfreie Stadt","Schwabach, Kreisfreie Stadt","Schwabach, Kreisfreie Stadt"
-273,DE,DE256,"Ansbach, Landkreis","Ansbach, Landkreis","Ansbach, Landkreis","Ansbach, Landkreis"
-274,DE,DE257,Erlangen-H�chstadt,Erlangen-H�chstadt,Erlangen-Hochstadt,Erlangen-H&#x00F6;chstadt
-275,DE,DE259,N�rnberger Land,N�rnberger Land,Nurnberger Land,N&#x00FC;rnberger Land
-276,DE,DE25A,Neustadt a. d. Aisch-Bad Windsheim,Neustadt a. d. Aisch-Bad Windsheim,Neustadt a. d. Aisch-Bad Windsheim,Neustadt a. d. Aisch-Bad Windsheim
-277,DE,DE25B,Roth,Roth,Roth,Roth
-278,DE,DE25C,Wei�enburg-Gunzenhausen,Wei�enburg-Gunzenhausen,Weissenburg-Gunzenhausen,Wei&#x00DF;enburg-Gunzenhausen
-279,DE,DE261,"Aschaffenburg, Kreisfreie Stadt","Aschaffenburg, Kreisfreie Stadt","Aschaffenburg, Kreisfreie Stadt","Aschaffenburg, Kreisfreie Stadt"
-280,DE,DE262,"Schweinfurt, Kreisfreie Stadt","Schweinfurt, Kreisfreie Stadt","Schweinfurt, Kreisfreie Stadt","Schweinfurt, Kreisfreie Stadt"
-281,DE,DE264,"Aschaffenburg, Landkreis","Aschaffenburg, Landkreis","Aschaffenburg, Landkreis","Aschaffenburg, Landkreis"
-282,DE,DE265,Bad Kissingen,Bad Kissingen,Bad Kissingen,Bad Kissingen
-283,DE,DE266,Rh�n-Grabfeld,Rh�n-Grabfeld,Rhon-Grabfeld,Rh&#x00F6;n-Grabfeld
-284,DE,DE267,Ha�berge,Ha�berge,Hassberge,Ha&#x00DF;berge
-285,DE,DE268,Kitzingen,Kitzingen,Kitzingen,Kitzingen
-286,DE,DE269,Miltenberg,Miltenberg,Miltenberg,Miltenberg
-287,DE,DE26A,Main-Spessart,Main-Spessart,Main-Spessart,Main-Spessart
-288,DE,DE26C,"W�rzburg, Landkreis","W�rzburg, Landkreis","Wurzburg, Landkreis","W&#x00FC;rzburg, Landkreis"
-289,DE,DE27,Schwaben,Schwaben,Schwaben,Schwaben
-290,DE,DE271,"Augsburg, Kreisfreie Stadt","Augsburg, Kreisfreie Stadt","Augsburg, Kreisfreie Stadt","Augsburg, Kreisfreie Stadt"
-291,DE,DE272,"Kaufbeuren, Kreisfreie Stadt","Kaufbeuren, Kreisfreie Stadt","Kaufbeuren, Kreisfreie Stadt","Kaufbeuren, Kreisfreie Stadt"
-292,DE,DE274,"Memmingen, Kreisfreie Stadt","Memmingen, Kreisfreie Stadt","Memmingen, Kreisfreie Stadt","Memmingen, Kreisfreie Stadt"
-293,DE,DE275,Aichach-Friedberg,Aichach-Friedberg,Aichach-Friedberg,Aichach-Friedberg
-294,DE,DE276,"Augsburg, Landkreis","Augsburg, Landkreis","Augsburg, Landkreis","Augsburg, Landkreis"
-295,DE,DE277,Dillingen a.d. Donau,Dillingen a.d. Donau,Dillingen a.d. Donau,Dillingen a.d. Donau
-296,DE,DE278,G�nzburg,G�nzburg,Gunzburg,G&#x00FC;nzburg
-297,DE,DE279,Neu-Ulm,Neu-Ulm,Neu-Ulm,Neu-Ulm
-298,DE,DE27A,Lindau (Bodensee),Lindau (Bodensee),Lindau (Bodensee),Lindau (Bodensee)
-299,DE,DE27B,Ostallg�u,Ostallg�u,Ostallgau,Ostallg&#x00E4;u
-300,DE,DE27C,Unterallg�u,Unterallg�u,Unterallgau,Unterallg&#x00E4;u
-301,DE,DE27D,Donau-Ries,Donau-Ries,Donau-Ries,Donau-Ries
-302,DE,DE27E,Oberallg�u,Oberallg�u,Oberallgau,Oberallg&#x00E4;u
-303,DE,DE3,BERLIN,BERLIN,BERLIN,BERLIN
-304,DE,DE30,Berlin,Berlin,Berlin,Berlin
-305,DE,DE300,Berlin,Berlin,Berlin,Berlin
-306,DE,DE4,BRANDENBURG,BRANDENBURG,BRANDENBURG,BRANDENBURG
-307,DE,DE40,Brandenburg,Brandenburg,Brandenburg,Brandenburg
-308,DE,DE401,"Brandenburg an der Havel, Kreisfreie Stadt","Brandenburg an der Havel, Kreisfreie Stadt","Brandenburg an der Havel, Kreisfreie Stadt","Brandenburg an der Havel, Kreisfreie Stadt"
-309,DE,DE402,"Cottbus, Kreisfreie Stadt","Cottbus, Kreisfreie Stadt","Cottbus, Kreisfreie Stadt","Cottbus, Kreisfreie Stadt"
-310,DE,DE403,"Frankfurt (Oder), Kreisfreie Stadt","Frankfurt (Oder), Kreisfreie Stadt","Frankfurt (Oder), Kreisfreie Stadt","Frankfurt (Oder), Kreisfreie Stadt"
-311,DE,DE404,"Potsdam, Kreisfreie Stadt","Potsdam, Kreisfreie Stadt","Potsdam, Kreisfreie Stadt","Potsdam, Kreisfreie Stadt"
-312,DE,DE405,Barnim,Barnim,Barnim,Barnim
-313,DE,DE407,Elbe-Elster,Elbe-Elster,Elbe-Elster,Elbe-Elster
-314,DE,DE408,Havelland,Havelland,Havelland,Havelland
-315,DE,DE409,M�rkisch-Oderland,M�rkisch-Oderland,Markisch-Oderland,M&#x00E4;rkisch-Oderland
-316,DE,DE40A,Oberhavel,Oberhavel,Oberhavel,Oberhavel
-317,DE,DE40B,Oberspreewald-Lausitz,Oberspreewald-Lausitz,Oberspreewald-Lausitz,Oberspreewald-Lausitz
-318,DE,DE40D,Ostprignitz-Ruppin,Ostprignitz-Ruppin,Ostprignitz-Ruppin,Ostprignitz-Ruppin
-319,DE,DE40E,Potsdam-Mittelmark,Potsdam-Mittelmark,Potsdam-Mittelmark,Potsdam-Mittelmark
-320,DE,DE40F,Prignitz,Prignitz,Prignitz,Prignitz
-321,DE,DE40H,Teltow-Fl�ming,Teltow-Fl�ming,Teltow-Flaming,Teltow-Fl&#x00E4;ming
-322,DE,DE40I,Uckermark,Uckermark,Uckermark,Uckermark
-323,DE,DE5,BREMEN,BREMEN,BREMEN,BREMEN
-324,DE,DE50,Bremen,Bremen,Bremen,Bremen
-325,DE,DE501,"Bremen, Kreisfreie Stadt","Bremen, Kreisfreie Stadt","Bremen, Kreisfreie Stadt","Bremen, Kreisfreie Stadt"
-326,DE,DE6,HAMBURG,HAMBURG,HAMBURG,HAMBURG
-327,DE,DE60,Hamburg,Hamburg,Hamburg,Hamburg
-328,DE,DE600,Hamburg,Hamburg,Hamburg,Hamburg
-329,DE,DE7,HESSEN,HESSEN,HESSEN,HESSEN
-330,DE,DE71,Darmstadt,Darmstadt,Darmstadt,Darmstadt
-331,DE,DE711,"Darmstadt, Kreisfreie Stadt","Darmstadt, Kreisfreie Stadt","Darmstadt, Kreisfreie Stadt","Darmstadt, Kreisfreie Stadt"
-332,DE,DE712,"Frankfurt am Main, Kreisfreie Stadt","Frankfurt am Main, Kreisfreie Stadt","Frankfurt am Main, Kreisfreie Stadt","Frankfurt am Main, Kreisfreie Stadt"
-333,DE,DE714,"Wiesbaden, Kreisfreie Stadt","Wiesbaden, Kreisfreie Stadt","Wiesbaden, Kreisfreie Stadt","Wiesbaden, Kreisfreie Stadt"
-334,DE,DE715,Bergstra�e,Bergstra�e,Bergstrasse,Bergstra&#x00DF;e
-335,DE,DE716,Darmstadt-Dieburg,Darmstadt-Dieburg,Darmstadt-Dieburg,Darmstadt-Dieburg
-336,DE,DE717,Gro�-Gerau,Gro�-Gerau,Gross-Gerau,Gro&#x00DF;-Gerau
-337,DE,DE718,Hochtaunuskreis,Hochtaunuskreis,Hochtaunuskreis,Hochtaunuskreis
-338,DE,DE719,Main-Kinzig-Kreis,Main-Kinzig-Kreis,Main-Kinzig-Kreis,Main-Kinzig-Kreis
-339,DE,DE71A,Main-Taunus-Kreis,Main-Taunus-Kreis,Main-Taunus-Kreis,Main-Taunus-Kreis
-340,DE,DE71B,Odenwaldkreis,Odenwaldkreis,Odenwaldkreis,Odenwaldkreis
-341,DE,DE71C,"Offenbach, Landkreis","Offenbach, Landkreis","Offenbach, Landkreis","Offenbach, Landkreis"
-342,DE,DE71E,Wetteraukreis,Wetteraukreis,Wetteraukreis,Wetteraukreis
-343,DE,DE72,Gie�en,Gie�en,Giessen,Gie&#x00DF;en
-344,DE,DE721,"Gie�en, Landkreis","Gie�en, Landkreis","Giessen, Landkreis","Gie&#x00DF;en, Landkreis"
-345,DE,DE722,Lahn-Dill-Kreis,Lahn-Dill-Kreis,Lahn-Dill-Kreis,Lahn-Dill-Kreis
-346,DE,DE723,Limburg-Weilburg,Limburg-Weilburg,Limburg-Weilburg,Limburg-Weilburg
-347,DE,DE725,Vogelsbergkreis,Vogelsbergkreis,Vogelsbergkreis,Vogelsbergkreis
-348,DE,DE73,Kassel,Kassel,Kassel,Kassel
-349,DE,DE731,"Kassel, Kreisfreie Stadt","Kassel, Kreisfreie Stadt","Kassel, Kreisfreie Stadt","Kassel, Kreisfreie Stadt"
-350,DE,DE732,Fulda,Fulda,Fulda,Fulda
-351,DE,DE733,Hersfeld-Rotenburg,Hersfeld-Rotenburg,Hersfeld-Rotenburg,Hersfeld-Rotenburg
-352,DE,DE734,"Kassel, Landkreis","Kassel, Landkreis","Kassel, Landkreis","Kassel, Landkreis"
-353,DE,DE736,Waldeck-Frankenberg,Waldeck-Frankenberg,Waldeck-Frankenberg,Waldeck-Frankenberg
-354,DE,DE737,Werra-Mei�ner-Kreis,Werra-Mei�ner-Kreis,Werra-Meissner-Kreis,Werra-Mei&#x00DF;ner-Kreis
-355,DE,DE8,MECKLENBURG-VORPOMMERN,MECKLENBURG-VORPOMMERN,MECKLENBURG-VORPOMMERN,MECKLENBURG-VORPOMMERN
-356,DE,DE80,Mecklenburg-Vorpommern,Mecklenburg-Vorpommern,Mecklenburg-Vorpommern,Mecklenburg-Vorpommern
-357,DE,DE804,"Schwerin, Kreisfreie Stadt","Schwerin, Kreisfreie Stadt","Schwerin, Kreisfreie Stadt","Schwerin, Kreisfreie Stadt"
-358,DE,DE80J,Mecklenburgische Seenplatte,Mecklenburgische Seenplatte,Mecklenburgische Seenplatte,Mecklenburgische Seenplatte
-359,DE,DE80K,Landkreis Rostock,Landkreis Rostock,Landkreis Rostock,Landkreis Rostock
-360,DE,DE80L,Vorpommern-R�gen,Vorpommern-R�gen,Vorpommern-Rugen,Vorpommern-R&#x00FC;gen
-361,DE,DE80N,Vorpommern-Greifswald,Vorpommern-Greifswald,Vorpommern-Greifswald,Vorpommern-Greifswald
-362,DE,DE80O,Ludwigslust-Parchim,Ludwigslust-Parchim,Ludwigslust-Parchim,Ludwigslust-Parchim
-363,DE,DE9,NIEDERSACHSEN,NIEDERSACHSEN,NIEDERSACHSEN,NIEDERSACHSEN
-364,DE,DE91,Braunschweig,Braunschweig,Braunschweig,Braunschweig
-365,DE,DE911,"Braunschweig, Kreisfreie Stadt","Braunschweig, Kreisfreie Stadt","Braunschweig, Kreisfreie Stadt","Braunschweig, Kreisfreie Stadt"
-366,DE,DE913,"Wolfsburg, Kreisfreie Stadt","Wolfsburg, Kreisfreie Stadt","Wolfsburg, Kreisfreie Stadt","Wolfsburg, Kreisfreie Stadt"
-367,DE,DE914,Gifhorn,Gifhorn,Gifhorn,Gifhorn
-368,DE,DE915,G�ttingen,G�ttingen,Gottingen,G&#x00F6;ttingen
-369,DE,DE916,Goslar,Goslar,Goslar,Goslar
-370,DE,DE917,Helmstedt,Helmstedt,Helmstedt,Helmstedt
-371,DE,DE918,Northeim,Northeim,Northeim,Northeim
-372,DE,DE919,Osterode am Harz,Osterode am Harz,Osterode am Harz,Osterode am Harz
-373,DE,DE91A,Peine,Peine,Peine,Peine
-374,DE,DE91B,Wolfenb�ttel,Wolfenb�ttel,Wolfenbuttel,Wolfenb&#x00FC;ttel
-375,DE,DE92,Hannover,Hannover,Hannover,Hannover
-376,DE,DE922,Diepholz,Diepholz,Diepholz,Diepholz
-377,DE,DE923,Hameln-Pyrmont,Hameln-Pyrmont,Hameln-Pyrmont,Hameln-Pyrmont
-378,DE,DE925,Hildesheim,Hildesheim,Hildesheim,Hildesheim
-379,DE,DE926,Holzminden,Holzminden,Holzminden,Holzminden
-380,DE,DE927,Nienburg (Weser),Nienburg (Weser),Nienburg (Weser),Nienburg (Weser)
-381,DE,DE928,Schaumburg,Schaumburg,Schaumburg,Schaumburg
-382,DE,DE929,Region Hannover,Region Hannover,Region Hannover,Region Hannover
-383,DE,DE93,L�neburg,L�neburg,Luneburg,L&#x00FC;neburg
-384,DE,DE931,Celle,Celle,Celle,Celle
-385,DE,DE932,Cuxhaven,Cuxhaven,Cuxhaven,Cuxhaven
-386,DE,DE933,Harburg,Harburg,Harburg,Harburg
-387,DE,DE934,L�chow-Dannenberg,L�chow-Dannenberg,Luchow-Dannenberg,L&#x00FC;chow-Dannenberg
-388,DE,DE935,"L�neburg, Landkreis","L�neburg, Landkreis","Luneburg, Landkreis","L&#x00FC;neburg, Landkreis"
-389,DE,DE936,Osterholz,Osterholz,Osterholz,Osterholz
-390,DE,DE937,Rotenburg (W�mme),Rotenburg (W�mme),Rotenburg (Wumme),Rotenburg (W&#x00FC;mme)
-391,DE,DE938,Heidekreis,Heidekreis,Heidekreis,Heidekreis
-392,DE,DE939,Stade,Stade,Stade,Stade
-393,DE,DE93A,Uelzen,Uelzen,Uelzen,Uelzen
-394,DE,DE93B,Verden,Verden,Verden,Verden
-395,DE,DE94,Weser-Ems,Weser-Ems,Weser-Ems,Weser-Ems
-396,DE,DE941,"Delmenhorst, Kreisfreie Stadt","Delmenhorst, Kreisfreie Stadt","Delmenhorst, Kreisfreie Stadt","Delmenhorst, Kreisfreie Stadt"
-397,DE,DE942,"Emden, Kreisfreie Stadt","Emden, Kreisfreie Stadt","Emden, Kreisfreie Stadt","Emden, Kreisfreie Stadt"
-398,DE,DE944,"Osnabr�ck, Kreisfreie Stadt","Osnabr�ck, Kreisfreie Stadt","Osnabruck, Kreisfreie Stadt","Osnabr&#x00FC;ck, Kreisfreie Stadt"
-399,DE,DE945,"Wilhelmshaven, Kreisfreie Stadt","Wilhelmshaven, Kreisfreie Stadt","Wilhelmshaven, Kreisfreie Stadt","Wilhelmshaven, Kreisfreie Stadt"
-400,DE,DE946,Ammerland,Ammerland,Ammerland,Ammerland
-401,DE,DE947,Aurich,Aurich,Aurich,Aurich
-402,DE,DE948,Cloppenburg,Cloppenburg,Cloppenburg,Cloppenburg
-403,DE,DE949,Emsland,Emsland,Emsland,Emsland
-404,DE,DE94A,Friesland (DE),Friesland (DE),Friesland (DE),Friesland (DE)
-405,DE,DE94B,Grafschaft Bentheim,Grafschaft Bentheim,Grafschaft Bentheim,Grafschaft Bentheim
-406,DE,DE94C,Leer,Leer,Leer,Leer
-407,DE,DE94D,"Oldenburg, Landkreis","Oldenburg, Landkreis","Oldenburg, Landkreis","Oldenburg, Landkreis"
-408,DE,DE94F,Vechta,Vechta,Vechta,Vechta
-409,DE,DE94G,Wesermarsch,Wesermarsch,Wesermarsch,Wesermarsch
-410,DE,DE94H,Wittmund,Wittmund,Wittmund,Wittmund
-411,DE,DEA,NORDRHEIN-WESTFALEN,NORDRHEIN-WESTFALEN,NORDRHEIN-WESTFALEN,NORDRHEIN-WESTFALEN
-412,DE,DEA1,D�sseldorf,D�sseldorf,Dusseldorf,D&#x00FC;sseldorf
-413,DE,DEA11,"D�sseldorf, Kreisfreie Stadt","D�sseldorf, Kreisfreie Stadt","Dusseldorf, Kreisfreie Stadt","D&#x00FC;sseldorf, Kreisfreie Stadt"
-414,DE,DEA13,"Essen, Kreisfreie Stadt","Essen, Kreisfreie Stadt","Essen, Kreisfreie Stadt","Essen, Kreisfreie Stadt"
-415,DE,DEA14,"Krefeld, Kreisfreie Stadt","Krefeld, Kreisfreie Stadt","Krefeld, Kreisfreie Stadt","Krefeld, Kreisfreie Stadt"
-416,DE,DEA15,"M�nchengladbach, Kreisfreie Stadt","M�nchengladbach, Kreisfreie Stadt","Monchengladbach, Kreisfreie Stadt","M&#x00F6;nchengladbach, Kreisfreie Stadt"
-417,DE,DEA17,"Oberhausen, Kreisfreie Stadt","Oberhausen, Kreisfreie Stadt","Oberhausen, Kreisfreie Stadt","Oberhausen, Kreisfreie Stadt"
-418,DE,DEA18,"Remscheid, Kreisfreie Stadt","Remscheid, Kreisfreie Stadt","Remscheid, Kreisfreie Stadt","Remscheid, Kreisfreie Stadt"
-419,DE,DEA19,"Solingen, Kreisfreie Stadt","Solingen, Kreisfreie Stadt","Solingen, Kreisfreie Stadt","Solingen, Kreisfreie Stadt"
-420,DE,DEA1A,"Wuppertal, Kreisfreie Stadt","Wuppertal, Kreisfreie Stadt","Wuppertal, Kreisfreie Stadt","Wuppertal, Kreisfreie Stadt"
-421,DE,DEA1B,Kleve,Kleve,Kleve,Kleve
-422,DE,DEA1C,Mettmann,Mettmann,Mettmann,Mettmann
-423,DE,DEA1D,Rhein-Kreis Neuss,Rhein-Kreis Neuss,Rhein-Kreis Neuss,Rhein-Kreis Neuss
-424,DE,DEA1E,Viersen,Viersen,Viersen,Viersen
-425,DE,DEA1F,Wesel,Wesel,Wesel,Wesel
-426,DE,DEA2,K�ln,K�ln,Koln,K&#x00F6;ln
-427,DE,DEA23,"K�ln, Kreisfreie Stadt","K�ln, Kreisfreie Stadt","Koln, Kreisfreie Stadt","K&#x00F6;ln, Kreisfreie Stadt"
-428,DE,DEA24,"Leverkusen, Kreisfreie Stadt","Leverkusen, Kreisfreie Stadt","Leverkusen, Kreisfreie Stadt","Leverkusen, Kreisfreie Stadt"
-429,DE,DEA26,D�ren,D�ren,Duren,D&#x00FC;ren
-430,DE,DEA27,Rhein-Erft-Kreis,Rhein-Erft-Kreis,Rhein-Erft-Kreis,Rhein-Erft-Kreis
-431,DE,DEA28,Euskirchen,Euskirchen,Euskirchen,Euskirchen
-432,DE,DEA29,Heinsberg,Heinsberg,Heinsberg,Heinsberg
-433,DE,DEA2B,Rheinisch-Bergischer Kreis,Rheinisch-Bergischer Kreis,Rheinisch-Bergischer Kreis,Rheinisch-Bergischer Kreis
-434,DE,DEA2C,Rhein-Sieg-Kreis,Rhein-Sieg-Kreis,Rhein-Sieg-Kreis,Rhein-Sieg-Kreis
-435,DE,DEA2D,St�dteregion Aachen,St�dteregion Aachen,Stadteregion Aachen,St&#x00E4;dteregion Aachen
-436,DE,DEA3,M�nster,M�nster,Munster,M&#x00FC;nster
-437,DE,DEA32,"Gelsenkirchen, Kreisfreie Stadt","Gelsenkirchen, Kreisfreie Stadt","Gelsenkirchen, Kreisfreie Stadt","Gelsenkirchen, Kreisfreie Stadt"
-438,DE,DEA33,"M�nster, Kreisfreie Stadt","M�nster, Kreisfreie Stadt","Munster, Kreisfreie Stadt","M&#x00FC;nster, Kreisfreie Stadt"
-439,DE,DEA34,Borken,Borken,Borken,Borken
-440,DE,DEA35,Coesfeld,Coesfeld,Coesfeld,Coesfeld
-441,DE,DEA36,Recklinghausen,Recklinghausen,Recklinghausen,Recklinghausen
-442,DE,DEA37,Steinfurt,Steinfurt,Steinfurt,Steinfurt
-443,DE,DEA38,Warendorf,Warendorf,Warendorf,Warendorf
-444,DE,DEA4,Detmold,Detmold,Detmold,Detmold
-445,DE,DEA42,G�tersloh,G�tersloh,Gutersloh,G&#x00FC;tersloh
-446,DE,DEA43,Herford,Herford,Herford,Herford
-447,DE,DEA44,H�xter,H�xter,Hoxter,H&#x00F6;xter
-448,DE,DEA45,Lippe,Lippe,Lippe,Lippe
-449,DE,DEA46,Minden-L�bbecke,Minden-L�bbecke,Minden-Lubbecke,Minden-L&#x00FC;bbecke
-450,DE,DEA47,Paderborn,Paderborn,Paderborn,Paderborn
-451,DE,DEA5,Arnsberg,Arnsberg,Arnsberg,Arnsberg
-452,DE,DEA51,"Bochum, Kreisfreie Stadt","Bochum, Kreisfreie Stadt","Bochum, Kreisfreie Stadt","Bochum, Kreisfreie Stadt"
-453,DE,DEA52,"Dortmund, Kreisfreie Stadt","Dortmund, Kreisfreie Stadt","Dortmund, Kreisfreie Stadt","Dortmund, Kreisfreie Stadt"
-454,DE,DEA53,"Hagen, Kreisfreie Stadt","Hagen, Kreisfreie Stadt","Hagen, Kreisfreie Stadt","Hagen, Kreisfreie Stadt"
-455,DE,DEA54,"Hamm, Kreisfreie Stadt","Hamm, Kreisfreie Stadt","Hamm, Kreisfreie Stadt","Hamm, Kreisfreie Stadt"
-456,DE,DEA55,"Herne, Kreisfreie Stadt","Herne, Kreisfreie Stadt","Herne, Kreisfreie Stadt","Herne, Kreisfreie Stadt"
-457,DE,DEA56,Ennepe-Ruhr-Kreis,Ennepe-Ruhr-Kreis,Ennepe-Ruhr-Kreis,Ennepe-Ruhr-Kreis
-458,DE,DEA57,Hochsauerlandkreis,Hochsauerlandkreis,Hochsauerlandkreis,Hochsauerlandkreis
-459,DE,DEA58,M�rkischer Kreis,M�rkischer Kreis,Markischer Kreis,M&#x00E4;rkischer Kreis
-460,DE,DEA59,Olpe,Olpe,Olpe,Olpe
-461,DE,DEA5A,Siegen-Wittgenstein,Siegen-Wittgenstein,Siegen-Wittgenstein,Siegen-Wittgenstein
-462,DE,DEA5B,Soest,Soest,Soest,Soest
-463,DE,DEA5C,Unna,Unna,Unna,Unna
-464,DE,DEB,RHEINLAND-PFALZ,RHEINLAND-PFALZ,RHEINLAND-PFALZ,RHEINLAND-PFALZ
-465,DE,DEB1,Koblenz,Koblenz,Koblenz,Koblenz
-466,DE,DEB11,"Koblenz, Kreisfreie Stadt","Koblenz, Kreisfreie Stadt","Koblenz, Kreisfreie Stadt","Koblenz, Kreisfreie Stadt"
-467,DE,DEB12,Ahrweiler,Ahrweiler,Ahrweiler,Ahrweiler
-468,DE,DEB13,Altenkirchen (Westerwald),Altenkirchen (Westerwald),Altenkirchen (Westerwald),Altenkirchen (Westerwald)
-469,DE,DEB14,Bad Kreuznach,Bad Kreuznach,Bad Kreuznach,Bad Kreuznach
-470,DE,DEB15,Birkenfeld,Birkenfeld,Birkenfeld,Birkenfeld
-471,DE,DEB16,Cochem-Zell,Cochem-Zell,Cochem-Zell,Cochem-Zell
-472,DE,DEB17,Mayen-Koblenz,Mayen-Koblenz,Mayen-Koblenz,Mayen-Koblenz
-473,DE,DEB18,Neuwied,Neuwied,Neuwied,Neuwied
-474,DE,DEB19,Rhein-Hunsr�ck-Kreis,Rhein-Hunsr�ck-Kreis,Rhein-Hunsruck-Kreis,Rhein-Hunsr&#x00FC;ck-Kreis
-475,DE,DEB1A,Rhein-Lahn-Kreis,Rhein-Lahn-Kreis,Rhein-Lahn-Kreis,Rhein-Lahn-Kreis
-476,DE,DEB2,Trier,Trier,Trier,Trier
-477,DE,DEB21,"Trier, Kreisfreie Stadt","Trier, Kreisfreie Stadt","Trier, Kreisfreie Stadt","Trier, Kreisfreie Stadt"
-478,DE,DEB22,Bernkastel-Wittlich,Bernkastel-Wittlich,Bernkastel-Wittlich,Bernkastel-Wittlich
-479,DE,DEB23,Eifelkreis Bitburg-Pr�m,Eifelkreis Bitburg-Pr�m,Eifelkreis Bitburg-Prum,Eifelkreis Bitburg-Pr&#x00FC;m
-480,DE,DEB25,Trier-Saarburg,Trier-Saarburg,Trier-Saarburg,Trier-Saarburg
-481,DE,DEB3,Rheinhessen-Pfalz,Rheinhessen-Pfalz,Rheinhessen-Pfalz,Rheinhessen-Pfalz
-482,DE,DEB32,"Kaiserslautern, Kreisfreie Stadt","Kaiserslautern, Kreisfreie Stadt","Kaiserslautern, Kreisfreie Stadt","Kaiserslautern, Kreisfreie Stadt"
-483,DE,DEB33,"Landau in der Pfalz, Kreisfreie Stadt","Landau in der Pfalz, Kreisfreie Stadt","Landau in der Pfalz, Kreisfreie Stadt","Landau in der Pfalz, Kreisfreie Stadt"
-484,DE,DEB34,"Ludwigshafen am Rhein, Kreisfreie Stadt","Ludwigshafen am Rhein, Kreisfreie Stadt","Ludwigshafen am Rhein, Kreisfreie Stadt","Ludwigshafen am Rhein, Kreisfreie Stadt"
-485,DE,DEB35,"Mainz, Kreisfreie Stadt","Mainz, Kreisfreie Stadt","Mainz, Kreisfreie Stadt","Mainz, Kreisfreie Stadt"
-486,DE,DEB37,"Pirmasens, Kreisfreie Stadt","Pirmasens, Kreisfreie Stadt","Pirmasens, Kreisfreie Stadt","Pirmasens, Kreisfreie Stadt"
-487,DE,DEB38,"Speyer, Kreisfreie Stadt","Speyer, Kreisfreie Stadt","Speyer, Kreisfreie Stadt","Speyer, Kreisfreie Stadt"
-488,DE,DEB39,"Worms, Kreisfreie Stadt","Worms, Kreisfreie Stadt","Worms, Kreisfreie Stadt","Worms, Kreisfreie Stadt"
-489,DE,DEB3A,"Zweibr�cken, Kreisfreie Stadt","Zweibr�cken, Kreisfreie Stadt","Zweibrucken, Kreisfreie Stadt","Zweibr&#x00FC;cken, Kreisfreie Stadt"
-490,DE,DEB3B,Alzey-Worms,Alzey-Worms,Alzey-Worms,Alzey-Worms
-491,DE,DEB3C,Bad D�rkheim,Bad D�rkheim,Bad Durkheim,Bad D&#x00FC;rkheim
-492,DE,DEB3D,Donnersbergkreis,Donnersbergkreis,Donnersbergkreis,Donnersbergkreis
-493,DE,DEB3E,Germersheim,Germersheim,Germersheim,Germersheim
-494,DE,DEB3F,"Kaiserslautern, Landkreis","Kaiserslautern, Landkreis","Kaiserslautern, Landkreis","Kaiserslautern, Landkreis"
-495,DE,DEB3G,Kusel,Kusel,Kusel,Kusel
-496,DE,DEB3H,S�dliche Weinstra�e,S�dliche Weinstra�e,Sudliche Weinstrasse,S&#x00FC;dliche Weinstra&#x00DF;e
-497,DE,DEB3J,Mainz-Bingen,Mainz-Bingen,Mainz-Bingen,Mainz-Bingen
-498,DE,DEB3K,S�dwestpfalz,S�dwestpfalz,Sudwestpfalz,S&#x00FC;dwestpfalz
-499,DE,DEC,SAARLAND,SAARLAND,SAARLAND,SAARLAND
-500,DE,Dec-00,Saarland,Saarland,Saarland,Saarland
-501,DE,Dec-02,Merzig-Wadern,Merzig-Wadern,Merzig-Wadern,Merzig-Wadern
-502,DE,Dec-03,Neunkirchen,Neunkirchen,Neunkirchen,Neunkirchen
-503,DE,Dec-04,Saarlouis,Saarlouis,Saarlouis,Saarlouis
-504,DE,Dec-05,Saarpfalz-Kreis,Saarpfalz-Kreis,Saarpfalz-Kreis,Saarpfalz-Kreis
-505,DE,Dec-06,St. Wendel,St. Wendel,St. Wendel,St. Wendel
-506,DE,DED,SACHSEN,SACHSEN,SACHSEN,SACHSEN
-507,DE,DED2,Dresden,Dresden,Dresden,Dresden
-508,DE,DED21,"Dresden, Kreisfreie Stadt","Dresden, Kreisfreie Stadt","Dresden, Kreisfreie Stadt","Dresden, Kreisfreie Stadt"
-509,DE,DED2C,Bautzen,Bautzen,Bautzen,Bautzen
-510,DE,DED2D,G�rlitz,G�rlitz,Gorlitz,G&#x00F6;rlitz
-511,DE,DED2E,Mei�en,Mei�en,Meissen,Mei&#x00DF;en
-512,DE,DED4,Chemnitz,Chemnitz,Chemnitz,Chemnitz
-513,DE,DED41,"Chemnitz, Kreisfreie Stadt","Chemnitz, Kreisfreie Stadt","Chemnitz, Kreisfreie Stadt","Chemnitz, Kreisfreie Stadt"
-514,DE,DED42,Erzgebirgskreis,Erzgebirgskreis,Erzgebirgskreis,Erzgebirgskreis
-515,DE,DED43,Mittelsachsen,Mittelsachsen,Mittelsachsen,Mittelsachsen
-516,DE,DED44,Vogtlandkreis,Vogtlandkreis,Vogtlandkreis,Vogtlandkreis
-517,DE,DED45,Zwickau,Zwickau,Zwickau,Zwickau
-518,DE,DED5,Leipzig,Leipzig,Leipzig,Leipzig
-519,DE,DED51,"Leipzig, Kreisfreie Stadt","Leipzig, Kreisfreie Stadt","Leipzig, Kreisfreie Stadt","Leipzig, Kreisfreie Stadt"
-520,DE,DED52,Leipzig,Leipzig,Leipzig,Leipzig
-521,DE,DED53,Nordsachsen,Nordsachsen,Nordsachsen,Nordsachsen
-522,DE,DEE,SACHSEN-ANHALT,SACHSEN-ANHALT,SACHSEN-ANHALT,SACHSEN-ANHALT
-523,DE,DEE01,"Dessau-Ro�lau, Kreisfreie Stadt","Dessau-Ro�lau, Kreisfreie Stadt","Dessau-Rosslau, Kreisfreie Stadt","Dessau-Ro&#x00DF;lau, Kreisfreie Stadt"
-524,DE,DEE02,"Halle (Saale), Kreisfreie Stadt","Halle (Saale), Kreisfreie Stadt","Halle (Saale), Kreisfreie Stadt","Halle (Saale), Kreisfreie Stadt"
-525,DE,DEE04,Altmarkkreis Salzwedel,Altmarkkreis Salzwedel,Altmarkkreis Salzwedel,Altmarkkreis Salzwedel
-526,DE,DEE05,Anhalt-Bitterfeld,Anhalt-Bitterfeld,Anhalt-Bitterfeld,Anhalt-Bitterfeld
-527,DE,DEE06,Jerichower Land,Jerichower Land,Jerichower Land,Jerichower Land
-528,DE,DEE07,B�rde,B�rde,Borde,B&#x00F6;rde
-529,DE,DEE08,Burgenland (DE),Burgenland (DE),Burgenland (DE),Burgenland (DE)
-530,DE,DEE09,Harz,Harz,Harz,Harz
-531,DE,DEE0A,Mansfeld-S�dharz,Mansfeld-S�dharz,Mansfeld-Sudharz,Mansfeld-S&#x00FC;dharz
-532,DE,DEE0B,Saalekreis,Saalekreis,Saalekreis,Saalekreis
-533,DE,DEE0C,Salzlandkreis,Salzlandkreis,Salzlandkreis,Salzlandkreis
-534,DE,DEE0D,Stendal,Stendal,Stendal,Stendal
-535,DE,DEE0E,Wittenberg,Wittenberg,Wittenberg,Wittenberg
-536,DE,DEF,SCHLESWIG-HOLSTEIN,SCHLESWIG-HOLSTEIN,SCHLESWIG-HOLSTEIN,SCHLESWIG-HOLSTEIN
-537,DE,DEF0,Schleswig-Holstein,Schleswig-Holstein,Schleswig-Holstein,Schleswig-Holstein
-538,DE,DEF01,"Flensburg, Kreisfreie Stadt","Flensburg, Kreisfreie Stadt","Flensburg, Kreisfreie Stadt","Flensburg, Kreisfreie Stadt"
-539,DE,DEF02,"Kiel, Kreisfreie Stadt","Kiel, Kreisfreie Stadt","Kiel, Kreisfreie Stadt","Kiel, Kreisfreie Stadt"
-540,DE,DEF03,"L�beck, Kreisfreie Stadt","L�beck, Kreisfreie Stadt","Lubeck, Kreisfreie Stadt","L&#x00FC;beck, Kreisfreie Stadt"
-541,DE,DEF04,"Neum�nster, Kreisfreie Stadt","Neum�nster, Kreisfreie Stadt","Neumunster, Kreisfreie Stadt","Neum&#x00FC;nster, Kreisfreie Stadt"
-542,DE,DEF05,Dithmarschen,Dithmarschen,Dithmarschen,Dithmarschen
-543,DE,DEF06,Herzogtum Lauenburg,Herzogtum Lauenburg,Herzogtum Lauenburg,Herzogtum Lauenburg
-544,DE,DEF07,Nordfriesland,Nordfriesland,Nordfriesland,Nordfriesland
-545,DE,DEF08,Ostholstein,Ostholstein,Ostholstein,Ostholstein
-546,DE,DEF09,Pinneberg,Pinneberg,Pinneberg,Pinneberg
-547,DE,DEF0B,Rendsburg-Eckernf�rde,Rendsburg-Eckernf�rde,Rendsburg-Eckernforde,Rendsburg-Eckernf&#x00F6;rde
-548,DE,DEF0D,Segeberg,Segeberg,Segeberg,Segeberg
-549,DE,DEF0E,Steinburg,Steinburg,Steinburg,Steinburg
-550,DE,DEF0F,Stormarn,Stormarn,Stormarn,Stormarn
-551,DE,DEG,TH�RINGEN,TH�RINGEN,THURINGEN,TH&#x00DC;RINGEN
-552,DE,DEG0,Th�ringen,Th�ringen,Thuringen,Th&#x00FC;ringen
-553,DE,DEG01,"Erfurt, Kreisfreie Stadt","Erfurt, Kreisfreie Stadt","Erfurt, Kreisfreie Stadt","Erfurt, Kreisfreie Stadt"
-554,DE,DEG03,"Jena, Kreisfreie Stadt","Jena, Kreisfreie Stadt","Jena, Kreisfreie Stadt","Jena, Kreisfreie Stadt"
-555,DE,DEG04,"Suhl, Kreisfreie Stadt","Suhl, Kreisfreie Stadt","Suhl, Kreisfreie Stadt","Suhl, Kreisfreie Stadt"
-556,DE,DEG05,"Weimar, Kreisfreie Stadt","Weimar, Kreisfreie Stadt","Weimar, Kreisfreie Stadt","Weimar, Kreisfreie Stadt"
-557,DE,DEG06,Eichsfeld,Eichsfeld,Eichsfeld,Eichsfeld
-558,DE,DEG07,Nordhausen,Nordhausen,Nordhausen,Nordhausen
-559,DE,DEG09,Unstrut-Hainich-Kreis,Unstrut-Hainich-Kreis,Unstrut-Hainich-Kreis,Unstrut-Hainich-Kreis
-560,DE,DEG0B,Schmalkalden-Meiningen,Schmalkalden-Meiningen,Schmalkalden-Meiningen,Schmalkalden-Meiningen
-561,DE,DEG0C,Gotha,Gotha,Gotha,Gotha
-562,DE,DEG0D,S�mmerda,S�mmerda,Sommerda,S&#x00F6;mmerda
-563,DE,DEG0E,Hildburghausen,Hildburghausen,Hildburghausen,Hildburghausen
-564,DE,DEG0F,Ilm-Kreis,Ilm-Kreis,Ilm-Kreis,Ilm-Kreis
-565,DE,DEG0H,Sonneberg,Sonneberg,Sonneberg,Sonneberg
-566,DE,DEG0I,Saalfeld-Rudolstadt,Saalfeld-Rudolstadt,Saalfeld-Rudolstadt,Saalfeld-Rudolstadt
-567,DE,DEG0J,Saale-Holzland-Kreis,Saale-Holzland-Kreis,Saale-Holzland-Kreis,Saale-Holzland-Kreis
-568,DE,DEG0K,Saale-Orla-Kreis,Saale-Orla-Kreis,Saale-Orla-Kreis,Saale-Orla-Kreis
-569,DE,DEG0L,Greiz,Greiz,Greiz,Greiz
-570,DE,DEG0N,"Eisenach, Kreisfreie Stadt","Eisenach, Kreisfreie Stadt","Eisenach, Kreisfreie Stadt","Eisenach, Kreisfreie Stadt"
-571,DE,DEG0P,Wartburgkreis,Wartburgkreis,Wartburgkreis,Wartburgkreis
-572,DK,DK0,DANMARK,DANMARK,DANMARK,DANMARK
-573,DK,DK01,Hovedstaden,Hovedstaden,Hovedstaden,Hovedstaden
-574,DK,DK012,K�benhavns omegn,K�benhavns omegn,Kobenhavns Omegn,K&#x00F8;benhavns Omegn
-575,DK,DK013,Nordsj�lland,Nordsj�lland,Nordsjaelland,Nordsj&#x00E6;lland
-576,DK,DK014,Bornholm,Bornholm,Bornholm,Bornholm
-577,DK,DK02,Sj�lland,Sj�lland,Sjaelland,Sj&#x00E6;lland
-578,DK,DK022,Vest- og Sydsj�lland,Vest- og Sydsj�lland,Vest- og Sydsjaelland,Vest- og Sydsj&#x00E6;lland
-579,DK,DK03,Syddanmark,Syddanmark,Syddanmark,Syddanmark
-580,DK,DK031,Fyn,Fyn,Fyn,Fyn
-581,DK,DK032,Sydjylland,Sydjylland,Sydjylland,Sydjylland
-582,DK,DK04,Midtjylland,Midtjylland,Midtjylland,Midtjylland
-583,DK,DK041,Vestjylland,Vestjylland,Vestjylland,Vestjylland
-584,DK,DK042,�stjylland,�stjylland,Ostjylland,&#x00D8;stjylland
-585,DK,DK050,Nordjylland,Nordjylland,Nordjylland,Nordjylland
-586,EE,EE0,EESTI,EESTI,EESTI,EESTI
-587,EE,EE00,Eesti,Eesti,Eesti,Eesti
-588,EE,EE001,P�hja-Eesti,P�hja-Eesti,Pohja-Eesti,P&#x00F5;hja-Eesti
-589,EE,EE006,Kesk-Eesti,Kesk-Eesti,Kesk-Eesti,Kesk-Eesti
-590,EE,EE007,Kirde-Eesti,Kirde-Eesti,Kirde-Eesti,Kirde-Eesti
-591,EE,EE008,L�una-Eesti,L�una-Eesti,Louna-Eesti,L&#x00F5;una-Eesti
-592,EL,EL3,ATTIKI,ATTIK?,ATTIKI,ATTIK&#919;
-593,EL,EL302,Ditikos Tomeas Athinon,??????? ?????? ?????? ,Ditikos Tomeas Athinon ,&#x0394;&#x03C5;&#x03C4;&#x03B9;&#x03BA;&#x03CC;&#x03C2; &#x03A4;&#x03BF;&#x03BC;&#x03AD;&#x03B1;&#x03C2; &#x0391;&#x03B8;&#x03B7;&#x03BD;&#x03CE;&#x03BD; 
-594,EL,EL303,Kentrikos Tomeas Athinon,????????? ?????? ??????,Kentrikos Tomeas Athinon,&#x039A;&#x03B5;&#x03BD;&#x03C4;&#x03C1;&#x03B9;&#x03BA;&#x03CC;&#x03C2; &#x03A4;&#x03BF;&#x03BC;&#x03AD;&#x03B1;&#x03C2; &#x0391;&#x03B8;&#x03B7;&#x03BD;&#x03CE;&#x03BD;
-595,EL,EL305,Anatoliki Attiki,????????? ??????,Anatoliki Attiki,&#x0391;&#x03BD;&#x03B1;&#x03C4;&#x03BF;&#x03BB;&#x03B9;&#x03BA;&#x03AE; &#x0391;&#x03C4;&#x03C4;&#x03B9;&#x03BA;&#x03AE;
-596,EL,EL306,Ditiki Attiki,?????? ??????,Ditiki Attiki,&#x0394;&#x03C5;&#x03C4;&#x03B9;&#x03BA;&#x03AE; &#x0391;&#x03C4;&#x03C4;&#x03B9;&#x03BA;&#x03AE;
-597,EL,EL4,"NISIA AIGAIOU, KRITI","N???? ???????, K????","NISIA AIGAIOU, KRITI","N&#x03B7;&#x03C3;&#x03B9;&#x03B1; &#x0391;&#x03B9;&#x03B3;&#x03B1;&#x03B9;&#x03BF;&#x03C5;, K&#x03C1;&#x03B7;&#x03C4;&#x03B7;"
-598,EL,EL41,Voreio Aigaio,?????? ??????,Boreio Aigaio,&#x0392;&#x03CC;&#x03C1;&#x03B5;&#x03B9;&#x03BF; &#x0391;&#x03B9;&#x03B3;&#x03B1;&#x03AF;&#x03BF;
-599,EL,EL412,"Ikaria, Samos","??????, ?????","Ikaria, Samos","&#x0399;&#x03BA;&#x03B1;&#x03C1;&#x03AF;&#x03B1;, &#x03A3;&#x03AC;&#x03BC;&#x03BF;&#x03C2;"
-600,EL,EL413,Xios,????,Xios,&#x03A7;&#x03AF;&#x03BF;&#x03C2;
-601,EL,EL421,"Kalimnos, Karpathos, Kos, Rodos","????????, ????????, ???, ?????","Kalimnos, Karpathos, Kos, Rodos","&#x039A;&#x03AC;&#x03BB;&#x03C5;&#x03BC;&#x03BD;&#x03BF;&#x03C2;, &#x039A;&#x03AC;&#x03C1;&#x03C0;&#x03B1;&#x03B8;&#x03BF;&#x03C2;, &#x039A;&#x03C9;&#x03C2;, &#x03A1;&#x03CC;&#x03B4;&#x03BF;&#x03C2;"
-602,EL,EL43,Kriti,?????,Kriti,&#x039A;&#x03C1;&#x03AE;&#x03C4;&#x03B7;
-603,EL,EL431,Irakleio,????????,Irakleio,&#x0397;&#x03C1;&#x03AC;&#x03BA;&#x03BB;&#x03B5;&#x03B9;&#x03BF;
-604,EL,EL432,Lasithi,??????,Lasithi,&#x039B;&#x03B1;&#x03C3;&#x03AF;&#x03B8;&#x03B9;
-605,EL,EL433,Rethymni,???????,Rethimni,&#x03A1;&#x03B5;&#x03B8;&#x03CD;&#x03BC;&#x03BD;&#x03B7;
-606,EL,EL434,Chania,?????,Xania,&#x03A7;&#x03B1;&#x03BD;&#x03B9;&#x03AC;
-607,EL,EL5,VOREIA ELLADA,?????? ??????,VOREIA ELLADA,&#914;&#927;&#929;&#917;&#921;&#913; &#917;&#923;&#923;&#913;&#916;&#913;
-608,EL,EL51,"Anatoliki Makedonia, Thraki","A???????? ?????????, ?????","Anatoliki Makedonia, Thraki","A&#x03BD;&#x03B1;&#x03C4;&#x03BF;&#x03BB;&#x03B9;&#x03BA;&#x03AE; &#x039C;&#x03B1;&#x03BA;&#x03B5;&#x03B4;&#x03BF;&#x03BD;&#x03AF;&#x03B1;, &#x0398;&#x03C1;&#x03AC;&#x03BA;&#x03B7;"
-609,EL,EL512,Xanthi,?????,Xanthi,&#x039E;&#x03AC;&#x03BD;&#x03B8;&#x03B7;
-610,EL,EL514,Drama,?????,Drama,&#x0394;&#x03C1;&#x03AC;&#x03BC;&#x03B1;
-611,EL,EL52,Kentriki Makedonia,???????? ?????????,Kentriki Makedonia,&#x039A;&#x03B5;&#x03BD;&#x03C4;&#x03C1;&#x03B9;&#x03BA;&#x03AE; &#x039C;&#x03B1;&#x03BA;&#x03B5;&#x03B4;&#x03BF;&#x03BD;&#x03AF;&#x03B1;
-612,EL,EL521,Imathia,??????,Imathia,&#x0397;&#x03BC;&#x03B1;&#x03B8;&#x03AF;&#x03B1;
-613,EL,EL523,Kilkis,??????,Kilkis,&#x039A;&#x03B9;&#x03BB;&#x03BA;&#x03AF;&#x03C2;
-614,EL,EL524,Pella,?????,Pella,&#x03A0;&#x03AD;&#x03BB;&#x03BB;&#x03B1;
-615,EL,EL525,Pieria,??????,Pieria,&#x03A0;&#x03B9;&#x03B5;&#x03C1;&#x03AF;&#x03B1;
-616,EL,EL526,Serres,??????,Serres,&#x03A3;&#x03AD;&#x03C1;&#x03C1;&#x03B5;&#x03C2;
-617,EL,EL53,Dytiki Makedonia,?????? ?????????,Ditiki Makedonia,&#x0394;&#x03C5;&#x03C4;&#x03B9;&#x03BA;&#x03AE; &#x039C;&#x03B1;&#x03BA;&#x03B5;&#x03B4;&#x03BF;&#x03BD;&#x03AF;&#x03B1;
-618,EL,EL532,Kastoria,????????,Kastoria,&#x039A;&#x03B1;&#x03C3;&#x03C4;&#x03BF;&#x03C1;&#x03B9;&#x03AC;
-619,EL,EL533,Florina,???????,Florina,&#x03A6;&#x03BB;&#x03CE;&#x03C1;&#x03B9;&#x03BD;&#x03B1;
-620,EL,EL541,"Arta, Prebeza","????, ???????","Arta, Prebeza","&#x0386;&#x03C1;&#x03C4;&#x03B1;, &#x03A0;&#x03C1;&#x03AD;&#x03B2;&#x03B5;&#x03B6;&#x03B1;"
-621,EL,EL543,Ioannina,????????,Ioannina,&#x0399;&#x03C9;&#x03AC;&#x03BD;&#x03BD;&#x03B9;&#x03BD;&#x03B1;
-622,EL,EL6,KENTRIKI ELLADA,???????? ??????,KENTRIKI ELLADA,&#922;&#917;&#925;&#932;&#929;&#921;&#922;&#919; &#917;&#923;&#923;&#913;&#916;&#913;
-623,EL,EL611,"Karditsa, Trikala","????????, ???????","Karditsa, Trikala","&#x039A;&#x03B1;&#x03C1;&#x03B4;&#x03AF;&#x03C4;&#x03C3;&#x03B1;, &#x03A4;&#x03C1;&#x03AF;&#x03BA;&#x03B1;&#x03BB;&#x03B1;"
-624,EL,EL613,Magnisia,????????,Magnisia,&#x039C;&#x03B1;&#x03B3;&#x03BD;&#x03B7;&#x03C3;&#x03AF;&#x03B1;
-625,EL,EL621,Zakynthos,????????,Zakinthos,&#x0396;&#x03AC;&#x03BA;&#x03C5;&#x03BD;&#x03B8;&#x03BF;&#x03C2;
-626,EL,EL622,Kerkyra,???????,Kerkira,&#x039A;&#x03AD;&#x03C1;&#x03BA;&#x03C5;&#x03C1;&#x03B1;
-627,EL,EL624,Lefkada,???????,Leikada,&#x039B;&#x03B5;&#x03C5;&#x03BA;&#x03AC;&#x03B4;&#x03B1;
-628,EL,EL63,Dytiki Ellada,?????? ??????,Ditiki Ellada,&#x0394;&#x03C5;&#x03C4;&#x03B9;&#x03BA;&#x03AE; &#x0395;&#x03BB;&#x03BB;&#x03AC;&#x03B4;&#x03B1;
-629,EL,EL632,Achaia,?????,AxaIa,&#x0391;&#x03C7;&#x03B1;&#x0390;&#x03B1;
-630,EL,EL633,Ileia,?????,Ileia,&#x0397;&#x03BB;&#x03B5;&#x03AF;&#x03B1;
-631,EL,EL64,Sterea Ellada,?????? ??????,Sterea Ellada,&#x03A3;&#x03C4;&#x03B5;&#x03C1;&#x03B5;&#x03AC; &#x0395;&#x03BB;&#x03BB;&#x03AC;&#x03B4;&#x03B1;
-632,EL,EL641,Voiotia,???????,Boiotia,&#x0392;&#x03BF;&#x03B9;&#x03C9;&#x03C4;&#x03AF;&#x03B1;
-633,EL,EL643,Evrytania,?????????,Eiritania,&#x0395;&#x03C5;&#x03C1;&#x03C5;&#x03C4;&#x03B1;&#x03BD;&#x03AF;&#x03B1;
-634,EL,EL644,Fthiotida,????????,Fthiotida,&#x03A6;&#x03B8;&#x03B9;&#x03CE;&#x03C4;&#x03B9;&#x03B4;&#x03B1;
-635,EL,EL645,Fokida,??????,Fokida,&#x03A6;&#x03C9;&#x03BA;&#x03AF;&#x03B4;&#x03B1;
-636,EL,EL65,Peloponnisos,????????????,Peloponnisos,&#x03A0;&#x03B5;&#x03BB;&#x03BF;&#x03C0;&#x03CC;&#x03BD;&#x03BD;&#x03B7;&#x03C3;&#x03BF;&#x03C2;
-637,EL,EL651,"Argolida, Arkadia","????????, ???????","Argolida, Arkadia","&#x0391;&#x03C1;&#x03B3;&#x03BF;&#x03BB;&#x03AF;&#x03B4;&#x03B1;, &#x0391;&#x03C1;&#x03BA;&#x03B1;&#x03B4;&#x03AF;&#x03B1;"
-638,EL,EL652,Korinthia,????????,Korinthia,&#x039A;&#x03BF;&#x03C1;&#x03B9;&#x03BD;&#x03B8;&#x03AF;&#x03B1;
-639,ES,ES1,NOROESTE,NOROESTE,NOROESTE,NOROESTE
-640,ES,ES11,Galicia,Galicia,Galicia,Galicia
-641,ES,ES111,A Coru�a,A Coru�a,A Coruna,A Coru&#x00F1;a
-642,ES,ES112,Lugo,Lugo,Lugo,Lugo
-643,ES,ES113,Ourense,Ourense,Ourense,Ourense
-644,ES,ES114,Pontevedra,Pontevedra,Pontevedra,Pontevedra
-645,ES,ES12,Principado de Asturias,Principado de Asturias,Principado de Asturias,Principado de Asturias
-646,ES,ES120,Asturias,Asturias,Asturias,Asturias
-647,ES,ES13,Cantabria,Cantabria,Cantabria,Cantabria
-648,ES,ES130,Cantabria,Cantabria,Cantabria,Cantabria
-649,ES,ES2,NORESTE,NORESTE,NORESTE,NORESTE
-650,ES,ES21,Pa�s Vasco,Pa�s Vasco,Pais Vasco,Pa&#x00ED;s Vasco
-651,ES,ES211,Araba/�lava,Araba/�lava,Araba/Alava,Araba/&#x00C1;lava
-652,ES,ES212,Gipuzkoa,Gipuzkoa,Gipuzkoa,Gipuzkoa
-653,ES,ES213,Bizkaia,Bizkaia,Bizkaia,Bizkaia
-654,ES,ES22,Comunidad Foral de Navarra,Comunidad Foral de Navarra,Comunidad Foral de Navarra,Comunidad Foral de Navarra
-655,ES,ES220,Navarra,Navarra,Navarra,Navarra
-656,ES,ES23,La Rioja,La Rioja,La Rioja,La Rioja
-657,ES,ES230,La Rioja,La Rioja,La Rioja,La Rioja
-658,ES,ES24,Arag�n,Arag�n,Aragon,Arag&#x00F3;n
-659,ES,ES241,Huesca,Huesca,Huesca,Huesca
-660,ES,ES242,Teruel,Teruel,Teruel,Teruel
-661,ES,ES243,Zaragoza,Zaragoza,Zaragoza,Zaragoza
-662,ES,ES3,COMUNIDAD DE MADRID,COMUNIDAD DE MADRID,COMUNIDAD DE MADRID,COMUNIDAD DE MADRID
-663,ES,ES30,Comunidad de Madrid,Comunidad de Madrid,Comunidad de Madrid,Comunidad de Madrid
-664,ES,ES4,CENTRO (ES),CENTRO (ES),CENTRO (ES),CENTRO (ES)
-665,ES,ES41,Castilla y Le�n,Castilla y Le�n,Castilla Y Leon,Castilla Y Le&#x00F3;n
-666,ES,ES412,Burgos,Burgos,Burgos,Burgos
-667,ES,ES413,Le�n,Le�n,Leon,Le&#x00F3;n
-668,ES,ES414,Palencia,Palencia,Palencia,Palencia
-669,ES,ES415,Salamanca,Salamanca,Salamanca,Salamanca
-670,ES,ES417,Soria,Soria,Soria,Soria
-671,ES,ES418,Valladolid,Valladolid,Valladolid,Valladolid
-672,ES,ES419,Zamora,Zamora,Zamora,Zamora
-673,ES,ES42,Castilla-La Mancha,Castilla-La Mancha,Castilla-La Mancha,Castilla-La Mancha
-674,ES,ES422,Ciudad Real,Ciudad Real,Ciudad Real,Ciudad Real
-675,ES,ES423,Cuenca,Cuenca,Cuenca,Cuenca
-676,ES,ES424,Guadalajara,Guadalajara,Guadalajara,Guadalajara
-677,ES,ES425,Toledo,Toledo,Toledo,Toledo
-678,ES,ES431,Badajoz,Badajoz,Badajoz,Badajoz
-679,ES,ES432,C�ceres,C�ceres,Caceres,C&#x00E1;ceres
-680,ES,ES5,ESTE,ESTE,ESTE,ESTE
-681,ES,ES51,Catalu�a,Catalu�a,Cataluna,Catalu&#x00F1;a
-682,ES,ES511,Barcelona,Barcelona,Barcelona,Barcelona
-683,ES,ES513,Lleida,Lleida,Lleida,Lleida
-684,ES,ES514,Tarragona,Tarragona,Tarragona,Tarragona
-685,ES,ES52,Comunidad Valenciana,Comunidad Valenciana,Comunidad Valenciana,Comunidad Valenciana
-686,ES,ES522,Castell�n / Castell�,Castell�n / Castell�,Castellon / Castello,Castell&#x00F3;n / Castell&#x00F3;
-687,ES,ES523,Valencia / Val�ncia,Valencia / Val�ncia,Valencia / Valencia,Valencia / Val&#x00E8;ncia
-688,ES,ES53,Illes Balears,Illes Balears,Illes Balears,Illes Balears
-689,ES,ES532,Mallorca,Mallorca,Mallorca,Mallorca
-690,ES,ES533,Menorca,Menorca,Menorca,Menorca
-691,ES,ES6,SUR,SUR,SUR,SUR
-692,ES,ES61,Andaluc�a,Andaluc�a,Andalucia,Andaluc&#x00ED;a
-693,ES,ES611,Almer�a,Almer�a,Almeria,Almer&#x00ED;a
-694,ES,ES612,C�diz,C�diz,Cadiz,C&#x00E1;diz
-695,ES,ES613,C�rdoba,C�rdoba,Cordoba,C&#x00F3;rdoba
-696,ES,ES614,Granada,Granada,Granada,Granada
-697,ES,ES615,Huelva,Huelva,Huelva,Huelva
-698,ES,ES617,M�laga,M�laga,Malaga,M&#x00E1;laga
-699,ES,ES618,Sevilla,Sevilla,Sevilla,Sevilla
-700,ES,ES620,Murcia,Murcia,Murcia,Murcia
-701,ES,ES63,Ciudad Aut�noma de Ceuta,Ciudad Aut�noma de Ceuta,Ciudad Autonoma de Ceuta,Ciudad Aut&#x00F3;noma de Ceuta
-702,ES,ES630,Ceuta,Ceuta,Ceuta,Ceuta
-703,ES,ES64,Ciudad Aut�noma de Melilla,Ciudad Aut�noma de Melilla,Ciudad Autonoma de Melilla,Ciudad Aut&#x00F3;noma de Melilla
-704,ES,ES640,Melilla,Melilla,Melilla,Melilla
-705,ES,ES7,CANARIAS,CANARIAS,CANARIAS,CANARIAS
-706,ES,ES703,El Hierro,El Hierro,El Hierro,El Hierro
-707,ES,ES704,Fuerteventura,Fuerteventura,Fuerteventura,Fuerteventura
-708,ES,ES705,Gran Canaria,Gran Canaria,Gran Canaria,Gran Canaria
-709,ES,ES706,La Gomera,La Gomera,La Gomera,La Gomera
-710,ES,ES708,Lanzarote,Lanzarote,Lanzarote,Lanzarote
-711,ES,ES709,Tenerife,Tenerife,Tenerife,Tenerife
-712,FI,FI1,MANNER-SUOMI,MANNER-SUOMI,MANNER-SUOMI,MANNER-SUOMI
-713,FI,FI193,Keski-Suomi,Keski-Suomi,Keski-Suomi,Keski-Suomi
-714,FI,FI194,Etel�-Pohjanmaa,Etel�-Pohjanmaa,Etela-Pohjanmaa,Etel&#x00E4;-Pohjanmaa
-715,FI,FI195,Pohjanmaa,Pohjanmaa,Pohjanmaa,Pohjanmaa
-716,FI,FI196,Satakunta,Satakunta,Satakunta,Satakunta
-717,FI,FI197,Pirkanmaa,Pirkanmaa,Pirkanmaa,Pirkanmaa
-718,FI,FI1B1,Helsinki-Uusimaa,Helsinki-Uusimaa,Helsinki-Uusimaa,Helsinki-Uusimaa
-719,FI,FI1C,Etel�-Suomi,Etel�-Suomi,Etela-Suomi,Etel&#x00E4;-Suomi
-720,FI,FI1C1,Varsinais-Suomi,Varsinais-Suomi,Varsinais-Suomi,Varsinais-Suomi
-721,FI,FI1C2,Kanta-H�me,Kanta-H�me,Kanta-Hame,Kanta-H&#x00E4;me
-722,FI,FI1C4,Kymenlaakso,Kymenlaakso,Kymenlaakso,Kymenlaakso
-723,FI,FI1C5,Etel�-Karjala,Etel�-Karjala,Etela-Karjala,Etel&#x00E4;-Karjala
-724,FI,FI1D,Pohjois- ja It�-Suomi,Pohjois- ja It�-Suomi,Pohjois- Ja Ita-Suomi,Pohjois- Ja It&#x00E4;-Suomi
-725,FI,FI1D1,Etel�-Savo,Etel�-Savo,Etela-Savo,Etel&#x00E4;-Savo
-726,FI,FI1D2,Pohjois-Savo,Pohjois-Savo,Pohjois-Savo,Pohjois-Savo
-727,FI,FI1D3,Pohjois-Karjala,Pohjois-Karjala,Pohjois-Karjala,Pohjois-Karjala
-728,FI,FI1D4,Kainuu,Kainuu,Kainuu,Kainuu
-729,FI,FI1D5,Keski-Pohjanmaa,Keski-Pohjanmaa,Keski-Pohjanmaa,Keski-Pohjanmaa
-730,FI,FI1D6,Pohjois-Pohjanmaa,Pohjois-Pohjanmaa,Pohjois-Pohjanmaa,Pohjois-Pohjanmaa
-731,FI,FI1D7,Lappi,Lappi,Lappi,Lappi
-732,FI,FI2,�LAND,�LAND,ALAND,&#x00C5;LAND
-733,FI,FI20,�land,�land,Aland,&#x00C5;land
-734,FI,FI200,�land,�land,Aland,&#x00C5;land
-735,FR,FR1,�LE DE FRANCE,�LE DE FRANCE,ILE DE FRANCE,&#x00CE;LE DE FRANCE
-736,FR,FR10,�le de France,�le de France,Ile de France,&#x00CE;le de France
-737,FR,FR101,Paris,Paris,Paris,Paris
-738,FR,FR102,Seine-et-Marne,Seine-et-Marne,Seine-et-Marne,Seine-et-Marne
-739,FR,FR103,Yvelines,Yvelines,Yvelines,Yvelines
-740,FR,FR104,Essonne,Essonne,Essonne,Essonne
-741,FR,FR105,Hauts-de-Seine,Hauts-de-Seine,Hauts-de-Seine,Hauts-de-Seine
-742,FR,FR106,Seine-Saint-Denis,Seine-Saint-Denis,Seine-Saint-Denis,Seine-Saint-Denis
-743,FR,FR107,Val-de-Marne,Val-de-Marne,Val-de-Marne,Val-de-Marne
-744,FR,FR108,Val-d'Oise,Val-d'Oise,Val-d'Oise,Val-d'Oise
-745,FR,FR2,BASSIN PARISIEN,BASSIN PARISIEN,BASSIN PARISIEN,BASSIN PARISIEN
-746,FR,FR21,Champagne-Ardenne,Champagne-Ardenne,Champagne-Ardenne,Champagne-Ardenne
-747,FR,FR211,Ardennes,Ardennes,Ardennes,Ardennes
-748,FR,FR212,Aube,Aube,Aube,Aube
-749,FR,FR213,Marne,Marne,Marne,Marne
-750,FR,FR214,Haute-Marne,Haute-Marne,Haute-Marne,Haute-Marne
-751,FR,FR22,Picardie,Picardie,Picardie,Picardie
-752,FR,FR221,Aisne,Aisne,Aisne,Aisne
-753,FR,FR222,Oise,Oise,Oise,Oise
-754,FR,FR223,Somme,Somme,Somme,Somme
-755,FR,FR23,Haute-Normandie,Haute-Normandie,Haute-Normandie,Haute-Normandie
-756,FR,FR231,Eure,Eure,Eure,Eure
-757,FR,FR232,Seine-Maritime,Seine-Maritime,Seine-Maritime,Seine-Maritime
-758,FR,FR24,Centre,Centre,Centre,Centre
-759,FR,FR241,Cher,Cher,Cher,Cher
-760,FR,FR242,Eure-et-Loir,Eure-et-Loir,Eure-et-Loir,Eure-et-Loir
-761,FR,FR243,Indre,Indre,Indre,Indre
-762,FR,FR244,Indre-et-Loire,Indre-et-Loire,Indre-et-Loire,Indre-et-Loire
-763,FR,FR245,Loir-et-Cher,Loir-et-Cher,Loir-et-Cher,Loir-et-Cher
-764,FR,FR246,Loiret,Loiret,Loiret,Loiret
-765,FR,FR25,Basse-Normandie,Basse-Normandie,Basse-Normandie,Basse-Normandie
-766,FR,FR251,Calvados,Calvados,Calvados,Calvados
-767,FR,FR252,Manche,Manche,Manche,Manche
-768,FR,FR253,Orne,Orne,Orne,Orne
-769,FR,FR26,Bourgogne,Bourgogne,Bourgogne,Bourgogne
-770,FR,FR261,C�te-d'Or,C�te-d'Or,Cote-d'Or,C&#x00F4;te-d'Or
-771,FR,FR262,Ni�vre,Ni�vre,Nievre,Ni&#x00E8;vre
-772,FR,FR264,Yonne,Yonne,Yonne,Yonne
-773,FR,FR3,NORD - PAS-DE-CALAIS,NORD - PAS-DE-CALAIS,NORD - PAS-DE-CALAIS,NORD - PAS-DE-CALAIS
-774,FR,FR30,Nord - Pas-de-Calais,Nord - Pas-de-Calais,Nord - Pas-de-Calais,Nord - Pas-de-Calais
-775,FR,FR301,Nord,Nord,Nord,Nord
-776,FR,FR302,Pas-de-Calais,Pas-de-Calais,Pas-de-Calais,Pas-de-Calais
-777,FR,FR4,EST,EST,Est,Est
-778,FR,FR41,Lorraine,Lorraine,Lorraine,Lorraine
-779,FR,FR412,Meuse,Meuse,Meuse,Meuse
-780,FR,FR413,Moselle,Moselle,Moselle,Moselle
-781,FR,FR414,Vosges,Vosges,Vosges,Vosges
-782,FR,FR42,Alsace,Alsace,Alsace,Alsace
-783,FR,FR421,Bas-Rhin,Bas-Rhin,Bas-Rhin,Bas-Rhin
-784,FR,FR422,Haut-Rhin,Haut-Rhin,Haut-Rhin,Haut-Rhin
-785,FR,FR43,Franche-Comt�,Franche-Comt�,Franche-Comte,Franche-Comt&#x00E9;
-786,FR,FR431,Doubs,Doubs,Doubs,Doubs
-787,FR,FR432,Jura,Jura,Jura,Jura
-788,FR,FR434,Territoire de Belfort,Territoire de Belfort,Territoire de Belfort,Territoire de Belfort
-789,FR,FR5,OUEST,OUEST,OUEST,OUEST
-790,FR,FR51,Pays de la Loire,Pays de la Loire,Pays de la Loire,Pays de la Loire
-791,FR,FR511,Loire-Atlantique,Loire-Atlantique,Loire-Atlantique,Loire-Atlantique
-792,FR,FR513,Mayenne,Mayenne,Mayenne,Mayenne
-793,FR,FR514,Sarthe,Sarthe,Sarthe,Sarthe
-794,FR,FR515,Vend�e,Vend�e,Vendee,Vend&#x00E9;e
-795,FR,FR52,Bretagne,Bretagne,Bretagne,Bretagne
-796,FR,FR521,C�tes-d'Armor,C�tes-d'Armor,Cotes-d'Armor,C&#x00F4;tes-d'Armor
-797,FR,FR523,Ille-et-Vilaine,Ille-et-Vilaine,Ille-et-Vilaine,Ille-et-Vilaine
-798,FR,FR524,Morbihan,Morbihan,Morbihan,Morbihan
-799,FR,FR53,Poitou-Charentes,Poitou-Charentes,Poitou-Charentes,Poitou-Charentes
-800,FR,FR531,Charente,Charente,Charente,Charente
-801,FR,FR532,Charente-Maritime,Charente-Maritime,Charente-Maritime,Charente-Maritime
-802,FR,FR534,Vienne,Vienne,Vienne,Vienne
-803,FR,FR6,SUD-OUEST,SUD-OUEST,SUD-OUEST,SUD-OUEST
-804,FR,FR61,Aquitaine,Aquitaine,Aquitaine,Aquitaine
-805,FR,FR611,Dordogne,Dordogne,Dordogne,Dordogne
-806,FR,FR612,Gironde,Gironde,Gironde,Gironde
-807,FR,FR613,Landes,Landes,Landes,Landes
-808,FR,FR615,Pyr�n�es-Atlantiques,Pyr�n�es-Atlantiques,Pyrenees-Atlantiques,Pyr&#x00E9;n&#x00E9;es-Atlantiques
-809,FR,FR62,Midi-Pyr�n�es,Midi-Pyr�n�es,Midi-Pyrenees,Midi-Pyr&#x00E9;n&#x00E9;es
-810,FR,FR621,Ari�ge,Ari�ge,Ariege,Ari&#x00E8;ge
-811,FR,FR623,Haute-Garonne,Haute-Garonne,Haute-Garonne,Haute-Garonne
-812,FR,FR624,Gers,Gers,Gers,Gers
-813,FR,FR625,Lot,Lot,Lot,Lot
-814,FR,FR627,Tarn,Tarn,Tarn,Tarn
-815,FR,FR628,Tarn-et-Garonne,Tarn-et-Garonne,Tarn-et-Garonne,Tarn-et-Garonne
-816,FR,FR63,Limousin,Limousin,Limousin,Limousin
-817,FR,FR631,Corr�ze,Corr�ze,Correze,Corr&#x00E8;ze
-818,FR,FR632,Creuse,Creuse,Creuse,Creuse
-819,FR,FR633,Haute-Vienne,Haute-Vienne,Haute-Vienne,Haute-Vienne
-820,FR,FR7,CENTRE-EST,CENTRE-EST,CENTRE-EST,CENTRE-EST
-821,FR,FR71,Rh�ne-Alpes,Rh�ne-Alpes,Rhone-Alpes,Rh&#x00F4;ne-Alpes
-822,FR,FR711,Ain,Ain,Ain,Ain
-823,FR,FR713,Dr�me,Dr�me,Drome,Dr&#x00F4;me
-824,FR,FR714,Is�re,Is�re,Isere,Is&#x00E8;re
-825,FR,FR715,Loire,Loire,Loire,Loire
-826,FR,FR716,Rh�ne,Rh�ne,Rhone,Rh&#x00F4;ne
-827,FR,FR717,Savoie,Savoie,Savoie,Savoie
-828,FR,FR72,Auvergne,Auvergne,Auvergne,Auvergne
-829,FR,FR721,Allier,Allier,Allier,Allier
-830,FR,FR722,Cantal,Cantal,Cantal,Cantal
-831,FR,FR723,Haute-Loire,Haute-Loire,Haute-Loire,Haute-Loire
-832,FR,FR724,Puy-de-D�me,Puy-de-D�me,Puy-de-Dome,Puy-de-D&#x00F4;me
-833,FR,FR81,Languedoc-Roussillon,Languedoc-Roussillon,Languedoc-Roussillon,Languedoc-Roussillon
-834,FR,FR811,Aude,Aude,Aude,Aude
-835,FR,FR812,Gard,Gard,Gard,Gard
-836,FR,FR813,H�rault,H�rault,Herault,H&#x00E9;rault
-837,FR,FR814,Loz�re,Loz�re,Lozere,Loz&#x00E8;re
-838,FR,FR815,Pyr�n�es-Orientales,Pyr�n�es-Orientales,Pyrenees-Orientales,Pyr&#x00E9;n&#x00E9;es-Orientales
-839,FR,FR82,Provence-Alpes-C�te d'Azur,Provence-Alpes-C�te d'Azur,Provence-Alpes-Cote d'Azur,Provence-Alpes-C&#x00F4;te d'Azur
-840,FR,FR821,Alpes-de-Haute-Provence,Alpes-de-Haute-Provence,Alpes-de-Haute-Provence,Alpes-de-Haute-Provence
-841,FR,FR822,Hautes-Alpes,Hautes-Alpes,Hautes-Alpes,Hautes-Alpes
-842,FR,FR823,Alpes-Maritimes,Alpes-Maritimes,Alpes-Maritimes,Alpes-Maritimes
-843,FR,FR824,Bouches-du-Rh�ne,Bouches-du-Rh�ne,Bouches-du-Rhone,Bouches-du-Rh&#x00F4;ne
-844,FR,FR825,Var,Var,Var,Var
-845,FR,FR826,Vaucluse,Vaucluse,Vaucluse,Vaucluse
-846,FR,FR83,Corse,Corse,Corse,Corse
-847,FR,FR831,Corse-du-Sud,Corse-du-Sud,Corse-du-Sud,Corse-du-Sud
-848,FR,FR832,Haute-Corse,Haute-Corse,Haute-Corse,Haute-Corse
-849,FR,FRA,D�PARTEMENTS D'OUTRE-MER,D�PARTEMENTS D'OUTRE-MER,DEPARTEMENTS D'OUTRE-MER,D&#x00C9;PARTEMENTS D'OUTRE-MER
-850,FR,FRA1,Guadeloupe,Guadeloupe,Guadeloupe,Guadeloupe
-851,FR,FRA10,Guadeloupe,Guadeloupe,Guadeloupe,Guadeloupe
-852,FR,FRA2,Martinique,Martinique,Martinique,Martinique
-853,FR,FRA20,Martinique,Martinique,Martinique,Martinique
-854,FR,FRA3,Guyane,Guyane,Guyane,Guyane
-855,FR,FRA30,Guyane,Guyane,Guyane,Guyane
-856,FR,FRA4,La R�union,La R�union,La Reunion,La R&#x00E9;union
-857,FR,FRA40,La R�union,La R�union,La Reunion,La R&#x00E9;union
-858,FR,FRA5,Mayotte,Mayotte,Mayotte,Mayotte
-859,FR,FRA50,Mayotte,Mayotte,Mayotte,Mayotte
-860,HR,HR0,HRVATSKA,HRVATSKA,HRVATSKA,HRVATSKA
-861,HR,HR031,Primorsko-goranska �upanija,Primorsko-goranska �upanija,Primorsko-Goranska Zupanija,Primorsko-Goranska &#x017D;upanija
-862,HR,HR032,Licko-senjska �upanija,Licko-senjska �upanija,Licko-Senjska Zupanija,Licko-Senjska &#x017D;upanija
-863,HR,HR033,Zadarska �upanija,Zadarska �upanija,Zadarska Zupanija,Zadarska &#x017D;upanija
-864,HR,HR035,Splitsko-dalmatinska �upanija,Splitsko-dalmatinska �upanija,Splitsko-Dalmatinska Zupanija,Splitsko-Dalmatinska &#x017D;upanija
-865,HR,HR036,Istarska �upanija,Istarska �upanija,Istarska Zupanija,Istarska &#x017D;upanija
-866,HR,HR037,Dubrovacko-neretvanska �upanija,Dubrovacko-neretvanska �upanija,Dubrovacko-Neretvanska Zupanija,Dubrovacko-Neretvanska &#x017D;upanija
-867,HR,HR04,Kontinentalna Hrvatska,Kontinentalna Hrvatska,Kontinentalna Hrvatska,Kontinentalna Hrvatska
-868,HR,HR042,Zagrebacka �upanija,Zagrebacka �upanija,Zagrebacka Zupanija,Zagrebacka &#x017D;upanija
-869,HR,HR043,Krapinsko-zagorska �upanija,Krapinsko-zagorska �upanija,Krapinsko-Zagorska Zupanija,Krapinsko-Zagorska &#x017D;upanija
-870,HR,HR045,Koprivnicko-kri�evacka �upanija,Koprivnicko-kri�evacka �upanija,Koprivnicko-Krizevacka Zupanija,Koprivnicko-Kri&#x017E;evacka &#x017D;upanija
-871,HR,HR046,Medimurska �upanija,Medimurska �upanija,Medimurska Zupanija,Medimurska &#x017D;upanija
-872,HR,HR047,Bjelovarsko-bilogorska �upanija,Bjelovarsko-bilogorska �upanija,Bjelovarsko-Bilogorska Zupanija,Bjelovarsko-Bilogorska &#x017D;upanija
-873,HR,HR049,Po�e�ko-slavonska �upanija,Po�e�ko-slavonska �upanija,Pozesko-Slavonska Zupanija,Po&#x017E;e&#x0161;ko-Slavonska &#x017D;upanija
-874,HR,HR04A,Brodsko-posavska �upanija,Brodsko-posavska �upanija,Brodsko-Posavska Zupanija,Brodsko-Posavska &#x017D;upanija
-875,HR,HR04B,Osjecko-baranjska �upanija,Osjecko-baranjska �upanija,Osjecko-Baranjska Zupanija,Osjecko-Baranjska &#x017D;upanija
-876,HR,HR04D,Karlovacka �upanija,Karlovacka �upanija,Karlovacka Zupanija,Karlovacka &#x017D;upanija
-877,HR,HR04E,Sisacko-moslavacka �upanija,Sisacko-moslavacka �upanija,Sisacko-Moslavacka Zupanija,Sisacko-Moslavacka &#x017D;upanija
-878,HU,HU1,K�Z�P-MAGYARORSZ�G,K�Z�P-MAGYARORSZ�G,KOZEP-MAGYARORSZAG,K&#x00D6;Z&#x00C9;P-MAGYARORSZ&#x00C1;G
-879,HU,HU10,K�z�p-Magyarorsz�g,K�z�p-Magyarorsz�g,Kozep-Magyarorszag,K&#x00F6;z&#x00E9;p-Magyarorsz&#x00E1;g
-880,HU,HU101,Budapest,Budapest,Budapest,Budapest
-881,HU,HU102,Pest,Pest,Pest,Pest
-882,HU,HU21,K�z�p-Dun�nt�l,K�z�p-Dun�nt�l,Kozep-Dunantul,K&#x00F6;z&#x00E9;p-Dun&#x00E1;nt&#x00FA;l
-883,HU,HU211,Fej�r,Fej�r,Fejer,Fej&#x00E9;r
-884,HU,HU213,Veszpr�m,Veszpr�m,Veszprem,Veszpr&#x00E9;m
-885,HU,HU22,Nyugat-Dun�nt�l,Nyugat-Dun�nt�l,Nyugat-Dunantul,Nyugat-Dun&#x00E1;nt&#x00FA;l
-886,HU,HU221,Gyor-Moson-Sopron,Gyor-Moson-Sopron,Gyor-Moson-Sopron,Gyor-Moson-Sopron
-887,HU,HU222,Vas,Vas,Vas,Vas
-888,HU,HU223,Zala,Zala,Zala,Zala
-889,HU,HU231,Baranya,Baranya,Baranya,Baranya
-890,HU,HU232,Somogy,Somogy,Somogy,Somogy
-891,HU,HU233,Tolna,Tolna,Tolna,Tolna
-892,HU,HU3,ALF�LD �S �SZAK,ALF�LD �S �SZAK,ALFOLD ES ESZAK,ALF&#x00D6;LD &#x00C9;S &#x00C9;SZAK
-893,HU,HU31,�szak-Magyarorsz�g,�szak-Magyarorsz�g,Eszak-Magyarorszag,&#x00C9;szak-Magyarorsz&#x00E1;g
-894,HU,HU312,Heves,Heves,Heves,Heves
-895,HU,HU313,N�gr�d,N�gr�d,Nograd,N&#x00F3;gr&#x00E1;d
-896,HU,HU32,�szak-Alf�ld,�szak-Alf�ld,Eszak-Alfold,&#x00C9;szak-Alf&#x00F6;ld
-897,HU,HU321,Hajd�-Bihar,Hajd�-Bihar,Hajdu-Bihar,Hajd&#x00FA;-Bihar
-898,HU,HU322,J�sz-Nagykun-Szolnok,J�sz-Nagykun-Szolnok,Jasz-Nagykun-Szolnok,J&#x00E1;sz-Nagykun-Szolnok
-899,HU,HU33,D�l-Alf�ld,D�l-Alf�ld,Del-Alfold,D&#x00E9;l-Alf&#x00F6;ld
-900,HU,HU331,B�cs-Kiskun,B�cs-Kiskun,Bacs-Kiskun,B&#x00E1;cs-Kiskun
-901,HU,HU332,B�k�s,B�k�s,Bekes,B&#x00E9;k&#x00E9;s
-902,HU,HU333,Csongr�d,Csongr�d,Csongrad,Csongr&#x00E1;d
-903,IE,IE0,IRELAND,IRELAND,IRELAND,IRELAND
-904,IE,IE01,"Border, Midland and Western","Border, Midland and Western","Border, Midland and Western","Border, Midland and Western"
-905,IE,IE011,Border,Border,Border,Border
-906,IE,IE012,Midland,Midland,Midland,Midland
-907,IE,IE02,Southern and Eastern,Southern and Eastern,Southern and Eastern,Southern and Eastern
-908,IE,IE021,Dublin,Dublin,Dublin,Dublin
-909,IE,IE023,Mid-West,Mid-West,Mid-West,Mid-West
-910,IE,IE024,South-East (IE),South-East (IE),South-East (IE),South-East (IE)
-911,IE,IE025,South-West (IE),South-West (IE),South-West (IE),South-West (IE)
-912,IS,IS0,�SLAND,�SLAND,ISLAND,&#x00CD;SLAND
-913,IS,IS00,�sland,�sland,Island,&#x00CD;sland
-914,IS,IS001,H�fu�borgarsv��i,H�fu�borgarsv��i,Hofudborgarsvaedi,H&#x00F6;fu&#x00F0;borgarsv&#x00E6;&#x00F0;i
-915,IS,IS002,Landsbygg�,Landsbygg�,Landsbyggd,Landsbygg&#x00F0;
-916,IT,ITC,NORD-OVEST,NORD-OVEST,NORD-OVEST,NORD-OVEST
-917,IT,ITC1,Piemonte,Piemonte,Piemonte,Piemonte
-918,IT,ITC11,Torino,Torino,Torino,Torino
-919,IT,ITC12,Vercelli,Vercelli,Vercelli,Vercelli
-920,IT,ITC13,Biella,Biella,Biella,Biella
-921,IT,ITC14,Verbano-Cusio-Ossola,Verbano-Cusio-Ossola,Verbano-Cusio-Ossola,Verbano-Cusio-Ossola
-922,IT,ITC15,Novara,Novara,Novara,Novara
-923,IT,ITC16,Cuneo,Cuneo,Cuneo,Cuneo
-924,IT,ITC17,Asti,Asti,Asti,Asti
-925,IT,ITC18,Alessandria,Alessandria,Alessandria,Alessandria
-926,IT,ITC2,Valle d'Aosta/Vall�e d'Aoste,Valle d'Aosta/Vall�e d'Aoste,Valle d'Aosta/Vallee D'Aoste,Valle d'Aosta/Vall&#x00E9;e D'Aoste
-927,IT,ITC20,Valle d'Aosta/Vall�e d'Aoste,Valle d'Aosta/Vall�e d'Aoste,Valle d'Aosta/Vallee D'Aoste,Valle d'Aosta/Vall&#x00E9;e D'Aoste
-928,IT,ITC3,Liguria,Liguria,Liguria,Liguria
-929,IT,ITC31,Imperia,Imperia,Imperia,Imperia
-930,IT,ITC32,Savona,Savona,Savona,Savona
-931,IT,ITC33,Genova,Genova,Genova,Genova
-932,IT,ITC34,La Spezia,La Spezia,La Spezia,La Spezia
-933,IT,ITC4,Lombardia,Lombardia,Lombardia,Lombardia
-934,IT,ITC41,Varese,Varese,Varese,Varese
-935,IT,ITC42,Como,Como,Como,Como
-936,IT,ITC43,Lecco,Lecco,Lecco,Lecco
-937,IT,ITC44,Sondrio,Sondrio,Sondrio,Sondrio
-938,IT,ITC46,Bergamo,Bergamo,Bergamo,Bergamo
-939,IT,ITC47,Brescia,Brescia,Brescia,Brescia
-940,IT,ITC48,Pavia,Pavia,Pavia,Pavia
-941,IT,ITC49,Lodi,Lodi,Lodi,Lodi
-942,IT,ITC4A,Cremona,Cremona,Cremona,Cremona
-943,IT,ITC4B,Mantova,Mantova,Mantova,Mantova
-944,IT,ITC4C,Milano,Milano,Milano,Milano
-945,IT,ITC4D,Monza e della Brianza,Monza e della Brianza,Monza e della Brianza,Monza e della Brianza
-946,IT,ITF,SUD,SUD,SUD,SUD
-947,IT,ITF1,Abruzzo,Abruzzo,Abruzzo,Abruzzo
-948,IT,ITF11,L'Aquila,L'Aquila,L'Aquila,L'Aquila
-949,IT,ITF12,Teramo,Teramo,Teramo,Teramo
-950,IT,ITF13,Pescara,Pescara,Pescara,Pescara
-951,IT,ITF14,Chieti,Chieti,Chieti,Chieti
-952,IT,ITF2,Molise,Molise,Molise,Molise
-953,IT,ITF21,Isernia,Isernia,Isernia,Isernia
-954,IT,ITF22,Campobasso,Campobasso,Campobasso,Campobasso
-955,IT,ITF3,Campania,Campania,Campania,Campania
-956,IT,ITF31,Caserta,Caserta,Caserta,Caserta
-957,IT,ITF32,Benevento,Benevento,Benevento,Benevento
-958,IT,ITF33,Napoli,Napoli,Napoli,Napoli
-959,IT,ITF34,Avellino,Avellino,Avellino,Avellino
-960,IT,ITF35,Salerno,Salerno,Salerno,Salerno
-961,IT,ITF4,Puglia,Puglia,Puglia,Puglia
-962,IT,ITF43,Taranto,Taranto,Taranto,Taranto
-963,IT,ITF44,Brindisi,Brindisi,Brindisi,Brindisi
-964,IT,ITF45,Lecce,Lecce,Lecce,Lecce
-965,IT,ITF46,Foggia,Foggia,Foggia,Foggia
-966,IT,ITF47,Bari,Bari,Bari,Bari
-967,IT,ITF5,Basilicata,Basilicata,Basilicata,Basilicata
-968,IT,ITF51,Potenza,Potenza,Potenza,Potenza
-969,IT,ITF52,Matera,Matera,Matera,Matera
-970,IT,ITF6,Calabria,Calabria,Calabria,Calabria
-971,IT,ITF61,Cosenza,Cosenza,Cosenza,Cosenza
-972,IT,ITF62,Crotone,Crotone,Crotone,Crotone
-973,IT,ITF63,Catanzaro,Catanzaro,Catanzaro,Catanzaro
-974,IT,ITF64,Vibo Valentia,Vibo Valentia,Vibo Valentia,Vibo Valentia
-975,IT,ITF65,Reggio di Calabria,Reggio di Calabria,Reggio di Calabria,Reggio di Calabria
-976,IT,ITG,ISOLE,ISOLE,ISOLE,ISOLE
-977,IT,ITG1,Sicilia,Sicilia,Sicilia,Sicilia
-978,IT,ITG12,Palermo,Palermo,Palermo,Palermo
-979,IT,ITG13,Messina,Messina,Messina,Messina
-980,IT,ITG14,Agrigento,Agrigento,Agrigento,Agrigento
-981,IT,ITG15,Caltanissetta,Caltanissetta,Caltanissetta,Caltanissetta
-982,IT,ITG17,Catania,Catania,Catania,Catania
-983,IT,ITG18,Ragusa,Ragusa,Ragusa,Ragusa
-984,IT,ITG19,Siracusa,Siracusa,Siracusa,Siracusa
-985,IT,ITG25,Sassari,Sassari,Sassari,Sassari
-986,IT,ITG26,Nuoro,Nuoro,Nuoro,Nuoro
-987,IT,ITG27,Cagliari,Cagliari,Cagliari,Cagliari
-988,IT,ITG28,Oristano,Oristano,Oristano,Oristano
-989,IT,ITG29,Olbia-Tempio,Olbia-Tempio,Olbia-Tempio,Olbia-Tempio
-990,IT,ITG2B,Medio Campidano,Medio Campidano,Medio Campidano,Medio Campidano
-991,IT,ITG2C,Carbonia-Iglesias,Carbonia-Iglesias,Carbonia-Iglesias,Carbonia-Iglesias
-992,IT,ITH,NORD-EST,NORD-EST,NORD-EST,NORD-EST
-993,IT,ITH10,Bolzano-Bozen,Bolzano-Bozen,Bolzano-Bozen,Bolzano-Bozen
-994,IT,ITH2,Provincia Autonoma di Trento,Provincia Autonoma di Trento,Provincia Autonoma di Trento,Provincia Autonoma di Trento
-995,IT,ITH20,Trento,Trento,Trento,Trento
-996,IT,ITH3,Veneto,Veneto,Veneto,Veneto
-997,IT,ITH31,Verona,Verona,Verona,Verona
-998,IT,ITH32,Vicenza,Vicenza,Vicenza,Vicenza
-999,IT,ITH33,Belluno,Belluno,Belluno,Belluno
-1000,IT,ITH34,Treviso,Treviso,Treviso,Treviso
-1001,IT,ITH35,Venezia,Venezia,Venezia,Venezia
-1002,IT,ITH36,Padova,Padova,Padova,Padova
-1003,IT,ITH37,Rovigo,Rovigo,Rovigo,Rovigo
-1004,IT,ITH4,Friuli-Venezia Giulia,Friuli-Venezia Giulia,Friuli-Venezia Giulia,Friuli-Venezia Giulia
-1005,IT,ITH41,Pordenone,Pordenone,Pordenone,Pordenone
-1006,IT,ITH42,Udine,Udine,Udine,Udine
-1007,IT,ITH44,Trieste,Trieste,Trieste,Trieste
-1008,IT,ITH5,Emilia-Romagna,Emilia-Romagna,Emilia-Romagna,Emilia-Romagna
-1009,IT,ITH51,Piacenza,Piacenza,Piacenza,Piacenza
-1010,IT,ITH52,Parma,Parma,Parma,Parma
-1011,IT,ITH54,Modena,Modena,Modena,Modena
-1012,IT,ITH55,Bologna,Bologna,Bologna,Bologna
-1013,IT,ITH56,Ferrara,Ferrara,Ferrara,Ferrara
-1014,IT,ITH57,Ravenna,Ravenna,Ravenna,Ravenna
-1015,IT,ITH58,Forl�-Cesena,Forl�-Cesena,Forli-Cesena,Forl&#x00EC;-Cesena
-1016,IT,ITH59,Rimini,Rimini,Rimini,Rimini
-1017,IT,ITI,CENTRO (IT),CENTRO (IT),CENTRO (IT),CENTRO (IT)
-1018,IT,ITI1,Toscana,Toscana,Toscana,Toscana
-1019,IT,ITI12,Lucca,Lucca,Lucca,Lucca
-1020,IT,ITI13,Pistoia,Pistoia,Pistoia,Pistoia
-1021,IT,ITI14,Firenze,Firenze,Firenze,Firenze
-1022,IT,ITI15,Prato,Prato,Prato,Prato
-1023,IT,ITI16,Livorno,Livorno,Livorno,Livorno
-1024,IT,ITI17,Pisa,Pisa,Pisa,Pisa
-1025,IT,ITI18,Arezzo,Arezzo,Arezzo,Arezzo
-1026,IT,ITI19,Siena,Siena,Siena,Siena
-1027,IT,ITI1A,Grosseto,Grosseto,Grosseto,Grosseto
-1028,IT,ITI2,Umbria,Umbria,Umbria,Umbria
-1029,IT,ITI22,Terni,Terni,Terni,Terni
-1030,IT,ITI3,Marche,Marche,Marche,Marche
-1031,IT,ITI31,Pesaro e Urbino,Pesaro e Urbino,Pesaro E Urbino,Pesaro E Urbino
-1032,IT,ITI32,Ancona,Ancona,Ancona,Ancona
-1033,IT,ITI33,Macerata,Macerata,Macerata,Macerata
-1034,IT,ITI34,Ascoli Piceno,Ascoli Piceno,Ascoli Piceno,Ascoli Piceno
-1035,IT,ITI35,Fermo,Fermo,Fermo,Fermo
-1036,IT,ITI4,Lazio,Lazio,Lazio,Lazio
-1037,IT,ITI41,Viterbo,Viterbo,Viterbo,Viterbo
-1038,IT,ITI42,Rieti,Rieti,Rieti,Rieti
-1039,IT,ITI43,Roma,Roma,Roma,Roma
-1040,IT,ITI44,Latina,Latina,Latina,Latina
-1041,IT,ITI45,Frosinone,Frosinone,Frosinone,Frosinone
-1042,LI,LI0,LIECHTENSTEIN,LIECHTENSTEIN,LIECHTENSTEIN,LIECHTENSTEIN
-1043,LI,LI00,Liechtenstein,Liechtenstein,Liechtenstein,Liechtenstein
-1044,LI,LI000,Liechtenstein,Liechtenstein,Liechtenstein,Liechtenstein
-1045,LT,LT0,LIETUVA,LIETUVA,LIETUVA,LIETUVA
-1046,LT,LT00,Lietuva,Lietuva,Lietuva,Lietuva
-1047,LT,LT001,Alytaus apskritis,Alytaus apskritis,Alytaus apskritis,Alytaus pskritis
-1048,LT,LT002,Kauno apskritis,Kauno apskritis,Kauno apskritis,Kauno apskritis
-1049,LT,LT003,Klaipedos apskritis,Klaipedos apskritis,Klaipedos apskritis,Klaipedos apskritis
-1050,LT,LT004,Marijampoles apskritis,Marijampoles apskritis,Marijampoles apskritis,Marijampoles apskritis
-1051,LT,LT005,Paneve�io apskritis,Paneve�io apskritis,Panevezio apskritis,Paneve&#x017E;io apskritis
-1052,LT,LT006,�iauliu apskritis,�iauliu apskritis,Siauliu apskritis,&#x0160;iauliu apskritis
-1053,LT,LT007,Taurages apskritis,Taurages apskritis,Taurages apskritis,Taurages apskritis
-1054,LT,LT008,Tel�iu apskritis,Tel�iu apskritis,Telsiu apskritis,Tel&#x0161;iu apskritis
-1055,LT,LT009,Utenos apskritis,Utenos apskritis,Utenos apskritis,Utenos apskritis
-1056,LT,LT00A,Vilniaus apskritis,Vilniaus apskritis,Vilniaus apskritis,Vilniaus apskritis
-1057,LU,LU0,LUXEMBOURG,LUXEMBOURG,LUXEMBOURG,LUXEMBOURG
-1058,LU,LU00,Luxembourg,Luxembourg,Luxembourg,Luxembourg
-1059,LU,LU000,Luxembourg,Luxembourg,Luxembourg,Luxembourg
-1060,LV,LV0,LATVIJA,LATVIJA,LATVIJA,LATVIJA
-1061,LV,LV00,Latvija,Latvija,Latvija,Latvija
-1062,LV,LV003,Kurzeme,Kurzeme,Kurzeme,Kurzeme
-1063,LV,LV005,Latgale,Latgale,Latgale,Latgale
-1064,LV,LV006,Riga,Riga,Riga,Riga
-1065,LV,LV007,Pieriga,Pieriga,Pieriga,Pieriga
-1066,LV,LV008,Vidzeme,Vidzeme,Vidzeme,Vidzeme
-1067,ME,ME0,CRNA GORA,???? ????,CRNA GORA,CRNA GORA
-1068,MK,MK00,Porane�na jugoslovenska Republika Makedonija,????????? ????????????? ????????? ??????????,Poranesna jugoslovenska Republika Makedonija,Porane&#x0161;na jugoslovenska Republika Makedonija
-1069,MK,MK001,Vardarski,?????????,Vardarski,Vardarski
-1070,MK,MK002,Isto?en,???????,Istocen,Istocen
-1071,MK,MK003,Jugozapaden,???????????,Jugozapaden,Jugozapaden
-1072,MK,MK004,Jugoisto?en,???????????,Jugoistocen,Jugoistocen
-1073,MK,MK005,???????????,???????????,Pelagoniski,Pelagoniski
-1074,MK,MK006,Polo�ki,???????,Poloski,Polo&#x0161;ki
-1075,MK,MK007,Severoisto?en,?????????????,Severoistocen,Severoistocen
-1076,MK,MK008,Skopski,???????,Skopski,Skopski
-1077,MT,MT0,MALTA,MALTA,MALTA,MALTA
-1078,MT,MT00,Malta,Malta,Malta,Malta
-1079,MT,MT001,Malta,Malta,Malta,Malta
-1080,MT,MT002,Gozo and Comino / Ghawdex u Kemmuna,Gozo and Comino / Ghawdex u Kemmuna,Gozo and Comino / Ghawdex u Kemmuna,Gozo and Comino / Ghawdex u Kemmuna
-1081,NL,NL1,NOORD-NEDERLAND,NOORD-NEDERLAND,NOORD-NEDERLAND,NOORD-NEDERLAND
-1082,NL,NL11,Groningen,Groningen,Groningen,Groningen
-1083,NL,NL111,Oost-Groningen,Oost-Groningen,Oost-Groningen,Oost-Groningen
-1084,NL,NL112,Delfzijl en omgeving,Delfzijl en omgeving,Delfzijl en Omgeving,Delfzijl en Omgeving
-1085,NL,NL12,Friesland (NL),Friesland (NL),Friesland (NL),Friesland (NL)
-1086,NL,NL121,Noord-Friesland,Noord-Friesland,Noord-Friesland,Noord-Friesland
-1087,NL,NL122,Zuidwest-Friesland,Zuidwest-Friesland,Zuidwest-Friesland,Zuidwest-Friesland
-1088,NL,NL123,Zuidoost-Friesland,Zuidoost-Friesland,Zuidoost-Friesland,Zuidoost-Friesland
-1089,NL,NL13,Drenthe,Drenthe,Drenthe,Drenthe
-1090,NL,NL132,Zuidoost-Drenthe,Zuidoost-Drenthe,Zuidoost-Drenthe,Zuidoost-Drenthe
-1091,NL,NL133,Zuidwest-Drenthe,Zuidwest-Drenthe,Zuidwest-Drenthe,Zuidwest-Drenthe
-1092,NL,NL2,OOST-NEDERLAND,OOST-NEDERLAND,OOST-NEDERLAND,OOST-NEDERLAND
-1093,NL,NL21,Overijssel,Overijssel,Overijssel,Overijssel
-1094,NL,NL212,Zuidwest-Overijssel,Zuidwest-Overijssel,Zuidwest-Overijssel,Zuidwest-Overijssel
-1095,NL,NL213,Twente,Twente,Twente,Twente
-1096,NL,NL22,Gelderland,Gelderland,Gelderland,Gelderland
-1097,NL,NL221,Veluwe,Veluwe,Veluwe,Veluwe
-1098,NL,NL224,Zuidwest-Gelderland,Zuidwest-Gelderland,Zuidwest-Gelderland,Zuidwest-Gelderland
-1099,NL,NL225,Achterhoek,Achterhoek,Achterhoek,Achterhoek
-1100,NL,NL23,Flevoland,Flevoland,Flevoland,Flevoland
-1101,NL,NL230,Flevoland,Flevoland,Flevoland,Flevoland
-1102,NL,NL3,WEST-NEDERLAND,WEST-NEDERLAND,WEST-NEDERLAND,WEST-NEDERLAND
-1103,NL,NL31,Utrecht,Utrecht,Utrecht,Utrecht
-1104,NL,NL310,Utrecht,Utrecht,Utrecht,Utrecht
-1105,NL,NL32,Noord-Holland,Noord-Holland,Noord-Holland,Noord-Holland
-1106,NL,NL322,Alkmaar en omgeving,Alkmaar en omgeving,Alkmaar en Omgeving,Alkmaar en Omgeving
-1107,NL,NL323,IJmond,IJmond,Ijmond,Ijmond
-1108,NL,NL324,Agglomeratie Haarlem,Agglomeratie Haarlem,Agglomeratie Haarlem,Agglomeratie Haarlem
-1109,NL,NL325,Zaanstreek,Zaanstreek,Zaanstreek,Zaanstreek
-1110,NL,NL326,Groot-Amsterdam,Groot-Amsterdam,Groot-Amsterdam,Groot-Amsterdam
-1111,NL,NL327,Het Gooi en Vechtstreek,Het Gooi en Vechtstreek,Het Gooi en Vechtstreek,Het Gooi en Vechtstreek
-1112,NL,NL332,Agglomeratie 's-Gravenhage,Agglomeratie 's-Gravenhage,Agglomeratie 's-Gravenhage,Agglomeratie 's-Gravenhage
-1113,NL,NL333,Delft en Westland,Delft en Westland,Delft en Westland,Delft en Westland
-1114,NL,NL338,Oost-Zuid-Holland,Oost-Zuid-Holland,Oost-Zuid-Holland,Oost-Zuid-Holland
-1115,NL,NL339,Groot-Rijnmond,Groot-Rijnmond,Groot-Rijnmond,Groot-Rijnmond
-1116,NL,NL33A,Zuidoost-Zuid-Holland,Zuidoost-Zuid-Holland,Zuidoost-Zuid-Holland,Zuidoost-Zuid-Holland
-1117,NL,NL34,Zeeland,Zeeland,Zeeland,Zeeland
-1118,NL,NL341,Zeeuwsch-Vlaanderen,Zeeuwsch-Vlaanderen,Zeeuwsch-Vlaanderen,Zeeuwsch-Vlaanderen
-1119,NL,NL342,Overig Zeeland,Overig Zeeland,Overig Zeeland,Overig Zeeland
-1120,NL,NL4,ZUID-NEDERLAND,ZUID-NEDERLAND,ZUID-NEDERLAND,ZUID-NEDERLAND
-1121,NL,NL41,Noord-Brabant,Noord-Brabant,Noord-Brabant,Noord-Brabant
-1122,NL,NL411,West-Noord-Brabant,West-Noord-Brabant,West-Noord-Brabant,West-Noord-Brabant
-1123,NL,NL412,Midden-Noord-Brabant,Midden-Noord-Brabant,Midden-Noord-Brabant,Midden-Noord-Brabant
-1124,NL,NL413,Noordoost-Noord-Brabant,Noordoost-Noord-Brabant,Noordoost-Noord-Brabant,Noordoost-Noord-Brabant
-1125,NL,NL414,Zuidoost-Noord-Brabant,Zuidoost-Noord-Brabant,Zuidoost-Noord-Brabant,Zuidoost-Noord-Brabant
-1126,NL,NL42,Limburg (NL),Limburg (NL),Limburg (NL),Limburg (NL)
-1127,NL,NL421,Noord-Limburg,Noord-Limburg,Noord-Limburg,Noord-Limburg
-1128,NL,NL422,Midden-Limburg,Midden-Limburg,Midden-Limburg,Midden-Limburg
-1129,NL,NL423,Zuid-Limburg,Zuid-Limburg,Zuid-Limburg,Zuid-Limburg
-1130,NO,NO0,NORGE,NORGE,NORGE,NORGE
-1131,NO,NO01,Oslo og Akershus,Oslo og Akershus,Oslo og Akershus,Oslo og Akershus
-1132,NO,NO011,Oslo,Oslo,Oslo,Oslo
-1133,NO,NO012,Akershus,Akershus,Akershus,Akershus
-1134,NO,NO02,Hedmark og Oppland,Hedmark og Oppland,Hedmark og Oppland,Hedmark og Oppland
-1135,NO,NO021,Hedmark,Hedmark,Hedmark,Hedmark
-1136,NO,NO022,Oppland,Oppland,Oppland,Oppland
-1137,NO,NO03,S�r-�stlandet,S�r-�stlandet,Sor-Ostlandet,S&#x00F8;r-&#x00D8;stlandet
-1138,NO,NO031,�stfold,�stfold,Ostfold,&#x00D8;stfold
-1139,NO,NO032,Buskerud,Buskerud,Buskerud,Buskerud
-1140,NO,NO033,Vestfold,Vestfold,Vestfold,Vestfold
-1141,NO,NO034,Telemark,Telemark,Telemark,Telemark
-1142,NO,NO04,Agder og Rogaland,Agder og Rogaland,Agder og Rogaland,Agder og Rogaland
-1143,NO,NO041,Aust-Agder,Aust-Agder,Aust-Agder,Aust-Agder
-1144,NO,NO042,Vest-Agder,Vest-Agder,Vest-Agder,Vest-Agder
-1145,NO,NO043,Rogaland,Rogaland,Rogaland,Rogaland
-1146,NO,NO05,Vestlandet,Vestlandet,Vestlandet,Vestlandet
-1147,NO,NO051,Hordaland,Hordaland,Hordaland,Hordaland
-1148,NO,NO052,Sogn og Fjordane,Sogn og Fjordane,Sogn og Fjordane,Sogn og Fjordane
-1149,NO,NO053,M�re og Romsdal,M�re og Romsdal,More og Romsdal,M&#x00F8;re og Romsdal
-1150,NO,NO06,Tr�ndelag,Tr�ndelag,Trondelag,Tr&#x00F8;ndelag
-1151,NO,NO062,Nord-Tr�ndelag,Nord-Tr�ndelag,Nord-Trondelag,Nord-Tr&#x00F8;ndelag
-1152,NO,NO07,Nord-Norge,Nord-Norge,Nord-Norge,Nord-Norge
-1153,NO,NO071,Nordland,Nordland,Nordland,Nordland
-1154,NO,NO072,Troms,Troms,Troms,Troms
-1155,NO,NO073,Finnmark,Finnmark,Finnmark,Finnmark
-1156,PL,PL1,REGION CENTRALNY,REGION CENTRALNY,REGION CENTRALNY,REGION CENTRALNY
-1157,PL,PL11,L�dzkie,L�dzkie,Lodzkie,L&#x00F3;dzkie
-1158,PL,PL114,L�dzki,L�dzki,Lodzki,L&#x00F3;dzki
-1159,PL,PL115,Piotrkowski,Piotrkowski,Piotrkowski,Piotrkowski
-1160,PL,PL116,Sieradzki,Sieradzki,Sieradzki,Sieradzki
-1161,PL,PL117,Skierniewicki,Skierniewicki,Skierniewicki,Skierniewicki
-1162,PL,PL12,Mazowieckie,Mazowieckie,Mazowieckie,Mazowieckie
-1163,PL,PL128,Radomski,Radomski,Radomski,Radomski
-1164,PL,PL129,Warszawski wschodni,Warszawski wschodni,Warszawski wschodni,Warszawski wschodni
-1165,PL,PL12A,Warszawski zachodni,Warszawski zachodni,Warszawski zachodni,Warszawski zachodni
-1166,PL,PL12B,Ciechanowski,Ciechanowski,Ciechanowski,Ciechanowski
-1167,PL,PL12C,Plocki,Plocki,Plocki,Plocki
-1168,PL,PL12D,Ostrolecki,Ostrolecki,Ostrolecki,Ostrolecki
-1169,PL,PL2,REGION POLUDNIOWY,REGION POLUDNIOWY,REGION POLUDNIOWY,REGION POLUDNIOWY
-1170,PL,PL21,Malopolskie,Malopolskie,Malopolskie,Malopolskie
-1171,PL,PL214,Krakowski,Krakowski,Krakowski,Krakowski
-1172,PL,PL217,Tarnowski,Tarnowski,Tarnowski,Tarnowski
-1173,PL,PL218,Nowosadecki,Nowosadecki,Nowosadecki,Nowosadecki
-1174,PL,PL219,Nowotarski,Nowotarski,Nowotarski,Nowotarski
-1175,PL,PL21A,Oswiecimski,Oswiecimski,Oswiecimski,Oswiecimski
-1176,PL,PL22,Slaskie,Slaskie,Slaskie,Slaskie
-1177,PL,PL224,Czestochowski,Czestochowski,Czestochowski,Czestochowski
-1178,PL,PL225,Bielski,Bielski,Bielski,Bielski
-1179,PL,PL228,Bytomski,Bytomski,Bytomski,Bytomski
-1180,PL,PL229,Gliwicki,Gliwicki,Gliwicki,Gliwicki
-1181,PL,PL22A,Katowicki,Katowicki,Katowicki,Katowicki
-1182,PL,PL22B,Sosnowiecki,Sosnowiecki,Sosnowiecki,Sosnowiecki
-1183,PL,PL22C,Tyski,Tyski,Tyski,Tyski
-1184,PL,PL31,Lubelskie,Lubelskie,Lubelskie,Lubelskie
-1185,PL,PL311,Bialski,Bialski,Bialski,Bialski
-1186,PL,PL312,Chelmsko-zamojski,Chelmsko-zamojski,Chelmsko-zamojski,Chelmsko-zamojski
-1187,PL,PL314,Lubelski,Lubelski,Lubelski,Lubelski
-1188,PL,PL315,Pulawski,Pulawski,Pulawski,Pulawski
-1189,PL,PL32,Podkarpackie,Podkarpackie,Podkarpackie,Podkarpackie
-1190,PL,PL324,Przemyski,Przemyski,Przemyski,Przemyski
-1191,PL,PL325,Rzeszowski,Rzeszowski,Rzeszowski,Rzeszowski
-1192,PL,PL326,Tarnobrzeski,Tarnobrzeski,Tarnobrzeski,Tarnobrzeski
-1193,PL,PL33,Swietokrzyskie,Swietokrzyskie,Swietokrzyskie,Swietokrzyskie
-1194,PL,PL331,Kielecki,Kielecki,Kielecki,Kielecki
-1195,PL,PL34,Podlaskie,Podlaskie,Podlaskie,Podlaskie
-1196,PL,PL343,Bialostocki,Bialostocki,Bialostocki,Bialostocki
-1197,PL,PL344,Lomzynski,Lomzynski,Lomzynski,Lomzynski
-1198,PL,PL345,Suwalski,Suwalski,Suwalski,Suwalski
-1199,PL,PL4,REGION P�LNOCNO-ZACHODNI,REGION P�LNOCNO-ZACHODNI,REGION POLNOCNO-ZACHODNI,REGION POLNOCNO-ZACHODNI
-1200,PL,PL41,Wielkopolskie,Wielkopolskie,Wielkopolskie,Wielkopolskie
-1201,PL,PL411,Pilski,Pilski,Pilski,Pilski
-1202,PL,PL414,Koninski,Koninski,Koninski,Koninski
-1203,PL,PL415,Miasto Poznan,Miasto Poznan,Miasto Poznan,Miasto Poznan
-1204,PL,PL417,Leszczynski,Leszczynski,Leszczynski,Leszczynski
-1205,PL,PL418,Poznanski,Poznanski,Poznanski,Poznanski
-1206,PL,PL42,Zachodniopomorskie,Zachodniopomorskie,Zachodniopomorskie,Zachodniopomorskie
-1207,PL,PL426,Koszalinski,Koszalinski,Koszalinski,Koszalinski
-1208,PL,PL427,Szczecinecko-pyrzycki,Szczecinecko-pyrzycki,Szczecinecko-pyrzycki,Szczecinecko-pyrzycki
-1209,PL,PL428,Szczecinski,Szczecinski,Szczecinski,Szczecinski
-1210,PL,PL43,Lubuskie,Lubuskie,Lubuskie,Lubuskie
-1211,PL,PL431,Gorzowski,Gorzowski,Gorzowski,Gorzowski
-1212,PL,PL5,REGION POLUDNIOWO-ZACHODNI,REGION POLUDNIOWO-ZACHODNI,REGION POLUDNIOWO-ZACHODNI,REGION POLUDNIOWO-ZACHODNI
-1213,PL,PL51,Dolnoslaskie,Dolnoslaskie,Dolnoslaskie,Dolnoslaskie
-1214,PL,PL514,Miasto Wroclaw,Miasto Wroclaw,Miasto Wroclaw,Miasto Wroclaw
-1215,PL,PL515,Jeleniog�rski,Jeleniog�rski,Jeleniogorski,Jeleniog&#x00F3;rski
-1216,PL,PL517,Walbrzyski,Walbrzyski,Walbrzyski,Walbrzyski
-1217,PL,PL518,Wroclawski,Wroclawski,Wroclawski,Wroclawski
-1218,PL,PL52,Opolskie,Opolskie,Opolskie,Opolskie
-1219,PL,PL523,Nyski,Nyski,Nyski,Nyski
-1220,PL,PL524,Opolski,Opolski,Opolski,Opolski
-1221,PL,PL6,REGION P�LNOCNY,REGION P�LNOCNY,REGION POLNOCNY,REGION P&#x00D3;LNOCNY
-1222,PL,PL61,Kujawsko-Pomorskie,Kujawsko-Pomorskie,Kujawsko-Pomorskie,Kujawsko-Pomorskie
-1223,PL,PL613,Bydgosko-Torunski,Bydgosko-Torunski,Bydgosko-Torunski,Bydgosko-Torunski
-1224,PL,PL616,Grudziadzki,Grudziadzki,Grudziadzki,Grudziadzki
-1225,PL,PL617,Inowroclawski,Inowroclawski,Inowroclawski,Inowroclawski
-1226,PL,PL618,Swiecki,Swiecki,Swiecki,Swiecki
-1227,PL,PL619,Wloclawski,Wloclawski,Wloclawski,Wloclawski
-1228,PL,PL62,Warminsko-Mazurskie,Warminsko-Mazurskie,Warminsko-Mazurskie,Warminsko-Mazurskie
-1229,PL,PL621,Elblaski,Elblaski,Elblaski,Elblaski
-1230,PL,PL622,Olsztynski,Olsztynski,Olsztynski,Olsztynski
-1231,PL,PL623,Elcki,Elcki,Elcki,Elcki
-1232,PL,PL63,Pomorskie,Pomorskie,Pomorskie,Pomorskie
-1233,PL,PL633,Tr�jmiejski,Tr�jmiejski,Trojmiejski,Tr&#x00F3;jmiejski
-1234,PL,PL634,Gdanski,Gdanski,Gdanski,Gdanski
-1235,PL,PL636,Slupski,Slupski,Slupski,Slupski
-1236,PL,PL637,Chojnicki,Chojnicki,Chojnicki,Chojnicki
-1237,PL,PL638,Starogardzki,Starogardzki,Starogardzki,Starogardzki
-1238,PT,PT1,CONTINENTE,CONTINENTE,CONTINENTE,CONTINENTE
-1239,PT,PT11,Norte,Norte,Norte,Norte
-1240,PT,PT111,Alto Minho,Alto Minho,Alto Minho,Alto Minho
-1241,PT,PT112,C�vado,C�vado,Cavado,C&#x00E1;vado
-1242,PT,PT119,Ave,Ave,Ave,Ave
-1243,PT,PT11A,�rea Metropolitana do Porto,�rea Metropolitana do Porto,Area Metropolitana do Porto,&#x00C1;rea Metropolitana do Porto
-1244,PT,PT11B,Alto T�mega,Alto T�mega,Alto Tamega,Alto T&#x00E2;mega
-1245,PT,PT11C,T�mega e Sousa,T�mega e Sousa,Tamega e Sousa,T&#x00E2;mega e Sousa
-1246,PT,PT11D,Douro,Douro,Douro,Douro
-1247,PT,PT11E,Terras de Tr�s-os-Montes,Terras de Tr�s-os-Montes,Terras de Tras-s-Montes,Terras de Tr&#x00E1;s-os-Montes
-1248,PT,PT15,Algarve,Algarve,Algarve,Algarve
-1249,PT,PT150,Algarve,Algarve,Algarve,Algarve
-1250,PT,PT16,Centro (PT),Centro (PT),Centro (PT),Centro (PT)
-1251,PT,PT16B,Oeste,Oeste,Oeste,Oeste
-1252,PT,PT16D,Regi�o de Aveiro,Regi�o de Aveiro,Regiao de Aveiro,Regi&#x00E3;o de Aveiro
-1253,PT,PT16F,Regi�o de Leiria,Regi�o de Leiria,Regiao de Leiria,Regi&#x00E3;o de Leiria
-1254,PT,PT16G,Viseu D�o Laf�es,Viseu D�o Laf�es,Viseu Dao Lafoes,Viseu D&#x00E3;o Laf&#x00F5;es
-1255,PT,PT16H,Beira Baixa,Beira Baixa,Beira Baixa,Beira Baixa
-1256,PT,PT16I,M�dio Tejo,M�dio Tejo,Medio Tejo,M&#x00E9;dio Tejo
-1257,PT,PT17,�rea Metropolitana de Lisboa,�rea Metropolitana de Lisboa,Area Metropolitana de Lisboa,&#x00C1;rea Metropolitana de Lisboa
-1258,PT,PT170,�rea Metropolitana de Lisboa,�rea Metropolitana de Lisboa,Area Metropolitana de Lisboa,&#x00C1;rea Metropolitana de Lisboa
-1259,PT,PT18,Alentejo,Alentejo,Alentejo,Alentejo
-1260,PT,PT181,Alentejo Litoral,Alentejo Litoral,Alentejo Litoral,Alentejo Litoral
-1261,PT,PT184,Baixo Alentejo,Baixo Alentejo,Baixo Alentejo,Baixo Alentejo
-1262,PT,PT186,Alto Alentejo,Alto Alentejo,Alto Alentejo,Alto Alentejo
-1263,PT,PT187,Alentejo Central,Alentejo Central,Alentejo Central,Alentejo Central
-1264,PT,PT2,REGI�O AUT�NOMA DOS A�ORES,REGI�O AUT�NOMA DOS A�ORES,EGIAO AUTONOMA DOS ACORES,REGI&#x00C3;O AUT&#x00D3;NOMA DOS A&#x00C7;ORES
-1265,PT,PT200,Regi�o Aut�noma dos A�ores,Regi�o Aut�noma dos A�ores,Regiao Autonoma dos Acores,Regi&#x00E3;o Aut&#x00F3;noma dos A&#x00E7;ores
-1266,PT,PT3,REGI�O AUT�NOMA DA MADEIRA,REGI�O AUT�NOMA DA MADEIRA,REGIAO AUTONOMA DA MADEIRA,REGI&#x00C3;O AUT&#x00D3;NOMA DA MADEIRA
-1267,PT,PT30,Regi�o Aut�noma da Madeira,Regi�o Aut�noma da Madeira,Regiao Autonoma da Madeira,Regi&#x00E3;o Aut&#x00F3;noma da Madeira
-1268,RO,RO1,MACROREGIUNEA UNU,MACROREGIUNEA UNU,MACROREGIUNEA UNU,MACROREGIUNEA UNU
-1269,RO,RO11,Nord-Vest,Nord-Vest,Nord-Vest,Nord-Vest
-1270,RO,RO111,Bihor,Bihor,Bihor,Bihor
-1271,RO,RO112,Bistrita-Nasaud,Bistrita-Nasaud,Bistrita-Nasaud,Bistrita-Nasaud
-1272,RO,RO113,Cluj,Cluj,Cluj,Cluj
-1273,RO,RO114,Maramures,Maramures,Maramures,Maramures
-1274,RO,RO115,Satu Mare,Satu Mare,Satu Mare,Satu Mare
-1275,RO,RO116,Salaj,Salaj,Salaj,Salaj
-1276,RO,RO12,Centru,Centru,Centru,Centru
-1277,RO,RO121,Alba,Alba,Alba,Alba
-1278,RO,RO122,Brasov,Brasov,Brasov,Brasov
-1279,RO,RO123,Covasna,Covasna,Covasna,Covasna
-1280,RO,RO124,Harghita,Harghita,Harghita,Harghita
-1281,RO,RO125,Mures,Mures,Mures,Mures
-1282,RO,RO126,Sibiu,Sibiu,Sibiu,Sibiu
-1283,RO,RO2,MACROREGIUNEA DOI,MACROREGIUNEA DOI,MACROREGIUNEA DOI,MACROREGIUNEA DOI
-1284,RO,RO21,Nord-Est,Nord-Est,Nord-Est,Nord-Est
-1285,RO,RO212,Botosani,Botosani,Botosani,Botosani
-1286,RO,RO213,Iasi,Iasi,Iasi,Iasi
-1287,RO,RO214,Neamt,Neamt,Neamt,Neamt
-1288,RO,RO215,Suceava,Suceava,Suceava,Suceava
-1289,RO,RO216,Vaslui,Vaslui,Vaslui,Vaslui
-1290,RO,RO221,Braila,Braila,Braila,Braila
-1291,RO,RO222,Buzau,Buzau,Buzau,Buzau
-1292,RO,RO223,Constanta,Constanta,Constanta,Constanta
-1293,RO,RO224,Galati,Galati,Galati,Galati
-1294,RO,RO225,Tulcea,Tulcea,Tulcea,Tulcea
-1295,RO,RO3,MACROREGIUNEA TREI,MACROREGIUNEA TREI,MACROREGIUNEA TREI,MACROREGIUNEA TREI
-1296,RO,RO31,Sud - Muntenia,Sud - Muntenia,Sud - Muntenia,Sud - Muntenia
-1297,RO,RO311,Arges,Arges,Arges,Arges
-1298,RO,RO313,D�mbovita,D�mbovita,Dambovita,D&#x00E2;mbovita
-1299,RO,RO314,Giurgiu,Giurgiu,Giurgiu,Giurgiu
-1300,RO,RO315,Ialomita,Ialomita,Ialomita,Ialomita
-1301,RO,RO316,Prahova,Prahova,Prahova,Prahova
-1302,RO,RO32,Bucuresti - Ilfov,Bucuresti - Ilfov,Bucuresti - Ilfov,Bucuresti - Ilfov
-1303,RO,RO321,Bucuresti,Bucuresti,Bucuresti,Bucuresti
-1304,RO,RO322,Ilfov,Ilfov,Ilfov,Ilfov
-1305,RO,RO41,Sud-Vest Oltenia,Sud-Vest Oltenia,Sud-Vest Oltenia,Sud-Vest Oltenia
-1306,RO,RO411,Dolj,Dolj,Dolj,Dolj
-1307,RO,RO412,Gorj,Gorj,Gorj,Gorj
-1308,RO,RO413,Mehedinti,Mehedinti,Mehedinti,Mehedinti
-1309,RO,RO414,Olt,Olt,Olt,Olt
-1310,RO,RO415,V�lcea,V�lcea,Valcea,V&#x00E2;lcea
-1311,RO,RO42,Vest,Vest,Vest,Vest
-1312,RO,RO421,Arad,Arad,Arad,Arad
-1313,RO,RO422,Caras-Severin,Caras-Severin,Caras-Severin,Caras-Severin
-1314,RO,RO423,Hunedoara,Hunedoara,Hunedoara,Hunedoara
-1315,RO,RO424,Timis,Timis,Timis,Timis
-1316,SE,SE11,Stockholm,Stockholm,Stockholm,Stockholm
-1317,SE,SE110,Stockholms l�n,Stockholms l�n,Stockholms lan,Stockholms l&#x00E4;n
-1318,SE,SE12,�stra Mellansverige,�stra Mellansverige,Ostra Mellansverige,&#x00D6;stra Mellansverige
-1319,SE,SE121,Uppsala l�n,Uppsala l�n,Uppsala lan,Uppsala l&#x00E4;n
-1320,SE,SE122,S�dermanlands l�n,S�dermanlands l�n,Sodermanlands lan,S&#x00F6;dermanlands l&#x00E4;n
-1321,SE,SE123,�sterg�tlands l�n,�sterg�tlands l�n,Ostergotlands lan,&#x00D6;sterg&#x00F6;tlands l&#x00E4;n
-1322,SE,SE124,�rebro l�n,�rebro l�n,Orebro lan,&#x00D6;rebro l&#x00E4;n
-1323,SE,SE125,V�stmanlands l�n,V�stmanlands l�n,Vastmanlands lan,V&#x00E4;stmanlands l&#x00E4;n
-1324,SE,SE2,S�DRA SVERIGE,S�DRA SVERIGE,SODRA SVERIGE,S&#x00D6;DRA SVERIGE
-1325,SE,SE21,Sm�land med �arna,Sm�land med �arna,Smaland med oarna,Sm&#x00E5;land med &#x00F6;arna
-1326,SE,SE211,J�nk�pings l�n,J�nk�pings l�n,Jonkopings lan,J&#x00F6;nk&#x00F6;pings l&#x00E4;n
-1327,SE,SE212,Kronobergs l�n,Kronobergs l�n,Kronobergs lan,Kronobergs l&#x00E4;n
-1328,SE,SE213,Kalmar l�n,Kalmar l�n,Kronobergs lan,Kalmar L&#x00E4;n
-1329,SE,SE214,Gotlands l�n,Gotlands l�n,Gotlands lan,Gotlands l&#x00E4;n
-1330,SE,SE22,Sydsverige,Sydsverige,Sydsverige,Sydsverige
-1331,SE,SE221,Blekinge l�n,Blekinge l�n,Blekinge lan,Blekinge l&#x00E4;n
-1332,SE,SE224,Sk�ne l�n,Sk�ne l�n,Skane lan,Sk&#x00E5;ne l&#x00E4;n
-1333,SE,SE23,V�stsverige,V�stsverige,Vastsverige,V&#x00E4;stsverige
-1334,SE,SE232,V�stra G�talands l�n,V�stra G�talands l�n,Vastra Gotalands lan,V&#x00E4;stra G&#x00F6;talands l&#x00E4;n
-1335,SE,SE3,NORRA SVERIGE,NORRA SVERIGE,NORRA SVERIGE,NORRA SVERIGE
-1336,SE,SE31,Norra Mellansverige,Norra Mellansverige,Norra Mellansverige,Norra Mellansverige
-1337,SE,SE312,Dalarnas l�n,Dalarnas l�n,Dalarnas lan,Dalarnas l&#x00E4;n
-1338,SE,SE313,G�vleborgs l�n,G�vleborgs l�n,Gavleborgs lan,G&#x00E4;vleborgs l&#x00E4;n
-1339,SE,SE32,Mellersta Norrland,Mellersta Norrland,Mellersta Norrland,Mellersta Norrland
-1340,SE,SE322,J�mtlands l�n,J�mtlands l�n,Jamtlands lan,J&#x00E4;mtlandslL&#x00E4;n
-1341,SE,SE33,�vre Norrland,�vre Norrland,Ovre Norrland,&#x00D6;vre Norrland
-1342,SE,SE331,V�sterbottens l�n,V�sterbottens l�n,Vasterbottens lan,V&#x00E4;sterbottens l&#x00E4;n
-1343,SE,SE332,Norrbottens l�n,Norrbottens l�n,Norrbottens lan,Norrbottens l&#x00E4;n
-1344,SI,SI0,SLOVENIJA,SLOVENIJA,SLOVENIJA,SLOVENIJA
-1345,SI,SI031,Pomurska,Pomurska,Pomurska,Pomurska
-1346,SI,SI032,Podravska,Podravska,Podravska,Podravska
-1347,SI,SI033,Koro�ka,Koro�ka,Koroska,Koro&#x0161;ka
-1348,SI,SI034,Savinjska,Savinjska,Savinjska,Savinjska
-1349,SI,SI035,Zasavska,Zasavska,Zasavska,Zasavska
-1350,SI,SI036,Posavska,Posavska,Posavska,Posavska
-1351,SI,SI038,Primorsko-notranjska,Primorsko-notranjska,Primorsko-notranjska,Primorsko-notranjska
-1352,SI,SI04,Zahodna Slovenija,Zahodna Slovenija,Zahodna Slovenija,Zahodna Slovenija
-1353,SI,SI041,Osrednjeslovenska,Osrednjeslovenska,Osrednjeslovenska,Osrednjeslovenska
-1354,SI,SI042,Gorenjska,Gorenjska,Gorenjska,Gorenjska
-1355,SI,SI043,Gori�ka,Gori�ka,Goriska,Gori&#x0161;ka
-1356,SI,SI044,Obalno-kra�ka,Obalno-kra�ka,Obalno-kraska,Obalno-kra&#x0161;ka
-1357,SK,SK0,SLOVENSKO,SLOVENSKO,SLOVENSKO,SLOVENSKO
-1358,SK,SK010,Bratislavsk� kraj,Bratislavsk� kraj,Bratislavsky kraj,Bratislavsk&#x00FD; kraj
-1359,SK,SK02,Z�padn� Slovensko,Z�padn� Slovensko,Zapadne Slovensko,Z&#x00E1;padn&#x00E9; Slovensko
-1360,SK,SK021,Trnavsk� kraj,Trnavsk� kraj,Trnavsky kraj,Trnavsk&#x00FD; kraj
-1361,SK,SK023,Nitriansky kraj,Nitriansky kraj,Nitriansky kraj,Nitriansky kraj
-1362,SK,SK03,Stredn� Slovensko,Stredn� Slovensko,Stredne Slovensko,Stredn&#x00E9; Slovensko
-1363,SK,SK031,�ilinsk� kraj,�ilinsk� kraj,Zilinsky kraj,&#x017D;ilinsk&#x00FD; kraj
-1364,SK,SK04,V�chodn� Slovensko,V�chodn� Slovensko,Vychodne Slovensko,V&#x00FD;chodn&#x00E9; Slovensko
-1365,SK,SK041,Pre�ovsk� kraj,Pre�ovsk� kraj,Presovsky kraj,Pre&#x0161;ovsk&#x00FD; kraj
-1366,SK,SK042,Ko�ick� kraj,Ko�ick� kraj,Kosicky kraj,Ko&#x0161;ick&#x00FD; kraj
-1367,TR,TR1,ISTANBUL,ISTANBUL,ISTANBUL,ISTANBUL
-1368,TR,TR10,Istanbul,Istanbul,Istanbul,Istanbul
-1369,TR,TR100,Istanbul,Istanbul,Istanbul,Istanbul
-1370,TR,TR21,"Tekirdag, Edirne, Kirklareli","Tekirdag, Edirne, Kirklareli","Tekirdag, Edirne, Kirklareli","Tekirdag, Edirne, Kirklareli"
-1371,TR,TR211,Tekirdag,Tekirdag,Tekirdag,Tekirdag
-1372,TR,TR212,Edirne,Edirne,Edirne,Edirne
-1373,TR,TR213,Kirklareli,Kirklareli,Kirklareli,Kirklareli
-1374,TR,TR221,Balikesir,Balikesir,Balikesir,Balikesir
-1375,TR,TR222,�anakkale,�anakkale,Canakkale,&#x00C7;anakkale
-1376,TR,TR3,EGE,EGE,EGE,EGE
-1377,TR,TR31,Izmir,Izmir,Izmir,Izmir
-1378,TR,TR310,Izmir,Izmir,Izmir,Izmir
-1379,TR,TR32,"Aydin, Denizli, Mugla","Aydin, Denizli, Mugla","Aydin, Denizli, Mugla","Aydin, Denizli, Mugla"
-1380,TR,TR321,Aydin,Aydin,Aydin,Aydin
-1381,TR,TR322,Denizli,Denizli,Denizli,Denizli
-1382,TR,TR323,Mugla,Mugla,Mugla,Mugla
-1383,TR,TR331,Manisa,Manisa,Manisa,Manisa
-1384,TR,TR332,Afyon,Afyon,Afyon,Afyon
-1385,TR,TR333,K�tahya,K�tahya,Kutahya,K&#x00FC;tahya
-1386,TR,TR334,Usak,Usak,Usak,Usak
-1387,TR,TR4,DOGU MARMARA,DOGU MARMARA,DOGU MARMARA,DOGU MARMARA
-1388,TR,TR41,"Bursa, Eskisehir, Bilecik","Bursa, Eskisehir, Bilecik","Bursa, Eskisehir, Bilecik","Bursa, Eskisehir, Bilecik"
-1389,TR,TR411,Bursa,Bursa,Bursa,Bursa
-1390,TR,TR412,Eskisehir,Eskisehir,Eskisehir,Eskisehir
-1391,TR,TR413,Bilecik,Bilecik,Bilecik,Bilecik
-1392,TR,TR42,"Kocaeli, Sakarya, D�zce, Bolu, Yalova","Kocaeli, Sakarya, D�zce, Bolu, Yalova","Kocaeli, Sakarya, Duzce, Bolu, Yalova","Kocaeli, Sakarya, D&#x00FC;zce, Bolu, Yalova"
-1393,TR,TR421,Kocaeli,Kocaeli,Kocaeli,Kocaeli
-1394,TR,TR422,Sakarya,Sakarya,Sakarya,Sakarya
-1395,TR,TR423,D�zce,D�zce,Duzce,D&#x00FC;zce
-1396,TR,TR424,Bolu,Bolu,Bolu,Bolu
-1397,TR,TR425,Yalova,Yalova,Yalova,Yalova
-1398,TR,TR51,Ankara,Ankara,Ankara,Ankara
-1399,TR,TR510,Ankara,Ankara,Ankara,Ankara
-1400,TR,TR52,"Konya, Karaman","Konya, Karaman","Konya, Karaman","Konya, Karaman"
-1401,TR,TR521,Konya,Konya,Konya,Konya
-1402,TR,TR522,Karaman,Karaman,Karaman,Karaman
-1403,TR,TR6,AKDENIZ,AKDENIZ,AKDENIZ,AKDENIZ
-1404,TR,TR61,"Antalya, Isparta, Burdur","Antalya, Isparta, Burdur","Antalya, Isparta, Burdur","Antalya, Isparta, Burdur"
-1405,TR,TR611,Antalya,Antalya,Antalya,Antalya
-1406,TR,TR612,Isparta,Isparta,Isparta,Isparta
-1407,TR,TR613,Burdur,Burdur,Burdur,Burdur
-1408,TR,TR62,"Adana, Mersin","Adana, Mersin","Adana, Mersin","Adana, Mersin"
-1409,TR,TR621,Adana,Adana,Adana,Adana
-1410,TR,TR622,I�el,I�el,Icel,I&#x00E7;el
-1411,TR,TR63,"Hatay, Kahramanmaras, Osmaniye","Hatay, Kahramanmaras, Osmaniye","Hatay, Kahramanmaras, Osmaniye","Hatay, Kahramanmaras, Osmaniye"
-1412,TR,TR631,Hatay,Hatay,Hatay,Hatay
-1413,TR,TR632,Kahramanmaras,Kahramanmaras,Kahramanmaras,Kahramanmaras
-1414,TR,TR633,Osmaniye,Osmaniye,Osmaniye,Osmaniye
-1415,TR,TR7,ORTA ANADOLU,ORTA ANADOLU,ORTA ANADOLU,ORTA ANADOLU
-1416,TR,TR71,"Kirikkale, Aksaray, Nigde, Nevsehir, Kirsehir","Kirikkale, Aksaray, Nigde, Nevsehir, Kirsehir","Kirikkale, Aksaray, Nigde, Nevsehir, Kirsehir","Kirikkale, Aksaray, Nigde, Nevsehir, Kirsehir"
-1417,TR,TR711,Kirikkale,Kirikkale,Kirikkale,Kirikkale
-1418,TR,TR712,Aksaray,Aksaray,Aksaray,Aksaray
-1419,TR,TR713,Nigde,Nigde,Nigde,Nigde
-1420,TR,TR714,Nevsehir,Nevsehir,Nevsehir,Nevsehir
-1421,TR,TR715,Kirsehir,Kirsehir,Kirsehir,Kirsehir
-1422,TR,TR72,"Kayseri, Sivas, Yozgat","Kayseri, Sivas, Yozgat","Kayseri, Sivas, Yozgat","Kayseri, Sivas, Yozgat"
-1423,TR,TR721,Kayseri,Kayseri,Kayseri,Kayseri
-1424,TR,TR722,Sivas,Sivas,Sivas,Sivas
-1425,TR,TR723,Yozgat,Yozgat,Yozgat,Yozgat
-1426,TR,TR8,BATI KARADENIZ,BATI KARADENIZ,BATI KARADENIZ,BATI KARADENIZ
-1427,TR,TR81,"Zonguldak, Karab�k, Bartin","Zonguldak, Karab�k, Bartin","Zonguldak, Karabuk, Bartin","Zonguldak, Karab&#x00FC;k, Bartin"
-1428,TR,TR811,Zonguldak,Zonguldak,Zonguldak,Zonguldak
-1429,TR,TR812,Karab�k,Karab�k,Karabuk,Karab&#x00FC;k
-1430,TR,TR813,Bartin,Bartin,Bartin,Bartin
-1431,TR,TR82,"Kastamonu, �ankiri, Sinop","Kastamonu, �ankiri, Sinop","Kastamonu, Cankiri, Sinop","Kastamonu, &#x00C7;ankiri, Sinop"
-1432,TR,TR821,Kastamonu,Kastamonu,Kastamonu,Kastamonu
-1433,TR,TR822,�ankiri,�ankiri,Cankiri,&#x00C7;ankiri
-1434,TR,TR823,Sinop,Sinop,Sinop,Sinop
-1435,TR,TR831,Samsun,Samsun,Samsun,Samsun
-1436,TR,TR832,Tokat,Tokat,Tokat,Tokat
-1437,TR,TR833,�orum,�orum,Corum,&#x00C7;orum
-1438,TR,TR834,Amasya,Amasya,Amasya,Amasya
-1439,TR,TR9,DOGU KARADENIZ,DOGU KARADENIZ,DOGU KARADENIZ,DOGU KARADENIZ
-1440,TR,TR90,Trabzon,Trabzon,Trabzon,Trabzon
-1441,TR,TR901,Trabzon,Trabzon,Trabzon,Trabzon
-1442,TR,TR902,Ordu,Ordu,Ordu,Ordu
-1443,TR,TR903,Giresun,Giresun,Giresun,Giresun
-1444,TR,TR904,Rize,Rize,Rize,Rize
-1445,TR,TR905,Artvin,Artvin,Artvin,Artvin
-1446,TR,TR906,G�m�shane,G�m�shane,Gumushane,G&#x00FC;m&#x00FC;shane
-1447,TR,TRA,KUZEYDOGU ANADOLU,KUZEYDOGU ANADOLU,KUZEYDOGU ANADOLU,KUZEYDOGU ANADOLU
-1448,TR,TRA11,Erzurum,Erzurum,Erzurum,Erzurum
-1449,TR,TRA12,Erzincan,Erzincan,Erzincan,Erzincan
-1450,TR,TRA13,Bayburt,Bayburt,Bayburt,Bayburt
-1451,TR,TRA2,"Agri, Kars, Igdir, Ardahan","Agri, Kars, Igdir, Ardahan","Agri, Kars, Igdir, Ardahan","Agri, Kars, Igdir, Ardahan"
-1452,TR,TRA21,Agri,Agri,Agri,Agri
-1453,TR,TRA22,Kars,Kars,Kars,Kars
-1454,TR,TRA23,Igdir,Igdir,Igdir,Igdir
-1455,TR,TRA24,Ardahan,Ardahan,Ardahan,Ardahan
-1456,TR,TRB,ORTADOGU ANADOLU,ORTADOGU ANADOLU,ORTADOGU ANADOLU,ORTADOGU ANADOLU
-1457,TR,TRB11,Malatya,Malatya,Malatya,Malatya
-1458,TR,TRB12,Elazig,Elazig,Elazig,Elazig
-1459,TR,TRB13,Bing�l,Bing�l,Bingol,Bing&#x00F6;l
-1460,TR,TRB14,Tunceli,Tunceli,Tunceli,Tunceli
-1461,TR,TRB2,"Van, Mus, Bitlis, Hakkari","Van, Mus, Bitlis, Hakkari","Van, Mus, Bitlis, Hakkari","Van, Mus, Bitlis, Hakkari"
-1462,TR,TRB21,Van,Van,Van,Van
-1463,TR,TRB22,Mus,Mus,Mus,Mus
-1464,TR,TRB23,Bitlis,Bitlis,Bitlis,Bitlis
-1465,TR,TRB24,Hakkari,Hakkari,Hakkari,Hakkari
-1466,TR,TRC,G�NEYDOGU ANADOLU,G�NEYDOGU ANADOLU,GUNEYDOGU ANADOLU,G&#x00DC;NEYDOGU ANADOLU
-1467,TR,TRC1,"Gaziantep, Adiyaman, Kilis","Gaziantep, Adiyaman, Kilis","Gaziantep, Adiyaman, Kilis","Gaziantep, Adiyaman, Kilis"
-1468,TR,TRC11,Gaziantep,Gaziantep,Gaziantep,Gaziantep
-1469,TR,TRC12,Adiyaman,Adiyaman,Adiyaman,Adiyaman
-1470,TR,TRC13,Kilis,Kilis,Kilis,Kilis
-1471,TR,TRC21,Sanliurfa,Sanliurfa,Sanliurfa,Sanliurfa
-1472,TR,TRC22,Diyarbakir,Diyarbakir,Diyarbakir,Diyarbakir
-1473,TR,TRC3,"Mardin, Batman, Sirnak, Siirt","Mardin, Batman, Sirnak, Siirt","Mardin, Batman, Sirnak, Siirt","Mardin, Batman, Sirnak, Siirt"
-1474,TR,TRC31,Mardin,Mardin,Mardin,Mardin
-1475,TR,TRC32,Batman,Batman,Batman,Batman
-1476,TR,TRC33,Sirnak,Sirnak,Sirnak,Sirnak
-1477,TR,TRC34,Siirt,Siirt,Siirt,Siirt
-1478,UK,UKC,NORTH EAST (ENGLAND),NORTH EAST (ENGLAND),NORTH EAST (ENGLAND),NORTH EAST (ENGLAND)
-1479,UK,UKC11,Hartlepool and Stockton-on-Tees,Hartlepool and Stockton-on-Tees,Hartlepool and Stockton-On-Tees,Hartlepool and Stockton-On-Tees
-1480,UK,UKC12,South Teesside,South Teesside,South Teesside,South Teesside
-1481,UK,UKC13,Darlington,Darlington,Darlington,Darlington
-1482,UK,UKC14,Durham CC,Durham CC,Durham CC,Durham CC
-1483,UK,UKC2,Northumberland and Tyne and Wear,Northumberland and Tyne and Wear,Northumberland and Tyne And Wear,Northumberland and Tyne And Wear
-1484,UK,UKC22,Tyneside,Tyneside,Tyneside,Tyneside
-1485,UK,UKC23,Sunderland,Sunderland,Sunderland,Sunderland
-1486,UK,UKD,NORTH WEST (ENGLAND),NORTH WEST (ENGLAND),NORTH WEST (ENGLAND),NORTH WEST (ENGLAND)
-1487,UK,UKD1,Cumbria,Cumbria,Cumbria,Cumbria
-1488,UK,UKD11,West Cumbria,West Cumbria,West Cumbria,West Cumbria
-1489,UK,UKD3,Greater Manchester,Greater Manchester,Greater Manchester,Greater Manchester
-1490,UK,UKD33,Manchester,Manchester,Manchester,Manchester
-1491,UK,UKD34,Greater Manchester South West,Greater Manchester South West,Greater Manchester South West,Greater Manchester South West
-1492,UK,UKD36,Greater Manchester North West,Greater Manchester North West,Greater Manchester North West,Greater Manchester North West
-1493,UK,UKD37,Greater Manchester North East,Greater Manchester North East,Greater Manchester North East,Greater Manchester North East
-1494,UK,UKD4,Lancashire,Lancashire,Lancashire,Lancashire
-1495,UK,UKD41,Blackburn with Darwen,Blackburn with Darwen,Blackburn with Darwen,Blackburn with Darwen
-1496,UK,UKD42,Blackpool,Blackpool,Blackpool,Blackpool
-1497,UK,UKD44,Lancaster & Wyre,Lancaster & Wyre,Lancaster & Wyre,Lancaster & Wyre
-1498,UK,UKD45,Mid Lancashire,Mid Lancashire,Mid Lancashire,Mid Lancashire
-1499,UK,UKD47,Chorley & West Lancashire,Chorley & West Lancashire,Chorley & West Lancashire,Chorley & West Lancashire
-1500,UK,UKD6,Cheshire,Cheshire,Cheshire,Cheshire
-1501,UK,UKD61,Warrington,Warrington,Warrington,Warrington
-1502,UK,UKD62,Cheshire East,Cheshire East,Cheshire East,Cheshire East
-1503,UK,UKD63,Cheshire West and Chester,Cheshire West and Chester,Cheshire West and Chester,Cheshire West and Chester
-1504,UK,UKD7,Merseyside,Merseyside,Merseyside,Merseyside
-1505,UK,UKD71,East Merseyside,East Merseyside,East Merseyside,East Merseyside
-1506,UK,UKD72,Liverpool,Liverpool,Liverpool,Liverpool
-1507,UK,UKD73,Sefton,Sefton,Sefton,Sefton
-1508,UK,UKD74,Wirral,Wirral,Wirral,Wirral
-1509,UK,UKE,YORKSHIRE AND THE HUMBER,YORKSHIRE AND THE HUMBER,YORKSHIRE AND THE HUMBER,YORKSHIRE AND THE HUMBER
-1510,UK,UKE1,East Yorkshire and Northern Lincolnshire,East Yorkshire and Northern Lincolnshire,East Yorkshire and Northern Lincolnshire,East Yorkshire and Northern Lincolnshire
-1511,UK,UKE11,"Kingston upon Hull, City of","Kingston upon Hull, City of","Kingston Upon Hull, City Of","Kingston Upon Hull, City Of"
-1512,UK,UKE12,East Riding of Yorkshire,East Riding of Yorkshire,East Riding of Yorkshire,East Riding of Yorkshire
-1513,UK,UKE13,North and North East Lincolnshire,North and North East Lincolnshire,North and North East Lincolnshire,North and North East Lincolnshire
-1514,UK,UKE2,North Yorkshire,North Yorkshire,North Yorkshire,North Yorkshire
-1515,UK,UKE21,York,York,York,York
-1516,UK,UKE22,North Yorkshire CC,North Yorkshire CC,North Yorkshire CC,North Yorkshire CC
-1517,UK,UKE3,South Yorkshire,South Yorkshire,South Yorkshire,South Yorkshire
-1518,UK,UKE31,"Barnsley, Doncaster and Rotherham","Barnsley, Doncaster and Rotherham","Barnsley, Doncaster and Rotherham","Barnsley, Doncaster and Rotherham"
-1519,UK,UKE32,Sheffield,Sheffield,Sheffield,Sheffield
-1520,UK,UKE4,West Yorkshire,West Yorkshire,West Yorkshire,West Yorkshire
-1521,UK,UKE42,Leeds,Leeds,Leeds,Leeds
-1522,UK,UKE44,Calderdale and Kirklees,Calderdale and Kirklees,Calderdale and Kirklees,Calderdale and Kirklees
-1523,UK,UKE45,Wakefield,Wakefield,Wakefield,Wakefield
-1524,UK,UKF1,Derbyshire and Nottinghamshire,Derbyshire and Nottinghamshire,Derbyshire and Nottinghamshire,Derbyshire and Nottinghamshire
-1525,UK,UKF11,Derby,Derby,Derby,Derby
-1526,UK,UKF12,East Derbyshire,East Derbyshire,East Derbyshire,East Derbyshire
-1527,UK,UKF13,South and West Derbyshire,South and West Derbyshire,South and West Derbyshire,South and West Derbyshire
-1528,UK,UKF14,Nottingham,Nottingham,Nottingham,Nottingham
-1529,UK,UKF16,South Nottinghamshire,South Nottinghamshire,South Nottinghamshire,South Nottinghamshire
-1530,UK,UKF2,"Leicestershire, Rutland and Northamptonshire","Leicestershire, Rutland and Northamptonshire","Leicestershire, Rutland and Northamptonshire","Leicestershire, Rutland and Northamptonshire"
-1531,UK,UKF21,Leicester,Leicester,Leicester,Leicester
-1532,UK,UKF22,Leicestershire CC and Rutland,Leicestershire CC and Rutland,Leicestershire CC and Rutland,Leicestershire CC and Rutland
-1533,UK,UKF25,North Northamptonshire,North Northamptonshire,North Northamptonshire,North Northamptonshire
-1534,UK,UKF3,Lincolnshire,Lincolnshire,Lincolnshire,Lincolnshire
-1535,UK,UKF30,Lincolnshire,Lincolnshire,Lincolnshire,Lincolnshire
-1536,UK,UKG,WEST MIDLANDS (ENGLAND),WEST MIDLANDS (ENGLAND),WEST MIDLANDS (ENGLAND),WEST MIDLANDS (ENGLAND)
-1537,UK,UKG11,"Herefordshire, County of","Herefordshire, County of","Herefordshire, County Of","Herefordshire, County Of"
-1538,UK,UKG12,Worcestershire,Worcestershire,Worcestershire,Worcestershire
-1539,UK,UKG13,Warwickshire,Warwickshire,Warwickshire,Warwickshire
-1540,UK,UKG2,Shropshire and Staffordshire,Shropshire and Staffordshire,Shropshire and Staffordshire,Shropshire and Staffordshire
-1541,UK,UKG21,Telford and Wrekin,Telford and Wrekin,Telford and Wrekin,Telford and Wrekin
-1542,UK,UKG22,Shropshire CC,Shropshire CC,Shropshire CC,Shropshire CC
-1543,UK,UKG23,Stoke-on-Trent,Stoke-on-Trent,Stoke-on-Trent,Stoke-on-Trent
-1544,UK,UKG24,Staffordshire CC,Staffordshire CC,Staffordshire CC,Staffordshire CC
-1545,UK,UKG3,West Midlands,West Midlands,West Midlands,West Midlands
-1546,UK,UKG31,Birmingham,Birmingham,Birmingham,Birmingham
-1547,UK,UKG32,Solihull,Solihull,Solihull,Solihull
-1548,UK,UKG33,Coventry,Coventry,Coventry,Coventry
-1549,UK,UKG36,Dudley,Dudley,Dudley,Dudley
-1550,UK,UKG37,Sandwell,Sandwell,Sandwell,Sandwell
-1551,UK,UKG38,Walsall,Walsall,Walsall,Walsall
-1552,UK,UKH,EAST OF ENGLAND,EAST OF ENGLAND,EAST OF ENGLAND,EAST OF ENGLAND
-1553,UK,UKH1,East Anglia,East Anglia,East Anglia,East Anglia
-1554,UK,UKH11,Peterborough,Peterborough,Peterborough,Peterborough
-1555,UK,UKH12,Cambridgeshire CC,Cambridgeshire CC,Cambridgeshire CC,Cambridgeshire CC
-1556,UK,UKH14,Suffolk,Suffolk,Suffolk,Suffolk
-1557,UK,UKH16,North�& West Norfolk,North�& West Norfolk,North�& West Norfolk,North�& West Norfolk
-1558,UK,UKH17,Breckland & South Norfolk,Breckland & South Norfolk,Breckland & South Norfolk,Breckland & South Norfolk
-1559,UK,UKH2,Bedfordshire and Hertfordshire,Bedfordshire and Hertfordshire,Bedfordshire and Hertfordshire,Bedfordshire and Hertfordshire
-1560,UK,UKH21,Luton,Luton,Luton,Luton
-1561,UK,UKH23,Hertfordshire,Hertfordshire,Hertfordshire,Hertfordshire
-1562,UK,UKH25,Central Bedfordshire,Central Bedfordshire,Central Bedfordshire,Central Bedfordshire
-1563,UK,UKH3,Essex,Essex,Essex,Essex
-1564,UK,UKH31,Southend-on-Sea,Southend-on-Sea,Southend-On-Sea,Southend-On-Sea
-1565,UK,UKH34,Essex Haven Gateway,Essex Haven Gateway,Essex Haven Gateway,Essex Haven Gateway
-1566,UK,UKH35,West Essex,West Essex,West Essex,West Essex
-1567,UK,UKH37,Essex Thames Gateway,Essex Thames Gateway,Essex Thames Gateway,Essex Thames Gateway
-1568,UK,UKI,LONDON,LONDON,LONDON,LONDON
-1569,UK,UKI3,Inner London - West,Inner London - West,Inner London - West,Inner London - West
-1570,UK,UKI31,Camden & City of London,Camden & City of London,Camden & City of London,Camden & City of London
-1571,UK,UKI33,Kensington and Chelsea & Hammersmith and Fulham,Kensington and Chelsea & Hammersmith and Fulham,Kensington and Chelsea & Hammersmith and Fulham,Kensington and Chelsea & Hammersmith and Fulham
-1572,UK,UKI34,Wandsworth,Wandsworth,Wandsworth,Wandsworth
-1573,UK,UKI41,Hackney & Newham,Hackney & Newham,Hackney & Newham,Hackney & Newham
-1574,UK,UKI42,Tower Hamlets,Tower Hamlets,Tower Hamlets,Tower Hamlets
-1575,UK,UKI43,Haringey & Islington,Haringey & Islington,Haringey & Islington,Haringey & Islington
-1576,UK,UKI44,Lewisham & Southwark,Lewisham & Southwark,Lewisham & Southwark,Lewisham & Southwark
-1577,UK,UKI45,Lambeth,Lambeth,Lambeth,Lambeth
-1578,UK,UKI5,Outer London - East and North East,Outer London - East and North East,Outer London - East and North East,Outer London - East and North East
-1579,UK,UKI51,Bexley & Greenwich,Bexley & Greenwich,Bexley & Greenwich,Bexley & Greenwich
-1580,UK,UKI52,Barking and Dagenham & Havering,Barking and Dagenham & Havering,Barking and Dagenham & Havering,Barking and Dagenham & Havering
-1581,UK,UKI53,Redbridge & Waltham Forest,Redbridge & Waltham Forest,Redbridge & Waltham Forest,Redbridge & Waltham Forest
-1582,UK,UKI54,Enfield,Enfield,Enfield,Enfield
-1583,UK,UKI6,Outer London - South,Outer London - South,Outer London - South,Outer London - South
-1584,UK,UKI61,Bromley,Bromley,Bromley,Bromley
-1585,UK,UKI62,Croydon,Croydon,Croydon,Croydon
-1586,UK,UKI63,"Merton, Kingston upon Thames & Sutton","Merton, Kingston upon Thames & Sutton","Merton, Kingston Upon Thames & Sutton","Merton, Kingston Upon Thames & Sutton"
-1587,UK,UKI7,Outer London - West and North West,Outer London - West and North West,Outer London - West and North West,Outer London - West and North West
-1588,UK,UKI71,Barnet,Barnet,Barnet,Barnet
-1589,UK,UKI72,Brent,Brent,Brent,Brent
-1590,UK,UKI73,Ealing,Ealing,Ealing,Ealing
-1591,UK,UKI74,Harrow & Hillingdon,Harrow & Hillingdon,Harrow & Hillingdon,Harrow & Hillingdon
-1592,UK,UKJ,SOUTH EAST (ENGLAND),SOUTH EAST (ENGLAND),SOUTH EAST (ENGLAND),SOUTH EAST (ENGLAND)
-1593,UK,UKJ1,"Berkshire, Buckinghamshire and Oxfordshire","Berkshire, Buckinghamshire and Oxfordshire","Berkshire, Buckinghamshire and Oxfordshire","Berkshire, Buckinghamshire and Oxfordshire"
-1594,UK,UKJ11,Berkshire,Berkshire,Berkshire,Berkshire
-1595,UK,UKJ12,Milton Keynes,Milton Keynes,Milton Keynes,Milton Keynes
-1596,UK,UKJ13,Buckinghamshire CC,Buckinghamshire CC,Buckinghamshire CC,Buckinghamshire CC
-1597,UK,UKJ14,Oxfordshire,Oxfordshire,Oxfordshire,Oxfordshire
-1598,UK,UKJ2,"Surrey, East and West Sussex","Surrey, East and West Sussex","Surrey, East and West Sussex","Surrey, East and West Sussex"
-1599,UK,UKJ22,East Sussex CC,East Sussex CC,East Sussex CC,East Sussex CC
-1600,UK,UKJ25,West Surrey,West Surrey,West Surrey,West Surrey
-1601,UK,UKJ26,East Surrey,East Surrey,East Surrey,East Surrey
-1602,UK,UKJ27,West Sussex (South West),West Sussex (South West),West Sussex (South West),West Sussex (South West)
-1603,UK,UKJ3,Hampshire and Isle of Wight,Hampshire and Isle of Wight,Hampshire and Isle of Wight,Hampshire and Isle of Wight
-1604,UK,UKJ31,Portsmouth,Portsmouth,Portsmouth,Portsmouth
-1605,UK,UKJ32,Southampton,Southampton,Southampton,Southampton
-1606,UK,UKJ34,Isle of Wight,Isle of Wight,Isle of Wight,Isle of Wight
-1607,UK,UKJ35,South Hampshire,South Hampshire,South Hampshire,South Hampshire
-1608,UK,UKJ36,Central Hampshire,Central Hampshire,Central Hampshire,Central Hampshire
-1609,UK,UKJ37,North Hampshire,North Hampshire,North Hampshire,North Hampshire
-1610,UK,UKJ4,Kent,Kent,Kent,Kent
-1611,UK,UKJ41,Medway,Medway,Medway,Medway
-1612,UK,UKJ44,East Kent,East Kent,East Kent,East Kent
-1613,UK,UKJ45,Mid Kent,Mid Kent,Mid Kent,Mid Kent
-1614,UK,UKJ46,West Kent,West Kent,West Kent,West Kent
-1615,UK,UKK,SOUTH WEST (ENGLAND),SOUTH WEST (ENGLAND),SOUTH WEST (ENGLAND),SOUTH WEST (ENGLAND)
-1616,UK,UKK11,"Bristol, City of","Bristol, City of","Bristol, City Of","Bristol, City Of"
-1617,UK,UKK12,"Bath and North East Somerset, North Somerset and South Gloucestershire","Bath and North East Somerset, North Somerset and South Gloucestershire","Bath and North East Somerset, North Somerset and South Gloucestershire","Bath and North East Somerset, North Somerset and South Gloucestershire"
-1618,UK,UKK13,Gloucestershire,Gloucestershire,Gloucestershire,Gloucestershire
-1619,UK,UKK14,Swindon,Swindon,Swindon,Swindon
-1620,UK,UKK15,Wiltshire CC,Wiltshire CC,Wiltshire CC,Wiltshire CC
-1621,UK,UKK2,Dorset and Somerset,Dorset and Somerset,Dorset and Somerset,Dorset and Somerset
-1622,UK,UKK21,Bournemouth and Poole,Bournemouth and Poole,Bournemouth and Poole,Bournemouth and Poole
-1623,UK,UKK22,Dorset CC,Dorset CC,Dorset CC,Dorset CC
-1624,UK,UKK23,Somerset,Somerset,Somerset,Somerset
-1625,UK,UKK3,Cornwall and Isles of Scilly,Cornwall and Isles of Scilly,Cornwall and Isles of Scilly,Cornwall and Isles of Scilly
-1626,UK,UKK4,Devon,Devon,Devon,Devon
-1627,UK,UKK41,Plymouth,Plymouth,Plymouth,Plymouth
-1628,UK,UKK42,Torbay,Torbay,Torbay,Torbay
-1629,UK,UKK43,Devon CC,Devon CC,Devon CC,Devon CC
-1630,UK,UKL,WALES,WALES,Wales,Wales
-1631,UK,UKL1,West Wales and The Valleys,West Wales and The Valleys,West Wales and the Valleys,West Wales and the Valleys
-1632,UK,UKL11,Isle of Anglesey,Isle of Anglesey,Isle of Anglesey,Isle of Anglesey
-1633,UK,UKL12,Gwynedd,Gwynedd,Gwynedd,Gwynedd
-1634,UK,UKL13,Conwy and Denbighshire,Conwy and Denbighshire,Conwy and Denbighshire,Conwy and Denbighshire
-1635,UK,UKL14,South West Wales,South West Wales,South West Wales,South West Wales
-1636,UK,UKL15,Central Valleys,Central Valleys,Central Valleys,Central Valleys
-1637,UK,UKL17,Bridgend and Neath Port Talbot,Bridgend and Neath Port Talbot,Bridgend and Neath Port Talbot,Bridgend and Neath Port Talbot
-1638,UK,UKL18,Swansea,Swansea,Swansea,Swansea
-1639,UK,UKL2,East Wales,East Wales,East Wales,East Wales
-1640,UK,UKL22,Cardiff and Vale of Glamorgan,Cardiff and Vale of Glamorgan,Cardiff and Vale of Glamorgan,Cardiff and Vale of Glamorgan
-1641,UK,UKL23,Flintshire and Wrexham,Flintshire and Wrexham,Flintshire and Wrexham,Flintshire and Wrexham
-1642,UK,UKL24,Powys,Powys,Powys,Powys
-1643,UK,UKM,SCOTLAND,SCOTLAND,SCOTLAND,SCOTLAND
-1644,UK,UKM2,Eastern Scotland,Eastern Scotland,Eastern Scotland,Eastern Scotland
-1645,UK,UKM21,Angus and Dundee City,Angus and Dundee City,Angus and Dundee City,Angus and Dundee City
-1646,UK,UKM23,East Lothian and Midlothian,East Lothian and Midlothian,East Lothian and Midlothian,East Lothian and Midlothian
-1647,UK,UKM24,Scottish Borders,Scottish Borders,Scottish Borders,Scottish Borders
-1648,UK,UKM25,"Edinburgh, City of","Edinburgh, City of","Edinburgh, City Of","Edinburgh, City Of"
-1649,UK,UKM26,Falkirk,Falkirk,Falkirk,Falkirk
-1650,UK,UKM27,Perth & Kinross and Stirling,Perth & Kinross and Stirling,Perth & Kinross and Stirling,Perth & Kinross and Stirling
-1651,UK,UKM28,West Lothian,West Lothian,West Lothian,West Lothian
-1652,UK,UKM3,South Western Scotland,South Western Scotland,South Western Scotland,South Western Scotland
-1653,UK,UKM31,"East Dunbartonshire, West Dunbartonshire and Helensburgh & Lomond","East Dunbartonshire, West Dunbartonshire and Helensburgh & Lomond","East Dunbartonshire, West Dunbartonshire and Helensburgh & Lomond","East Dunbartonshire, West Dunbartonshire and Helensburgh & Lomond"
-1654,UK,UKM32,Dumfries & Galloway,Dumfries & Galloway,Dumfries & Galloway,Dumfries & Galloway
-1655,UK,UKM34,Glasgow City,Glasgow City,Glasgow City,Glasgow City
-1656,UK,UKM35,"Inverclyde, East Renfrewshire and Renfrewshire","Inverclyde, East Renfrewshire and Renfrewshire","Inverclyde, East Renfrewshire and Renfrewshire","Inverclyde, East Renfrewshire and Renfrewshire"
-1657,UK,UKM36,North Lanarkshire,North Lanarkshire,North Lanarkshire,North Lanarkshire
-1658,UK,UKM37,South Ayrshire,South Ayrshire,South Ayrshire,South Ayrshire
-1659,UK,UKM38,South Lanarkshire,South Lanarkshire,South Lanarkshire,South Lanarkshire
-1660,UK,UKM5,North Eastern Scotland,North Eastern Scotland,North Eastern Scotland,North Eastern Scotland
-1661,UK,UKM50,Aberdeen City and Aberdeenshire,Aberdeen City and Aberdeenshire,Aberdeen City and Aberdeenshire,Aberdeen City and Aberdeenshire
-1662,UK,UKM6,Highlands and Islands,Highlands and Islands,Highlands and Islands,Highlands and Islands
-1663,UK,UKM62,"Inverness & Nairn and Moray, Badenoch & Strathspey","Inverness & Nairn and Moray, Badenoch & Strathspey","Inverness & Nairn and Moray, Badenoch & Strathspey","Inverness & Nairn and Moray, Badenoch & Strathspey"
-1664,UK,UKM63,"Lochaber, Skye & Lochalsh, Arran & Cumbrae and Argyll & Bute","Lochaber, Skye & Lochalsh, Arran & Cumbrae and Argyll & Bute","Lochaber, Skye & Lochalsh, Arran & Cumbrae and Argyll & Bute","Lochaber, Skye & Lochalsh, Arran & Cumbrae and Argyll & Bute"
-1665,UK,UKM64,Eilean Siar (Western Isles),Eilean Siar (Western Isles),Eilean Siar (Western Isles),Eilean Siar (Western Isles)
-1666,UK,UKM65,Orkney Islands,Orkney Islands,Orkney Islands,Orkney Islands
-1667,UK,UKM66,Shetland Islands,Shetland Islands,Shetland Islands,Shetland Islands
-1668,UK,UKN,NORTHERN IRELAND,NORTHERN IRELAND,NORTHERN IRELAND,NORTHERN IRELAND
-1669,UK,UKN01,Belfast,Belfast,Belfast,Belfast
-1670,UK,UKN02,Outer Belfast,Outer Belfast,Outer Belfast,Outer Belfast
-1671,UK,UKN03,East of Northern Ireland,East of Northern Ireland,East of Northern Ireland,East of Northern Ireland
-1672,UK,UKN04,North of Northern Ireland,North of Northern Ireland,North of Northern Ireland,North of Northern Ireland
-1673,ME,ME00,Crna Gora,???? ????,Crna Gora,Crna Gora
-1674,ME,ME000,Crna Gora,???? ????,Crna Gora,Crna Gora
-1675,AT,AT,�STERREICH,�STERREICH,OSTERREICH,&#x00D6;STERREICH
-1676,BE,BE,BELGIQUE-BELGI�,BELGIQUE-BELGI�,BELGIQUE-BELGIE,BELGIQUE-BELGI&#x00CB;
-1677,BG,BG,BULGARIA,????????,BULGARIA,&#1041;&#1066;&#1051;&#1043;&#1040;&#1056;&#1048;&#1071;
-1678,CH,CH,SCHWEIZ/SUISSE/SVIZZERA,SCHWEIZ/SUISSE/SVIZZERA,SCHWEIZ/SUISSE/SVIZZERA,SCHWEIZ/SUISSE/SVIZZERA
-1679,CZ,CZ,CESK� REPUBLIKA,CESK� REPUBLIKA,CESKA REPUBLIKA,CESK&#x00C1; REPUBLIKA
-1680,DE,DE,DEUTSCHLAND,DEUTSCHLAND,DEUTSCHLAND,DEUTSCHLAND
-1681,DK,DK,DANMARK,DANMARK,DANMARK,DANMARK
-1682,EE,EE,EESTI,EESTI,EESTI,EESTI
-1683,EL,EL,ELLADA,??????,ELLADA,&#917;&#923;&#923;&#913;&#916;&#913;
-1684,FI,FI,SUOMI / FINLAND,SUOMI / FINLAND,SUOMI / FINLAND,SUOMI / FINLAND
-1685,FR,FR,FRANCE,FRANCE,FRANCE,FRANCE
-1686,HR,HR,HRVATSKA,HRVATSKA,HRVATSKA,HRVATSKA
-1687,IE,IE,IRELAND,IRELAND,IRELAND,IRELAND
-1688,IS,IS,�SLAND,�SLAND,ISLAND,&#x00CD;SLAND
-1689,IT,IT,ITALIA,ITALIA,ITALIA,ITALIA
-1690,LI,LI,LIECHTENSTEIN,LIECHTENSTEIN,LIECHTENSTEIN,LIECHTENSTEIN
-1691,LT,LT,LIETUVA,LIETUVA,LIETUVA,LIETUVA
-1692,LU,LU,LUXEMBOURG,LUXEMBOURG,LUXEMBOURG,LUXEMBOURG
-1693,LV,LV,LATVIJA,LATVIJA,LATVIJA,LATVIJA
-1694,MK,MK,PORANE�NA JUGOSLOVENSKA REPUBLIKA MAKEDONIJA,????????? ????????????? ????????? ??????????,PORANESNA JUGOSLOVENSKA REPUBLIKA MAKEDONIJA,PORANE&#x0160;NA JUGOSLOVENSKA REPUBLIKA MAKEDONIJA
-1695,MT,MT,MALTA,MALTA,MALTA,MALTA
-1696,NO,NO,NORGE,NORGE,NORGE,NORGE
-1697,PL,PL,POLSKA,POLSKA,POLSKA,POLSKA
-1698,PT,PT,PORTUGAL,PORTUGAL,PORTUGAL,PORTUGAL
-1699,RO,RO,ROM�NIA,ROM�NIA,ROMANIA,ROM&#x00C2;NIA
-1700,SE,SE,SVERIGE,SVERIGE,SVERIGE,SVERIGE
-1701,SK,SK,SLOVENSKO,SLOVENSKO,SLOVENSKO,SLOVENSKO
-1702,TR,TR,T�RKIYE,T�RKIYE,TURKIYE,T&#x00DC;RKIYE
-1703,UK,UK,UNITED KINGDOM,UNITED KINGDOM,UNITED KINGDOM,UNITED KINGDOM
-1704,AT,AT22,Steiermark,Steiermark,Steiermark,Steiermark
-1705,AT,AT224,Oststeiermark,Oststeiermark,Oststeiermark,Oststeiermark
-1706,AT,AT3,WEST�STERREICH,WEST�STERREICH,WESTOSTERREICH,WEST&#x00D6;STERREICH
-1707,AT,AT315,Traunviertel,Traunviertel,Traunviertel,Traunviertel
-1708,AT,AT331,Au�erfern,Au�erfern,Ausserfern,Au&#x00DF;erfern
-1709,AT,AT341,Bludenz-Bregenzer Wald,Bludenz-Bregenzer Wald,Bludenz-Bregenzer Wald,Bludenz-Bregenzer Wald
-1710,BE,BE10,R�gion de Bruxelles-Capitale / Brussels Hoofdstedelijk Gewest,R�gion de Bruxelles-Capitale / Brussels Hoofdstedelijk Gewest,Region de Bruxelles-Capitale / Brussels Hoofdstedelijk Gewest,R&#x00E9;gion de Bruxelles-Capitale / Brussels Hoofdstedelijk Gewest
-1711,BE,BE235,Arr. Oudenaarde,Arr. Oudenaarde,Arr. Oudenaarde,Arr. Oudenaarde
-1712,BE,BE25,Prov. West-Vlaanderen,Prov. West-Vlaanderen,Prov. West-Vlaanderen,Prov. West-Vlaanderen
-1713,BE,BE258,Arr. Veurne,Arr. Veurne,Arr. Veurne,Arr. Veurne
-1714,BE,BE32,Prov. Hainaut,Prov. Hainaut,Prov. Hainaut,Prov. Hainaut
-1715,BE,BE326,Arr. Thuin,Arr. Thuin,Arr. Thuin,Arr. Thuin
-1716,BE,BE332,Arr. Li�ge,Arr. Li�ge,Arr. Liege,Arr. Li&#x00E8;ge
-1717,BG,BG3,SEVERNA I YUGOIZTOCHNA BULGARIA,??????? ? ?????????? ????????,SEVERNA I YUGOIZTOCHNA BULGARIA,&#x0421;&#x0435;&#x0432;&#x0435;&#x0440;&#x043D;&#x0430; &#x0418; &#x042E;&#x0433;&#x043E;&#x0438;&#x0437;&#x0442;&#x043E;&#x0447;&#x043D;&#x0430; &#x0411;&#x044A;&#x043B;&#x0433;&#x0430;&#x0440;&#x0438;&#x044F;
-1718,BG,BG32,Severen tsentralen,??????? ?????????,Severen tsentralen,&#x0421;&#x0435;&#x0432;&#x0435;&#x0440;&#x0435;&#x043D; &#x0426;&#x0435;&#x043D;&#x0442;&#x0440;&#x0430;&#x043B;&#x0435;&#x043D;
-1719,BG,BG325,Silistra,????????,Silistra,&#x0421;&#x0438;&#x043B;&#x0438;&#x0441;&#x0442;&#x0440;&#x0430;
-1720,BG,BG331,Varna,?????,Varna,&#x0412;&#x0430;&#x0440;&#x043D;&#x0430;
-1721,BG,BG334,Targovishte,?????????,Targovishte,&#x0422;&#x044A;&#x0440;&#x0433;&#x043E;&#x0432;&#x0438;&#x0449;&#x0435;
-1722,BG,BG341,Burgas,??????,Burgas,&#x0411;&#x0443;&#x0440;&#x0433;&#x0430;&#x0441;
-1723,BG,BG344,Stara Zagora,????? ??????,Stara Zagora,&#x0421;&#x0442;&#x0430;&#x0440;&#x0430; &#x0417;&#x0430;&#x0433;&#x043E;&#x0440;&#x0430;
-1724,BG,BG4,YUGOZAPADNA I YUZHNA TSENTRALNA BULGARIA,?????????? ? ???? ????????? ????????,YUGOZAPADNA I YUZHNA TSENTRALNA BULGARIA,&#1070;&#1043;&#1054;&#1047;&#1040;&#1055;&#1040;&#1044;&#1053;&#1040; &#1048; &#1070;&#1046;&#1053;&#1040; &#1062;&#1045;&#1053;&#1058;&#1056;&#1040;&#1051;&#1053;&#1040; &#1041;&#1066;&#1051;&#1043;&#1040;&#1056;&#1048;&#1071;
-1725,BG,BG422,Haskovo,???????,Haskovo,&#x0425;&#x0430;&#x0441;&#x043A;&#x043E;&#x0432;&#x043E;
-1726,BG,BG424,Smolyan,??????,Smolyan,&#x0421;&#x043C;&#x043E;&#x043B;&#x044F;&#x043D;
-1727,CH,CH01,R�gion l�manique,R�gion l�manique,Region lemanique,R&#x00E9;gion l&#x00E9;manique
-1728,CH,CH031,Basel-Stadt,Basel-Stadt,Basel-Stadt,Basel-Stadt
-1729,CH,CH051,Glarus,Glarus,Glarus,Glarus
-1730,CH,CH054,Appenzell Innerrhoden,Appenzell Innerrhoden,Appenzell Innerrhoden,Appenzell Innerrhoden
-1731,CZ,CZ051,Libereck� kraj,Libereck� kraj,Liberecky kraj,Libereck&#x00FD; kraj
-1732,CZ,CZ06,Jihov�chod,Jihov�chod,Jihovychod,Jihov&#x00FD;chod
-1733,CZ,CZ071,Olomouck� kraj,Olomouck� kraj,Olomoucky kraj,Olomouck&#x00FD; kraj
-1734,DE,DE1,BADEN-W�RTTEMBERG,BADEN-W�RTTEMBERG,BADEN-WURTTEMBERG,BADEN-W&#x00DC;RTTEMBERG
-1735,DE,DE116,Rems-Murr-Kreis,Rems-Murr-Kreis,Rems-Murr-Kreis,Rems-Murr-Kreis
-1736,DE,DE11A,Schw�bisch Hall,Schw�bisch Hall,Schwabisch Hall,Schw&#x00E4;bisch Hall
-1737,DE,DE122,"Karlsruhe, Stadtkreis","Karlsruhe, Stadtkreis","Karlsruhe, Stadtkreis","Karlsruhe, Stadtkreis"
-1738,DE,DE129,"Pforzheim, Stadtkreis","Pforzheim, Stadtkreis","Pforzheim, Stadtkreis","Pforzheim, Stadtkreis"
-1739,DE,DE133,Emmendingen,Emmendingen,Emmendingen,Emmendingen
-1740,DE,DE138,Konstanz,Konstanz,Konstanz,Konstanz
-1741,DE,DE142,"T�bingen, Landkreis","T�bingen, Landkreis","Tubingen, Landkreis","T&#x00FC;bingen, Landkreis"
-1742,DE,DE21,Oberbayern,Oberbayern,Oberbayern,Oberbayern
-1743,DE,DE212,"M�nchen, Kreisfreie Stadt","M�nchen, Kreisfreie Stadt","Munchen, Kreisfreie Stadt","M&#x00FC;nchen, Kreisfreie Stadt"
-1744,DE,DE227,"Landshut, Landkreis","Landshut, Landkreis","Landshut, Landkreis","Landshut, Landkreis"
-1745,DE,DE231,"Amberg, Kreisfreie Stadt","Amberg, Kreisfreie Stadt","Amberg, Kreisfreie Stadt","Amberg, Kreisfreie Stadt"
-1746,DE,DE237,Neustadt a. d. Waldnaab,Neustadt a. d. Waldnaab,Neustadt a. d. Waldnaab,Neustadt a. d. Waldnaab
-1747,DE,DE243,"Coburg, Kreisfreie Stadt","Coburg, Kreisfreie Stadt","Coburg, Kreisfreie Stadt","Coburg, Kreisfreie Stadt"
-1748,DE,DE24B,Kulmbach,Kulmbach,Kulmbach,Kulmbach
-1749,DE,DE25,Mittelfranken,Mittelfranken,Mittelfranken,Mittelfranken
-1750,DE,DE253,"F�rth, Kreisfreie Stadt","F�rth, Kreisfreie Stadt","Furth, Kreisfreie Stadt","F&#x00FC;rth, Kreisfreie Stadt"
-1751,DE,DE258,"F�rth, Landkreis","F�rth, Landkreis","Furth, Landkreis","F&#x00FC;rth, Landkreis"
-1752,DE,DE26,Unterfranken,Unterfranken,Unterfranken,Unterfranken
-1753,DE,DE263,"W�rzburg, Kreisfreie Stadt","W�rzburg, Kreisfreie Stadt","Wurzburg, Kreisfreie Stadt","W&#x00FC;rzburg, Kreisfreie Stadt"
-1754,DE,DE26B,"Schweinfurt, Landkreis","Schweinfurt, Landkreis","Schweinfurt, Landkreis","Schweinfurt, Landkreis"
-1755,DE,DE273,"Kempten (Allg�u), Kreisfreie Stadt","Kempten (Allg�u), Kreisfreie Stadt","Kempten (Allgau), Kreisfreie Stadt","Kempten (Allg&#x00E4;u), Kreisfreie Stadt"
-1756,DE,DE406,Dahme-Spreewald,Dahme-Spreewald,Dahme-Spreewald,Dahme-Spreewald
-1757,DE,DE40C,Oder-Spree,Oder-Spree,Oder-Spree,Oder-Spree
-1758,DE,DE40G,Spree-Nei�e,Spree-Nei�e,Spree-Neisse,Spree-Nei&#x00DF;e
-1759,DE,DE502,"Bremerhaven, Kreisfreie Stadt","Bremerhaven, Kreisfreie Stadt","Bremerhaven, Kreisfreie Stadt","Bremerhaven, Kreisfreie Stadt"
-1760,DE,DE713,"Offenbach am Main, Kreisfreie Stadt","Offenbach am Main, Kreisfreie Stadt","Offenbach am Main, Kreisfreie Stadt","Offenbach am Main, Kreisfreie Stadt"
-1761,DE,DE71D,Rheingau-Taunus-Kreis,Rheingau-Taunus-Kreis,Rheingau-Taunus-Kreis,Rheingau-Taunus-Kreis
-1762,DE,DE724,Marburg-Biedenkopf,Marburg-Biedenkopf,Marburg-Biedenkopf,Marburg-Biedenkopf
-1763,DE,DE735,Schwalm-Eder-Kreis,Schwalm-Eder-Kreis,Schwalm-Eder-Kreis,Schwalm-Eder-Kreis
-1764,DE,DE803,"Rostock, Kreisfreie Stadt","Rostock, Kreisfreie Stadt","Rostock, Kreisfreie Stadt","Rostock, Kreisfreie Stadt"
-1765,DE,DE80M,Nordwestmecklenburg,Nordwestmecklenburg,Nordwestmecklenburg,Nordwestmecklenburg
-1766,DE,DE912,"Salzgitter, Kreisfreie Stadt","Salzgitter, Kreisfreie Stadt","Salzgitter, Kreisfreie Stadt","Salzgitter, Kreisfreie Stadt"
-1767,DE,DE943,"Oldenburg (Oldenburg), Kreisfreie Stadt","Oldenburg (Oldenburg), Kreisfreie Stadt","Oldenburg (Oldenburg), Kreisfreie Stadt","Oldenburg (Oldenburg), Kreisfreie Stadt"
-1768,DE,DE94E,"Osnabr�ck, Landkreis","Osnabr�ck, Landkreis","Osnabruck, Landkreis","Osnabr&#x00FC;ck, Landkreis"
-1769,DE,DEA12,"Duisburg, Kreisfreie Stadt","Duisburg, Kreisfreie Stadt","Duisburg, Kreisfreie Stadt","Duisburg, Kreisfreie Stadt"
-1770,DE,DEA16,"M�lheim an der Ruhr,Kreisfreie Stadt","M�lheim an der Ruhr,Kreisfreie Stadt","Mulheim an der Ruhr,Kreisfreie Stadt","M&#x00FC;lheim an der Ruhr,Kreisfreie Stadt"
-1771,DE,DEA22,"Bonn, Kreisfreie Stadt","Bonn, Kreisfreie Stadt","Bonn, Kreisfreie Stadt","Bonn, Kreisfreie Stadt"
-1772,DE,DEA2A,Oberbergischer Kreis,Oberbergischer Kreis,Oberbergischer Kreis,Oberbergischer Kreis
-1773,DE,DEA31,"Bottrop, Kreisfreie Stadt","Bottrop, Kreisfreie Stadt","Bottrop, Kreisfreie Stadt","Bottrop, Kreisfreie Stadt"
-1774,DE,DEA41,"Bielefeld, Kreisfreie Stadt","Bielefeld, Kreisfreie Stadt","Bielefeld, Kreisfreie Stadt","Bielefeld, Kreisfreie Stadt"
-1775,DE,DEB1B,Westerwaldkreis,Westerwaldkreis,Westerwaldkreis,Westerwaldkreis
-1776,DE,DEB24,Vulkaneifel,Vulkaneifel,Vulkaneifel,Vulkaneifel
-1777,DE,DEB31,"Frankenthal (Pfalz), Kreisfreie Stadt","Frankenthal (Pfalz), Kreisfreie Stadt","Frankenthal (Pfalz), Kreisfreie Stadt","Frankenthal (Pfalz), Kreisfreie Stadt"
-1778,DE,DEB36,"Neustadt an der Weinstra�e, Kreisfreie Stadt","Neustadt an der Weinstra�e, Kreisfreie Stadt","Neustadt an der Weinstrasse, Kreisfreie Stadt","Neustadt an der Weinstra&#x00DF;e, Kreisfreie Stadt"
-1779,DE,DEB3I,Rhein-Pfalz-Kreis,Rhein-Pfalz-Kreis,Rhein-Pfalz-Kreis,Rhein-Pfalz-Kreis
-1780,DE,Dec-01,Regionalverband Saarbr�cken,Regionalverband Saarbr�cken,Regionalverband Saarbrucken,Regionalverband Saarbr&#x00FC;cken
-1781,DE,DED2F,S�chsische Schweiz-Osterzgebirge,S�chsische Schweiz-Osterzgebirge,Sachsische Schweiz-Osterzgebirge,S&#x00E4;chsische Schweiz-Osterzgebirge
-1782,DE,DEE0,Sachsen-Anhalt,Sachsen-Anhalt,Sachsen-Anhalt,Sachsen-Anhalt
-1783,DE,DEE03,"Magdeburg, Kreisfreie Stadt","Magdeburg, Kreisfreie Stadt","Magdeburg, Kreisfreie Stadt","Magdeburg, Kreisfreie Stadt"
-1784,DE,DEF0A,Pl�n,Pl�n,Plon,Pl&#x00F6;n
-1785,DE,DEF0C,Schleswig-Flensburg,Schleswig-Flensburg,Schleswig-Flensburg,Schleswig-Flensburg
-1786,DE,DEG02,"Gera, Kreisfreie Stadt","Gera, Kreisfreie Stadt","Gera, Kreisfreie Stadt","Gera, Kreisfreie Stadt"
-1787,DE,DEG0A,Kyffh�userkreis,Kyffh�userkreis,Kyffhauserkreis,Kyffh&#x00E4;userkreis
-1788,DE,DEG0G,Weimarer Land,Weimarer Land,Weimarer Land,Weimarer Land
-1789,DE,DEG0M,Altenburger Land,Altenburger Land,Altenburger Land,Altenburger Land
-1790,DK,DK011,Byen K�benhavn,Byen K�benhavn,Byen Kobenhavn,Byen K&#x00F8;benhavn
-1791,DK,DK021,�stsj�lland,�stsj�lland,Ostsjaelland,&#x00D8;stsj&#x00E6;lland
-1792,DK,DK05,Nordjylland,Nordjylland,Nordjylland,Nordjylland
-1793,EE,EE004,L��ne-Eesti,L��ne-Eesti,Laane-Eesti,L&#x00E4;&#x00E4;ne-Eesti
-1794,EL,EL30,Attiki,A?????,Attiki,A&#x03C4;&#x03C4;&#x03B9;&#x03BA;&#x03AE;
-1795,EL,EL301,Boreios Tomeas Athinon,??????? ?????? ??????,Boreios Tomeas Athinon,&#x0392;&#x03CC;&#x03C1;&#x03B5;&#x03B9;&#x03BF;&#x03C2; &#x03A4;&#x03BF;&#x03BC;&#x03AD;&#x03B1;&#x03C2; &#x0391;&#x03B8;&#x03B7;&#x03BD;&#x03CE;&#x03BD;
-1796,EL,EL304,Notios Tomeas Athinon,?????? ?????? ??????,Notios Tomeas Athinon,&#x039D;&#x03CC;&#x03C4;&#x03B9;&#x03BF;&#x03C2; &#x03A4;&#x03BF;&#x03BC;&#x03AD;&#x03B1;&#x03C2; &#x0391;&#x03B8;&#x03B7;&#x03BD;&#x03CE;&#x03BD;
-1797,EL,EL307,"Peiraias, Nisoi","????????, ?????","Peiraias, Nisoi","&#x03A0;&#x03B5;&#x03B9;&#x03C1;&#x03B1;&#x03B9;&#x03AC;&#x03C2;, &#x039D;&#x03AE;&#x03C3;&#x03BF;&#x03B9;"
-1798,EL,EL411,"Lesbos, Limnos","??????, ??????","Lesbos, Limnos","&#x039B;&#x03AD;&#x03C3;&#x03B2;&#x03BF;&#x03C2;, &#x039B;&#x03AE;&#x03BC;&#x03BD;&#x03BF;&#x03C2;"
-1799,EL,EL42,Notio Aigaio,????? ??????,Notio Aigaio,&#x039D;&#x03CC;&#x03C4;&#x03B9;&#x03BF; &#x0391;&#x03B9;&#x03B3;&#x03B1;&#x03AF;&#x03BF;
-1800,EL,EL422,"Andros, Thira, Kea, Milos, Mikonos, Naxos, Paros, Siros, Tinos","??????, ????, ???, ?????, ???????, ?????, ?????, ?????, ?????","Andros, Thira, Kea, Milos, Mikonos, Naxos, Paros, Siros, Tinos","&#x0386;&#x03BD;&#x03B4;&#x03C1;&#x03BF;&#x03C2;, &#x0398;&#x03AE;&#x03C1;&#x03B1;, &#x039A;&#x03AD;&#x03B1;, &#x039C;&#x03AE;&#x03BB;&#x03BF;&#x03C2;, &#x039C;&#x03CD;&#x03BA;&#x03BF;&#x03BD;&#x03BF;&#x03C2;, &#x039D;&#x03AC;&#x03BE;&#x03BF;&#x03C2;, &#x"
-1801,EL,EL511,Evros,?????,Ebros,&#x0388;&#x03B2;&#x03C1;&#x03BF;&#x03C2;
-1802,EL,EL513,Rodopi,??????,Rodopi,&#x03A1;&#x03BF;&#x03B4;&#x03CC;&#x03C0;&#x03B7;
-1803,EL,EL515,"Thasos, Kavala","?????, ??????","Thasos, Kabala","&#x0398;&#x03AC;&#x03C3;&#x03BF;&#x03C2;, &#x039A;&#x03B1;&#x03B2;&#x03AC;&#x03BB;&#x03B1;"
-1804,EL,EL522,Thessaloniki,???????????,Thessaloniki,&#x0398;&#x03B5;&#x03C3;&#x03C3;&#x03B1;&#x03BB;&#x03BF;&#x03BD;&#x03AF;&#x03BA;&#x03B7;
-1805,EL,EL527,Chalkidiki,?????????,Xalkidiki,&#x03A7;&#x03B1;&#x03BB;&#x03BA;&#x03B9;&#x03B4;&#x03B9;&#x03BA;&#x03AE;
-1806,EL,EL531,"Grebena, Kozani","???????, ??????","Grebena, Kozani","&#x0393;&#x03C1;&#x03B5;&#x03B2;&#x03B5;&#x03BD;&#x03AC;, &#x039A;&#x03BF;&#x03B6;&#x03AC;&#x03BD;&#x03B7;"
-1807,EL,EL54,Ipeiros,???????,Ipeiros,&#x0389;&#x03C0;&#x03B5;&#x03B9;&#x03C1;&#x03BF;&#x03C2;
-1808,EL,EL542,Thesprotia,?????????,Thesprotia,&#x0398;&#x03B5;&#x03C3;&#x03C0;&#x03C1;&#x03C9;&#x03C4;&#x03AF;&#x03B1;
-1809,EL,EL61,Thessalia,????????,Thessalia,&#x0398;&#x03B5;&#x03C3;&#x03C3;&#x03B1;&#x03BB;&#x03AF;&#x03B1;
-1810,EL,EL612,Larisa,??????,Larisa,&#x039B;&#x03AC;&#x03C1;&#x03B9;&#x03C3;&#x03B1;
-1811,EL,EL62,Ionia Nisia,????? ?????,Ionia Nisia,&#x0399;&#x03CC;&#x03BD;&#x03B9;&#x03B1; &#x039D;&#x03B7;&#x03C3;&#x03B9;&#x03AC;
-1812,EL,EL623,"Ithaki, Kefallinia","?????, ??????????","Ithaki, Kefallinia","&#x0399;&#x03B8;&#x03AC;&#x03BA;&#x03B7;, &#x039A;&#x03B5;&#x03C6;&#x03B1;&#x03BB;&#x03BB;&#x03B7;&#x03BD;&#x03AF;&#x03B1;"
-1813,EL,EL631,Aitoloakarnania,???????????????,Aitoloakarnania,&#x0391;&#x03B9;&#x03C4;&#x03C9;&#x03BB;&#x03BF;&#x03B1;&#x03BA;&#x03B1;&#x03C1;&#x03BD;&#x03B1;&#x03BD;&#x03AF;&#x03B1;
-1814,EL,EL642,Evvoia,??????,Eiboia,&#x0395;&#x03CD;&#x03B2;&#x03BF;&#x03B9;&#x03B1;
-1815,EL,EL653,"Lakonia, Messinia","???????, ????????","Lakonia, Messinia","&#x039B;&#x03B1;&#x03BA;&#x03C9;&#x03BD;&#x03AF;&#x03B1;, &#x039C;&#x03B5;&#x03C3;&#x03C3;&#x03B7;&#x03BD;&#x03AF;&#x03B1;"
-1816,ES,ES300,Madrid,Madrid,Madrid,Madrid
-1817,ES,ES411,�vila,�vila,Avila,&#x00C1;vila
-1818,ES,ES416,Segovia,Segovia,Segovia,Segovia
-1819,ES,ES421,Albacete,Albacete,Albacete,Albacete
-1820,ES,ES43,Extremadura,Extremadura,Extremadura,Extremadura
-1821,ES,ES512,Girona,Girona,Girona,Girona
-1822,ES,ES521,Alicante / Alacant,Alicante / Alacant,Alicante / Alacant,Alicante / Alacant
-1823,ES,ES531,Eivissa y Formentera,Eivissa y Formentera,Eivissa Y Formentera,Eivissa Y Formentera
-1824,ES,ES616,Ja�n,Ja�n,Jaen,Ja&#x00E9;n
-1825,ES,ES62,Regi�n de Murcia,Regi�n de Murcia,Region de Murcia,Regi&#x00F3;n de Murcia
-1826,ES,ES70,Canarias,Canarias,Canarias,Canarias
-1827,ES,ES707,La Palma,La Palma,La Palma,La Palma
-1828,FI,FI19,L�nsi-Suomi,L�nsi-Suomi,Lansi-Suomi,L&#x00E4;nsi-Suomi
-1829,FI,FI1B,Helsinki-Uusimaa,Helsinki-Uusimaa,Helsinki-Uusimaa,Helsinki-Uusimaa
-1830,FI,FI1C3,P�ij�t-H�me,P�ij�t-H�me,Paijat-Hame,P&#x00E4;ij&#x00E4;t-H&#x00E4;me
-1831,FR,FR263,Sa�ne-et-Loire,Sa�ne-et-Loire,Saone-et-Loire,Sa&#x00F4;ne-et-Loire
-1832,FR,FR411,Meurthe-et-Moselle,Meurthe-et-Moselle,Meurthe-et-Moselle,Meurthe-et-Moselle
-1833,FR,FR433,Haute-Sa�ne,Haute-Sa�ne,Haute-Saone,Haute-Sa&#x00F4;ne
-1834,FR,FR512,Maine-et-Loire,Maine-et-Loire,Maine-et-Loire,Maine-et-Loire
-1835,FR,FR522,Finist�re,Finist�re,Finistere,Finist&#x00E8;re
-1836,FR,FR533,Deux-S�vres,Deux-S�vres,Deux-Sevres,Deux-S&#x00E8;vres
-1837,FR,FR614,Lot-et-Garonne,Lot-et-Garonne,Lot-et-Garonne,Lot-et-Garonne
-1838,FR,FR622,Aveyron,Aveyron,Aveyron,Aveyron
-1839,FR,FR626,Hautes-Pyr�n�es,Hautes-Pyr�n�es,Hautes-Pyrenees,Hautes-Pyr&#x00E9;n&#x00E9;es
-1840,FR,FR712,Ard�che,Ard�che,Ardeche,Ard&#x00E8;che
-1841,FR,FR718,Haute-Savoie,Haute-Savoie,Haute-Savoie,Haute-Savoie
-1842,FR,FR8,M�DITERRAN�E,M�DITERRAN�E,MEDITERRANEE,M&#x00C9;DITERRAN&#x00C9;E
-1843,HR,HR03,Jadranska Hrvatska,Jadranska Hrvatska,Jadranska Hrvatska,Jadranska Hrvatska
-1844,HR,HR034,�ibensko-kninska �upanija,�ibensko-kninska �upanija,Sibensko-Kninska Zupanija,&#x0160;ibensko-Kninska &#x017D;upanija
-1845,HR,HR041,Grad Zagreb,Grad Zagreb,Grad Zagreb,Grad Zagreb
-1846,HR,HR044,Vara�dinska �upanija,Vara�dinska �upanija,Varazdinska Zupanija,Vara&#x017E;dinska &#x017D;upanija
-1847,HR,HR048,Viroviticko-podravska �upanija,Viroviticko-podravska �upanija,Viroviticko-Podravska Zupanija,Viroviticko-Podravska &#x017D;upanija
-1848,HR,HR04C,Vukovarsko-srijemska �upanija,Vukovarsko-srijemska �upanija,Vukovarsko-Srijemska Zupanija,Vukovarsko-Srijemska &#x017D;upanija
-1849,HU,HU2,DUN�NT�L,DUN�NT�L,DUNANTUL,DUN&#x00C1;NT&#x00DA;L
-1850,HU,HU212,Kom�rom-Esztergom,Kom�rom-Esztergom,Komarom-Esztergom,Kom&#x00E1;rom-Esztergom
-1851,HU,HU23,D�l-Dun�nt�l,D�l-Dun�nt�l,Del-Dunantul,D&#x00E9;l-Dun&#x00E1;nt&#x00FA;l
-1852,HU,HU311,Borsod-Aba�j-Zempl�n,Borsod-Aba�j-Zempl�n,Borsod-Abauj-Zemplen,Borsod-Aba&#x00FA;j-Zempl&#x00E9;n
-1853,HU,HU323,Szabolcs-Szatm�r-Bereg,Szabolcs-Szatm�r-Bereg,Szabolcs-Szatmar-Bereg,Szabolcs-Szatm&#x00E1;r-Bereg
-1854,IE,IE013,West,West,West,West
-1855,IE,IE022,Mid-East,Mid-East,Mid-East,Mid-East
-1856,IT,ITF48,Barletta-Andria-Trani,Barletta-Andria-Trani,Barletta-Andria-Trani,Barletta-Andria-Trani
-1857,IT,ITG11,Trapani,Trapani,Trapani,Trapani
-1858,IT,ITG16,Enna,Enna,Enna,Enna
-1859,IT,ITG2,Sardegna,Sardegna,Sardegna,Sardegna
-1860,IT,ITG2A,Ogliastra,Ogliastra,Ogliastra,Ogliastra
-1861,IT,ITH1,Provincia Autonoma di Bolzano/Bozen,Provincia Autonoma di Bolzano/Bozen,Provincia Autonoma di Bolzano/Bozen,Provincia Autonoma di Bolzano/Bozen
-1862,IT,ITH43,Gorizia,Gorizia,Gorizia,Gorizia
-1863,IT,ITH53,Reggio nell'Emilia,Reggio nell'Emilia,Reggio Nell'Emilia,Reggio Nell'Emilia
-1864,IT,ITI11,Massa-Carrara,Massa-Carrara,Massa-Carrara,Massa-Carrara
-1865,IT,ITI21,Perugia,Perugia,Perugia,Perugia
-1866,LV,LV009,Zemgale,Zemgale,Zemgale,Zemgale
-1867,MK,MK0,PORANE�NA JUGOSLOVENSKA REPUBLIKA MAKEDONIJA,????????? ????????????? ????????? ??????????,PORANESNA JUGOSLOVENSKA REPUBLIKA MAKEDONIJA,PORANE&#x0160;NA JUGOSLOVENSKA REPUBLIKA MAKEDONIJA
-1868,NL,NL113,Overig Groningen,Overig Groningen,Overig Groningen,Overig Groningen
-1869,NL,NL131,Noord-Drenthe,Noord-Drenthe,Noord-Drenthe,Noord-Drenthe
-1870,NL,NL211,Noord-Overijssel,Noord-Overijssel,Noord-Overijssel,Noord-Overijssel
-1871,NL,NL226,Arnhem/Nijmegen,Arnhem/Nijmegen,Arnhem/Nijmegen,Arnhem/Nijmegen
-1872,NL,NL321,Kop van Noord-Holland,Kop van Noord-Holland,Kop Van Noord-Holland,Kop Van Noord-Holland
-1873,NL,NL33,Zuid-Holland,Zuid-Holland,Zuid-Holland,Zuid-Holland
-1874,NL,NL337,Agglomeratie Leiden en Bollenstreek,Agglomeratie Leiden en Bollenstreek,Agglomeratie Leiden en Bollenstreek,Agglomeratie Leiden en Bollenstreek
-1875,NO,NO061,S�r-Tr�ndelag,S�r-Tr�ndelag,Sor-Trondelag,S&#x00F8;r-Tr&#x00F8;ndelag
-1876,PL,PL113,Miasto L�dz,Miasto L�dz,Miasto Lodz,Miasto L&#x00F3;dz
-1877,PL,PL127,Miasto Warszawa,Miasto Warszawa,Miasto Warszawa,Miasto Warszawa
-1878,PL,PL12E,Siedlecki,Siedlecki,Siedlecki,Siedlecki
-1879,PL,PL213,Miasto Krak�w,Miasto Krak�w,Miasto Krakow,Miasto Krak&#x00F3;w
-1880,PL,PL227,Rybnicki,Rybnicki,Rybnicki,Rybnicki
-1881,PL,PL3,REGION WSCHODNI,REGION WSCHODNI,REGION WSCHODNI,REGION WSCHODNI
-1882,PL,PL323,Krosnienski,Krosnienski,Krosnienski,Krosnienski
-1883,PL,PL332,Sandomiersko-jedrzejowski,Sandomiersko-jedrzejowski,Sandomiersko-jedrzejowski,Sandomiersko-jedrzejowski
-1884,PL,PL416,Kaliski,Kaliski,Kaliski,Kaliski
-1885,PL,PL424,Miasto Szczecin,Miasto Szczecin,Miasto Szczecin,Miasto Szczecin
-1886,PL,PL432,Zielonog�rski,Zielonog�rski,Zielonogorski,Zielonog&#x00F3;rski
-1887,PL,PL516,Legnicko-Glogowski,Legnicko-Glogowski,Legnicko-Glogowski,Legnicko-Glogowski
-1888,PT,PT16E,Regi�o de Coimbra,Regi�o de Coimbra,Regiao de Coimbra,Regi&#x00E3;o de Coimbra
-1889,PT,PT16J,Beiras e Serra da Estrela,Beiras e Serra da Estrela,Beiras e Serra Da Estrela,Beiras e Serra Da Estrela
-1890,PT,PT185,Lez�ria do Tejo,Lez�ria do Tejo,Leziria do Tejo,Lez&#x00ED;ria do Tejo
-1891,PT,PT20,Regi�o Aut�noma dos A�ores,Regi�o Aut�noma dos A�ores,Regiao Autonoma dos Acores,Regi&#x00E3;o Aut&#x00F3;noma dos A&#x00E7;ores
-1892,PT,PT300,Regi�o Aut�noma da Madeira,Regi�o Aut�noma da Madeira,Regiao Autonoma da Madeira,Regi&#x00E3;o Aut&#x00F3;noma da Madeira
-1893,RO,RO211,Bacau,Bacau,Bacau,Bacau
-1894,RO,RO22,Sud-Est,Sud-Est,Sud-Est,Sud-Est
-1895,RO,RO226,Vrancea,Vrancea,Vrancea,Vrancea
-1896,RO,RO312,Calarasi,Calarasi,Calarasi,Calarasi
-1897,RO,RO317,Teleorman,Teleorman,Teleorman,Teleorman
-1898,RO,RO4,MACROREGIUNEA PATRU,MACROREGIUNEA PATRU,MACROREGIUNEA PATRU,MACROREGIUNEA PATRU
-1899,SE,SE1,�STRA SVERIGE,�STRA SVERIGE,OSTRA SVERIGE,&#x00D6;STRA SVERIGE
-1900,SE,SE231,Hallands l�n,Hallands l�n,Hallands lan,Hallands l&#x00E4;n
-1901,SE,SE311,V�rmlands l�n,V�rmlands l�n,Varmlands lan,V&#x00E4;rmlands l&#x00E4;n
-1902,SE,SE321,V�sternorrlands l�n,V�sternorrlands l�n,Vasternorrlands lan,V&#x00E4;sternorrlands l&#x00E4;n
-1903,SI,SI03,Vzhodna Slovenija,Vzhodna Slovenija,Vzhodna Slovenija,Vzhodna Slovenija
-1904,SI,SI037,Jugovzhodna Slovenija,Jugovzhodna Slovenija,Jugovzhodna Slovenija,Jugovzhodna Slovenija
-1905,SK,SK01,Bratislavsk� kraj,Bratislavsk� kraj,Bratislavsky kraj,Bratislavsk&#x00FD; kraj
-1906,SK,SK022,Trenciansky kraj,Trenciansky kraj,Trenciansky kraj,Trenciansky kraj
-1907,SK,SK032,Banskobystrick� kraj,Banskobystrick� kraj,Banskobystricky kraj,Banskobystrick&#x00FD; kraj
-1908,TR,TR2,BATI MARMARA,BATI MARMARA,BATI MARMARA,BATI MARMARA
-1909,TR,TR22,"Balikesir, �anakkale","Balikesir, �anakkale","Balikesir, Canakkale","Balikesir, &#x00C7;anakkale"
-1910,TR,TR33,"Manisa, Afyonkarahisar, K�tahya, Usak","Manisa, Afyonkarahisar, K�tahya, Usak","Manisa, Afyonkarahisar, Kutahya, Usak","Manisa, Afyonkarahisar, K&#x00FC;tahya, Usak"
-1911,TR,TR5,BATI ANADOLU,BATI ANADOLU,BATI ANADOLU,BATI ANADOLU
-1912,TR,TR83,"Samsun, Tokat, �orum, Amasya","Samsun, Tokat, �orum, Amasya","Samsun, Tokat, Corum, Amasya","Samsun, Tokat, &#x00C7;orum, Amasya"
-1913,TR,TRA1,"Erzurum, Erzincan, Bayburt","Erzurum, Erzincan, Bayburt","Erzurum, Erzincan, Bayburt","Erzurum, Erzincan, Bayburt"
-1914,TR,TRB1,"Malatya, Elazig, Bing�l, Tunceli","Malatya, Elazig, Bing�l, Tunceli","Malatya, Elazig, Bingol, Tunceli","Malatya, Elazig, Bing&#x00F6;l, Tunceli"
-1915,TR,TRC2,"Sanliurfa, Diyarbakir","Sanliurfa, Diyarbakir","Sanliurfa, Diyarbakir","Sanliurfa, Diyarbakir"
-1916,UK,UKC1,Tees Valley and Durham,Tees Valley and Durham,Tees Valley and Durham,Tees Valley and Durham
-1917,UK,UKC21,Northumberland,Northumberland,Northumberland,Northumberland
-1918,UK,UKD12,East Cumbria,East Cumbria,East Cumbria,East Cumbria
-1919,UK,UKD35,Greater Manchester South East,Greater Manchester South East,Greater Manchester South East,Greater Manchester South East
-1920,UK,UKD46,East Lancashire,East Lancashire,East Lancashire,East Lancashire
-1921,UK,UKE41,Bradford,Bradford,Bradford,Bradford
-1922,UK,UKF,EAST MIDLANDS (ENGLAND),EAST MIDLANDS (ENGLAND),EAST MIDLANDS (ENGLAND),EAST MIDLANDS (ENGLAND)
-1923,UK,UKF15,North Nottinghamshire,North Nottinghamshire,North Nottinghamshire,North Nottinghamshire
-1924,UK,UKF24,West Northamptonshire,West Northamptonshire,West Northamptonshire,West Northamptonshire
-1925,UK,UKG1,"Herefordshire, Worcestershire and Warwickshire","Herefordshire, Worcestershire and Warwickshire","Herefordshire, Worcestershire and Warwickshire","Herefordshire, Worcestershire and Warwickshire"
-1926,UK,UKG39,Wolverhampton,Wolverhampton,Wolverhampton,Wolverhampton
-1927,UK,UKH15,Norwich & East Norfolk,Norwich & East Norfolk,Norwich & East Norfolk,Norwich & East Norfolk
-1928,UK,UKH24,Bedford,Bedford,Bedford,Bedford
-1929,UK,UKH32,Thurrock,Thurrock,Thurrock,Thurrock
-1930,UK,UKH36,Heart of Essex,Heart of Essex,Heart of Essex,Heart of Essex
-1931,UK,UKI32,Westminster,Westminster,Westminster,Westminster
-1932,UK,UKI4,Inner London - East,Inner London - East,Inner London - East,Inner London - East
-1933,UK,UKI75,Hounslow & Richmond upon Thames,Hounslow & Richmond upon Thames,Hounslow & Richmond Upon Thames,Hounslow & Richmond Upon Thames
-1934,UK,UKJ21,Brighton and Hove,Brighton and Hove,Brighton and Hove,Brighton and Hove
-1935,UK,UKJ28,West Sussex (North East),West Sussex (North East),West Sussex (North East),West Sussex (North East)
-1936,UK,UKJ43,Kent Thames Gateway,Kent Thames Gateway,Kent Thames Gateway,Kent Thames Gateway
-1937,UK,UKK1,"Gloucestershire, Wiltshire and Bristol/Bath area","Gloucestershire, Wiltshire and Bristol/Bath area","Gloucestershire, Wiltshire and Bristol/Bath Area","Gloucestershire, Wiltshire and Bristol/Bath Area"
-1938,UK,UKK30,Cornwall and Isles of Scilly,Cornwall and Isles of Scilly,Cornwall and Isles of Scilly,Cornwall and Isles of Scilly
-1939,UK,UKL16,Gwent Valleys,Gwent Valleys,Gwent Valleys,Gwent Valleys
-1940,UK,UKL21,Monmouthshire and Newport,Monmouthshire and Newport,Monmouthshire and Newport,Monmouthshire and Newport
-1941,UK,UKM22,Clackmannanshire and Fife,Clackmannanshire and Fife,Clackmannanshire and Fife,Clackmannanshire and Fife
-1942,UK,UKM33,East Ayrshire and North Ayrshire mainland,East Ayrshire and North Ayrshire mainland,East Ayrshire and North Ayrshire Mainland,East Ayrshire and North Ayrshire Mainland
-1943,UK,UKM61,Caithness & Sutherland and Ross & Cromarty,Caithness & Sutherland and Ross & Cromarty,Caithness & Sutherland and Ross & Cromarty,Caithness & Sutherland and Ross & Cromarty
-1944,UK,UKN0,Northern Ireland,Northern Ireland,Northern Ireland,Northern Ireland
-1945,UK,UKN05,West and South of Northern Ireland,West and South of Northern Ireland,West and South of Northern Ireland,West and South of Northern Ireland
-1946,CY,CY,K�PROS,??????,KYPROS,&#922;&#933;&#928;&#929;&#927;&#931;
-1947,ES,ES,ESPA�A,ESPA�A,ESPANA,ESPA&Ntilde;A
-1948,HU,HU,MAGYARORSZ�G,MAGYARORSZ�G,MAGYARORSZAG,MAGYARORSZ&#x00C1;G
-1949,ME,ME,CRNA GORA,???? ????,CRNA GORA,CRNA GORA
-1950,NL,NL,NEDERLAND,NEDERLAND,NEDERLAND,NEDERLAND
-1951,SI,SI,SLOVENIJA,SLOVENIJA,SLOVENIJA,SLOVENIJA
+CNTR_CODE,NUTS_ID,NUTS_NAME
+AT,AT1,OSTÖSTERREICH
+AT,AT11,Burgenland (AT)
+AT,AT111,Mittelburgenland
+AT,AT112,Nordburgenland
+AT,AT113,Südburgenland
+AT,AT12,Niederösterreich
+AT,AT121,Mostviertel-Eisenwurzen
+AT,AT122,Niederösterreich-Süd
+AT,AT123,Sankt Pölten
+AT,AT124,Waldviertel
+AT,AT125,Weinviertel
+AT,AT126,Wiener Umland/Nordteil
+AT,AT127,Wiener Umland/Südteil
+AT,AT13,Wien
+AT,AT130,Wien
+AT,AT2,SÜDÖSTERREICH
+AT,AT21,Kärnten
+AT,AT211,Klagenfurt-Villach
+AT,AT212,Oberkärnten
+AT,AT213,Unterkärnten
+AT,AT221,Graz
+AT,AT222,Liezen
+AT,AT223,Östliche Obersteiermark
+AT,AT225,West- und Südsteiermark
+AT,AT226,Westliche Obersteiermark
+AT,AT31,Oberösterreich
+AT,AT311,Innviertel
+AT,AT312,Linz-Wels
+AT,AT313,Mühlviertel
+AT,AT314,Steyr-Kirchdorf
+AT,AT32,Salzburg
+AT,AT321,Lungau
+AT,AT322,Pinzgau-Pongau
+AT,AT323,Salzburg und Umgebung
+AT,AT33,Tirol
+AT,AT332,Innsbruck
+AT,AT333,Osttirol
+AT,AT334,Tiroler Oberland
+AT,AT335,Tiroler Unterland
+AT,AT34,Vorarlberg
+AT,AT342,Rheintal-Bodenseegebiet
+BE,BE1,RÉGION DE BRUXELLES-CAPITALE / BRUSSELS HOOFDSTEDELIJK GEWEST
+BE,BE100,Arr. de Bruxelles-Capitale / Arr. van Brussel-Hoofdstad
+BE,BE2,VLAAMS GEWEST
+BE,BE21,Prov. Antwerpen
+BE,BE211,Arr. Antwerpen
+BE,BE212,Arr. Mechelen
+BE,BE213,Arr. Turnhout
+BE,BE22,Prov. Limburg (BE)
+BE,BE221,Arr. Hasselt
+BE,BE222,Arr. Maaseik
+BE,BE223,Arr. Tongeren
+BE,BE23,Prov. Oost-Vlaanderen
+BE,BE231,Arr. Aalst
+BE,BE232,Arr. Dendermonde
+BE,BE233,Arr. Eeklo
+BE,BE234,Arr. Gent
+BE,BE236,Arr. Sint-Niklaas
+BE,BE24,Prov. Vlaams-Brabant
+BE,BE241,Arr. Halle-Vilvoorde
+BE,BE242,Arr. Leuven
+BE,BE251,Arr. Brugge
+BE,BE252,Arr. Diksmuide
+BE,BE253,Arr. Ieper
+BE,BE254,Arr. Kortrijk
+BE,BE255,Arr. Oostende
+BE,BE256,Arr. Roeselare
+BE,BE257,Arr. Tielt
+BE,BE3,RÉGION WALLONNE
+BE,BE31,Prov. Brabant Wallon
+BE,BE310,Arr. Nivelles
+BE,BE321,Arr. Ath
+BE,BE322,Arr. Charleroi
+BE,BE323,Arr. Mons
+BE,BE324,Arr. Mouscron
+BE,BE325,Arr. Soignies
+BE,BE327,Arr. Tournai
+BE,BE33,Prov. Liège
+BE,BE331,Arr. Huy
+BE,BE334,Arr. Waremme
+BE,BE335,Arr. Verviers - communes francophones
+BE,BE336,Bezirk Verviers - Deutschsprachige Gemeinschaft
+BE,BE34,Prov. Luxembourg (BE)
+BE,BE341,Arr. Arlon
+BE,BE342,Arr. Bastogne
+BE,BE343,Arr. Marche-en-Famenne
+BE,BE344,Arr. Neufchâteau
+BE,BE345,Arr. Virton
+BE,BE35,Prov. Namur
+BE,BE351,Arr. Dinant
+BE,BE352,Arr. Namur
+BE,BE353,Arr. Philippeville
+BG,BG31,Северозападен
+BG,BG311,Видин
+BG,BG312,Монтана
+BG,BG313,Враца
+BG,BG314,Плевен
+BG,BG315,Ловеч
+BG,BG321,Велико Търново
+BG,BG322,Габрово
+BG,BG323,Русе
+BG,BG324,Разград
+BG,BG33,Североизточен
+BG,BG332,Добрич
+BG,BG333,Шумен
+BG,BG34,Югоизточен
+BG,BG342,Сливен
+BG,BG343,Ямбол
+BG,BG41,Югозападен
+BG,BG411,София (столица)
+BG,BG412,София
+BG,BG413,Благоевград
+BG,BG414,Перник
+BG,BG415,Кюстендил
+BG,BG42,Южен централен
+BG,BG421,Пловдив
+BG,BG423,Пазарджик
+BG,BG425,Кърджали
+CH,CH0,SCHWEIZ/SUISSE/SVIZZERA
+CH,CH011,Vaud
+CH,CH012,Valais
+CH,CH013,Genève
+CH,CH02,Espace Mittelland
+CH,CH021,Bern
+CH,CH022,Freiburg
+CH,CH023,Solothurn
+CH,CH024,Neuchâtel
+CH,CH025,Jura
+CH,CH03,Nordwestschweiz
+CH,CH032,Basel-Landschaft
+CH,CH033,Aargau
+CH,CH04,Zürich
+CH,CH040,Zürich
+CH,CH05,Ostschweiz
+CH,CH052,Schaffhausen
+CH,CH053,Appenzell Ausserrhoden
+CH,CH055,St. Gallen
+CH,CH056,Graubünden
+CH,CH057,Thurgau
+CH,CH06,Zentralschweiz
+CH,CH061,Luzern
+CH,CH062,Uri
+CH,CH063,Schwyz
+CH,CH064,Obwalden
+CH,CH065,Nidwalden
+CH,CH066,Zug
+CH,CH07,Ticino
+CH,CH070,Ticino
+CY,CY0,ΚΥΠΡΟΣ
+CY,CY00,Κύπρος
+CY,CY000,Κύπρος
+CZ,CZ0,CESKÁ REPUBLIKA
+CZ,CZ01,Praha
+CZ,CZ010,Hlavní mesto Praha
+CZ,CZ02,Strední Cechy
+CZ,CZ020,Stredoceský kraj
+CZ,CZ03,Jihozápad
+CZ,CZ031,Jihoceský kraj
+CZ,CZ032,Plzenský kraj
+CZ,CZ04,Severozápad
+CZ,CZ041,Karlovarský kraj
+CZ,CZ042,Ústecký kraj
+CZ,CZ05,Severovýchod
+CZ,CZ052,Královéhradecký kraj
+CZ,CZ053,Pardubický kraj
+CZ,CZ063,Kraj Vysocina
+CZ,CZ064,Jihomoravský kraj
+CZ,CZ07,Strední Morava
+CZ,CZ072,Zlínský kraj
+CZ,CZ08,Moravskoslezsko
+CZ,CZ080,Moravskoslezský kraj
+DE,DE14,Tübingen
+DE,DE11,Stuttgart
+DE,DE111,"Stuttgart, Stadtkreis"
+DE,DE112,Böblingen
+DE,DE113,Esslingen
+DE,DE114,Göppingen
+DE,DE115,Ludwigsburg
+DE,DE117,"Heilbronn, Stadtkreis"
+DE,DE118,"Heilbronn, Landkreis"
+DE,DE119,Hohenlohekreis
+DE,DE11B,Main-Tauber-Kreis
+DE,DE11C,Heidenheim
+DE,DE11D,Ostalbkreis
+DE,DE12,Karlsruhe
+DE,DE121,"Baden-Baden, Stadtkreis"
+DE,DE123,"Karlsruhe, Landkreis"
+DE,DE124,Rastatt
+DE,DE125,"Heidelberg, Stadtkreis"
+DE,DE126,"Mannheim, Stadtkreis"
+DE,DE127,Neckar-Odenwald-Kreis
+DE,DE128,Rhein-Neckar-Kreis
+DE,DE12A,Calw
+DE,DE12B,Enzkreis
+DE,DE12C,Freudenstadt
+DE,DE13,Freiburg
+DE,DE131,"Freiburg im Breisgau, Stadtkreis"
+DE,DE132,Breisgau-Hochschwarzwald
+DE,DE134,Ortenaukreis
+DE,DE135,Rottweil
+DE,DE136,Schwarzwald-Baar-Kreis
+DE,DE137,Tuttlingen
+DE,DE139,Lörrach
+DE,DE13A,Waldshut
+DE,DE141,Reutlingen
+DE,DE143,Zollernalbkreis
+DE,DE144,"Ulm, Stadtkreis"
+DE,DE145,Alb-Donau-Kreis
+DE,DE146,Biberach
+DE,DE147,Bodenseekreis
+DE,DE148,Ravensburg
+DE,DE149,Sigmaringen
+DE,DE2,BAYERN
+DE,DE211,"Ingolstadt, Kreisfreie Stadt"
+DE,DE213,"Rosenheim, Kreisfreie Stadt"
+DE,DE214,Altötting
+DE,DE215,Berchtesgadener Land
+DE,DE216,Bad Tölz-Wolfratshausen
+DE,DE217,Dachau
+DE,DE218,Ebersberg
+DE,DE219,Eichstätt
+DE,DE21A,Erding
+DE,DE21B,Freising
+DE,DE21C,Fürstenfeldbruck
+DE,DE21D,Garmisch-Partenkirchen
+DE,DE21E,Landsberg am Lech
+DE,DE21F,Miesbach
+DE,DE21G,Mühldorf a. Inn
+DE,DE21H,"München, Landkreis"
+DE,DE21I,Neuburg-Schrobenhausen
+DE,DE21J,Pfaffenhofen a. d. Ilm
+DE,DE21K,"Rosenheim, Landkreis"
+DE,DE21L,Starnberg
+DE,DE21M,Traunstein
+DE,DE21N,Weilheim-Schongau
+DE,DE22,Niederbayern
+DE,DE221,"Landshut, Kreisfreie Stadt"
+DE,DE222,"Passau, Kreisfreie Stadt"
+DE,DE223,"Straubing, Kreisfreie Stadt"
+DE,DE224,Deggendorf
+DE,DE225,Freyung-Grafenau
+DE,DE226,Kelheim
+DE,DE228,"Passau, Landkreis"
+DE,DE229,Regen
+DE,DE22A,Rottal-Inn
+DE,DE22B,Straubing-Bogen
+DE,DE22C,Dingolfing-Landau
+DE,DE23,Oberpfalz
+DE,DE232,"Regensburg, Kreisfreie Stadt"
+DE,DE233,"Weiden i. d. Opf, Kreisfreie Stadt"
+DE,DE234,Amberg-Sulzbach
+DE,DE235,Cham
+DE,DE236,Neumarkt i. d. OPf.
+DE,DE238,"Regensburg, Landkreis"
+DE,DE239,Schwandorf
+DE,DE23A,Tirschenreuth
+DE,DE24,Oberfranken
+DE,DE241,"Bamberg, Kreisfreie Stadt"
+DE,DE242,"Bayreuth, Kreisfreie Stadt"
+DE,DE244,"Hof, Kreisfreie Stadt"
+DE,DE245,"Bamberg, Landkreis"
+DE,DE246,"Bayreuth, Landkreis"
+DE,DE247,"Coburg, Landkreis"
+DE,DE248,Forchheim
+DE,DE249,"Hof, Landkreis"
+DE,DE24A,Kronach
+DE,DE24C,Lichtenfels
+DE,DE24D,Wunsiedel i. Fichtelgebirge
+DE,DE251,"Ansbach, Kreisfreie Stadt"
+DE,DE252,"Erlangen, Kreisfreie Stadt"
+DE,DE254,"Nürnberg, Kreisfreie Stadt"
+DE,DE255,"Schwabach, Kreisfreie Stadt"
+DE,DE256,"Ansbach, Landkreis"
+DE,DE257,Erlangen-Höchstadt
+DE,DE259,Nürnberger Land
+DE,DE25A,Neustadt a. d. Aisch-Bad Windsheim
+DE,DE25B,Roth
+DE,DE25C,Weißenburg-Gunzenhausen
+DE,DE261,"Aschaffenburg, Kreisfreie Stadt"
+DE,DE262,"Schweinfurt, Kreisfreie Stadt"
+DE,DE264,"Aschaffenburg, Landkreis"
+DE,DE265,Bad Kissingen
+DE,DE266,Rhön-Grabfeld
+DE,DE267,Haßberge
+DE,DE268,Kitzingen
+DE,DE269,Miltenberg
+DE,DE26A,Main-Spessart
+DE,DE26C,"Würzburg, Landkreis"
+DE,DE27,Schwaben
+DE,DE271,"Augsburg, Kreisfreie Stadt"
+DE,DE272,"Kaufbeuren, Kreisfreie Stadt"
+DE,DE274,"Memmingen, Kreisfreie Stadt"
+DE,DE275,Aichach-Friedberg
+DE,DE276,"Augsburg, Landkreis"
+DE,DE277,Dillingen a.d. Donau
+DE,DE278,Günzburg
+DE,DE279,Neu-Ulm
+DE,DE27A,Lindau (Bodensee)
+DE,DE27B,Ostallgäu
+DE,DE27C,Unterallgäu
+DE,DE27D,Donau-Ries
+DE,DE27E,Oberallgäu
+DE,DE3,BERLIN
+DE,DE30,Berlin
+DE,DE300,Berlin
+DE,DE4,BRANDENBURG
+DE,DE40,Brandenburg
+DE,DE401,"Brandenburg an der Havel, Kreisfreie Stadt"
+DE,DE402,"Cottbus, Kreisfreie Stadt"
+DE,DE403,"Frankfurt (Oder), Kreisfreie Stadt"
+DE,DE404,"Potsdam, Kreisfreie Stadt"
+DE,DE405,Barnim
+DE,DE407,Elbe-Elster
+DE,DE408,Havelland
+DE,DE409,Märkisch-Oderland
+DE,DE40A,Oberhavel
+DE,DE40B,Oberspreewald-Lausitz
+DE,DE40D,Ostprignitz-Ruppin
+DE,DE40E,Potsdam-Mittelmark
+DE,DE40F,Prignitz
+DE,DE40H,Teltow-Fläming
+DE,DE40I,Uckermark
+DE,DE5,BREMEN
+DE,DE50,Bremen
+DE,DE501,"Bremen, Kreisfreie Stadt"
+DE,DE6,HAMBURG
+DE,DE60,Hamburg
+DE,DE600,Hamburg
+DE,DE7,HESSEN
+DE,DE71,Darmstadt
+DE,DE711,"Darmstadt, Kreisfreie Stadt"
+DE,DE712,"Frankfurt am Main, Kreisfreie Stadt"
+DE,DE714,"Wiesbaden, Kreisfreie Stadt"
+DE,DE715,Bergstraße
+DE,DE716,Darmstadt-Dieburg
+DE,DE717,Groß-Gerau
+DE,DE718,Hochtaunuskreis
+DE,DE719,Main-Kinzig-Kreis
+DE,DE71A,Main-Taunus-Kreis
+DE,DE71B,Odenwaldkreis
+DE,DE71C,"Offenbach, Landkreis"
+DE,DE71E,Wetteraukreis
+DE,DE72,Gießen
+DE,DE721,"Gießen, Landkreis"
+DE,DE722,Lahn-Dill-Kreis
+DE,DE723,Limburg-Weilburg
+DE,DE725,Vogelsbergkreis
+DE,DE73,Kassel
+DE,DE731,"Kassel, Kreisfreie Stadt"
+DE,DE732,Fulda
+DE,DE733,Hersfeld-Rotenburg
+DE,DE734,"Kassel, Landkreis"
+DE,DE736,Waldeck-Frankenberg
+DE,DE737,Werra-Meißner-Kreis
+DE,DE8,MECKLENBURG-VORPOMMERN
+DE,DE80,Mecklenburg-Vorpommern
+DE,DE804,"Schwerin, Kreisfreie Stadt"
+DE,DE80J,Mecklenburgische Seenplatte
+DE,DE80K,Landkreis Rostock
+DE,DE80L,Vorpommern-Rügen
+DE,DE80N,Vorpommern-Greifswald
+DE,DE80O,Ludwigslust-Parchim
+DE,DE9,NIEDERSACHSEN
+DE,DE91,Braunschweig
+DE,DE911,"Braunschweig, Kreisfreie Stadt"
+DE,DE913,"Wolfsburg, Kreisfreie Stadt"
+DE,DE914,Gifhorn
+DE,DE915,Göttingen
+DE,DE916,Goslar
+DE,DE917,Helmstedt
+DE,DE918,Northeim
+DE,DE919,Osterode am Harz
+DE,DE91A,Peine
+DE,DE91B,Wolfenbüttel
+DE,DE92,Hannover
+DE,DE922,Diepholz
+DE,DE923,Hameln-Pyrmont
+DE,DE925,Hildesheim
+DE,DE926,Holzminden
+DE,DE927,Nienburg (Weser)
+DE,DE928,Schaumburg
+DE,DE929,Region Hannover
+DE,DE93,Lüneburg
+DE,DE931,Celle
+DE,DE932,Cuxhaven
+DE,DE933,Harburg
+DE,DE934,Lüchow-Dannenberg
+DE,DE935,"Lüneburg, Landkreis"
+DE,DE936,Osterholz
+DE,DE937,Rotenburg (Wümme)
+DE,DE938,Heidekreis
+DE,DE939,Stade
+DE,DE93A,Uelzen
+DE,DE93B,Verden
+DE,DE94,Weser-Ems
+DE,DE941,"Delmenhorst, Kreisfreie Stadt"
+DE,DE942,"Emden, Kreisfreie Stadt"
+DE,DE944,"Osnabrück, Kreisfreie Stadt"
+DE,DE945,"Wilhelmshaven, Kreisfreie Stadt"
+DE,DE946,Ammerland
+DE,DE947,Aurich
+DE,DE948,Cloppenburg
+DE,DE949,Emsland
+DE,DE94A,Friesland (DE)
+DE,DE94B,Grafschaft Bentheim
+DE,DE94C,Leer
+DE,DE94D,"Oldenburg, Landkreis"
+DE,DE94F,Vechta
+DE,DE94G,Wesermarsch
+DE,DE94H,Wittmund
+DE,DEA,NORDRHEIN-WESTFALEN
+DE,DEA1,Düsseldorf
+DE,DEA11,"Düsseldorf, Kreisfreie Stadt"
+DE,DEA13,"Essen, Kreisfreie Stadt"
+DE,DEA14,"Krefeld, Kreisfreie Stadt"
+DE,DEA15,"Mönchengladbach, Kreisfreie Stadt"
+DE,DEA17,"Oberhausen, Kreisfreie Stadt"
+DE,DEA18,"Remscheid, Kreisfreie Stadt"
+DE,DEA19,"Solingen, Kreisfreie Stadt"
+DE,DEA1A,"Wuppertal, Kreisfreie Stadt"
+DE,DEA1B,Kleve
+DE,DEA1C,Mettmann
+DE,DEA1D,Rhein-Kreis Neuss
+DE,DEA1E,Viersen
+DE,DEA1F,Wesel
+DE,DEA2,Köln
+DE,DEA23,"Köln, Kreisfreie Stadt"
+DE,DEA24,"Leverkusen, Kreisfreie Stadt"
+DE,DEA26,Düren
+DE,DEA27,Rhein-Erft-Kreis
+DE,DEA28,Euskirchen
+DE,DEA29,Heinsberg
+DE,DEA2B,Rheinisch-Bergischer Kreis
+DE,DEA2C,Rhein-Sieg-Kreis
+DE,DEA2D,Städteregion Aachen
+DE,DEA3,Münster
+DE,DEA32,"Gelsenkirchen, Kreisfreie Stadt"
+DE,DEA33,"Münster, Kreisfreie Stadt"
+DE,DEA34,Borken
+DE,DEA35,Coesfeld
+DE,DEA36,Recklinghausen
+DE,DEA37,Steinfurt
+DE,DEA38,Warendorf
+DE,DEA4,Detmold
+DE,DEA42,Gütersloh
+DE,DEA43,Herford
+DE,DEA44,Höxter
+DE,DEA45,Lippe
+DE,DEA46,Minden-Lübbecke
+DE,DEA47,Paderborn
+DE,DEA5,Arnsberg
+DE,DEA51,"Bochum, Kreisfreie Stadt"
+DE,DEA52,"Dortmund, Kreisfreie Stadt"
+DE,DEA53,"Hagen, Kreisfreie Stadt"
+DE,DEA54,"Hamm, Kreisfreie Stadt"
+DE,DEA55,"Herne, Kreisfreie Stadt"
+DE,DEA56,Ennepe-Ruhr-Kreis
+DE,DEA57,Hochsauerlandkreis
+DE,DEA58,Märkischer Kreis
+DE,DEA59,Olpe
+DE,DEA5A,Siegen-Wittgenstein
+DE,DEA5B,Soest
+DE,DEA5C,Unna
+DE,DEB,RHEINLAND-PFALZ
+DE,DEB1,Koblenz
+DE,DEB11,"Koblenz, Kreisfreie Stadt"
+DE,DEB12,Ahrweiler
+DE,DEB13,Altenkirchen (Westerwald)
+DE,DEB14,Bad Kreuznach
+DE,DEB15,Birkenfeld
+DE,DEB16,Cochem-Zell
+DE,DEB17,Mayen-Koblenz
+DE,DEB18,Neuwied
+DE,DEB19,Rhein-Hunsrück-Kreis
+DE,DEB1A,Rhein-Lahn-Kreis
+DE,DEB2,Trier
+DE,DEB21,"Trier, Kreisfreie Stadt"
+DE,DEB22,Bernkastel-Wittlich
+DE,DEB23,Eifelkreis Bitburg-Prüm
+DE,DEB25,Trier-Saarburg
+DE,DEB3,Rheinhessen-Pfalz
+DE,DEB32,"Kaiserslautern, Kreisfreie Stadt"
+DE,DEB33,"Landau in der Pfalz, Kreisfreie Stadt"
+DE,DEB34,"Ludwigshafen am Rhein, Kreisfreie Stadt"
+DE,DEB35,"Mainz, Kreisfreie Stadt"
+DE,DEB37,"Pirmasens, Kreisfreie Stadt"
+DE,DEB38,"Speyer, Kreisfreie Stadt"
+DE,DEB39,"Worms, Kreisfreie Stadt"
+DE,DEB3A,"Zweibrücken, Kreisfreie Stadt"
+DE,DEB3B,Alzey-Worms
+DE,DEB3C,Bad Dürkheim
+DE,DEB3D,Donnersbergkreis
+DE,DEB3E,Germersheim
+DE,DEB3F,"Kaiserslautern, Landkreis"
+DE,DEB3G,Kusel
+DE,DEB3H,Südliche Weinstraße
+DE,DEB3J,Mainz-Bingen
+DE,DEB3K,Südwestpfalz
+DE,DEC,SAARLAND
+DE,DEC0,Saarland
+DE,DEC02,Merzig-Wadern
+DE,DEC03,Neunkirchen
+DE,DEC04,Saarlouis
+DE,DEC05,Saarpfalz-Kreis
+DE,DEC06,St. Wendel
+DE,DED,SACHSEN
+DE,DED2,Dresden
+DE,DED21,"Dresden, Kreisfreie Stadt"
+DE,DED2C,Bautzen
+DE,DED2D,Görlitz
+DE,DED2E,Meißen
+DE,DED4,Chemnitz
+DE,DED41,"Chemnitz, Kreisfreie Stadt"
+DE,DED42,Erzgebirgskreis
+DE,DED43,Mittelsachsen
+DE,DED44,Vogtlandkreis
+DE,DED45,Zwickau
+DE,DED5,Leipzig
+DE,DED51,"Leipzig, Kreisfreie Stadt"
+DE,DED52,Leipzig
+DE,DED53,Nordsachsen
+DE,DEE,SACHSEN-ANHALT
+DE,DEE01,"Dessau-Roßlau, Kreisfreie Stadt"
+DE,DEE02,"Halle (Saale), Kreisfreie Stadt"
+DE,DEE04,Altmarkkreis Salzwedel
+DE,DEE05,Anhalt-Bitterfeld
+DE,DEE06,Jerichower Land
+DE,DEE07,Börde
+DE,DEE08,Burgenland (DE)
+DE,DEE09,Harz
+DE,DEE0A,Mansfeld-Südharz
+DE,DEE0B,Saalekreis
+DE,DEE0C,Salzlandkreis
+DE,DEE0D,Stendal
+DE,DEE0E,Wittenberg
+DE,DEF,SCHLESWIG-HOLSTEIN
+DE,DEF0,Schleswig-Holstein
+DE,DEF01,"Flensburg, Kreisfreie Stadt"
+DE,DEF02,"Kiel, Kreisfreie Stadt"
+DE,DEF03,"Lübeck, Kreisfreie Stadt"
+DE,DEF04,"Neumünster, Kreisfreie Stadt"
+DE,DEF05,Dithmarschen
+DE,DEF06,Herzogtum Lauenburg
+DE,DEF07,Nordfriesland
+DE,DEF08,Ostholstein
+DE,DEF09,Pinneberg
+DE,DEF0B,Rendsburg-Eckernförde
+DE,DEF0D,Segeberg
+DE,DEF0E,Steinburg
+DE,DEF0F,Stormarn
+DE,DEG,THÜRINGEN
+DE,DEG0,Thüringen
+DE,DEG01,"Erfurt, Kreisfreie Stadt"
+DE,DEG03,"Jena, Kreisfreie Stadt"
+DE,DEG04,"Suhl, Kreisfreie Stadt"
+DE,DEG05,"Weimar, Kreisfreie Stadt"
+DE,DEG06,Eichsfeld
+DE,DEG07,Nordhausen
+DE,DEG09,Unstrut-Hainich-Kreis
+DE,DEG0B,Schmalkalden-Meiningen
+DE,DEG0C,Gotha
+DE,DEG0D,Sömmerda
+DE,DEG0E,Hildburghausen
+DE,DEG0F,Ilm-Kreis
+DE,DEG0H,Sonneberg
+DE,DEG0I,Saalfeld-Rudolstadt
+DE,DEG0J,Saale-Holzland-Kreis
+DE,DEG0K,Saale-Orla-Kreis
+DE,DEG0L,Greiz
+DE,DEG0N,"Eisenach, Kreisfreie Stadt"
+DE,DEG0P,Wartburgkreis
+DK,DK0,DANMARK
+DK,DK01,Hovedstaden
+DK,DK012,Københavns omegn
+DK,DK013,Nordsjælland
+DK,DK014,Bornholm
+DK,DK02,Sjælland
+DK,DK022,Vest- og Sydsjælland
+DK,DK03,Syddanmark
+DK,DK031,Fyn
+DK,DK032,Sydjylland
+DK,DK04,Midtjylland
+DK,DK041,Vestjylland
+DK,DK042,Østjylland
+DK,DK050,Nordjylland
+EE,EE0,EESTI
+EE,EE00,Eesti
+EE,EE001,Põhja-Eesti
+EE,EE006,Kesk-Eesti
+EE,EE007,Kirde-Eesti
+EE,EE008,Lõuna-Eesti
+EL,EL3,ATTIKΗ
+EL,EL302,Δυτικός Τομέας Αθηνών 
+EL,EL303,Κεντρικός Τομέας Αθηνών
+EL,EL305,Ανατολική Αττική
+EL,EL306,Δυτική Αττική
+EL,EL4,"NΗΣΙΑ ΑΙΓΑΙΟΥ, KΡΗΤΗ"
+EL,EL41,Βόρειο Αιγαίο
+EL,EL412,"Ικαρία, Σάμος"
+EL,EL413,Χίος
+EL,EL421,"Κάλυμνος, Κάρπαθος, Κως, Ρόδος"
+EL,EL43,Κρήτη
+EL,EL431,Ηράκλειο
+EL,EL432,Λασίθι
+EL,EL433,Ρεθύμνη
+EL,EL434,Χανιά
+EL,EL5,ΒΟΡΕΙΑ ΕΛΛΑΔΑ
+EL,EL51,"Aνατολική Μακεδονία, Θράκη"
+EL,EL512,Ξάνθη
+EL,EL514,Δράμα
+EL,EL52,Κεντρική Μακεδονία
+EL,EL521,Ημαθία
+EL,EL523,Κιλκίς
+EL,EL524,Πέλλα
+EL,EL525,Πιερία
+EL,EL526,Σέρρες
+EL,EL53,Δυτική Μακεδονία
+EL,EL532,Καστοριά
+EL,EL533,Φλώρινα
+EL,EL541,"Άρτα, Πρέβεζα"
+EL,EL543,Ιωάννινα
+EL,EL6,ΚΕΝΤΡΙΚΗ ΕΛΛΑΔΑ
+EL,EL611,"Καρδίτσα, Τρίκαλα"
+EL,EL613,Μαγνησία
+EL,EL621,Ζάκυνθος
+EL,EL622,Κέρκυρα
+EL,EL624,Λευκάδα
+EL,EL63,Δυτική Ελλάδα
+EL,EL632,Αχαΐα
+EL,EL633,Ηλεία
+EL,EL64,Στερεά Ελλάδα
+EL,EL641,Βοιωτία
+EL,EL643,Ευρυτανία
+EL,EL644,Φθιώτιδα
+EL,EL645,Φωκίδα
+EL,EL65,Πελοπόννησος
+EL,EL651,"Αργολίδα, Αρκαδία"
+EL,EL652,Κορινθία
+ES,ES1,NOROESTE
+ES,ES11,Galicia
+ES,ES111,A Coruña
+ES,ES112,Lugo
+ES,ES113,Ourense
+ES,ES114,Pontevedra
+ES,ES12,Principado de Asturias
+ES,ES120,Asturias
+ES,ES13,Cantabria
+ES,ES130,Cantabria
+ES,ES2,NORESTE
+ES,ES21,País Vasco
+ES,ES211,Araba/Álava
+ES,ES212,Gipuzkoa
+ES,ES213,Bizkaia
+ES,ES22,Comunidad Foral de Navarra
+ES,ES220,Navarra
+ES,ES23,La Rioja
+ES,ES230,La Rioja
+ES,ES24,Aragón
+ES,ES241,Huesca
+ES,ES242,Teruel
+ES,ES243,Zaragoza
+ES,ES3,COMUNIDAD DE MADRID
+ES,ES30,Comunidad de Madrid
+ES,ES4,CENTRO (ES)
+ES,ES41,Castilla y León
+ES,ES412,Burgos
+ES,ES413,León
+ES,ES414,Palencia
+ES,ES415,Salamanca
+ES,ES417,Soria
+ES,ES418,Valladolid
+ES,ES419,Zamora
+ES,ES42,Castilla-La Mancha
+ES,ES422,Ciudad Real
+ES,ES423,Cuenca
+ES,ES424,Guadalajara
+ES,ES425,Toledo
+ES,ES431,Badajoz
+ES,ES432,Cáceres
+ES,ES5,ESTE
+ES,ES51,Cataluña
+ES,ES511,Barcelona
+ES,ES513,Lleida
+ES,ES514,Tarragona
+ES,ES52,Comunidad Valenciana
+ES,ES522,Castellón / Castelló
+ES,ES523,Valencia / València
+ES,ES53,Illes Balears
+ES,ES532,Mallorca
+ES,ES533,Menorca
+ES,ES6,SUR
+ES,ES61,Andalucía
+ES,ES611,Almería
+ES,ES612,Cádiz
+ES,ES613,Córdoba
+ES,ES614,Granada
+ES,ES615,Huelva
+ES,ES617,Málaga
+ES,ES618,Sevilla
+ES,ES620,Murcia
+ES,ES63,Ciudad Autónoma de Ceuta
+ES,ES630,Ceuta
+ES,ES64,Ciudad Autónoma de Melilla
+ES,ES640,Melilla
+ES,ES7,CANARIAS
+ES,ES703,El Hierro
+ES,ES704,Fuerteventura
+ES,ES705,Gran Canaria
+ES,ES706,La Gomera
+ES,ES708,Lanzarote
+ES,ES709,Tenerife
+FI,FI1,MANNER-SUOMI
+FI,FI193,Keski-Suomi
+FI,FI194,Etelä-Pohjanmaa
+FI,FI195,Pohjanmaa
+FI,FI196,Satakunta
+FI,FI197,Pirkanmaa
+FI,FI1B1,Helsinki-Uusimaa
+FI,FI1C,Etelä-Suomi
+FI,FI1C1,Varsinais-Suomi
+FI,FI1C2,Kanta-Häme
+FI,FI1C4,Kymenlaakso
+FI,FI1C5,Etelä-Karjala
+FI,FI1D,Pohjois- ja Itä-Suomi
+FI,FI1D1,Etelä-Savo
+FI,FI1D2,Pohjois-Savo
+FI,FI1D3,Pohjois-Karjala
+FI,FI1D4,Kainuu
+FI,FI1D5,Keski-Pohjanmaa
+FI,FI1D6,Pohjois-Pohjanmaa
+FI,FI1D7,Lappi
+FI,FI2,ÅLAND
+FI,FI20,Åland
+FI,FI200,Åland
+FR,FR1,ÎLE DE FRANCE
+FR,FR10,Île de France
+FR,FR101,Paris
+FR,FR102,Seine-et-Marne
+FR,FR103,Yvelines
+FR,FR104,Essonne
+FR,FR105,Hauts-de-Seine
+FR,FR106,Seine-Saint-Denis
+FR,FR107,Val-de-Marne
+FR,FR108,Val-d'Oise
+FR,FR2,BASSIN PARISIEN
+FR,FR21,Champagne-Ardenne
+FR,FR211,Ardennes
+FR,FR212,Aube
+FR,FR213,Marne
+FR,FR214,Haute-Marne
+FR,FR22,Picardie
+FR,FR221,Aisne
+FR,FR222,Oise
+FR,FR223,Somme
+FR,FR23,Haute-Normandie
+FR,FR231,Eure
+FR,FR232,Seine-Maritime
+FR,FR24,Centre
+FR,FR241,Cher
+FR,FR242,Eure-et-Loir
+FR,FR243,Indre
+FR,FR244,Indre-et-Loire
+FR,FR245,Loir-et-Cher
+FR,FR246,Loiret
+FR,FR25,Basse-Normandie
+FR,FR251,Calvados
+FR,FR252,Manche
+FR,FR253,Orne
+FR,FR26,Bourgogne
+FR,FR261,Côte-d'Or
+FR,FR262,Nièvre
+FR,FR264,Yonne
+FR,FR3,NORD - PAS-DE-CALAIS
+FR,FR30,Nord - Pas-de-Calais
+FR,FR301,Nord
+FR,FR302,Pas-de-Calais
+FR,FR4,EST
+FR,FR41,Lorraine
+FR,FR412,Meuse
+FR,FR413,Moselle
+FR,FR414,Vosges
+FR,FR42,Alsace
+FR,FR421,Bas-Rhin
+FR,FR422,Haut-Rhin
+FR,FR43,Franche-Comté
+FR,FR431,Doubs
+FR,FR432,Jura
+FR,FR434,Territoire de Belfort
+FR,FR5,OUEST
+FR,FR51,Pays de la Loire
+FR,FR511,Loire-Atlantique
+FR,FR513,Mayenne
+FR,FR514,Sarthe
+FR,FR515,Vendée
+FR,FR52,Bretagne
+FR,FR521,Côtes-d'Armor
+FR,FR523,Ille-et-Vilaine
+FR,FR524,Morbihan
+FR,FR53,Poitou-Charentes
+FR,FR531,Charente
+FR,FR532,Charente-Maritime
+FR,FR534,Vienne
+FR,FR6,SUD-OUEST
+FR,FR61,Aquitaine
+FR,FR611,Dordogne
+FR,FR612,Gironde
+FR,FR613,Landes
+FR,FR615,Pyrénées-Atlantiques
+FR,FR62,Midi-Pyrénées
+FR,FR621,Ariège
+FR,FR623,Haute-Garonne
+FR,FR624,Gers
+FR,FR625,Lot
+FR,FR627,Tarn
+FR,FR628,Tarn-et-Garonne
+FR,FR63,Limousin
+FR,FR631,Corrèze
+FR,FR632,Creuse
+FR,FR633,Haute-Vienne
+FR,FR7,CENTRE-EST
+FR,FR71,Rhône-Alpes
+FR,FR711,Ain
+FR,FR713,Drôme
+FR,FR714,Isère
+FR,FR715,Loire
+FR,FR716,Rhône
+FR,FR717,Savoie
+FR,FR72,Auvergne
+FR,FR721,Allier
+FR,FR722,Cantal
+FR,FR723,Haute-Loire
+FR,FR724,Puy-de-Dôme
+FR,FR81,Languedoc-Roussillon
+FR,FR811,Aude
+FR,FR812,Gard
+FR,FR813,Hérault
+FR,FR814,Lozère
+FR,FR815,Pyrénées-Orientales
+FR,FR82,Provence-Alpes-Côte d'Azur
+FR,FR821,Alpes-de-Haute-Provence
+FR,FR822,Hautes-Alpes
+FR,FR823,Alpes-Maritimes
+FR,FR824,Bouches-du-Rhône
+FR,FR825,Var
+FR,FR826,Vaucluse
+FR,FR83,Corse
+FR,FR831,Corse-du-Sud
+FR,FR832,Haute-Corse
+FR,FRA,DÉPARTEMENTS D'OUTRE-MER
+FR,FRA1,Guadeloupe
+FR,FRA10,Guadeloupe
+FR,FRA2,Martinique
+FR,FRA20,Martinique
+FR,FRA3,Guyane
+FR,FRA30,Guyane
+FR,FRA4,La Réunion
+FR,FRA40,La Réunion
+FR,FRA5,Mayotte
+FR,FRA50,Mayotte
+HR,HR0,HRVATSKA
+HR,HR031,Primorsko-goranska županija
+HR,HR032,Licko-senjska županija
+HR,HR033,Zadarska županija
+HR,HR035,Splitsko-dalmatinska županija
+HR,HR036,Istarska županija
+HR,HR037,Dubrovacko-neretvanska županija
+HR,HR04,Kontinentalna Hrvatska
+HR,HR042,Zagrebacka županija
+HR,HR043,Krapinsko-zagorska županija
+HR,HR045,Koprivnicko-križevacka županija
+HR,HR046,Medimurska županija
+HR,HR047,Bjelovarsko-bilogorska županija
+HR,HR049,Požeško-slavonska županija
+HR,HR04A,Brodsko-posavska županija
+HR,HR04B,Osjecko-baranjska županija
+HR,HR04D,Karlovacka županija
+HR,HR04E,Sisacko-moslavacka županija
+HU,HU1,KÖZÉP-MAGYARORSZÁG
+HU,HU10,Közép-Magyarország
+HU,HU101,Budapest
+HU,HU102,Pest
+HU,HU21,Közép-Dunántúl
+HU,HU211,Fejér
+HU,HU213,Veszprém
+HU,HU22,Nyugat-Dunántúl
+HU,HU221,Gyor-Moson-Sopron
+HU,HU222,Vas
+HU,HU223,Zala
+HU,HU231,Baranya
+HU,HU232,Somogy
+HU,HU233,Tolna
+HU,HU3,ALFÖLD ÉS ÉSZAK
+HU,HU31,Észak-Magyarország
+HU,HU312,Heves
+HU,HU313,Nógrád
+HU,HU32,Észak-Alföld
+HU,HU321,Hajdú-Bihar
+HU,HU322,Jász-Nagykun-Szolnok
+HU,HU33,Dél-Alföld
+HU,HU331,Bács-Kiskun
+HU,HU332,Békés
+HU,HU333,Csongrád
+IE,IE0,IRELAND
+IE,IE01,"Border, Midland and Western"
+IE,IE011,Border
+IE,IE012,Midland
+IE,IE02,Southern and Eastern
+IE,IE021,Dublin
+IE,IE023,Mid-West
+IE,IE024,South-East (IE)
+IE,IE025,South-West (IE)
+IS,IS0,ÍSLAND
+IS,IS00,Ísland
+IS,IS001,Höfuðborgarsvæði
+IS,IS002,Landsbyggð
+IT,ITC,NORD-OVEST
+IT,ITC1,Piemonte
+IT,ITC11,Torino
+IT,ITC12,Vercelli
+IT,ITC13,Biella
+IT,ITC14,Verbano-Cusio-Ossola
+IT,ITC15,Novara
+IT,ITC16,Cuneo
+IT,ITC17,Asti
+IT,ITC18,Alessandria
+IT,ITC2,Valle d'Aosta/Vallée d'Aoste
+IT,ITC20,Valle d'Aosta/Vallée d'Aoste
+IT,ITC3,Liguria
+IT,ITC31,Imperia
+IT,ITC32,Savona
+IT,ITC33,Genova
+IT,ITC34,La Spezia
+IT,ITC4,Lombardia
+IT,ITC41,Varese
+IT,ITC42,Como
+IT,ITC43,Lecco
+IT,ITC44,Sondrio
+IT,ITC46,Bergamo
+IT,ITC47,Brescia
+IT,ITC48,Pavia
+IT,ITC49,Lodi
+IT,ITC4A,Cremona
+IT,ITC4B,Mantova
+IT,ITC4C,Milano
+IT,ITC4D,Monza e della Brianza
+IT,ITF,SUD
+IT,ITF1,Abruzzo
+IT,ITF11,L'Aquila
+IT,ITF12,Teramo
+IT,ITF13,Pescara
+IT,ITF14,Chieti
+IT,ITF2,Molise
+IT,ITF21,Isernia
+IT,ITF22,Campobasso
+IT,ITF3,Campania
+IT,ITF31,Caserta
+IT,ITF32,Benevento
+IT,ITF33,Napoli
+IT,ITF34,Avellino
+IT,ITF35,Salerno
+IT,ITF4,Puglia
+IT,ITF43,Taranto
+IT,ITF44,Brindisi
+IT,ITF45,Lecce
+IT,ITF46,Foggia
+IT,ITF47,Bari
+IT,ITF5,Basilicata
+IT,ITF51,Potenza
+IT,ITF52,Matera
+IT,ITF6,Calabria
+IT,ITF61,Cosenza
+IT,ITF62,Crotone
+IT,ITF63,Catanzaro
+IT,ITF64,Vibo Valentia
+IT,ITF65,Reggio di Calabria
+IT,ITG,ISOLE
+IT,ITG1,Sicilia
+IT,ITG12,Palermo
+IT,ITG13,Messina
+IT,ITG14,Agrigento
+IT,ITG15,Caltanissetta
+IT,ITG17,Catania
+IT,ITG18,Ragusa
+IT,ITG19,Siracusa
+IT,ITG25,Sassari
+IT,ITG26,Nuoro
+IT,ITG27,Cagliari
+IT,ITG28,Oristano
+IT,ITG29,Olbia-Tempio
+IT,ITG2B,Medio Campidano
+IT,ITG2C,Carbonia-Iglesias
+IT,ITH,NORD-EST
+IT,ITH10,Bolzano-Bozen
+IT,ITH2,Provincia Autonoma di Trento
+IT,ITH20,Trento
+IT,ITH3,Veneto
+IT,ITH31,Verona
+IT,ITH32,Vicenza
+IT,ITH33,Belluno
+IT,ITH34,Treviso
+IT,ITH35,Venezia
+IT,ITH36,Padova
+IT,ITH37,Rovigo
+IT,ITH4,Friuli-Venezia Giulia
+IT,ITH41,Pordenone
+IT,ITH42,Udine
+IT,ITH44,Trieste
+IT,ITH5,Emilia-Romagna
+IT,ITH51,Piacenza
+IT,ITH52,Parma
+IT,ITH54,Modena
+IT,ITH55,Bologna
+IT,ITH56,Ferrara
+IT,ITH57,Ravenna
+IT,ITH58,Forlì-Cesena
+IT,ITH59,Rimini
+IT,ITI,CENTRO (IT)
+IT,ITI1,Toscana
+IT,ITI12,Lucca
+IT,ITI13,Pistoia
+IT,ITI14,Firenze
+IT,ITI15,Prato
+IT,ITI16,Livorno
+IT,ITI17,Pisa
+IT,ITI18,Arezzo
+IT,ITI19,Siena
+IT,ITI1A,Grosseto
+IT,ITI2,Umbria
+IT,ITI22,Terni
+IT,ITI3,Marche
+IT,ITI31,Pesaro e Urbino
+IT,ITI32,Ancona
+IT,ITI33,Macerata
+IT,ITI34,Ascoli Piceno
+IT,ITI35,Fermo
+IT,ITI4,Lazio
+IT,ITI41,Viterbo
+IT,ITI42,Rieti
+IT,ITI43,Roma
+IT,ITI44,Latina
+IT,ITI45,Frosinone
+LI,LI0,LIECHTENSTEIN
+LI,LI00,Liechtenstein
+LI,LI000,Liechtenstein
+LT,LT0,LIETUVA
+LT,LT00,Lietuva
+LT,LT001,Alytaus apskritis
+LT,LT002,Kauno apskritis
+LT,LT003,Klaipėdos apskritis
+LT,LT004,Marijampolės apskritis
+LT,LT005,Panevėžio apskritis
+LT,LT006,Šiaulių apskritis
+LT,LT007,Tauragės apskritis
+LT,LT008,Telšių apskritis
+LT,LT009,Utenos apskritis
+LT,LT00A,Vilniaus apskritis
+LU,LU0,LUXEMBOURG
+LU,LU00,Luxembourg
+LU,LU000,Luxembourg
+LV,LV0,LATVIJA
+LV,LV00,Latvija
+LV,LV003,Kurzeme
+LV,LV005,Latgale
+LV,LV006,Riga
+LV,LV007,Pieriga
+LV,LV008,Vidzeme
+ME,ME0,ЦРНА ГОРА
+MK,MK00,Поранешна југословенска Република Македонија
+MK,MK001,Вардарски
+MK,MK002,Источен
+MK,MK003,Југозападен
+MK,MK004,Југоисточен
+MK,MK005,Пелагониски
+MK,MK006,Полошки
+MK,MK007,Североисточен
+MK,MK008,Скопски
+MT,MT0,MALTA
+MT,MT00,Malta
+MT,MT001,Malta
+MT,MT002,Gozo and Comino / Ghawdex u Kemmuna
+NL,NL1,NOORD-NEDERLAND
+NL,NL11,Groningen
+NL,NL111,Oost-Groningen
+NL,NL112,Delfzijl en omgeving
+NL,NL12,Friesland (NL)
+NL,NL121,Noord-Friesland
+NL,NL122,Zuidwest-Friesland
+NL,NL123,Zuidoost-Friesland
+NL,NL13,Drenthe
+NL,NL132,Zuidoost-Drenthe
+NL,NL133,Zuidwest-Drenthe
+NL,NL2,OOST-NEDERLAND
+NL,NL21,Overijssel
+NL,NL212,Zuidwest-Overijssel
+NL,NL213,Twente
+NL,NL22,Gelderland
+NL,NL221,Veluwe
+NL,NL224,Zuidwest-Gelderland
+NL,NL225,Achterhoek
+NL,NL23,Flevoland
+NL,NL230,Flevoland
+NL,NL3,WEST-NEDERLAND
+NL,NL31,Utrecht
+NL,NL310,Utrecht
+NL,NL32,Noord-Holland
+NL,NL322,Alkmaar en omgeving
+NL,NL323,IJmond
+NL,NL324,Agglomeratie Haarlem
+NL,NL325,Zaanstreek
+NL,NL326,Groot-Amsterdam
+NL,NL327,Het Gooi en Vechtstreek
+NL,NL332,Agglomeratie 's-Gravenhage
+NL,NL333,Delft en Westland
+NL,NL338,Oost-Zuid-Holland
+NL,NL339,Groot-Rijnmond
+NL,NL33A,Zuidoost-Zuid-Holland
+NL,NL34,Zeeland
+NL,NL341,Zeeuwsch-Vlaanderen
+NL,NL342,Overig Zeeland
+NL,NL4,ZUID-NEDERLAND
+NL,NL41,Noord-Brabant
+NL,NL411,West-Noord-Brabant
+NL,NL412,Midden-Noord-Brabant
+NL,NL413,Noordoost-Noord-Brabant
+NL,NL414,Zuidoost-Noord-Brabant
+NL,NL42,Limburg (NL)
+NL,NL421,Noord-Limburg
+NL,NL422,Midden-Limburg
+NL,NL423,Zuid-Limburg
+NO,NO0,NORGE
+NO,NO01,Oslo og Akershus
+NO,NO011,Oslo
+NO,NO012,Akershus
+NO,NO02,Hedmark og Oppland
+NO,NO021,Hedmark
+NO,NO022,Oppland
+NO,NO03,Sør-Østlandet
+NO,NO031,Østfold
+NO,NO032,Buskerud
+NO,NO033,Vestfold
+NO,NO034,Telemark
+NO,NO04,Agder og Rogaland
+NO,NO041,Aust-Agder
+NO,NO042,Vest-Agder
+NO,NO043,Rogaland
+NO,NO05,Vestlandet
+NO,NO051,Hordaland
+NO,NO052,Sogn og Fjordane
+NO,NO053,Møre og Romsdal
+NO,NO06,Trøndelag
+NO,NO062,Nord-Trøndelag
+NO,NO07,Nord-Norge
+NO,NO071,Nordland
+NO,NO072,Troms
+NO,NO073,Finnmark
+PL,PL1,REGION CENTRALNY
+PL,PL11,Lódzkie
+PL,PL114,Lódzki
+PL,PL115,Piotrkowski
+PL,PL116,Sieradzki
+PL,PL117,Skierniewicki
+PL,PL12,Mazowieckie
+PL,PL128,Radomski
+PL,PL129,Warszawski wschodni
+PL,PL12A,Warszawski zachodni
+PL,PL12B,Ciechanowski
+PL,PL12C,Plocki
+PL,PL12D,Ostrolecki
+PL,PL2,REGION POLUDNIOWY
+PL,PL21,Malopolskie
+PL,PL214,Krakowski
+PL,PL217,Tarnowski
+PL,PL218,Nowosadecki
+PL,PL219,Nowotarski
+PL,PL21A,Oswiecimski
+PL,PL22,Slaskie
+PL,PL224,Czestochowski
+PL,PL225,Bielski
+PL,PL228,Bytomski
+PL,PL229,Gliwicki
+PL,PL22A,Katowicki
+PL,PL22B,Sosnowiecki
+PL,PL22C,Tyski
+PL,PL31,Lubelskie
+PL,PL311,Bialski
+PL,PL312,Chelmsko-zamojski
+PL,PL314,Lubelski
+PL,PL315,Pulawski
+PL,PL32,Podkarpackie
+PL,PL324,Przemyski
+PL,PL325,Rzeszowski
+PL,PL326,Tarnobrzeski
+PL,PL33,Swietokrzyskie
+PL,PL331,Kielecki
+PL,PL34,Podlaskie
+PL,PL343,Bialostocki
+PL,PL344,Lomzynski
+PL,PL345,Suwalski
+PL,PL4,REGION PÓLNOCNO-ZACHODNI
+PL,PL41,Wielkopolskie
+PL,PL411,Pilski
+PL,PL414,Koninski
+PL,PL415,Miasto Poznan
+PL,PL417,Leszczynski
+PL,PL418,Poznanski
+PL,PL42,Zachodniopomorskie
+PL,PL426,Koszalinski
+PL,PL427,Szczecinecko-pyrzycki
+PL,PL428,Szczecinski
+PL,PL43,Lubuskie
+PL,PL431,Gorzowski
+PL,PL5,REGION POLUDNIOWO-ZACHODNI
+PL,PL51,Dolnoslaskie
+PL,PL514,Miasto Wroclaw
+PL,PL515,Jeleniogórski
+PL,PL517,Walbrzyski
+PL,PL518,Wroclawski
+PL,PL52,Opolskie
+PL,PL523,Nyski
+PL,PL524,Opolski
+PL,PL6,REGION PÓLNOCNY
+PL,PL61,Kujawsko-Pomorskie
+PL,PL613,Bydgosko-Torunski
+PL,PL616,Grudziadzki
+PL,PL617,Inowroclawski
+PL,PL618,Swiecki
+PL,PL619,Wloclawski
+PL,PL62,Warminsko-Mazurskie
+PL,PL621,Elblaski
+PL,PL622,Olsztynski
+PL,PL623,Elcki
+PL,PL63,Pomorskie
+PL,PL633,Trójmiejski
+PL,PL634,Gdanski
+PL,PL636,Slupski
+PL,PL637,Chojnicki
+PL,PL638,Starogardzki
+PT,PT1,CONTINENTE
+PT,PT11,Norte
+PT,PT111,Alto Minho
+PT,PT112,Cávado
+PT,PT119,Ave
+PT,PT11A,Área Metropolitana do Porto
+PT,PT11B,Alto Tâmega
+PT,PT11C,Tâmega e Sousa
+PT,PT11D,Douro
+PT,PT11E,Terras de Trás-os-Montes
+PT,PT15,Algarve
+PT,PT150,Algarve
+PT,PT16,Centro (PT)
+PT,PT16B,Oeste
+PT,PT16D,Região de Aveiro
+PT,PT16F,Região de Leiria
+PT,PT16G,Viseu Dão Lafões
+PT,PT16H,Beira Baixa
+PT,PT16I,Médio Tejo
+PT,PT17,Área Metropolitana de Lisboa
+PT,PT170,Área Metropolitana de Lisboa
+PT,PT18,Alentejo
+PT,PT181,Alentejo Litoral
+PT,PT184,Baixo Alentejo
+PT,PT186,Alto Alentejo
+PT,PT187,Alentejo Central
+PT,PT2,REGIÃO AUTÓNOMA DOS AÇORES
+PT,PT200,Região Autónoma dos Açores
+PT,PT3,REGIÃO AUTÓNOMA DA MADEIRA
+PT,PT30,Região Autónoma da Madeira
+RO,RO1,MACROREGIUNEA UNU
+RO,RO11,Nord-Vest
+RO,RO111,Bihor
+RO,RO112,Bistrita-Nasaud
+RO,RO113,Cluj
+RO,RO114,Maramures
+RO,RO115,Satu Mare
+RO,RO116,Salaj
+RO,RO12,Centru
+RO,RO121,Alba
+RO,RO122,Brasov
+RO,RO123,Covasna
+RO,RO124,Harghita
+RO,RO125,Mures
+RO,RO126,Sibiu
+RO,RO2,MACROREGIUNEA DOI
+RO,RO21,Nord-Est
+RO,RO212,Botosani
+RO,RO213,Iasi
+RO,RO214,Neamt
+RO,RO215,Suceava
+RO,RO216,Vaslui
+RO,RO221,Braila
+RO,RO222,Buzau
+RO,RO223,Constanta
+RO,RO224,Galati
+RO,RO225,Tulcea
+RO,RO3,MACROREGIUNEA TREI
+RO,RO31,Sud - Muntenia
+RO,RO311,Arges
+RO,RO313,Dâmbovita
+RO,RO314,Giurgiu
+RO,RO315,Ialomita
+RO,RO316,Prahova
+RO,RO32,Bucuresti - Ilfov
+RO,RO321,Bucuresti
+RO,RO322,Ilfov
+RO,RO41,Sud-Vest Oltenia
+RO,RO411,Dolj
+RO,RO412,Gorj
+RO,RO413,Mehedinti
+RO,RO414,Olt
+RO,RO415,Vâlcea
+RO,RO42,Vest
+RO,RO421,Arad
+RO,RO422,Caras-Severin
+RO,RO423,Hunedoara
+RO,RO424,Timis
+SE,SE11,Stockholm
+SE,SE110,Stockholms län
+SE,SE12,Östra Mellansverige
+SE,SE121,Uppsala län
+SE,SE122,Södermanlands län
+SE,SE123,Östergötlands län
+SE,SE124,Örebro län
+SE,SE125,Västmanlands län
+SE,SE2,SÖDRA SVERIGE
+SE,SE21,Småland med öarna
+SE,SE211,Jönköpings län
+SE,SE212,Kronobergs län
+SE,SE213,Kalmar län
+SE,SE214,Gotlands län
+SE,SE22,Sydsverige
+SE,SE221,Blekinge län
+SE,SE224,Skåne län
+SE,SE23,Västsverige
+SE,SE232,Västra Götalands län
+SE,SE3,NORRA SVERIGE
+SE,SE31,Norra Mellansverige
+SE,SE312,Dalarnas län
+SE,SE313,Gävleborgs län
+SE,SE32,Mellersta Norrland
+SE,SE322,Jämtlands län
+SE,SE33,Övre Norrland
+SE,SE331,Västerbottens län
+SE,SE332,Norrbottens län
+SI,SI0,SLOVENIJA
+SI,SI031,Pomurska
+SI,SI032,Podravska
+SI,SI033,Koroška
+SI,SI034,Savinjska
+SI,SI035,Zasavska
+SI,SI036,Posavska
+SI,SI038,Primorsko-notranjska
+SI,SI04,Zahodna Slovenija
+SI,SI041,Osrednjeslovenska
+SI,SI042,Gorenjska
+SI,SI043,Goriška
+SI,SI044,Obalno-kraška
+SK,SK0,SLOVENSKO
+SK,SK010,Bratislavský kraj
+SK,SK02,Západné Slovensko
+SK,SK021,Trnavský kraj
+SK,SK023,Nitriansky kraj
+SK,SK03,Stredné Slovensko
+SK,SK031,Žilinský kraj
+SK,SK04,Východné Slovensko
+SK,SK041,Prešovský kraj
+SK,SK042,Košický kraj
+TR,TR1,ISTANBUL
+TR,TR10,Istanbul
+TR,TR100,Istanbul
+TR,TR21,"Tekirdag, Edirne, Kirklareli"
+TR,TR211,Tekirdag
+TR,TR212,Edirne
+TR,TR213,Kirklareli
+TR,TR221,Balikesir
+TR,TR222,Çanakkale
+TR,TR3,EGE
+TR,TR31,Izmir
+TR,TR310,Izmir
+TR,TR32,"Aydin, Denizli, Mugla"
+TR,TR321,Aydin
+TR,TR322,Denizli
+TR,TR323,Mugla
+TR,TR331,Manisa
+TR,TR332,Afyon
+TR,TR333,Kütahya
+TR,TR334,Usak
+TR,TR4,DOGU MARMARA
+TR,TR41,"Bursa, Eskisehir, Bilecik"
+TR,TR411,Bursa
+TR,TR412,Eskisehir
+TR,TR413,Bilecik
+TR,TR42,"Kocaeli, Sakarya, Düzce, Bolu, Yalova"
+TR,TR421,Kocaeli
+TR,TR422,Sakarya
+TR,TR423,Düzce
+TR,TR424,Bolu
+TR,TR425,Yalova
+TR,TR51,Ankara
+TR,TR510,Ankara
+TR,TR52,"Konya, Karaman"
+TR,TR521,Konya
+TR,TR522,Karaman
+TR,TR6,AKDENIZ
+TR,TR61,"Antalya, Isparta, Burdur"
+TR,TR611,Antalya
+TR,TR612,Isparta
+TR,TR613,Burdur
+TR,TR62,"Adana, Mersin"
+TR,TR621,Adana
+TR,TR622,Içel
+TR,TR63,"Hatay, Kahramanmaras, Osmaniye"
+TR,TR631,Hatay
+TR,TR632,Kahramanmaras
+TR,TR633,Osmaniye
+TR,TR7,ORTA ANADOLU
+TR,TR71,"Kirikkale, Aksaray, Nigde, Nevsehir, Kirsehir"
+TR,TR711,Kirikkale
+TR,TR712,Aksaray
+TR,TR713,Nigde
+TR,TR714,Nevsehir
+TR,TR715,Kirsehir
+TR,TR72,"Kayseri, Sivas, Yozgat"
+TR,TR721,Kayseri
+TR,TR722,Sivas
+TR,TR723,Yozgat
+TR,TR8,BATI KARADENIZ
+TR,TR81,"Zonguldak, Karabük, Bartin"
+TR,TR811,Zonguldak
+TR,TR812,Karabük
+TR,TR813,Bartin
+TR,TR82,"Kastamonu, Çankiri, Sinop"
+TR,TR821,Kastamonu
+TR,TR822,Çankiri
+TR,TR823,Sinop
+TR,TR831,Samsun
+TR,TR832,Tokat
+TR,TR833,Çorum
+TR,TR834,Amasya
+TR,TR9,DOGU KARADENIZ
+TR,TR90,Trabzon
+TR,TR901,Trabzon
+TR,TR902,Ordu
+TR,TR903,Giresun
+TR,TR904,Rize
+TR,TR905,Artvin
+TR,TR906,Gümüshane
+TR,TRA,KUZEYDOGU ANADOLU
+TR,TRA11,Erzurum
+TR,TRA12,Erzincan
+TR,TRA13,Bayburt
+TR,TRA2,"Agri, Kars, Igdir, Ardahan"
+TR,TRA21,Agri
+TR,TRA22,Kars
+TR,TRA23,Igdir
+TR,TRA24,Ardahan
+TR,TRB,ORTADOGU ANADOLU
+TR,TRB11,Malatya
+TR,TRB12,Elazig
+TR,TRB13,Bingöl
+TR,TRB14,Tunceli
+TR,TRB2,"Van, Mus, Bitlis, Hakkari"
+TR,TRB21,Van
+TR,TRB22,Mus
+TR,TRB23,Bitlis
+TR,TRB24,Hakkari
+TR,TRC,GÜNEYDOGU ANADOLU
+TR,TRC1,"Gaziantep, Adiyaman, Kilis"
+TR,TRC11,Gaziantep
+TR,TRC12,Adiyaman
+TR,TRC13,Kilis
+TR,TRC21,Sanliurfa
+TR,TRC22,Diyarbakir
+TR,TRC3,"Mardin, Batman, Sirnak, Siirt"
+TR,TRC31,Mardin
+TR,TRC32,Batman
+TR,TRC33,Sirnak
+TR,TRC34,Siirt
+UK,UKC,NORTH EAST (ENGLAND)
+UK,UKC11,Hartlepool and Stockton-on-Tees
+UK,UKC12,South Teesside
+UK,UKC13,Darlington
+UK,UKC14,Durham CC
+UK,UKC2,Northumberland and Tyne and Wear
+UK,UKC22,Tyneside
+UK,UKC23,Sunderland
+UK,UKD,NORTH WEST (ENGLAND)
+UK,UKD1,Cumbria
+UK,UKD11,West Cumbria
+UK,UKD3,Greater Manchester
+UK,UKD33,Manchester
+UK,UKD34,Greater Manchester South West
+UK,UKD36,Greater Manchester North West
+UK,UKD37,Greater Manchester North East
+UK,UKD4,Lancashire
+UK,UKD41,Blackburn with Darwen
+UK,UKD42,Blackpool
+UK,UKD44,Lancaster & Wyre
+UK,UKD45,Mid Lancashire
+UK,UKD47,Chorley & West Lancashire
+UK,UKD6,Cheshire
+UK,UKD61,Warrington
+UK,UKD62,Cheshire East
+UK,UKD63,Cheshire West and Chester
+UK,UKD7,Merseyside
+UK,UKD71,East Merseyside
+UK,UKD72,Liverpool
+UK,UKD73,Sefton
+UK,UKD74,Wirral
+UK,UKE,YORKSHIRE AND THE HUMBER
+UK,UKE1,East Yorkshire and Northern Lincolnshire
+UK,UKE11,"Kingston upon Hull, City of"
+UK,UKE12,East Riding of Yorkshire
+UK,UKE13,North and North East Lincolnshire
+UK,UKE2,North Yorkshire
+UK,UKE21,York
+UK,UKE22,North Yorkshire CC
+UK,UKE3,South Yorkshire
+UK,UKE31,"Barnsley, Doncaster and Rotherham"
+UK,UKE32,Sheffield
+UK,UKE4,West Yorkshire
+UK,UKE42,Leeds
+UK,UKE44,Calderdale and Kirklees
+UK,UKE45,Wakefield
+UK,UKF1,Derbyshire and Nottinghamshire
+UK,UKF11,Derby
+UK,UKF12,East Derbyshire
+UK,UKF13,South and West Derbyshire
+UK,UKF14,Nottingham
+UK,UKF16,South Nottinghamshire
+UK,UKF2,"Leicestershire, Rutland and Northamptonshire"
+UK,UKF21,Leicester
+UK,UKF22,Leicestershire CC and Rutland
+UK,UKF25,North Northamptonshire
+UK,UKF3,Lincolnshire
+UK,UKF30,Lincolnshire
+UK,UKG,WEST MIDLANDS (ENGLAND)
+UK,UKG11,"Herefordshire, County of"
+UK,UKG12,Worcestershire
+UK,UKG13,Warwickshire
+UK,UKG2,Shropshire and Staffordshire
+UK,UKG21,Telford and Wrekin
+UK,UKG22,Shropshire CC
+UK,UKG23,Stoke-on-Trent
+UK,UKG24,Staffordshire CC
+UK,UKG3,West Midlands
+UK,UKG31,Birmingham
+UK,UKG32,Solihull
+UK,UKG33,Coventry
+UK,UKG36,Dudley
+UK,UKG37,Sandwell
+UK,UKG38,Walsall
+UK,UKH,EAST OF ENGLAND
+UK,UKH1,East Anglia
+UK,UKH11,Peterborough
+UK,UKH12,Cambridgeshire CC
+UK,UKH14,Suffolk
+UK,UKH16,North & West Norfolk
+UK,UKH17,Breckland & South Norfolk
+UK,UKH2,Bedfordshire and Hertfordshire
+UK,UKH21,Luton
+UK,UKH23,Hertfordshire
+UK,UKH25,Central Bedfordshire
+UK,UKH3,Essex
+UK,UKH31,Southend-on-Sea
+UK,UKH34,Essex Haven Gateway
+UK,UKH35,West Essex
+UK,UKH37,Essex Thames Gateway
+UK,UKI,LONDON
+UK,UKI3,Inner London - West
+UK,UKI31,Camden & City of London
+UK,UKI33,Kensington and Chelsea & Hammersmith and Fulham
+UK,UKI34,Wandsworth
+UK,UKI41,Hackney & Newham
+UK,UKI42,Tower Hamlets
+UK,UKI43,Haringey & Islington
+UK,UKI44,Lewisham & Southwark
+UK,UKI45,Lambeth
+UK,UKI5,Outer London - East and North East
+UK,UKI51,Bexley & Greenwich
+UK,UKI52,Barking and Dagenham & Havering
+UK,UKI53,Redbridge & Waltham Forest
+UK,UKI54,Enfield
+UK,UKI6,Outer London - South
+UK,UKI61,Bromley
+UK,UKI62,Croydon
+UK,UKI63,"Merton, Kingston upon Thames & Sutton"
+UK,UKI7,Outer London - West and North West
+UK,UKI71,Barnet
+UK,UKI72,Brent
+UK,UKI73,Ealing
+UK,UKI74,Harrow & Hillingdon
+UK,UKJ,SOUTH EAST (ENGLAND)
+UK,UKJ1,"Berkshire, Buckinghamshire and Oxfordshire"
+UK,UKJ11,Berkshire
+UK,UKJ12,Milton Keynes
+UK,UKJ13,Buckinghamshire CC
+UK,UKJ14,Oxfordshire
+UK,UKJ2,"Surrey, East and West Sussex"
+UK,UKJ22,East Sussex CC
+UK,UKJ25,West Surrey
+UK,UKJ26,East Surrey
+UK,UKJ27,West Sussex (South West)
+UK,UKJ3,Hampshire and Isle of Wight
+UK,UKJ31,Portsmouth
+UK,UKJ32,Southampton
+UK,UKJ34,Isle of Wight
+UK,UKJ35,South Hampshire
+UK,UKJ36,Central Hampshire
+UK,UKJ37,North Hampshire
+UK,UKJ4,Kent
+UK,UKJ41,Medway
+UK,UKJ44,East Kent
+UK,UKJ45,Mid Kent
+UK,UKJ46,West Kent
+UK,UKK,SOUTH WEST (ENGLAND)
+UK,UKK11,"Bristol, City of"
+UK,UKK12,"Bath and North East Somerset, North Somerset and South Gloucestershire"
+UK,UKK13,Gloucestershire
+UK,UKK14,Swindon
+UK,UKK15,Wiltshire CC
+UK,UKK2,Dorset and Somerset
+UK,UKK21,Bournemouth and Poole
+UK,UKK22,Dorset CC
+UK,UKK23,Somerset
+UK,UKK3,Cornwall and Isles of Scilly
+UK,UKK4,Devon
+UK,UKK41,Plymouth
+UK,UKK42,Torbay
+UK,UKK43,Devon CC
+UK,UKL,WALES
+UK,UKL1,West Wales and The Valleys
+UK,UKL11,Isle of Anglesey
+UK,UKL12,Gwynedd
+UK,UKL13,Conwy and Denbighshire
+UK,UKL14,South West Wales
+UK,UKL15,Central Valleys
+UK,UKL17,Bridgend and Neath Port Talbot
+UK,UKL18,Swansea
+UK,UKL2,East Wales
+UK,UKL22,Cardiff and Vale of Glamorgan
+UK,UKL23,Flintshire and Wrexham
+UK,UKL24,Powys
+UK,UKM,SCOTLAND
+UK,UKM2,Eastern Scotland
+UK,UKM21,Angus and Dundee City
+UK,UKM23,East Lothian and Midlothian
+UK,UKM24,Scottish Borders
+UK,UKM25,"Edinburgh, City of"
+UK,UKM26,Falkirk
+UK,UKM27,Perth & Kinross and Stirling
+UK,UKM28,West Lothian
+UK,UKM3,South Western Scotland
+UK,UKM31,"East Dunbartonshire, West Dunbartonshire and Helensburgh & Lomond"
+UK,UKM32,Dumfries & Galloway
+UK,UKM34,Glasgow City
+UK,UKM35,"Inverclyde, East Renfrewshire and Renfrewshire"
+UK,UKM36,North Lanarkshire
+UK,UKM37,South Ayrshire
+UK,UKM38,South Lanarkshire
+UK,UKM5,North Eastern Scotland
+UK,UKM50,Aberdeen City and Aberdeenshire
+UK,UKM6,Highlands and Islands
+UK,UKM62,"Inverness & Nairn and Moray, Badenoch & Strathspey"
+UK,UKM63,"Lochaber, Skye & Lochalsh, Arran & Cumbrae and Argyll & Bute"
+UK,UKM64,Eilean Siar (Western Isles)
+UK,UKM65,Orkney Islands
+UK,UKM66,Shetland Islands
+UK,UKN,NORTHERN IRELAND
+UK,UKN01,Belfast
+UK,UKN02,Outer Belfast
+UK,UKN03,East of Northern Ireland
+UK,UKN04,North of Northern Ireland
+ME,ME00,Црна Гора
+ME,ME000,Црна Гора
+AT,AT,ÖSTERREICH
+BE,BE,BELGIQUE-BELGIË
+BG,BG,БЪЛГАРИЯ
+CH,CH,SCHWEIZ/SUISSE/SVIZZERA
+CZ,CZ,CESKÁ REPUBLIKA
+DE,DE,DEUTSCHLAND
+DK,DK,DANMARK
+EE,EE,EESTI
+EL,EL,ΕΛΛΑΔΑ
+FI,FI,SUOMI / FINLAND
+FR,FR,FRANCE
+HR,HR,HRVATSKA
+IE,IE,IRELAND
+IS,IS,ÍSLAND
+IT,IT,ITALIA
+LI,LI,LIECHTENSTEIN
+LT,LT,LIETUVA
+LU,LU,LUXEMBOURG
+LV,LV,LATVIJA
+MK,MK,ПОРАНЕШНА ЈУГОСЛОВЕНСКА РЕПУБЛИКА МАКЕДОНИЈА
+MT,MT,MALTA
+NO,NO,NORGE
+PL,PL,POLSKA
+PT,PT,PORTUGAL
+RO,RO,ROMÂNIA
+SE,SE,SVERIGE
+SK,SK,SLOVENSKO
+TR,TR,TÜRKIYE
+UK,UK,UNITED KINGDOM
+AT,AT22,Steiermark
+AT,AT224,Oststeiermark
+AT,AT3,WESTÖSTERREICH
+AT,AT315,Traunviertel
+AT,AT331,Außerfern
+AT,AT341,Bludenz-Bregenzer Wald
+BE,BE10,Région de Bruxelles-Capitale / Brussels Hoofdstedelijk Gewest
+BE,BE235,Arr. Oudenaarde
+BE,BE25,Prov. West-Vlaanderen
+BE,BE258,Arr. Veurne
+BE,BE32,Prov. Hainaut
+BE,BE326,Arr. Thuin
+BE,BE332,Arr. Liège
+BG,BG3,СЕВЕРНА И ЮГОИЗТОЧНА БЪЛГАРИЯ
+BG,BG32,Северен централен
+BG,BG325,Силистра
+BG,BG331,Варна
+BG,BG334,Търговище
+BG,BG341,Бургас
+BG,BG344,Стара Загора
+BG,BG4,ЮГОЗАПАДНА И ЮЖНА ЦЕНТРАЛНА БЪЛГАРИЯ
+BG,BG422,Хасково
+BG,BG424,Смолян
+CH,CH01,Région lémanique
+CH,CH031,Basel-Stadt
+CH,CH051,Glarus
+CH,CH054,Appenzell Innerrhoden
+CZ,CZ051,Liberecký kraj
+CZ,CZ06,Jihovýchod
+CZ,CZ071,Olomoucký kraj
+DE,DE1,BADEN-WÜRTTEMBERG
+DE,DE116,Rems-Murr-Kreis
+DE,DE11A,Schwäbisch Hall
+DE,DE122,"Karlsruhe, Stadtkreis"
+DE,DE129,"Pforzheim, Stadtkreis"
+DE,DE133,Emmendingen
+DE,DE138,Konstanz
+DE,DE142,"Tübingen, Landkreis"
+DE,DE21,Oberbayern
+DE,DE212,"München, Kreisfreie Stadt"
+DE,DE227,"Landshut, Landkreis"
+DE,DE231,"Amberg, Kreisfreie Stadt"
+DE,DE237,Neustadt a. d. Waldnaab
+DE,DE243,"Coburg, Kreisfreie Stadt"
+DE,DE24B,Kulmbach
+DE,DE25,Mittelfranken
+DE,DE253,"Fürth, Kreisfreie Stadt"
+DE,DE258,"Fürth, Landkreis"
+DE,DE26,Unterfranken
+DE,DE263,"Würzburg, Kreisfreie Stadt"
+DE,DE26B,"Schweinfurt, Landkreis"
+DE,DE273,"Kempten (Allgäu), Kreisfreie Stadt"
+DE,DE406,Dahme-Spreewald
+DE,DE40C,Oder-Spree
+DE,DE40G,Spree-Neiße
+DE,DE502,"Bremerhaven, Kreisfreie Stadt"
+DE,DE713,"Offenbach am Main, Kreisfreie Stadt"
+DE,DE71D,Rheingau-Taunus-Kreis
+DE,DE724,Marburg-Biedenkopf
+DE,DE735,Schwalm-Eder-Kreis
+DE,DE803,"Rostock, Kreisfreie Stadt"
+DE,DE80M,Nordwestmecklenburg
+DE,DE912,"Salzgitter, Kreisfreie Stadt"
+DE,DE943,"Oldenburg (Oldenburg), Kreisfreie Stadt"
+DE,DE94E,"Osnabrück, Landkreis"
+DE,DEA12,"Duisburg, Kreisfreie Stadt"
+DE,DEA16,"Mülheim an der Ruhr,Kreisfreie Stadt"
+DE,DEA22,"Bonn, Kreisfreie Stadt"
+DE,DEA2A,Oberbergischer Kreis
+DE,DEA31,"Bottrop, Kreisfreie Stadt"
+DE,DEA41,"Bielefeld, Kreisfreie Stadt"
+DE,DEB1B,Westerwaldkreis
+DE,DEB24,Vulkaneifel
+DE,DEB31,"Frankenthal (Pfalz), Kreisfreie Stadt"
+DE,DEB36,"Neustadt an der Weinstraße, Kreisfreie Stadt"
+DE,DEB3I,Rhein-Pfalz-Kreis
+DE,DEC01,Regionalverband Saarbrücken
+DE,DED2F,Sächsische Schweiz-Osterzgebirge
+DE,DEE0,Sachsen-Anhalt
+DE,DEE03,"Magdeburg, Kreisfreie Stadt"
+DE,DEF0A,Plön
+DE,DEF0C,Schleswig-Flensburg
+DE,DEG02,"Gera, Kreisfreie Stadt"
+DE,DEG0A,Kyffhäuserkreis
+DE,DEG0G,Weimarer Land
+DE,DEG0M,Altenburger Land
+DK,DK011,Byen København
+DK,DK021,Østsjælland
+DK,DK05,Nordjylland
+EE,EE004,Lääne-Eesti
+EL,EL30,Aττική
+EL,EL301,Βόρειος Τομέας Αθηνών
+EL,EL304,Νότιος Τομέας Αθηνών
+EL,EL307,"Πειραιάς, Νήσοι"
+EL,EL411,"Λέσβος, Λήμνος"
+EL,EL42,Νότιο Αιγαίο
+EL,EL422,"Άνδρος, Θήρα, Κέα, Μήλος, Μύκονος, Νάξος, Πάρος, Σύρος, Τήνος"
+EL,EL511,Έβρος
+EL,EL513,Ροδόπη
+EL,EL515,"Θάσος, Καβάλα"
+EL,EL522,Θεσσαλονίκη
+EL,EL527,Χαλκιδική
+EL,EL531,"Γρεβενά, Κοζάνη"
+EL,EL54,Ήπειρος
+EL,EL542,Θεσπρωτία
+EL,EL61,Θεσσαλία
+EL,EL612,Λάρισα
+EL,EL62,Ιόνια Νησιά
+EL,EL623,"Ιθάκη, Κεφαλληνία"
+EL,EL631,Αιτωλοακαρνανία
+EL,EL642,Εύβοια
+EL,EL653,"Λακωνία, Μεσσηνία"
+ES,ES300,Madrid
+ES,ES411,Ávila
+ES,ES416,Segovia
+ES,ES421,Albacete
+ES,ES43,Extremadura
+ES,ES512,Girona
+ES,ES521,Alicante / Alacant
+ES,ES531,Eivissa y Formentera
+ES,ES616,Jaén
+ES,ES62,Región de Murcia
+ES,ES70,Canarias
+ES,ES707,La Palma
+FI,FI19,Länsi-Suomi
+FI,FI1B,Helsinki-Uusimaa
+FI,FI1C3,Päijät-Häme
+FR,FR263,Saône-et-Loire
+FR,FR411,Meurthe-et-Moselle
+FR,FR433,Haute-Saône
+FR,FR512,Maine-et-Loire
+FR,FR522,Finistère
+FR,FR533,Deux-Sèvres
+FR,FR614,Lot-et-Garonne
+FR,FR622,Aveyron
+FR,FR626,Hautes-Pyrénées
+FR,FR712,Ardèche
+FR,FR718,Haute-Savoie
+FR,FR8,MÉDITERRANÉE
+HR,HR03,Jadranska Hrvatska
+HR,HR034,Šibensko-kninska županija
+HR,HR041,Grad Zagreb
+HR,HR044,Varaždinska županija
+HR,HR048,Viroviticko-podravska županija
+HR,HR04C,Vukovarsko-srijemska županija
+HU,HU2,DUNÁNTÚL
+HU,HU212,Komárom-Esztergom
+HU,HU23,Dél-Dunántúl
+HU,HU311,Borsod-Abaúj-Zemplén
+HU,HU323,Szabolcs-Szatmár-Bereg
+IE,IE013,West
+IE,IE022,Mid-East
+IT,ITF48,Barletta-Andria-Trani
+IT,ITG11,Trapani
+IT,ITG16,Enna
+IT,ITG2,Sardegna
+IT,ITG2A,Ogliastra
+IT,ITH1,Provincia Autonoma di Bolzano/Bozen
+IT,ITH43,Gorizia
+IT,ITH53,Reggio nell'Emilia
+IT,ITI11,Massa-Carrara
+IT,ITI21,Perugia
+LV,LV009,Zemgale
+MK,MK0,ПОРАНЕШНА ЈУГОСЛОВЕНСКА РЕПУБЛИКА МАКЕДОНИЈА
+NL,NL113,Overig Groningen
+NL,NL131,Noord-Drenthe
+NL,NL211,Noord-Overijssel
+NL,NL226,Arnhem/Nijmegen
+NL,NL321,Kop van Noord-Holland
+NL,NL33,Zuid-Holland
+NL,NL337,Agglomeratie Leiden en Bollenstreek
+NO,NO061,Sør-Trøndelag
+PL,PL113,Miasto Lódz
+PL,PL127,Miasto Warszawa
+PL,PL12E,Siedlecki
+PL,PL213,Miasto Kraków
+PL,PL227,Rybnicki
+PL,PL3,REGION WSCHODNI
+PL,PL323,Krosnienski
+PL,PL332,Sandomiersko-jedrzejowski
+PL,PL416,Kaliski
+PL,PL424,Miasto Szczecin
+PL,PL432,Zielonogórski
+PL,PL516,Legnicko-Glogowski
+PT,PT16E,Região de Coimbra
+PT,PT16J,Beiras e Serra da Estrela
+PT,PT185,Lezíria do Tejo
+PT,PT20,Região Autónoma dos Açores
+PT,PT300,Região Autónoma da Madeira
+RO,RO211,Bacau
+RO,RO22,Sud-Est
+RO,RO226,Vrancea
+RO,RO312,Calarasi
+RO,RO317,Teleorman
+RO,RO4,MACROREGIUNEA PATRU
+SE,SE1,ÖSTRA SVERIGE
+SE,SE231,Hallands län
+SE,SE311,Värmlands län
+SE,SE321,Västernorrlands län
+SI,SI03,Vzhodna Slovenija
+SI,SI037,Jugovzhodna Slovenija
+SK,SK01,Bratislavský kraj
+SK,SK022,Trenciansky kraj
+SK,SK032,Banskobystrický kraj
+TR,TR2,BATI MARMARA
+TR,TR22,"Balikesir, Çanakkale"
+TR,TR33,"Manisa, Afyonkarahisar, Kütahya, Usak"
+TR,TR5,BATI ANADOLU
+TR,TR83,"Samsun, Tokat, Çorum, Amasya"
+TR,TRA1,"Erzurum, Erzincan, Bayburt"
+TR,TRB1,"Malatya, Elazig, Bingöl, Tunceli"
+TR,TRC2,"Sanliurfa, Diyarbakir"
+UK,UKC1,Tees Valley and Durham
+UK,UKC21,Northumberland
+UK,UKD12,East Cumbria
+UK,UKD35,Greater Manchester South East
+UK,UKD46,East Lancashire
+UK,UKE41,Bradford
+UK,UKF,EAST MIDLANDS (ENGLAND)
+UK,UKF15,North Nottinghamshire
+UK,UKF24,West Northamptonshire
+UK,UKG1,"Herefordshire, Worcestershire and Warwickshire"
+UK,UKG39,Wolverhampton
+UK,UKH15,Norwich & East Norfolk
+UK,UKH24,Bedford
+UK,UKH32,Thurrock
+UK,UKH36,Heart of Essex
+UK,UKI32,Westminster
+UK,UKI4,Inner London - East
+UK,UKI75,Hounslow & Richmond upon Thames
+UK,UKJ21,Brighton and Hove
+UK,UKJ28,West Sussex (North East)
+UK,UKJ43,Kent Thames Gateway
+UK,UKK1,"Gloucestershire, Wiltshire and Bristol/Bath area"
+UK,UKK30,Cornwall and Isles of Scilly
+UK,UKL16,Gwent Valleys
+UK,UKL21,Monmouthshire and Newport
+UK,UKM22,Clackmannanshire and Fife
+UK,UKM33,East Ayrshire and North Ayrshire mainland
+UK,UKM61,Caithness & Sutherland and Ross & Cromarty
+UK,UKN0,Northern Ireland
+UK,UKN05,West and South of Northern Ireland
+CY,CY,ΚΥΠΡΟΣ
+ES,ES,ESPAÑA
+HU,HU,MAGYARORSZÁG
+ME,ME,ЦРНА ГОРА
+NL,NL,NEDERLAND
+SI,SI,SLOVENIJA
