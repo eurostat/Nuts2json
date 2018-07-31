@@ -62,7 +62,7 @@ do
         echo "Project country $type to $proj"
         ogr2ogr -overwrite -f "ESRI Shapefile" \
             "tmp/"$year"/"$proj"/CNTR_"$type"_proj.shp" \
-            "tmp/"$year"/CNTR_"$type"_01M_"$year"___.shp" \
+            "tmp/"$year"/CNTR_"$type".shp" \
             -t_srs EPSG:$epsg -s_srs EPSG:4258
 
         echo "Clip country $type $proj"
