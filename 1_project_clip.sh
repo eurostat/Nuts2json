@@ -18,18 +18,18 @@ year=${years[pi]}
 mkdir -p "tmp/"$year
 
 echo "Clip and filter country RG"
-ogr2ogr -overwrite -f "ESRI Shapefile" \
-   "tmp/"$year"/CNTR_RG_01M_"$year"_.shp" \
+ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
+   "tmp/"$year"/CNTR_RG.shp" \
    "shp/"$year"/CNTR_RG_01M_"$year".shp" \
    -sql "SELECT * FROM CNTR_RG_01M_"$year" WHERE CNTR_ID NOT IN ('PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME')" \
    -clipsrc -179 -89 179 89
 
-echo "Join country RG attributes"
-ogr2ogr -overwrite -f "ESRI Shapefile" \
-   "tmp/"$year"/CNTR_RG_01M_"$year"___.shp" \
-   "tmp/"$year"/CNTR_RG_01M_"$year"_.shp" \
-   -sql "select CNTR_RG_01M_"$year"_.*, CNTR_AT_"$year".* from CNTR_RG_01M_"$year"_ left join 'shp/"$year"/CNTR_AT_"$year".csv'.CNTR_AT_"$year" on CNTR_RG_01M_"$year"_.CNTR_ID = CNTR_AT_"$year".CNTR_ID" \
-   -clipsrc -179 -89 179 89
+#echo "Join country RG attributes"
+#ogr2ogr -overwrite -f "ESRI Shapefile" \
+#   "tmp/"$year"/CNTR_RG___.shp" \
+#   "tmp/"$year"/CNTR_RG.shp" \
+#   -sql "select CNTR_RG.*, CNTR_AT_"$year".* from CNTR_RG left join 'shp/"$year"/CNTR_AT_"$year".csv'.CNTR_AT_"$year" on CNTR_RG.CNTR_ID = CNTR_AT_"$year".CNTR_ID" \
+#   -clipsrc -179 -89 179 89
 
 #echo "Clip and filter country BN and select"
 #ogr2ogr -overwrite -f "ESRI Shapefile" \
