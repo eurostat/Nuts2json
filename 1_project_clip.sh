@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-years=("2013" "2016")
+years=(2013 2016)
 projs=("etrs89" "wm" "laea")
 epsgs=("4258" "3857" "3035")
 xmin=(-12.5 -1490000 2434550)
@@ -44,7 +44,7 @@ for pi in ${!projs[@]}
 do
     proj=${projs[pi]}
     epsg=${epsgs[pi]}
-    mkdir -p "tmp/"$year"/"$proj
+    mkdir -p "tmp/$year/$proj"
     for type in "RG" "BN"
     do
         echo "NUTS $year: Project $type to $proj"
