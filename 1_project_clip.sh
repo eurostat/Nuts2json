@@ -13,7 +13,7 @@ mkdir -p tmp
 for yi in ${!years[@]}
 do
 
-year=${years[pi]}
+year=${years[yi]}
 
 mkdir -p "tmp/"$year
 
