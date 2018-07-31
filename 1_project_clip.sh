@@ -15,6 +15,8 @@ do
 
 year=${years[pi]}
 
+mkdir "tmp/"$year
+
 echo "Clip and filter country RG"
 ogr2ogr -overwrite -f "ESRI Shapefile" \
    "tmp/"$year"/CNTR_RG_01M_"$year"_.shp" \
