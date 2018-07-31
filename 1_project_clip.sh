@@ -36,6 +36,7 @@ ogr2ogr -overwrite -f "ESRI Shapefile" \
    -sql "SELECT * FROM CNTR_BN_01M_"$year" WHERE COAS_FLAG='F' AND OTHR_CNTR_='T'" \
    -clipsrc -179 -89 179 89
 
+
 for pi in ${!projs[@]}
 do
     proj=${projs[pi]}
