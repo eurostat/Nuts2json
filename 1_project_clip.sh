@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-years=("2010")
+years=("2013")
 projs=("etrs89" "wm" "laea")
 epsgs=("4258" "3857" "3035")
 xmin=(-12.5 -1490000 2434550)
@@ -16,6 +16,7 @@ do
 year=${years[pi]}
 
 mkdir -p "tmp/"$year
+
 
 echo "Country: Clip and filter RG"
 ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
@@ -39,37 +40,37 @@ ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
    -clipsrc -179 -89 179 89
 
 
-#for pi in ${!projs[@]}
-#do
-#    proj=${projs[pi]}
-#    epsg=${epsgs[pi]}
-#    mkdir -p tmp/"$year"/$proj
-#    for type in "RG" "BN"
-#    do
-#        echo "Project NUTS $type to $proj"
-#        ogr2ogr -overwrite -f "ESRI Shapefile" \
-#            "tmp/"$year"/"$proj"/NUTS_"$type"_proj.shp" \
-#            "shp/"$year"/NUTS_"$type"_01M_"$year".shp" \
-#            -t_srs EPSG:$epsg -s_srs EPSG:4258
-#
-#        echo "Clip NUTS $type $proj"
-#        ogr2ogr -overwrite -f "ESRI Shapefile" \
-#            "tmp/"$year"/"$proj"/NUTS_"$type".shp" \
-#            "tmp/"$year"/"$proj"/NUTS_"$type"_proj.shp" \
-#            -clipsrc ${xmin[pi]} ${ymin[pi]} ${xmax[pi]} ${ymax[pi]}
-#
-#        echo "Project country $type to $proj"
-#        ogr2ogr -overwrite -f "ESRI Shapefile" \
-#            "tmp/"$year"/"$proj"/CNTR_"$type"_proj.shp" \
-#            "tmp/"$year"/CNTR_"$type"_01M_"$year"___.shp" \
-#            -t_srs EPSG:$epsg -s_srs EPSG:4258
-#
-#        echo "Clip country $type $proj"
-#        ogr2ogr -overwrite -f "ESRI Shapefile" \
-#            "tmp/"$year"/"$proj"/CNTR_"$type".shp" \
-#            "tmp/"$year"/"$proj"/CNTR_"$type"_proj.shp" \
-#            -clipsrc ${xmin[pi]} ${ymin[pi]} ${xmax[pi]} ${ymax[pi]}
-#    done
-#done
+for pi in ${!projs[@]}
+do
+    proj=${projs[pi]}
+    epsg=${epsgs[pi]}
+    mkdir -p tmp/"$year"/$proj
+    for type in "RG" "BN"
+    do
+        echo "Project NUTS $type to $proj"
+        ogr2ogr -overwrite -f "ESRI Shapefile" \
+            "tmp/"$year"/"$proj"/NUTS_"$type"_proj.shp" \
+            "shp/"$year"/NUTS_"$type"_01M_"$year".shp" \
+            -t_srs EPSG:$epsg -s_srs EPSG:4258
+
+        echo "Clip NUTS $type $proj"
+        ogr2ogr -overwrite -f "ESRI Shapefile" \
+            "tmp/"$year"/"$proj"/NUTS_"$type".shp" \
+            "tmp/"$year"/"$proj"/NUTS_"$type"_proj.shp" \
+            -clipsrc ${xmin[pi]} ${ymin[pi]} ${xmax[pi]} ${ymax[pi]}
+
+        echo "Project country $type to $proj"
+        ogr2ogr -overwrite -f "ESRI Shapefile" \
+            "tmp/"$year"/"$proj"/CNTR_"$type"_proj.shp" \
+            "tmp/"$year"/CNTR_"$type"_01M_"$year"___.shp" \
+            -t_srs EPSG:$epsg -s_srs EPSG:4258
+
+        echo "Clip country $type $proj"
+        ogr2ogr -overwrite -f "ESRI Shapefile" \
+            "tmp/"$year"/"$proj"/CNTR_"$type".shp" \
+            "tmp/"$year"/"$proj"/CNTR_"$type"_proj.shp" \
+            -clipsrc ${xmin[pi]} ${ymin[pi]} ${xmax[pi]} ${ymax[pi]}
+    done
+done
 
 done
