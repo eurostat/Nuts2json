@@ -48,25 +48,25 @@ do
     for type in "RG" "BN"
     do
         echo "Project NUTS $type to $proj"
-        ogr2ogr -overwrite -f "ESRI Shapefile" \
+        ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
             "tmp/"$year"/"$proj"/NUTS_"$type"_proj.shp" \
             "shp/"$year"/NUTS_"$type"_01M_"$year".shp" \
             -t_srs EPSG:$epsg -s_srs EPSG:4258
 
         echo "Clip NUTS $type $proj"
-        ogr2ogr -overwrite -f "ESRI Shapefile" \
+        ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
             "tmp/"$year"/"$proj"/NUTS_"$type".shp" \
             "tmp/"$year"/"$proj"/NUTS_"$type"_proj.shp" \
             -clipsrc ${xmin[pi]} ${ymin[pi]} ${xmax[pi]} ${ymax[pi]}
 
         echo "Project country $type to $proj"
-        ogr2ogr -overwrite -f "ESRI Shapefile" \
+        ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
             "tmp/"$year"/"$proj"/CNTR_"$type"_proj.shp" \
             "tmp/"$year"/CNTR_"$type".shp" \
             -t_srs EPSG:$epsg -s_srs EPSG:4258
 
         echo "Clip country $type $proj"
-        ogr2ogr -overwrite -f "ESRI Shapefile" \
+        ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
             "tmp/"$year"/"$proj"/CNTR_"$type".shp" \
             "tmp/"$year"/"$proj"/CNTR_"$type"_proj.shp" \
             -clipsrc ${xmin[pi]} ${ymin[pi]} ${xmax[pi]} ${ymax[pi]}
