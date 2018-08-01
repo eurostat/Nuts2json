@@ -9,12 +9,7 @@ http://geoexamples.com/d3-composite-projections/
 http://bl.ocks.org/rveciana/4bcc5750c776c22ffda6
 
 
-produce geo etrs89 (See end of http://teslabs.com/articles/topojson-catalonia/)
-use only that one?
-
 show more: SEP, JOIN + natural earth?
-
-
 do for european communes (...) + other eurostat datasets?
 
 produce geojson
@@ -34,17 +29,3 @@ https://bost.ocks.org/mike/simplify/
 
 shp info
 ogrinfo -so -al myfile.shp
-Attributes:
-NUTS_ID: String (14.0)
-STAT_LEVL_: Integer (5.0)
-SHAPE_AREA: Real (19.11)
-SHAPE_LEN: Real (19.11)
-
-EU_FLAG: String (1.0)
-EFTA_FLAG: String (1.0)
-CC_FLAG: String (1.0)
-STAT_LEVL_: Integer (5.0)
-NUTS_BN_ID: Integer (10.0)
-COAS_FLAG: String (1.0)
-OTHR_CNTR_: String (1.0)
-SHAPE_LEN: Real (19.11)

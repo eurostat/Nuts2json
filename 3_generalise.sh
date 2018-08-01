@@ -28,8 +28,8 @@ do
             else
 
             echo "$year $proj $size $level - Generalise"
-            
-            
+            #generalise nuts/country regions/boundaries toguether
+
 #            topojson -o \
 #                $dir"/"$level".topojson" \
 #                "nutsrg=tmp/"$year"/"$proj"/RGbylevel/RG_lvl"$level".shp" \
