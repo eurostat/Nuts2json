@@ -60,3 +60,4 @@ Feel free to [ask support](https://github.com/eurostat/Nuts2json/issues/new), fo
 ## Copyright
 
 The <a href="http://ec.europa.eu/eurostat/web/nuts/overview" target="_blank">Eurostat NUTS dataset</a> is copyrighted. See the <a href="http://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts" target="_blank">Eurostat-GISCO</a> website for more information.
+
