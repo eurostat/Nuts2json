@@ -10,15 +10,17 @@ The files can be retrieved directly from the base URL `https://raw.githubusercon
 
 The file path pattern is: `/\<YEAR\>/\<PROJECTION\>/\<SIZE\>/\<NUTS_LEVEL\>.\<FORMAT\>*`
 
-where:
+where the parameters are:
 
-- <i>YEAR</i> is the NUTS version year. Currently, only 2013 is provided. 2016 will be published soon.
-- <i>PROJECTION</i> is the map projection. Currently, European projection LAEA (<a href="http://spatialreference.org/ref/epsg/etrs89-etrs-laea/" target="_blank">EPSG 3035</a>) and Web Mercator (<a href="http://spatialreference.org/ref/sr-org/7483/" target="_blank">EPSG 3857</a>) are provided.
-- <i>SIZE</i> is the size of the map, in pixel. Currently, all maps are squared. The available sizes are 400, 600, 800, 1000 and 1200 pixels.
-- <i>NUTS_LEVEL</i> is the NUTS level to be shown on the map, from national level (NUTS_LEVEL=0) to provincial level (NUTS_LEVEL=3).
-- <i>FORMAT</i> is the file format. Currently, only <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a> is provided. <a href="http://geojson.org/" target="_blank">GeoJSON</a> format is to come.
+| Parameter | Description | Possible values |
+| ------------- | ------------- |-------------|
+| <i>YEAR</i> | The NUTS version year. | 2013 |
+| <i>PROJECTION</i> | The map projection. Currently, European projection LAEA (<a href="http://spatialreference.org/ref/epsg/etrs89-etrs-laea/" target="_blank">EPSG 3035</a>) and Web Mercator (<a href="http://spatialreference.org/ref/sr-org/7483/" target="_blank">EPSG 3857</a>) are provided | laea, wm |
+| <i>SIZE</i> | The map size, in pixel. Currently, all maps are squared. | 400, 600, 800, 1000, 1200 |
+| <i>NUTS_LEVEL</i> | The NUTS level to be shown on the map, from national level (NUTS_LEVEL=0) to provincial level (NUTS_LEVEL=3). | 0, 1, 2, 3 |
+| <i>FORMAT</i> | The file format. Currently, only <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a> is provided. <a href="http://geojson.org/" target="_blank">GeoJSON</a> format is to come. | topojson |
 
-If you need additional projections, formats, sizes, etc., feel free to [ask](https://github.com/eurostat/Nuts2json/issues/new) !
+For additional projections, formats, sizes, etc., feel free to [ask](https://github.com/eurostat/Nuts2json/issues/new) !
 
 ### Features
 
