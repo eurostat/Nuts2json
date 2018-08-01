@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<svg width="800px" height="800px"></svg>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+
+<style>
+	.rg { fill: #fdbf6f; }
+	.rg:hover { fill: #ff7f00; }
+	.bn { fill: none; stroke-linecap:round; stroke-linejoin:round }
+	.bn_0 { stroke: #333; stroke-width: 1.3px; }
+	.bn_1 { stroke: #333; stroke-width: 1px; }
+	.bn_2 { stroke: #333; stroke-width: 1px; }
+	.bn_3 { stroke: #333; stroke-width: 0.7px; }
+	.bn_oth { stroke: #aaa; stroke-width: 1px; }
+	.cntrg { fill: lightgray; }
+	.cntrg:hover { fill: darkgray; }
+	.cntbn { fill: none; stroke: #aaa; stroke-width: 1px; stroke-linecap:round; stroke-linejoin:round }
+</style>
+
+<script>
+
+	var svg = d3.select("svg");
+	var path = d3.geoPath();
+
+	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2013/laea/800px/3.topojson", function(error, nuts) {
+		if (error) throw error;
+
+		//country regions
+		svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntrg).features).enter()
+				.append("path").attr("d", path)
+				.attr("class", "cntrg")
+
+		//country boundaries
+		svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntbn).features).enter()
+				.append("path").attr("d", path)
+				.attr("class", "cntbn");
+
+		//nuts regions
+		svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsrg).features).enter()
+				.append("path").attr("d", path)
+				.attr("class", "rg")
+
+		//nuts boundaries
+		var bn = topojson.feature(nuts, nuts.objects.nutsbn).features;
+		bn.sort(function(bn1,bn2){ return bn2.properties.lvl - bn1.properties.lvl; });
+		svg.append("g").selectAll("path").data(bn).enter()
+				.append("path").attr("d", path)
+				.attr("class", function(bn){
+					bn = bn.properties;
+					var cl = ["bn","bn_"+bn.lvl];
+					if(bn.oth==="T") cl.push("bn_oth");
+					return cl.join(" ");
+				});
+	});
+
+</script>
