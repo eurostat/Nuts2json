@@ -8,11 +8,13 @@ Examples: For an example of such blank map, see <a href="http://eurostat.github.
 
 ## Supported formats
 
-The files can be retrieved directly from the base URL `https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/` according to a predefined path pattern. For example, <a href="https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2013/wm/600px/2.topojson" target="_blank">`https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2013/wm/600px/2.topojson`</a> is the path to a TopoJSON file of 2013 NUTS regions level 2 in web mercator projection, for a map size 600*600px.
+The files can be retrieved on-the-fly from the base URL `https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/` according to the file pattern:
 
-The file path pattern is: `/<YEAR>/<PROJECTION>/<SIZE>/<NUTS_LEVEL>.<FORMAT>`
+`/<YEAR>/<PROJECTION>/<SIZE>/<NUTS_LEVEL>.<FORMAT>`
 
-where the parameters are:
+For example, <a href="https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2013/wm/600px/2.topojson" target="_blank">`https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2013/wm/600px/2.topojson`</a> returns a TopoJSON file of 2013 NUTS regions level 2 in web mercator projection, for a map size 600*600px.
+
+The parameters are:
 
 | Parameter | Description | Possible values |
 | ------------- | ------------- |-------------|
@@ -45,6 +47,10 @@ Non-european countries (feature type `cntrg`) with the following properties:
   - `cna`: The country name.
 
 Non-european boundaries (feature type `cntbn`). Coastal boundaries are not included.
+
+### GeoJSON features
+
+[TODO]
 
 ## Usage example
 
