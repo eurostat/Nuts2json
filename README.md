@@ -20,7 +20,7 @@ The parameters are:
 | ------------- | ------------- |-------------|
 | `YEAR` | The NUTS version year. | `2013` |
 | `PROJECTION` | The map projection. Currently, European projection LAEA (<a href="http://spatialreference.org/ref/epsg/etrs89-etrs-laea/" target="_blank">EPSG 3035</a>) and Web Mercator (<a href="http://spatialreference.org/ref/sr-org/7483/" target="_blank">EPSG 3857</a>) are provided | `laea`, `wm` |
-| `SIZE` | The map size, in pixel. Currently, all maps are squared. | `400, `600`, `800`, `1000`, `1200` |
+| `SIZE` | The map size, in pixel. Currently, all maps are squared. | `400`, `600`, `800`, `1000`, `1200` |
 | `NUTS_LEVEL` | The NUTS level to be shown on the map, from national level (NUTS_LEVEL=0) to provincial level (NUTS_LEVEL=3). | `0`, `1`, `2`, `3` |
 | `FORMAT` | The file format. Currently, only <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a> is provided. <a href="http://geojson.org/" target="_blank">GeoJSON</a> format is to come. | `topojson` |
 
