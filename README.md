@@ -16,13 +16,13 @@ For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/201
 
 The parameters are:
 
-| Parameter | Description | Possible values |
+| Parameter | Supported values | Description |
 | ------------- | ------------- |-------------|
-| `YEAR` | The NUTS version year. | `2013` |
-| `PROJECTION` | The map projection. Currently, European projection LAEA ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) and Web Mercator ([EPSG 3857](http://spatialreference.org/ref/sr-org/7483/)) are provided. ETRS89 ([EPSG 4258](http://spatialreference.org/ref/epsg/4258/)) should be provided soon. | `laea`, `wm` |
-| `SIZE` | The map size, in pixel. Currently, all maps are squared. | `400`, `600`, `800`, `1000`, `1200` |
-| `NUTS_LEVEL` | The NUTS level to be shown on the map, from national level (NUTS_LEVEL=0) to provincial level (NUTS_LEVEL=3). | `0`, `1`, `2`, `3` |
-| `FORMAT` | The file format. Currently, only <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a> is provided. <a href="http://geojson.org/" target="_blank">GeoJSON</a> format is to come. | `topojson` |
+| `YEAR` | `2013` | The NUTS version year. |
+| `PROJECTION` | `laea`, `wm` | The map projection. Currently, European projection LAEA ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) and Web Mercator ([EPSG 3857](http://spatialreference.org/ref/sr-org/7483/)) are provided. ETRS89 ([EPSG 4258](http://spatialreference.org/ref/epsg/4258/)) should be provided soon. |
+| `SIZE` | `400`, `600`, `800`, `1000`, `1200` | The map size, in pixel. Currently, all maps are squared. |
+| `NUTS_LEVEL` | `0`, `1`, `2`, `3` | The NUTS level to be shown on the map, from national level (NUTS_LEVEL=0) to provincial level (NUTS_LEVEL=3). |
+| `FORMAT` | `topojson` | The file format. Currently, only [TopoJSON](https://github.com/mbostock/topojson/wiki) is provided. [GeoJSON](http://geojson.org/) format is to come. |
 
 For additional projections, formats, sizes, etc., feel free to [ask](https://github.com/eurostat/Nuts2json/issues/new) !
 
