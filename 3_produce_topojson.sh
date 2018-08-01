@@ -7,8 +7,8 @@ s=3
 for year in "2013"
 do
 
-for proj in "laea" "wm" #"etrs89"
-do
+  for proj in "laea" "wm" #"etrs89"
+  do
     for size in 1200 1000 800 600 400
     do
         for level in 0 1 2 3
@@ -33,7 +33,7 @@ do
 
             else
 
-            echo "   Produce topojson - "$year" - "$proj" - "$size"px - lvl"$level
+            echo "$year $proj $size $level - Produce topojson"
             topojson -o \
                 $dir"/"$level".topojson" \
                 "nutsrg=tmp/"$year"/"$proj"/RGbylevel/RG_lvl"$level".shp" \
@@ -49,6 +49,6 @@ do
             fi
         done
     done
-done
+  done
 
 done
