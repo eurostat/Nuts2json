@@ -8,17 +8,17 @@ Examples: For an example of such blank map, see <a href="http://eurostat.github.
 
 The files can be retrieved directly from the base URL `https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/` according to a predefined path pattern. For example, <a href="https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2013/wm/600px/2.topojson" target="_blank">`https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2013/wm/600px/2.topojson`</a> is the path to a TopoJSON file of 2013 NUTS regions level 2 in web mercator projection, for a map size 600*600px.
 
-The file path pattern is: `/\<YEAR\>/\<PROJECTION\>/\<SIZE\>/\<NUTS_LEVEL\>.\<FORMAT\>*`
+The file path pattern is: `/<YEAR>/<PROJECTION>/<SIZE>/<NUTS_LEVEL>.<FORMAT>`
 
 where the parameters are:
 
 | Parameter | Description | Possible values |
 | ------------- | ------------- |-------------|
-| <i>YEAR</i> | The NUTS version year. | 2013 |
-| <i>PROJECTION</i> | The map projection. Currently, European projection LAEA (<a href="http://spatialreference.org/ref/epsg/etrs89-etrs-laea/" target="_blank">EPSG 3035</a>) and Web Mercator (<a href="http://spatialreference.org/ref/sr-org/7483/" target="_blank">EPSG 3857</a>) are provided | laea, wm |
-| <i>SIZE</i> | The map size, in pixel. Currently, all maps are squared. | 400, 600, 800, 1000, 1200 |
-| <i>NUTS_LEVEL</i> | The NUTS level to be shown on the map, from national level (NUTS_LEVEL=0) to provincial level (NUTS_LEVEL=3). | 0, 1, 2, 3 |
-| <i>FORMAT</i> | The file format. Currently, only <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a> is provided. <a href="http://geojson.org/" target="_blank">GeoJSON</a> format is to come. | topojson |
+| `YEAR` | The NUTS version year. | 2013 |
+| `PROJECTION` | The map projection. Currently, European projection LAEA (<a href="http://spatialreference.org/ref/epsg/etrs89-etrs-laea/" target="_blank">EPSG 3035</a>) and Web Mercator (<a href="http://spatialreference.org/ref/sr-org/7483/" target="_blank">EPSG 3857</a>) are provided | laea, wm |
+| `SIZE` | The map size, in pixel. Currently, all maps are squared. | 400, 600, 800, 1000, 1200 |
+| `NUTS_LEVEL` | The NUTS level to be shown on the map, from national level (NUTS_LEVEL=0) to provincial level (NUTS_LEVEL=3). | 0, 1, 2, 3 |
+| `FORMAT` | The file format. Currently, only <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a> is provided. <a href="http://geojson.org/" target="_blank">GeoJSON</a> format is to come. | topojson |
 
 For additional projections, formats, sizes, etc., feel free to [ask](https://github.com/eurostat/Nuts2json/issues/new) !
 
@@ -26,23 +26,23 @@ For additional projections, formats, sizes, etc., feel free to [ask](https://git
 
 Each file provides 4 feature types with the following properties:
 
-NUTS regions (feature type <i>nutsrg</i>) have two properties:
-  - <i>id</i>: The NUTS identifier to be used to join Eurostat statistical figures and then assign colors to the regions.
-  - <i>na</i>: The geographical name of the region.
+NUTS regions (feature type `nutsrg`) have two properties:
+  - `id`: The NUTS identifier to be used to join Eurostat statistical figures and then assign colors to the regions.
+  - `na`: The geographical name of the region.
 
-NUTS boundaries (feature type <i>nutsbn</i>) have the following properties:
-  - <i>lvl</i>: The NUTS level of the boundary, from 0 (national level) to 3 (provincial level).
-  - <i>eu</i>: T if the boundary separate two EU member states, F otherwise.
-  - <i>efta</i>: T if the boundary touches at least one EFTA country, F otherwise.
-  - <i>cc</i>: T if the boundary touches at least one Candidate Country, F otherwise.
-  - <i>oth</i>: T if the boundary touches a country wich is not EU, EFTA,CC. F otherwise.
-<u>NB:</u> The coastal boundaries are not included.
+NUTS boundaries (feature type `nutsbn`) have the following properties:
+  - `lvl`: The NUTS level of the boundary, from 0 (national level) to 3 (provincial level).
+  - `eu`: T if the boundary separate two EU member states, F otherwise.
+  - `efta`: T if the boundary touches at least one EFTA country, F otherwise.
+  - `cc`: T if the boundary touches at least one Candidate Country, F otherwise.
+  - `oth`: T if the boundary touches a country wich is not EU, EFTA,CC. F otherwise.
+NB: Coastal boundaries are not included.
 
-Non-european countries (feature type <i>cntrg</i>)
-  - <i>cid</i>: The country identifier (2 letters code).
-  - <i>cna</i>: The country name.
+Non-european countries (feature type `cntrg`)
+  - `cid`: The country identifier (2 letters code).
+  - `cna`: The country name.
 
-Non-european boundaries (feature type <i>cntbn</i>). Coastal boundaries are not included.
+Non-european boundaries (feature type `cntbn`). Coastal boundaries are not included.
 
 ## Usage example
 
