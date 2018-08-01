@@ -9,17 +9,17 @@ For an example of thematic map, see <a href="http://eurostat.github.io/EurostatV
 
 ## Supported formats
 
-The files can be retrieved directly from the base URL <a href="https://eurostat.github.io/Nuts2json/" target="_blank">https://eurostat.github.io/Nuts2json/</a> according to a predefined path pattern. For example, <a href="https://eurostat.github.io/Nuts2json/topojson/2013/wm/600px/2.json" target="_blank">topojson/2013/wm/600px/2.json</a> is the path to a TopoJSON file of 2013 NUTS regions level 2 in projection web mercator, for a map size 600*600px.
+The files can be retrieved directly from the base URL <a href="https://eurostat.github.io/Nuts2json/" target="_blank">https://eurostat.github.io/Nuts2json/</a> according to a predefined path pattern. For example, <a href="https://eurostat.github.io/Nuts2json/2013/wm/600px/2.topojson" target="_blank">2013/wm/600px/2.topojson</a> is the path to a TopoJSON file of 2013 NUTS regions level 2 in projection web mercator, for a map size 600*600px.
 
-The file path pattern is: <i>/\<FORMAT\>/\<YEAR\>/\<PROJECTION\>/\<SIZE\>/\<NUTS_LEVEL\>.json</i>
+The file path pattern is: <i>/\<YEAR\>/\<PROJECTION\>/\<SIZE\>/\<NUTS_LEVEL\>./\<FORMAT\></i>
 
 where:
 
-- <i>FORMAT</i> is the file format. Currently, only <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a> is provided. <a href="http://geojson.org/" target="_blank">GeoJSON</a> format is to come.
 - <i>YEAR</i> is the NUTS version year. Currently, only 2013 is provided. 2016 will be published soon.
 - <i>PROJECTION</i> is the map projection. Currently, European projection LAEA (<a href="http://spatialreference.org/ref/epsg/etrs89-etrs-laea/" target="_blank">EPSG 3035</a>) and Web Mercator (<a href="http://spatialreference.org/ref/sr-org/7483/" target="_blank">EPSG 3857</a>) are provided.
 - <i>SIZE</i> is the size of the map, in pixel. Currently, all maps are squared. The available sizes are 400, 600, 800, 1000 and 1200 pixels.
 - <i>NUTS_LEVEL</i> is the NUTS level to be shown on the map, from national level (NUTS_LEVEL=0) to provincial level (NUTS_LEVEL=3).
+- <i>FORMAT</i> is the file format. Currently, only <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a> is provided. <a href="http://geojson.org/" target="_blank">GeoJSON</a> format is to come.
 
 ### Features
 

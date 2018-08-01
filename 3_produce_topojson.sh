@@ -35,7 +35,7 @@ do
 
             echo "   Produce topojson - lvl"$level" - "$proj" - "$size"px"
             topojson -o \
-                $dir"/NUTS_lvl"$level".json" \
+                $dir"/"$level".topojson" \
                 "nutsrg=tmp/"$year"/"$proj"/RGbylevel/RG_lvl"$level".shp" \
                 "nutsbn=tmp/"$year"/"$proj"/BNbylevel/BN_lvl"$level".shp" \
                 "cntrg=tmp/"$year"/"$proj"/CNTR_RG.shp" \
