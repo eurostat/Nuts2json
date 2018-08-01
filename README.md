@@ -1,6 +1,6 @@
 # Nuts2json
 
-[Nuts2json](https://github.com/eurostat/Nuts2json) provides various reusable versions of [Eurostat NUTS dataset](http://ec.europa.eu/eurostat/web/nuts/overview) as web formats such as [GeoJSON](http://geojson.org/) and [TopoJSON](https://github.com/mbostock/topojson/wiki). It is provided to support the development of statistical web maps of [Eurostat data](http://ec.europa.eu/eurostat/web/json-and-unicode-web-services/getting-started/rest-request) based on NUTS regions. In a way, it provides a blank map of geometries ready for use with your own data and colors.
+[Nuts2json](https://github.com/eurostat/Nuts2json) provides various reusable versions of [Eurostat NUTS dataset](http://ec.europa.eu/eurostat/web/nuts/overview) as web formats such as [GeoJSON](http://geojson.org/) and [TopoJSON](https://github.com/mbostock/topojson/wiki). It is provided to support the development of statistical web maps of [Eurostat data](http://ec.europa.eu/eurostat/) based on NUTS regions. In a way, it provides a blank map of geometries ready for use with your own data and colors.
 
 Examples: For an example of such blank map, see [this map](http://eurostat.github.io/Nuts2json/overview.html?proj=laea&lvl=3&s=1000&y=2013). For an example of statistical map, see [this map](http://eurostat.github.io/EurostatVisu/population_map.html) showing population in Europe.
 
@@ -54,9 +54,9 @@ Non-european boundaries (feature type `cntbn`). Coastal boundaries are not inclu
 
 ## Usage example
 
-A map showing the geometries with [d3js](https://d3js.org/):
+A map showing the TopoJSON geometries with [d3js](https://d3js.org/):
 
-(See it online [here](usage.html)).
+(See it online [here](https://eurostat.github.io/Nuts2json/usage.html)).
 
 ```html
 <!DOCTYPE html>
@@ -118,7 +118,7 @@ A map showing the geometries with [d3js](https://d3js.org/):
 </script>
 ```
 
-For a map showing a choropleth map based on statistical data, see [this map](http://eurostat.github.io/EurostatVisu/population_map.html) on [EurostatVisu repo](https://github.com/eurostat/EurostatVisu/blob/gh-pages/population_map.html).
+For a map showing a choropleth map based on [Eurostat statistical data API](http://ec.europa.eu/eurostat/web/json-and-unicode-web-services/getting-started/rest-request), see [this map](http://eurostat.github.io/EurostatVisu/population_map.html) on [EurostatVisu repo](https://github.com/eurostat/EurostatVisu/blob/gh-pages/population_map.html).
 
 ## Technical details
 
