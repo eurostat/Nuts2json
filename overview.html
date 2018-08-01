@@ -71,7 +71,7 @@
 	var path = d3.geoPath().projection(null);
 
 	//get data
-	d3.json("topojson/"+year+"/"+proj+"/"+size+"/"+nutsLvl+".json", function(error, nuts) {
+	d3.json("https://eurostat.github.io/Nuts2json/"+year+"/"+proj+"/"+size+"/"+nutsLvl+".topojson", function(error, nuts) {
 		if (error) return console.error(error);
 		//console.log(nuts);
 

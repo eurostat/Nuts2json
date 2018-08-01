@@ -14,7 +14,7 @@ do
         for level in 0 1 2 3
         do
             #make directory
-            dir="json/topojson/"$proj"/"$size"px"
+            dir=$year"/"$proj"/"$size"px"
             mkdir -p $dir
 
             if [ $proj = "etrs89" ]
@@ -33,7 +33,7 @@ do
 
             else
 
-            echo "   Produce topojson - lvl"$level" - "$proj" - "$size"px"
+            echo "   Produce topojson - "$year" - "$proj" - "$size"px - lvl"$level
             topojson -o \
                 $dir"/"$level".topojson" \
                 "nutsrg=tmp/"$year"/"$proj"/RGbylevel/RG_lvl"$level".shp" \
