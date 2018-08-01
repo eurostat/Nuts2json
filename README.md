@@ -11,7 +11,7 @@ For an example of thematic map, see <a href="http://eurostat.github.io/EurostatV
 
 The files can be retrieved directly from the base URL <a href="https://eurostat.github.io/Nuts2json/" target="_blank">https://eurostat.github.io/Nuts2json/</a> according to a predefined path pattern. For example, <a href="https://eurostat.github.io/Nuts2json/topojson/2013/wm/600px/NUTS_lvl2.json" target="_blank">topojson/2013/wm/600px/NUTS_lvl2.json</a> is the path to a TopoJSON file of 2013 NUTS regions level 2 in projection web mercator, for a map size 600*600px.
 
-The file path pattern is: <i>/\<FORMAT\>\<YEAR\>/\<PROJECTION\>/\<SIZE\>/\NUTS_lvl\<NUTS_LEVEL\>.json</i>
+The file path pattern is: <i>/\<FORMAT\>/\<YEAR\>/\<PROJECTION\>/\<SIZE\>/\NUTS_lvl\<NUTS_LEVEL\>.json</i>
 
 where:
 
