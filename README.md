@@ -1,8 +1,10 @@
 # Nuts2json
 
-<a href="https://github.com/eurostat/Nuts2json">Nuts2json</a> provides various reusable versions of <a href="http://ec.europa.eu/eurostat/web/nuts/overview" target="_blank">Eurostat NUTS dataset</a> as web formats such as <a href="http://geojson.org/" target="_blank">GeoJSON</a> and <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a>. It supports the design of statistical web maps of <a href="http://ec.europa.eu/eurostat/web/json-and-unicode-web-services/getting-started/rest-request" target="_blank">Eurostat data</a>. In a way, it provides a blank map of geometries ready for use with your own data and colors.
+<a href="https://github.com/eurostat/Nuts2json">Nuts2json</a> provides various reusable versions of <a href="http://ec.europa.eu/eurostat/web/nuts/overview" target="_blank">Eurostat NUTS dataset</a> as web formats such as <a href="http://geojson.org/" target="_blank">GeoJSON</a> and <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a>. It is provided to support the development of statistical web maps of <a href="http://ec.europa.eu/eurostat/web/json-and-unicode-web-services/getting-started/rest-request" target="_blank">Eurostat data</a>. In a way, it provides a blank map of geometries ready for use with your own data and colors.
 
-Examples: For an example of such blank map, see <a href="http://eurostat.github.io/Nuts2json/overview.html?proj=laea&lvl=3&s=1000&y=2013" target="_blank"><b>this map</b></a>. The URL parameters can be changed. For an example of thematic map, see <a href="http://eurostat.github.io/EurostatVisu/population_map.html"><b>this map</b></a> showing population in Europe.
+Examples: For an example of such blank map, see <a href="http://eurostat.github.io/Nuts2json/overview.html?proj=laea&lvl=3&s=1000&y=2013" target="_blank">this map</a>. The URL parameters can be changed. For an example of thematic map, see <a href="http://eurostat.github.io/EurostatVisu/population_map.html">this map</a> showing population in Europe.
+
+[![Example](img/ex_population.png)](http://eurostat.github.io/EurostatVisu/population_map.html)
 
 ## Supported formats
 
@@ -14,23 +16,23 @@ where the parameters are:
 
 | Parameter | Description | Possible values |
 | ------------- | ------------- |-------------|
-| `YEAR` | The NUTS version year. | 2013 |
-| `PROJECTION` | The map projection. Currently, European projection LAEA (<a href="http://spatialreference.org/ref/epsg/etrs89-etrs-laea/" target="_blank">EPSG 3035</a>) and Web Mercator (<a href="http://spatialreference.org/ref/sr-org/7483/" target="_blank">EPSG 3857</a>) are provided | laea, wm |
-| `SIZE` | The map size, in pixel. Currently, all maps are squared. | 400, 600, 800, 1000, 1200 |
-| `NUTS_LEVEL` | The NUTS level to be shown on the map, from national level (NUTS_LEVEL=0) to provincial level (NUTS_LEVEL=3). | 0, 1, 2, 3 |
-| `FORMAT` | The file format. Currently, only <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a> is provided. <a href="http://geojson.org/" target="_blank">GeoJSON</a> format is to come. | topojson |
+| `YEAR` | The NUTS version year. | `2013` |
+| `PROJECTION` | The map projection. Currently, European projection LAEA (<a href="http://spatialreference.org/ref/epsg/etrs89-etrs-laea/" target="_blank">EPSG 3035</a>) and Web Mercator (<a href="http://spatialreference.org/ref/sr-org/7483/" target="_blank">EPSG 3857</a>) are provided | `laea`, `wm` |
+| `SIZE` | The map size, in pixel. Currently, all maps are squared. | `400, `600`, `800`, `1000`, `1200` |
+| `NUTS_LEVEL` | The NUTS level to be shown on the map, from national level (NUTS_LEVEL=0) to provincial level (NUTS_LEVEL=3). | `0`, `1`, `2`, `3` |
+| `FORMAT` | The file format. Currently, only <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a> is provided. <a href="http://geojson.org/" target="_blank">GeoJSON</a> format is to come. | `topojson` |
 
 For additional projections, formats, sizes, etc., feel free to [ask](https://github.com/eurostat/Nuts2json/issues/new) !
 
-### Features
+### TopoJSON features
 
-Each file provides 4 feature types with the following properties:
+Four feature types are provided:
 
-NUTS regions (feature type `nutsrg`) have two properties:
+NUTS regions (feature type `nutsrg`) with the following properties:
   - `id`: The NUTS identifier to be used to join Eurostat statistical figures and then assign colors to the regions.
   - `na`: The geographical name of the region.
 
-NUTS boundaries (feature type `nutsbn`) have the following properties:
+NUTS boundaries (feature type `nutsbn`) with the following properties:
   - `lvl`: The NUTS level of the boundary, from 0 (national level) to 3 (provincial level).
   - `eu`: T if the boundary separate two EU member states, F otherwise.
   - `efta`: T if the boundary touches at least one EFTA country, F otherwise.
@@ -38,7 +40,7 @@ NUTS boundaries (feature type `nutsbn`) have the following properties:
   - `oth`: T if the boundary touches a country wich is not EU, EFTA,CC. F otherwise.
 NB: Coastal boundaries are not included.
 
-Non-european countries (feature type `cntrg`)
+Non-european countries (feature type `cntrg`) with the following properties:
   - `cid`: The country identifier (2 letters code).
   - `cna`: The country name.
 
