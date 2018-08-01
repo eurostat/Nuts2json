@@ -2,21 +2,21 @@
 
 <a href="https://github.com/eurostat/Nuts2json">Nuts2json</a> provides various reusable versions of <a href="http://ec.europa.eu/eurostat/web/nuts/overview" target="_blank">Eurostat NUTS dataset</a> as web formats such as <a href="http://geojson.org/" target="_blank">GeoJSON</a> and <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a>. It supports the design of statistical web maps of <a href="http://ec.europa.eu/eurostat/web/json-and-unicode-web-services/getting-started/rest-request" target="_blank">Eurostat data</a>. In a way, it provides a blank map of geometries ready for use with your own data and colors.
 
-For an example of such blank map, see <a href="http://eurostat.github.io/Nuts2json/overview.html?proj=laea&lvl=3&s=1000&y=2013" target="_blank"><b>HERE</b></a> (the URL parameters can be changed).
+For an example of such blank map, see <a href="http://eurostat.github.io/Nuts2json/overview.html?proj=laea&lvl=3&s=1000&y=2013" target="_blank"><b>this map</b></a>. The URL parameters can be changed.
 
 For an example of thematic map, see <a href="http://eurostat.github.io/EurostatVisu/population_map.html"><b>this map</b></a> showing population in Europe.
 
 
 ## Supported formats
 
-The JSON files are available in the folder <a href="/json" target="_blank">json</a> according to a predefined path pattern. For example, <a href="https://eurostat.github.io/Nuts2json/json/2013/topojson/wm/600px/NUTS_lvl2.json" target="_blank">json/2013/topojson/wm/600px/NUTS_lvl2.json</a> is the path to a TopoJSON file of 2013 NUTS regions level 2 in projection web mercator, for a map size 600*600px.
+The files can be retrieved directly from the base URL <a href="https://eurostat.github.io/Nuts2json/" target="_blank">https://eurostat.github.io/Nuts2json/</a> according to a predefined path pattern. For example, <a href="https://eurostat.github.io/Nuts2json/topojson/2013/wm/600px/NUTS_lvl2.json" target="_blank">topojson/2013/wm/600px/NUTS_lvl2.json</a> is the path to a TopoJSON file of 2013 NUTS regions level 2 in projection web mercator, for a map size 600*600px.
 
-The file path pattern is: <i>/json/\<YEAR\>\<FORMAT\>/\<PROJECTION\>/\<SIZE\>/\NUTS_lvl\<NUTS_LEVEL\>.json</i>
+The file path pattern is: <i>/\<FORMAT\>\<YEAR\>/\<PROJECTION\>/\<SIZE\>/\NUTS_lvl\<NUTS_LEVEL\>.json</i>
 
 where:
 
-- <i>YEAR</i> is the NUTS version year. Currently, only 2013 is provided. 2016 will be published soon.
 - <i>FORMAT</i> is the file format. Currently, only <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a> is provided. <a href="http://geojson.org/" target="_blank">GeoJSON</a> format is to come.
+- <i>YEAR</i> is the NUTS version year. Currently, only 2013 is provided. 2016 will be published soon.
 - <i>PROJECTION</i> is the map projection. Currently, European projection LAEA (<a href="http://spatialreference.org/ref/epsg/etrs89-etrs-laea/" target="_blank">EPSG 3035</a>) and Web Mercator (<a href="http://spatialreference.org/ref/sr-org/7483/" target="_blank">EPSG 3857</a>) are provided.
 - <i>SIZE</i> is the size of the map, in pixel. Currently, all maps are squared. The available sizes are 400, 600, 800, 1000 and 1200 pixels.
 - <i>NUTS_LEVEL</i> is the NUTS level to be shown on the map, from national level (NUTS_LEVEL=0) to provincial level (NUTS_LEVEL=3).
@@ -51,7 +51,7 @@ See <a href="http://eurostat.github.io/EurostatVisu/population_map.html">this ma
 
 ## Technical details
 
-These files are produced from the NUTS SHP files provided on Eurostat website, <a href="http://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts" target="_blank">here</a>. The input SHP files are in the <a href="/shp" target="_blank">shp folder</a>. They are transformed using <a href="http://www.gdal.org/" target="_blank">GDAL</a> and, of course, <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a> libraries. The processes are automated in Bash files, which are also shared in this repository.
+These files are produced from the NUTS SHP files provided on <a href="http://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts" target="_blank">Eurostat-GISCO website</a>. The input SHP files are in the <a href="/shp" target="_blank">shp folder</a>. They are transformed using <a href="http://www.gdal.org/" target="_blank">GDAL</a> and <a href="https://github.com/mbostock/topojson/wiki" target="_blank">TopoJSON</a>. The processes are automated in bash files, which are also shared in this repository.
 
 ## Support and contribution
 
