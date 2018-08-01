@@ -9,7 +9,11 @@ For an example of thematic map, see <a href="http://eurostat.github.io/EurostatV
 
 ## Supported formats
 
-The files can be retrieved directly from the base URL <a href="https://eurostat.github.io/Nuts2json/" target="_blank">https://eurostat.github.io/Nuts2json/</a> according to a predefined path pattern. For example, <a href="https://eurostat.github.io/Nuts2json/2013/wm/600px/2.topojson" target="_blank">2013/wm/600px/2.topojson</a> is the path to a TopoJSON file of 2013 NUTS regions level 2 in web mercator projection, for a map size 600*600px.
+
+https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/
+2013/laea/800px/0.topojson
+
+The files can be retrieved directly from the base URL `https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/` according to a predefined path pattern. For example, <a href="https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2013/wm/600px/2.topojson" target="_blank">`https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2013/wm/600px/2.topojson`</a> is the path to a TopoJSON file of 2013 NUTS regions level 2 in web mercator projection, for a map size 600*600px.
 
 The file path pattern is: <i>/\<YEAR\>/\<PROJECTION\>/\<SIZE\>/\<NUTS_LEVEL\>./\<FORMAT\></i>
 
