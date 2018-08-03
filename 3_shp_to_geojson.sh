@@ -2,22 +2,18 @@
 
 for year in "2013" "2016"
 do
-
-  for proj in "laea" "wm" "etrs89"
+  for proj in "etrs89" "laea" "wm"
   do
-    for level in 0 1 2 3
+    for type in "RG" "BN"
     do
-      for type in "RG" "BN"
+
+      dir="tmp/"$year"/"$proj"/"$type
+
+      for level in 0 1 2 3
       do
         echo "$year $proj $level $type - SHP to geojson"
-
-		    dir="tmp/$year/$proj/"$type"bylevel"
-
-			rm -f $dir"/"$level".json"
-
-	        ogr2ogr -overwrite -f geoJSON \
-    	        $dirRG"/RG_lvl"$level".json" \
-				$dirRG"/RG_lvl"$level".shp"
+		rm -f $dir"/"$level".json"
+	    ogr2ogr -overwrite -f geoJSON $dir"/"$level".json" $dir"/"$level".shp"
 
       done
     done
