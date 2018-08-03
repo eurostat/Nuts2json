@@ -7,10 +7,8 @@ for proj in "etrs89" "laea" "wm"
 do
 
     #make folders
-    dirRG="tmp/"$year"/"$proj"/RGbylevel"
-    dirBN="tmp/"$year"/"$proj"/BNbylevel"
-    mkdir -p $dirRG
-    mkdir -p $dirBN
+    dirRG="tmp/"$year"/"$proj
+    dirBN="tmp/"$year"/"$proj
 
     for level in 0 1 2 3
     do

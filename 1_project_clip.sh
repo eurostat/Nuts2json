@@ -17,7 +17,6 @@ year=${years[yi]}
 
 mkdir -p "tmp/"$year
 
-
 echo "$year Country: Clip and filter RG"
 ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
    "tmp/"$year"/CNTR_RG_.shp" \
@@ -39,38 +38,39 @@ ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
    -sql "SELECT * FROM CNTR_BN_01M_"$year" WHERE COAS_FLAG='F' AND OTHR_FLAG='T'" \
    -clipsrc -179 -89 179 89
 
-
-for pi in ${!projs[@]}
-do
+  for pi in ${!projs[@]}
+  do
     proj=${projs[pi]}
     epsg=${epsgs[pi]}
-    mkdir -p "tmp/$year/$proj"
     for type in "RG" "BN"
     do
+    	dir="tmp/$year/$proj/$type"
+        mkdir -p $dir
+
         echo "$year $proj $type NUTS: Project"
         ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
-            "tmp/"$year"/"$proj"/NUTS_"$type"_proj.shp" \
+            $dir"/NUTS_proj.shp" \
             "shp/"$year"/NUTS_"$type"_01M_"$year".shp" \
             -t_srs EPSG:$epsg -s_srs EPSG:4258
 
         echo "$year $proj $type NUTS: Clip"
         ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
-            "tmp/"$year"/"$proj"/NUTS_"$type".shp" \
-            "tmp/"$year"/"$proj"/NUTS_"$type"_proj.shp" \
+            $dir"/NUTS.shp" \
+            $dir"/NUTS_proj.shp" \
             -clipsrc ${xmin[pi]} ${ymin[pi]} ${xmax[pi]} ${ymax[pi]}
 
         echo "$year $proj $type Country: Project"
         ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
-            "tmp/"$year"/"$proj"/CNTR_"$type"_proj.shp" \
+            $dir"/CNTR_proj.shp" \
             "tmp/"$year"/CNTR_"$type".shp" \
             -t_srs EPSG:$epsg -s_srs EPSG:4258
 
         echo "$year $proj $type Country: Clip"
         ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
-            "tmp/"$year"/"$proj"/CNTR_"$type".shp" \
-            "tmp/"$year"/"$proj"/CNTR_"$type"_proj.shp" \
+            $dir"/CNTR.shp" \
+            $dir"/CNTR_proj.shp" \
             -clipsrc ${xmin[pi]} ${ymin[pi]} ${xmax[pi]} ${ymax[pi]}
-    done
-done
 
+    done
+  done
 done
