@@ -12,7 +12,8 @@ do
     for level in 0 1 2 3
     do
       echo "$year $proj $level - geojson to topojson"
-      geo2topo nutsrg=$dir"/RG/"$level".shp" > $dir"/"$level".topojson"
+	  #rm -f $dir"/"$level".topojson"
+      geo2topo nutsrg=$dir"/RG/"$level".json" nutsbn=$dir"/BN/"$level".json" cntrrg=$dir"/RG/CNTR.json" cntrbn=$dir"/BN/CNTR.json"> $dir"/"$level".topojson"
 
     done
   done
