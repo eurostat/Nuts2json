@@ -17,6 +17,7 @@ year=${years[yi]}
 
 mkdir -p "tmp/"$year
 
+
 echo "$year Country RG: Clip and filter"
 ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
    "tmp/"$year"/CNTR_RG_.shp" \
@@ -40,8 +41,19 @@ ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
    -clipsrc -179 -89 179 89
 
 
-#   -sql "SELECT NUTS_ID as id,NUTS_NAME as na FROM NUTS_RG_01M_"$year".shp
-#   -sql "SELECT NUTS_ID as id,NUTS_NAME as na FROM NUTS_BN_01M_"$year".shp
+echo "$year NUTS RG: Clip and filter"
+ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
+   "tmp/"$year"/NUTS_RG.shp" \
+   "shp/"$year"/NUTS_RG_01M_"$year".shp" \
+   -sql "SELECT NUTS_ID as id,NUTS_NAME as na,LEVL_CODE as lvl FROM NUTS_RG_01M_"$year \
+   -clipsrc -179 -89 179 89
+
+echo "$year NUTS BN: Clip and filter"
+ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
+   "tmp/"$year"/NUTS_BN.shp" \
+   "shp/"$year"/NUTS_BN_01M_"$year".shp" \
+   -sql "SELECT LEVL_CODE as lvl,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_CNTR_ as oth FROM NUTS_BN_01M_"$year \
+   -clipsrc -179 -89 179 89
 
 
   for pi in ${!projs[@]}
@@ -56,7 +68,7 @@ ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
         echo "$year $proj $type NUTS: Project"
         ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
             $dir"/NUTS_proj.shp" \
-            "shp/"$year"/NUTS_"$type"_01M_"$year".shp" \
+            "tmp/"$year"/NUTS_"$type".shp" \
             -t_srs EPSG:$epsg -s_srs EPSG:4258
 
         echo "$year $proj $type NUTS: Clip"
