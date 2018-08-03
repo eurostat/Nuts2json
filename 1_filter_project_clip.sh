@@ -17,27 +17,32 @@ year=${years[yi]}
 
 mkdir -p "tmp/"$year
 
-echo "$year Country: Clip and filter RG"
+echo "$year Country RG: Clip and filter"
 ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
    "tmp/"$year"/CNTR_RG_.shp" \
    "shp/"$year"/CNTR_RG_01M_"$year".shp" \
-   -sql "SELECT * FROM CNTR_RG_01M_"$year" WHERE CNTR_ID NOT IN ('PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME')" \
+   -sql "SELECT CNTR_ID as id,SHRT_ENGL as na FROM CNTR_RG_01M_"$year" WHERE CNTR_ID NOT IN ('PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME')" \
    -clipsrc -179 -89 179 89
 
 #necessary?
-echo "$year Country: Join RG attributes"
-ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
-   "tmp/"$year"/CNTR_RG.shp" \
-   "tmp/"$year"/CNTR_RG_.shp" \
-   -sql "select CNTR_RG_.CNTR_ID as cid, CNTR_AT_"$year".CNTR_NAME as cna from CNTR_RG_ left join 'shp/"$year"/CNTR_AT_"$year".csv'.CNTR_AT_"$year" on CNTR_RG_.CNTR_ID = CNTR_AT_"$year".CNTR_ID" \
-   -clipsrc -179 -89 179 89
+#echo "$year Country RG: Join attributes"
+#ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
+#   "tmp/"$year"/CNTR_RG.shp" \
+#   "tmp/"$year"/CNTR_RG_.shp" \
+#   -sql "select CNTR_RG_.CNTR_ID as cid, CNTR_AT_"$year".CNTR_NAME as cna from CNTR_RG_ left join 'shp/"$year"/CNTR_AT_"$year".csv'.CNTR_AT_"$year" on CNTR_RG_.CNTR_ID = CNTR_AT_"$year".CNTR_ID" \
+#   -clipsrc -179 -89 179 89
 
-echo "$year Country: Clip and filter BN"
+echo "$year Country BN: Clip and filter"
 ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
    "tmp/"$year"/CNTR_BN.shp" \
    "shp/"$year"/CNTR_BN_01M_"$year".shp" \
    -sql "SELECT CC_FLAG as cc,EFTA_FLAG as efta,EU_FLAG as eu,OTHR_FLAG as oth FROM CNTR_BN_01M_"$year" WHERE COAS_FLAG='F' AND OTHR_FLAG='T'" \
    -clipsrc -179 -89 179 89
+
+
+#   -sql "SELECT NUTS_ID as id,NUTS_NAME as na FROM NUTS_RG_01M_"$year".shp
+#   -sql "SELECT NUTS_ID as id,NUTS_NAME as na FROM NUTS_BN_01M_"$year".shp
+
 
   for pi in ${!projs[@]}
   do
