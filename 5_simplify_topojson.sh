@@ -1,18 +1,20 @@
 #!/usr/bin/env bash
 
 #simplify topojson files
-#https://github.com/topojson/topojson-server/blob/master/README.md#geo2topo
-for year in "2013" "2016"
+#https://github.com/topojson/topojson-simplify/blob/master/README.md#toposimplify
+for year in "2016" #"2013"
 do
-  for proj in "etrs89" "laea" "wm"
+  for proj in "laea" #"etrs89" "laea" "wm"
   do
     dir="tmp/"$year"/"$proj
+    outdir="tmp/"$year"/"$proj
+    mkdir -p $outdir
     for level in 0 1 2 3
     do
       for size in 1200 1000 800 600 400
       do
         echo "$year $proj $level $size - topojson simplify"
-        toposimplify -f -p $(($size * $size )) -o $dir"/"$level"_"$size".topojson" $dir"/"$level".topojson"
+        toposimplify -f -p $(( 35000000000000 / ($size * $size) )) -o $outdir"/"$level"_"$size".topojson" $dir"/"$level".topojson"
       done
     done
   done
