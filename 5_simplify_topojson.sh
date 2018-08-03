@@ -7,14 +7,15 @@ do
   for proj in "laea" #"etrs89" "laea" "wm"
   do
     dir="tmp/"$year"/"$proj
-    outdir="tmp/"$year"/"$proj
-    mkdir -p $outdir
     for level in 0 1 2 3
     do
       for size in 1200 1000 800 600 400
       do
+        outdir=$year"/"$proj"/"$size
+        mkdir -p $outdir
+
         echo "$year $proj $level $size - topojson simplify"
-        toposimplify -f -p $(( 35000000000000 / ($size * $size) )) -o $outdir"/"$level"_"$size".topojson" $dir"/"$level".topojson"
+        toposimplify -f -p $(( 35000000000000 / ($size * $size) )) -o $outdir"/"$level".topojson" $dir"/"$level".topojson"
       done
     done
   done
