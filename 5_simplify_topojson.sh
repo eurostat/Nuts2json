@@ -9,10 +9,10 @@ do
     dir="tmp/"$year"/"$proj
     for level in 0 1 2 3
     do
-      for size in 1200 #1000 800 600 400
+      for size in 1200 1000 800 600 400
       do
         echo "$year $proj $level $size - topojson simplify"
-        #toposimplify $dir"/"$level".topojson"
+        toposimplify -f -p $(($size * $size )) -o $dir"/"$level"_"$size".topojson" $dir"/"$level".topojson"
       done
     done
   done
