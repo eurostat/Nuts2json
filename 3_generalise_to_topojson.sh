@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+#install npm. npm install -g topojson: 
+
 q0=6000
 q1=3000
 s=3
