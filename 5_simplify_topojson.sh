@@ -4,7 +4,7 @@
 #https://github.com/topojson/topojson-simplify/blob/master/README.md#toposimplify
 for year in "2016" #"2013"
 do
-  for proj in "etrs89" "laea" "wm"
+  for proj in "3035" "3857" "4258"
   do
     dir="tmp/"$year"/"$proj
     for level in 0 1 2 3

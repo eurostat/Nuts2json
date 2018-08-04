@@ -4,7 +4,7 @@
 #https://github.com/topojson/topojson-server/blob/master/README.md#geo2topo
 for year in "2013" "2016"
 do
-  for proj in "etrs89" "laea" "wm"
+  for proj in "3035" "3857" "4258"
   do
     dir="tmp/"$year"/"$proj
     for level in 0 1 2 3

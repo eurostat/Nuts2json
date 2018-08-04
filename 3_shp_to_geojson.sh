@@ -2,7 +2,7 @@
 
 for year in "2013" "2016"
 do
-  for proj in "etrs89" "laea" "wm"
+  for proj in "3035" "3857" "4258"
   do
     for type in "RG" "BN"
     do

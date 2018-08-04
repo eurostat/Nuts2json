@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
+#4258-etrs89 3857-wm 3035-laea
+
 years=(2013 2016)
-projs=("etrs89" "wm" "laea")
-epsgs=("4258" "3857" "3035")
+projs=("4258" "3857" "3035")
 xmin=(-12.5 -1490000 2434550)
 ymin=(32.5 3884000 1340330)
 xmax=(46.5 5200000 7512400)
@@ -59,7 +60,6 @@ ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
   for pi in ${!projs[@]}
   do
     proj=${projs[pi]}
-    epsg=${epsgs[pi]}
     for type in "RG" "BN"
     do
     	dir="tmp/$year/$proj/$type"
@@ -69,7 +69,7 @@ ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
         ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
             $dir"/NUTS_proj.shp" \
             "tmp/"$year"/NUTS_"$type".shp" \
-            -t_srs EPSG:$epsg -s_srs EPSG:4258
+            -t_srs EPSG:$proj -s_srs EPSG:4258
 
         echo "$year $proj $type NUTS: Clip"
         ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
@@ -81,7 +81,7 @@ ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
         ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
             $dir"/CNTR_proj.shp" \
             "tmp/"$year"/CNTR_"$type".shp" \
-            -t_srs EPSG:$epsg -s_srs EPSG:4258
+            -t_srs EPSG:$proj -s_srs EPSG:4258
 
         echo "$year $proj $type Country: Clip"
         ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \

@@ -35,7 +35,7 @@
 	//http://bl.ocks.org/mbostock/5557726
 
 	//get url parameters for projection, level and size
-	var proj = EstLib.getParameterByName("proj") || "laea",
+	var proj = EstLib.getParameterByName("proj") || 3035,
 			nutsLvl = EstLib.getParameterByName("lvl") || "3",
 			size = (EstLib.getParameterByName("s") || 800)+"px",
 			year = EstLib.getParameterByName("y") || 2013,
@@ -68,19 +68,17 @@
 	//loading image
 	var loadingDiv = EstLib.loadingImage({imgsrc:"img/loading.png"});
 
-	var path = d3.geoPath().projection(null);
-
 	//get data
 	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/"+year+"/"+proj+"/"+size+"/"+nutsLvl+".topojson", function(error, nuts) {
 		if (error) return console.error(error);
 
-		//console.log(nuts);
-
 		loadingDiv.hide();
 
 		//center
-		zoom.translateBy(svg,(-nuts.bbox[0]),(-nuts.bbox[1]));
+		//zoom.translateBy(svg,(-nuts.bbox[0]),(-nuts.bbox[1]));
 		//zoom.scaleBy(svg, 2);
+
+		var path = d3.geoPath().projection(d3.geoIdentity().reflectY(true).fitSize([size,size], topojson.feature(nuts, nuts.objects.nutsrg)))
 
 		//country
 		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntrg).features).enter()
