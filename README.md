@@ -10,8 +10,8 @@ Examples: For an example of such blank map, see [this map](http://eurostat.githu
 
 The files can be retrieved on-the-fly from the base URL `https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/` according to one of these file patterns:
 
-- For [TopoJSON](https://github.com/mbostock/topojson/wiki) format: `/<YEAR>/<PROJECTION>/<SIZE>/<NUTS_LEVEL>.json`
-- For [GeoJSON](http://geojson.org/) format: `/<YEAR>/<PROJECTION>/<SIZE>/<TYPE>_<NUTS_LEVEL>.json`
+- For TopoJSON format: `/<YEAR>/<PROJECTION>/<SIZE>/<NUTS_LEVEL>.json`
+- For GeoJSON format: `/<YEAR>/<PROJECTION>/<SIZE>/<TYPE>_<NUTS_LEVEL>.json`
 
 For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/600px/2.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/600px/2.json)</a> returns a TopoJSON file of 2016 NUTS regions level 2 in European LAEA projection ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)), for a map size 600*600px.
 
@@ -20,10 +20,10 @@ The parameters are:
 | Parameter | Supported values | Description |
 | ------------- | ------------- |-------------|
 | `YEAR` | `2013` `2016` | The NUTS year version. |
-| `PROJECTION` | `3035`, `3857`, `4258` | The coordinate reference system among: - European LAEA projection ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) - Web Mercator ([EPSG 3857](http://spatialreference.org/ref/sr-org/7483/)) - ETRS89 ([EPSG 4258](http://spatialreference.org/ref/epsg/4258/)). For statistical maps, it is strongly adviced to use an equal-area projection such as `3035`. |
-| `SIZE` | `400`, `600`, `800`, `1000`, `1200` | The intended map size, in pixel. Yes: the maps are squared ! The smaller the value, the stronger the simplification. |
-| `NUTS_LEVEL` | `0`, `1`, `2`, `3` | The NUTS level to be shown on the map, from national level (NUTS_LEVEL=0) to provincial level (NUTS_LEVEL=3). |
-| `TYPE` | `nutsrg`, `nutsbn`, `cntrg`, `cntbn` | For [GeoJSON](http://geojson.org/) format, the feature type has to be specified. The available feature types are described below. |
+| `PROJECTION` | `3035` `3857` `4258` | The coordinate reference system among: - European LAEA projection ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) - Web Mercator ([EPSG 3857](http://spatialreference.org/ref/sr-org/7483/)) - ETRS89 ([EPSG 4258](http://spatialreference.org/ref/epsg/4258/)). For statistical maps, it is strongly adviced to use an equal-area projection such as `3035`. |
+| `SIZE` | `400` `600` `800` `1000` `1200` | The intended map size, in pixel. Yes: the maps are squared ! The smaller the value, the stronger the simplification. |
+| `NUTS_LEVEL` | `0` `1` `2` `3` | The NUTS level to be shown on the map, from national level (NUTS_LEVEL=0) to provincial level (NUTS_LEVEL=3). |
+| `TYPE` | `nutsrg` `nutsbn` `cntrg` `cntbn` | For [GeoJSON](http://geojson.org/) format, the feature type has to be specified. The available feature types are described below. |
 
 For additional projections, formats, sizes, etc., feel free to [ask](https://github.com/eurostat/Nuts2json/issues/new) !
 
