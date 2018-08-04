@@ -2,7 +2,7 @@
 
 [Nuts2json](https://github.com/eurostat/Nuts2json) provides various reusable versions of [Eurostat NUTS dataset](http://ec.europa.eu/eurostat/web/nuts/overview) as web formats such as [GeoJSON](http://geojson.org/) and [TopoJSON](https://github.com/mbostock/topojson/wiki). It is provided to support the development of statistical web maps of [Eurostat data](http://ec.europa.eu/eurostat/) based on NUTS regions. In a way, it provides a blank map of geometries ready for use with your own data and colors.
 
-Examples: For an example of such blank map, see [this map](http://eurostat.github.io/Nuts2json/overview.html?proj=laea&lvl=3&s=1000&y=2013). For an example of statistical map, see [this map](http://eurostat.github.io/EurostatVisu/population_map.html) showing population in Europe.
+Examples: For an example of such blank map, see [this map](http://eurostat.github.io/Nuts2json/overview.html?proj=3035&lvl=3&s=1000&y=2016). For an example of statistical map, see [this map](http://eurostat.github.io/EurostatVisu/population_map.html) showing population in Europe.
 
 [![Example](img/ex_population.png)](http://eurostat.github.io/EurostatVisu/population_map.html)
 
@@ -12,14 +12,14 @@ The files can be retrieved on-the-fly from the base URL `https://raw.githubuserc
 
 `/<YEAR>/<PROJECTION>/<SIZE>/<NUTS_LEVEL>.<FORMAT>`
 
-For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2013/wm/600px/2.topojson`](https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2013/wm/600px/2.topojson)</a> returns a TopoJSON file of 2013 NUTS regions level 2 in web mercator projection, for a map size 600*600px.
+For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3857/600px/2.topojson`](https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3857/600px/2.topojson)</a> returns a TopoJSON file of 2016 NUTS regions level 2 in web mercator projection ([EPSG 3857](http://spatialreference.org/ref/sr-org/7483/)), for a map size 600*600px.
 
 The parameters are:
 
 | Parameter | Supported values | Description |
 | ------------- | ------------- |-------------|
-| `YEAR` | `2013` | The NUTS version year. |
-| `PROJECTION` | `laea`, `wm` | The map projection. Currently, European projection LAEA ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) and Web Mercator ([EPSG 3857](http://spatialreference.org/ref/sr-org/7483/)) are provided. ETRS89 ([EPSG 4258](http://spatialreference.org/ref/epsg/4258/)) should be provided soon. |
+| `YEAR` | `2013` `2016` | The NUTS version year. |
+| `PROJECTION` | `3035`, `3857`, `4258` | The coordinate reference system. Currently, European projection LAEA ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)), Web Mercator ([EPSG 3857](http://spatialreference.org/ref/sr-org/7483/)) and ETRS89 ([EPSG 4258](http://spatialreference.org/ref/epsg/4258/)) are provided. |
 | `SIZE` | `400`, `600`, `800`, `1000`, `1200` | The map size, in pixel. Currently, all maps are squared. |
 | `NUTS_LEVEL` | `0`, `1`, `2`, `3` | The NUTS level to be shown on the map, from national level (NUTS_LEVEL=0) to provincial level (NUTS_LEVEL=3). |
 | `FORMAT` | `topojson` | The file format. Currently, only [TopoJSON](https://github.com/mbostock/topojson/wiki) is provided. [GeoJSON](http://geojson.org/) format is to come. |
@@ -60,6 +60,7 @@ A map showing the TopoJSON geometries with [d3js](https://d3js.org/):
 
 ```html
 <!DOCTYPE html>
+
 <svg width="800px" height="800px"></svg>
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -81,29 +82,37 @@ A map showing the TopoJSON geometries with [d3js](https://d3js.org/):
 
 <script>
 
-	var svg = d3.select("svg");
-	var path = d3.geoPath();
-
-	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2013/laea/800px/3.topojson", function(error, nuts) {
+	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/800px/3.topojson", function(error, nuts) {
 		if (error) throw error;
 
-		//country regions
-		svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntrg).features).enter()
+		//get the geometries
+		var cntrg = topojson.feature(nuts, nuts.objects.cntrg),
+			cntbn = topojson.feature(nuts, nuts.objects.cntbn),
+			nutsrg = topojson.feature(nuts, nuts.objects.nutsrg),
+			nutsbn = topojson.feature(nuts, nuts.objects.nutsbn)
+		;
+
+		var svg = d3.select("svg"),
+			path = d3.geoPath().projection(d3.geoIdentity().reflectY(true).fitSize([800,800], nutsrg))
+		;
+
+		//draw country regions
+		svg.append("g").selectAll("path").data(cntrg.features).enter()
 				.append("path").attr("d", path)
 				.attr("class", "cntrg")
 
-		//country boundaries
-		svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntbn).features).enter()
+		//draw country boundaries
+		svg.append("g").selectAll("path").data(cntbn.features).enter()
 				.append("path").attr("d", path)
 				.attr("class", "cntbn");
 
-		//nuts regions
-		svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsrg).features).enter()
+		//draw nuts regions
+		svg.append("g").selectAll("path").data(nutsrg.features).enter()
 				.append("path").attr("d", path)
 				.attr("class", "rg")
 
-		//nuts boundaries
-		var bn = topojson.feature(nuts, nuts.objects.nutsbn).features;
+		//draw nuts boundaries
+		var bn = nutsbn.features;
 		bn.sort(function(bn1,bn2){ return bn2.properties.lvl - bn1.properties.lvl; });
 		svg.append("g").selectAll("path").data(bn).enter()
 				.append("path").attr("d", path)
