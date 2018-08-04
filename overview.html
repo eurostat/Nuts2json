@@ -71,12 +71,7 @@
 	//get data
 	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/"+year+"/"+proj+"/"+size+"px"+"/"+nutsLvl+".topojson", function(error, nuts) {
 		if (error) return console.error(error);
-
 		loadingDiv.hide();
-
-		//center
-		//zoom.translateBy(svg,(-nuts.bbox[0]),(-nuts.bbox[1]));
-		//zoom.scaleBy(svg, 2);
 
 		var path = d3.geoPath().projection(d3.geoIdentity().reflectY(true).fitSize([size,size], topojson.feature(nuts, nuts.objects.nutsrg)))
 
@@ -106,7 +101,6 @@
 				.append("path").attr("d", path)
 				.attr("class", function(bn){
 					bn = bn.properties;
-					//eu=EU_FLAG,efta=EFTA_FLAG,cc=CC_FLAG,lvl=STAT_LEVL_,oth=OTHR_CNTR_
 					var cl = ["bn","bn_"+bn.lvl];
 					if(bn.oth==="T") cl.push("bn_oth");
 					return cl.join(" ");
