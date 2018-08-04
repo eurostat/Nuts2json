@@ -2,7 +2,7 @@
 
 #produce geojson from topojson
 #https://github.com/topojson/topojson-client/blob/master/README.md#topo2geo
-for year in "2016" "2013"
+for year in "2013" "2016"
 do
   for proj in "3035" "3857" "4258"
   do
@@ -15,8 +15,7 @@ do
         mkdir -p $outdir
 
         echo "$year $proj $level $size - topojson to geojson"
-        topo2geo $outdir"/"$level".geojson" < $outdir"/"$level".topojson"
-        #toposimplify -f -p $(( 35000000000000 / ($size * $size) )) -o $outdir"/"$level".topojson" $dir"/"$level".topojson"
+        topo2geo nutsrg=$outdir"/nutsrg_"$level".geojson" nutsbn=$outdir"/nutsbn_"$level".geojson" cntrg=$outdir"/cntrg.geojson" cntbn=$outdir"/cntbn.geojson" < $outdir"/"$level".topojson"
       done
     done
   done
