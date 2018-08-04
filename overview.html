@@ -37,7 +37,7 @@
 	//get url parameters for projection, level and size
 	var proj = EstLib.getParameterByName("proj") || 3035,
 			nutsLvl = EstLib.getParameterByName("lvl") || "3",
-			size = (EstLib.getParameterByName("s") || 800)+"px",
+			size = (EstLib.getParameterByName("s") || 800),
 			year = EstLib.getParameterByName("y") || 2013,
 
 	//build blank svg
@@ -69,7 +69,7 @@
 	var loadingDiv = EstLib.loadingImage({imgsrc:"img/loading.png"});
 
 	//get data
-	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/"+year+"/"+proj+"/"+size+"/"+nutsLvl+".topojson", function(error, nuts) {
+	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/"+year+"/"+proj+"/"+size+"px"+"/"+nutsLvl+".topojson", function(error, nuts) {
 		if (error) return console.error(error);
 
 		loadingDiv.hide();
