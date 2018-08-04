@@ -2,7 +2,7 @@
 
 [Nuts2json](https://github.com/eurostat/Nuts2json) provides various reusable versions of [Eurostat NUTS dataset](http://ec.europa.eu/eurostat/web/nuts/overview) as web formats such as [GeoJSON](http://geojson.org/) and [TopoJSON](https://github.com/mbostock/topojson/wiki). It is provided to support the development of statistical web maps of [Eurostat data](http://ec.europa.eu/eurostat/) based on NUTS regions. In a way, it provides a blank map of geometries ready for use with your own data and colors.
 
-Examples: For an example of such blank map, see [this map](http://eurostat.github.io/Nuts2json/overview.html?proj=3035&lvl=3&s=1000&y=2016). For an example of statistical map, see [this map](http://eurostat.github.io/EurostatVisu/population_map.html?proj=3035&lvl=3&s=1000&time=2014) showing population in Europe.
+Examples: For an example of such blank map, see [this map](http://eurostat.github.io/Nuts2json/overview.html?proj=3035&lvl=3&s=1000&y=2016). For an example of statistical map, see [this map](http://eurostat.github.io/EurostatVisu/population_map.html?proj=3035&lvl=3&s=1000&time=2016) showing population in Europe.
 
 [![Example](img/ex_population.png)](http://eurostat.github.io/EurostatVisu/population_map.html)
 
@@ -18,9 +18,9 @@ The parameters are:
 
 | Parameter | Supported values | Description |
 | ------------- | ------------- |-------------|
-| `YEAR` | `2013` `2016` | The NUTS version year. |
-| `PROJECTION` | `3035`, `3857`, `4258` | The coordinate reference system. Currently, European projection LAEA ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)), Web Mercator ([EPSG 3857](http://spatialreference.org/ref/sr-org/7483/)) and ETRS89 ([EPSG 4258](http://spatialreference.org/ref/epsg/4258/)) are provided. |
-| `SIZE` | `400`, `600`, `800`, `1000`, `1200` | The map size, in pixel. Currently, all maps are squared. |
+| `YEAR` | `2013` `2016` | The NUTS year version. |
+| `PROJECTION` | `3035`, `3857`, `4258` | The coordinate reference system. Currently, European projection LAEA ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)), Web Mercator ([EPSG 3857](http://spatialreference.org/ref/sr-org/7483/)) and ETRS89 ([EPSG 4258](http://spatialreference.org/ref/epsg/4258/)) are provided. For statistical maps, it is strongly adviced to use an equal-area projection such as `3035`. |
+| `SIZE` | `400`, `600`, `800`, `1000`, `1200` | The map size, in pixel. Yes: the maps are squared ! |
 | `NUTS_LEVEL` | `0`, `1`, `2`, `3` | The NUTS level to be shown on the map, from national level (NUTS_LEVEL=0) to provincial level (NUTS_LEVEL=3). |
 | `FORMAT` | `topojson` | The file format. Currently, only [TopoJSON](https://github.com/mbostock/topojson/wiki) is provided. [GeoJSON](http://geojson.org/) format is to come. |
 
