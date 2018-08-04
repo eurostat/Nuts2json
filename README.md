@@ -1,32 +1,33 @@
 # Nuts2json
 
-[Nuts2json](https://github.com/eurostat/Nuts2json) provides various reusable versions of [Eurostat NUTS dataset](http://ec.europa.eu/eurostat/web/nuts/overview) as web formats such as [GeoJSON](http://geojson.org/) and [TopoJSON](https://github.com/mbostock/topojson/wiki). It is provided to support the development of statistical web maps of [Eurostat data](http://ec.europa.eu/eurostat/) based on NUTS regions. In a way, it provides a blank map of geometries ready for use with your own data and colors.
+[Nuts2json](https://github.com/eurostat/Nuts2json) provides various reusable versions of [Eurostat NUTS dataset](http://ec.europa.eu/eurostat/web/nuts/overview) as web formats such as [TopoJSON](https://github.com/mbostock/topojson/wiki) and [GeoJSON](http://geojson.org/). It is provided to support the development of statistical web maps of [Eurostat data](http://ec.europa.eu/eurostat/) based on NUTS regions. In a way, it provides a blank map of geometries ready for use with your own data and colors.
 
 Examples: For an example of such blank map, see [this map](http://eurostat.github.io/Nuts2json/overview.html?proj=3035&lvl=3&s=1000&y=2016). For an example of statistical map, see [this map](http://eurostat.github.io/EurostatVisu/population_map.html?proj=3035&lvl=3&s=1000&time=2016) showing population in Europe.
 
 [![Example](img/ex_population.png)](http://eurostat.github.io/EurostatVisu/population_map.html)
 
-## Supported formats
+## API
 
-The files can be retrieved on-the-fly from the base URL `https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/` according to the file pattern:
+The files can be retrieved on-the-fly from the base URL `https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/` according to one of these file patterns:
 
-`/<YEAR>/<PROJECTION>/<SIZE>/<NUTS_LEVEL>.<FORMAT>`
+- For [TopoJSON](https://github.com/mbostock/topojson/wiki) format: `/<YEAR>/<PROJECTION>/<SIZE>/<NUTS_LEVEL>.json`
+- For [GeoJSON](http://geojson.org/) format: `/<YEAR>/<PROJECTION>/<SIZE>/<TYPE>_<NUTS_LEVEL>.json`
 
-For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3857/600px/2.topojson`](https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3857/600px/2.topojson)</a> returns a TopoJSON file of 2016 NUTS regions level 2 in web mercator projection ([EPSG 3857](http://spatialreference.org/ref/sr-org/7483/)), for a map size 600*600px.
+For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/600px/2.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3857/600px/2.json)</a> returns a TopoJSON file of 2016 NUTS regions level 2 in European LAEA projection ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)), for a map size 600*600px.
 
 The parameters are:
 
 | Parameter | Supported values | Description |
 | ------------- | ------------- |-------------|
 | `YEAR` | `2013` `2016` | The NUTS year version. |
-| `PROJECTION` | `3035`, `3857`, `4258` | The coordinate reference system. Currently, European projection LAEA ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)), Web Mercator ([EPSG 3857](http://spatialreference.org/ref/sr-org/7483/)) and ETRS89 ([EPSG 4258](http://spatialreference.org/ref/epsg/4258/)) are provided. For statistical maps, it is strongly adviced to use an equal-area projection such as `3035`. |
-| `SIZE` | `400`, `600`, `800`, `1000`, `1200` | The map size, in pixel. Yes: the maps are squared ! |
+| `PROJECTION` | `3035`, `3857`, `4258` | The coordinate reference system among: - European LAEA projection ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) - Web Mercator ([EPSG 3857](http://spatialreference.org/ref/sr-org/7483/)) - ETRS89 ([EPSG 4258](http://spatialreference.org/ref/epsg/4258/)). For statistical maps, it is strongly adviced to use an equal-area projection such as `3035`. |
+| `SIZE` | `400`, `600`, `800`, `1000`, `1200` | The intended map size, in pixel. Yes: the maps are squared ! The smaller the value, the stronger the simplification. |
 | `NUTS_LEVEL` | `0`, `1`, `2`, `3` | The NUTS level to be shown on the map, from national level (NUTS_LEVEL=0) to provincial level (NUTS_LEVEL=3). |
-| `FORMAT` | `topojson` | The file format. Currently, only [TopoJSON](https://github.com/mbostock/topojson/wiki) is provided. [GeoJSON](http://geojson.org/) format is to come. |
+| `TYPE` | `nutsrg`, `nutsbn`, `cntrg`, `cntbn` | For [GeoJSON](http://geojson.org/) format, the feature type has to be specified. The available feature types are described below. |
 
 For additional projections, formats, sizes, etc., feel free to [ask](https://github.com/eurostat/Nuts2json/issues/new) !
 
-### TopoJSON features
+### Feature types
 
 Four feature types are provided:
 
@@ -48,9 +49,6 @@ Non-european countries (feature type `cntrg`) with the following properties:
 
 Non-european boundaries (feature type `cntbn`). Coastal boundaries are not included.
 
-### GeoJSON features
-
-[TODO]
 
 ## Usage example
 
@@ -82,7 +80,7 @@ A map showing the TopoJSON geometries with [d3js](https://d3js.org/):
 
 <script>
 
-	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/800px/3.topojson", function(error, nuts) {
+	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/800px/3.json", function(error, nuts) {
 		if (error) throw error;
 
 		//get the geometries

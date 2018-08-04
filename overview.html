@@ -69,7 +69,7 @@
 	var loadingDiv = EstLib.loadingImage({imgsrc:"img/loading.png"});
 
 	//get data
-	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/"+year+"/"+proj+"/"+size+"px"+"/"+nutsLvl+".topojson", function(error, nuts) {
+	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/"+year+"/"+proj+"/"+size+"px"+"/"+nutsLvl+".json", function(error, nuts) {
 		if (error) return console.error(error);
 		loadingDiv.hide();
 

@@ -15,7 +15,7 @@ do
         mkdir -p $outdir
 
         echo "$year $proj $level $size - topojson to geojson"
-        topo2geo nutsrg=$outdir"/nutsrg_"$level".geojson" nutsbn=$outdir"/nutsbn_"$level".geojson" cntrg=$outdir"/cntrg.geojson" cntbn=$outdir"/cntbn.geojson" < $outdir"/"$level".topojson"
+        topo2geo nutsrg=$outdir"/nutsrg_"$level".json" nutsbn=$outdir"/nutsbn_"$level".json" cntrg=$outdir"/cntrg.json" cntbn=$outdir"/cntbn.json" < $outdir"/"$level".json"
       done
     done
   done
