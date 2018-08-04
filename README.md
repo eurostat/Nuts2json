@@ -13,7 +13,7 @@ The files can be retrieved on-the-fly from the base URL `https://raw.githubuserc
 - For [TopoJSON](https://github.com/mbostock/topojson/wiki) format: `/<YEAR>/<PROJECTION>/<SIZE>/<NUTS_LEVEL>.json`
 - For [GeoJSON](http://geojson.org/) format: `/<YEAR>/<PROJECTION>/<SIZE>/<TYPE>_<NUTS_LEVEL>.json`
 
-For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/600px/2.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3857/600px/2.json)</a> returns a TopoJSON file of 2016 NUTS regions level 2 in European LAEA projection ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)), for a map size 600*600px.
+For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/600px/2.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/600px/2.json)</a> returns a TopoJSON file of 2016 NUTS regions level 2 in European LAEA projection ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)), for a map size 600*600px.
 
 The parameters are:
 
