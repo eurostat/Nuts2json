@@ -43,8 +43,8 @@ NUTS boundaries (feature type `nutsbn`) with the following properties:
 NB: Coastal boundaries are not included.
 
 Non-european countries (feature type `cntrg`) with the following properties:
-  - `cid`: The country identifier (2 letters code).
-  - `cna`: The country name.
+  - `id`: The country identifier (2 letters code).
+  - `na`: The country name.
 
 Non-european boundaries (feature type `cntbn`). Coastal boundaries are not included.
 
