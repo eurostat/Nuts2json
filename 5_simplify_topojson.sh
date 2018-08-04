@@ -2,7 +2,7 @@
 
 #simplify topojson files
 #https://github.com/topojson/topojson-simplify/blob/master/README.md#toposimplify
-for year in "2016" "2013"
+for year in "2016" #"2013"
 do
   for proj in "laea" "etrs89" "laea" "wm"
   do
