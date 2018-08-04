@@ -73,6 +73,7 @@
 	//get data
 	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/"+year+"/"+proj+"/"+size+"/"+nutsLvl+".topojson", function(error, nuts) {
 		if (error) return console.error(error);
+
 		//console.log(nuts);
 
 		loadingDiv.hide();
@@ -85,7 +86,7 @@
 		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntrg).features).enter()
 				.append("path").attr("d", path)
 				.attr("class", "cntrg")
-				.on("mouseover", function(rg) { tooltip.mouseover("<b>"+rg.properties.cna+"</b><br>"+rg.properties.cid); })
+				.on("mouseover", function(rg) { tooltip.mouseover("<b>"+rg.properties.na+"</b><br>"+rg.properties.id); })
 				.on("mousemove", function() { tooltip.mousemove(); })
 				.on("mouseout", function() { tooltip.mouseout(); });
 		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntbn).features).enter()
