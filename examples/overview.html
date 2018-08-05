@@ -34,6 +34,9 @@
 <script>
 	//http://bl.ocks.org/mbostock/5557726
 
+	//show loading message
+	var loadingDiv = EstLib.loadingImage({imgsrc:"../img/loading.png"});
+
 	//get url parameters for projection, level and size
 	var proj = EstLib.getParameterByName("proj") || 3035,
 			nutsLvl = EstLib.getParameterByName("lvl") || "3",
@@ -64,9 +67,6 @@
 
 	//tooltip element
 	var tooltip = EstLib.tooltip();
-
-	//loading image
-	var loadingDiv = EstLib.loadingImage({imgsrc:"img/loading.png"});
 
 	//get data
 	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/"+year+"/"+proj+"/"+size+"px"+"/"+nutsLvl+".json", function(error, nuts) {
