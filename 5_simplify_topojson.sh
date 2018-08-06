@@ -15,7 +15,7 @@ do
         mkdir -p $outdir
 
         echo "$year $proj $level $size - topojson simplify"
-        toposimplify -F -p $(( 35000000000000 / ($size * $size) )) -o $outdir"/"$level".json" $dir"/"$level".json"
+        toposimplify -f -p $(( 35000000000000 / ($size * $size) )) -o $outdir"/"$level".json" $dir"/"$level".json"
       done
     done
   done
