@@ -32,20 +32,20 @@ For additional projections, formats, sizes, etc., feel free to [ask](https://git
 Four feature types are provided:
 
 - NUTS regions (feature type `nutsrg`) with the following properties:
-..- `id`: The NUTS identifier to be used to join Eurostat statistical figures and then assign colors to the regions.
-..- `na`: The geographical name of the region.
+  - `id`: The NUTS identifier to be used to join Eurostat statistical figures and then assign colors to the regions.
+  - `na`: The geographical name of the region.
 
 - NUTS boundaries (feature type `nutsbn`) with the following properties:
-..- `lvl`: The NUTS level of the boundary, from 0 (national level) to 3 (provincial level).
-..- `eu`: T if the boundary separate two EU member states, F otherwise.
-..- `efta`: T if the boundary touches at least one EFTA country, F otherwise.
-..- `cc`: T if the boundary touches at least one Candidate Country, F otherwise.
-..- `oth`: T if the boundary touches a country wich is not EU, EFTA,CC. F otherwise.
+  - `lvl`: The NUTS level of the boundary, from 0 (national level) to 3 (provincial level).
+  - `eu`: T if the boundary separate two EU member states, F otherwise.
+  - `efta`: T if the boundary touches at least one EFTA country, F otherwise.
+  - `cc`: T if the boundary touches at least one Candidate Country, F otherwise.
+  - `oth`: T if the boundary touches a country wich is not EU, EFTA,CC. F otherwise.
 NB: Coastal boundaries are not included.
 
 - Non-european countries (feature type `cntrg`) with the following properties:
-..- `id`: The country identifier (2 letters code).
-..- `na`: The country name.
+  - `id`: The country identifier (2 letters code).
+  - `na`: The country name.
 
 - Non-european boundaries (feature type `cntbn`). Coastal boundaries are not included.
 
