@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-for year in "2013" "2016"
+for year in "2016" "2013" "2010"
 do
   for proj in "3035" "3857" "4258"
   do

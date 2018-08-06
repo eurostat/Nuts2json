@@ -2,7 +2,7 @@
 
 #make topojson base files, one per nuts level
 #https://github.com/topojson/topojson-server/blob/master/README.md#geo2topo
-for year in "2013" "2016"
+for year in "2016" "2013" "2010"
 do
   for proj in "3035" "3857" "4258"
   do
