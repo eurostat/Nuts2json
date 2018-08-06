@@ -75,12 +75,14 @@ A map showing the TopoJSON geometries with [d3js](https://d3js.org/):
 	.bn_oth { stroke: #aaa; stroke-width: 1px; }
 	.cntrg { fill: lightgray; }
 	.cntrg:hover { fill: darkgray; }
-	.cntbn { fill: none; stroke: #aaa; stroke-width: 1px; stroke-linecap:round; stroke-linejoin:round }
+	.cntbn { fill: none; stroke: #aaa; stroke-width: 1px }
 </style>
 
 <script>
 
-	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/800px/3.json", function(error, nuts) {
+	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/800px/3.json",
+		function(error, nuts) {
+
 		if (error) throw error;
 
 		//get the geometries
@@ -91,7 +93,8 @@ A map showing the TopoJSON geometries with [d3js](https://d3js.org/):
 		;
 
 		var svg = d3.select("svg"),
-			path = d3.geoPath().projection(d3.geoIdentity().reflectY(true).fitSize([800,800], nutsrg))
+			path = d3.geoPath().projection(
+				d3.geoIdentity().reflectY(true).fitSize([800,800], nutsrg))
 		;
 
 		//draw country regions
