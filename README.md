@@ -1,5 +1,7 @@
 # Nuts2json
 
+**New: NUTS 2016 is now available !**
+
 [Nuts2json](https://github.com/eurostat/Nuts2json) provides various reusable versions of [Eurostat NUTS dataset](http://ec.europa.eu/eurostat/web/nuts/overview) as web formats such as [TopoJSON](https://github.com/mbostock/topojson/wiki) and [GeoJSON](http://geojson.org/). It is provided to support the development of statistical web maps of [Eurostat data](http://ec.europa.eu/eurostat/) based on NUTS regions. In a way, it provides a blank map of geometries ready for use with your own data and colors.
 
 Examples: For an example of such blank map, see [this map](http://eurostat.github.io/Nuts2json/examples/overview.html?proj=3035&lvl=3&s=1000&y=2016). For an example of statistical map, see [this map](http://eurostat.github.io/EurostatVisu/population_map.html?proj=3035&lvl=3&s=1000&time=2016) showing population in Europe.
