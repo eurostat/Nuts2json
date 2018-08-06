@@ -5,60 +5,47 @@
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/topojson.v1.min.js"></script>
 
-<style>
-	.rg { fill: #fdbf6f; }
-	.rg:hover { fill: #ff7f00; }
-	.bn { stroke: #333; fill: none; }
-	.bn_0 { stroke: white; stroke-width: 1.8px; }
-	.bn_1 { stroke-width: 1.2px; }
-	.bn_2 { stroke-width: 1.2px; }
-	.bn_3 { stroke-width: 0.5px; }
-	.bn_oth { stroke: #aaa; stroke-width: 1.2px; }
-	.cntrg { fill: lightgray; }
-	.cntrg:hover { fill: darkgray; }
-	.cntbn { fill: none; stroke: white; stroke-width: 1.2px; }
-</style>
-
 <script>
-
 	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/1200px/3.json",
 			function(error, nuts) {
 		if (error) throw error;
 
-		//prepare the SVG
-		var size = 1200,
+		//prepare SVG element
+		var width = 1200,
 			geoW = nuts.bbox[2]-nuts.bbox[0],
 			geoH = nuts.bbox[3]-nuts.bbox[1],
-			svg = d3.select("svg").attr("width", size+"px").attr("height", (size*geoH/geoW)+"px")
+			svg = d3.select("svg").attr("width", width+"px").attr("height", (width*geoH/geoW)+"px")
 			path = d3.geoPath().projection(d3.geoIdentity()
-				.scale(size/geoW).reflectY(true)
-				.translate([-nuts.bbox[0]*(size/geoW), size*geoH/geoW+nuts.bbox[1]*(size/geoW)]))
+				.scale(width/geoW).reflectY(true)
+				.translate([-nuts.bbox[0]*(width/geoW), width*geoH/geoW+nuts.bbox[1]*(width/geoW)]))
 		;
 
 		//draw country regions
 		svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntrg).features).enter()
 				.append("path").attr("d", path)
-				.attr("class", "cntrg")
+				.style("fill","lightgray")
+				.on("mouseover", function() { d3.select(this).style("fill", "darkgray") })
+				.on("mouseout",  function() { d3.select(this).style("fill", "lightgray"); });
 
 		//draw country boundaries
 		svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntbn).features).enter()
 				.append("path").attr("d", path)
-				.attr("class", "cntbn");
+				.style("fill","none").style("stroke","white").style("stroke-width","1px");
 
 		//draw nuts regions
 		svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsrg).features).enter()
 				.append("path").attr("d", path)
-				.attr("class", "rg")
+				.style("fill","#fdbf6f")
+				.on("mouseover", function() { d3.select(this).style("fill", "#ff7f00") })
+				.on("mouseout",  function() { d3.select(this).style("fill", "#fdbf6f"); });
 
 		//draw nuts boundaries
 		svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsbn).features).enter()
 				.append("path").attr("d", path)
-				.attr("class", function(bn){
-					var cl = ["bn","bn_"+bn.properties.lvl];
-					if(bn.properties.oth==="T") cl.push("bn_oth");
-					return cl.join(" ");
-				});
+				.style("fill","none")
+				.style("stroke",function(bn){
+					if(bn.properties.oth==="T" || bn.properties.lvl==0) return "white"; return "#333"; })
+				.style("stroke-width",function(bn){
+					if(bn.properties.lvl==3) return "0.5px"; return "1px"; });
 	});
-
 </script>
-

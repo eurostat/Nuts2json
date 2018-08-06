@@ -31,23 +31,23 @@ For additional projections, formats, sizes, etc., feel free to [ask](https://git
 
 Four feature types are provided:
 
-NUTS regions (feature type `nutsrg`) with the following properties:
-  - `id`: The NUTS identifier to be used to join Eurostat statistical figures and then assign colors to the regions.
-  - `na`: The geographical name of the region.
+- NUTS regions (feature type `nutsrg`) with the following properties:
+..- `id`: The NUTS identifier to be used to join Eurostat statistical figures and then assign colors to the regions.
+..- `na`: The geographical name of the region.
 
-NUTS boundaries (feature type `nutsbn`) with the following properties:
-  - `lvl`: The NUTS level of the boundary, from 0 (national level) to 3 (provincial level).
-  - `eu`: T if the boundary separate two EU member states, F otherwise.
-  - `efta`: T if the boundary touches at least one EFTA country, F otherwise.
-  - `cc`: T if the boundary touches at least one Candidate Country, F otherwise.
-  - `oth`: T if the boundary touches a country wich is not EU, EFTA,CC. F otherwise.
+- NUTS boundaries (feature type `nutsbn`) with the following properties:
+..- `lvl`: The NUTS level of the boundary, from 0 (national level) to 3 (provincial level).
+..- `eu`: T if the boundary separate two EU member states, F otherwise.
+..- `efta`: T if the boundary touches at least one EFTA country, F otherwise.
+..- `cc`: T if the boundary touches at least one Candidate Country, F otherwise.
+..- `oth`: T if the boundary touches a country wich is not EU, EFTA,CC. F otherwise.
 NB: Coastal boundaries are not included.
 
-Non-european countries (feature type `cntrg`) with the following properties:
-  - `id`: The country identifier (2 letters code).
-  - `na`: The country name.
+- Non-european countries (feature type `cntrg`) with the following properties:
+..- `id`: The country identifier (2 letters code).
+..- `na`: The country name.
 
-Non-european boundaries (feature type `cntbn`). Coastal boundaries are not included.
+- Non-european boundaries (feature type `cntbn`). Coastal boundaries are not included.
 
 
 ## Usage example
@@ -64,61 +64,49 @@ A map showing the TopoJSON geometries with [d3js](https://d3js.org/):
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/topojson.v1.min.js"></script>
 
-<style>
-	.rg { fill: #fdbf6f; }
-	.rg:hover { fill: #ff7f00; }
-	.bn { fill: none; }
-	.bn_0 { stroke: #333; stroke-width: 1.3px; }
-	.bn_1 { stroke: #333; stroke-width: 1px; }
-	.bn_2 { stroke: #333; stroke-width: 1px; }
-	.bn_3 { stroke: #333; stroke-width: 0.7px; }
-	.bn_oth { stroke: #aaa; stroke-width: 1px; }
-	.cntrg { fill: lightgray; }
-	.cntrg:hover { fill: darkgray; }
-	.cntbn { fill: none; stroke: #aaa; stroke-width: 1px; }
-</style>
-
 <script>
-
 	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/1200px/3.json",
 			function(error, nuts) {
 		if (error) throw error;
 
-		//prepare the SVG
-		var size = 1200,
+		//prepare SVG element
+		var width = 1200,
 			geoW = nuts.bbox[2]-nuts.bbox[0],
 			geoH = nuts.bbox[3]-nuts.bbox[1],
-			svg = d3.select("svg").attr("width", size+"px").attr("height", (size*geoH/geoW)+"px")
+			svg = d3.select("svg").attr("width", width+"px").attr("height", (width*geoH/geoW)+"px")
 			path = d3.geoPath().projection(d3.geoIdentity()
-				.scale(size/geoW).reflectY(true)
-				.translate([-nuts.bbox[0]*(size/geoW), size*geoH/geoW+nuts.bbox[1]*(size/geoW)]))
+				.scale(width/geoW).reflectY(true)
+				.translate([-nuts.bbox[0]*(width/geoW), width*geoH/geoW+nuts.bbox[1]*(width/geoW)]))
 		;
 
 		//draw country regions
 		svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntrg).features).enter()
 				.append("path").attr("d", path)
-				.attr("class", "cntrg")
+				.style("fill","lightgray")
+				.on("mouseover", function() { d3.select(this).style("fill", "darkgray") })
+				.on("mouseout",  function() { d3.select(this).style("fill", "lightgray"); });
 
 		//draw country boundaries
 		svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntbn).features).enter()
 				.append("path").attr("d", path)
-				.attr("class", "cntbn");
+				.style("fill","none").style("stroke","white").style("stroke-width","1px");
 
 		//draw nuts regions
 		svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsrg).features).enter()
 				.append("path").attr("d", path)
-				.attr("class", "rg")
+				.style("fill","#fdbf6f")
+				.on("mouseover", function() { d3.select(this).style("fill", "#ff7f00") })
+				.on("mouseout",  function() { d3.select(this).style("fill", "#fdbf6f"); });
 
 		//draw nuts boundaries
 		svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsbn).features).enter()
 				.append("path").attr("d", path)
-				.attr("class", function(bn){
-					var cl = ["bn","bn_"+bn.properties.lvl];
-					if(bn.properties.oth==="T") cl.push("bn_oth");
-					return cl.join(" ");
-				});
+				.style("fill","none")
+				.style("stroke",function(bn){
+					if(bn.properties.oth==="T" || bn.properties.lvl==0) return "white"; return "#333"; })
+				.style("stroke-width",function(bn){
+					if(bn.properties.lvl==3) return "0.5px"; return "1px"; });
 	});
-
 </script>
 ```
 
