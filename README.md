@@ -59,7 +59,7 @@ A map showing the TopoJSON geometries with [d3js](https://d3js.org/):
 ```html
 <!DOCTYPE html>
 
-<svg width="800px" height="800px"></svg>
+<svg></svg>
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/topojson.v1.min.js"></script>
@@ -67,7 +67,7 @@ A map showing the TopoJSON geometries with [d3js](https://d3js.org/):
 <style>
 	.rg { fill: #fdbf6f; }
 	.rg:hover { fill: #ff7f00; }
-	.bn { fill: none; stroke-linecap:round; stroke-linejoin:round }
+	.bn { fill: none; }
 	.bn_0 { stroke: #333; stroke-width: 1.3px; }
 	.bn_1 { stroke: #333; stroke-width: 1px; }
 	.bn_2 { stroke: #333; stroke-width: 1px; }
@@ -75,45 +75,42 @@ A map showing the TopoJSON geometries with [d3js](https://d3js.org/):
 	.bn_oth { stroke: #aaa; stroke-width: 1px; }
 	.cntrg { fill: lightgray; }
 	.cntrg:hover { fill: darkgray; }
-	.cntbn { fill: none; stroke: #aaa; stroke-width: 1px }
+	.cntbn { fill: none; stroke: #aaa; stroke-width: 1px; }
 </style>
 
 <script>
 
-	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/800px/3.json",
-		function(error, nuts) {
-
+	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/1200px/3.json",
+			function(error, nuts) {
 		if (error) throw error;
 
-		//get the geometries
-		var cntrg = topojson.feature(nuts, nuts.objects.cntrg),
-			cntbn = topojson.feature(nuts, nuts.objects.cntbn),
-			nutsrg = topojson.feature(nuts, nuts.objects.nutsrg),
-			nutsbn = topojson.feature(nuts, nuts.objects.nutsbn)
-		;
-
-		var svg = d3.select("svg"),
-			path = d3.geoPath().projection(
-				d3.geoIdentity().reflectY(true).fitSize([800,800], nutsrg))
+		//prepare the SVG
+		var size = 1200,
+			geoW = nuts.bbox[2]-nuts.bbox[0],
+			geoH = nuts.bbox[3]-nuts.bbox[1],
+			svg = d3.select("svg").attr("width", size+"px").attr("height", (size*geoH/geoW)+"px")
+			path = d3.geoPath().projection(d3.geoIdentity()
+				.scale(size/geoW).reflectY(true)
+				.translate([-nuts.bbox[0]*(size/geoW), size*geoH/geoW+nuts.bbox[1]*(size/geoW)]))
 		;
 
 		//draw country regions
-		svg.append("g").selectAll("path").data(cntrg.features).enter()
+		svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntrg).features).enter()
 				.append("path").attr("d", path)
 				.attr("class", "cntrg")
 
 		//draw country boundaries
-		svg.append("g").selectAll("path").data(cntbn.features).enter()
+		svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntbn).features).enter()
 				.append("path").attr("d", path)
 				.attr("class", "cntbn");
 
 		//draw nuts regions
-		svg.append("g").selectAll("path").data(nutsrg.features).enter()
+		svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsrg).features).enter()
 				.append("path").attr("d", path)
 				.attr("class", "rg")
 
 		//draw nuts boundaries
-		svg.append("g").selectAll("path").data(nutsbn.features).enter()
+		svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsbn).features).enter()
 				.append("path").attr("d", path)
 				.attr("class", function(bn){
 					var cl = ["bn","bn_"+bn.properties.lvl];
@@ -121,6 +118,7 @@ A map showing the TopoJSON geometries with [d3js](https://d3js.org/):
 					return cl.join(" ");
 				});
 	});
+
 </script>
 ```
 

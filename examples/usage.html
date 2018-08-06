@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<svg width="600px" height="600px"></svg>
+<svg></svg>
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/topojson.v1.min.js"></script>
@@ -21,18 +21,18 @@
 
 <script>
 
-	var size = 600;
-
-	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/"+size+"px/3.json",
+	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/1200px/3.json",
 			function(error, nuts) {
 		if (error) throw error;
 
-		console.log(nuts.bbox);
-		
-		var svg = d3.select("svg"),
+		//prepare the SVG
+		var size = 1200,
+			geoW = nuts.bbox[2]-nuts.bbox[0],
+			geoH = nuts.bbox[3]-nuts.bbox[1],
+			svg = d3.select("svg").attr("width", size+"px").attr("height", (size*geoH/geoW)+"px")
 			path = d3.geoPath().projection(d3.geoIdentity()
-					.scale(Math.max(size/(nuts.bbox[0]-nuts.bbox[2]), size/(nuts.bbox[1]-nuts.bbox[3])))
-					.reflectX(true).translate([-size/2,size*1.25]))
+				.scale(size/geoW).reflectY(true)
+				.translate([-nuts.bbox[0]*(size/geoW), size*geoH/geoW+nuts.bbox[1]*(size/geoW)]))
 		;
 
 		//draw country regions
