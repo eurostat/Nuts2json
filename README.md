@@ -65,48 +65,48 @@ A map showing the TopoJSON geometries with [d3js](https://d3js.org/):
 <script src="https://d3js.org/topojson.v1.min.js"></script>
 
 <script>
-	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/1200px/3.json",
-			function(error, nuts) {
-		if (error) throw error;
+d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/1200px/3.json",
+		function(error, nuts) {
+	if (error) throw error;
 
-		//prepare SVG element
-		var width = 1200,
-			geoW = nuts.bbox[2]-nuts.bbox[0],
-			geoH = nuts.bbox[3]-nuts.bbox[1],
-			svg = d3.select("svg").attr("width", width+"px").attr("height", (width*geoH/geoW)+"px")
-			path = d3.geoPath().projection(d3.geoIdentity()
-				.scale(width/geoW).reflectY(true)
-				.translate([-nuts.bbox[0]*(width/geoW), width*geoH/geoW+nuts.bbox[1]*(width/geoW)]))
-		;
+	//prepare SVG element
+	var width = 1200,
+		geoW = nuts.bbox[2]-nuts.bbox[0],
+		geoH = nuts.bbox[3]-nuts.bbox[1],
+		svg = d3.select("svg").attr("width", width+"px").attr("height", (width*geoH/geoW)+"px")
+		path = d3.geoPath().projection(d3.geoIdentity()
+			.scale(width/geoW).reflectY(true)
+			.translate([-nuts.bbox[0]*(width/geoW), width*geoH/geoW+nuts.bbox[1]*(width/geoW)]))
+	;
 
-		//draw country regions
-		svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntrg).features).enter()
-				.append("path").attr("d", path)
-				.style("fill","lightgray")
-				.on("mouseover", function() { d3.select(this).style("fill", "darkgray") })
-				.on("mouseout",  function() { d3.select(this).style("fill", "lightgray"); });
+	//draw country regions
+	svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntrg).features).enter()
+		.append("path").attr("d", path)
+		.style("fill","lightgray")
+		.on("mouseover", function() { d3.select(this).style("fill", "darkgray") })
+		.on("mouseout",  function() { d3.select(this).style("fill", "lightgray"); });
 
-		//draw country boundaries
-		svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntbn).features).enter()
-				.append("path").attr("d", path)
-				.style("fill","none").style("stroke","white").style("stroke-width","1px");
+	//draw country boundaries
+	svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntbn).features).enter()
+		.append("path").attr("d", path)
+		.style("fill","none").style("stroke","white").style("stroke-width","1px");
 
-		//draw nuts regions
-		svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsrg).features).enter()
-				.append("path").attr("d", path)
-				.style("fill","#fdbf6f")
-				.on("mouseover", function() { d3.select(this).style("fill", "#ff7f00") })
-				.on("mouseout",  function() { d3.select(this).style("fill", "#fdbf6f"); });
+	//draw nuts regions
+	svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsrg).features).enter()
+		.append("path").attr("d", path)
+		.style("fill","#fdbf6f")
+		.on("mouseover", function() { d3.select(this).style("fill", "#ff7f00") })
+		.on("mouseout",  function() { d3.select(this).style("fill", "#fdbf6f"); });
 
 		//draw nuts boundaries
-		svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsbn).features).enter()
-				.append("path").attr("d", path)
-				.style("fill","none")
-				.style("stroke",function(bn){
-					if(bn.properties.oth==="T" || bn.properties.lvl==0) return "white"; return "#333"; })
-				.style("stroke-width",function(bn){
-					if(bn.properties.lvl==3) return "0.5px"; return "1px"; });
-	});
+	svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsbn).features).enter()
+		.append("path").attr("d", path)
+		.style("fill","none")
+		.style("stroke",function(bn){
+			if(bn.properties.oth==="T" || bn.properties.lvl==0) return "white"; return "#333"; })
+		.style("stroke-width",function(bn){
+			if(bn.properties.lvl==3) return "0.5px"; return "1px"; });
+});
 </script>
 ```
 
