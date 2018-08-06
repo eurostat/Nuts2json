@@ -8,7 +8,7 @@
 <style>
 	.rg { fill: #fdbf6f; }
 	.rg:hover { fill: #ff7f00; }
-	.bn { fill: none; stroke-linecap:round; stroke-linejoin:round }
+	.bn { fill: none; }
 	.bn_0 { stroke: #333; stroke-width: 1.3px; }
 	.bn_1 { stroke: #333; stroke-width: 1px; }
 	.bn_2 { stroke: #333; stroke-width: 1px; }
@@ -16,12 +16,13 @@
 	.bn_oth { stroke: #aaa; stroke-width: 1px; }
 	.cntrg { fill: lightgray; }
 	.cntrg:hover { fill: darkgray; }
-	.cntbn { fill: none; stroke: #aaa; stroke-width: 1px; stroke-linecap:round; stroke-linejoin:round }
+	.cntbn { fill: none; stroke: #aaa; stroke-width: 1px; }
 </style>
 
 <script>
 
-	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/800px/3.json", function(error, nuts) {
+	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/800px/3.json",
+			function(error, nuts) {
 		if (error) throw error;
 
 		//get the geometries
@@ -31,6 +32,9 @@
 			nutsbn = topojson.feature(nuts, nuts.objects.nutsbn)
 		;
 
+		console.log(nuts.bbox);
+
+		
 		var svg = d3.select("svg"),
 			path = d3.geoPath().projection(d3.geoIdentity().reflectY(true).fitSize([800,800], nutsrg))
 		;
@@ -51,14 +55,11 @@
 				.attr("class", "rg")
 
 		//draw nuts boundaries
-		var bn = nutsbn.features;
-		bn.sort(function(bn1,bn2){ return bn2.properties.lvl - bn1.properties.lvl; });
-		svg.append("g").selectAll("path").data(bn).enter()
+		svg.append("g").selectAll("path").data(nutsbn.features).enter()
 				.append("path").attr("d", path)
 				.attr("class", function(bn){
-					bn = bn.properties;
-					var cl = ["bn","bn_"+bn.lvl];
-					if(bn.oth==="T") cl.push("bn_oth");
+					var cl = ["bn","bn_"+bn.properties.lvl];
+					if(bn.properties.oth==="T") cl.push("bn_oth");
 					return cl.join(" ");
 				});
 	});

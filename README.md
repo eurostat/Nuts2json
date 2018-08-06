@@ -113,18 +113,14 @@ A map showing the TopoJSON geometries with [d3js](https://d3js.org/):
 				.attr("class", "rg")
 
 		//draw nuts boundaries
-		var bn = nutsbn.features;
-		bn.sort(function(bn1,bn2){ return bn2.properties.lvl - bn1.properties.lvl; });
-		svg.append("g").selectAll("path").data(bn).enter()
+		svg.append("g").selectAll("path").data(nutsbn.features).enter()
 				.append("path").attr("d", path)
 				.attr("class", function(bn){
-					bn = bn.properties;
-					var cl = ["bn","bn_"+bn.lvl];
-					if(bn.oth==="T") cl.push("bn_oth");
+					var cl = ["bn","bn_"+bn.properties.lvl];
+					if(bn.properties.oth==="T") cl.push("bn_oth");
 					return cl.join(" ");
 				});
 	});
-
 </script>
 ```
 

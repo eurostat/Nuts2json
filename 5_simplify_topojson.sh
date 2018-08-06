@@ -11,7 +11,7 @@ do
     do
       for size in 1200 1000 800 600 400
       do
-        echo "$year $proj $level $size - topojson simplify"
+        echo "5- $year $proj $level $size - topojson simplify"
 
         outdir=$year"/"$proj"/"$size"px"
         mkdir -p $outdir
