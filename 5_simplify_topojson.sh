@@ -19,7 +19,7 @@ do
         if [ $proj = "4258" ]
         then
           #toposimplify -f -s $(( 160000 / ($size * $size) )) -o $outdir"/"$level".json" $dir"/"$level".json"
-          toposimplify -f -p $(( 160000 / ($size * $size) )) -o $outdir"/"$level".json" $dir"/"$level".json"
+          toposimplify -f -p $(( 42000000000000 / ($size * $size) )) -o $outdir"/"$level".json" $dir"/"$level".json"
         else
           toposimplify -f -p $(( 42000000000000 / ($size * $size) )) -o $outdir"/"$level".json" $dir"/"$level".json"
         fi
