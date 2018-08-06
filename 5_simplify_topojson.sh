@@ -11,11 +11,18 @@ do
     do
       for size in 1200 1000 800 600 400
       do
+        echo "$year $proj $level $size - topojson simplify"
+
         outdir=$year"/"$proj"/"$size"px"
         mkdir -p $outdir
 
-        echo "$year $proj $level $size - topojson simplify"
-        toposimplify -f -p $(( 35000000000000 / ($size * $size) )) -o $outdir"/"$level".json" $dir"/"$level".json"
+        if [ $proj = "4258" ]
+        then
+          #toposimplify -f -s $(( 160000 / ($size * $size) )) -o $outdir"/"$level".json" $dir"/"$level".json"
+          toposimplify -f -p $(( 157000 / ($size * $size) )) -o $outdir"/"$level".json" $dir"/"$level".json"
+        else
+          toposimplify -f -p $(( 35000000000000 / ($size * $size) )) -o $outdir"/"$level".json" $dir"/"$level".json"
+        fi
       done
     done
   done
