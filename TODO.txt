@@ -12,14 +12,8 @@ http://bl.ocks.org/rveciana/4bcc5750c776c22ffda6
 show more: SEP, JOIN + natural earth?
 do for european communes (...) + other eurostat datasets?
 
-produce geojson
-https://www.npmjs.com/package/topo-geo-json-converter
-with topojsonJS/nodejs
-ogr2ogr \  -f GeoJSON \  -where "ISO_A2 = 'GB' AND SCALERANK < 8" \ places.json \ ne_10m_populated_places.shp
-
 opencarto vector tiles
 use make instead of bash?
-
 
 https://github.com/mbostock/topojson/wiki/Command-Line-Reference
 http://teslabs.com/articles/topojson-catalonia/ section "Simplification and quantization"
