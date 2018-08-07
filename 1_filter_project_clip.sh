@@ -51,6 +51,13 @@ ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
    -clipsrc -120.02 25.02 120.02 89.02
 
 
+echo "1- $year Graticule: Clip"
+ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
+   "tmp/$year/graticule_.shp" \
+   "shp/graticule.shp" \
+   -clipsrc -120.02 25.02 120.02 85
+
+
   for pi in ${!projs[@]}
   do
     proj=${projs[pi]}
@@ -59,15 +66,15 @@ ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
 
     echo "1- $year $proj Graticule: Project"
     ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
-            "tmp/$year/$proj/graticule_.shp" \
-            "shp/graticule.shp" \
+            "tmp/$year/$proj/graticule__.shp" \
+            "tmp/$year/graticule_.shp" \
             -t_srs EPSG:$proj -s_srs EPSG:4258
 
     echo "1- $year $proj Graticule: Clip"
     ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
             "tmp/$year/$proj/graticule.shp" \
-            "tmp/$year/$proj/graticule_.shp" \
-          -clipsrc ${xmin[pi]} ${ymin[pi]} ${xmax[pi]} ${ymax[pi]}
+            "tmp/$year/$proj/graticule__.shp" \
+            -clipsrc ${xmin[pi]} ${ymin[pi]} ${xmax[pi]} ${ymax[pi]}
 
     for type in "RG" "BN"
     do

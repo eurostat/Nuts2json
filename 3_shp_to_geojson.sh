@@ -18,7 +18,6 @@ do
         echo "3- $year $proj $type - NUTS $level SHP to geojson"
 		rm -f $dir"/"$level".json"
 	    ogr2ogr -overwrite -f geoJSON $dir"/"$level".json" $dir"/"$level".shp"
-
       done
     done
   done
