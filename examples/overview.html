@@ -23,7 +23,7 @@
 	var proj = EstLib.getParameterByName("proj") || 3035,
 			nutsLvl = EstLib.getParameterByName("lvl") || "3",
 			width = EstLib.getParameterByName("s") || 1200,
-			year = EstLib.getParameterByName("y") || 2013,
+			year = EstLib.getParameterByName("y") || 2016,
 
 	//build tooltip element
 	tooltip = EstLib.tooltip();
@@ -36,8 +36,12 @@
 
 		//prepare SVG element
 		var height = width*(nuts.bbox[3]-nuts.bbox[1])/(nuts.bbox[2]-nuts.bbox[0]),
-		svg = d3.select("#map").attr("width", width+"px").attr("height", height+"px"),
+		svg = d3.select("#map").attr("width", width).attr("height", height),
 		path = d3.geoPath().projection(d3.geoIdentity().reflectY(true).fitSize([width,height], topojson.feature(nuts, nuts.objects.gra)));
+
+		//define filter for coastal margin
+		svg.append("filter").attr("id","blur").append("feGaussianBlur").attr("in","SourceGraphic").attr("stdDeviation","3");
+		//try 'feTurbulence' on polygon textures ?
 
 		//background rectangle
 		svg.append("rect").attr("id","bck").attr("x",0).attr("y",0).attr("width", width).attr("height", height).style("fill","#b3cde3");
@@ -53,12 +57,12 @@
 		//draw coastal margin
 		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntbn).features).enter()
 			.append("path").attr("d", path)
-			.style("fill","none").style("opacity","0.15").style("stroke-width","20px").style("stroke-linejoin","round").style("stroke-linecap","round")
+			.style("fill","none").style("stroke-width","5px").style("filter","url(#blur)").style("stroke-linejoin","round").style("stroke-linecap","round")
 			.style("stroke",function(bn){ if(bn.properties.co==="T") return "white"; return "none"; })
 		;
 		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsbn).features).enter()
 			.append("path").attr("d", path)
-			.style("fill","none").style("opacity","0.15").style("stroke-width","20px").style("stroke-linejoin","round").style("stroke-linecap","round")
+			.style("fill","none").style("stroke-width","5px").style("filter","url(#blur)").style("stroke-linejoin","round").style("stroke-linecap","round")
 			.style("stroke",function(bn){ if(bn.properties.co==="T") return "white"; return "none"; })
 		;
 
@@ -99,7 +103,7 @@
 			.style("stroke",function(bn){
 				if(bn.properties.co==="T") return "#1f78b4";
 				if(bn.properties.oth==="T" || bn.properties.lvl==0) return "white"; return "#333"; })
-			.style("stroke-width",function(bn){ if(bn.properties.lvl==3) return "0.5px"; return "1px"; })
+			.style("stroke-width",function(bn){ if(bn.properties.lvl==3) return "0.7px"; return "1.2px"; })
 		;
 	});
 

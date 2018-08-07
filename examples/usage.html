@@ -9,7 +9,7 @@ d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035
 
 	//prepare SVG element
 	var width = 1200, height = width*(nuts.bbox[3]-nuts.bbox[1])/(nuts.bbox[2]-nuts.bbox[0]),
-		svg = d3.select("svg").attr("width", width+"px").attr("height", height+"px")
+		svg = d3.select("svg").attr("width", width).attr("height", height)
 		path = d3.geoPath().projection(d3.geoIdentity()
 			.reflectY(true).fitSize([width,height], topojson.feature(nuts, nuts.objects.gra)));
 
