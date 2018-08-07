@@ -41,14 +41,14 @@ Four feature types are provided:
   - `efta`: T if the boundary touches at least one EFTA country, F otherwise.
   - `cc`: T if the boundary touches at least one Candidate Country, F otherwise.
   - `oth`: T if the boundary touches a country wich is not EU, EFTA,CC. F otherwise.
-NB: Coastal boundaries are not included.
+  - `co`: T if the boundary is coastal. F otherwise.
 
 - Non-european countries (feature type `cntrg`) with the following properties:
   - `id`: The country identifier (2 letters code).
   - `na`: The country name.
 
-- Non-european boundaries (feature type `cntbn`). Coastal boundaries are not included.
-
+- Non-european boundaries (feature type `cntbn`) with a single property:
+  - `co`: T if the boundary is coastal. F otherwise.
 
 ## Usage example
 
