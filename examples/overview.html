@@ -40,7 +40,7 @@
 		path = d3.geoPath().projection(d3.geoIdentity().reflectY(true).fitSize([width,height], topojson.feature(nuts, nuts.objects.gra)));
 
 		//define filter for coastal margin
-		svg.append("filter").attr("id","blur").append("feGaussianBlur").attr("in","SourceGraphic").attr("stdDeviation","3");
+		svg.append("filter").attr("id","blur").append("feGaussianBlur").attr("in","SourceGraphic").attr("stdDeviation","4");
 
 		//background rectangle
 		svg.append("rect").attr("id","bck").attr("x",0).attr("y",0).attr("width", width).attr("height", height).style("fill","#b3cde3");
@@ -70,7 +70,7 @@
 			.append("path").attr("d", path)
 			.style("fill","none").style("stroke-width","1px").style("stroke","gray");
 
-		//country regions
+		//draw country regions
 		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntrg).features).enter()
 			.append("path").attr("d", path)
 			.on("mouseover", function(rg) { d3.select(this).style("fill", "#ddd"); tooltip.mouseover("<b>"+rg.properties.na+"</b><br>"+rg.properties.id); })
@@ -79,7 +79,7 @@
 			.style("fill","#f2f2f2")
 		;
 
-		//nuts regions
+		//draw nuts regions
 		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsrg).features).enter()
 			.append("path").attr("d", path)
 			.on("mouseover", function(rg) { d3.select(this).style("fill", "#ff7f00"); tooltip.mouseover("<b>"+rg.properties.na+"</b><br>"+rg.properties.id); })
@@ -97,7 +97,9 @@
 		;
 
 		//draw nuts boundaries
-		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsbn).features).enter()
+		var bn = topojson.feature(nuts, nuts.objects.nutsbn).features;
+		bn.sort(function(bn1,bn2){ return bn2.properties.lvl - bn1.properties.lvl; });
+		g.append("g").selectAll("path").data(bn).enter()
 			.append("path").attr("d", path)
 			.style("fill","none")
 			.style("stroke",function(bn){
