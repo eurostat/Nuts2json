@@ -60,12 +60,9 @@ A map showing the TopoJSON geometries with [d3js](https://d3js.org/):
 
 ```html
 <!DOCTYPE html>
-
 <svg></svg>
-
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/topojson.v1.min.js"></script>
-
 <script>
 d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/1200px/3.json",
 		function(error, nuts) {
@@ -86,21 +83,21 @@ d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035
 	svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntrg).features).enter()
 		.append("path").attr("d", path)
 		.style("fill","lightgray")
-		.on("mouseover", function() { d3.select(this).style("fill", "darkgray") })
+		.on("mouseover", function() { d3.select(this).style("fill", "darkgray");  })
 		.on("mouseout",  function() { d3.select(this).style("fill", "lightgray"); });
+
+	//draw nuts regions
+	svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsrg).features).enter()
+		.append("path").attr("d", path)
+		.style("fill","#fdbf6f")
+		.on("mouseover", function() { d3.select(this).style("fill", "#ff7f00"); })
+		.on("mouseout",  function() { d3.select(this).style("fill", "#fdbf6f"); });
 
 	//draw country boundaries
 	svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntbn).features).enter()
 		.append("path").attr("d", path)
 		.style("fill","none").style("stroke-width","1px")
 		.style("stroke",function(bn){ if(bn.properties.co==="T") return "#1f78b4"; return "white"; });
-	
-	//draw nuts regions
-	svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsrg).features).enter()
-		.append("path").attr("d", path)
-		.style("fill","#fdbf6f")
-		.on("mouseover", function() { d3.select(this).style("fill", "#ff7f00") })
-		.on("mouseout",  function() { d3.select(this).style("fill", "#fdbf6f"); });
 
 	//draw nuts boundaries
 	svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsbn).features).enter()
