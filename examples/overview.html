@@ -56,12 +56,12 @@
 		//draw coastal margin
 		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntbn).features).enter()
 			.append("path").attr("d", path)
-			.style("fill","none").style("stroke-width","5px").style("filter","url(#blur)").style("stroke-linejoin","round").style("stroke-linecap","round")
+			.style("fill","none").style("stroke-width","8px").style("filter","url(#blur)").style("stroke-linejoin","round").style("stroke-linecap","round")
 			.style("stroke",function(bn){ if(bn.properties.co==="T") return "white"; return "none"; })
 		;
 		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsbn).features).enter()
 			.append("path").attr("d", path)
-			.style("fill","none").style("stroke-width","5px").style("filter","url(#blur)").style("stroke-linejoin","round").style("stroke-linecap","round")
+			.style("fill","none").style("stroke-width","8px").style("filter","url(#blur)").style("stroke-linejoin","round").style("stroke-linecap","round")
 			.style("stroke",function(bn){ if(bn.properties.co==="T") return "white"; return "none"; })
 		;
 
@@ -93,6 +93,7 @@
 			.append("path").attr("d", path)
 			.style("fill","none").style("stroke-width","1.2px")
 			.style("stroke",function(bn){ if(bn.properties.co==="T") return "#1f78b4"; return "gray"; })
+			.style("stroke-linejoin","round").style("stroke-linecap","round")
 		;
 
 		//draw nuts boundaries
@@ -103,6 +104,7 @@
 				if(bn.properties.co==="T") return "#1f78b4";
 				if(bn.properties.oth==="T" || bn.properties.lvl==0) return "white"; return "#333"; })
 			.style("stroke-width",function(bn){ if(bn.properties.lvl==3) return "0.7px"; return "1.2px"; })
+			.style("stroke-linejoin","round").style("stroke-linecap","round")
 		;
 	});
 
