@@ -61,7 +61,7 @@ A map showing the TopoJSON geometries with [d3js](https://d3js.org/):
 ```html
 <!DOCTYPE html>
 
-<svg />
+<svg></svg>
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/topojson.v1.min.js"></script>
