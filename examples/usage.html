@@ -11,14 +11,10 @@ d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035
 	if (error) throw error;
 
 	//prepare SVG element
-	var width = 1200,
-		geoW = nuts.bbox[2]-nuts.bbox[0],
-		geoH = nuts.bbox[3]-nuts.bbox[1],
-		svg = d3.select("svg").attr("width", width+"px").attr("height", (width*geoH/geoW)+"px")
+	var width = 1200, height = width*(nuts.bbox[3]-nuts.bbox[1])/(nuts.bbox[2]-nuts.bbox[0]),
+		svg = d3.select("svg").attr("width", width+"px").attr("height", height+"px")
 		path = d3.geoPath().projection(d3.geoIdentity()
-			.scale(width/geoW).reflectY(true)
-			.translate([-nuts.bbox[0]*(width/geoW), width*geoH/geoW+nuts.bbox[1]*(width/geoW)]))
-	;
+			.reflectY(true).fitSize([width,height], topojson.feature(nuts, nuts.objects.gra)));
 
 	//draw graticule
 	svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.gra).features).enter()
