@@ -19,7 +19,7 @@ do
 
         echo "2- $year $proj $level NUTS BN: extract by level "
         ogr2ogr -overwrite -lco ENCODING=UTF-8 \
-            -sql "SELECT lvl,eu,efta,cc,oth FROM NUTS WHERE lvl<="$level" AND coas <> 'T'" \
+            -sql "SELECT * FROM NUTS WHERE lvl<="$level" AND coas <> 'T'" \
             $dirBN"/"$level".shp" \
             $dirBN"/NUTS.shp"
     done
