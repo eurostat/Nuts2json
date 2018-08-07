@@ -10,8 +10,6 @@ d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035
 		function(error, nuts) {
 	if (error) throw error;
 
-	console.log(nuts);
-	
 	//prepare SVG element
 	var width = 1200,
 		geoW = nuts.bbox[2]-nuts.bbox[0],
@@ -21,6 +19,11 @@ d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035
 			.scale(width/geoW).reflectY(true)
 			.translate([-nuts.bbox[0]*(width/geoW), width*geoH/geoW+nuts.bbox[1]*(width/geoW)]))
 	;
+
+	//draw graticule
+	svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.gra).features).enter()
+		.append("path").attr("d", path)
+		.style("fill","none").style("stroke-width","2px").style("stroke","lightgray");
 
 	//draw country regions
 	svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntrg).features).enter()
@@ -42,7 +45,7 @@ d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035
 		.on("mouseover", function() { d3.select(this).style("fill", "#ff7f00") })
 		.on("mouseout",  function() { d3.select(this).style("fill", "#fdbf6f"); });
 
-		//draw nuts boundaries
+	//draw nuts boundaries
 	svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsbn).features).enter()
 		.append("path").attr("d", path)
 		.style("fill","none")
