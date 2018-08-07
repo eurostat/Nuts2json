@@ -6,3 +6,6 @@ bash 3_shp_to_geojson.sh
 bash 4_geojson_to_topojson.sh
 bash 5_simplify_topojson.sh
 bash 6_topojson_to_geojson.sh
+
+#https://github.com/dwtkns/gdal-cheat-sheet
+#npm install -g topojson
