@@ -61,7 +61,7 @@ A map showing the TopoJSON geometries with [d3js](https://d3js.org/):
 ```html
 <!DOCTYPE html>
 
-<svg></svg>
+<svg />
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/topojson.v1.min.js"></script>
@@ -80,6 +80,11 @@ d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035
 			.scale(width/geoW).reflectY(true)
 			.translate([-nuts.bbox[0]*(width/geoW), width*geoH/geoW+nuts.bbox[1]*(width/geoW)]))
 	;
+
+	//draw graticule
+	svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.gra).features).enter()
+		.append("path").attr("d", path)
+		.style("fill","none").style("stroke-width","2px").style("stroke","lightgray");
 
 	//draw country regions
 	svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntrg).features).enter()
@@ -101,7 +106,7 @@ d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035
 		.on("mouseover", function() { d3.select(this).style("fill", "#ff7f00") })
 		.on("mouseout",  function() { d3.select(this).style("fill", "#fdbf6f"); });
 
-		//draw nuts boundaries
+	//draw nuts boundaries
 	svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsbn).features).enter()
 		.append("path").attr("d", path)
 		.style("fill","none")
