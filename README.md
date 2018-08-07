@@ -89,8 +89,9 @@ d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035
 	//draw country boundaries
 	svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntbn).features).enter()
 		.append("path").attr("d", path)
-		.style("fill","none").style("stroke","white").style("stroke-width","1px");
-
+		.style("fill","none").style("stroke-width","1px")
+		.style("stroke",function(bn){ if(bn.properties.co==="T") return "#1f78b4"; return "white"; });
+	
 	//draw nuts regions
 	svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsrg).features).enter()
 		.append("path").attr("d", path)
@@ -103,9 +104,9 @@ d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035
 		.append("path").attr("d", path)
 		.style("fill","none")
 		.style("stroke",function(bn){
+			if(bn.properties.co==="T") return "#1f78b4";
 			if(bn.properties.oth==="T" || bn.properties.lvl==0) return "white"; return "#333"; })
-		.style("stroke-width",function(bn){
-			if(bn.properties.lvl==3) return "0.5px"; return "1px"; });
+		.style("stroke-width",function(bn){ if(bn.properties.lvl==3) return "0.5px"; return "1px"; });
 });
 </script>
 ```
