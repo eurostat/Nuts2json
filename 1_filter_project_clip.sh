@@ -54,6 +54,21 @@ ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
   for pi in ${!projs[@]}
   do
     proj=${projs[pi]}
+
+    mkdir -p "tmp/$year/$proj/"
+
+    echo "1- $year $proj Graticule: Project"
+    ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
+            "tmp/$year/$proj/graticule_.shp" \
+            "shp/graticule.shp" \
+            -t_srs EPSG:$proj -s_srs EPSG:4258
+
+    echo "1- $year $proj Graticule: Clip"
+    ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
+            "tmp/$year/$proj/graticule.shp" \
+            "tmp/$year/$proj/graticule_.shp" \
+          -clipsrc ${xmin[pi]} ${ymin[pi]} ${xmax[pi]} ${ymax[pi]}
+
     for type in "RG" "BN"
     do
     	dir="tmp/$year/$proj/$type"
