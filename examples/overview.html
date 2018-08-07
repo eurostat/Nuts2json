@@ -3,28 +3,10 @@
 <head>
 	<meta charset="utf-8">
 	<title>NUTS JSON overview</title>
-	<style>
-		html { height: 100%; margin:0; padding:0; }
-		body { height: 100%; margin:0; padding:0; font-family: "Myriad Pro", Myriad, MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", vegur, Vegur, Helvetica, Arial, sans-serif; }
-		#bck { fill: #f5f5f5; }
-		.rg { fill: #004494; }
-		.rg:hover { fill: darkred; }
-		.bn { fill: none; stroke-linecap:round; stroke-linejoin:round }
-		.bn_0 { stroke: #fff; stroke-width: 1.5px; }
-		.bn_1 { stroke: #ddd; stroke-width: 1px; }
-		.bn_2 { stroke: #ddd; stroke-width: 1px; }
-		.bn_3 { stroke: #888; stroke-width: 0.5px; }
-		.bn_oth { stroke: #444; stroke-width: 1px; }
-		.cntrg { fill: lightgray; }
-		.cntrg:hover { fill: darkgray; }
-		.cntbn { fill: none; stroke: white; stroke-width: 1px; stroke-linecap:round; stroke-linejoin:round }
-	</style>
-
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<script src="https://d3js.org/topojson.v1.min.js"></script>
 	<script src="https://rawgit.com/eurostat/EurostatVisu/gh-pages/js/lib.js"></script>
-
 </head>
 
 <body>
@@ -37,74 +19,88 @@
 	//show loading message
 	var loadingDiv = EstLib.loadingImage({imgsrc:"../img/loading.png"});
 
-	//get url parameters for projection, level and size
+	//get url parameters for projection, level and width
 	var proj = EstLib.getParameterByName("proj") || 3035,
 			nutsLvl = EstLib.getParameterByName("lvl") || "3",
-			size = (EstLib.getParameterByName("s") || 800),
+			width = EstLib.getParameterByName("s") || 1200,
 			year = EstLib.getParameterByName("y") || 2013,
 
-	//build blank svg
-			width = "100%",
-			height = "100%",
-	//build svg
-			svg = d3.select("#map").attr("width", width).attr("height", height);
-	//background rectangle
-	svg.append("rect").attr("id","bck").attr("x",0).attr("y",0).attr("width", width).attr("height", height);
-	//drawing group
-	var g = svg.append("g").attr("transform","translate(0,0)");
-
-	//zoom
-	var zoom;
-	svg.call(zoom=d3.zoom().scaleExtent([0.5,4]).on("zoom", function() {
-		var k = d3.event.transform.k;
-		d3.selectAll(".bn_0").style("stroke-width", (1.5/k)+"px");
-		d3.selectAll(".bn_1").style("stroke-width", (1/k)+"px");
-		d3.selectAll(".bn_2").style("stroke-width", (1/k)+"px");
-		d3.selectAll(".bn_3").style("stroke-width", (0.5/k)+"px");
-		d3.selectAll(".bn_oth").style("stroke-width", (1/k)+"px");
-		g.attr("transform", d3.event.transform);
-	}));
-
-	//tooltip element
-	var tooltip = EstLib.tooltip();
+	//build tooltip element
+	tooltip = EstLib.tooltip();
+	d3.select("#tooltip").style("font-family", "Myriad Pro, Myriad, MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', 'Liberation Sans', 'Nimbus Sans L', 'Helvetica Neue', vegur, Vegur, Helvetica, Arial, sans-serif");
 
 	//get data
-	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/"+year+"/"+proj+"/"+size+"px"+"/"+nutsLvl+".json", function(error, nuts) {
+	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/"+year+"/"+proj+"/"+width+"px"+"/"+nutsLvl+".json", function(error, nuts) {
 		if (error) return console.error(error);
 		loadingDiv.hide();
 
-		var path = d3.geoPath().projection(d3.geoIdentity().reflectY(true).fitSize([size,size], topojson.feature(nuts, nuts.objects.nutsrg)))
+		//prepare SVG element
+		var height = width*(nuts.bbox[3]-nuts.bbox[1])/(nuts.bbox[2]-nuts.bbox[0]),
+		svg = d3.select("#map").attr("width", width+"px").attr("height", height+"px"),
+		path = d3.geoPath().projection(d3.geoIdentity().reflectY(true).fitSize([width,height], topojson.feature(nuts, nuts.objects.gra)));
 
-		//country
-		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntrg).features).enter()
-				.append("path").attr("d", path)
-				.attr("class", "cntrg")
-				.on("mouseover", function(rg) { tooltip.mouseover("<b>"+rg.properties.na+"</b><br>"+rg.properties.id); })
-				.on("mousemove", function() { tooltip.mousemove(); })
-				.on("mouseout", function() { tooltip.mouseout(); });
+		//background rectangle
+		svg.append("rect").attr("id","bck").attr("x",0).attr("y",0).attr("width", width).attr("height", height).style("fill","#b3cde3");
+		//drawing group
+		var g = svg.append("g").attr("transform","translate(0,0)");
+
+		//zoom
+		var zoom;
+		svg.call(zoom=d3.zoom().scaleExtent([0.25,6]).on("zoom", function() {
+			g.attr("transform", d3.event.transform);
+		}));
+
+		//draw coastal margin
 		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntbn).features).enter()
-				.append("path").attr("d", path)
-				.attr("class", "cntbn");
+			.append("path").attr("d", path)
+			.style("fill","none").style("opacity","0.15").style("stroke-width","20px").style("stroke-linejoin","round").style("stroke-linecap","round")
+			.style("stroke",function(bn){ if(bn.properties.co==="T") return "white"; return "none"; })
+		;
+		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsbn).features).enter()
+			.append("path").attr("d", path)
+			.style("fill","none").style("opacity","0.15").style("stroke-width","20px").style("stroke-linejoin","round").style("stroke-linecap","round")
+			.style("stroke",function(bn){ if(bn.properties.co==="T") return "white"; return "none"; })
+		;
+
+		//draw graticule
+		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.gra).features).enter()
+			.append("path").attr("d", path)
+			.style("fill","none").style("stroke-width","1px").style("stroke","gray");
+
+		//country regions
+		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntrg).features).enter()
+			.append("path").attr("d", path)
+			.on("mouseover", function(rg) { d3.select(this).style("fill", "#ddd"); tooltip.mouseover("<b>"+rg.properties.na+"</b><br>"+rg.properties.id); })
+			.on("mousemove", function() { tooltip.mousemove(); })
+			.on("mouseout", function() { d3.select(this).style("fill", "#f2f2f2"); tooltip.mouseout(); })
+			.style("fill","#f2f2f2")
+		;
 
 		//nuts regions
 		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsrg).features).enter()
-				.append("path").attr("d", path)
-				.attr("class", "rg")
-				.on("mouseover", function(rg) { tooltip.mouseover("<b>"+rg.properties.na+"</b><br>"+rg.properties.id); })
-				.on("mousemove", function() { tooltip.mousemove(); })
-				.on("mouseout", function() { tooltip.mouseout(); });
+			.append("path").attr("d", path)
+			.on("mouseover", function(rg) { d3.select(this).style("fill", "#ff7f00"); tooltip.mouseover("<b>"+rg.properties.na+"</b><br>"+rg.properties.id); })
+			.on("mousemove", function() { tooltip.mousemove(); })
+			.on("mouseout", function() { d3.select(this).style("fill", "#fdbf6f"); tooltip.mouseout(); })
+			.style("fill","#fdbf6f")
+		;
 
-		//nuts boundaries
-		var bn = topojson.feature(nuts, nuts.objects.nutsbn).features;
-		bn.sort(function(bn1,bn2){ return bn2.properties.lvl - bn1.properties.lvl; });
-		g.append("g").selectAll("path").data(bn).enter()
-				.append("path").attr("d", path)
-				.attr("class", function(bn){
-					bn = bn.properties;
-					var cl = ["bn","bn_"+bn.lvl];
-					if(bn.oth==="T") cl.push("bn_oth");
-					return cl.join(" ");
-				});
+		//draw country boundaries
+		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntbn).features).enter()
+			.append("path").attr("d", path)
+			.style("fill","none").style("stroke-width","1px")
+			.style("stroke",function(bn){ if(bn.properties.co==="T") return "#1f78b4"; return "gray"; })
+		;
+
+		//draw nuts boundaries
+		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsbn).features).enter()
+			.append("path").attr("d", path)
+			.style("fill","none")
+			.style("stroke",function(bn){
+				if(bn.properties.co==="T") return "#1f78b4";
+				if(bn.properties.oth==="T" || bn.properties.lvl==0) return "white"; return "#333"; })
+			.style("stroke-width",function(bn){ if(bn.properties.lvl==3) return "0.5px"; return "1px"; })
+		;
 	});
 
 </script>
