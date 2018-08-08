@@ -34,22 +34,21 @@
 
 		//prepare SVG element
 		var height = width*(nuts.bbox[3]-nuts.bbox[1])/(nuts.bbox[2]-nuts.bbox[0]),
-		svg = d3.select("#map").attr("width", width).attr("height", height),
-		path = d3.geoPath().projection(d3.geoIdentity().reflectY(true).fitSize([width,height], topojson.feature(nuts, nuts.objects.gra)));
+			svg = d3.select("#map").attr("width", width).attr("height", height),
+			path = d3.geoPath().projection(d3.geoIdentity().reflectY(true).fitSize([width,height], topojson.feature(nuts, nuts.objects.gra)))
+		;
 
 		//define filter for coastal margin
 		svg.append("filter").attr("id","blur").append("feGaussianBlur").attr("in","SourceGraphic").attr("stdDeviation","4");
 
-		//background rectangle
+        //draw background rectangle
 		svg.append("rect").attr("id","bck").attr("x",0).attr("y",0).attr("width", width).attr("height", height).style("fill","#b3cde3");
-		//drawing group
+        //prepare drawing group
 		var g = svg.append("g").attr("transform","translate(0,0)");
 
-		//zoom
+        //add zooming function
 		var zoom;
-		svg.call(zoom=d3.zoom().scaleExtent([0.25,6]).on("zoom", function() {
-			g.attr("transform", d3.event.transform);
-		}));
+		svg.call(zoom=d3.zoom().scaleExtent([0.25,6]).on("zoom", function() { g.attr("transform", d3.event.transform); }));
 
 		//draw coastal margin
 		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntbn).features).enter()
