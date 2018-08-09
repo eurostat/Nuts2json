@@ -20,7 +20,8 @@
 	//get url parameters for projection, level and width
 	var proj = EstLib.getParameterByName("proj") || 3035,
 			nutsLvl = EstLib.getParameterByName("lvl") || "3",
-			width = EstLib.getParameterByName("s") || 1200,
+			width = EstLib.getParameterByName("w") || 1200,
+			scale = EstLib.getParameterByName("s") || 20M,
 			year = EstLib.getParameterByName("y") || 2016,
 
 	//build tooltip element
@@ -28,7 +29,7 @@
 	d3.select("#tooltip").style("font-family", "Myriad Pro, Myriad, MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', 'Liberation Sans', 'Nimbus Sans L', 'Helvetica Neue', vegur, Vegur, Helvetica, Arial, sans-serif");
 
 	//get data
-	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/"+year+"/"+proj+"/"+width+"px"+"/"+nutsLvl+".json", function(error, nuts) {
+	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/"+year+"/"+proj+"/"+scale+"/"+nutsLvl+".json", function(error, nuts) {
 		if (error) return console.error(error);
 		loadingDiv.hide();
 
