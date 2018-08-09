@@ -17,22 +17,22 @@ mkdir -p "tmp/"$year
 echo "1- $year NUTS RG: Clip and filter"
 ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
    "tmp/"$year"/NUTS_RG.shp" \
-   "shp/"$year"/NUTS_RG_01M_"$year".shp" \
-   -sql "SELECT NUTS_ID as id,NUTS_NAME as na,LEVL_CODE as lvl FROM NUTS_RG_01M_"$year \
+   "shp/"$year"/NUTS_RG_01M_"$year"_4258.shp" \
+   -sql "SELECT NUTS_ID as id,NUTS_NAME as na,LEVL_CODE as lvl FROM NUTS_RG_01M_"$year"_4258" \
    -clipsrc -120.02 25.02 120.02 89.02
 
 echo "1- $year NUTS BN: Clip and filter"
 ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
    "tmp/"$year"/NUTS_BN.shp" \
-   "shp/"$year"/NUTS_BN_01M_"$year".shp" \
-   -sql "SELECT LEVL_CODE as lvl,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_CNTR_ as oth,COAS_FLAG as co FROM NUTS_BN_01M_"$year \
+   "shp/"$year"/NUTS_BN_01M_"$year"_4258.shp" \
+   -sql "SELECT LEVL_CODE as lvl,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_CNTR_ as oth,COAS_FLAG as co FROM NUTS_BN_01M_"$year"_4258" \
    -clipsrc -120.02 25.02 120.02 89.02
 
 echo "1- $year Country RG: Clip and filter"
 ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
    "tmp/"$year"/CNTR_RG.shp" \
-   "shp/"$year"/CNTR_RG_01M_"$year".shp" \
-   -sql "SELECT CNTR_ID as id,NAME_ENGL as na FROM CNTR_RG_01M_"$year" WHERE CNTR_ID NOT IN ('PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME')" \
+   "shp/"$year"/CNTR_RG_01M_"$year"_4258.shp" \
+   -sql "SELECT CNTR_ID as id,NAME_ENGL as na FROM CNTR_RG_01M_"$year"_4258 WHERE CNTR_ID NOT IN ('PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME')" \
    -clipsrc -120.02 25.02 120.02 89.02
 
 #necessary?
@@ -46,8 +46,8 @@ ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
 echo "1- $year Country BN: Clip and filter"
 ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
    "tmp/"$year"/CNTR_BN.shp" \
-   "shp/"$year"/CNTR_BN_01M_"$year".shp" \
-   -sql "SELECT COAS_FLAG as co FROM CNTR_BN_01M_"$year" WHERE OTHR_FLAG='T'" \
+   "shp/"$year"/CNTR_BN_01M_"$year"_4258.shp" \
+   -sql "SELECT COAS_FLAG as co FROM CNTR_BN_01M_"$year"_4258 WHERE OTHR_FLAG='T'" \
    -clipsrc -120.02 25.02 120.02 89.02
 
 
