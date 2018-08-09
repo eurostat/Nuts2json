@@ -4,7 +4,7 @@
 #https://github.com/topojson/topojson-server/blob/master/README.md#geo2topo
 for year in "2016" "2013" "2010"
 do
-for scale in "20"
+for scale in "10" "20" "60"
 do
   for proj in "3035" "3857" "4258"
   do
