@@ -63,16 +63,16 @@ ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
   do
     proj=${projs[pi]}
 
-    dir="tmp/$year/$proj/$scale"
+    dir="tmp/$year/$scale/$proj"
     mkdir -p $dir
 
-    echo "1- $year $proj $scale Graticule: Project"
+    echo "1- $year $scale $proj Graticule: Project"
     ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
             $dir"graticule__.shp" \
             "tmp/$year/$scale/graticule_.shp" \
             -t_srs EPSG:$proj -s_srs EPSG:4258
 
-    echo "1- $year $proj $scale Graticule: Clip"
+    echo "1- $year $scale $proj Graticule: Clip"
     ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
             $dir"graticule.shp" \
             $dir"graticule__.shp" \
@@ -80,28 +80,28 @@ ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
 
     for type in "RG" "BN"
     do
-    	dir="tmp/$year/$proj/$scale/$type"
+    	dir="tmp/$year/$scale/$proj/$type"
         mkdir -p $dir
 
-        echo "1- $year $proj $scale $type NUTS: Project"
+        echo "1- $year $scale $proj $type NUTS: Project"
         ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
             $dir"/NUTS_proj.shp" \
             "tmp/"$year"/"$scale"/NUTS_"$type".shp" \
             -t_srs EPSG:$proj -s_srs EPSG:4258
 
-        echo "1- $year $proj $scale $type NUTS: Clip"
+        echo "1- $year $scale $proj $type NUTS: Clip"
         ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
             $dir"/NUTS.shp" \
             $dir"/NUTS_proj.shp" \
             -clipsrc ${xmin[pi]} ${ymin[pi]} ${xmax[pi]} ${ymax[pi]}
 
-        echo "1- $year $proj $scale $type Country: Project"
+        echo "1- $year $scale $proj $type Country: Project"
         ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
             $dir"/CNTR_proj.shp" \
             "tmp/"$year"/"$scale"/CNTR_"$type".shp" \
             -t_srs EPSG:$proj -s_srs EPSG:4258
 
-        echo "1- $year $proj $scale $type Country: Clip"
+        echo "1- $year $scale $proj $type Country: Clip"
         ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
             $dir"/CNTR.shp" \
             $dir"/CNTR_proj.shp" \
