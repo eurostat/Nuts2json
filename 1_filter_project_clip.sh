@@ -68,14 +68,14 @@ ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
 
     echo "1- $year $scale $proj Graticule: Project"
     ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
-            $dir"graticule__.shp" \
+            $dir"/graticule__.shp" \
             "tmp/$year/$scale/graticule_.shp" \
             -t_srs EPSG:$proj -s_srs EPSG:4258
 
     echo "1- $year $scale $proj Graticule: Clip"
     ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
-            $dir"graticule.shp" \
-            $dir"graticule__.shp" \
+            $dir"/graticule.shp" \
+            $dir"/graticule__.shp" \
             -clipsrc ${xmin[pi]} ${ymin[pi]} ${xmax[pi]} ${ymax[pi]}
 
     for type in "RG" "BN"
