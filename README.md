@@ -69,8 +69,8 @@ d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035
 	if (error) throw error;
 
 	//prepare SVG element
-	var width = 1200, height = width*(nuts.bbox[3]-nuts.bbox[1])/(nuts.bbox[2]-nuts.bbox[0]),
-		svg = d3.select("svg").attr("width", width+"px").attr("height", height+"px")
+	var width = 1000, height = width*(nuts.bbox[3]-nuts.bbox[1])/(nuts.bbox[2]-nuts.bbox[0]),
+		svg = d3.select("svg").attr("width", width).attr("height", height)
 		path = d3.geoPath().projection(d3.geoIdentity()
 			.reflectY(true).fitSize([width,height], topojson.feature(nuts, nuts.objects.gra)));
 
@@ -92,6 +92,8 @@ d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035
 		.style("fill","#fdbf6f")
 		.on("mouseover", function() { d3.select(this).style("fill", "#ff7f00"); })
 		.on("mouseout",  function() { d3.select(this).style("fill", "#fdbf6f"); });
+
+	console.log(nuts.objects.cntbn);
 
 	//draw country boundaries
 	svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntbn).features).enter()
