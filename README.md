@@ -10,10 +10,10 @@ Examples: For an example of such blank map, see [this map](http://eurostat.githu
 
 The files can be retrieved on-the-fly from the base URL `https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/` according to one of these file patterns:
 
-- For TopoJSON format: `/<YEAR>/<PROJECTION>/<SIZE>/<NUTS_LEVEL>.json`
-- For GeoJSON format: `/<YEAR>/<PROJECTION>/<SIZE>/<TYPE>[_<NUTS_LEVEL>].json`
+- For TopoJSON format: `/<YEAR>/<PROJECTION>/<WIDTH>/<NUTS_LEVEL>.json`
+- For GeoJSON format: `/<YEAR>/<PROJECTION>/<WIDTH>/<TYPE>[_<NUTS_LEVEL>].json`
 
-For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/600px/2.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/600px/2.json)</a> returns a TopoJSON file of 2016 NUTS regions level 2 in European LAEA projection ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)), for a map size 600*600px.
+For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/600px/2.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/600px/2.json)</a> returns a TopoJSON file of 2016 NUTS regions level 2 in European LAEA projection ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)), for a map with a 600px width.
 
 The parameters are:
 
@@ -21,11 +21,11 @@ The parameters are:
 | ------------- | ------------- |-------------|
 | `YEAR` | `2016` `2013` `2010` | The NUTS version. |
 | `PROJECTION` | `3035` `3857` ~~`4258`~~ | The coordinate reference system EPSG code. Two projections are provided: European LAEA projection ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) and web mercator ([EPSG 3857](http://spatialreference.org/ref/sr-org/7483/)). For statistical maps, it is strongly adviced to use an equal-area projection such as `3035`. ~~Geographic coordinates ETRS89 ([EPSG 4258](http://spatialreference.org/ref/epsg/4258/)) are provided.~~. |
-| `SIZE` | `400` `600` `800` `1000` `1200` | The intended map width, in pixel. The smaller the value, the stronger the simplification. |
+| `WIDTH` | `400` `600` `800` `1000` `1200` | The intended map width, in pixel. The smaller the value, the stronger the simplification. |
 | `NUTS_LEVEL` | `0` `1` `2` `3` | The NUTS level to be displayed on the map, from national (NUTS_LEVEL=`0`) to local level (NUTS_LEVEL=`3`). |
 | `TYPE` | `nutsrg` `nutsbn` `cntrg` `cntbn` `gra` | For GeoJSON format, the feature type has to be specified. The available feature types are described below. For NUTS feature types (`nutsrg` and `nutsbn`), the `NUTS_LEVEL` to be displayed on the map has to be specified.  |
 
-For additional projections, formats, sizes, etc., feel free to [ask](https://github.com/eurostat/Nuts2json/issues/new) !
+For additional projections, formats, widths, etc., feel free to [ask](https://github.com/eurostat/Nuts2json/issues/new) !
 
 ### Feature types
 
