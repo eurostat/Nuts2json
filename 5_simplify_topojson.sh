@@ -4,25 +4,17 @@
 #https://github.com/topojson/topojson-simplify/blob/master/README.md#toposimplify
 for year in "2016" "2013" "2010"
 do
-  for proj in "3035" "3857" "4258"
+  for scale in "10" "20" "60"
   do
-    dir="tmp/$year/$proj"
-    for level in 0 1 2 3
+    for proj in "3035" "3857" "4258"
     do
-      for size in 1200 1000 800 600 400
+      dir="tmp/$year/$scale/$proj"
+      for level in 0 1 2 3
       do
-        echo "5- $year $proj $level $size - topojson simplify"
-
-        outdir=$year"/"$proj"/"$size"px"
+        echo "5- $year $scale $proj $level - topojson simplify"
+        outdir=$year"/"$proj"/"$scale"M"
         mkdir -p $outdir
-
-        if [ $proj = "4258" ]
-        then
-          #toposimplify -f -s $(( 160000 / ($size * $size) )) -o $outdir"/"$level".json" $dir"/"$level".json"
-          toposimplify -f -p $(( 42000000000000 / ($size * $size) )) -o $outdir"/"$level".json" $dir"/"$level".json"
-        else
-          toposimplify -f -p $(( 42000000000000 / ($size * $size) )) -o $outdir"/"$level".json" $dir"/"$level".json"
-        fi
+        toposimplify -f -P 0.99 -o "$outdir/$level.json" "$dir/$level.json"
       done
     done
   done
