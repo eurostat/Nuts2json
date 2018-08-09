@@ -3,7 +3,7 @@
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/topojson.v1.min.js"></script>
 <script>
-d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/20M/3.json",
+d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/10M/3.json",
 		function(error, nuts) {
 	if (error) throw error;
 
@@ -31,6 +31,8 @@ d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035
 		.style("fill","#fdbf6f")
 		.on("mouseover", function() { d3.select(this).style("fill", "#ff7f00"); })
 		.on("mouseout",  function() { d3.select(this).style("fill", "#fdbf6f"); });
+
+	console.log(nuts.objects.cntbn);
 
 	//draw country boundaries
 	svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntbn).features).enter()
