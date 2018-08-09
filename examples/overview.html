@@ -28,9 +28,9 @@
 	tooltip = EstLib.tooltip();
 	d3.select("#tooltip").style("font-family", "Myriad Pro, Myriad, MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', 'Liberation Sans', 'Nimbus Sans L', 'Helvetica Neue', vegur, Vegur, Helvetica, Arial, sans-serif");
 
-	
-	
-	
+
+
+
 	//get data
 	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/"+year+"/"+proj+"/"+scale+"/"+nutsLvl+".json", function(error, nuts) {
 		if (error) return console.error(error);
