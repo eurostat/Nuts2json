@@ -6,7 +6,7 @@ for year in "2016" "2013" "2010"
 do
   for proj in "3035" "3857" "4258"
   do
-    dir="tmp/"$year"/"$proj
+    dir="tmp/$year/$proj"
     for level in 0 1 2 3
     do
       for size in 1200 1000 800 600 400
