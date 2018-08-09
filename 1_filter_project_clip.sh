@@ -7,32 +7,33 @@ ymin=(32.5 3884000 1340330)
 xmax=(46.5 5200000 7512400)
 ymax=(73.9 11690000 5664600)
 
-mkdir -p tmp
-
 for year in "2016" "2013" "2010"
 do
+for scale in "01"
+do
 
-mkdir -p "tmp/"$year
+dir="tmp/$year/$scale"
+mkdir -p $dir
 
-echo "1- $year NUTS RG: Clip and filter"
+echo "1- $year $scale NUTS RG: Clip and filter"
 ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
-   "tmp/"$year"/NUTS_RG.shp" \
-   "shp/"$year"/NUTS_RG_01M_"$year"_4258.shp" \
-   -sql "SELECT NUTS_ID as id,NUTS_NAME as na,LEVL_CODE as lvl FROM NUTS_RG_01M_"$year"_4258" \
+   $dir"/NUTS_RG.shp" \
+   "shp/"$year"/NUTS_RG_"$scale"M_"$year"_4258.shp" \
+   -sql "SELECT NUTS_ID as id,NUTS_NAME as na,LEVL_CODE as lvl FROM NUTS_RG_"$scale"M_"$year"_4258" \
    -clipsrc -120.02 25.02 120.02 89.02
 
-echo "1- $year NUTS BN: Clip and filter"
+echo "1- $year $scale NUTS BN: Clip and filter"
 ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
-   "tmp/"$year"/NUTS_BN.shp" \
-   "shp/"$year"/NUTS_BN_01M_"$year"_4258.shp" \
-   -sql "SELECT LEVL_CODE as lvl,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_CNTR_ as oth,COAS_FLAG as co FROM NUTS_BN_01M_"$year"_4258" \
+   $dir"/NUTS_BN.shp" \
+   "shp/"$year"/NUTS_BN_"$scale"M_"$year"_4258.shp" \
+   -sql "SELECT LEVL_CODE as lvl,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_CNTR_ as oth,COAS_FLAG as co FROM NUTS_BN_"$scale"M_"$year"_4258" \
    -clipsrc -120.02 25.02 120.02 89.02
 
-echo "1- $year Country RG: Clip and filter"
+echo "1- $year $scale Country RG: Clip and filter"
 ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
-   "tmp/"$year"/CNTR_RG.shp" \
-   "shp/"$year"/CNTR_RG_01M_"$year"_4258.shp" \
-   -sql "SELECT CNTR_ID as id,NAME_ENGL as na FROM CNTR_RG_01M_"$year"_4258 WHERE CNTR_ID NOT IN ('PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME')" \
+   $dir"/CNTR_RG.shp" \
+   "shp/"$year"/CNTR_RG_"$scale"M_"$year"_4258.shp" \
+   -sql "SELECT CNTR_ID as id,NAME_ENGL as na FROM CNTR_RG_"$scale"M_"$year"_4258 WHERE CNTR_ID NOT IN ('PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME')" \
    -clipsrc -120.02 25.02 120.02 89.02
 
 #necessary?
@@ -43,17 +44,17 @@ ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
 #   -sql "select CNTR_RG_.CNTR_ID as cid, CNTR_AT_"$year".CNTR_NAME as cna from CNTR_RG_ left join 'shp/"$year"/CNTR_AT_"$year".csv'.CNTR_AT_"$year" on CNTR_RG_.CNTR_ID = CNTR_AT_"$year".CNTR_ID" \
 #   -clipsrc -179 -89 179 89
 
-echo "1- $year Country BN: Clip and filter"
+echo "1- $year $scale Country BN: Clip and filter"
 ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
-   "tmp/"$year"/CNTR_BN.shp" \
-   "shp/"$year"/CNTR_BN_01M_"$year"_4258.shp" \
-   -sql "SELECT COAS_FLAG as co FROM CNTR_BN_01M_"$year"_4258 WHERE OTHR_FLAG='T'" \
+   $dir"/CNTR_BN.shp" \
+   "shp/"$year"/CNTR_BN_"$scale"M_"$year"_4258.shp" \
+   -sql "SELECT COAS_FLAG as co FROM CNTR_BN_"$scale"M_"$year"_4258 WHERE OTHR_FLAG='T'" \
    -clipsrc -120.02 25.02 120.02 89.02
 
 
-echo "1- $year Graticule: Clip"
+echo "1- $year $scale Graticule: Clip"
 ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
-   "tmp/$year/graticule_.shp" \
+   $dir"/graticule_.shp" \
    "shp/graticule.shp" \
    -clipsrc -120.02 25.02 120.02 85
 
@@ -62,44 +63,45 @@ ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
   do
     proj=${projs[pi]}
 
-    mkdir -p "tmp/$year/$proj/"
+    dir="tmp/$year/$proj/$scale"
+    mkdir -p $dir
 
-    echo "1- $year $proj Graticule: Project"
+    echo "1- $year $proj $scale Graticule: Project"
     ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
-            "tmp/$year/$proj/graticule__.shp" \
-            "tmp/$year/graticule_.shp" \
+            $dir"graticule__.shp" \
+            "tmp/$year/$scale/graticule_.shp" \
             -t_srs EPSG:$proj -s_srs EPSG:4258
 
-    echo "1- $year $proj Graticule: Clip"
+    echo "1- $year $proj $scale Graticule: Clip"
     ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
-            "tmp/$year/$proj/graticule.shp" \
-            "tmp/$year/$proj/graticule__.shp" \
+            $dir"graticule.shp" \
+            $dir"graticule__.shp" \
             -clipsrc ${xmin[pi]} ${ymin[pi]} ${xmax[pi]} ${ymax[pi]}
 
     for type in "RG" "BN"
     do
-    	dir="tmp/$year/$proj/$type"
+    	dir="tmp/$year/$proj/$scale/$type"
         mkdir -p $dir
 
-        echo "1- $year $proj $type NUTS: Project"
+        echo "1- $year $proj $scale $type NUTS: Project"
         ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
             $dir"/NUTS_proj.shp" \
-            "tmp/"$year"/NUTS_"$type".shp" \
+            "tmp/"$year"/"$scale"/NUTS_"$type".shp" \
             -t_srs EPSG:$proj -s_srs EPSG:4258
 
-        echo "1- $year $proj $type NUTS: Clip"
+        echo "1- $year $proj $scale $type NUTS: Clip"
         ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
             $dir"/NUTS.shp" \
             $dir"/NUTS_proj.shp" \
             -clipsrc ${xmin[pi]} ${ymin[pi]} ${xmax[pi]} ${ymax[pi]}
 
-        echo "1- $year $proj $type Country: Project"
+        echo "1- $year $proj $scale $type Country: Project"
         ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
             $dir"/CNTR_proj.shp" \
-            "tmp/"$year"/CNTR_"$type".shp" \
+            "tmp/"$year"/"$scale"/CNTR_"$type".shp" \
             -t_srs EPSG:$proj -s_srs EPSG:4258
 
-        echo "1- $year $proj $type Country: Clip"
+        echo "1- $year $proj $scale $type Country: Clip"
         ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
             $dir"/CNTR.shp" \
             $dir"/CNTR_proj.shp" \
@@ -107,4 +109,6 @@ ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
 
     done
   done
+
+done
 done
