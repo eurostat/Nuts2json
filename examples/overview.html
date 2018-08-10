@@ -30,6 +30,11 @@
 
 
 
+	
+	var refresh = function(){
+		
+	//clear SVG element
+	
 
 	//get data
 	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/"+year+"/"+proj+"/"+scale+"/"+nutsLvl+".json", function(error, nuts) {
@@ -111,5 +116,9 @@
 		;
 	});
 
+	}
+
+	refresh();
+	
 </script>
 </body>
