@@ -122,9 +122,13 @@ body {
 */		
 
 
-		var pattS=3, patt = svg.append("pattern").attr("id","pattern").attr("x","0").attr("y","0").attr("width",pattS).attr("height",pattS).attr("patternUnits","userSpaceOnUse");
+		var pattS=3, patt = svg.append("pattern").attr("id","patt_cntrg").attr("x","0").attr("y","0").attr("width",pattS).attr("height",pattS).attr("patternUnits","userSpaceOnUse");
 			patt.append("rect").attr("x","0").attr("y","0").attr("width",pattS).attr("height",pattS).style("stroke","none").style("fill","white")
 			patt.append("circle").attr("cx",pattS/2).attr("cy",pattS/2).attr("r",pattS/2*0.3).style("stroke","none").style("fill","gray")
+
+		pattS=3, patt = svg.append("pattern").attr("id","patt_nutsrg").attr("x","0").attr("y","0").attr("width",pattS).attr("height",pattS).attr("patternUnits","userSpaceOnUse");
+			patt.append("rect").attr("x","0").attr("y","0").attr("width",pattS).attr("height",pattS).style("stroke","none").style("fill","#fdbf6f")
+			patt.append("circle").attr("cx",pattS/2).attr("cy",pattS/2).attr("r",pattS/2*0.3).style("stroke","none").style("fill","white")
 		;
 
 
@@ -164,9 +168,9 @@ body {
 			.append("path").attr("d", path)
 			.on("mouseover", function(rg) { d3.select(this).style("fill", "#ddd"); tooltip.mouseover("<b>"+rg.properties.na+"</b><br>"+rg.properties.id); })
 			.on("mousemove", function() { tooltip.mousemove(); })
-			.on("mouseout", function() { d3.select(this).style("fill","url(#pattern)"); tooltip.mouseout(); })
+			.on("mouseout", function() { d3.select(this).style("fill","url(#patt_cntrg)"); tooltip.mouseout(); })
 			//.style("fill","#f2f2f2")
-			.style("fill","url(#pattern)")
+			.style("fill","url(#patt_cntrg)")
 			//.style("filter","url(#dispfil)")
 		;
 
@@ -175,8 +179,9 @@ body {
 			.append("path").attr("d", path)
 			.on("mouseover", function(rg) { d3.select(this).style("fill", "#ff7f00"); tooltip.mouseover("<b>"+rg.properties.na+"</b><br>"+rg.properties.id); })
 			.on("mousemove", function() { tooltip.mousemove(); })
-			.on("mouseout", function() { d3.select(this).style("fill", "#fdbf6f"); tooltip.mouseout(); })
-			.style("fill","#fdbf6f")
+			.on("mouseout", function() { d3.select(this).style("fill","url(#patt_nutsrg)"); tooltip.mouseout(); })
+			//.style("fill","#fdbf6f")
+			.style("fill","url(#patt_nutsrg)")
 			//.style("filter","url(#dispfil)")
 		;
 
