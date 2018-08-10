@@ -7,37 +7,90 @@
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<script src="https://d3js.org/topojson.v1.min.js"></script>
 	<script src="https://rawgit.com/eurostat/EurostatVisu/gh-pages/js/lib.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<style>
+body {
+	font-family: "Myriad Pro", Myriad, MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", vegur, Vegur, Helvetica, Arial, sans-serif;
+	font-size: 80%;
+}
+
+.ui-widget {
+	font-size: 90% !important;
+}
+</style>
+
 </head>
 
+
+
 <body>
-<svg id="map"></svg>
+
+<div style="float: left; margin-right: 20px;"><svg id="map"></svg></div>
+<div>
+	<div id="lvl">
+	Nuts level
+		<input type="radio" name="lvl" id="0" value="0"><label for="0">0</label>
+		<input type="radio" name="lvl" id="1" value="1"><label for="1">1</label>
+		<input type="radio" name="lvl" id="2" value="2"><label for="2">2</label>
+		<input type="radio" name="lvl" id="3" value="3"><label for="3">3</label>
+	</div>
+	<div id="scale">
+	Scale
+		<input type="radio" name="scale" id="10M" value="10M"><label for="10M">1:10M</label>
+		<input type="radio" name="scale" id="20M" value="20M"><label for="20M">1:20M</label>
+		<input type="radio" name="scale" id="60M" value="60M"><label for="60M">1:60M</label>
+	</div>
+	<div id="proj">
+	Projection
+		<input type="radio" name="proj" id="3035" value="3035"><label for="3035">LAEA Europe (3035)</label>
+		<input type="radio" name="proj" id="3857" value="3857"><label for="3857">Web mercator (3857)</label>
+		<input type="radio" name="proj" id="4258" value="4258"><label for="4258">ETRS89 (4258)</label>
+	</div>
+	<div id="year">
+	NUTS version
+		<input type="radio" name="year" id="2010" value="2010"><label for="2010">2010</label>
+		<input type="radio" name="year" id="2013" value="2013"><label for="2013">2013</label>
+		<input type="radio" name="year" id="2016" value="2016"><label for="2016">2016</label>
+	</div>
+</div>
 <div id="tooltip"></div>
 
 <script>
 	//show loading message
 	var loadingDiv = EstLib.loadingImage({imgsrc:"../img/loading.png"});
 
-	//get url parameters for projection, level and width
-	var proj = EstLib.getParameterByName("proj") || 3035,
-			nutsLvl = EstLib.getParameterByName("lvl") || "3",
-			width = EstLib.getParameterByName("w") || 1200,
-			scale = EstLib.getParameterByName("s") || "20M",
-			year = EstLib.getParameterByName("y") || 2016,
+	//get option values
+	var opts = {};
+	opts.lvl = EstLib.getParameterByName("lvl") || "3";
+	opts.scale = EstLib.getParameterByName("s") || "20M";
+	opts.proj = EstLib.getParameterByName("proj") || 3035;
+	opts.year = EstLib.getParameterByName("y") || 2016;
+
+	var width = EstLib.getParameterByName("w") || 1000;
 
 	//build tooltip element
-	tooltip = EstLib.tooltip();
+	var tooltip = EstLib.tooltip();
 	d3.select("#tooltip").style("font-family", "Myriad Pro, Myriad, MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', 'Liberation Sans', 'Nimbus Sans L', 'Helvetica Neue', vegur, Vegur, Helvetica, Arial, sans-serif");
 
-
-
+	//option
+	Object.keys(opts).forEach(function(opt) {
+		var cb = $("#"+opt);
+		$("input[name='"+opt+"']").change(function () {
+			opts[opt] = $("input:radio[name="+opt+"]:checked").val();
+			refresh();
+		});
+		cb.buttonset();
+		//$("input:radio[name="+opt+"]").val("checked");
+	});
 	
 	var refresh = function(){
-		
-	//clear SVG element
-	
 
 	//get data
-	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/"+year+"/"+proj+"/"+scale+"/"+nutsLvl+".json", function(error, nuts) {
+	d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/"+opts.year+"/"+opts.proj+"/"+opts.scale+"/"+opts.lvl+".json", function(error, nuts) {
 		if (error) return console.error(error);
 		loadingDiv.hide();
 
@@ -46,6 +99,9 @@
 			svg = d3.select("#map").attr("width", width).attr("height", height),
 			path = d3.geoPath().projection(d3.geoIdentity().reflectY(true).fitSize([width,height], topojson.feature(nuts, nuts.objects.gra)))
 		;
+
+		//clear SVG element
+		svg.selectAll("*").remove()
 
 		//define filter for coastal margin
 		svg.append("filter").attr("id","blur").append("feGaussianBlur").attr("in","SourceGraphic").attr("stdDeviation","4");
