@@ -108,7 +108,18 @@ body {
 			.append("feGaussianBlur").attr("in","SourceGraphic").attr("stdDeviation","4")
 		;
 
-        //draw background rectangle
+		//define test filters for regions
+		//var f1 = svg.append("filter").attr("id","reglight");
+		//f1.append("feSpecularLighting").attr("result","specOut").attr("specularExponent","20").attr("lighting-color","#bbbbbb")
+		//	.append("fePointLight").attr("x","50").attr("y","75").attr("z","200");
+		//f1.append("feComposite").attr("in","SourceGraphic").attr("in2","specOut").attr("operator","arithmetic").attr("k1","0").attr("k2","1").attr("k3","1").attr("k4","0")
+
+		//var f1 = svg.append("filter").attr("id","dispfil");
+		//f1.append("feTurbulence").attr("type","turbulence").attr("baseFrequency","0.05").attr("numOctaves","2").attr("result","turbulence")
+		//f1.append("feDisplacementMap").attr("in2","turbulence").attr("in","SourceGraphic").attr("scale","50").attr("xChannelSelector","R").attr("yChannelSelector","G")
+		
+
+		//draw background rectangle
 		svg.append("rect").attr("id","bck").attr("x",0).attr("y",0).attr("width", width).attr("height", height).style("fill","#b3cde3");
         //prepare drawing group
 		var g = svg.append("g").attr("transform","translate(0,0)");
@@ -141,6 +152,7 @@ body {
 			.on("mousemove", function() { tooltip.mousemove(); })
 			.on("mouseout", function() { d3.select(this).style("fill", "#f2f2f2"); tooltip.mouseout(); })
 			.style("fill","#f2f2f2")
+			//.style("filter","url(#dispfil)")
 		;
 
 		//draw nuts regions
@@ -150,6 +162,7 @@ body {
 			.on("mousemove", function() { tooltip.mousemove(); })
 			.on("mouseout", function() { d3.select(this).style("fill", "#fdbf6f"); tooltip.mouseout(); })
 			.style("fill","#fdbf6f")
+			//.style("filter","url(#dispfil)")
 		;
 
 		//draw country boundaries
