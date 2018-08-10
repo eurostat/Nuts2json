@@ -17,10 +17,8 @@ body {
 	font-family: "Myriad Pro", Myriad, MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", vegur, Vegur, Helvetica, Arial, sans-serif;
 	font-size: 80%;
 }
+.ui-widget { font-size: 90% !important; }
 
-.ui-widget {
-	font-size: 90% !important;
-}
 </style>
 
 </head>
@@ -103,11 +101,6 @@ body {
 		//clear SVG element
 		svg.selectAll("*").remove()
 
-		//define filter for coastal margin
-		svg.append("filter").attr("id","blur").attr("x","-200%").attr("y","-200%").attr("width","400%").attr("height","400%")
-			.append("feGaussianBlur").attr("in","SourceGraphic").attr("stdDeviation","4")
-		;
-
 		//define test filters for regions
 		//var f1 = svg.append("filter").attr("id","reglight");
 		//f1.append("feSpecularLighting").attr("result","specOut").attr("specularExponent","20").attr("lighting-color","#bbbbbb")
@@ -117,7 +110,28 @@ body {
 		//var f1 = svg.append("filter").attr("id","dispfil");
 		//f1.append("feTurbulence").attr("type","turbulence").attr("baseFrequency","0.05").attr("numOctaves","2").attr("result","turbulence")
 		//f1.append("feDisplacementMap").attr("in2","turbulence").attr("in","SourceGraphic").attr("scale","50").attr("xChannelSelector","R").attr("yChannelSelector","G")
-		
+
+		/*
+
+<defs>
+  <pattern id="pattern1" x="10" y="10" width="20" height="20" patternUnits="userSpaceOnUse" >
+      <circle cx="10" cy="10" r="10" style="stroke: none; fill: #0000ff" />
+  </pattern>
+</defs>
+.style("fill","url(#pattern)")
+*/		
+
+
+		var pattS=3, patt = svg.append("pattern").attr("id","pattern").attr("x","0").attr("y","0").attr("width",pattS).attr("height",pattS).attr("patternUnits","userSpaceOnUse");
+			patt.append("rect").attr("x","0").attr("y","0").attr("width",pattS).attr("height",pattS).style("stroke","none").style("fill","white")
+			patt.append("circle").attr("cx",pattS/2).attr("cy",pattS/2).attr("r",pattS/2*0.3).style("stroke","none").style("fill","gray")
+		;
+
+
+		//define filter for coastal margin
+		svg.append("filter").attr("id","blur").attr("x","-200%").attr("y","-200%").attr("width","400%").attr("height","400%")
+			.append("feGaussianBlur").attr("in","SourceGraphic").attr("stdDeviation","4")
+		;
 
 		//draw background rectangle
 		svg.append("rect").attr("id","bck").attr("x",0).attr("y",0).attr("width", width).attr("height", height).style("fill","#b3cde3");
@@ -150,8 +164,9 @@ body {
 			.append("path").attr("d", path)
 			.on("mouseover", function(rg) { d3.select(this).style("fill", "#ddd"); tooltip.mouseover("<b>"+rg.properties.na+"</b><br>"+rg.properties.id); })
 			.on("mousemove", function() { tooltip.mousemove(); })
-			.on("mouseout", function() { d3.select(this).style("fill", "#f2f2f2"); tooltip.mouseout(); })
-			.style("fill","#f2f2f2")
+			.on("mouseout", function() { d3.select(this).style("fill","url(#pattern)"); tooltip.mouseout(); })
+			//.style("fill","#f2f2f2")
+			.style("fill","url(#pattern)")
 			//.style("filter","url(#dispfil)")
 		;
 
