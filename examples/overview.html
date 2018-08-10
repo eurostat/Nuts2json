@@ -32,26 +32,26 @@ body {
 <div style="float: left; margin-right: 20px;"><svg id="map"></svg></div>
 <div>
 	<div id="lvl">
-	Nuts level
+	<div>Nuts level</div>
 		<input type="radio" name="lvl" id="0" value="0"><label for="0">0</label>
 		<input type="radio" name="lvl" id="1" value="1"><label for="1">1</label>
 		<input type="radio" name="lvl" id="2" value="2"><label for="2">2</label>
 		<input type="radio" name="lvl" id="3" value="3"><label for="3">3</label>
 	</div>
-	<div id="scale">
-	Scale
+	<div id="scale" style="margin-top: 10px;">
+	<div>Scale</div>
 		<input type="radio" name="scale" id="10M" value="10M"><label for="10M">1:10M</label>
 		<input type="radio" name="scale" id="20M" value="20M"><label for="20M">1:20M</label>
 		<input type="radio" name="scale" id="60M" value="60M"><label for="60M">1:60M</label>
 	</div>
-	<div id="proj">
-	Projection
+	<div id="proj" style="margin-top: 10px;">
+	<div>Projection</div>
 		<input type="radio" name="proj" id="3035" value="3035"><label for="3035">LAEA Europe (3035)</label>
 		<input type="radio" name="proj" id="3857" value="3857"><label for="3857">Web mercator (3857)</label>
 		<input type="radio" name="proj" id="4258" value="4258"><label for="4258">ETRS89 (4258)</label>
 	</div>
-	<div id="year">
-	NUTS version
+	<div id="year" style="margin-top: 10px;">
+	<div>NUTS version</div>
 		<input type="radio" name="year" id="2010" value="2010"><label for="2010">2010</label>
 		<input type="radio" name="year" id="2013" value="2013"><label for="2013">2013</label>
 		<input type="radio" name="year" id="2016" value="2016"><label for="2016">2016</label>
@@ -76,15 +76,15 @@ body {
 	var tooltip = EstLib.tooltip();
 	d3.select("#tooltip").style("font-family", "Myriad Pro, Myriad, MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', 'Liberation Sans', 'Nimbus Sans L', 'Helvetica Neue', vegur, Vegur, Helvetica, Arial, sans-serif");
 
-	//option
+	//options
 	Object.keys(opts).forEach(function(opt) {
 		var cb = $("#"+opt);
 		$("input[name='"+opt+"']").change(function () {
 			opts[opt] = $("input:radio[name="+opt+"]:checked").val();
 			refresh();
 		});
+		$("input:radio[name="+opt+"][value="+opts[opt]+"]").prop('checked',true);
 		cb.buttonset();
-		//$("input:radio[name="+opt+"]").val("checked");
 	});
 	
 	var refresh = function(){
