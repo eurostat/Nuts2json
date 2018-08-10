@@ -165,10 +165,12 @@ body {
 			.style("stroke",function(bn){ if(bn.properties.co==="T") return "white"; return "none"; })
 		;
 
+
 		//draw graticule
 		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.gra).features).enter()
 			.append("path").attr("d", path)
 			.style("fill","none").style("stroke-width","1px").style("stroke","gray");
+
 
 		//draw country regions
 		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntrg).features).enter()
@@ -195,8 +197,9 @@ body {
 		//draw country boundaries
 		g.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntbn).features).enter()
 			.append("path").attr("d", path)
-			.style("fill","none").style("stroke-width","1.2px")
+			.style("fill","none")
 			.style("stroke",function(bn){ if(bn.properties.co==="T") return "#1f78b4"; return "gray"; })
+			.style("stroke-width","1.2px")
 			.style("stroke-linejoin","round").style("stroke-linecap","round")
 		;
 
@@ -208,8 +211,17 @@ body {
 			.style("fill","none")
 			.style("stroke",function(bn){
 				if(bn.properties.co==="T") return "#1f78b4";
-				if(bn.properties.oth==="T" || bn.properties.lvl==0) return "white"; return "#333"; })
-			.style("stroke-width",function(bn){ if(bn.properties.lvl==3) return "0.7px"; return "1.2px"; })
+				if(bn.properties.oth==="T") return "#666";
+				if(bn.properties.lvl==0) return "#444";
+				return "#666";
+			})
+			.style("stroke-width",function(bn){
+				if(bn.properties.co==="T") return "1px";
+				if(bn.properties.oth==="T") return "1.8px";
+				if(bn.properties.lvl==0) return "1.5px";
+				if(bn.properties.lvl==3) return "0.6px";
+				return "1.1px";
+			})
 			.style("stroke-linejoin","round").style("stroke-linecap","round")
 		;
 	});
