@@ -54,66 +54,10 @@ Five feature types are provided:
 
 ## Usage example
 
-A map showing the TopoJSON geometries with [d3js](https://d3js.org/):
+- [Basic example](https://bl.ocks.org/jgaffuri/raw/e7e0a76a6e0f851b253d3b1c8fb17ffb/) (see the [code](https://bl.ocks.org/jgaffuri/e7e0a76a6e0f851b253d3b1c8fb17ffb)).
+- [choropleth map](http://eurostat.github.io/EurostatVisu/population_map.html) (see the [code](https://github.com/eurostat/EurostatVisu/blob/gh-pages/population_map.html))
 
-(See it online [here](https://eurostat.github.io/Nuts2json/examples/usage.html)).
-
-```html
-<!DOCTYPE html>
-<svg></svg>
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="https://d3js.org/topojson.v1.min.js"></script>
-<script>
-d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/20M/3.json",
-		function(error, nuts) {
-	if (error) throw error;
-
-	//prepare SVG element
-	var width = 1000, height = width*(nuts.bbox[3]-nuts.bbox[1])/(nuts.bbox[2]-nuts.bbox[0]),
-		svg = d3.select("svg").attr("width", width).attr("height", height)
-		path = d3.geoPath().projection(d3.geoIdentity()
-			.reflectY(true).fitSize([width,height], topojson.feature(nuts, nuts.objects.gra)));
-
-	//draw graticule
-	svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.gra).features).enter()
-		.append("path").attr("d", path)
-		.style("fill","none").style("stroke-width","2px").style("stroke","lightgray");
-
-	//draw country regions
-	svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntrg).features).enter()
-		.append("path").attr("d", path)
-		.style("fill","lightgray")
-		.on("mouseover", function() { d3.select(this).style("fill", "darkgray");  })
-		.on("mouseout",  function() { d3.select(this).style("fill", "lightgray"); });
-
-	//draw nuts regions
-	svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsrg).features).enter()
-		.append("path").attr("d", path)
-		.style("fill","#fdbf6f")
-		.on("mouseover", function() { d3.select(this).style("fill", "#ff7f00"); })
-		.on("mouseout",  function() { d3.select(this).style("fill", "#fdbf6f"); });
-
-	console.log(nuts.objects.cntbn);
-
-	//draw country boundaries
-	svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.cntbn).features).enter()
-		.append("path").attr("d", path)
-		.style("fill","none").style("stroke-width","1px")
-		.style("stroke",function(bn){ if(bn.properties.co==="T") return "#1f78b4"; return "white"; });
-
-	//draw nuts boundaries
-	svg.append("g").selectAll("path").data(topojson.feature(nuts, nuts.objects.nutsbn).features).enter()
-		.append("path").attr("d", path)
-		.style("fill","none")
-		.style("stroke",function(bn){
-			if(bn.properties.co==="T") return "#1f78b4";
-			if(bn.properties.oth==="T" || bn.properties.lvl==0) return "white"; return "#333"; })
-		.style("stroke-width",function(bn){ if(bn.properties.lvl==3) return "0.5px"; return "1px"; });
-});
-</script>
-```
-
-For a map showing a choropleth map based on [Eurostat statistical data API](http://ec.europa.eu/eurostat/web/json-and-unicode-web-services/getting-started/rest-request), see [this map](http://eurostat.github.io/EurostatVisu/population_map.html) on [EurostatVisu repo](https://github.com/eurostat/EurostatVisu/blob/gh-pages/population_map.html).
+These examples are based on [d3js](https://d3js.org/) and [Eurostat statistical data API](http://ec.europa.eu/eurostat/web/json-and-unicode-web-services/getting-started/rest-request).
 
 ## Technical details
 
