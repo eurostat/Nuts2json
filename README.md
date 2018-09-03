@@ -55,7 +55,7 @@ Five feature types are provided:
 ## Usage example
 
 - [Basic example](https://bl.ocks.org/jgaffuri/raw/e7e0a76a6e0f851b253d3b1c8fb17ffb/) (see the [code](https://bl.ocks.org/jgaffuri/e7e0a76a6e0f851b253d3b1c8fb17ffb)).
-- [choropleth map](http://eurostat.github.io/EurostatVisu/population_map.html) (see the [code](https://github.com/eurostat/EurostatVisu/blob/gh-pages/population_map.html))
+- [Population map](http://eurostat.github.io/EurostatVisu/population_map.html) (see the [code](https://github.com/eurostat/EurostatVisu/blob/gh-pages/population_map.html))
 
 These examples are based on [d3js](https://d3js.org/) and [Eurostat statistical data API](http://ec.europa.eu/eurostat/web/json-and-unicode-web-services/getting-started/rest-request).
 
