@@ -2,6 +2,8 @@
 
 [Nuts2json](https://github.com/eurostat/Nuts2json) provides various reusable versions of [Eurostat NUTS dataset](http://ec.europa.eu/eurostat/web/nuts/overview) as web formats such as [TopoJSON](https://github.com/mbostock/topojson/wiki) and [GeoJSON](http://geojson.org/). It is provided to support the development of statistical web maps of [Eurostat data](http://ec.europa.eu/eurostat/) based on NUTS regions. In a way, it provides a blank map of geometries ready for use with your own data and colors.
 
+NB: For a faster creation of maps based on Nuts2json, check out [eurostat-map.js](https://github.com/eurostat/eurostat.js/blob/master/doc/README-map.md) !
+
 See [some examples below](https://github.com/eurostat/Nuts2json#usage-examples).
 
 [![Example](img/ex_population.png)](https://bl.ocks.org/jgaffuri/raw/0d6e1b1c6f9e1297829f38b9c37737fe?proj=3035&lvl=3&w=1000&s=20M&time=2016)
@@ -56,7 +58,7 @@ Five feature types are provided:
 
 - [Basic example](https://bl.ocks.org/jgaffuri/raw/e7e0a76a6e0f851b253d3b1c8fb17ffb/) (see the [code](https://bl.ocks.org/jgaffuri/e7e0a76a6e0f851b253d3b1c8fb17ffb)).
 - [Overview example](https://bl.ocks.org/jgaffuri/raw/71d130bf5963c5ffe0a436399f401af3/) (see the [code](https://bl.ocks.org/jgaffuri/71d130bf5963c5ffe0a436399f401af3)).
-- [Population map](https://bl.ocks.org/jgaffuri/raw/0d6e1b1c6f9e1297829f38b9c37737fe?proj=3035&lvl=3&w=1000&s=20M&time=2016) (see the [code](https://bl.ocks.org/jgaffuri/0d6e1b1c6f9e1297829f38b9c37737fe))
+- [Population map](https://bl.ocks.org/jgaffuri/raw/0d6e1b1c6f9e1297829f38b9c37737fe?proj=3035&lvl=3&w=1000&s=20M&time=2016) (see the [code](https://bl.ocks.org/jgaffuri/0d6e1b1c6f9e1297829f38b9c37737fe)) based on [eurostat-map.js](https://github.com/eurostat/eurostat.js/blob/master/doc/README-map.md).
 
 These examples are based on [d3js](https://d3js.org/) and [Eurostat statistical data API](http://ec.europa.eu/eurostat/web/json-and-unicode-web-services/getting-started/rest-request).
 
