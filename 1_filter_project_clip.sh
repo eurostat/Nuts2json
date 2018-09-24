@@ -48,7 +48,7 @@ echo "1- $year $scale Country BN: Clip and filter"
 ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
    $dir"/CNTR_BN.shp" \
    "shp/"$year"/CNTR_BN_"$scale"M_"$year"_4258.shp" \
-   -sql "SELECT COAS_FLAG as co FROM CNTR_BN_"$scale"M_"$year"_4258 WHERE OTHR_FLAG='T'" \
+   -sql "SELECT CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM CNTR_BN_"$scale"M_"$year"_4258 WHERE EU_FLAG='F' AND EFTA_FLAG='F'" \
    -clipsrc -120.02 25.02 120.02 89.02
 
 
