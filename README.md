@@ -50,10 +50,12 @@ Five feature types are provided:
   - `id`: The country identifier (2 letters code).
   - `na`: The country name.
 
-- Non-european boundaries (feature type `cntbn`) with a single property:
+- Non-european boundaries (feature type `cntbn`) with the following properties:
+  - `cc`: T if the boundary touches at least one Candidate Country, F otherwise.
+  - `oth`: T if the boundary touches a country wich is not EU, EFTA,CC. F otherwise.
   - `co`: T if the boundary is coastal. F otherwise.
 
-- The map graticule (meridian and parrallel lines) is provided as feature type `gra` with a single `id` property:
+- The map graticule (meridian and parrallel lines) is provided as feature type `gra` with a single `id` property, which is the lat/lon of the parallel/meridian.
 
 ## Some examples
 
