@@ -7,8 +7,15 @@ ymin=(32.5 3884000 1340330)
 xmax=(46.5 5200000 7512400)
 ymax=(73.9 11690000 5664600)
 
-for year in "2016" "2013" "2010"
+years=("2016" "2013" "2010")
+filters=("'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME'" "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME'" "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME','RS','AL'")
+
+for yi in ${!years[@]}
 do
+
+year=${years[yi]}
+filter=${filters[yi]}
+
 for scale in "10" "20" "60"
 do
 
@@ -33,7 +40,7 @@ echo "1- $year $scale Country RG: Clip and filter"
 ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
    $dir"/CNTR_RG.shp" \
    "shp/"$year"/CNTR_RG_"$scale"M_"$year"_4258.shp" \
-   -sql "SELECT CNTR_ID as id,SHRT_ENGL as na FROM CNTR_RG_"$scale"M_"$year"_4258 WHERE CNTR_ID NOT IN ('PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME')" \
+-sql "SELECT CNTR_ID as id,SHRT_ENGL as na FROM CNTR_RG_"$scale"M_"$year"_4258 WHERE CNTR_ID NOT IN ("$filter")" \
    -clipsrc -120.02 25.02 120.02 89.02
 
 #necessary?
