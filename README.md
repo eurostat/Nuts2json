@@ -2,7 +2,7 @@
 
 [Nuts2json](https://github.com/eurostat/Nuts2json) provides various reusable versions of [Eurostat NUTS dataset](http://ec.europa.eu/eurostat/web/nuts/overview) as web formats such as [TopoJSON](https://github.com/mbostock/topojson/wiki) and [GeoJSON](http://geojson.org/). It is provided to support the development of statistical web maps of [Eurostat data](http://ec.europa.eu/eurostat/) based on NUTS regions. In a way, it provides a blank map of geometries ready for use with your own data and colors.
 
-For a faster creation of maps based on Nuts2json, check out [**eurostat-map.js**](https://github.com/eurostat/eurostat.js/blob/master/doc/README-map.md) !
+For a faster creation of maps based on Nuts2json, check out [**eurostat-map.js**](https://github.com/eurostat/eurostat.js/blob/master/doc/README-map.md).
 
 See [some examples below](https://github.com/eurostat/Nuts2json#some-examples).
 
@@ -57,11 +57,11 @@ Five feature types are provided:
 
 ## Some examples
 
+These examples are based on [d3js](https://d3js.org/) library.
+
 - [Basic example](https://bl.ocks.org/jgaffuri/raw/e7e0a76a6e0f851b253d3b1c8fb17ffb/) (see the [code](https://bl.ocks.org/jgaffuri/e7e0a76a6e0f851b253d3b1c8fb17ffb)).
 - [Advanced example](https://bl.ocks.org/jgaffuri/raw/71d130bf5963c5ffe0a436399f401af3/) (see the [code](https://bl.ocks.org/jgaffuri/71d130bf5963c5ffe0a436399f401af3)).
-- [Statistical map examples](https://github.com/eurostat/eurostat.js/blob/master/doc/README-map.md#some-examples) based on [**eurostat-map.js**](https://github.com/eurostat/eurostat.js/blob/master/doc/README-map.md#some-examples).
-
-These examples are based on [d3js](https://d3js.org/) and [Eurostat statistical data API](http://ec.europa.eu/eurostat/web/json-and-unicode-web-services/getting-started/rest-request).
+- [Statistical map examples](https://github.com/eurostat/eurostat.js/blob/master/doc/README-map.md#some-examples) based on [eurostat-map.js](https://github.com/eurostat/eurostat.js/blob/master/doc/README-map.md).
 
 ## Technical details
 
