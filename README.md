@@ -4,9 +4,10 @@
 
 For a faster creation of maps based on Nuts2json, check out [**eurostat-map.js**](https://github.com/eurostat/eurostat.js/blob/master/doc/README-map.md) !
 
-See [some examples below](https://github.com/eurostat/Nuts2json#usage-examples).
+See [some examples below](https://github.com/eurostat/Nuts2json#some-examples).
 
-[![Example](img/ex_population.png)](https://bl.ocks.org/jgaffuri/raw/0d6e1b1c6f9e1297829f38b9c37737fe?proj=3035&lvl=3&w=1000&s=20M&time=2016)
+[![Example](img/sc_simple.png)](https://bl.ocks.org/jgaffuri/raw/e7e0a76a6e0f851b253d3b1c8fb17ffb?proj=3035&lvl=3&w=1000&s=20M&time=2016)
+[![Example](img/sc_advanced.png)](https://bl.ocks.org/jgaffuri/raw/71d130bf5963c5ffe0a436399f401af3?proj=3035&lvl=3&w=1000&s=20M&time=2016)
 
 ## API
 
@@ -54,11 +55,11 @@ Five feature types are provided:
 
 - The map graticule (meridian and parrallel lines) is provided as feature type `gra` with a single `id` property:
 
-## Usage examples
+## Some examples
 
 - [Basic example](https://bl.ocks.org/jgaffuri/raw/e7e0a76a6e0f851b253d3b1c8fb17ffb/) (see the [code](https://bl.ocks.org/jgaffuri/e7e0a76a6e0f851b253d3b1c8fb17ffb)).
-- [Overview example](https://bl.ocks.org/jgaffuri/raw/71d130bf5963c5ffe0a436399f401af3/) (see the [code](https://bl.ocks.org/jgaffuri/71d130bf5963c5ffe0a436399f401af3)).
-- [Population map](https://bl.ocks.org/jgaffuri/raw/0d6e1b1c6f9e1297829f38b9c37737fe?proj=3035&lvl=3&w=1000&s=20M&time=2016) (see the [code](https://bl.ocks.org/jgaffuri/0d6e1b1c6f9e1297829f38b9c37737fe)) based on [eurostat-map.js](https://github.com/eurostat/eurostat.js/blob/master/doc/README-map.md).
+- [Advanced example](https://bl.ocks.org/jgaffuri/raw/71d130bf5963c5ffe0a436399f401af3/) (see the [code](https://bl.ocks.org/jgaffuri/71d130bf5963c5ffe0a436399f401af3)).
+- [Statistical map examples](https://github.com/eurostat/eurostat.js/blob/master/doc/README-map.md#some-examples) based on [**eurostat-map.js**](https://github.com/eurostat/eurostat.js/blob/master/doc/README-map.md#some-examples).
 
 These examples are based on [d3js](https://d3js.org/) and [Eurostat statistical data API](http://ec.europa.eu/eurostat/web/json-and-unicode-web-services/getting-started/rest-request).
 
