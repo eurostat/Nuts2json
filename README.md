@@ -6,8 +6,8 @@ For a faster creation of maps based on Nuts2json, check out [**eurostat-map.js**
 
 See [some examples below](https://github.com/eurostat/Nuts2json#some-examples).
 
-[![Example](img/sc_simple.png)](https://bl.ocks.org/jgaffuri/raw/e7e0a76a6e0f851b253d3b1c8fb17ffb?proj=3035&lvl=3&w=1000&s=20M&time=2016)
-[![Example](img/sc_advanced.png)](https://bl.ocks.org/jgaffuri/raw/71d130bf5963c5ffe0a436399f401af3?proj=3035&lvl=3&w=1000&s=20M&time=2016)
+[![Example](doc/img/sc_simple.png)](https://bl.ocks.org/jgaffuri/raw/e7e0a76a6e0f851b253d3b1c8fb17ffb?proj=3035&lvl=3&w=1000&s=20M&time=2016)
+[![Example](doc/img/sc_advanced.png)](https://bl.ocks.org/jgaffuri/raw/71d130bf5963c5ffe0a436399f401af3?proj=3035&lvl=3&w=1000&s=20M&time=2016)
 
 ## API
 
