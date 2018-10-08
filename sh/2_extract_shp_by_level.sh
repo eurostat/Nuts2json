@@ -7,8 +7,8 @@ do
   for proj in "3035" "3857" "4258"
   do
 
-    dirRG="tmp/$year/$scale/$proj/RG"
-    dirBN="tmp/$year/$scale/$proj/BN"
+    dirRG="../tmp/$year/$scale/$proj/RG"
+    dirBN="../tmp/$year/$scale/$proj/BN"
 
     for level in 0 1 2 3
     do

@@ -8,13 +8,13 @@ do
   do
 
     echo "3- $year $scale $proj - graticule SHP to geojson"
-    rm -f "tmp/$year/$scale/$proj/graticule.json"
-    ogr2ogr -overwrite -f geoJSON "tmp/$year/$scale/$proj/graticule.json" "tmp/$year/$scale/$proj/graticule.shp"
+    rm -f "../tmp/$year/$scale/$proj/graticule.json"
+    ogr2ogr -overwrite -f geoJSON "../tmp/$year/$scale/$proj/graticule.json" "../tmp/$year/$scale/$proj/graticule.shp"
 
     for type in "RG" "BN"
     do
 
-      dir="tmp/$year/$scale/$proj/$type"
+      dir="../tmp/$year/$scale/$proj/$type"
 
       echo "3- $year $scale $proj $type - country SHP to geojson"
 	  rm -f $dir"/CNTR.json"

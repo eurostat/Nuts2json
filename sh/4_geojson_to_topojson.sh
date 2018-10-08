@@ -8,7 +8,7 @@ do
   do
     for proj in "3035" "3857" "4258"
     do
-      dir="tmp/$year/$scale/$proj"
+      dir="../tmp/$year/$scale/$proj"
       for level in 0 1 2 3
       do
         echo "4- $year $scale $proj $level - geojson to topojson"

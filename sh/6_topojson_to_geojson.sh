@@ -8,11 +8,11 @@ do
   do
     for proj in "3035" "3857" "4258"
     do
-      dir="tmp/$year/$scale/$proj"
+      dir="../tmp/$year/$scale/$proj"
       for level in 0 1 2 3
       do
         echo "6- $year $scale $proj $level - topojson to geojson"
-        outdir=$year"/"$proj"/"$scale"M"
+        outdir="../"$year"/"$proj"/"$scale"M"
         mkdir -p $outdir
         topo2geo nutsrg=$outdir"/nutsrg_"$level".json" nutsbn=$outdir"/nutsbn_"$level".json" cntrg=$outdir"/cntrg.json" cntbn=$outdir"/cntbn.json" gra=$outdir"/gra.json" < $outdir"/"$level".json"
       done
