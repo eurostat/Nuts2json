@@ -7,7 +7,6 @@ For GeoJSON format: /<YEAR>/<PROJECTION>/<SCALE>/<TYPE>[_<NUTS_LEVEL>].json
 Replace projection code with inset code
 
 
-
 guadeloupe GU
 martinique MA
 guyane GU
