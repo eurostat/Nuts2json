@@ -8,4 +8,5 @@ bash 5_simplify_topojson.sh
 bash 6_topojson_to_geojson.sh
 
 #https://github.com/dwtkns/gdal-cheat-sheet
+#install npm. npm install -g topojson:
 #npm install -g topojson
