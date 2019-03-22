@@ -72,10 +72,10 @@ These files are produced from the NUTS SHP files provided on [Eurostat-GISCO web
 These input files are transformed using [GDAL](http://www.gdal.org/) and [TopoJSON](https://github.com/mbostock/topojson/wiki). The transformation process is automated in bash files, which are also shared in the [sh folder](/sh). This process has 6 successive steps:
 1. *filter_project_clip*: Filter and reproject the input data for each year, each scale and each projection.
 2. *extract_shp_by_level*: For each year, scale and projection, decompose the data by NUTS level.
-3. *shp_to_geojson*: Convert from SHP to geoJSON format.
-4. *geojson_to_topojson*: Convert from geoJSON to topoJSON format.
-5. *simplify_topojson*: Simplify the topoJSON files using *toposimplify* program.
-6. *topojson_to_geojson*: Convert from topoJSON to geoJSON format.
+3. *shp_to_geojson*: Convert from SHP to GeoJSON format.
+4. *geojson_to_topojson*: Convert from GeoJSON to TopoJSON format.
+5. *simplify_topojson*: Simplify the TopoJSON files using [TopoJSON Simplify](https://github.com/topojson/topojson-simplify/) program.
+6. *topojson_to_geojson*: Convert from TopoJSON to GeoJSON format.
 
 ## Support and contribution
 
