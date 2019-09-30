@@ -11,12 +11,12 @@ See [some examples below](https://github.com/eurostat/Nuts2json#some-examples).
 
 ## API
 
-The files can be retrieved on-the-fly from the base URL `https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/` according to one of these file patterns:
+The files can be retrieved on-the-fly from the base URL `https://raw.githubusercontent.com/eurostat/Nuts2json/master/` according to one of these file patterns:
 
 - For TopoJSON format: `/<YEAR>/<PROJECTION>/<SCALE>/<NUTS_LEVEL>.json`
 - For GeoJSON format: `/<YEAR>/<PROJECTION>/<SCALE>/<TYPE>[_<NUTS_LEVEL>].json`
 
-For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/20M/2.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/gh-pages/2016/3035/20M/2.json)</a> returns a TopoJSON file of 2016 NUTS regions level 2 in European LAEA projection ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) at 1:20M scale.
+For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/2016/3035/20M/2.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/2016/3035/20M/2.json)</a> returns a TopoJSON file of 2016 NUTS regions level 2 in European LAEA projection ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) at 1:20M scale.
 
 The parameters are:
 
