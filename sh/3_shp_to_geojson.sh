@@ -1,25 +1,6 @@
 #!/usr/bin/env bash
 
 
-#points
-
-for year in "2016" "2013" "2010"
-do
-  for proj in "3035" "3857" "4258" "4326"
-  do
-    for level in 0 1 2 3
-    do
-      echo "3- $year $proj $level - NUTS LB SHP to geojson"
-      outjson="../"$year"/"$proj"/nutspt_"$level".json"
-      rm -f $outjson
-      ogr2ogr -overwrite -f geoJSON $outjson "../tmp/$year/LB/NUTS_LB_"$proj"_"$level".shp"
-    done
-  done
-done
-
-
-
-
 for year in "2016" "2013" "2010"
 do
 for scale in "10" "20" "60"
@@ -51,4 +32,21 @@ do
 done
 done
 
+
+
+#points
+for year in "2016" "2013" "2010"
+do
+  for proj in "3035" "3857" "4258" "4326"
+  do
+    for level in 0 1 2 3
+    do
+      echo "3- $year $proj $level - NUTS LB SHP to geojson"
+      mkdir -p "../"$year"/"$proj
+      outjson="../"$year"/"$proj"/nutspt_"$level".json"
+      rm -f $outjson
+      ogr2ogr -overwrite -f geoJSON $outjson "../tmp/$year/LB/NUTS_LB_"$proj"_"$level".shp"
+    done
+  done
+done
 
