@@ -57,8 +57,10 @@ Five feature types are provided:
 
 - The map graticule (meridian and parrallel lines) is provided as feature type `gra` with a single `id` property, which is the lat/lon of the parallel/meridian.
 
-Additionnaly, for GeoJSON format, NUTS center points (feature type `nutspt`) are available, with the following properties:
-  - `id`: The NUTS identifier to be used to join Eurostat statistical figures and then assign colors to the regions.
+### Point
+
+In addition, point geometries for NUTS regions are also provided. These geometries can be used for label placement or simplified maps such as [Dorling cartograms](http://www.dannydorling.org/wp-content/files/dannydorling_publication_id1448.pdf). Since this data does not depends on the `<SCALE>` parameter, it can be retrieved under the: `/<YEAR>/<PROJECTION>/nutspt_<NUTS_LEVEL>.json` URL patter, as GeoJSON format only. The point features have the following properties:
+  - `id`: The NUTS identifier.
   - `na`: The geographical name of the region.
   - `ar`: The area of the region, in m².
 
