@@ -16,7 +16,7 @@ The files can be retrieved on-the-fly from the base URL `https://raw.githubuserc
 - For TopoJSON format: `/<YEAR>/<PROJECTION>/<SCALE>/<NUTS_LEVEL>.json`
 - For GeoJSON format: `/<YEAR>/<PROJECTION>/<SCALE>/<TYPE>[_<NUTS_LEVEL>].json`
 
-For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/2016/3035/20M/2.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/2016/3035/20M/2.json)</a> returns a TopoJSON file of 2016 NUTS regions level 2 in European LAEA projection ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) at 1:20M scale.
+For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/2016/3035/20M/2.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/2016/3035/20M/2.json) returns a TopoJSON file of 2016 NUTS regions level 2 in European LAEA projection ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) at 1:20M scale.
 
 The parameters are:
 
@@ -59,7 +59,9 @@ Five feature types are provided:
 
 ### Regions as points
 
-In addition, point geometries for NUTS regions are also provided. These geometries can be usefull for label placement or simplified maps such as [Dorling cartograms](http://www.dannydorling.org/wp-content/files/dannydorling_publication_id1448.pdf). Since this data does not depend on the `<SCALE>` parameter, it can be retrieved directly under the `/<YEAR>/<PROJECTION>/nutspt_<NUTS_LEVEL>.json` URL pattern, as GeoJSON format only. The point features are provided with the following properties:
+In addition, point geometries for NUTS regions are also provided. These geometries can be useful for label placement or simplified maps such as [Dorling cartograms](http://www.dannydorling.org/wp-content/files/dannydorling_publication_id1448.pdf). Since this data does not depend on the `<SCALE>` parameter, it can be retrieved directly under the `/<YEAR>/<PROJECTION>/nutspt_<NUTS_LEVEL>.json` URL pattern, as GeoJSON format only. For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/2013/4326/nutspt_2.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/2013/4326/nutspt_2.json) returns a GeoJSON file of 2013 NUTS region points level 2 in WGS84 ([EPSG 4326](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) geographic coordinates.
+
+The point features are provided with the following properties:
   - `id`: The NUTS identifier.
   - `na`: The geographical name of the region.
   - `ar`: The area of the region, in m².
