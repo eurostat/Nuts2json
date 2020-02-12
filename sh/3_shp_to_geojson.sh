@@ -4,7 +4,7 @@ for year in "2016" "2013" "2010"
 do
 for scale in "10" "20" "60"
 do
-  for proj in "3035" "3857" "4258"
+  for proj in "3035" "3857" "4258" "4326"
   do
 
     echo "3- $year $scale $proj - graticule SHP to geojson"

@@ -6,7 +6,7 @@ for year in "2016" "2013" "2010"
 do
   for scale in "10" "20" "60"
   do
-    for proj in "3035" "3857" "4258"
+    for proj in "3035" "3857" "4258" "4326"
     do
       dir="../tmp/$year/$scale/$proj"
       for level in 0 1 2 3
