@@ -18,7 +18,7 @@ do
   year=${years[yi]}
 
   echo "1- $year NUTS LB: Join"
-  dir="../tmp/$year"
+  dir="../tmp/$year/LB"
   mkdir -p $dir
 
   ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
