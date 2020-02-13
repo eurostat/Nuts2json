@@ -16,7 +16,7 @@ for yi in ${!years[@]}
 do
   year=${years[yi]}
 
-  echo "1- $year NUTS LB: Join"
+  echo "9- $year NUTS LB: Join"
   dir="../tmp/$year/LB"
   mkdir -p $dir
 
@@ -28,7 +28,7 @@ do
   for pi in ${!projs[@]}
   do
     proj=${projs[pi]}
-    echo "1- $year $proj NUTS LB: Project"
+    echo "9- $year $proj NUTS LB: Project"
     ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
        $dir"/NUTS_LB_"$proj".shp" \
        $dir"/NUTS_LB.shp" \
@@ -44,7 +44,7 @@ do
   do
     for level in 0 1 2 3
     do
-      echo "2- $year $proj $level NUTS LB: extract by level"
+      echo "9- $year $proj $level NUTS LB: extract by level"
       dir="../tmp/$year/LB"
       ogr2ogr -overwrite -lco ENCODING=UTF-8 \
          -sql "SELECT id,na,ar FROM NUTS_LB_"$proj" WHERE lvl="$level \
@@ -62,7 +62,7 @@ do
   do
     for level in 0 1 2 3
     do
-      echo "3- $year $proj $level - NUTS LB SHP to geojson"
+      echo "9- $year $proj $level - NUTS LB SHP to geojson"
       mkdir -p "../"$year"/"$proj
       outjson="../"$year"/"$proj"/nutspt_"$level".json"
       rm -f $outjson
