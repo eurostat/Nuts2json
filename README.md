@@ -57,11 +57,11 @@ Five feature types are provided:
 
 - The map graticule (meridian and parrallel lines) is provided as feature type `gra` with a single `id` property, which is the lat/lon of the parallel/meridian.
 
-### Regions as points
+### NUTS regions as points
 
-In addition, point geometries for NUTS regions are also provided. These geometries can be useful for label placement or simplified maps such as [Dorling cartograms](http://www.dannydorling.org/wp-content/files/dannydorling_publication_id1448.pdf). Since this data does not depend on the `<SCALE>` parameter, it can be retrieved directly under the `/<YEAR>/<PROJECTION>/nutspt_<NUTS_LEVEL>.json` URL pattern, as GeoJSON format.
+NUTS regions are also provided as point geometries. These points can be used for label placement or simplified maps such as [Dorling cartograms](http://www.dannydorling.org/wp-content/files/dannydorling_publication_id1448.pdf). Since this data does not depend on the `<SCALE>` parameter, it can be retrieved directly under the `/<YEAR>/<PROJECTION>/nutspt_<NUTS_LEVEL>.json` URL pattern, as GeoJSON format.
 
-For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/2013/4326/nutspt_2.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/2013/4326/nutspt_2.json) returns a GeoJSON file of 2013 NUTS region points level 2 in WGS84 ([EPSG 4326](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) geographic coordinates.
+For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/2013/4326/nutspt_2.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/2013/4326/nutspt_2.json) returns a GeoJSON file of 2013 NUTS points level 2 in WGS84 ([EPSG 4326](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) geographic coordinates.
 
 The point features are provided with the following properties:
   - `id`: The NUTS identifier.
