@@ -88,6 +88,10 @@ These input files are transformed using [GDAL](http://www.gdal.org/) and [TopoJS
 5. *simplify_topojson*: Simplify the TopoJSON files using [TopoJSON Simplify](https://github.com/topojson/topojson-simplify/) program.
 6. *topojson_to_geojson*: Convert from TopoJSON to GeoJSON format.
 
+And finally:
+
+9. *points*: Produces the NUTS regions as points.
+
 ## Support and contribution
 
 Feel free to [ask support](https://github.com/eurostat/Nuts2json/issues/new), fork the project or simply star it (it's always a pleasure).
