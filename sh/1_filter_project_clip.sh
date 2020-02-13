@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#4258-etrs89 3857-wm 3035-laea
+#4326-wgs84 4258-etrs89 3857-wm 3035-laea
 projs=("4326" "4258" "3857" "3035")
 xmin=(-25 -25 -2800000 2434560)
 ymin=(32.5 32.5 3884000 1340340)
@@ -120,35 +120,5 @@ ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
   done
 
 done
-done
-
-
-
-
-
-
-#points
-for yi in ${!years[@]}
-do
-  year=${years[yi]}
-
-  echo "1- $year NUTS LB: Join"
-  dir="../tmp/$year/LB"
-  mkdir -p $dir
-
-  ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
-     $dir"/NUTS_LB.shp" \
-     "../shp/"$year"/NUTS_LB_"$year"_4326.shp" \
-     -sql "select NUTS_LB_"$year"_4326.NUTS_ID as id, NUTS_LB_"$year"_4326.LEVL_CODE as lvl, NUTS_LB_"$year"_4326.NUTS_NAME as na, AREA.area as ar from NUTS_LB_"$year"_4326 left join '../shp/"$year"/AREA.csv'.AREA on NUTS_LB_"$year"_4326.NUTS_ID = AREA.nuts_id"
-
-  for pi in ${!projs[@]}
-  do
-    proj=${projs[pi]}
-    echo "1- $year $proj NUTS LB: Project"
-    ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
-       $dir"/NUTS_LB_"$proj".shp" \
-       $dir"/NUTS_LB.shp" \
-       -t_srs EPSG:$proj -s_srs EPSG:4258
-  done
 done
 
