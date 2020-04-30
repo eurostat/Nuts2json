@@ -70,6 +70,8 @@ The point features are provided with the following properties:
   - `na`: The geographical name of the region.
   - `ar`: The area of the region, in m².
 
+To easily produce Dorling cartograms, use [NutsDorlingCartogram](https://github.com/eurostat/NutsDorlingCartogram).
+
 ## Some examples
 
 These examples are based on [d3js](https://d3js.org/) library.
