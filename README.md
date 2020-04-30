@@ -4,6 +4,8 @@
 
 For a faster creation of maps based on Nuts2json, check out [**eurostat-map.js**](https://github.com/eurostat/eurostat.js/blob/master/docs/README-map.md).
 
+For a faster creation of [Dorling cartograms](http://www.dannydorling.org/wp-content/files/dannydorling_publication_id1448.pdf) based on Nuts2json, check out [**NutsDorlingCartogram**](https://github.com/eurostat/NutsDorlingCartogram).
+
 See [some examples below](https://github.com/eurostat/Nuts2json#some-examples).
 
 [![Example](doc/img/sc_simple.png)](https://bl.ocks.org/jgaffuri/raw/e7e0a76a6e0f851b253d3b1c8fb17ffb?proj=3035&lvl=3&w=1000&s=20M&time=2016)
@@ -69,8 +71,6 @@ The point features are provided with the following properties:
   - `id`: The NUTS identifier.
   - `na`: The geographical name of the region.
   - `ar`: The area of the region, in m².
-
-To easily produce Dorling cartograms, use [NutsDorlingCartogram](https://github.com/eurostat/NutsDorlingCartogram).
 
 ## Some examples
 
