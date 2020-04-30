@@ -11,7 +11,9 @@ See [some examples below](https://github.com/eurostat/Nuts2json#some-examples).
 
 ## API
 
-The files can be retrieved on-the-fly from the base URL `https://raw.githubusercontent.com/eurostat/Nuts2json/master/` according to one of these file patterns:
+Base URL: `https://raw.githubusercontent.com/eurostat/Nuts2json/master/`
+
+File patterns:
 
 - For TopoJSON format: `/<YEAR>/<PROJECTION>/<SCALE>/<NUTS_LEVEL>.json`
 - For GeoJSON format: `/<YEAR>/<PROJECTION>/<SCALE>/<TYPE>[_<NUTS_LEVEL>].json`
