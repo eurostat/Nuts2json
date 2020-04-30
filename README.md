@@ -83,6 +83,7 @@ These examples are based on [d3js](https://d3js.org/) library.
 - [NUTS regions Dorling cartogram](https://observablehq.com/@jgaffuri/dorling-cartogram).
 - [NUTS population Dorling cartogram](https://observablehq.com/@jgaffuri/dorling-cartogram-population).
 - [NUTS population change Dorling cartogram](https://observablehq.com/@jgaffuri/dorling-cartogram-population-change).
+- [NutsDorlingCartogram](https://github.com/eurostat/NutsDorlingCartogram).
 
 ## Technical details
 
