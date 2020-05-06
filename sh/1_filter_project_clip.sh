@@ -23,13 +23,12 @@ do
 dir="../tmp/$year/$scale"
 mkdir -p $dir
 
-echo "1- $year $scale NUTS RG: Clip and filter"
+echo "1- $year $scale NUTS RG: Clip, filter, join names"
 ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
    $dir"/NUTS_RG.shp" \
    "../shp/"$year"/NUTS_RG_"$scale"M_"$year"_4326.shp" \
    -sql "SELECT N.NUTS_ID as id,A.NAME_LATN as na,N.LEVL_CODE as lvl FROM NUTS_RG_"$scale"M_"$year"_4326 as N left join '../shp/"$year"/NUTS_AT_"$year".csv'.NUTS_AT_"$year" as A on N.NUTS_ID = A.NUTS_ID" \
    -clipsrc -120.02 25.02 120.02 89.02
-#   -sql "SELECT NUTS_ID as id,NUTS_NAME as na,LEVL_CODE as lvl FROM NUTS_RG_"$scale"M_"$year"_4326" \
 
 echo "1- $year $scale NUTS BN: Clip and filter"
 ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
