@@ -27,14 +27,15 @@ echo "1- $year $scale NUTS RG: Clip and filter"
 ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
    $dir"/NUTS_RG.shp" \
    "../shp/"$year"/NUTS_RG_"$scale"M_"$year"_4326.shp" \
-   -sql "SELECT NUTS_ID as id,NUTS_NAME as na,LEVL_CODE as lvl FROM NUTS_RG_"$scale"M_"$year"_4326" \
+   -sql "SELECT N.NUTS_ID as id,A.NAME_LATN as na,N.LEVL_CODE as lvl FROM NUTS_RG_"$scale"M_"$year"_4326 as N left join '../shp/"$year"/NUTS_AT_"$year".csv'.NUTS_AT_"$year" as A on N.NUTS_ID = A.NUTS_ID" \
    -clipsrc -120.02 25.02 120.02 89.02
+#   -sql "SELECT NUTS_ID as id,NUTS_NAME as na,LEVL_CODE as lvl FROM NUTS_RG_"$scale"M_"$year"_4326" \
 
 echo "1- $year $scale NUTS BN: Clip and filter"
 ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
    $dir"/NUTS_BN.shp" \
    "../shp/"$year"/NUTS_BN_"$scale"M_"$year"_4326.shp" \
-   -sql "SELECT LEVL_CODE as lvl,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM NUTS_BN_"$scale"M_"$year"_4326" \
+   -sql "SELECT NUTS_BN_ID as id,LEVL_CODE as lvl,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM NUTS_BN_"$scale"M_"$year"_4326" \
    -clipsrc -120.02 25.02 120.02 89.02
 
 echo "1- $year $scale Country RG: Clip and filter"
@@ -56,7 +57,7 @@ echo "1- $year $scale Country BN: Clip and filter"
 ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
    $dir"/CNTR_BN.shp" \
    "../shp/"$year"/CNTR_BN_"$scale"M_"$year"_4326.shp" \
-   -sql "SELECT CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM CNTR_BN_"$scale"M_"$year"_4326 WHERE EU_FLAG='F' AND EFTA_FLAG='F'" \
+   -sql "SELECT CNTR_BN_ID as id,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM CNTR_BN_"$scale"M_"$year"_4326 WHERE EU_FLAG='F' AND EFTA_FLAG='F'" \
    -clipsrc -120.02 25.02 120.02 89.02
 
 
