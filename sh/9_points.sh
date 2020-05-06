@@ -23,7 +23,8 @@ do
   ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
      $dir"/NUTS_LB.shp" \
      "../shp/"$year"/NUTS_LB_"$year"_4326.shp" \
-     -sql "select NUTS_LB_"$year"_4326.NUTS_ID as id, NUTS_LB_"$year"_4326.LEVL_CODE as lvl, NUTS_LB_"$year"_4326.NUTS_NAME as na, AREA.area as ar FROM NUTS_LB_"$year"_4326 left join '../shp/"$year"/AREA.csv'.AREA on NUTS_LB_"$year"_4326.NUTS_ID = AREA.nuts_id"
+     -sql "select LB.NUTS_ID as id, LB.LEVL_CODE as lvl, LB.NUTS_NAME as na, A.area as ar FROM NUTS_LB_"$year"_4326 AS LB left join '../shp/"$year"/AREA.csv'.AREA AS A ON LB.NUTS_ID = A.nuts_id"
+#   -sql "SELECT N.NUTS_ID as id,A.NAME_LATN as na,N.LEVL_CODE as lvl FROM NUTS_RG_"$scale"M_"$year"_4326 as N left join '../shp/"$year"/NUTS_AT_"$year".csv'.NUTS_AT_"$year" as A on N.NUTS_ID = A.NUTS_ID" \
 
   for pi in ${!projs[@]}
   do
