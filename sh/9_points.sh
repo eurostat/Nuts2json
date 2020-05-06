@@ -16,15 +16,20 @@ for yi in ${!years[@]}
 do
   year=${years[yi]}
 
-  echo "9- $year NUTS LB: Join"
   dir="../tmp/$year/LB"
   mkdir -p $dir
 
+  echo "9- $year NUTS LB: Join area"
+  ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
+     $dir"/NUTS_LB_.shp" \
+     "../shp/"$year"/NUTS_LB_"$year"_4326.shp" \
+     -sql "select LB.NUTS_ID as id, LB.LEVL_CODE as lvl, A.area as ar FROM NUTS_LB_"$year"_4326 AS LB left join '../shp/"$year"/AREA.csv'.AREA AS A ON LB.NUTS_ID = A.nuts_id"
+
+  echo "9- $year NUTS LB: Join latn name"
   ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
      $dir"/NUTS_LB.shp" \
-     "../shp/"$year"/NUTS_LB_"$year"_4326.shp" \
-     -sql "select LB.NUTS_ID as id, LB.LEVL_CODE as lvl, LB.NUTS_NAME as na, A.area as ar FROM NUTS_LB_"$year"_4326 AS LB left join '../shp/"$year"/AREA.csv'.AREA AS A ON LB.NUTS_ID = A.nuts_id"
-#   -sql "SELECT N.NUTS_ID as id,A.NAME_LATN as na,N.LEVL_CODE as lvl FROM NUTS_RG_"$scale"M_"$year"_4326 as N left join '../shp/"$year"/NUTS_AT_"$year".csv'.NUTS_AT_"$year" as A on N.NUTS_ID = A.NUTS_ID" \
+     $dir"/NUTS_LB_.shp" \
+     -sql "select LB.id as id, LB.lvl as lvl, A.NAME_LATN as na, LB.ar as ar FROM NUTS_LB_ AS LB left join '../shp/"$year"/NUTS_AT_"$year".csv'.NUTS_AT_"$year" as A on LB.id = A.NUTS_ID"
 
   for pi in ${!projs[@]}
   do

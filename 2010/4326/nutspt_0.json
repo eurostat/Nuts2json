@@ -3,17 +3,17 @@
 "name": "NUTS_LB_4326_0",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
-{ "type": "Feature", "properties": { "id": "BG", "na": "България", "ar": "110980316708" }, "geometry": { "type": "Point", "coordinates": [ 25.4823, 42.4645 ] } },
+{ "type": "Feature", "properties": { "id": "BG", "na": "Balgarija", "ar": "110980316708" }, "geometry": { "type": "Point", "coordinates": [ 25.4823, 42.4645 ] } },
 { "type": "Feature", "properties": { "id": "CH", "na": "Schweiz\/Suisse\/Svizzera", "ar": "41285051586" }, "geometry": { "type": "Point", "coordinates": [ 8.2303, 46.7908 ] } },
-{ "type": "Feature", "properties": { "id": "CY", "na": "Κύπρος", "ar": "9244002308" }, "geometry": { "type": "Point", "coordinates": [ 33.4287, 35.0483 ] } },
+{ "type": "Feature", "properties": { "id": "CY", "na": "Kýpros", "ar": "9244002308" }, "geometry": { "type": "Point", "coordinates": [ 33.4287, 35.0483 ] } },
 { "type": "Feature", "properties": { "id": "CZ", "na": "Česká republika", "ar": "78878395875" }, "geometry": { "type": "Point", "coordinates": [ 15.475, 49.8711 ] } },
 { "type": "Feature", "properties": { "id": "HU", "na": "Magyarország", "ar": "93018726879" }, "geometry": { "type": "Point", "coordinates": [ 18.9865, 47.1623 ] } },
 { "type": "Feature", "properties": { "id": "LI", "na": "Liechtenstein", "ar": "159938163" }, "geometry": { "type": "Point", "coordinates": [ 9.5541, 47.1377 ] } },
 { "type": "Feature", "properties": { "id": "LU", "na": "Luxembourg", "ar": "2594343640" }, "geometry": { "type": "Point", "coordinates": [ 6.1334, 49.7529 ] } },
 { "type": "Feature", "properties": { "id": "LV", "na": "Latvija", "ar": "64598153053" }, "geometry": { "type": "Point", "coordinates": [ 24.6061, 57.1445 ] } },
-{ "type": "Feature", "properties": { "id": "MK", "na": "Поранешна Југословенска Република Македонија", "ar": "25436360438" }, "geometry": { "type": "Point", "coordinates": [ 21.7432, 41.5955 ] } },
+{ "type": "Feature", "properties": { "id": "MK", "na": "Poranešna Jugoslovenska Republika Makedonija", "ar": "25436360438" }, "geometry": { "type": "Point", "coordinates": [ 21.7432, 41.5955 ] } },
 { "type": "Feature", "properties": { "id": "SK", "na": "Slovensko", "ar": "49032358712" }, "geometry": { "type": "Point", "coordinates": [ 19.7, 48.8015 ] } },
-{ "type": "Feature", "properties": { "id": "EL", "na": "Ελλάδα", "ar": "131829695353" }, "geometry": { "type": "Point", "coordinates": [ 23.322, 38.2645 ] } },
+{ "type": "Feature", "properties": { "id": "EL", "na": "Ellada", "ar": "131829695353" }, "geometry": { "type": "Point", "coordinates": [ 23.322, 38.2645 ] } },
 { "type": "Feature", "properties": { "id": "TR", "na": "Türkiye", "ar": "780178939423" }, "geometry": { "type": "Point", "coordinates": [ 35.4398, 39.1287 ] } },
 { "type": "Feature", "properties": { "id": "AT", "na": "Österreich", "ar": "83927901406" }, "geometry": { "type": "Point", "coordinates": [ 14.1353, 47.5991 ] } },
 { "type": "Feature", "properties": { "id": "BE", "na": "Belgique-België", "ar": "30664325927" }, "geometry": { "type": "Point", "coordinates": [ 4.4769, 50.7124 ] } },
@@ -37,6 +37,6 @@
 { "type": "Feature", "properties": { "id": "SE", "na": "Sverige", "ar": "449905297883" }, "geometry": { "type": "Point", "coordinates": [ 14.9832, 61.4257 ] } },
 { "type": "Feature", "properties": { "id": "SI", "na": "Slovenija", "ar": "20273718529" }, "geometry": { "type": "Point", "coordinates": [ 14.9861, 46.051 ] } },
 { "type": "Feature", "properties": { "id": "UK", "na": "United Kingdom", "ar": "244812632808" }, "geometry": { "type": "Point", "coordinates": [ -2.2326, 53.2738 ] } },
-{ "type": "Feature", "properties": { "id": "ME", "na": "Црна Гора", "ar": "13881847621" }, "geometry": { "type": "Point", "coordinates": [ 19.1126, 42.6878 ] } }
+{ "type": "Feature", "properties": { "id": "ME", "na": "Crna Gora", "ar": "13881847621" }, "geometry": { "type": "Point", "coordinates": [ 19.1126, 42.6878 ] } }
 ]
 }
