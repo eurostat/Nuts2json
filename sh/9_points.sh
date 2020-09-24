@@ -44,7 +44,7 @@ done
 
 
 #extract shp by level
-for year in $years
+for year in "2021" "2016" "2013" "2010"
 do
   for proj in "3035" "3857" "4258" "4326"
   do
@@ -62,7 +62,7 @@ done
 
 
 #shp to geojson
-for year in $years
+for year in "2021" "2016" "2013" "2010"
 do
   for proj in "3035" "3857" "4258" "4326"
   do
