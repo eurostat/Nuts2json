@@ -2,7 +2,7 @@
 
 #produce geojson from topojson
 #https://github.com/topojson/topojson-client/blob/master/README.md#topo2geo
-for year in "2016" "2013" "2010"
+for year in "2021" "2016" "2013" "2010"
 do
   for scale in "10" "20" "60"
   do

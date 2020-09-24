@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-for year in "2016" "2013" "2010"
+for year in "2021" "2016" "2013" "2010"
 do
 for scale in "10" "20" "60"
 do
