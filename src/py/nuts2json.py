@@ -118,9 +118,16 @@ def topojsonSimplify():
    #toposimplify -f -P 0.99 -o "$outdir/$level.json" "$dir/$level.json"
 
 
-#produces geojson from topojson
+#produce geojson from topojson
 def topoToGeojson():
    print()
+
+   #https://github.com/topojson/topojson-client/blob/master/README.md#topo2geo
+   #echo "6- $year $scale $proj $level - topojson to geojson"
+   #outdir="../"$year"/"$proj"/"$scale"M"
+   #mkdir -p $outdir
+   #topo2geo nutsrg=$outdir"/nutsrg_"$level".json" nutsbn=$outdir"/nutsbn_"$level".json" cntrg=$outdir"/cntrg.json" cntbn=$outdir"/cntbn.json" gra=$outdir"/gra.json" < $outdir"/"$level".json"
+
 
 
 #produce point representations
