@@ -32,12 +32,13 @@ geos = {
 
 #prepare input data into tmp folder: filter, rename attributes, decompose by nuts level
 def filterRenameDecompose():
+   Path("tmp/").mkdir(parents=True, exist_ok=True)
+
    print("Graticule")
    ogr2ogr.main(["-overwrite","-f", "GPKG", "tmp/graticule.gpkg", "src/resources/shp/graticule.shp"])
 
    for year in years:
        for scale in scales:
-           Path("tmp/").mkdir(parents=True, exist_ok=True)
 
            print(year + " " + scale + " CNTR RG - filter, rename attributes")
            ogr2ogr.main(["-overwrite","-f", "GPKG",
@@ -73,10 +74,17 @@ def clipReprojGeojson():
    for year in years:
       for geo in geos:
          for crs in geos[geo]:
+            outpath = "tmp/"+year+"/"+geo+"/"+crs+"/"
+            Path(outpath).mkdir(parents=True, exist_ok=True)
             extends = geos[geo][crs]
 
             print(year + " " + geo + " " + crs + " - clipReprojGeojson graticule")
-            #TODO
+            ogr2ogr.main(["-overwrite","-f", "GeoJSON",
+              outpath + "graticule.geojson",
+              "tmp/graticule.gpkg",
+              "-t_srs", "EPSG:"+crs, "-s_srs", "EPSG:4258",
+              "-clipsrc", str(extends["xmin"]), str(extends["ymin"]), str(extends["xmax"]), str(extends["ymax"])
+              ])
 
             for scale in scales:
                for type in ["RG", "BN"]:
