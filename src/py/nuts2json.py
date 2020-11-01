@@ -4,6 +4,14 @@ from pathlib import Path
 
 import ogr2ogr
 
+
+####
+# Target structure:
+# topojson:  YEAR/GEO/PROJECTION/SCALE/<NUTS_LEVEL>.json
+# geojson: YEAR/GEO/PROJECTION/SCALE/<TYPE>[_<NUTS_LEVEL>].json
+# pts:      YEAR/GEO/PROJECTION/nutspt_<NUTS_LEVEL>.json
+####
+
 #years and scales covered
 years = ["2010", "2013", "2016", "2021"]
 scales = ["10M", "20M", "60M"]
@@ -16,9 +24,19 @@ filters = {
     "2021" : "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME'"
     }
 
+#regions, CRSs and extends
+geos = {
+   "EUR" : {
+      "4326" : { "xmin" : -25, "ymin" : 32.5, "xmax" : 46.5, "ymax" : 73.9},
+      "4258" : { "xmin" : -25, "ymin" : 32.5, "xmax" : 46.5, "ymax" : 73.9},
+      "3857" : { "xmin" : -2800000, "ymin" : 3884000, "xmax" : 5200000, "ymax" : 11690000},
+      "3035" : { "xmin" : 2434560, "ymin" : 1340340, "xmax" : 7512390, "ymax" : 5664590}
+   }
+}
+
 
 #prepare input data into tmp folder: filter, rename attributes, decompose by nuts level
-def prepare():
+def filterRenameDecompose():
    print("Graticule")
    ogr2ogr.main(["-overwrite","-f", "GPKG", "tmp/graticule.gpkg", "src/resources/shp/graticule.shp"])
 
@@ -55,28 +73,8 @@ def prepare():
 
 
 
-
-
-
-####
-# topojson: YEAR/GEO/PROJECTION/SCALE/<TYPE>[_<NUTS_LEVEL>].json
-# geojson:  YEAR/GEO/PROJECTION/SCALE/<NUTS_LEVEL>.json
-# pts:      YEAR/GEO/PROJECTION/nutspt_<NUTS_LEVEL>.json
-####
-
-
-
-#regions, CRSs and extends
-geos = {
-   "EUR" : {
-      "4326" : { "xmin" : -25, "ymin" : 32.5, "xmax" : 46.5, "ymax" : 73.9},
-      "4258" : { "xmin" : -25, "ymin" : 32.5, "xmax" : 46.5, "ymax" : 73.9},
-      "3857" : { "xmin" : -2800000, "ymin" : 3884000, "xmax" : 5200000, "ymax" : 11690000},
-      "3035" : { "xmin" : 2434560, "ymin" : 1340340, "xmax" : 7512390, "ymax" : 5664590}
-   }
-}
-
-def make():
+#clip, reproject and convert as geojson
+def clipReprojGeojson():
    for year in years:
       for geo in geos:
          for crs in geos[geo]:
@@ -85,13 +83,58 @@ def make():
 
             #handle gra?
 
-# make loop of year, geo, projection
-# make loop of scale, nuts level
+            for scale in scales:
+               # clip - reproject - to geojson
+               for type in ["RG", "BN"]:
+                  print()
+                  #cntr
+               for level in ["0", "1", "2", "3"]:
+                  for type in ["RG", "BN"]:
+                     #nuts
+                     print()
+
+
+#make topojson file from geojson files
+#simplify them with topojson simplify
+def topojsonSimplify():
+   print()
+
+   #run command
+   #https://stackoverflow.com/questions/89228/how-to-call-an-external-command
+   #import subprocess
+   #subprocess.run(["ls", "-l"])
+
+   #make topojson base files, one per nuts level
+   #https://github.com/topojson/topojson-server/blob/master/README.md#geo2topo
+   #echo "4- $year $scale $proj $level - geojson to topojson"
+   #geo2topo -q 20000 nutsrg=$dir"/RG/"$level".json" nutsbn=$dir"/BN/"$level".json" cntrg=$dir"/RG/CNTR.json" cntbn=$dir"/BN/CNTR.json" gra=$dir"/graticule.json" > $dir"/"$level".json"
+   #quantization: q small means strong 'simplification'
+
+   #simplify topojson files
+   #https://github.com/topojson/topojson-simplify/blob/master/README.md#toposimplify
+   #echo "5- $year $scale $proj $level - topojson simplify"
+   #outdir="../"$year"/"$proj"/"$scale"M"
+   #mkdir -p $outdir
+   #toposimplify -f -P 0.99 -o "$outdir/$level.json" "$dir/$level.json"
+
+
+#produces geojson from topojson
+def topoToGeojson():
+   print()
+
+
+#produce point representations
+def pts():
+   print()
 
 
 
-#prepare();
-make()
+#filterRenameDecompose()
+clipReprojGeojson()
+#topojsonSimplify()
+#topoToGeojson()
+#pts()
+
 
 
 
