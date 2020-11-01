@@ -86,12 +86,11 @@ def clipReprojGeojson():
               "-clipsrc", str(extends["xmin"]), str(extends["ymin"]), str(extends["xmax"]), str(extends["ymax"])
               ])
 
-            for scale in scales:
-               for type in ["RG", "BN"]:
+            for type in ["RG", "BN"]:
+               for scale in scales:
                   print(year + " " + geo + " " + crs + " " + scale + " " + type + " - clipReprojGeojson CNTR")
                   #TODO
-               for level in ["0", "1", "2", "3"]:
-                  for type in ["RG", "BN"]:
+                  for level in ["0", "1", "2", "3"]:
                      print(year + " " + geo + " " + crs + " " + scale + " " + type + " " + level + " - clipReprojGeojson NUTS")
                      #TODO
 
