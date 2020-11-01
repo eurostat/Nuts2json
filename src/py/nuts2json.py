@@ -1,12 +1,14 @@
 from pathlib import Path
-import ogr2ogr
+import ogr2ogr, subprocess
 
 ####
 # Target structure:
 # topojson:  YEAR/GEO/PROJECTION/SCALE/<NUTS_LEVEL>.json
-# geojson: YEAR/GEO/PROJECTION/SCALE/<TYPE>[_<NUTS_LEVEL>].json
-# pts:      YEAR/GEO/PROJECTION/nutspt_<NUTS_LEVEL>.json
+# geojson:   YEAR/GEO/PROJECTION/SCALE/<TYPE>[_<NUTS_LEVEL>].json
+# pts:       YEAR/GEO/PROJECTION/nutspt_<NUTS_LEVEL>.json
 ####
+
+version = "v1"
 
 # NUTS year version and for each year, the countrie shown as stat units
 years = {
@@ -65,7 +67,7 @@ def filterRenameDecompose():
                ogr2ogr.main(["-overwrite","-f", "GPKG",
                  "tmp/" + year + "_" + scale + "_" + level + "_NUTS_BN.gpkg",
                  "src/resources/shp/" + year + "/NUTS_BN_" + scale + "_" + year + "_4326.shp",
-                 "-sql", "SELECT NUTS_BN_ID as id,LEVL_CODE as lvl,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM NUTS_BN_" + scale + "_" + year + "_4326 WHERE LEVL_CODE = " + level])
+                 "-sql", "SELECT NUTS_BN_ID as id,LEVL_CODE as lvl,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM NUTS_BN_" + scale + "_" + year + "_4326 WHERE LEVL_CODE <= " + level])
 
 
 
@@ -128,46 +130,47 @@ def reprojectClipGeojson():
 
 
 
-#make topojson file from geojson files
-#simplify them with topojson simplify
-#produce geojson from topojson
+# make topojson file from geojson files
+# simplify them with topojson simplify
+# produce geojson from topojson
+# See: https://github.com/topojson/topojson-server/blob/master/README.md#geo2topo
+# See: https://github.com/topojson/topojson-simplify/blob/master/README.md#toposimplify
+# See: https://github.com/topojson/topojson-client/blob/master/README.md#topo2geo
+# See: https://stackoverflow.com/questions/89228/how-to-call-an-external-command
 def topogeojson():
    for year in years:
       for geo in geos:
          for crs in geos[geo]:
             for scale in scales:
                for level in ["0", "1", "2", "3"]:
+                  inpath = "tmp/"+year+"/"+geo+"/"+crs+"/"
+                  outpath = "pub/" + version + "/" + year + "/" + geo + "/" + crs + "/" + scale + "/"
+                  Path(outpath).mkdir(parents=True, exist_ok=True)
 
+                  # make topojson base files, one per nuts level
+                  # quantization: q small means strong 'simplification'
                   print(year + " " + geo + " " + crs + " " + scale + " " + level + " - make topojson")
-                  #TODO
-   #make topojson base files, one per nuts level
-   #https://github.com/topojson/topojson-server/blob/master/README.md#geo2topo
-   #echo "4- $year $scale $proj $level - geojson to topojson"
-   #geo2topo -q 20000 nutsrg=$dir"/RG/"$level".json" nutsbn=$dir"/BN/"$level".json" cntrg=$dir"/RG/CNTR.json" cntbn=$dir"/BN/CNTR.json" gra=$dir"/graticule.json" > $dir"/"$level".json"
-   #quantization: q small means strong 'simplification'
-
-   #run command
-   #https://stackoverflow.com/questions/89228/how-to-call-an-external-command
-   #import subprocess
-   #subprocess.run(["ls", "-l"])
+                  subprocess.run(["geo2topo", "-q", "20000",
+                    "nutsrg=" + inpath + scale + "_" + level + "_NUTS_RG.geojson",
+                    "nutsbn=" + inpath + scale + "_" + level + "_NUTS_BN.geojson",
+                    "cntrg=" + inpath + scale + "_CNTR_RG.geojson",
+                    "cntbn=" + inpath + scale + "_CNTR_BN.geojson",
+                    "gra=" + inpath + "graticule.geojson",
+                    "-o", inpath + level + ".json"])
 
                   print(year + " " + geo + " " + crs + " " + scale + " " + level + " - simplify topojson")
-                  #TODO
-   #simplify topojson files
-   #https://github.com/topojson/topojson-simplify/blob/master/README.md#toposimplify
-   #echo "5- $year $scale $proj $level - topojson simplify"
-   #outdir="../"$year"/"$proj"/"$scale"M"
-   #mkdir -p $outdir
-   #toposimplify -f -P 0.99 -o "$outdir/$level.json" "$dir/$level.json"
+                  subprocess.run(["toposimplify", "-f", "-P", "0.99", "-o",
+                    outpath + level + ".json",
+                    inpath + level + ".json"])
 
                   print(year + " " + geo + " " + crs + " " + scale + " " + level + " - topojson to geojson")
-                  #TODO
-   #https://github.com/topojson/topojson-client/blob/master/README.md#topo2geo
-   #echo "6- $year $scale $proj $level - topojson to geojson"
-   #outdir="../"$year"/"$proj"/"$scale"M"
-   #mkdir -p $outdir
-   #topo2geo nutsrg=$outdir"/nutsrg_"$level".json" nutsbn=$outdir"/nutsbn_"$level".json" cntrg=$outdir"/cntrg.json" cntbn=$outdir"/cntbn.json" gra=$outdir"/gra.json" < $outdir"/"$level".json"
-
+                  subprocess.run(["topo2geo",
+                    "nutsrg=" + outpath + "nutsrg_" + level + ".json",
+                    "nutsbn=" + outpath + "nutsbn_" + level + ".json",
+                    "cntrg=" + outpath + "cntrg_" + level + ".json",
+                    "cntbn=" + outpath + "cntbn_" + level + ".json",
+                    "gra=" + outpath + "gra_" + level + ".json",
+                    "-i", outpath + level + ".json"])
 
 
 
@@ -175,12 +178,13 @@ def topogeojson():
 #produce point representations
 def pts():
    print()
+   #TODO
 
 
 
 #filterRenameDecompose()
-reprojectClipGeojson()
-#topogeojson()
+#reprojectClipGeojson()
+topogeojson()
 #pts()
 
 
