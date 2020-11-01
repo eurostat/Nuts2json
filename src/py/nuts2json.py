@@ -168,9 +168,9 @@ def topogeojson():
                   subprocess.run(["topo2geo",
                     "nutsrg=" + outpath + "nutsrg_" + level + ".json",
                     "nutsbn=" + outpath + "nutsbn_" + level + ".json",
-                    "cntrg=" + outpath + "cntrg_" + level + ".json",
-                    "cntbn=" + outpath + "cntbn_" + level + ".json",
-                    "gra=" + outpath + "gra_" + level + ".json",
+                    "cntrg=" + outpath + "cntrg.json",
+                    "cntbn=" + outpath + "cntbn.json",
+                    "gra=" + outpath + "gra.json",
                     "-i", outpath + level + ".json"])
 
 
@@ -216,10 +216,10 @@ def pts():
 
 
 
-#filterRenameDecompose()
-#reprojectClipGeojson()
-#topogeojson()
-pts()
+filterRenameDecompose()
+reprojectClipGeojson()
+topogeojson()
+#pts()
 
 
 
