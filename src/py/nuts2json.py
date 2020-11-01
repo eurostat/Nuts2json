@@ -69,6 +69,7 @@ def filterRenameDecompose():
 
 
 
+
 #clip, reproject and convert as geojson
 def reprojectClipGeojson():
    for year in years:
@@ -84,6 +85,7 @@ def reprojectClipGeojson():
               "tmp/graticule.gpkg",
               "-t_srs", "EPSG:"+crs, "-s_srs", "EPSG:4258"
               ])
+
             print(year + " " + geo + " " + crs + " - clip + geojson graticule")
             ogr2ogr.main(["-overwrite","-f", "GeoJSON",
               outpath + "graticule.geojson",
@@ -93,15 +95,37 @@ def reprojectClipGeojson():
 
             for type in ["RG", "BN"]:
                for scale in scales:
+
                   print(year + " " + geo + " " + crs + " " + scale + " " + type + " - reproject CNTR")
-                  #TODO
+                  ogr2ogr.main(["-overwrite","-f", "GPKG",
+                    outpath + scale + "_CNTR_" + type + ".gpkg",
+                    "tmp/" + year + "_" + scale + "_CNTR_" + type + ".gpkg",
+                    "-t_srs", "EPSG:"+crs, "-s_srs", "EPSG:4258"
+                    ])
+
                   print(year + " " + geo + " " + crs + " " + scale + " " + type + " - clip + geojson CNTR")
-                  #TODO
+                  ogr2ogr.main(["-overwrite","-f", "GeoJSON",
+                    outpath + scale + "_CNTR_" + type + ".geojson",
+                    outpath + scale + "_CNTR_" + type + ".gpkg",
+                    "-clipsrc", str(extends["xmin"]), str(extends["ymin"]), str(extends["xmax"]), str(extends["ymax"])
+                    ])
+
                   for level in ["0", "1", "2", "3"]:
+
                      print(year + " " + geo + " " + crs + " " + scale + " " + type + " " + level + " - reproject NUTS")
-                     #TODO
+                     ogr2ogr.main(["-overwrite","-f", "GPKG",
+                       outpath + scale + "_" + level + "_NUTS_" + type + ".gpkg",
+                       "tmp/" + year + "_" + scale + "_" + level + "_NUTS_" + type + ".gpkg",
+                       "-t_srs", "EPSG:"+crs, "-s_srs", "EPSG:4258"
+                       ])
+
                      print(year + " " + geo + " " + crs + " " + scale + " " + type + " " + level + " - clip + geojson NUTS")
-                     #TODO
+                     ogr2ogr.main(["-overwrite","-f", "GeoJSON",
+                       outpath + scale + "_" + level + "_NUTS_" + type + ".geojson",
+                       outpath + scale + "_" + level + "_NUTS_" + type + ".gpkg",
+                       "-clipsrc", str(extends["xmin"]), str(extends["ymin"]), str(extends["xmax"]), str(extends["ymax"])
+                       ])
+
 
 
 #make topojson file from geojson files
