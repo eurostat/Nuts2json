@@ -12,17 +12,16 @@ import ogr2ogr
 # pts:      YEAR/GEO/PROJECTION/nutspt_<NUTS_LEVEL>.json
 ####
 
-#years and scales covered
-years = ["2010", "2013", "2016", "2021"]
-scales = ["10M", "20M", "60M"]
-
-#for each year, the countrie shown as stat units
-filters = {
+# NUTS year version and for each year, the countrie shown as stat units
+years = {
     "2010" : "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME','RS','AL'",
     "2013" : "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME','RS','AL'",
     "2016" : "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME'",
     "2021" : "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME'"
     }
+
+# scales
+scales = ["10M", "20M", "60M"]
 
 #regions, CRSs and extends
 geos = {
@@ -48,7 +47,7 @@ def filterRenameDecompose():
            ogr2ogr.main(["-overwrite","-f", "GPKG",
               "tmp/" + year + "_" + scale + "_CNTR_RG.gpkg",
               "src/resources/shp/" + year + "/CNTR_RG_" + scale + "_" + year + "_4326.shp",
-              "-sql", "SELECT CNTR_ID as id,NAME_ENGL as na FROM CNTR_RG_" + scale + "_" + year + "_4326 WHERE CNTR_ID NOT IN (" + filters[year] + ")"])
+              "-sql", "SELECT CNTR_ID as id,NAME_ENGL as na FROM CNTR_RG_" + scale + "_" + year + "_4326 WHERE CNTR_ID NOT IN (" + years[year] + ")"])
 
            print(year + " " + scale + " CNTR BN - filter, rename attributes")
            ogr2ogr.main(["-overwrite","-f", "GPKG",
@@ -78,20 +77,19 @@ def clipReprojGeojson():
    for year in years:
       for geo in geos:
          for crs in geos[geo]:
-            print(year + " " + geo + " " + crs)
             extends = geos[geo][crs]
 
-            #handle gra?
+            print(year + " " + geo + " " + crs + " - clipReprojGeojson graticule")
+            #TODO
 
             for scale in scales:
-               # clip - reproject - to geojson
                for type in ["RG", "BN"]:
-                  print()
-                  #cntr
+                  print(year + " " + geo + " " + crs + " " + scale + " " + type + " - clipReprojGeojson CNTR")
+                  #TODO
                for level in ["0", "1", "2", "3"]:
                   for type in ["RG", "BN"]:
-                     #nuts
-                     print()
+                     print(year + " " + geo + " " + crs + " " + scale + " " + type + " " + level + " - clipReprojGeojson NUTS")
+                     #TODO
 
 
 #make topojson file from geojson files
