@@ -98,20 +98,29 @@ def clipReprojGeojson():
 
 #make topojson file from geojson files
 #simplify them with topojson simplify
-def topojsonSimplify():
-   print()
+#produce geojson from topojson
+def topogeojson():
+   for year in years:
+      for geo in geos:
+         for crs in geos[geo]:
+            for scale in scales:
+               for level in ["0", "1", "2", "3"]:
 
-   #run command
-   #https://stackoverflow.com/questions/89228/how-to-call-an-external-command
-   #import subprocess
-   #subprocess.run(["ls", "-l"])
-
+                  print(year + " " + geo + " " + crs + " " + scale + " " + level + " - make topojson")
+                  #TODO
    #make topojson base files, one per nuts level
    #https://github.com/topojson/topojson-server/blob/master/README.md#geo2topo
    #echo "4- $year $scale $proj $level - geojson to topojson"
    #geo2topo -q 20000 nutsrg=$dir"/RG/"$level".json" nutsbn=$dir"/BN/"$level".json" cntrg=$dir"/RG/CNTR.json" cntbn=$dir"/BN/CNTR.json" gra=$dir"/graticule.json" > $dir"/"$level".json"
    #quantization: q small means strong 'simplification'
 
+   #run command
+   #https://stackoverflow.com/questions/89228/how-to-call-an-external-command
+   #import subprocess
+   #subprocess.run(["ls", "-l"])
+
+                  print(year + " " + geo + " " + crs + " " + scale + " " + level + " - simplify topojson")
+                  #TODO
    #simplify topojson files
    #https://github.com/topojson/topojson-simplify/blob/master/README.md#toposimplify
    #echo "5- $year $scale $proj $level - topojson simplify"
@@ -119,16 +128,15 @@ def topojsonSimplify():
    #mkdir -p $outdir
    #toposimplify -f -P 0.99 -o "$outdir/$level.json" "$dir/$level.json"
 
-
-#produce geojson from topojson
-def topoToGeojson():
-   print()
-
+                  print(year + " " + geo + " " + crs + " " + scale + " " + level + " - topojson to geojson")
+                  #TODO
    #https://github.com/topojson/topojson-client/blob/master/README.md#topo2geo
    #echo "6- $year $scale $proj $level - topojson to geojson"
    #outdir="../"$year"/"$proj"/"$scale"M"
    #mkdir -p $outdir
    #topo2geo nutsrg=$outdir"/nutsrg_"$level".json" nutsbn=$outdir"/nutsbn_"$level".json" cntrg=$outdir"/cntrg.json" cntbn=$outdir"/cntbn.json" gra=$outdir"/gra.json" < $outdir"/"$level".json"
+
+
 
 
 
@@ -140,8 +148,7 @@ def pts():
 
 #filterRenameDecompose()
 clipReprojGeojson()
-#topojsonSimplify()
-#topoToGeojson()
+#topogeojson()
 #pts()
 
 
