@@ -7,7 +7,7 @@
 
 See [some examples below](https://github.com/eurostat/Nuts2json#some-examples).
 
-For a faster creation of maps based on Nuts2json, check out [**eurostat-map.js**](https://github.com/eurostat/eurostat.js/blob/master/docs/README-map.md).
+For a faster creation of maps based on Nuts2json, check out [**eurostat-map.js**](https://github.com/eurostat/eurostat-map.js).
 
 For a faster creation of [Dorling cartograms](http://www.dannydorling.org/wp-content/files/dannydorling_publication_id1448.pdf) based on Nuts2json, check out [**NutsDorlingCartogram**](https://github.com/eurostat/NutsDorlingCartogram).
 
