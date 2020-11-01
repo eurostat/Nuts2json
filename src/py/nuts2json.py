@@ -1,9 +1,5 @@
-# Extract decomposed information from input SHP files
-
 from pathlib import Path
-
 import ogr2ogr
-
 
 ####
 # Target structure:
