@@ -145,7 +145,7 @@ def topogeojson():
             for scale in scales:
                for level in ["0", "1", "2", "3"]:
                   inpath = "tmp/"+year+"/"+geo+"/"+crs+"/"
-                  outpath = "pub/" + version + "/" + year + "/" + geo + "/" + crs + "/" + scale + "/"
+                  outpath = "pub/" + version + "/" + year + "/" + ("" if geo=="EUR" else geo) + "/" + crs + "/" + scale + "/"
                   Path(outpath).mkdir(parents=True, exist_ok=True)
 
                   # make topojson base files, one per nuts level
