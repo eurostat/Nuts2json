@@ -70,7 +70,7 @@ def filterRenameDecompose():
 
 
 #clip, reproject and convert as geojson
-def clipReprojGeojson():
+def reprojectClipGeojson():
    for year in years:
       for geo in geos:
          for crs in geos[geo]:
@@ -78,20 +78,29 @@ def clipReprojGeojson():
             Path(outpath).mkdir(parents=True, exist_ok=True)
             extends = geos[geo][crs]
 
-            print(year + " " + geo + " " + crs + " - clipReprojGeojson graticule")
+            print(year + " " + geo + " " + crs + " - reproject graticule")
+            ogr2ogr.main(["-overwrite","-f", "GPKG",
+              outpath + "graticule.gpkg",
+              "tmp/graticule.gpkg",
+              "-t_srs", "EPSG:"+crs, "-s_srs", "EPSG:4258"
+              ])
+            print(year + " " + geo + " " + crs + " - clip + geojson graticule")
             ogr2ogr.main(["-overwrite","-f", "GeoJSON",
               outpath + "graticule.geojson",
-              "tmp/graticule.gpkg",
-              "-t_srs", "EPSG:"+crs, "-s_srs", "EPSG:4258",
+              outpath + "graticule.gpkg",
               "-clipsrc", str(extends["xmin"]), str(extends["ymin"]), str(extends["xmax"]), str(extends["ymax"])
               ])
 
             for type in ["RG", "BN"]:
                for scale in scales:
-                  print(year + " " + geo + " " + crs + " " + scale + " " + type + " - clipReprojGeojson CNTR")
+                  print(year + " " + geo + " " + crs + " " + scale + " " + type + " - reproject CNTR")
+                  #TODO
+                  print(year + " " + geo + " " + crs + " " + scale + " " + type + " - clip + geojson CNTR")
                   #TODO
                   for level in ["0", "1", "2", "3"]:
-                     print(year + " " + geo + " " + crs + " " + scale + " " + type + " " + level + " - clipReprojGeojson NUTS")
+                     print(year + " " + geo + " " + crs + " " + scale + " " + type + " " + level + " - reproject NUTS")
+                     #TODO
+                     print(year + " " + geo + " " + crs + " " + scale + " " + type + " " + level + " - clip + geojson NUTS")
                      #TODO
 
 
@@ -146,7 +155,7 @@ def pts():
 
 
 #filterRenameDecompose()
-clipReprojGeojson()
+reprojectClipGeojson()
 #topogeojson()
 #pts()
 
@@ -171,3 +180,6 @@ clipReprojGeojson()
 #For GeoJSON format: /<YEAR>/<PROJECTION>/<SCALE>/<TYPE>[_<NUTS_LEVEL>].json
 #nutsrg nutsbn cntrg cntbn gra
 #PTs: /<YEAR>/<PROJECTION>/nutspt_<NUTS_LEVEL>.json
+
+
+#GDAL_DATA ="/usr/share/gdal/2.2"
