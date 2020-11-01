@@ -8,9 +8,10 @@ import ogr2ogr, subprocess
 # pts:       YEAR/GEO/PROJECTION/nutspt_<NUTS_LEVEL>.json
 ####
 
+# The Nuts2json version number
 version = "v1"
 
-# NUTS year version and for each year, the countrie shown as stat units
+# NUTS year version and, for each year, the countrie shown as stat units
 years = {
     "2010" : "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME','RS','AL'",
     "2013" : "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME','RS','AL'",
@@ -175,17 +176,50 @@ def topogeojson():
 
 
 
-#produce point representations
+# produce point representations
 def pts():
-   print()
-   #TODO
+
+   # prepare
+   for year in years:
+
+      #TODO join area/name
+  #echo "9- $year NUTS LB: Join area"
+  #ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
+  #   $dir"/NUTS_LB_.shp" \
+  #   "../shp/"$year"/NUTS_LB_"$year"_4326.shp" \
+  #   -sql "select LB.NUTS_ID as id, LB.LEVL_CODE as lvl, A.area as ar FROM NUTS_LB_"$year"_4326 AS LB left join '../shp/"$year"/AREA.csv'.AREA AS A ON LB.NUTS_ID = A.nuts_id"
+
+  #echo "9- $year NUTS LB: Join latn name"
+  #ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
+  #   $dir"/NUTS_LB.shp" \
+  #   $dir"/NUTS_LB_.shp" \
+  #   -sql "select LB.id as id, LB.lvl as lvl, A.NAME_LATN as na, LB.ar as ar FROM NUTS_LB_ AS LB left join '../shp/"$year"/NUTS_AT_"$year".csv'.NUTS_AT_"$year" as A on LB.id = A.NUTS_ID"
+
+      for level in ["0", "1", "2", "3"]:
+         print()
+         #TODO decompose by level
+      #echo "9- $year $proj $level NUTS LB: extract by level"
+      #dir="../tmp/$year/LB"
+      #ogr2ogr -overwrite -lco ENCODING=UTF-8 \
+      #   -sql "SELECT id,na,ar FROM NUTS_LB_"$proj" WHERE lvl="$level \
+      #   $dir"/NUTS_LB_"$proj"_"$level".shp" \
+      #   $dir"/NUTS_LB_"$proj".shp"
+
+
+   for year in years:
+      for geo in geos:
+         for crs in geos[geo]:
+            for level in ["0", "1", "2", "3"]:
+               print()
+               #TODO reproject, clip, to geojson
+
 
 
 
 #filterRenameDecompose()
 #reprojectClipGeojson()
-topogeojson()
-#pts()
+#topogeojson()
+pts()
 
 
 
