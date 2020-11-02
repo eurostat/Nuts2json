@@ -78,13 +78,19 @@ The point features are provided with the following properties:
 
 ### Overseas territories - map insets
 
-TODO: explain, describe. "Missing one? Ask."
+TODO: explain, describe.
 
-URL patterns: Similar to the previously defnined ones, with an additional **GEO** parameter: `/<YEAR>/**<GEO>**/<PROJECTION>`. The values supported for this **GEO** parameter are:
+URL patterns: Similar to the previously defined ones, with an additional **GEO** parameter:
+
+`/<YEAR>/<GEO>/<PROJECTION>`.
+
+For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2021/GF/32622/10M/1.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2021/GF/32622/10M/1.json) returns a TopoJSON file of 2021 NUTS regions level 1 on French Guyana overseas territory in UTM zone 22N projection ([EPSG 32622](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-22n/)) at 1:10M scale.
+
+The values supported for this additional **GEO** parameter are listed in the table below. For each of them, a specific CRS TODO
 
 | **GEO** | territory | Specific CRS |
 | ------------- | ------------- | ------------- |
-| GF | French Guyana | 32622 ([UTM zone 22N](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-22n/) |
+| GF | French Guyana | 32622 ([UTM zone 22N](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-22n/)) |
 | GP | Guadeloupe | |
 | MQ | Martinique | |
 | XC | Caribbean islands | |
@@ -97,9 +103,7 @@ URL patterns: Similar to the previously defnined ones, with an additional **GEO*
 | LI | Liechtenstein | |
 | IS | Iceland | |
 
-For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2021/GF/32622/10M/1.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2021/GF/32622/10M/1.json) returns a TopoJSON file of 2021 NUTS regions level 1 on French Guyana overseas territory in UTM zone 22N projection ([EPSG 32622](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-22n/)) at 1:10M scale.
-
-TODO: CRS supported depend on the GEO parameter.
+TODO: missing one ?
 
 ## Some examples
 
