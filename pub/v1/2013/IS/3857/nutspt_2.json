@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_2",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "ES70", "na": "Canarias", "ar": "7450140101" }, "geometry": { "type": "Point", "coordinates": [ -1743330.017517139902338, 3292932.546521706040949 ] } },
+{ "type": "Feature", "properties": { "id": "PT30", "na": "Região Autónoma da Madeira", "ar": "800481077" }, "geometry": { "type": "Point", "coordinates": [ -1892564.926874602446333, 3861082.166969694662839 ] } }
+]
+}
