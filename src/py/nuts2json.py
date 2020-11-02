@@ -24,25 +24,32 @@ scales = ["10M", "20M", "60M"]
 
 #regions, CRSs and extends
 geos = {
+   # Europe
    "EUR" : {
       "4326" : { "xmin" : -25, "ymin" : 32.5, "xmax" : 46.5, "ymax" : 73.9},
       "4258" : { "xmin" : -25, "ymin" : 32.5, "xmax" : 46.5, "ymax" : 73.9},
       "3857" : { "xmin" : -2800000, "ymin" : 3884000, "xmax" : 5200000, "ymax" : 11690000},
       "3035" : { "xmin" : 2434560, "ymin" : 1340340, "xmax" : 7512390, "ymax" : 5664590}
+   },
+   # French Guyana
+   "GF" : {
+      "4326" : { "xmin" : -55, "ymin" : 1.9, "xmax" : -51.5, "ymax" : 6},
+      "4258" : { "xmin" : -55, "ymin" : 1.9, "xmax" : -51.5, "ymax" : 6},
+      "3857" : { "xmin" : -6103000, "ymin" : 214000, "xmax" : -5722000, "ymax" : 660000},
+      "32622" : { "xmin" : 90000, "ymin" : 224000, "xmax" : 436000, "ymax" : 647000}
    }
-#TODO add that
-# GF guyane
-# GP guadeloupe
-# MQ martinique
-# XC antilles (aggregate)
-# RE reunion
-# YT mayotte
-# PT20 açores
-# PT30 madeire
-# IC canaries
-# MT malte
-# LI liechtenstein
-# IS islande
+   # TODO
+   # GP guadeloupe
+   # MQ martinique
+   # XC caribbean islands
+   # RE reunion
+   # YT mayotte
+   # PT20 azores
+   # PT30 madeira
+   # IC canaries
+   # MT malta
+   # LI liechtenstein
+   # IS iceland
 }
 
 #prepare input data into tmp folder: filter, rename attributes, decompose by nuts level
