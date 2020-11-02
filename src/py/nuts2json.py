@@ -1,12 +1,12 @@
 from pathlib import Path
 import ogr2ogr, subprocess
 
-####
+################
 # Target structure:
 # topojson:  YEAR/GEO/PROJECTION/SCALE/<NUTS_LEVEL>.json
 # geojson:   YEAR/GEO/PROJECTION/SCALE/<TYPE>[_<NUTS_LEVEL>].json
 # pts:       YEAR/GEO/PROJECTION/nutspt_<NUTS_LEVEL>.json
-####
+################
 
 # The Nuts2json version number
 version = "v1"
@@ -22,7 +22,7 @@ years = {
 # scales
 scales = ["10M", "20M", "60M"]
 
-#regions, CRSs and extends
+# Regions, CRSs and extends
 geos = {
    # Europe
    "EUR" : {
@@ -77,7 +77,7 @@ geos = {
    }
 }
 
-#prepare input data into tmp folder: filter, rename attributes, decompose by nuts level
+# Prepare input data into tmp folder: filter, rename attributes, decompose by nuts level
 def filterRenameDecompose():
    Path("tmp/").mkdir(parents=True, exist_ok=True)
 
@@ -99,7 +99,6 @@ def filterRenameDecompose():
               "src/resources/shp/" + year + "/CNTR_BN_" + scale + "_" + year + "_4326.shp",
               "-sql", "SELECT CNTR_BN_ID as id,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM CNTR_BN_" + scale + "_" + year + "_4326 WHERE EU_FLAG='F' AND EFTA_FLAG='F'"])
 
-           #nuts: filter, rename attributes
            for level in ["0", "1", "2", "3"]:
 
                print(year + " " + scale + " NUTS RG " + level + " - filter, rename attributes")
@@ -117,7 +116,7 @@ def filterRenameDecompose():
 
 
 
-#clip, reproject and convert as geojson
+# Clip, reproject and convert as geojson
 def reprojectClipGeojson():
    for year in years:
       for geo in geos:
@@ -175,9 +174,9 @@ def reprojectClipGeojson():
 
 
 
-# make topojson file from geojson files
-# simplify them with topojson simplify
-# produce geojson from topojson
+# Make topojson file from geojson files
+# Simplify them with topojson simplify
+# Produce geojson from topojson
 # See: https://github.com/topojson/topojson-server/blob/master/README.md#geo2topo
 # See: https://github.com/topojson/topojson-simplify/blob/master/README.md#toposimplify
 # See: https://github.com/topojson/topojson-client/blob/master/README.md#topo2geo
@@ -220,7 +219,7 @@ def topogeojson():
 
 
 
-# produce point representations
+# Produce point representations
 def makePoints():
 
    # prepare
@@ -278,11 +277,12 @@ def makePoints():
 
 
 
+######## Full process #########
 filterRenameDecompose()
 reprojectClipGeojson()
 topogeojson()
 makePoints()
-
+##############################
 
 
 
@@ -299,11 +299,9 @@ makePoints()
 #https://pcjericks.github.io/py-gdalogr-cookbook/
 #ogr2ogr.main(["","-f", "KML", "out.kml", "data/san_andres_y_providencia_administrative.shp"])
 
-
 #For TopoJSON format: /<YEAR>/<PROJECTION>/<SCALE>/<NUTS_LEVEL>.json
 #For GeoJSON format: /<YEAR>/<PROJECTION>/<SCALE>/<TYPE>[_<NUTS_LEVEL>].json
 #nutsrg nutsbn cntrg cntbn gra
 #PTs: /<YEAR>/<PROJECTION>/nutspt_<NUTS_LEVEL>.json
-
 
 #GDAL_DATA ="/usr/share/gdal/2.2"
