@@ -247,6 +247,7 @@ def makepts():
                ogr2ogr.main(["-overwrite","-f", "GeoJSON",
                  outpath + "nutspt_" + level + ".json",
                  "tmp/pts/" + year + "/" + geo + "_" + crs + "NUTS_LB_" + level + ".gpkg",
+                 "-nln", "nutspt_" + level,
                  "-clipsrc", str(extends["xmin"]), str(extends["ymin"]), str(extends["xmax"]), str(extends["ymax"])
                  ])
 
