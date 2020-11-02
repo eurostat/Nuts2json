@@ -31,7 +31,7 @@ geos = {
       "3857" : { "xmin" : -2800000, "ymin" : 3884000, "xmax" : 5200000, "ymax" : 11690000},
       "3035" : { "xmin" : 2434560, "ymin" : 1340340, "xmax" : 7512390, "ymax" : 5664590}
    },
-   # French Guyana
+   # French Guiana
    "GF" : {
       "4326" : { "xmin" : -55, "ymin" : 1.9, "xmax" : -51.5, "ymax" : 6},
       "4258" : { "xmin" : -55, "ymin" : 1.9, "xmax" : -51.5, "ymax" : 6},
@@ -41,12 +41,12 @@ geos = {
    # TODO
    # GP guadeloupe
    # MQ martinique
-   # XC caribbean islands
-   # RE reunion
+   # CARIB caribbean islands
+   # RE réunion
    # YT mayotte
    # PT20 azores
    # PT30 madeira
-   # IC canaries
+   # IC canary islands
    # MT malta
    # LI liechtenstein
    # IS iceland

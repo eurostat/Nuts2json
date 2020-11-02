@@ -78,32 +78,30 @@ The point features are provided with the following properties:
 
 ### Overseas territories - map insets
 
-TODO: explain, describe.
-
-URL patterns: Similar to the previously defined ones, with an additional **GEO** parameter:
-
+To make [map insets](http://wiki.gis.com/wiki/index.php/Inset_Map) showing overseas territories or detail on small countries, dedicated files are accessible. The URL patterns are similar to the previously defined ones, an additional **GEO** parameter has to be specified: 
 `/<YEAR>/<GEO>/<PROJECTION>`.
 
-For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2021/GF/32622/10M/1.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2021/GF/32622/10M/1.json) returns a TopoJSON file of 2021 NUTS regions level 1 on French Guyana overseas territory in UTM zone 22N projection ([EPSG 32622](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-22n/)) at 1:10M scale.
+For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2021/GF/32622/10M/1.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2021/GF/32622/10M/1.json) returns a TopoJSON file of 2021 NUTS regions level 1 on French Guiana overseas territory in UTM zone 22N projection ([EPSG 32622](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-22n/)) at 1:10M scale.
 
-The values supported for this additional **GEO** parameter are listed in the table below. For each of them, a specific CRS TODO
+The values supported for this additional **GEO** parameter are listed in the table below. For each of them, a specific cartographic CRS is proposed, replacing the European LAEA CRS.
 
-| **GEO** | territory | Specific CRS |
+| **GEO** | Territory | Specific CRS (EPSG code) |
 | ------------- | ------------- | ------------- |
-| GF | French Guyana | 32622 ([UTM zone 22N](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-22n/)) |
-| GP | Guadeloupe | |
-| MQ | Martinique | |
-| XC | Caribbean islands | |
-| RE | Reunion | |
-| YT | Mayotte | |
-| PT20 | Azores | |
-| PT30 | Madeira | |
-| IC | Canary islands | |
-| MT | Malta | |
-| LI | Liechtenstein | |
-| IS | Iceland | |
+| `GF` | French Guiana | `32622` ([UTM zone 22N](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-22n/)) |
+| `GP` | Guadeloupe | |
+| `MQ` | Martinique | |
+| `CARIB` | Caribbean islands | |
+| `RE` | Réunion | |
+| `YT` | Mayotte | |
+| `PT20` | Azores | |
+| `PT30` | Madeira | |
+| `IC` | Canary islands | |
+| `MT` | Malta | `3035`  ([European LAEA projection](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) |
+| `LI` | Liechtenstein | `3035`  ([European LAEA projection](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) |
+| `IS` | Iceland | `3035`  ([European LAEA projection](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) |
 
-TODO: missing one ?
+You would like to see another territory in this table? Feel free to [request it](https://github.com/eurostat/Nuts2json/issues/new) !
+
 
 ## Some examples
 
@@ -143,4 +141,5 @@ Feel free to [ask support](https://github.com/eurostat/Nuts2json/issues/new), fo
 The [Eurostat NUTS dataset](http://ec.europa.eu/eurostat/web/nuts/overview) is copyrighted. There are [specific provisions](https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units) for the usage of this dataset which must be respected. The usage of these data is subject to their acceptance. See the [Eurostat-GISCO website](http://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts) for more information.
 
 ## Disclaimer
+
 The designations employed and the presentation of material on these maps do not imply the expression of any opinion whatsoever on the part of the European Union concerning the legal status of any country, territory, city or area or of its authorities, or concerning the delimitation of its frontiers or boundaries. Kosovo*: This designation is without prejudice to positions on status, and is in line with UNSCR 1244/1999 and the ICJ Opinion on the Kosovo declaration of independence. Palestine*: This designation shall not be construed as recognition of a State of Palestine and is without prejudice to the individual positions of the Member States on this issue.
