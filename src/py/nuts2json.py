@@ -30,8 +30,20 @@ geos = {
       "3857" : { "xmin" : -2800000, "ymin" : 3884000, "xmax" : 5200000, "ymax" : 11690000},
       "3035" : { "xmin" : 2434560, "ymin" : 1340340, "xmax" : 7512390, "ymax" : 5664590}
    }
+#TODO add that
+# GF guyane
+# GP guadeloupe
+# MQ martinique
+# XC antilles (aggregate)
+# RE reunion
+# YT mayotte
+# PT20 açores
+# PT30 madeire
+# IC canaries
+# MT malte
+# LI liechtenstein
+# IS islande
 }
-
 
 #prepare input data into tmp folder: filter, rename attributes, decompose by nuts level
 def filterRenameDecompose():
@@ -145,7 +157,7 @@ def topogeojson():
             for scale in scales:
                for level in ["0", "1", "2", "3"]:
                   inpath = "tmp/"+year+"/"+geo+"/"+crs+"/"
-                  outpath = "pub/" + version + "/" + year + "/" + ("" if geo=="EUR" else geo) + "/" + crs + "/" + scale + "/"
+                  outpath = "pub/" + version + "/" + year + "/" + ("" if geo=="EUR" else geo + "/") + crs + "/" + scale + "/"
                   Path(outpath).mkdir(parents=True, exist_ok=True)
 
                   # make topojson base files, one per nuts level
