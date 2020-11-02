@@ -63,9 +63,6 @@ Five feature types are provided:
 
 - The map graticule (meridian and parrallel lines) is provided as feature type `gra` with a single `id` property, which is the lat/lon of the parallel/meridian.
 
-### Overseas territories - map insets
-
-TODO: explain, describe. "Missing one? Ask!"
 
 ### NUTS regions as points
 
@@ -77,6 +74,29 @@ The point features are provided with the following properties:
   - `id`: The NUTS identifier.
   - `na`: The geographical name of the region.
   - `ar`: The area of the region, in m².
+
+
+### Overseas territories - map insets
+
+TODO: explain, describe. "Missing one? Ask."
+
+URL patterns: Similar to the previously defnined ones, with: `/<YEAR>/<GEO>/<PROJECTION>`. For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2016/GF/3035/20M/2.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2016/GF/3035/20M/2.json) returns XXX in XXX projection ([EPSG XXXX](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) at 1:20M scale.
+
+| GEO code | territory |
+| ------------- | ------------- |
+| GF | guyane |
+| GP | guadeloupe |
+| MQ | martinique |
+| XC | antilles (aggregate) |
+| RE | reunion |
+| YT | mayotte |
+| PT20 | açores |
+| PT30 | madeire |
+| IC | canaries |
+| MT | malte |
+| LI | liechtenstein |
+| IS | islande |
+
 
 ## Some examples
 
