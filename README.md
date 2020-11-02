@@ -63,6 +63,10 @@ Five feature types are provided:
 
 - The map graticule (meridian and parrallel lines) is provided as feature type `gra` with a single `id` property, which is the lat/lon of the parallel/meridian.
 
+### Overseas territories - map insets
+
+TODO: explain, describe. "Missing one? Ask!"
+
 ### NUTS regions as points
 
 NUTS regions are also provided as point geometries. These points can be used for label placement or simplified maps such as [Dorling cartograms](http://www.dannydorling.org/wp-content/files/dannydorling_publication_id1448.pdf). Since this data does not depend on the `<SCALE>` parameter, it can be retrieved directly under the `/<YEAR>/<PROJECTION>/nutspt_<NUTS_LEVEL>.json` URL pattern, as GeoJSON format.
