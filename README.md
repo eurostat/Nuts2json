@@ -80,23 +80,26 @@ The point features are provided with the following properties:
 
 TODO: explain, describe. "Missing one? Ask."
 
-URL patterns: Similar to the previously defnined ones, with: `/<YEAR>/<GEO>/<PROJECTION>`. For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2016/GF/3035/20M/2.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2016/GF/3035/20M/2.json) returns XXX in XXX projection ([EPSG XXXX](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) at 1:20M scale.
+URL patterns: Similar to the previously defnined ones, with an additional **GEO** parameter: `/<YEAR>/**<GEO>**/<PROJECTION>`. The values supported for this **GEO** parameter are:
 
-| GEO code | territory |
-| ------------- | ------------- |
-| GF | guyane |
-| GP | guadeloupe |
-| MQ | martinique |
-| XC | antilles (aggregate) |
-| RE | reunion |
-| YT | mayotte |
-| PT20 | açores |
-| PT30 | madeire |
-| IC | canaries |
-| MT | malte |
-| LI | liechtenstein |
-| IS | islande |
+| **GEO** | territory | Specific CRS |
+| ------------- | ------------- | ------------- |
+| GF | French Guyana | 32622 ([UTM zone 22N](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-22n/) |
+| GP | Guadeloupe | |
+| MQ | Martinique | |
+| XC | Caribbean islands | |
+| RE | Reunion | |
+| YT | Mayotte | |
+| PT20 | Azores | |
+| PT30 | Madeira | |
+| IC | Canary islands | |
+| MT | Malta | |
+| LI | Liechtenstein | |
+| IS | Iceland | |
 
+For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2021/GF/32622/10M/1.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2021/GF/32622/10M/1.json) returns a TopoJSON file of 2021 NUTS regions level 1 on French Guyana overseas territory in UTM zone 22N projection ([EPSG 32622](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-22n/)) at 1:10M scale.
+
+TODO: CRS supported depend on the GEO parameter.
 
 ## Some examples
 
