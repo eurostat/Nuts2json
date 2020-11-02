@@ -13,14 +13,14 @@ For a faster creation of [Dorling cartograms](http://www.dannydorling.org/wp-con
 
 ## API
 
-Base URL: `https://raw.githubusercontent.com/eurostat/Nuts2json/master/`
+Base URL: `https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1`
 
 URL patterns:
 
 - For TopoJSON format: `/<YEAR>/<PROJECTION>/<SCALE>/<NUTS_LEVEL>.json`
 - For GeoJSON format: `/<YEAR>/<PROJECTION>/<SCALE>/<TYPE>[_<NUTS_LEVEL>].json`
 
-For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/2016/3035/20M/2.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/2016/3035/20M/2.json) returns a TopoJSON file of 2016 NUTS regions level 2 in European LAEA projection ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) at 1:20M scale.
+For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2016/3035/20M/2.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2016/3035/20M/2.json) returns a TopoJSON file of 2016 NUTS regions level 2 in European LAEA projection ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) at 1:20M scale.
 
 The parameters are:
 
@@ -67,7 +67,7 @@ Five feature types are provided:
 
 NUTS regions are also provided as point geometries. These points can be used for label placement or simplified maps such as [Dorling cartograms](http://www.dannydorling.org/wp-content/files/dannydorling_publication_id1448.pdf). Since this data does not depend on the `<SCALE>` parameter, it can be retrieved directly under the `/<YEAR>/<PROJECTION>/nutspt_<NUTS_LEVEL>.json` URL pattern, as GeoJSON format.
 
-For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/2013/4326/nutspt_2.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/2013/4326/nutspt_2.json) returns a GeoJSON file of 2013 NUTS points level 2 in WGS84 ([EPSG 4326](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) geographic coordinates.
+For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2013/4326/nutspt_2.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2013/4326/nutspt_2.json) returns a GeoJSON file of 2013 NUTS points level 2 in WGS84 ([EPSG 4326](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) geographic coordinates.
 
 The point features are provided with the following properties:
   - `id`: The NUTS identifier.
@@ -80,7 +80,7 @@ These examples are based on [d3js](https://d3js.org/) library.
 
 - [Basic example](https://bl.ocks.org/jgaffuri/raw/e7e0a76a6e0f851b253d3b1c8fb17ffb/) (see the [code](https://bl.ocks.org/jgaffuri/e7e0a76a6e0f851b253d3b1c8fb17ffb)).
 - [Advanced example](https://bl.ocks.org/jgaffuri/raw/71d130bf5963c5ffe0a436399f401af3/) (see the [code](https://bl.ocks.org/jgaffuri/71d130bf5963c5ffe0a436399f401af3)).
-- [Statistical map examples](https://github.com/eurostat/eurostat.js/blob/master/docs/README-map.md#some-examples) based on [eurostat-map.js](https://github.com/eurostat/eurostat.js/blob/master/docs/README-map.md).
+- [Statistical map examples](https://github.com/eurostat/eurostat-map.js) based on [eurostat-map.js](https://github.com/eurostat/eurostat.js/blob/master/docs/README-map.md).
 - [NUTS regions as points](https://observablehq.com/@jgaffuri/nuts-regions-as-points).
 - [NUTS regions Dorling cartogram](https://observablehq.com/@jgaffuri/dorling-cartogram).
 - [NUTS population Dorling cartogram](https://observablehq.com/@jgaffuri/dorling-cartogram-population).
