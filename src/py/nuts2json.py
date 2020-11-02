@@ -201,44 +201,61 @@ def makepts():
    # prepare
    for year in years:
 
-      #TODO join area/name
-  #echo "9- $year NUTS LB: Join area"
-  #ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
-  #   $dir"/NUTS_LB_.shp" \
-  #   "../shp/"$year"/NUTS_LB_"$year"_4326.shp" \
-  #   -sql "select LB.NUTS_ID as id, LB.LEVL_CODE as lvl, A.area as ar FROM NUTS_LB_"$year"_4326 AS LB left join '../shp/"$year"/AREA.csv'.AREA AS A ON LB.NUTS_ID = A.nuts_id"
+      Path("tmp/pts/" + year + "/").mkdir(parents=True, exist_ok=True)
 
-  #echo "9- $year NUTS LB: Join latn name"
-  #ogr2ogr -overwrite -f "ESRI Shapefile" -lco ENCODING=UTF-8 \
-  #   $dir"/NUTS_LB.shp" \
-  #   $dir"/NUTS_LB_.shp" \
-  #   -sql "select LB.id as id, LB.lvl as lvl, A.NAME_LATN as na, LB.ar as ar FROM NUTS_LB_ AS LB left join '../shp/"$year"/NUTS_AT_"$year".csv'.NUTS_AT_"$year" as A on LB.id = A.NUTS_ID"
+      print(year + " PTS join areas")
+      ogr2ogr.main(["-overwrite","-f", "ESRI Shapefile",
+        "tmp/pts/" + year + "/NUTS_LB.shp",
+        "src/resources/shp/" + year + "/NUTS_LB_" + year + "_4326.shp",
+        "-sql", "select LB.NUTS_ID as id, LB.LEVL_CODE as lvl, A.area as ar FROM NUTS_LB_" + year + "_4326 AS LB left join 'src/resources/shp/" + year + "/AREA.csv'.AREA AS A ON LB.NUTS_ID = A.nuts_id"
+        ])
+
+      print(year + " PTS join latn names")
+      ogr2ogr.main(["-overwrite","-f", "GPKG",
+        "tmp/pts/" + year + "/NUTS_LB.gpkg",
+        "tmp/pts/" + year + "/NUTS_LB.shp",
+        "-sql", "select LB.id as id, LB.lvl as lvl, A.NAME_LATN as na, LB.ar as ar FROM NUTS_LB AS LB left join 'src/resources/shp/" + year + "/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on LB.id = A.NUTS_ID"
+        ])
 
       for level in ["0", "1", "2", "3"]:
-         print()
-         #TODO decompose by level
-      #echo "9- $year $proj $level NUTS LB: extract by level"
-      #dir="../tmp/$year/LB"
-      #ogr2ogr -overwrite -lco ENCODING=UTF-8 \
-      #   -sql "SELECT id,na,ar FROM NUTS_LB_"$proj" WHERE lvl="$level \
-      #   $dir"/NUTS_LB_"$proj"_"$level".shp" \
-      #   $dir"/NUTS_LB_"$proj".shp"
 
+         print(year + " " + level + " - PTS decompose by NUTS level")
+         ogr2ogr.main(["-overwrite","-f", "GPKG",
+           "tmp/pts/" + year + "/NUTS_LB_" + level + ".gpkg",
+           "tmp/pts/" + year + "/NUTS_LB.gpkg",
+           "-sql", "SELECT geom,id,na,ar FROM LB AS LB WHERE lvl=" + level
+           ])
 
    for year in years:
       for geo in geos:
          for crs in geos[geo]:
+            extends = geos[geo][crs]
+
+            outpath = "pub/" + version + "/" + year + "/" + ("" if geo=="EUR" else geo + "/") + crs + "/"
+            Path(outpath).mkdir(parents=True, exist_ok=True)
+
             for level in ["0", "1", "2", "3"]:
-               print()
-               #TODO reproject, clip, to geojson
+
+               print(year + " " + geo + " " + crs + " " + level + " - reproject PTS")
+               ogr2ogr.main(["-overwrite","-f", "GPKG",
+                 "tmp/pts/" + year + "/" + geo + "_" + crs + "NUTS_LB_" + level + ".gpkg",
+                 "tmp/pts/" + year + "/NUTS_LB_" + level + ".gpkg",
+                 "-t_srs", "EPSG:"+crs, "-s_srs", "EPSG:4258"
+                 ])
+
+               print(year + " " + geo + " " + crs + " " + level + " - clip + geojson PTS")
+               ogr2ogr.main(["-overwrite","-f", "GeoJSON",
+                 outpath + "nutspt_" + level + ".json",
+                 "tmp/pts/" + year + "/" + geo + "_" + crs + "NUTS_LB_" + level + ".gpkg",
+                 "-clipsrc", str(extends["xmin"]), str(extends["ymin"]), str(extends["xmax"]), str(extends["ymax"])
+                 ])
 
 
 
-
-filterRenameDecompose()
-reprojectClipGeojson()
-topogeojson()
-#makepts()
+#filterRenameDecompose()
+#reprojectClipGeojson()
+#topogeojson()
+makepts()
 
 
 
