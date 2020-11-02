@@ -214,7 +214,7 @@ def topogeojson():
 
 
 # produce point representations
-def makepts():
+def makePoints():
 
    # prepare
    for year in years:
@@ -271,10 +271,10 @@ def makepts():
 
 
 
-#filterRenameDecompose()
-#reprojectClipGeojson()
-#topogeojson()
-makepts()
+filterRenameDecompose()
+reprojectClipGeojson()
+topogeojson()
+makePoints()
 
 
 
