@@ -78,29 +78,27 @@ The point features are provided with the following properties:
 
 ### Overseas territories - map insets
 
-To make [map insets](http://wiki.gis.com/wiki/index.php/Inset_Map) showing overseas territories or detail on small countries, dedicated files are accessible. The URL patterns are similar to the previously defined ones, an additional **GEO** parameter has to be specified: 
-`/<YEAR>/<GEO>/<PROJECTION>`.
-
-For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2021/GF/32622/10M/1.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2021/GF/32622/10M/1.json) returns a TopoJSON file of 2021 NUTS regions level 1 on French Guiana overseas territory in UTM zone 22N projection ([EPSG 32622](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-22n/)) at 1:10M scale.
+To add [map insets](http://wiki.gis.com/wiki/index.php/Inset_Map) showing overseas territories or detail on small countries, dedicated files can be used. To access these files, the URL patterns are the same as the ones previously defined, except an additional **GEO** parameter has to be specified here: 
+`/<YEAR>/<GEO>/<PROJECTION>`. This parameter specifies the territory of interest. For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2021/GF/32622/10M/1.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2021/GF/32622/10M/1.json) returns a TopoJSON file of 2021 NUTS regions level 1 on French Guiana overseas territory in UTM zone 22N projection ([EPSG 32622](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-22n/)) at 1:10M scale.
 
 The values supported for this additional **GEO** parameter are listed in the table below. For each of them, a specific cartographic CRS is proposed, replacing the European LAEA CRS.
 
 | **GEO** | Territory | Specific CRS (EPSG code) |
 | ------------- | ------------- | ------------- |
+| `PT20` | Azores | |
+| `PT30` | Madeira | |
+| `IC` | Canary islands | |
 | `GF` | French Guiana | `32622` ([UTM zone 22N](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-22n/)) |
 | `GP` | Guadeloupe | |
 | `MQ` | Martinique | |
 | `CARIB` | Caribbean islands | |
 | `RE` | Réunion | |
 | `YT` | Mayotte | |
-| `PT20` | Azores | |
-| `PT30` | Madeira | |
-| `IC` | Canary islands | |
 | `MT` | Malta | `3035`  ([European LAEA projection](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) |
 | `LI` | Liechtenstein | `3035`  ([European LAEA projection](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) |
 | `IS` | Iceland | `3035`  ([European LAEA projection](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) |
 
-You would like to see another territory in this table? Feel free to [request it](https://github.com/eurostat/Nuts2json/issues/new) !
+You need another territory in this table? Feel free to [request it](https://github.com/eurostat/Nuts2json/issues/new) !
 
 
 ## Some examples
