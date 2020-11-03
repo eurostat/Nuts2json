@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_2",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::4258" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "FRA2", "na": "Martinique", "ar": "1104125005" }, "geometry": { "type": "Point", "coordinates": [ -61.0082, 14.6606 ] } }
+]
+}

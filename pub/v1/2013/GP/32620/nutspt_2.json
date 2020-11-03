@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_2",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32620" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "FRA1", "na": "Guadeloupe", "ar": "1687977647" }, "geometry": { "type": "Point", "coordinates": [ 641611.709963339264505, 1784810.14403256517835 ] } }
+]
+}
