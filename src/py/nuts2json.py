@@ -65,35 +65,35 @@ geos = {
    #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
+   #    "32620" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
    # },
    # Martinique TODO 
    # "MQ" : {
    #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
+   #    "32620" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
    # },
    # Caribbean islands TODO 
    # "CARIB" : {
    #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
+   #    "32620" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
    # },
    # Réunion TODO
    # "RE" : {
    #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
+   #    "32740" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
    # },
    # Mayotte TODO
    # "YT" : {
    #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
+   #    "32738" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
    # },
    # Malta
    "MT" : {
