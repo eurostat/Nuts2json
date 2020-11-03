@@ -116,19 +116,13 @@ These examples are based on [d3js](https://d3js.org/) library.
 
 ## Technical details
 
-These files are produced from the NUTS SHP files provided on [Eurostat-GISCO website](http://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts). The input files are in the [shp folder](/shp).
+These files are produced from the NUTS SHP files provided on [Eurostat-GISCO website](http://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts). The input files are in the [shp folder](/src/resources/shp).
 
-These input files are transformed using [GDAL](http://www.gdal.org/) and [TopoJSON](https://github.com/mbostock/topojson/wiki). The transformation process is automated in bash files, which are also shared in the [sh folder](/sh). This process has 6 successive steps:
-1. *filter_project_clip*: Filter and reproject the input data for each year, each scale and each projection.
-2. *extract_shp_by_level*: For each year, scale and projection, decompose the data by NUTS level.
-3. *shp_to_geojson*: Convert from SHP to GeoJSON format.
-4. *geojson_to_topojson*: Convert from GeoJSON to TopoJSON format.
-5. *simplify_topojson*: Simplify the TopoJSON files using [TopoJSON Simplify](https://github.com/topojson/topojson-simplify/) program.
-6. *topojson_to_geojson*: Convert from TopoJSON to GeoJSON format.
-
-And finally:
-
-9. *points*: Produces the NUTS regions as points.
+These input files are transformed using [GDAL](http://www.gdal.org/) and [TopoJSON](https://github.com/mbostock/topojson/wiki). The transformation process is automated in a Python script, which is also shared in the [/src/py/ folder](/src/py/). This process has 4 successive steps:
+1. *filterRenameDecompose*: Prepare input data: filter, rename attributes and decompose by NUTS level.
+2. *reprojectClipGeojson*: Clip, reproject and convert as GeoJSON.
+3. *topogeojson*: Make TopoJSON file from GeoJSON files, simplify them with [TopoJSON Simplify](https://github.com/topojson/topojson-simplify/) program, and finally produce GeoJSON from TopoJSON.
+4. *makePoints*: Produce point representations.
 
 ## Support and contribution
 
