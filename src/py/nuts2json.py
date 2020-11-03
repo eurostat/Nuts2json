@@ -96,36 +96,36 @@ geos = {
      },
       "scales" : ["10M", "20M", "60M"]
    },
-   # "CARIB" : {
-   #    "name" : "Caribbean islands",
-   #    "crs" : {
-   #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "32620" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
-   #   },
-   #   "scales" : ["10M", "20M", "60M"]
-   # },
-   # "RE" : {
-   #    "name" : "Reunion",
-   #    "crs" : {
-   #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "32740" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
-   #   },
-   #   "scales" : ["10M", "20M", "60M"]
-   # },
-   # "YT" : {
-   #    "name" : "Mayotte",
-   #    "crs" : {
-   #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "32738" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
-   #   },
-   #   "scales" : ["10M", "20M", "60M"]
-   # },
+   "CARIB" : {
+      "name" : "Caribbean islands",
+      "crs" : {
+      "4326" : { "xmin" : -64.074, "ymin" : 12.816, "xmax" : -60.257, "ymax" : 18.350},
+      "4258" : { "xmin" : -64.074, "ymin" : 12.816, "xmax" : -60.257, "ymax" : 18.350},
+      "3857" : { "xmin" : -7114435, "ymin" : 1438782, "xmax" : -6701775, "ymax" : 2080865},
+      "32620" : { "xmin" : 390901, "ymin" : 1412066, "xmax" : 803644, "ymax" : 2038195}
+     },
+     "scales" : ["10M", "20M", "60M"]
+   },
+   "RE" : {
+      "name" : "Reunion",
+      "crs" : {
+      "4326" : { "xmin" : 55.087, "ymin" : -21.521, "xmax" : 55.981, "ymax" : -20.752},
+      "4258" : { "xmin" : 55.087, "ymin" : -21.521, "xmax" : 55.981, "ymax" : -20.752},
+      "3857" : { "xmin" : 6118552, "ymin" : -2456745, "xmax" : 6240595, "ymax" : -2355898},
+      "32740" : { "xmin" : 301152, "ymin" : 7625194, "xmax" : 397346, "ymax" : 7708036}
+     },
+     "scales" : ["10M", "20M", "60M"]
+   },
+   "YT" : {
+      "name" : "Mayotte",
+      "crs" : {
+      "4326" : { "xmin" : 44.854, "ymin" : -13.112, "xmax" : 45.454, "ymax" : -12.532},
+      "4258" : { "xmin" : 44.854, "ymin" : -13.112, "xmax" : 45.454, "ymax" : -12.532},
+      "3857" : { "xmin" : 4990911, "ymin" : -1475429, "xmax" : 5056930, "ymax" : -1411884},
+      "32738" : { "xmin" : 484128, "ymin" : 8548691, "xmax" : 546084, "ymax" : 8611393}
+     },
+     "scales" : ["10M", "20M", "60M"]
+   },
    "MT" : {
       "name" : "Malta",
       "crs" : {
