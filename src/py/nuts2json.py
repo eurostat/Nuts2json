@@ -31,12 +31,27 @@ geos = {
       "3857" : { "xmin" : -2800000, "ymin" : 3884000, "xmax" : 5200000, "ymax" : 11690000},
       "3035" : { "xmin" : 2434560, "ymin" : 1340340, "xmax" : 7512390, "ymax" : 5664590}
    },
-   # Azores
-   # TODO PT20
-   # Madeira
-   # TODO PT30
-   # Canary islands
-   # TODO IC
+   # Azores TODO    UTM zone 26N  EPSG:32626    https://spatialreference.org/ref/epsg/wgs-84-utm-zone-26n/
+   # "PT20" : {
+   #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
+   #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
+   #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
+   #    "32626" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
+   # },
+   # Madeira TODO    UTM zone 28N  EPSG:32628    https://spatialreference.org/ref/epsg/wgs-84-utm-zone-28n/
+    # "PT30" : {
+   #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
+   #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
+   #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
+   #    "32628" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
+   # },
+   # Canary islands TODO  UTM zone 28N  EPSG:32628    https://spatialreference.org/ref/epsg/wgs-84-utm-zone-28n/
+   # "IC" : {
+   #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
+   #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
+   #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
+   #    "32628" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
+   # },
    # French Guiana
    "GF" : {
       "4326" : { "xmin" : -55, "ymin" : 1.9, "xmax" : -51.5, "ymax" : 6},
@@ -44,16 +59,41 @@ geos = {
       "3857" : { "xmin" : -6103000, "ymin" : 214000, "xmax" : -5722000, "ymax" : 660000},
       "32622" : { "xmin" : 90000, "ymin" : 224000, "xmax" : 436000, "ymax" : 647000}
    },
-   # Guadeloupe
-   # TODO GP
-   # Martinique
-   # TODO MQ
-   # Caribbean islands
-   # TODO CARIB
-   # Réunion
-   # TODO RE
-   # Mayotte
-   # TODO YT
+   # Guadeloupe TODO 
+   # "GP" : {
+   #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
+   #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
+   #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
+   #    "" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
+   # },
+   # Martinique TODO 
+   # "MQ" : {
+   #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
+   #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
+   #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
+   #    "" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
+   # },
+   # Caribbean islands TODO 
+   # "CARIB" : {
+   #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
+   #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
+   #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
+   #    "" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
+   # },
+   # Réunion TODO
+   # "RE" : {
+   #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
+   #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
+   #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
+   #    "" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
+   # },
+   # Mayotte TODO
+   # "YT" : {
+   #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
+   #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
+   #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
+   #    "" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
+   # },
    # Malta
    "MT" : {
       "4326" : { "xmin" : 14.1, "ymin" : 35.7, "xmax" : 14.6, "ymax" : 36.1},
