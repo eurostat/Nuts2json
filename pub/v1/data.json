@@ -1,5 +1,6 @@
 {
    "EUR": {
+      "name": "Europe",
       "crs": {
          "4326": {
             "xmin": -25,
@@ -33,6 +34,7 @@
       ]
    },
    "PT20": {
+      "name": "Azores",
       "crs": {
          "4326": {
             "xmin": -32.67,
@@ -66,6 +68,7 @@
       ]
    },
    "PT30": {
+      "name": "Madeira",
       "crs": {
          "4326": {
             "xmin": -18.18,
@@ -99,6 +102,7 @@
       ]
    },
    "IC": {
+      "name": "Canary islands",
       "crs": {
          "4326": {
             "xmin": -18.599,
@@ -132,6 +136,7 @@
       ]
    },
    "GF": {
+      "name": "French Guiana",
       "crs": {
          "4326": {
             "xmin": -55,
@@ -165,6 +170,7 @@
       ]
    },
    "GP": {
+      "name": "Guadeloupe",
       "crs": {
          "4326": {
             "xmin": -63.519,
@@ -198,6 +204,7 @@
       ]
    },
    "MQ": {
+      "name": "Martinique",
       "crs": {
          "4326": {
             "xmin": -61.398,
@@ -231,6 +238,7 @@
       ]
    },
    "MT": {
+      "name": "Malta",
       "crs": {
          "4326": {
             "xmin": 14.1,
@@ -264,6 +272,7 @@
       ]
    },
    "LI": {
+      "name": "Liechtenstein",
       "crs": {
          "4326": {
             "xmin": 9.4,
@@ -297,6 +306,7 @@
       ]
    },
    "IS": {
+      "name": "Iceland",
       "crs": {
          "4326": {
             "xmin": -25,

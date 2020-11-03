@@ -26,8 +26,8 @@ nutsData = {
 
 # Geographical territories for map insets, CRSs and extends
 geos = {
-   # Europe
    "EUR" : {
+      "name" : "Europe",
       "crs" : {
       "4326" : { "xmin" : -25, "ymin" : 32.5, "xmax" : 46.5, "ymax" : 73.9},
       "4258" : { "xmin" : -25, "ymin" : 32.5, "xmax" : 46.5, "ymax" : 73.9},
@@ -36,8 +36,8 @@ geos = {
       },
       "scales" : ["10M", "20M", "60M"]
    },
-   # Azores
    "PT20" : {
+      "name" : "Azores",
       "crs" : {
       "4326" : { "xmin" : -32.67, "ymin" : 35.92, "xmax" : -23.89, "ymax" : 40.53},
       "4258" : { "xmin" : -32.67, "ymin" : 35.92, "xmax" : -23.89, "ymax" : 40.53},
@@ -46,8 +46,8 @@ geos = {
       },
       "scales" : ["10M", "20M", "60M"]
    },
-   # Madeira
     "PT30" : {
+      "name" : "Madeira",
       "crs" : {
       "4326" : { "xmin" : -18.18, "ymin" : 29.73, "xmax" : -15.46, "ymax" : 33.52},
       "4258" : { "xmin" : -18.18, "ymin" : 29.73, "xmax" : -15.46, "ymax" : 33.52},
@@ -56,8 +56,8 @@ geos = {
       },
       "scales" : ["10M", "20M", "60M"]
    },
-   # Canary islands
    "IC" : {
+      "name" : "Canary islands",
       "crs" : {
       "4326" : { "xmin" : -18.599, "ymin" : 27.131, "xmax" : -12.82, "ymax" : 29.77},
       "4258" : { "xmin" : -18.599, "ymin" : 27.131, "xmax" : -12.82, "ymax" : 29.77},
@@ -66,8 +66,8 @@ geos = {
       },
       "scales" : ["10M", "20M", "60M"]
     },
-   # French Guiana
    "GF" : {
+      "name" : "French Guiana",
       "crs" : {
       "4326" : { "xmin" : -55, "ymin" : 1.9, "xmax" : -51.5, "ymax" : 6},
       "4258" : { "xmin" : -55, "ymin" : 1.9, "xmax" : -51.5, "ymax" : 6},
@@ -76,9 +76,9 @@ geos = {
       },
       "scales" : ["10M", "20M", "60M"]
    },
-   # Guadeloupe
    "GP" : {
-     "crs" : {
+      "name" : "Guadeloupe",
+      "crs" : {
       "4326" : { "xmin" : -63.519, "ymin" : 15.391, "xmax" : -60.196, "ymax" : 18.515},
       "4258" : { "xmin" : -63.519, "ymin" : 15.391, "xmax" : -60.196, "ymax" : 18.515},
       "3857" : { "xmin" : -7101130, "ymin" : 1734899, "xmax" : -6747739, "ymax" : 2095527},
@@ -86,9 +86,9 @@ geos = {
      },
       "scales" : ["10M", "20M", "60M"]
    },
-   # Martinique
    "MQ" : {
-     "crs" : {
+      "name" : "Martinique",
+      "crs" : {
       "4326" : { "xmin" : -61.398, "ymin" : 14.293, "xmax" : -60.618, "ymax" : 15.059},
       "4258" : { "xmin" : -61.398, "ymin" : 14.293, "xmax" : -60.618, "ymax" : 15.059},
       "3857" : { "xmin" : -6843610, "ymin" : 1596556, "xmax" : -6743775, "ymax" : 1692156},
@@ -96,9 +96,9 @@ geos = {
      },
       "scales" : ["10M", "20M", "60M"]
    },
-   # Caribbean islands TODO 
    # "CARIB" : {
-   #   "crs" : {
+   #    "name" : "Caribbean islands",
+   #    "crs" : {
    #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
@@ -106,9 +106,9 @@ geos = {
    #   },
    #   "scales" : ["10M", "20M", "60M"]
    # },
-   # Réunion TODO
    # "RE" : {
-   #   "crs" : {
+   #    "name" : "Reunion",
+   #    "crs" : {
    #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
@@ -116,9 +116,9 @@ geos = {
    #   },
    #   "scales" : ["10M", "20M", "60M"]
    # },
-   # Mayotte TODO
    # "YT" : {
-   #   "crs" : {
+   #    "name" : "Mayotte",
+   #    "crs" : {
    #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
@@ -126,8 +126,8 @@ geos = {
    #   },
    #   "scales" : ["10M", "20M", "60M"]
    # },
-   # Malta
    "MT" : {
+      "name" : "Malta",
       "crs" : {
       "4326" : { "xmin" : 14.1, "ymin" : 35.7, "xmax" : 14.6, "ymax" : 36.1},
       "4258" : { "xmin" : 14.1, "ymin" : 35.7, "xmax" : 14.6, "ymax" : 36.1},
@@ -136,8 +136,8 @@ geos = {
       },
       "scales" : ["10M", "20M", "60M"]
    },
-   # Liechtenstein
    "LI" : {
+      "name" : "Liechtenstein",
       "crs" : {
       "4326" : { "xmin" : 9.4, "ymin" : 47, "xmax" : 9.7, "ymax" : 47.4},
       "4258" : { "xmin" : 9.4, "ymin" : 47, "xmax" : 9.7, "ymax" : 47.4},
@@ -146,8 +146,8 @@ geos = {
       },
       "scales" : ["10M", "20M", "60M"]
    },
-   # Iceland
    "IS" : {
+      "name" : "Iceland",
       "crs" : {
       "4326" : { "xmin" : -25, "ymin" : 62.6, "xmax" : -12, "ymax" : 67.7},
       "4258" : { "xmin" : -25, "ymin" : 62.6, "xmax" : -12, "ymax" : 67.7},
