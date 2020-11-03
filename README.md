@@ -85,9 +85,9 @@ The values supported for this additional **GEO** parameter are listed in the tab
 
 | **GEO** | Territory | Specific CRS (EPSG code) |
 | ------------- | ------------- | ------------- |
-| `PT20` | Azores | |
-| `PT30` | Madeira | |
-| `IC` | Canary islands | |
+| `PT20` | Azores | `32626` ([UTM zone 26N](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-26n/)) |
+| `PT30` | Madeira | `32628` ([UTM zone 28N](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-28n/)) |
+| `IC` | Canary islands | `32628` ([UTM zone 28N](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-28n/)) |
 | `GF` | French Guiana | `32622` ([UTM zone 22N](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-22n/)) |
 | `GP` | Guadeloupe | |
 | `MQ` | Martinique | |

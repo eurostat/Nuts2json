@@ -21,8 +21,9 @@ years = {
 
 # scales
 scales = ["10M", "20M", "60M"]
+#TODO: more detailled data for map insets - maybe scales should be defined depending on territories
 
-# Regions, CRSs and extends
+# Geographical territories for map insets, CRSs and extends
 geos = {
    # Europe
    "EUR" : {
@@ -31,21 +32,21 @@ geos = {
       "3857" : { "xmin" : -2800000, "ymin" : 3884000, "xmax" : 5200000, "ymax" : 11690000},
       "3035" : { "xmin" : 2434560, "ymin" : 1340340, "xmax" : 7512390, "ymax" : 5664590}
    },
-   # Azores TODO    UTM zone 26N  EPSG:32626    https://spatialreference.org/ref/epsg/wgs-84-utm-zone-26n/
+   # Azores TODO
    # "PT20" : {
    #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "32626" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
    # },
-   # Madeira TODO    UTM zone 28N  EPSG:32628    https://spatialreference.org/ref/epsg/wgs-84-utm-zone-28n/
+   # Madeira TODO
     # "PT30" : {
    #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "32628" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
    # },
-   # Canary islands TODO  UTM zone 28N  EPSG:32628    https://spatialreference.org/ref/epsg/wgs-84-utm-zone-28n/
+   # Canary islands
    # "IC" : {
    #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
