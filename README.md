@@ -122,6 +122,13 @@ These files are produced from the NUTS geodata provided on [Eurostat-GISCO websi
 3. *topogeojson*: Make TopoJSON file from GeoJSON files, simplify them with [TopoJSON Simplify](https://github.com/topojson/topojson-simplify/) program, and finally produce GeoJSON from TopoJSON.
 4. *makePoints*: Produce point representations.
 
+## About
+
+| *contributors* | [![fmshka](https://github.com/jgaffuri.png)](https://github.com/jgaffuri) [![fmshka](https://github.com/JoeWDavies.png)](https://github.com/JoeWDavies) |
+| *version* | 1 |
+| *status* | Since 2016 |
+| *license* | [EUPL 1.2](https://github.com/eurostat/Nuts2json/blob/master/LICENSE) |
+
 ## Support and contribution
 
 Feel free to [ask support](https://github.com/eurostat/Nuts2json/issues/new), fork the project or simply star it (it's always a pleasure).
