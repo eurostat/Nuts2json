@@ -126,7 +126,7 @@ These files are produced from the NUTS geodata provided on [Eurostat-GISCO websi
 
 | | |
 |-|-|
-| *contributors* | [<img src="https://github.com/jgaffuri.png" height="40" />](https://github.com/jgaffuri) [<img src="https://github.com/JoeWDavies.png" height="40" />](https://github.com/JoeWDavies) |
+| *contributors* | [<img src="https://github.com/jgaffuri.png" height="40" />](https://github.com/jgaffuri) [<img src="https://github.com/JoeWDavies.png" height="40" />](https://github.com/JoeWDavies) [<img src="https://github.com/mumins.png" height="40" />](https://github.com/mumins) |
 | *version* | 1 |
 | *status* | Since 2016 |
 | *license* | [EUPL 1.2](https://github.com/eurostat/Nuts2json/blob/master/LICENSE) |
