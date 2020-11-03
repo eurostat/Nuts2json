@@ -1,5 +1,5 @@
 from pathlib import Path
-import ogr2ogr, subprocess
+import ogr2ogr, subprocess, json
 
 ################
 # Target structure:
@@ -157,6 +157,12 @@ geos = {
       "scales" : ["10M", "20M", "60M"]
    }
 }
+
+
+print("save data")
+with open("pub/" + version + "/data.json", "w") as fp:
+    json.dump(geos, fp, indent=3)
+
 
 # Prepare input data into tmp folder: filter, rename attributes, decompose by nuts level
 def filterRenameDecompose():
