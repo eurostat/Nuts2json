@@ -21,7 +21,7 @@ years = {
 
 # scales
 scales = ["10M", "20M", "60M"]
-#TODO: more detailled data for map insets - maybe scales should be defined depending on territories
+#TODO: more detailled data for map insets - scales should be more detailled for map insets: ["1M", "3M", "10M"]
 
 # Geographical territories for map insets, CRSs and extends
 geos = {
