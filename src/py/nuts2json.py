@@ -79,15 +79,15 @@ geos = {
       "32620" : { "xmin" : 413686, "ymin" : 1696392, "xmax" : 1109654, "ymax" : 2043231}
      }
    },
-   # Martinique TODO 
-   # "MQ" : {
-   #   "crs" : {
-   #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "32620" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
-   #   }
-   # },
+   # Martinique
+   "MQ" : {
+     "crs" : {
+      "4326" : { "xmin" : -61.398, "ymin" : 14.293, "xmax" : -60.618, "ymax" : 15.059},
+      "4258" : { "xmin" : -61.398, "ymin" : 14.293, "xmax" : -60.618, "ymax" : 15.059},
+      "3857" : { "xmin" : -6843610, "ymin" : 1596556, "xmax" : -6743775, "ymax" : 1692156},
+      "32620" : { "xmin" : 658362, "ymin" : 1580492, "xmax" : 760525, "ymax" : 1660906}
+     }
+   },
    # Caribbean islands TODO 
    # "CARIB" : {
    #   "crs" : {
