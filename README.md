@@ -116,9 +116,7 @@ These examples are based on [d3js](https://d3js.org/) library.
 
 ## Technical details
 
-These files are produced from the NUTS SHP files provided on [Eurostat-GISCO website](http://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts). The input files are in the [shp folder](/src/resources/shp).
-
-These input files are transformed using [GDAL](http://www.gdal.org/) and [TopoJSON](https://github.com/mbostock/topojson/wiki). The transformation process is automated in a Python script, which is also shared in the [/src/py/ folder](/src/py/). This process has 4 successive steps:
+These files are produced from the NUTS geodata provided on [Eurostat-GISCO website](http://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts). The input files are in the [shp folder](/src/resources/shp). They are transformed using [GDAL](http://www.gdal.org/) and [TopoJSON](https://github.com/mbostock/topojson/wiki) programs. The transformation process is automated in a Python script, which is also available in the [/src/py/ folder](/src/py/). This process has 4 steps:
 1. *filterRenameDecompose*: Prepare input data: filter, rename attributes and decompose by NUTS level.
 2. *reprojectClipGeojson*: Clip, reproject and convert as GeoJSON.
 3. *topogeojson*: Make TopoJSON file from GeoJSON files, simplify them with [TopoJSON Simplify](https://github.com/topojson/topojson-simplify/) program, and finally produce GeoJSON from TopoJSON.
