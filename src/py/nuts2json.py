@@ -27,94 +27,120 @@ scales = ["10M", "20M", "60M"]
 geos = {
    # Europe
    "EUR" : {
+      "crs" : {
       "4326" : { "xmin" : -25, "ymin" : 32.5, "xmax" : 46.5, "ymax" : 73.9},
       "4258" : { "xmin" : -25, "ymin" : 32.5, "xmax" : 46.5, "ymax" : 73.9},
       "3857" : { "xmin" : -2800000, "ymin" : 3884000, "xmax" : 5200000, "ymax" : 11690000},
       "3035" : { "xmin" : 2434560, "ymin" : 1340340, "xmax" : 7512390, "ymax" : 5664590}
+      }
    },
    # Azores
    "PT20" : {
+      "crs" : {
       "4326" : { "xmin" : -32.67, "ymin" : 35.92, "xmax" : -23.89, "ymax" : 40.53},
       "4258" : { "xmin" : -32.67, "ymin" : 35.92, "xmax" : -23.89, "ymax" : 40.53},
       "3857" : { "xmin" : -3692767, "ymin" : 4238065, "xmax" : -2526564, "ymax" : 4972707},
       "32626" : { "xmin" : 16784, "ymin" : 4002891, "xmax" : 788999, "ymax" : 4458221}
+      }
    },
    # Madeira
     "PT30" : {
+      "crs" : {
       "4326" : { "xmin" : -18.18, "ymin" : 29.73, "xmax" : -15.46, "ymax" : 33.52},
       "4258" : { "xmin" : -18.18, "ymin" : 29.73, "xmax" : -15.46, "ymax" : 33.52},
       "3857" : { "xmin" : -1987937, "ymin" : 3483657, "xmax" : -1698033, "ymax" : 3938279},
       "32628" : { "xmin" : 189150, "ymin" : 3262646, "xmax" : 525471, "ymax" : 3697671}
+      }
    },
    # Canary islands
    "IC" : {
+      "crs" : {
       "4326" : { "xmin" : -18.599, "ymin" : 27.131, "xmax" : -12.82, "ymax" : 29.77},
       "4258" : { "xmin" : -18.599, "ymin" : 27.131, "xmax" : -12.82, "ymax" : 29.77},
       "3857" : { "xmin" : -2093768, "ymin" : 3148045, "xmax" : -1438191, "ymax" : 3480775},
       "32628" : { "xmin" : 79480, "ymin" : 2951914, "xmax" : 755779, "ymax" : 3306514}
+      }
     },
    # French Guiana
    "GF" : {
+      "crs" : {
       "4326" : { "xmin" : -55, "ymin" : 1.9, "xmax" : -51.5, "ymax" : 6},
       "4258" : { "xmin" : -55, "ymin" : 1.9, "xmax" : -51.5, "ymax" : 6},
       "3857" : { "xmin" : -6103000, "ymin" : 214000, "xmax" : -5722000, "ymax" : 660000},
       "32622" : { "xmin" : 90000, "ymin" : 224000, "xmax" : 436000, "ymax" : 647000}
+      }
    },
    # Guadeloupe TODO 
    # "GP" : {
+   #   "crs" : {
    #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "32620" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
+   #   }
    # },
    # Martinique TODO 
    # "MQ" : {
+   #   "crs" : {
    #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "32620" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
+   #   }
    # },
    # Caribbean islands TODO 
    # "CARIB" : {
+   #   "crs" : {
    #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "32620" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
+   #   }
    # },
    # Réunion TODO
    # "RE" : {
+   #   "crs" : {
    #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "32740" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
+   #   }
    # },
    # Mayotte TODO
    # "YT" : {
+   #   "crs" : {
    #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
    #    "32738" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
+   #   }
    # },
    # Malta
    "MT" : {
+      "crs" : {
       "4326" : { "xmin" : 14.1, "ymin" : 35.7, "xmax" : 14.6, "ymax" : 36.1},
       "4258" : { "xmin" : 14.1, "ymin" : 35.7, "xmax" : 14.6, "ymax" : 36.1},
       "3857" : { "xmin" : 1573000, "ymin" : 4270000, "xmax" : 1632000, "ymax" : 4320000},
       "3035" : { "xmin" : 4692000, "ymin" : 1420000, "xmax" : 4750000, "ymax" : 1466000}
+      }
    },
    # Liechtenstein
    "LI" : {
+      "crs" : {
       "4326" : { "xmin" : 9.4, "ymin" : 47, "xmax" : 9.7, "ymax" : 47.4},
       "4258" : { "xmin" : 9.4, "ymin" : 47, "xmax" : 9.7, "ymax" : 47.4},
       "3857" : { "xmin" : 1046000, "ymin" : 5945000, "xmax" : 1079000, "ymax" : 5992000},
       "3035" : { "xmin" : 4276797, "ymin" : 2655615, "xmax" : 4300880, "ymax" : 2686748}
+      }
    },
    # Iceland
    "IS" : {
+      "crs" : {
       "4326" : { "xmin" : -25, "ymin" : 62.6, "xmax" : -12, "ymax" : 67.7},
       "4258" : { "xmin" : -25, "ymin" : 62.6, "xmax" : -12, "ymax" : 67.7},
       "3857" : { "xmin" : -2800000, "ymin" : 9000000, "xmax" : -1360000, "ymax" : 1020000},
       "3035" : { "xmin" : 2717398, "ymin" : 4722894, "xmax" : 3301249, "ymax" : 5171386}
+      }
    }
 }
 
@@ -161,10 +187,10 @@ def filterRenameDecompose():
 def reprojectClipGeojson():
    for year in years:
       for geo in geos:
-         for crs in geos[geo]:
+         for crs in geos[geo]["crs"]:
             outpath = "tmp/"+year+"/"+geo+"/"+crs+"/"
             Path(outpath).mkdir(parents=True, exist_ok=True)
-            extends = geos[geo][crs]
+            extends = geos[geo]["crs"][crs]
 
             print(year + " " + geo + " " + crs + " - reproject graticule")
             ogr2ogr.main(["-overwrite","-f", "GPKG",
@@ -225,7 +251,7 @@ def reprojectClipGeojson():
 def topogeojson():
    for year in years:
       for geo in geos:
-         for crs in geos[geo]:
+         for crs in geos[geo]["crs"]:
             for scale in scales:
                for level in ["0", "1", "2", "3"]:
                   inpath = "tmp/"+year+"/"+geo+"/"+crs+"/"
@@ -293,8 +319,8 @@ def makePoints():
 
    for year in years:
       for geo in geos:
-         for crs in geos[geo]:
-            extends = geos[geo][crs]
+         for crs in geos[geo]["crs"]:
+            extends = geos[geo]["crs"][crs]
 
             outpath = "pub/" + version + "/" + year + "/" + ("" if geo=="EUR" else geo + "/") + crs + "/"
             Path(outpath).mkdir(parents=True, exist_ok=True)
