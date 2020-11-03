@@ -32,27 +32,27 @@ geos = {
       "3857" : { "xmin" : -2800000, "ymin" : 3884000, "xmax" : 5200000, "ymax" : 11690000},
       "3035" : { "xmin" : 2434560, "ymin" : 1340340, "xmax" : 7512390, "ymax" : 5664590}
    },
-   # Azores TODO
-   # "PT20" : {
-   #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "32626" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
-   # },
-   # Madeira TODO
-    # "PT30" : {
-   #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "32628" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
-   # },
+   # Azores
+   "PT20" : {
+      "4326" : { "xmin" : -32.67, "ymin" : 35.92, "xmax" : -23.89, "ymax" : 40.53},
+      "4258" : { "xmin" : -32.67, "ymin" : 35.92, "xmax" : -23.89, "ymax" : 40.53},
+      "3857" : { "xmin" : -3692767, "ymin" : 4238065, "xmax" : -2526564, "ymax" : 4972707},
+      "32626" : { "xmin" : 16784, "ymin" : 4002891, "xmax" : 788999, "ymax" : 4458221}
+   },
+   # Madeira
+    "PT30" : {
+      "4326" : { "xmin" : -18.18, "ymin" : 29.73, "xmax" : -15.46, "ymax" : 33.52},
+      "4258" : { "xmin" : -18.18, "ymin" : 29.73, "xmax" : -15.46, "ymax" : 33.52},
+      "3857" : { "xmin" : -1987937, "ymin" : 3483657, "xmax" : -1698033, "ymax" : 3938279},
+      "32628" : { "xmin" : 189150, "ymin" : 3262646, "xmax" : 525471, "ymax" : 3697671}
+   },
    # Canary islands
-   # "IC" : {
-   #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "32628" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
-   # },
+   "IC" : {
+      "4326" : { "xmin" : -18.599, "ymin" : 27.131, "xmax" : -12.82, "ymax" : 29.77},
+      "4258" : { "xmin" : -18.599, "ymin" : 27.131, "xmax" : -12.82, "ymax" : 29.77},
+      "3857" : { "xmin" : -2093768, "ymin" : 3148045, "xmax" : -1438191, "ymax" : 3480775},
+      "32628" : { "xmin" : 79480, "ymin" : 2951914, "xmax" : 755779, "ymax" : 3306514}
+    },
    # French Guiana
    "GF" : {
       "4326" : { "xmin" : -55, "ymin" : 1.9, "xmax" : -51.5, "ymax" : 6},
