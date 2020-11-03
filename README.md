@@ -124,6 +124,8 @@ These files are produced from the NUTS geodata provided on [Eurostat-GISCO websi
 
 ## About
 
+| | |
+|-|-|
 | *contributors* | [<img src="https://github.com/jgaffuri.png" height="40" />](https://github.com/jgaffuri) [<img src="https://github.com/JoeWDavies.png" height="40" />](https://github.com/JoeWDavies) |
 | *version* | 1 |
 | *status* | Since 2016 |
