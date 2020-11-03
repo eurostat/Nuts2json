@@ -70,15 +70,15 @@ geos = {
       "32622" : { "xmin" : 90000, "ymin" : 224000, "xmax" : 436000, "ymax" : 647000}
       }
    },
-   # Guadeloupe TODO 
-   # "GP" : {
-   #   "crs" : {
-   #    "4326" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "4258" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "3857" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : },
-   #    "32620" : { "xmin" : , "ymin" : , "xmax" : , "ymax" : }
-   #   }
-   # },
+   # Guadeloupe
+   "GP" : {
+     "crs" : {
+      "4326" : { "xmin" : -63.519, "ymin" : 15.391, "xmax" : -60.196, "ymax" : 18.515},
+      "4258" : { "xmin" : -63.519, "ymin" : 15.391, "xmax" : -60.196, "ymax" : 18.515},
+      "3857" : { "xmin" : -7101130, "ymin" : 1734899, "xmax" : -6747739, "ymax" : 2095527},
+      "32620" : { "xmin" : 413686, "ymin" : 1696392, "xmax" : 1109654, "ymax" : 2043231}
+     }
+   },
    # Martinique TODO 
    # "MQ" : {
    #   "crs" : {
