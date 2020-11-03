@@ -83,20 +83,20 @@ To add [map insets](http://wiki.gis.com/wiki/index.php/Inset_Map) showing overse
 
 The values supported for this additional **GEO** parameter are listed in the table below. For each of them, a specific projection is proposed, replacing the European LAEA projection when necessary.
 
-| **GEO** | Territory | Specific CRS (EPSG code) |
+| **GEO** | Territory | Specific projection |
 | ------------- | ------------- | ------------- |
-| `PT20` | Azores | `32626` ([UTM zone 26N](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-26n/)) |
-| `PT30` | Madeira | `32628` ([UTM zone 28N](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-28n/)) |
-| `IC` | Canary islands | `32628` ([UTM zone 28N](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-28n/)) |
-| `GF` | French Guiana | `32622` ([UTM zone 22N](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-22n/)) |
-| `GP` | Guadeloupe | `32620` ([UTM zone 20N](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-20n/)) |
-| `MQ` | Martinique | `32620` ([UTM zone 20N](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-20n/)) |
-| `CARIB` | Caribbean islands | `32620` ([UTM zone 20N](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-20n/)) |
-| `RE` | Réunion | `32740` ([UTM zone 40S](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-40s/)) |
-| `YT` | Mayotte | `32738` ([UTM zone 38S](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-38s/)) |
-| `MT` | Malta | `3035`  ([European LAEA projection](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) |
-| `LI` | Liechtenstein | `3035`  ([European LAEA projection](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) |
-| `IS` | Iceland | `3035`  ([European LAEA projection](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) |
+| `PT20` | Azores | `32626` - [UTM zone 26N](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-26n/) |
+| `PT30` | Madeira | `32628` - [UTM zone 28N](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-28n/) |
+| `IC` | Canary islands | `32628` - [UTM zone 28N](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-28n/) |
+| `GF` | French Guiana | `32622` - [UTM zone 22N](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-22n/) |
+| `GP` | Guadeloupe | `32620` - [UTM zone 20N](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-20n/) |
+| `MQ` | Martinique | `32620` - [UTM zone 20N](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-20n/) |
+| `CARIB` | Caribbean islands | `32620` - [UTM zone 20N](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-20n/) |
+| `RE` | Réunion | `32740` - [UTM zone 40S](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-40s/) |
+| `YT` | Mayotte | `32738` - [UTM zone 38S](https://spatialreference.org/ref/epsg/wgs-84-utm-zone-38s/) |
+| `MT` | Malta | `3035` - [European LAEA projection](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/) |
+| `LI` | Liechtenstein | `3035` - [European LAEA projection](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/) |
+| `IS` | Iceland | `3035` - [European LAEA projection](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/) |
 
 Need for another territory in this table? Feel free to [request it](https://github.com/eurostat/Nuts2json/issues/new) !
 
