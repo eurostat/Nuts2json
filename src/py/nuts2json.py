@@ -210,6 +210,7 @@ def filterRenameDecompose():
 
 # Perform coarse clipping by region, to improve reprojection process
 def coarseClipping():
+   margin = 5
    for year in nutsData["years"]:
       for geo in geos:
 
@@ -217,14 +218,20 @@ def coarseClipping():
 
          for type in ["RG", "BN"]:
             for scale in geos[geo]["scales"]:
-               # TODO cntr
-               #out: "tmp/" + year + "_" + geo + "_" + scale + "_CNTR_" + type + ".gpkg",
+
+               print(year + " " + geo + " " + scale + " CNTR " + type + " - coarse clipping")
+               ogr2ogr.main(["-overwrite","-f", "GPKG",
+                 "tmp/" + year + "_" + geo + "_" + scale + "_CNTR_" + type + ".gpkg",
+                 "tmp/" + year + "_" + scale + "_CNTR_" + type + ".gpkg",
+                 "-clipsrc", str(extends["xmin"]-margin), str(extends["ymin"]-margin), str(extends["xmax"]+margin), str(extends["ymax"]+margin)])
 
                for level in ["0", "1", "2", "3"]:
-                  #TODO nuts
-                  #out: "tmp/" + year + "_" + geo + "_" + scale + "_" + level + "_NUTS_" + type + ".gpkg"
-                  pass
 
+                  print(year + " " + geo + " " + scale + " NUTS " + type + " - coarse clipping")
+                  ogr2ogr.main(["-overwrite","-f", "GPKG",
+                    "tmp/" + year + "_" + geo + "_" + scale + "_" + level + "_NUTS_" + type + ".gpkg",
+                    "tmp/" + year + "_" + scale + "_NUTS_" + type + ".gpkg",
+                    "-clipsrc", str(extends["xmin"]-margin), str(extends["ymin"]-margin), str(extends["xmax"]+margin), str(extends["ymax"]+margin)])
 
 
 
@@ -257,7 +264,7 @@ def reprojectClipGeojson():
                   print(year + " " + geo + " " + crs + " " + scale + " " + type + " - reproject CNTR")
                   ogr2ogr.main(["-overwrite","-f", "GPKG",
                     outpath + scale + "_CNTR_" + type + ".gpkg",
-                    "tmp/" + year + "_" + scale + "_CNTR_" + type + ".gpkg",
+                    "tmp/" + year + "_" + geo + "_" + scale + "_CNTR_" + type + ".gpkg",
                     "-t_srs", "EPSG:"+crs, "-s_srs", "EPSG:4258"
                     ])
 
@@ -273,7 +280,7 @@ def reprojectClipGeojson():
                      print(year + " " + geo + " " + crs + " " + scale + " " + type + " " + level + " - reproject NUTS")
                      ogr2ogr.main(["-overwrite","-f", "GPKG",
                        outpath + scale + "_" + level + "_NUTS_" + type + ".gpkg",
-                       "tmp/" + year + "_" + scale + "_" + level + "_NUTS_" + type + ".gpkg",
+                       "tmp/" + year + "_" + geo + "_" + scale + "_" + level + "_NUTS_" + type + ".gpkg",
                        "-t_srs", "EPSG:"+crs, "-s_srs", "EPSG:4258"
                        ])
 
