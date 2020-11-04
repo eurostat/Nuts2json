@@ -9,7 +9,6 @@ import ogr2ogr, subprocess, json
 ################
 
 # TODO: quick check, possibly with observable ?
-# TODO: first clip, as data preparation, one per region
 # TODO: buffer(0) cleaning
 # TODO: more detailled data for map insets - scales should be more detailled for map insets: ["1M", "3M", "10M"]
 # TODO: use new clean input data
@@ -210,11 +209,11 @@ def filterRenameDecompose():
 
 # Perform coarse clipping by region, to improve reprojection process
 def coarseClipping():
-   margin = 5
    for year in nutsData["years"]:
       for geo in geos:
 
          extends = geos[geo]["crs"]["4326"]
+         marginDeg = 30 if(geo == "EUR") else 5
 
          for type in ["RG", "BN"]:
             for scale in geos[geo]["scales"]:
@@ -223,7 +222,7 @@ def coarseClipping():
                ogr2ogr.main(["-overwrite","-f", "GPKG",
                  "tmp/" + year + "_" + geo + "_" + scale + "_CNTR_" + type + ".gpkg",
                  "tmp/" + year + "_" + scale + "_CNTR_" + type + ".gpkg",
-                 "-clipsrc", str(extends["xmin"]-margin), str(extends["ymin"]-margin), str(extends["xmax"]+margin), str(extends["ymax"]+margin)])
+                 "-clipsrc", str(extends["xmin"]-marginDeg), str(extends["ymin"]-marginDeg), str(extends["xmax"]+marginDeg), str(extends["ymax"]+marginDeg)])
 
                for level in ["0", "1", "2", "3"]:
 
@@ -231,7 +230,7 @@ def coarseClipping():
                   ogr2ogr.main(["-overwrite","-f", "GPKG",
                     "tmp/" + year + "_" + geo + "_" + scale + "_" + level + "_NUTS_" + type + ".gpkg",
                     "tmp/" + year + "_" + scale + "_" + level + "_NUTS_" + type + ".gpkg",
-                    "-clipsrc", str(extends["xmin"]-margin), str(extends["ymin"]-margin), str(extends["xmax"]+margin), str(extends["ymax"]+margin)])
+                    "-clipsrc", str(extends["xmin"]-marginDeg), str(extends["ymin"]-marginDeg), str(extends["xmax"]+marginDeg), str(extends["ymax"]+marginDeg)])
 
 
 
