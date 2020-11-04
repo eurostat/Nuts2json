@@ -8,6 +8,13 @@ import ogr2ogr, subprocess, json
 # pts:       YEAR/GEO/PROJECTION/nutspt_<NUTS_LEVEL>.json
 ################
 
+# TODO: check, observable
+# TODO: first clip, as data preparation, one per region
+# TODO: buffer(0) cleaning
+# TODO: more detailled data for map insets - scales should be more detailled for map insets: ["1M", "3M", "10M"]
+# TODO: use new clean input data
+
+
 # The Nuts2json version number
 version = "v1"
 
@@ -21,8 +28,6 @@ nutsData = {
    },
    "scales" : ["10M", "20M", "60M"]
 }
-
-#TODO: more detailled data for map insets - scales should be more detailled for map insets: ["1M", "3M", "10M"]
 
 # Geographical territories for map insets, CRSs and extends
 geos = {
