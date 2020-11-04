@@ -230,7 +230,7 @@ def coarseClipping():
                   print(year + " " + geo + " " + scale + " NUTS " + type + " - coarse clipping")
                   ogr2ogr.main(["-overwrite","-f", "GPKG",
                     "tmp/" + year + "_" + geo + "_" + scale + "_" + level + "_NUTS_" + type + ".gpkg",
-                    "tmp/" + year + "_" + scale + "_NUTS_" + type + ".gpkg",
+                    "tmp/" + year + "_" + scale + "_" + level + "_NUTS_" + type + ".gpkg",
                     "-clipsrc", str(extends["xmin"]-margin), str(extends["ymin"]-margin), str(extends["xmax"]+margin), str(extends["ymax"]+margin)])
 
 
@@ -398,6 +398,7 @@ def makePoints():
 
 ######## Full process #########
 filterRenameDecompose()
+coarseClipping()
 reprojectClipGeojson()
 topogeojson()
 makePoints()
