@@ -8,7 +8,7 @@ import ogr2ogr, subprocess, json
 # pts:       YEAR/GEO/PROJECTION/nutspt_<NUTS_LEVEL>.json
 ################
 
-# TODO: check, observable
+# TODO: quick check, possibly with observable ?
 # TODO: first clip, as data preparation, one per region
 # TODO: buffer(0) cleaning
 # TODO: more detailled data for map insets - scales should be more detailled for map insets: ["1M", "3M", "10M"]
@@ -204,6 +204,26 @@ def filterRenameDecompose():
                  "tmp/" + year + "_" + scale + "_" + level + "_NUTS_BN.gpkg",
                  "src/resources/shp/" + year + "/NUTS_BN_" + scale + "_" + year + "_4326.shp",
                  "-sql", "SELECT NUTS_BN_ID as id,LEVL_CODE as lvl,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM NUTS_BN_" + scale + "_" + year + "_4326 WHERE LEVL_CODE <= " + level])
+
+
+
+
+# Perform coarse clipping by region, to improve reprojection process
+def coarseClipping():
+   for year in nutsData["years"]:
+      for geo in geos:
+
+         extends = geos[geo]["crs"]["4326"]
+
+         for type in ["RG", "BN"]:
+            for scale in geos[geo]["scales"]:
+               # TODO cntr
+               #out: "tmp/" + year + "_" + geo + "_" + scale + "_CNTR_" + type + ".gpkg",
+
+               for level in ["0", "1", "2", "3"]:
+                  #TODO nuts
+                  #out: "tmp/" + year + "_" + geo + "_" + scale + "_" + level + "_NUTS_" + type + ".gpkg"
+                  pass
 
 
 
