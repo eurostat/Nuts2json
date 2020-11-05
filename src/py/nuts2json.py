@@ -10,8 +10,8 @@ import ogr2ogr, subprocess, json
 
 # TODO: quick check, possibly with observable ?
 # TODO: buffer(0) cleaning
-# TODO: more detailled data for map insets - scales should be more detailled for map insets: ["1M", "3M", "10M"]
 # TODO: use new clean input data
+# TODO: more detailled data for map insets - scales should be more detailled for map insets: ["1M", "3M", "10M"]
 
 
 # The Nuts2json version number
