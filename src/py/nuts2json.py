@@ -9,9 +9,10 @@ import ogr2ogr, subprocess, json
 ################
 
 # TODO: quick check, possibly with observable ?
-# TODO: buffer(0) cleaning
-# TODO: use new clean input data
-# TODO: more detailled data for map insets - scales should be more detailled for map insets: ["1M", "3M", "10M"]
+# TODO: use new clean input data, new branch: GPKG. buffer 0. Add Kosovo ?
+# automated download - https://gisco-services.ec.europa.eu/distribution/v2/nuts/geojson/NUTS_BN_03M_2021_3857_LEVL_0.geojson
+# TODO: brasil, LI-AT issue: use buffer(0) cleaning after reprojection?
+# TODO: use more detailled data for map insets - scales should be more detailled for map insets: ["1M", "3M", "10M"]
 
 
 # The Nuts2json version number
