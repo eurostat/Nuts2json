@@ -1,5 +1,5 @@
 from pathlib import Path
-import ogr2ogr, subprocess, json
+import ogr2ogr, subprocess, json, urllib.request, zipfile
 
 ################
 # Target structure:
@@ -170,9 +170,38 @@ with open("pub/" + version + "/data.json", "w") as fp:
 
 
 
+
+# Download base data
 def download():
    print("Download")
    Path("download/").mkdir(parents=True, exist_ok=True)
+
+   baseURL = "http://gisco-services.ec.europa.eu/distribution/v2/"
+
+   for year in nutsData["years"]:
+      for scale in nutsData["scales"]:
+         print( year + " " + scale + " Download and unzip")
+
+         # NUTS
+         outfile = "download/" + year + "_" + scale + "_NUTS.zip"
+         if not Path(outfile).exists():
+            urllib.request.urlretrieve(baseURL + "nuts/download/ref-nuts-" + year + "-" + scale + ".geojson.zip", outfile)
+            # with zipfile.ZipFile(outfile, 'r') as zip_ref:
+            #    outfolder = "download/" + year + "_" + scale + "_NUTS/"
+            #    Path(outfolder).mkdir(parents=True, exist_ok=True)
+            #    zip_ref.extractall(outfolder)
+
+         # CNTR
+         outfile = "download/" + year + "_" + scale + "_CNTR.zip"
+         year_ = ("2020" if year=="2021" else year)
+         if not Path(outfile).exists():
+            urllib.request.urlretrieve(baseURL + "countries/download/ref-countries-" + year_ + "-" + scale + ".geojson.zip", outfile)
+            # with zipfile.ZipFile(outfile, 'r') as zip_ref:
+            #    outfolder = "download/" + year_ + "_" + scale + "_CNTR/"
+            #    Path(outfolder).mkdir(parents=True, exist_ok=True)
+            #    zip_ref.extractall(outfolder)
+
+
 
 
 # Prepare input data into tmp folder: filter, rename attributes, decompose by nuts level
@@ -403,11 +432,12 @@ def makePoints():
 
 
 ######## Full process #########
-filterRenameDecompose()
-coarseClipping()
-reprojectClipGeojson()
-topogeojson()
-makePoints()
+download()
+# filterRenameDecompose()
+# coarseClipping()
+# reprojectClipGeojson()
+# topogeojson()
+# makePoints()
 ##############################
 
 
