@@ -169,6 +169,12 @@ with open("pub/" + version + "/data.json", "w") as fp:
     json.dump(geos, fp, indent=3)
 
 
+
+def download():
+   print("Download")
+   Path("download/").mkdir(parents=True, exist_ok=True)
+
+
 # Prepare input data into tmp folder: filter, rename attributes, decompose by nuts level
 def filterRenameDecompose():
    Path("tmp/").mkdir(parents=True, exist_ok=True)
