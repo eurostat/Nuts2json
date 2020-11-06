@@ -249,7 +249,7 @@ def coarseClipping():
       for geo in geos:
 
          extends = geos[geo]["crs"]["4326"]
-         marginDeg = 30 if(geo == "EUR") else 5
+         marginDeg = 30.2 if(geo == "EUR") else 5
 
          for type in ["RG", "BN"]:
             for scale in geos[geo]["scales"]:
