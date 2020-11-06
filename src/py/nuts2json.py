@@ -8,7 +8,6 @@ import ogr2ogr, subprocess, json, urllib.request, zipfile
 # pts:       YEAR/GEO/PROJECTION/nutspt_<NUTS_LEVEL>.json
 ################
 
-# TODO: quick check, possibly with observable ?
 # TODO: use new clean input data, new branch: GPKG. buffer 0. Add Kosovo ?
 # automated download - https://gisco-services.ec.europa.eu/distribution/v2/nuts/geojson/NUTS_BN_03M_2021_3857_LEVL_0.geojson
 # TODO: brasil, LI-AT issue: use buffer(0) cleaning after reprojection?
@@ -171,7 +170,7 @@ with open("pub/" + version + "/data.json", "w") as fp:
 
 
 
-# Download base data
+# Download and unzip base data
 def download():
    print("Download")
    Path("download/").mkdir(parents=True, exist_ok=True)
@@ -186,20 +185,20 @@ def download():
          outfile = "download/" + year + "_" + scale + "_NUTS.zip"
          if not Path(outfile).exists():
             urllib.request.urlretrieve(baseURL + "nuts/download/ref-nuts-" + year + "-" + scale + ".geojson.zip", outfile)
-            # with zipfile.ZipFile(outfile, 'r') as zip_ref:
-            #    outfolder = "download/" + year + "_" + scale + "_NUTS/"
-            #    Path(outfolder).mkdir(parents=True, exist_ok=True)
-            #    zip_ref.extractall(outfolder)
+            with zipfile.ZipFile(outfile, 'r') as zip_ref:
+               outfolder = "download/" + year + "_" + scale + "_NUTS/"
+               Path(outfolder).mkdir(parents=True, exist_ok=True)
+               zip_ref.extractall(outfolder)
 
          # CNTR
-         outfile = "download/" + year + "_" + scale + "_CNTR.zip"
          year_ = ("2020" if year=="2021" else year)
+         outfile = "download/" + year_ + "_" + scale + "_CNTR.zip"
          if not Path(outfile).exists():
             urllib.request.urlretrieve(baseURL + "countries/download/ref-countries-" + year_ + "-" + scale + ".geojson.zip", outfile)
-            # with zipfile.ZipFile(outfile, 'r') as zip_ref:
-            #    outfolder = "download/" + year_ + "_" + scale + "_CNTR/"
-            #    Path(outfolder).mkdir(parents=True, exist_ok=True)
-            #    zip_ref.extractall(outfolder)
+            with zipfile.ZipFile(outfile, 'r') as zip_ref:
+               outfolder = "download/" + year_ + "_" + scale + "_CNTR/"
+               Path(outfolder).mkdir(parents=True, exist_ok=True)
+               zip_ref.extractall(outfolder)
 
 
 
