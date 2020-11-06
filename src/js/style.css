@@ -1,0 +1,33 @@
+.graticule {
+    fill: none;
+    stroke-width: 2px;
+    stroke: lightgray;
+}
+
+.cntrg {
+    fill: lightgray;
+}
+.cntrg:hover { 
+    fill: darkgray;
+}
+
+.nutsrg {
+    fill: #fdbf6f;
+}
+.nutsrg:hover { 
+    fill: #ff7f00;
+}
+
+.cntbn {
+    fill: none;
+    stroke-width: 1px;
+    stroke: white;
+}
+.nutsbn {
+    fill: none;
+    stroke-width: 1px;
+    stroke: #333;
+}
+.white { stroke: white; }
+.thin { stroke-width: 0.5px; }
+.coastal { stroke: #1f78b4; }
