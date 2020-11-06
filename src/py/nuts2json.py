@@ -8,8 +8,7 @@ import ogr2ogr, subprocess, json, urllib.request, zipfile
 # pts:       YEAR/GEO/PROJECTION/nutspt_<NUTS_LEVEL>.json
 ################
 
-# TODO: use new clean input data, new branch: GPKG. buffer 0. Add Kosovo ?
-# automated download - https://gisco-services.ec.europa.eu/distribution/v2/nuts/geojson/NUTS_BN_03M_2021_3857_LEVL_0.geojson
+# TODO: use new clean input data, new branch: GPKG. buffer 0. Add Kosovo - NO ?
 # TODO: brasil, LI-AT issue: use buffer(0) cleaning after reprojection?
 # TODO: use more detailled data for map insets - scales should be more detailled for map insets: ["1M", "3M", "10M"]
 
@@ -163,6 +162,7 @@ geos = {
 }
 
 
+
 print("save data")
 with open("pub/" + version + "/data.json", "w") as fp:
     json.dump(geos, fp, indent=3)
@@ -174,7 +174,6 @@ with open("pub/" + version + "/data.json", "w") as fp:
 def download():
    print("Download")
    Path("download/").mkdir(parents=True, exist_ok=True)
-
    baseURL = "http://gisco-services.ec.europa.eu/distribution/v2/"
 
    for year in nutsData["years"]:
