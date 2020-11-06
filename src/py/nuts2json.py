@@ -206,9 +206,6 @@ def download():
 def filterRenameDecompose():
    Path("tmp/").mkdir(parents=True, exist_ok=True)
 
-   print("Graticule")
-   ogr2ogr.main(["-overwrite","-f", "GPKG", "tmp/graticule.gpkg", "src/resources/shp/graticule.shp"])
-
    for year in nutsData["years"]:
        for scale in nutsData["scales"]:
 
@@ -280,7 +277,7 @@ def reprojectClipGeojson():
             print(year + " " + geo + " " + crs + " - reproject graticule")
             ogr2ogr.main(["-overwrite","-f", "GPKG",
               outpath + "graticule.gpkg",
-              "tmp/graticule.gpkg",
+              "src/resources/graticule.gpkg",
               "-t_srs", "EPSG:"+crs, "-s_srs", "EPSG:4258"
               ])
 
