@@ -427,12 +427,12 @@ def makePoints():
 
 
 ######## Full process #########
-download()
-# filterRenameDecompose()
-# coarseClipping()
-# reprojectClipGeojson()
-# topogeojson()
-# makePoints()
+#download()
+filterRenameDecompose()
+coarseClipping()
+reprojectClipGeojson()
+topogeojson()
+makePoints()
 ##############################
 
 
