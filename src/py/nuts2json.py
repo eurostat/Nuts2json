@@ -11,6 +11,7 @@ import ogr2ogr, subprocess, json, urllib.request, zipfile
 # TODO: use new clean input data, new branch: GPKG. buffer 0. Add Kosovo - NO ?
 # TODO: use more detailled data for map insets - scales should be more detailled for map insets: ["1M", "3M", "10M"]
 # TODO: brasil, LI-AT issue: use buffer(0) cleaning after reprojection?
+# TODO: test -makevalid
 
 
 # The Nuts2json version number
@@ -24,7 +25,7 @@ nutsData = {
       # "2016" : "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME'",
       "2021" : "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME'"
    },
-   "scales" : ["10M", "20M", "60M"]
+   "scales" : ["01M", "03M", "10M", "20M", "60M"]
 }
 
 # Geographical territories for map insets, CRSs and extends
@@ -47,7 +48,7 @@ geos = {
       "3857" : { "xmin" : -3692767, "ymin" : 4238065, "xmax" : -2526564, "ymax" : 4972707},
       "32626" : { "xmin" : 16784, "ymin" : 4002891, "xmax" : 788999, "ymax" : 4458221}
       },
-      "scales" : ["10M", "20M", "60M"]
+      "scales" : ["01M", "03M", "10M"]
    },
     "PT30" : {
       "name" : "Madeira",
@@ -57,7 +58,7 @@ geos = {
       "3857" : { "xmin" : -1987937, "ymin" : 3483657, "xmax" : -1698033, "ymax" : 3938279},
       "32628" : { "xmin" : 189150, "ymin" : 3262646, "xmax" : 525471, "ymax" : 3697671}
       },
-      "scales" : ["10M", "20M", "60M"]
+      "scales" : ["01M", "03M", "10M"]
    },
    "IC" : {
       "name" : "Canary islands",
@@ -67,7 +68,7 @@ geos = {
       "3857" : { "xmin" : -2093768, "ymin" : 3148045, "xmax" : -1438191, "ymax" : 3480775},
       "32628" : { "xmin" : 79480, "ymin" : 2951914, "xmax" : 755779, "ymax" : 3306514}
       },
-      "scales" : ["10M", "20M", "60M"]
+      "scales" : ["01M", "03M", "10M"]
     },
    "GF" : {
       "name" : "French Guiana",
@@ -77,7 +78,7 @@ geos = {
       "3857" : { "xmin" : -6103000, "ymin" : 214000, "xmax" : -5722000, "ymax" : 660000},
       "32622" : { "xmin" : 90000, "ymin" : 224000, "xmax" : 436000, "ymax" : 647000}
       },
-      "scales" : ["10M", "20M", "60M"]
+      "scales" : ["01M", "03M", "10M"]
    },
    "GP" : {
       "name" : "Guadeloupe",
@@ -87,7 +88,7 @@ geos = {
       "3857" : { "xmin" : -7101130, "ymin" : 1734899, "xmax" : -6747739, "ymax" : 2095527},
       "32620" : { "xmin" : 413686, "ymin" : 1696392, "xmax" : 1109654, "ymax" : 2043231}
      },
-      "scales" : ["10M", "20M", "60M"]
+     "scales" : ["01M", "03M", "10M"]
    },
    "MQ" : {
       "name" : "Martinique",
@@ -97,7 +98,7 @@ geos = {
       "3857" : { "xmin" : -6843610, "ymin" : 1596556, "xmax" : -6743775, "ymax" : 1692156},
       "32620" : { "xmin" : 658362, "ymin" : 1580492, "xmax" : 760525, "ymax" : 1660906}
      },
-      "scales" : ["10M", "20M", "60M"]
+     "scales" : ["01M", "03M", "10M"]
    },
    "CARIB" : {
       "name" : "Caribbean islands",
@@ -107,7 +108,7 @@ geos = {
       "3857" : { "xmin" : -7114435, "ymin" : 1438782, "xmax" : -6701775, "ymax" : 2080865},
       "32620" : { "xmin" : 390901, "ymin" : 1412066, "xmax" : 803644, "ymax" : 2038195}
      },
-     "scales" : ["10M", "20M", "60M"]
+     "scales" : ["01M", "03M", "10M"]
    },
    "RE" : {
       "name" : "Reunion",
@@ -117,7 +118,7 @@ geos = {
       "3857" : { "xmin" : 6118552, "ymin" : -2456745, "xmax" : 6240595, "ymax" : -2355898},
       "32740" : { "xmin" : 301152, "ymin" : 7625194, "xmax" : 397346, "ymax" : 7708036}
      },
-     "scales" : ["10M", "20M", "60M"]
+     "scales" : ["01M", "03M", "10M"]
    },
    "YT" : {
       "name" : "Mayotte",
@@ -127,7 +128,7 @@ geos = {
       "3857" : { "xmin" : 4990911, "ymin" : -1475429, "xmax" : 5056930, "ymax" : -1411884},
       "32738" : { "xmin" : 484128, "ymin" : 8548691, "xmax" : 546084, "ymax" : 8611393}
      },
-     "scales" : ["10M", "20M", "60M"]
+     "scales" : ["01M", "03M", "10M"]
    },
    "MT" : {
       "name" : "Malta",
@@ -137,7 +138,7 @@ geos = {
       "3857" : { "xmin" : 1573000, "ymin" : 4270000, "xmax" : 1632000, "ymax" : 4320000},
       "3035" : { "xmin" : 4692000, "ymin" : 1420000, "xmax" : 4750000, "ymax" : 1466000}
       },
-      "scales" : ["10M", "20M", "60M"]
+      "scales" : ["01M", "03M", "10M"]
    },
    "LI" : {
       "name" : "Liechtenstein",
@@ -147,7 +148,7 @@ geos = {
       "3857" : { "xmin" : 1046000, "ymin" : 5945000, "xmax" : 1079000, "ymax" : 5992000},
       "3035" : { "xmin" : 4276797, "ymin" : 2655615, "xmax" : 4300880, "ymax" : 2686748}
       },
-      "scales" : ["10M", "20M", "60M"]
+      "scales" : ["01M", "03M", "10M"]
    },
    "IS" : {
       "name" : "Iceland",
@@ -157,7 +158,7 @@ geos = {
       "3857" : { "xmin" : -2800000, "ymin" : 9000000, "xmax" : -1360000, "ymax" : 1020000},
       "3035" : { "xmin" : 2717398, "ymin" : 4722894, "xmax" : 3301249, "ymax" : 5171386}
       },
-      "scales" : ["10M", "20M", "60M"]
+      "scales" : ["01M", "03M", "10M"]
    }
 }
 
@@ -289,6 +290,7 @@ def reprojectClipGeojson():
               outpath + "graticule.geojson",
               outpath + "graticule.gpkg",
               "-clipsrc", str(extends["xmin"]), str(extends["ymin"]), str(extends["xmax"]), str(extends["ymax"])
+              #TODO use -clipdst
               ])
 
             for type in ["RG", "BN"]:
@@ -306,6 +308,7 @@ def reprojectClipGeojson():
                     outpath + scale + "_CNTR_" + type + ".geojson",
                     outpath + scale + "_CNTR_" + type + ".gpkg",
                     "-clipsrc", str(extends["xmin"]), str(extends["ymin"]), str(extends["xmax"]), str(extends["ymax"])
+                    #TODO use -clipdst
                     ])
 
                   for level in ["0", "1", "2", "3"]:
@@ -322,6 +325,7 @@ def reprojectClipGeojson():
                        outpath + scale + "_" + level + "_NUTS_" + type + ".geojson",
                        outpath + scale + "_" + level + "_NUTS_" + type + ".gpkg",
                        "-clipsrc", str(extends["xmin"]), str(extends["ymin"]), str(extends["xmax"]), str(extends["ymax"])
+                       #TODO use -clipdst
                        ])
 
 
@@ -383,15 +387,16 @@ def makePoints():
       print(year + " PTS join areas")
       ogr2ogr.main(["-overwrite","-f", "ESRI Shapefile",
         "tmp/pts/" + year + "/NUTS_LB.shp",
-        "download/"+year+"_"+scale+"_NUTS/NUTS_LB_" + year + "_4326.shp",
-        "-sql", "select LB.NUTS_ID as id, LB.LEVL_CODE as lvl, A.area as ar FROM NUTS_LB_" + year + "_4326 AS LB left join 'src/resources/shp/" + year + "/AREA.csv'.AREA AS A ON LB.NUTS_ID = A.nuts_id"
+        "download/"+year+"_"+scale+"_NUTS/NUTS_LB_" + year + "_4326.geojson",
+        #"-nln", "_LB_",
+        "-sql", "select LB.NUTS_ID as id, LB.LEVL_CODE as lvl, A.area as ar FROM NUTS_LB_" + year + "_4326 AS LB left join 'src/resources/nuts_areas/AREA_" + year + ".csv'.AREA_" + year + " AS A ON LB.NUTS_ID = A.nuts_id"
         ])
 
       print(year + " PTS join latn names")
       ogr2ogr.main(["-overwrite","-f", "GPKG",
         "tmp/pts/" + year + "/NUTS_LB.gpkg",
         "tmp/pts/" + year + "/NUTS_LB.shp",
-        "-sql", "select LB.id as id, LB.lvl as lvl, A.NAME_LATN as na, LB.ar as ar FROM NUTS_LB AS LB left join 'src/resources/shp/" + year + "/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on LB.id = A.NUTS_ID"
+        "-sql", "select LB.id as id, LB.lvl as lvl, A.NAME_LATN as na, LB.ar as ar FROM NUTS_LB AS LB left join 'download/"+year+"_"+scale+"_NUTS/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on LB.id = A.NUTS_ID"
         ])
 
       for level in ["0", "1", "2", "3"]:
@@ -431,7 +436,7 @@ def makePoints():
 
 
 ######## Full process #########
-#download()
+download()
 filterRenameDecompose()
 coarseClipping()
 reprojectClipGeojson()
