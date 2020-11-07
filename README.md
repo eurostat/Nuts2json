@@ -28,7 +28,7 @@ The parameters are:
 | ------------- | ------------- |-------------|
 | `YEAR` | `2021` `2016` `2013` `2010` | The NUTS version. |
 | `PROJECTION` | `3035` `3857` `4258` `4326` | The coordinate reference system EPSG code. Two projections are provided: European LAEA projection ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) and web mercator ([EPSG 3857](http://spatialreference.org/ref/sr-org/7483/)). For statistical maps, it is strongly adviced to use an equal-area projection such as `3035`. Geographic coordinates ETRS89 ([EPSG 4258](http://spatialreference.org/ref/epsg/4258/)) and WGS84 ([EPSG 4326](http://spatialreference.org/ref/epsg/4326/)) are also provided. |
-| `SCALE` | `60M` `20M` `10M` | The intended map scale factor. The larger the value, the stronger the simplification. For example, for a map width of 1000 pixels the scale 1:20M is the most suitable. |
+| `SCALE` | `60M` `20M` `10M` `03M` | The intended map scale factor. The larger the value, the stronger the simplification. For example, for a map width of 1000 pixels the scale 1:20M is the most suitable. |
 | `NUTS_LEVEL` | `0` `1` `2` `3` | The NUTS level to be displayed on the map, from national (NUTS_LEVEL=`0`) to local level (NUTS_LEVEL=`3`). |
 | `TYPE` | `nutsrg` `nutsbn` `cntrg` `cntbn` `gra` | For GeoJSON format, the feature type has to be specified. The available feature types are described below. For NUTS feature types (`nutsrg` and `nutsbn`), the `NUTS_LEVEL` to be displayed on the map has to be specified.  |
 

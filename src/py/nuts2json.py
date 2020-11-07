@@ -8,10 +8,12 @@ import ogr2ogr, subprocess, json, urllib.request, zipfile
 # pts:       YEAR/GEO/PROJECTION/nutspt_<NUTS_LEVEL>.json
 ################
 
-# TODO: use new clean input data, new branch: GPKG. buffer 0. Add Kosovo - NO ?
-# TODO: use more detailled data for map insets - scales should be more detailled for map insets: ["1M", "3M", "10M"]
+# TODO: check xk/rs
 # TODO: brasil, LI-AT issue: use buffer(0) cleaning after reprojection?
 # TODO: test -makevalid
+# TODO get areas ?
+# ----
+# TODO clean old shps
 
 
 # The Nuts2json version number
@@ -48,7 +50,7 @@ geos = {
       "3857" : { "xmin" : -3692767, "ymin" : 4238065, "xmax" : -2526564, "ymax" : 4972707},
       "32626" : { "xmin" : 16784, "ymin" : 4002891, "xmax" : 788999, "ymax" : 4458221}
       },
-      "scales" : ["01M", "03M", "10M", "20", "60"]
+      "scales" : ["01M", "03M", "10M", "20M", "60M"]
    },
     "PT30" : {
       "name" : "Madeira",
@@ -58,7 +60,7 @@ geos = {
       "3857" : { "xmin" : -1987937, "ymin" : 3483657, "xmax" : -1698033, "ymax" : 3938279},
       "32628" : { "xmin" : 189150, "ymin" : 3262646, "xmax" : 525471, "ymax" : 3697671}
       },
-      "scales" : ["01M", "03M", "10M", "20", "60"]
+      "scales" : ["01M", "03M", "10M", "20M", "60M"]
    },
    "IC" : {
       "name" : "Canary islands",
@@ -68,7 +70,7 @@ geos = {
       "3857" : { "xmin" : -2093768, "ymin" : 3148045, "xmax" : -1438191, "ymax" : 3480775},
       "32628" : { "xmin" : 79480, "ymin" : 2951914, "xmax" : 755779, "ymax" : 3306514}
       },
-      "scales" : ["01M", "03M", "10M", "20", "60"]
+      "scales" : ["01M", "03M", "10M", "20M", "60M"]
     },
    "GF" : {
       "name" : "French Guiana",
@@ -78,7 +80,7 @@ geos = {
       "3857" : { "xmin" : -6103000, "ymin" : 214000, "xmax" : -5722000, "ymax" : 660000},
       "32622" : { "xmin" : 90000, "ymin" : 224000, "xmax" : 436000, "ymax" : 647000}
       },
-      "scales" : ["01M", "03M", "10M", "20", "60"]
+      "scales" : ["01M", "03M", "10M", "20M", "60M"]
    },
    "GP" : {
       "name" : "Guadeloupe",
@@ -88,7 +90,7 @@ geos = {
       "3857" : { "xmin" : -7101130, "ymin" : 1734899, "xmax" : -6747739, "ymax" : 2095527},
       "32620" : { "xmin" : 413686, "ymin" : 1696392, "xmax" : 1109654, "ymax" : 2043231}
      },
-     "scales" : ["01M", "03M", "10M", "20", "60"]
+     "scales" : ["01M", "03M", "10M", "20M", "60M"]
    },
    "MQ" : {
       "name" : "Martinique",
@@ -98,7 +100,7 @@ geos = {
       "3857" : { "xmin" : -6843610, "ymin" : 1596556, "xmax" : -6743775, "ymax" : 1692156},
       "32620" : { "xmin" : 658362, "ymin" : 1580492, "xmax" : 760525, "ymax" : 1660906}
      },
-     "scales" : ["01M", "03M", "10M", "20", "60"]
+     "scales" : ["01M", "03M", "10M", "20M", "60M"]
    },
    "CARIB" : {
       "name" : "Caribbean islands",
@@ -108,7 +110,7 @@ geos = {
       "3857" : { "xmin" : -7114435, "ymin" : 1438782, "xmax" : -6701775, "ymax" : 2080865},
       "32620" : { "xmin" : 390901, "ymin" : 1412066, "xmax" : 803644, "ymax" : 2038195}
      },
-     "scales" : ["01M", "03M", "10M", "20", "60"]
+     "scales" : ["01M", "03M", "10M", "20M", "60M"]
    },
    "RE" : {
       "name" : "Reunion",
@@ -118,7 +120,7 @@ geos = {
       "3857" : { "xmin" : 6118552, "ymin" : -2456745, "xmax" : 6240595, "ymax" : -2355898},
       "32740" : { "xmin" : 301152, "ymin" : 7625194, "xmax" : 397346, "ymax" : 7708036}
      },
-     "scales" : ["01M", "03M", "10M", "20", "60"]
+     "scales" : ["01M", "03M", "10M", "20M", "60M"]
    },
    "YT" : {
       "name" : "Mayotte",
@@ -128,7 +130,7 @@ geos = {
       "3857" : { "xmin" : 4990911, "ymin" : -1475429, "xmax" : 5056930, "ymax" : -1411884},
       "32738" : { "xmin" : 484128, "ymin" : 8548691, "xmax" : 546084, "ymax" : 8611393}
      },
-     "scales" : ["01M", "03M", "10M", "20", "60"]
+     "scales" : ["01M", "03M", "10M", "20M", "60M"]
    },
    "MT" : {
       "name" : "Malta",
@@ -138,7 +140,7 @@ geos = {
       "3857" : { "xmin" : 1573000, "ymin" : 4270000, "xmax" : 1632000, "ymax" : 4320000},
       "3035" : { "xmin" : 4692000, "ymin" : 1420000, "xmax" : 4750000, "ymax" : 1466000}
       },
-      "scales" : ["01M", "03M", "10M", "20", "60"]
+      "scales" : ["01M", "03M", "10M", "20M", "60M"]
    },
    "LI" : {
       "name" : "Liechtenstein",
@@ -148,7 +150,7 @@ geos = {
       "3857" : { "xmin" : 1046000, "ymin" : 5945000, "xmax" : 1079000, "ymax" : 5992000},
       "3035" : { "xmin" : 4276797, "ymin" : 2655615, "xmax" : 4300880, "ymax" : 2686748}
       },
-      "scales" : ["01M", "03M", "10M", "20", "60"]
+      "scales" : ["01M", "03M", "10M", "20M", "60M"]
    },
    "IS" : {
       "name" : "Iceland",
@@ -158,7 +160,7 @@ geos = {
       "3857" : { "xmin" : -2800000, "ymin" : 9000000, "xmax" : -1360000, "ymax" : 1020000},
       "3035" : { "xmin" : 2717398, "ymin" : 4722894, "xmax" : 3301249, "ymax" : 5171386}
       },
-      "scales" : ["01M", "03M", "10M", "20", "60"]
+      "scales" : ["01M", "03M", "10M", "20M", "60M"]
    }
 }
 
@@ -446,26 +448,13 @@ makePoints()
 
 
 
-#run command
-#https://stackoverflow.com/questions/89228/how-to-call-an-external-command
-
-#import subprocess
-#subprocess.run(["ls", "-l"])
-
 #
 #https://gis.stackexchange.com/questions/39080/using-ogr2ogr-to-convert-gml-to-shapefile-in-python
 #import ogr2ogr
 #https://github.com/OSGeo/gdal/tree/master/gdal/swig/python
 #https://pcjericks.github.io/py-gdalogr-cookbook/
 #ogr2ogr.main(["","-f", "KML", "out.kml", "data/san_andres_y_providencia_administrative.shp"])
-
-#For TopoJSON format: /<YEAR>/<PROJECTION>/<SCALE>/<NUTS_LEVEL>.json
-#For GeoJSON format: /<YEAR>/<PROJECTION>/<SCALE>/<TYPE>[_<NUTS_LEVEL>].json
-#nutsrg nutsbn cntrg cntbn gra
-#PTs: /<YEAR>/<PROJECTION>/nutspt_<NUTS_LEVEL>.json
-
 #GDAL_DATA ="/usr/share/gdal/2.2"
-
 
 
 
