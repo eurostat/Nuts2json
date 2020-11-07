@@ -229,7 +229,7 @@ def filterRenameDecompose():
                ogr2ogr.main(["-overwrite","-f", "GPKG",
                  "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG.gpkg",
                  "download/"+year+"_"+scale+"_NUTS/NUTS_RG_"+scale+"_"+year+"_4326.geojson",
-                 "-sql", "SELECT N.NUTS_ID as id,A.NAME_LATN as na FROM NUTS_RG_" + scale + "_" + year + "_4326 as N left join 'src/resources/shp/" + year + "/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on N.NUTS_ID = A.NUTS_ID WHERE N.LEVL_CODE = " + level])
+                 "-sql", "SELECT N.NUTS_ID as id,A.NAME_LATN as na FROM NUTS_RG_" + scale + "_" + year + "_4326 as N left join 'download/"+year+"_"+scale+"_NUTS/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on N.NUTS_ID = A.NUTS_ID WHERE N.LEVL_CODE = " + level])
 
                print(year + " " + scale + " NUTS BN " + level + " - filter, rename attributes")
                ogr2ogr.main(["-overwrite","-f", "GPKG",
@@ -237,43 +237,6 @@ def filterRenameDecompose():
                  "download/"+year+"_"+scale+"_NUTS/NUTS_BN_"+scale+"_"+year+"_4326.geojson",
                  "-sql", "SELECT NUTS_BN_ID as id,LEVL_CODE as lvl,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM NUTS_BN_" + scale + "_" + year + "_4326 WHERE LEVL_CODE <= " + level])
 
-
-
-
-
-
-# Prepare input data into tmp folder: filter, rename attributes, decompose by nuts level
-def filterRenameDecomposeOld():
-   Path("tmp/").mkdir(parents=True, exist_ok=True)
-
-   for year in nutsData["years"]:
-       for scale in nutsData["scales"]:
-
-           print(year + " " + scale + " CNTR RG - filter, rename attributes")
-           ogr2ogr.main(["-overwrite","-f", "GPKG",
-              "tmp/" + year + "_" + scale + "_CNTR_RG.gpkg",
-              "src/resources/shp/" + year + "/CNTR_RG_" + scale + "_" + year + "_4326.shp",
-              "-sql", "SELECT CNTR_ID as id,NAME_ENGL as na FROM CNTR_RG_" + scale + "_" + year + "_4326 WHERE CNTR_ID NOT IN (" + nutsData["years"][year] + ")"])
-
-           print(year + " " + scale + " CNTR BN - filter, rename attributes")
-           ogr2ogr.main(["-overwrite","-f", "GPKG",
-              "tmp/" + year + "_" + scale + "_CNTR_BN.gpkg",
-              "src/resources/shp/" + year + "/CNTR_BN_" + scale + "_" + year + "_4326.shp",
-              "-sql", "SELECT CNTR_BN_ID as id,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM CNTR_BN_" + scale + "_" + year + "_4326 WHERE EU_FLAG='F' AND EFTA_FLAG='F'"])
-
-           for level in ["0", "1", "2", "3"]:
-
-               print(year + " " + scale + " NUTS RG " + level + " - filter, rename attributes")
-               ogr2ogr.main(["-overwrite","-f", "GPKG",
-                 "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG.gpkg",
-                 "src/resources/shp/" + year + "/NUTS_RG_" + scale + "_" + year + "_4326.shp",
-                 "-sql", "SELECT N.NUTS_ID as id,A.NAME_LATN as na FROM NUTS_RG_" + scale + "_" + year + "_4326 as N left join 'src/resources/shp/" + year + "/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on N.NUTS_ID = A.NUTS_ID WHERE N.LEVL_CODE = " + level])
-
-               print(year + " " + scale + " NUTS BN " + level + " - filter, rename attributes")
-               ogr2ogr.main(["-overwrite","-f", "GPKG",
-                 "tmp/" + year + "_" + scale + "_" + level + "_NUTS_BN.gpkg",
-                 "src/resources/shp/" + year + "/NUTS_BN_" + scale + "_" + year + "_4326.shp",
-                 "-sql", "SELECT NUTS_BN_ID as id,LEVL_CODE as lvl,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM NUTS_BN_" + scale + "_" + year + "_4326 WHERE LEVL_CODE <= " + level])
 
 
 
@@ -410,6 +373,7 @@ def topogeojson():
 
 # Produce point representations
 def makePoints():
+   scale = "10M" #TODO better choose that?
 
    # prepare
    for year in nutsData["years"]:
@@ -419,7 +383,7 @@ def makePoints():
       print(year + " PTS join areas")
       ogr2ogr.main(["-overwrite","-f", "ESRI Shapefile",
         "tmp/pts/" + year + "/NUTS_LB.shp",
-        "src/resources/shp/" + year + "/NUTS_LB_" + year + "_4326.shp",
+        "download/"+year+"_"+scale+"_NUTS/NUTS_LB_" + year + "_4326.shp",
         "-sql", "select LB.NUTS_ID as id, LB.LEVL_CODE as lvl, A.area as ar FROM NUTS_LB_" + year + "_4326 AS LB left join 'src/resources/shp/" + year + "/AREA.csv'.AREA AS A ON LB.NUTS_ID = A.nuts_id"
         ])
 
@@ -469,10 +433,10 @@ def makePoints():
 ######## Full process #########
 #download()
 filterRenameDecompose()
-# coarseClipping()
-# reprojectClipGeojson()
-# topogeojson()
-# makePoints()
+coarseClipping()
+reprojectClipGeojson()
+topogeojson()
+makePoints()
 ##############################
 
 
@@ -496,3 +460,41 @@ filterRenameDecompose()
 #PTs: /<YEAR>/<PROJECTION>/nutspt_<NUTS_LEVEL>.json
 
 #GDAL_DATA ="/usr/share/gdal/2.2"
+
+
+
+
+
+# Prepare input data into tmp folder: filter, rename attributes, decompose by nuts level
+#def filterRenameDecomposeOld():
+   # Path("tmp/").mkdir(parents=True, exist_ok=True)
+
+   # for year in nutsData["years"]:
+   #     for scale in nutsData["scales"]:
+
+   #         print(year + " " + scale + " CNTR RG - filter, rename attributes")
+   #         ogr2ogr.main(["-overwrite","-f", "GPKG",
+   #            "tmp/" + year + "_" + scale + "_CNTR_RG.gpkg",
+   #            "src/resources/shp/" + year + "/CNTR_RG_" + scale + "_" + year + "_4326.shp",
+   #            "-sql", "SELECT CNTR_ID as id,NAME_ENGL as na FROM CNTR_RG_" + scale + "_" + year + "_4326 WHERE CNTR_ID NOT IN (" + nutsData["years"][year] + ")"])
+
+   #         print(year + " " + scale + " CNTR BN - filter, rename attributes")
+   #         ogr2ogr.main(["-overwrite","-f", "GPKG",
+   #            "tmp/" + year + "_" + scale + "_CNTR_BN.gpkg",
+   #            "src/resources/shp/" + year + "/CNTR_BN_" + scale + "_" + year + "_4326.shp",
+   #            "-sql", "SELECT CNTR_BN_ID as id,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM CNTR_BN_" + scale + "_" + year + "_4326 WHERE EU_FLAG='F' AND EFTA_FLAG='F'"])
+
+   #         for level in ["0", "1", "2", "3"]:
+
+   #             print(year + " " + scale + " NUTS RG " + level + " - filter, rename attributes")
+   #             ogr2ogr.main(["-overwrite","-f", "GPKG",
+   #               "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG.gpkg",
+   #               "src/resources/shp/" + year + "/NUTS_RG_" + scale + "_" + year + "_4326.shp",
+   #               "-sql", "SELECT N.NUTS_ID as id,A.NAME_LATN as na FROM NUTS_RG_" + scale + "_" + year + "_4326 as N left join 'src/resources/shp/" + year + "/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on N.NUTS_ID = A.NUTS_ID WHERE N.LEVL_CODE = " + level])
+
+   #             print(year + " " + scale + " NUTS BN " + level + " - filter, rename attributes")
+   #             ogr2ogr.main(["-overwrite","-f", "GPKG",
+   #               "tmp/" + year + "_" + scale + "_" + level + "_NUTS_BN.gpkg",
+   #               "src/resources/shp/" + year + "/NUTS_BN_" + scale + "_" + year + "_4326.shp",
+   #               "-sql", "SELECT NUTS_BN_ID as id,LEVL_CODE as lvl,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM NUTS_BN_" + scale + "_" + year + "_4326 WHERE LEVL_CODE <= " + level])
+
