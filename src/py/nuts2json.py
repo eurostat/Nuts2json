@@ -9,8 +9,8 @@ import ogr2ogr, subprocess, json, urllib.request, zipfile
 ################
 
 # TODO: use new clean input data, new branch: GPKG. buffer 0. Add Kosovo - NO ?
-# TODO: brasil, LI-AT issue: use buffer(0) cleaning after reprojection?
 # TODO: use more detailled data for map insets - scales should be more detailled for map insets: ["1M", "3M", "10M"]
+# TODO: brasil, LI-AT issue: use buffer(0) cleaning after reprojection?
 
 
 # The Nuts2json version number
@@ -19,9 +19,9 @@ version = "v1"
 # NUTS year version and, for each year, the countrie shown as stat units
 nutsData = {
    "years" : {
-      "2010" : "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME','RS','AL'",
-      "2013" : "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME','RS','AL'",
-      "2016" : "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME'",
+      # "2010" : "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME','RS','AL'",
+      # "2013" : "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME','RS','AL'",
+      # "2016" : "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME'",
       "2021" : "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME'"
    },
    "scales" : ["10M", "20M", "60M"]
@@ -202,8 +202,48 @@ def download():
 
 
 
+
 # Prepare input data into tmp folder: filter, rename attributes, decompose by nuts level
 def filterRenameDecompose():
+   Path("tmp/").mkdir(parents=True, exist_ok=True)
+
+   for year in nutsData["years"]:
+       for scale in nutsData["scales"]:
+
+           year_ = ("2020" if year=="2021" else year)
+           print(year + " " + scale + " CNTR RG - filter, rename attributes")
+           ogr2ogr.main(["-overwrite","-f", "GPKG",
+              "tmp/" + year + "_" + scale + "_CNTR_RG.gpkg",
+              "download/"+year_+"_"+scale+"_CNTR/CNTR_RG_"+scale+"_"+year_+"_4326.geojson",
+              "-sql", "SELECT CNTR_ID as id,NAME_ENGL as na FROM CNTR_RG_" + scale + "_" + year_ + "_4326 WHERE CNTR_ID NOT IN (" + nutsData["years"][year] + ")"])
+
+           print(year + " " + scale + " CNTR BN - filter, rename attributes")
+           ogr2ogr.main(["-overwrite","-f", "GPKG",
+              "tmp/" + year + "_" + scale + "_CNTR_BN.gpkg",
+              "download/"+year_+"_"+scale+"_CNTR/CNTR_BN_"+scale+"_"+year_+"_4326.geojson",
+              "-sql", "SELECT CNTR_BN_ID as id,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM CNTR_BN_" + scale + "_" + year_ + "_4326 WHERE EU_FLAG='F' AND EFTA_FLAG='F'"])
+
+           for level in ["0", "1", "2", "3"]:
+
+               print(year + " " + scale + " NUTS RG " + level + " - filter, rename attributes")
+               ogr2ogr.main(["-overwrite","-f", "GPKG",
+                 "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG.gpkg",
+                 "download/"+year+"_"+scale+"_NUTS/NUTS_RG_"+scale+"_"+year+"_4326.geojson",
+                 "-sql", "SELECT N.NUTS_ID as id,A.NAME_LATN as na FROM NUTS_RG_" + scale + "_" + year + "_4326 as N left join 'src/resources/shp/" + year + "/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on N.NUTS_ID = A.NUTS_ID WHERE N.LEVL_CODE = " + level])
+
+               print(year + " " + scale + " NUTS BN " + level + " - filter, rename attributes")
+               ogr2ogr.main(["-overwrite","-f", "GPKG",
+                 "tmp/" + year + "_" + scale + "_" + level + "_NUTS_BN.gpkg",
+                 "download/"+year+"_"+scale+"_NUTS/NUTS_BN_"+scale+"_"+year+"_4326.geojson",
+                 "-sql", "SELECT NUTS_BN_ID as id,LEVL_CODE as lvl,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM NUTS_BN_" + scale + "_" + year + "_4326 WHERE LEVL_CODE <= " + level])
+
+
+
+
+
+
+# Prepare input data into tmp folder: filter, rename attributes, decompose by nuts level
+def filterRenameDecomposeOld():
    Path("tmp/").mkdir(parents=True, exist_ok=True)
 
    for year in nutsData["years"]:
@@ -429,10 +469,10 @@ def makePoints():
 ######## Full process #########
 #download()
 filterRenameDecompose()
-coarseClipping()
-reprojectClipGeojson()
-topogeojson()
-makePoints()
+# coarseClipping()
+# reprojectClipGeojson()
+# topogeojson()
+# makePoints()
 ##############################
 
 
