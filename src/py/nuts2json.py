@@ -8,7 +8,7 @@ import ogr2ogr, subprocess, json, urllib.request, zipfile
 # pts:       YEAR/GEO/PROJECTION/nutspt_<NUTS_LEVEL>.json
 ################
 
-# TODO: check xk/rs
+# TODO: viewer - check xk/rs
 # TODO: brasil, LI-AT issue: use buffer(0) cleaning after reprojection?
 # TODO: test -makevalid
 # TODO get areas ?
@@ -344,8 +344,8 @@ def reprojectClipGeojson():
 # See: https://github.com/topojson/topojson-simplify/blob/master/README.md#toposimplify
 # See: https://github.com/topojson/topojson-client/blob/master/README.md#topo2geo
 # See: https://stackoverflow.com/questions/89228/how-to-call-an-external-command
-def topogeojson():
-   print("topogeojson")
+def topoGeojson():
+   print("topoGeojson")
    for year in nutsData["years"]:
       for geo in geos:
          for crs in geos[geo]["crs"]:
@@ -384,8 +384,8 @@ def topogeojson():
 
 
 # Produce point representations
-def makePoints():
-   print("makePoints")
+def points():
+   print("points")
    scale = "10M" #TODO better choose that?
 
    # prepare
@@ -449,8 +449,8 @@ download()
 filterRenameDecompose()
 coarseClipping()
 reprojectClipGeojson()
-topogeojson()
-makePoints()
+topoGeojson()
+points()
 ##############################
 
 
