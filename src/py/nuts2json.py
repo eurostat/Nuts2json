@@ -15,6 +15,8 @@ import ogr2ogr, subprocess, json, urllib.request, zipfile
 # ----
 # TODO clean old shps
 
+# Set to True/False to show/hide debug messages
+debug = False
 
 # The Nuts2json version number
 version = "v1"
@@ -181,7 +183,7 @@ def download():
 
    for year in nutsData["years"]:
       for scale in nutsData["scales"]:
-         print( year + " " + scale + " Download and unzip")
+         if debug: print( year + " " + scale + " Download and unzip")
 
          # NUTS
          outfile = "download/" + year + "_" + scale + "_NUTS.zip"
@@ -208,19 +210,20 @@ def download():
 
 # Prepare input data into tmp folder: filter, rename attributes, decompose by nuts level
 def filterRenameDecompose():
+   print("filterRenameDecompose")
    Path("tmp/").mkdir(parents=True, exist_ok=True)
 
    for year in nutsData["years"]:
        for scale in nutsData["scales"]:
 
            year_ = ("2020" if year=="2021" else year)
-           print(year + " " + scale + " CNTR RG - filter, rename attributes")
+           if debug: print(year + " " + scale + " CNTR RG - filter, rename attributes")
            ogr2ogr.main(["-overwrite","-f", "GPKG",
               "tmp/" + year + "_" + scale + "_CNTR_RG.gpkg",
               "download/"+year_+"_"+scale+"_CNTR/CNTR_RG_"+scale+"_"+year_+"_4326.geojson",
               "-sql", "SELECT CNTR_ID as id,NAME_ENGL as na FROM CNTR_RG_" + scale + "_" + year_ + "_4326 WHERE CNTR_ID NOT IN (" + nutsData["years"][year] + ")"])
 
-           print(year + " " + scale + " CNTR BN - filter, rename attributes")
+           if debug: print(year + " " + scale + " CNTR BN - filter, rename attributes")
            ogr2ogr.main(["-overwrite","-f", "GPKG",
               "tmp/" + year + "_" + scale + "_CNTR_BN.gpkg",
               "download/"+year_+"_"+scale+"_CNTR/CNTR_BN_"+scale+"_"+year_+"_4326.geojson",
@@ -228,13 +231,13 @@ def filterRenameDecompose():
 
            for level in ["0", "1", "2", "3"]:
 
-               print(year + " " + scale + " NUTS RG " + level + " - filter, rename attributes")
+               if debug: print(year + " " + scale + " NUTS RG " + level + " - filter, rename attributes")
                ogr2ogr.main(["-overwrite","-f", "GPKG",
                  "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG.gpkg",
                  "download/"+year+"_"+scale+"_NUTS/NUTS_RG_"+scale+"_"+year+"_4326.geojson",
                  "-sql", "SELECT N.NUTS_ID as id,A.NAME_LATN as na FROM NUTS_RG_" + scale + "_" + year + "_4326 as N left join 'download/"+year+"_"+scale+"_NUTS/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on N.NUTS_ID = A.NUTS_ID WHERE N.LEVL_CODE = " + level])
 
-               print(year + " " + scale + " NUTS BN " + level + " - filter, rename attributes")
+               if debug: print(year + " " + scale + " NUTS BN " + level + " - filter, rename attributes")
                ogr2ogr.main(["-overwrite","-f", "GPKG",
                  "tmp/" + year + "_" + scale + "_" + level + "_NUTS_BN.gpkg",
                  "download/"+year+"_"+scale+"_NUTS/NUTS_BN_"+scale+"_"+year+"_4326.geojson",
@@ -246,6 +249,7 @@ def filterRenameDecompose():
 
 # Perform coarse clipping by region, to improve reprojection process
 def coarseClipping():
+   print("coarseClipping")
    for year in nutsData["years"]:
       for geo in geos:
 
@@ -255,7 +259,7 @@ def coarseClipping():
          for type in ["RG", "BN"]:
             for scale in geos[geo]["scales"]:
 
-               print(year + " " + geo + " " + scale + " CNTR " + type + " - coarse clipping")
+               if debug: print(year + " " + geo + " " + scale + " CNTR " + type + " - coarse clipping")
                ogr2ogr.main(["-overwrite","-f", "GPKG",
                  "tmp/" + year + "_" + geo + "_" + scale + "_CNTR_" + type + ".gpkg",
                  "tmp/" + year + "_" + scale + "_CNTR_" + type + ".gpkg",
@@ -263,7 +267,7 @@ def coarseClipping():
 
                for level in ["0", "1", "2", "3"]:
 
-                  print(year + " " + geo + " " + scale + " NUTS " + type + " - coarse clipping")
+                  if debug: print(year + " " + geo + " " + scale + " NUTS " + type + " - coarse clipping")
                   ogr2ogr.main(["-overwrite","-f", "GPKG",
                     "tmp/" + year + "_" + geo + "_" + scale + "_" + level + "_NUTS_" + type + ".gpkg",
                     "tmp/" + year + "_" + scale + "_" + level + "_NUTS_" + type + ".gpkg",
@@ -273,6 +277,7 @@ def coarseClipping():
 
 # Clip, reproject and convert as geojson
 def reprojectClipGeojson():
+   print("reprojectClipGeojson")
    for year in nutsData["years"]:
       for geo in geos:
          for crs in geos[geo]["crs"]:
@@ -280,14 +285,14 @@ def reprojectClipGeojson():
             Path(outpath).mkdir(parents=True, exist_ok=True)
             extends = geos[geo]["crs"][crs]
 
-            print(year + " " + geo + " " + crs + " - reproject graticule")
+            if debug: print(year + " " + geo + " " + crs + " - reproject graticule")
             ogr2ogr.main(["-overwrite","-f", "GPKG",
               outpath + "graticule.gpkg",
               "src/resources/graticule.gpkg",
               "-t_srs", "EPSG:"+crs, "-s_srs", "EPSG:4258"
               ])
 
-            print(year + " " + geo + " " + crs + " - clip + geojson graticule")
+            if debug: print(year + " " + geo + " " + crs + " - clip + geojson graticule")
             ogr2ogr.main(["-overwrite","-f", "GeoJSON",
               outpath + "graticule.geojson",
               outpath + "graticule.gpkg",
@@ -298,14 +303,14 @@ def reprojectClipGeojson():
             for type in ["RG", "BN"]:
                for scale in geos[geo]["scales"]:
 
-                  print(year + " " + geo + " " + crs + " " + scale + " " + type + " - reproject CNTR")
+                  if debug: print(year + " " + geo + " " + crs + " " + scale + " " + type + " - reproject CNTR")
                   ogr2ogr.main(["-overwrite","-f", "GPKG",
                     outpath + scale + "_CNTR_" + type + ".gpkg",
                     "tmp/" + year + "_" + geo + "_" + scale + "_CNTR_" + type + ".gpkg",
                     "-t_srs", "EPSG:"+crs, "-s_srs", "EPSG:4258"
                     ])
 
-                  print(year + " " + geo + " " + crs + " " + scale + " " + type + " - clip + geojson CNTR")
+                  if debug: print(year + " " + geo + " " + crs + " " + scale + " " + type + " - clip + geojson CNTR")
                   ogr2ogr.main(["-overwrite","-f", "GeoJSON",
                     outpath + scale + "_CNTR_" + type + ".geojson",
                     outpath + scale + "_CNTR_" + type + ".gpkg",
@@ -315,14 +320,14 @@ def reprojectClipGeojson():
 
                   for level in ["0", "1", "2", "3"]:
 
-                     print(year + " " + geo + " " + crs + " " + scale + " " + type + " " + level + " - reproject NUTS")
+                     if debug: print(year + " " + geo + " " + crs + " " + scale + " " + type + " " + level + " - reproject NUTS")
                      ogr2ogr.main(["-overwrite","-f", "GPKG",
                        outpath + scale + "_" + level + "_NUTS_" + type + ".gpkg",
                        "tmp/" + year + "_" + geo + "_" + scale + "_" + level + "_NUTS_" + type + ".gpkg",
                        "-t_srs", "EPSG:"+crs, "-s_srs", "EPSG:4258"
                        ])
 
-                     print(year + " " + geo + " " + crs + " " + scale + " " + type + " " + level + " - clip + geojson NUTS")
+                     if debug: print(year + " " + geo + " " + crs + " " + scale + " " + type + " " + level + " - clip + geojson NUTS")
                      ogr2ogr.main(["-overwrite","-f", "GeoJSON",
                        outpath + scale + "_" + level + "_NUTS_" + type + ".geojson",
                        outpath + scale + "_" + level + "_NUTS_" + type + ".gpkg",
@@ -340,6 +345,7 @@ def reprojectClipGeojson():
 # See: https://github.com/topojson/topojson-client/blob/master/README.md#topo2geo
 # See: https://stackoverflow.com/questions/89228/how-to-call-an-external-command
 def topogeojson():
+   print("topogeojson")
    for year in nutsData["years"]:
       for geo in geos:
          for crs in geos[geo]["crs"]:
@@ -351,7 +357,7 @@ def topogeojson():
 
                   # make topojson base files, one per nuts level
                   # quantization: q small means strong 'simplification'
-                  print(year + " " + geo + " " + crs + " " + scale + " " + level + " - make topojson")
+                  if debug: print(year + " " + geo + " " + crs + " " + scale + " " + level + " - make topojson")
                   subprocess.run(["geo2topo", "-q", "20000",
                     "nutsrg=" + inpath + scale + "_" + level + "_NUTS_RG.geojson",
                     "nutsbn=" + inpath + scale + "_" + level + "_NUTS_BN.geojson",
@@ -360,12 +366,12 @@ def topogeojson():
                     "gra=" + inpath + "graticule.geojson",
                     "-o", inpath + level + ".json"])
 
-                  print(year + " " + geo + " " + crs + " " + scale + " " + level + " - simplify topojson")
+                  if debug: print(year + " " + geo + " " + crs + " " + scale + " " + level + " - simplify topojson")
                   subprocess.run(["toposimplify", "-f", "-P", "0.99", "-o",
                     outpath + level + ".json",
                     inpath + level + ".json"])
 
-                  print(year + " " + geo + " " + crs + " " + scale + " " + level + " - topojson to geojson")
+                  if debug: print(year + " " + geo + " " + crs + " " + scale + " " + level + " - topojson to geojson")
                   subprocess.run(["topo2geo",
                     "nutsrg=" + outpath + "nutsrg_" + level + ".json",
                     "nutsbn=" + outpath + "nutsbn_" + level + ".json",
@@ -379,6 +385,7 @@ def topogeojson():
 
 # Produce point representations
 def makePoints():
+   print("makePoints")
    scale = "10M" #TODO better choose that?
 
    # prepare
@@ -386,7 +393,7 @@ def makePoints():
 
       Path("tmp/pts/" + year + "/").mkdir(parents=True, exist_ok=True)
 
-      print(year + " PTS join areas")
+      if debug: print(year + " PTS join areas")
       ogr2ogr.main(["-overwrite","-f", "ESRI Shapefile",
         "tmp/pts/" + year + "/NUTS_LB.shp",
         "download/"+year+"_"+scale+"_NUTS/NUTS_LB_" + year + "_4326.geojson",
@@ -394,7 +401,7 @@ def makePoints():
         "-sql", "select LB.NUTS_ID as id, LB.LEVL_CODE as lvl, A.area as ar FROM NUTS_LB_" + year + "_4326 AS LB left join 'src/resources/nuts_areas/AREA_" + year + ".csv'.AREA_" + year + " AS A ON LB.NUTS_ID = A.nuts_id"
         ])
 
-      print(year + " PTS join latn names")
+      if debug: print(year + " PTS join latn names")
       ogr2ogr.main(["-overwrite","-f", "GPKG",
         "tmp/pts/" + year + "/NUTS_LB.gpkg",
         "tmp/pts/" + year + "/NUTS_LB.shp",
@@ -403,7 +410,7 @@ def makePoints():
 
       for level in ["0", "1", "2", "3"]:
 
-         print(year + " " + level + " - PTS decompose by NUTS level")
+         if debug: print(year + " " + level + " - PTS decompose by NUTS level")
          ogr2ogr.main(["-overwrite","-f", "GPKG",
            "tmp/pts/" + year + "/NUTS_LB_" + level + ".gpkg",
            "tmp/pts/" + year + "/NUTS_LB.gpkg",
@@ -420,14 +427,14 @@ def makePoints():
 
             for level in ["0", "1", "2", "3"]:
 
-               print(year + " " + geo + " " + crs + " " + level + " - reproject PTS")
+               if debug: print(year + " " + geo + " " + crs + " " + level + " - reproject PTS")
                ogr2ogr.main(["-overwrite","-f", "GPKG",
                  "tmp/pts/" + year + "/" + geo + "_" + crs + "NUTS_LB_" + level + ".gpkg",
                  "tmp/pts/" + year + "/NUTS_LB_" + level + ".gpkg",
                  "-t_srs", "EPSG:"+crs, "-s_srs", "EPSG:4258"
                  ])
 
-               print(year + " " + geo + " " + crs + " " + level + " - clip + geojson PTS")
+               if debug: print(year + " " + geo + " " + crs + " " + level + " - clip + geojson PTS")
                ogr2ogr.main(["-overwrite","-f", "GeoJSON",
                  outpath + "nutspt_" + level + ".json",
                  "tmp/pts/" + year + "/" + geo + "_" + crs + "NUTS_LB_" + level + ".gpkg",
