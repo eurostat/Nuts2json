@@ -8,6 +8,7 @@ import ogr2ogr, subprocess, json, urllib.request, zipfile
 # pts:       YEAR/GEO/PROJECTION/nutspt_<NUTS_LEVEL>.json
 ################
 
+# TODO remove -f
 # TODO: test -makevalid
 # TODO: viewer - check xk/rs
 # TODO: brasil, LI-AT issue: use buffer(0) cleaning after reprojection?
@@ -285,55 +286,35 @@ def reprojectClipGeojson():
             Path(outpath).mkdir(parents=True, exist_ok=True)
             extends = geos[geo]["crs"][crs]
 
-            if debug: print(year + " " + geo + " " + crs + " - reproject graticule")
-            ogr2ogr.main(["-overwrite","-f", "GPKG",
-              outpath + "graticule.gpkg",
-              "src/resources/graticule.gpkg",
-              "-t_srs", "EPSG:"+crs, "-s_srs", "EPSG:4258"
-              ])
-
-            if debug: print(year + " " + geo + " " + crs + " - clip + geojson graticule")
-            ogr2ogr.main(["-overwrite","-f", "GeoJSON",
+            if debug: print(year + " " + geo + " " + crs + " - reproject + clip + geojson graticule")
+            ogr2ogr.main(["-overwrite",
               outpath + "graticule.geojson",
-              outpath + "graticule.gpkg",
-              "-clipsrc", str(extends["xmin"]), str(extends["ymin"]), str(extends["xmax"]), str(extends["ymax"])
-              #TODO use -clipdst
+              "src/resources/graticule.gpkg",
+              "-t_srs", "EPSG:"+crs, "-s_srs", "EPSG:4258",
+              "-clipdst", str(extends["xmin"]), str(extends["ymin"]), str(extends["xmax"]), str(extends["ymax"])
               ])
 
             for type in ["RG", "BN"]:
                for scale in geos[geo]["scales"]:
 
-                  if debug: print(year + " " + geo + " " + crs + " " + scale + " " + type + " - reproject CNTR")
-                  ogr2ogr.main(["-overwrite","-f", "GPKG",
-                    outpath + scale + "_CNTR_" + type + ".gpkg",
-                    "tmp/" + year + "_" + geo + "_" + scale + "_CNTR_" + type + ".gpkg",
-                    "-t_srs", "EPSG:"+crs, "-s_srs", "EPSG:4258"
-                    ])
-
-                  if debug: print(year + " " + geo + " " + crs + " " + scale + " " + type + " - clip + geojson CNTR")
-                  ogr2ogr.main(["-overwrite","-f", "GeoJSON",
+                  if debug: print(year + " " + geo + " " + crs + " " + scale + " " + type + " - reproject + clip + geojson CNTR")
+                  ogr2ogr.main(["-overwrite",
                     outpath + scale + "_CNTR_" + type + ".geojson",
-                    outpath + scale + "_CNTR_" + type + ".gpkg",
-                    "-clipsrc", str(extends["xmin"]), str(extends["ymin"]), str(extends["xmax"]), str(extends["ymax"])
-                    #TODO use -clipdst
+                    "tmp/" + year + "_" + geo + "_" + scale + "_CNTR_" + type + ".gpkg",
+                    "-t_srs", "EPSG:"+crs, "-s_srs", "EPSG:4258",
+                    "-clipdst", str(extends["xmin"]), str(extends["ymin"]), str(extends["xmax"]), str(extends["ymax"])
                     ])
 
                   for level in ["0", "1", "2", "3"]:
 
-                     if debug: print(year + " " + geo + " " + crs + " " + scale + " " + type + " " + level + " - reproject NUTS")
-                     ogr2ogr.main(["-overwrite","-f", "GPKG",
-                       outpath + scale + "_" + level + "_NUTS_" + type + ".gpkg",
+                     if debug: print(year + " " + geo + " " + crs + " " + scale + " " + type + " " + level + " - reproject + clip + geojson NUTS")
+                     ogr2ogr.main(["-overwrite",
+                       outpath + scale + "_" + level + "_NUTS_" + type + ".geojson",
                        "tmp/" + year + "_" + geo + "_" + scale + "_" + level + "_NUTS_" + type + ".gpkg",
-                       "-t_srs", "EPSG:"+crs, "-s_srs", "EPSG:4258"
+                       "-t_srs", "EPSG:"+crs, "-s_srs", "EPSG:4258",
+                       "-clipdst", str(extends["xmin"]), str(extends["ymin"]), str(extends["xmax"]), str(extends["ymax"])
                        ])
 
-                     if debug: print(year + " " + geo + " " + crs + " " + scale + " " + type + " " + level + " - clip + geojson NUTS")
-                     ogr2ogr.main(["-overwrite","-f", "GeoJSON",
-                       outpath + scale + "_" + level + "_NUTS_" + type + ".geojson",
-                       outpath + scale + "_" + level + "_NUTS_" + type + ".gpkg",
-                       "-clipsrc", str(extends["xmin"]), str(extends["ymin"]), str(extends["xmax"]), str(extends["ymax"])
-                       #TODO use -clipdst
-                       ])
 
 
 
