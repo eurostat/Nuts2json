@@ -8,9 +8,9 @@ import ogr2ogr, subprocess, json, urllib.request, zipfile
 # pts:       YEAR/GEO/PROJECTION/nutspt_<NUTS_LEVEL>.json
 ################
 
+# TODO: test -makevalid
 # TODO: viewer - check xk/rs
 # TODO: brasil, LI-AT issue: use buffer(0) cleaning after reprojection?
-# TODO: test -makevalid
 # TODO get areas ?
 # ----
 # TODO clean old shps
