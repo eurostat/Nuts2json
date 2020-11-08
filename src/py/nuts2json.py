@@ -8,12 +8,11 @@ import ogr2ogr, subprocess, json, urllib.request, zipfile
 # pts:       YEAR/GEO/PROJECTION/nutspt_<NUTS_LEVEL>.json
 ################
 
-# TODO: test -makevalid
+# TODO clean old shps
 # TODO: viewer - check xk/rs
+# TODO: test -makevalid
 # TODO: brasil, LI-AT issue: use buffer(0) cleaning after reprojection?
 # TODO get areas ?
-# ----
-# TODO clean old shps
 # TODO remove -f ?
 
 # Set to True/False to show/hide debug messages
@@ -187,6 +186,10 @@ def download():
       if debug: print( year + " AT Download and unzip")
       outfile = "download/NUTS_AT_"+year+".csv"
       if not Path(outfile).exists(): urllib.request.urlretrieve(baseURL + "nuts/csv/NUTS_AT_"+year+".csv", outfile)
+
+      # NUTS LB
+      outfile = "download/NUTS_LB_"+year+"_4326.geojson"
+      if not Path(outfile).exists(): urllib.request.urlretrieve(baseURL + "nuts/geojson/NUTS_LB_"+year+"_4326.geojson", outfile)
 
       for scale in nutsData["scales"]:
          if debug: print( year + " " + scale + " Download and unzip")
@@ -397,7 +400,7 @@ def points():
       if debug: print(year + " PTS join areas")
       ogr2ogr.main(["-overwrite","-f", "ESRI Shapefile",
         "tmp/pts/" + year + "/NUTS_LB.shp",
-        "download/"+year+"_"+scale+"_NUTS/NUTS_LB_" + year + "_4326.geojson",
+        "download/NUTS_LB_" + year + "_4326.geojson",
         #"-nln", "_LB_",
         "-sql", "select LB.NUTS_ID as id, LB.LEVL_CODE as lvl, A.area as ar FROM NUTS_LB_" + year + "_4326 AS LB left join 'src/resources/nuts_areas/AREA_" + year + ".csv'.AREA_" + year + " AS A ON LB.NUTS_ID = A.nuts_id"
         ])
