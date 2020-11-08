@@ -17,7 +17,7 @@ import ogr2ogr, subprocess, json, urllib.request, zipfile
 # TODO remove -f ?
 
 # Set to True/False to show/hide debug messages
-debug = False
+debug = True
 
 # The Nuts2json version number
 version = "v1"
@@ -183,27 +183,43 @@ def download():
    baseURL = "http://gisco-services.ec.europa.eu/distribution/v2/"
 
    for year in nutsData["years"]:
+
+      if debug: print( year + " AT Download and unzip")
+      outfile = "download/NUTS_AT_"+year+".csv"
+      if not Path(outfile).exists(): urllib.request.urlretrieve(baseURL + "nuts/csv/NUTS_AT_"+year+".csv", outfile)
+
       for scale in nutsData["scales"]:
          if debug: print( year + " " + scale + " Download and unzip")
 
+         for type in ["RG", "BN"]:
+
+            # NUTS
+            outfile = "download/NUTS_"+type+"_"+scale+"_"+year+"_4326.geojson"
+            if not Path(outfile).exists(): urllib.request.urlretrieve(baseURL + "nuts/geojson/NUTS_"+type+"_"+scale+"_"+year+"_4326.geojson", outfile)
+
+            # CNTR
+            outfile = "download/CNTR_"+type+"_"+scale+"_"+year+"_4326.geojson"
+            year_ = ("2020" if year=="2021" else year)
+            if not Path(outfile).exists(): urllib.request.urlretrieve(baseURL + "countries/geojson/CNTR_"+type+"_"+scale+"_"+year_+"_4326.geojson", outfile)
+
          # NUTS
-         outfile = "download/" + year + "_" + scale + "_NUTS.zip"
-         if not Path(outfile).exists():
-            urllib.request.urlretrieve(baseURL + "nuts/download/ref-nuts-" + year + "-" + scale + ".geojson.zip", outfile)
-            with zipfile.ZipFile(outfile, 'r') as zip_ref:
-               outfolder = "download/" + year + "_" + scale + "_NUTS/"
-               Path(outfolder).mkdir(parents=True, exist_ok=True)
-               zip_ref.extractall(outfolder)
+         # outfile = "download/" + year + "_" + scale + "_NUTS.zip"
+         # if not Path(outfile).exists():
+         #    urllib.request.urlretrieve(baseURL + "nuts/download/ref-nuts-" + year + "-" + scale + ".geojson.zip", outfile)
+         #    with zipfile.ZipFile(outfile, 'r') as zip_ref:
+         #       outfolder = "download/" + year + "_" + scale + "_NUTS/"
+         #       Path(outfolder).mkdir(parents=True, exist_ok=True)
+         #       zip_ref.extractall(outfolder)
 
          # CNTR
-         year_ = ("2020" if year=="2021" else year)
-         outfile = "download/" + year_ + "_" + scale + "_CNTR.zip"
-         if not Path(outfile).exists():
-            urllib.request.urlretrieve(baseURL + "countries/download/ref-countries-" + year_ + "-" + scale + ".geojson.zip", outfile)
-            with zipfile.ZipFile(outfile, 'r') as zip_ref:
-               outfolder = "download/" + year_ + "_" + scale + "_CNTR/"
-               Path(outfolder).mkdir(parents=True, exist_ok=True)
-               zip_ref.extractall(outfolder)
+         # year_ = ("2020" if year=="2021" else year)
+         # outfile = "download/" + year_ + "_" + scale + "_CNTR.zip"
+         # if not Path(outfile).exists():
+         #    urllib.request.urlretrieve(baseURL + "countries/download/ref-countries-" + year_ + "-" + scale + ".geojson.zip", outfile)
+         #    with zipfile.ZipFile(outfile, 'r') as zip_ref:
+         #       outfolder = "download/" + year_ + "_" + scale + "_CNTR/"
+         #       Path(outfolder).mkdir(parents=True, exist_ok=True)
+         #       zip_ref.extractall(outfolder)
 
 
 
@@ -217,31 +233,30 @@ def filterRenameDecompose():
    for year in nutsData["years"]:
        for scale in nutsData["scales"]:
 
-           year_ = ("2020" if year=="2021" else year)
            if debug: print(year + " " + scale + " CNTR RG - filter, rename attributes")
            ogr2ogr.main(["-overwrite","-f", "GPKG",
               "tmp/" + year + "_" + scale + "_CNTR_RG.gpkg",
-              "download/"+year_+"_"+scale+"_CNTR/CNTR_RG_"+scale+"_"+year_+"_4326.geojson",
-              "-sql", "SELECT CNTR_ID as id,NAME_ENGL as na FROM CNTR_RG_" + scale + "_" + year_ + "_4326 WHERE CNTR_ID NOT IN (" + nutsData["years"][year] + ")"])
+              "download/CNTR_RG_"+scale+"_"+year+"_4326.geojson",
+              "-sql", "SELECT CNTR_ID as id,NAME_ENGL as na FROM CNTR_RG_" + scale + "_" + year + "_4326 WHERE CNTR_ID NOT IN (" + nutsData["years"][year] + ")"])
 
            if debug: print(year + " " + scale + " CNTR BN - filter, rename attributes")
            ogr2ogr.main(["-overwrite","-f", "GPKG",
               "tmp/" + year + "_" + scale + "_CNTR_BN.gpkg",
-              "download/"+year_+"_"+scale+"_CNTR/CNTR_BN_"+scale+"_"+year_+"_4326.geojson",
-              "-sql", "SELECT CNTR_BN_ID as id,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM CNTR_BN_" + scale + "_" + year_ + "_4326 WHERE EU_FLAG='F' AND EFTA_FLAG='F'"])
+              "download/CNTR_BN_"+scale+"_"+year+"_4326.geojson",
+              "-sql", "SELECT CNTR_BN_ID as id,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM CNTR_BN_" + scale + "_" + year + "_4326 WHERE EU_FLAG='F' AND EFTA_FLAG='F'"])
 
            for level in ["0", "1", "2", "3"]:
 
                if debug: print(year + " " + scale + " NUTS RG " + level + " - filter, rename attributes")
                ogr2ogr.main(["-overwrite","-f", "GPKG",
                  "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG.gpkg",
-                 "download/"+year+"_"+scale+"_NUTS/NUTS_RG_"+scale+"_"+year+"_4326.geojson",
+                 "download/NUTS_RG_"+scale+"_"+year+"_4326.geojson",
                  "-sql", "SELECT N.NUTS_ID as id,A.NAME_LATN as na FROM NUTS_RG_" + scale + "_" + year + "_4326 as N left join 'download/"+year+"_"+scale+"_NUTS/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on N.NUTS_ID = A.NUTS_ID WHERE N.LEVL_CODE = " + level])
 
                if debug: print(year + " " + scale + " NUTS BN " + level + " - filter, rename attributes")
                ogr2ogr.main(["-overwrite","-f", "GPKG",
                  "tmp/" + year + "_" + scale + "_" + level + "_NUTS_BN.gpkg",
-                 "download/"+year+"_"+scale+"_NUTS/NUTS_BN_"+scale+"_"+year+"_4326.geojson",
+                 "download/NUTS_BN_"+scale+"_"+year+"_4326.geojson",
                  "-sql", "SELECT NUTS_BN_ID as id,LEVL_CODE as lvl,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM NUTS_BN_" + scale + "_" + year + "_4326 WHERE LEVL_CODE <= " + level])
 
 
