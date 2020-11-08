@@ -251,7 +251,7 @@ def filterRenameDecompose():
                ogr2ogr.main(["-overwrite","-f", "GPKG",
                  "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG.gpkg",
                  "download/NUTS_RG_"+scale+"_"+year+"_4326.geojson",
-                 "-sql", "SELECT N.NUTS_ID as id,A.NAME_LATN as na FROM NUTS_RG_" + scale + "_" + year + "_4326 as N left join 'download/"+year+"_"+scale+"_NUTS/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on N.NUTS_ID = A.NUTS_ID WHERE N.LEVL_CODE = " + level])
+                 "-sql", "SELECT N.NUTS_ID as id,A.NAME_LATN as na FROM NUTS_RG_" + scale + "_" + year + "_4326 as N left join 'download/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on N.NUTS_ID = A.NUTS_ID WHERE N.LEVL_CODE = " + level])
 
                if debug: print(year + " " + scale + " NUTS BN " + level + " - filter, rename attributes")
                ogr2ogr.main(["-overwrite","-f", "GPKG",
@@ -406,7 +406,7 @@ def points():
       ogr2ogr.main(["-overwrite","-f", "GPKG",
         "tmp/pts/" + year + "/NUTS_LB.gpkg",
         "tmp/pts/" + year + "/NUTS_LB.shp",
-        "-sql", "select LB.id as id, LB.lvl as lvl, A.NAME_LATN as na, LB.ar as ar FROM NUTS_LB AS LB left join 'download/"+year+"_"+scale+"_NUTS/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on LB.id = A.NUTS_ID"
+        "-sql", "select LB.id as id, LB.lvl as lvl, A.NAME_LATN as na, LB.ar as ar FROM NUTS_LB AS LB left join 'download/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on LB.id = A.NUTS_ID"
         ])
 
       for level in ["0", "1", "2", "3"]:
