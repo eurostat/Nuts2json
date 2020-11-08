@@ -35,16 +35,16 @@ nutsData = {
 
 # Geographical territories for map insets, CRSs and extends
 geos = {
-   "EUR" : {
-      "name" : "Europe",
-      "crs" : {
-      "4326" : { "xmin" : -25, "ymin" : 32.5, "xmax" : 46.5, "ymax" : 73.9},
-      "4258" : { "xmin" : -25, "ymin" : 32.5, "xmax" : 46.5, "ymax" : 73.9},
-      "3857" : { "xmin" : -2800000, "ymin" : 3884000, "xmax" : 5200000, "ymax" : 11690000},
-      "3035" : { "xmin" : 2434560, "ymin" : 1340340, "xmax" : 7512390, "ymax" : 5664590}
-      },
-      "scales" : ["03M", "10M", "20M", "60M"]
-   },
+   # "EUR" : {
+   #    "name" : "Europe",
+   #    "crs" : {
+   #    "4326" : { "xmin" : -25, "ymin" : 32.5, "xmax" : 46.5, "ymax" : 73.9},
+   #    "4258" : { "xmin" : -25, "ymin" : 32.5, "xmax" : 46.5, "ymax" : 73.9},
+   #    "3857" : { "xmin" : -2800000, "ymin" : 3884000, "xmax" : 5200000, "ymax" : 11690000},
+   #    "3035" : { "xmin" : 2434560, "ymin" : 1340340, "xmax" : 7512390, "ymax" : 5664590}
+   #    },
+   #    "scales" : ["03M", "10M", "20M", "60M"]
+   # },
    # "PT20" : {
    #    "name" : "Azores",
    #    "crs" : {
@@ -75,16 +75,16 @@ geos = {
    #    },
    #    "scales" : ["01M", "03M", "10M", "20M", "60M"]
    #  },
-   # "GF" : {
-   #    "name" : "French Guiana",
-   #    "crs" : {
-   #    "4326" : { "xmin" : -55, "ymin" : 1.9, "xmax" : -51.5, "ymax" : 6},
-   #    "4258" : { "xmin" : -55, "ymin" : 1.9, "xmax" : -51.5, "ymax" : 6},
-   #    "3857" : { "xmin" : -6103000, "ymin" : 214000, "xmax" : -5722000, "ymax" : 660000},
-   #    "32622" : { "xmin" : 90000, "ymin" : 224000, "xmax" : 436000, "ymax" : 647000}
-   #    },
-   #    "scales" : ["01M", "03M", "10M", "20M", "60M"]
-   # },
+   "GF" : {
+      "name" : "French Guiana",
+      "crs" : {
+      "4326" : { "xmin" : -55, "ymin" : 1.9, "xmax" : -51.5, "ymax" : 6},
+      "4258" : { "xmin" : -55, "ymin" : 1.9, "xmax" : -51.5, "ymax" : 6},
+      "3857" : { "xmin" : -6103000, "ymin" : 214000, "xmax" : -5722000, "ymax" : 660000},
+      "32622" : { "xmin" : 90000, "ymin" : 224000, "xmax" : 436000, "ymax" : 647000}
+      },
+      "scales" : ["01M", "03M", "10M", "20M", "60M"]
+   },
    # "GP" : {
    #    "name" : "Guadeloupe",
    #    "crs" : {
