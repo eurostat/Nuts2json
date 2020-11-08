@@ -409,18 +409,12 @@ def points():
             for level in ["0", "1", "2", "3"]:
 
                if debug: print(year + " " + geo + " " + crs + " " + level + " - reproject PTS")
-               ogr2ogr.main(["-overwrite","-f", "GPKG",
-                 "tmp/pts/" + year + "/" + geo + "_" + crs + "NUTS_LB_" + level + ".gpkg",
+               ogr2ogr.main(["-overwrite",
+                 outpath + "nutspt_" + level + ".json", #TODO .geojson
                  "tmp/pts/" + year + "/NUTS_LB_" + level + ".gpkg",
-                 "-t_srs", "EPSG:"+crs, "-s_srs", "EPSG:4258"
-                 ])
-
-               if debug: print(year + " " + geo + " " + crs + " " + level + " - clip + geojson PTS")
-               ogr2ogr.main(["-overwrite","-f", "GeoJSON",
-                 outpath + "nutspt_" + level + ".json",
-                 "tmp/pts/" + year + "/" + geo + "_" + crs + "NUTS_LB_" + level + ".gpkg",
                  "-nln", "nutspt_" + level,
-                 "-clipsrc", str(extends["xmin"]), str(extends["ymin"]), str(extends["xmax"]), str(extends["ymax"])
+                 "-t_srs", "EPSG:"+crs, "-s_srs", "EPSG:4258",
+                 "-clipdst", str(extends["xmin"]), str(extends["ymin"]), str(extends["xmax"]), str(extends["ymax"])
                  ])
 
 
