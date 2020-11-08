@@ -1,5 +1,5 @@
 from pathlib import Path
-import ogr2ogr, subprocess, json, urllib.request, zipfile
+import ogr2ogr, subprocess, json, urllib.request
 
 ################
 # Target structure:
@@ -9,9 +9,9 @@ import ogr2ogr, subprocess, json, urllib.request, zipfile
 ################
 
 # TODO clean old shps
-# TODO: viewer - check xk/rs
-# TODO: test -makevalid
-# TODO: brasil, LI-AT issue: use buffer(0) cleaning after reprojection?
+# TODO: upgrade viewer - check xk/rs
+# TODO: brasil, LI-AT issue: test -makevalid - update ogr2ogr ? use buffer(0) cleaning after reprojection?
+
 # TODO get areas ?
 # TODO remove -f ?
 
@@ -28,7 +28,6 @@ nutsData = {
       "2016" : "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME'",
       "2013" : "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME','RS','AL'",
       "2010" : "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME','RS','AL'",
-      "2013" : "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME','RS','AL'",
    },
    "scales" : ["01M", "03M", "10M", "20M", "60M"]
 }
@@ -176,7 +175,7 @@ with open("pub/" + version + "/data.json", "w") as fp:
 
 
 
-# Download and unzip base data
+# Download base data
 def download():
    print("Download")
    Path("download/").mkdir(parents=True, exist_ok=True)
@@ -184,7 +183,7 @@ def download():
 
    for year in nutsData["years"]:
 
-      if debug: print( year + " AT Download and unzip")
+      if debug: print( year + " AT Download")
       outfile = "download/NUTS_AT_"+year+".csv"
       if not Path(outfile).exists(): urllib.request.urlretrieve(baseURL + "nuts/csv/NUTS_AT_"+year+".csv", outfile)
 
@@ -193,7 +192,7 @@ def download():
       if not Path(outfile).exists(): urllib.request.urlretrieve(baseURL + "nuts/geojson/NUTS_LB_"+year+"_4326.geojson", outfile)
 
       for scale in nutsData["scales"]:
-         if debug: print( year + " " + scale + " Download and unzip")
+         if debug: print( year + " " + scale + " Download")
 
          for type in ["RG", "BN"]:
 

@@ -116,11 +116,12 @@ These examples are based on [d3js](https://d3js.org/) library.
 
 ## Technical details
 
-These files are produced from the NUTS geodata provided on [Eurostat-GISCO website](http://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts). The input files are in the [shp folder](/src/resources/shp). They are transformed using [GDAL](http://www.gdal.org/) and [TopoJSON](https://github.com/mbostock/topojson/wiki) programs. The transformation process is automated in a Python script, which is also available in the [/src/py/ folder](/src/py/). This process has 4 steps:
-1. *filterRenameDecompose*: Prepare input data: filter, rename attributes and decompose by NUTS level.
-2. *reprojectClipGeojson*: Clip, reproject and convert as GeoJSON.
-3. *topogeojson*: Make TopoJSON file from GeoJSON files, simplify them with [TopoJSON Simplify](https://github.com/topojson/topojson-simplify/) program, and finally produce GeoJSON from TopoJSON.
-4. *makePoints*: Produce point representations.
+These files are produced from the NUTS geodata provided on [Eurostat-GISCO website](http://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts). The input files are in the [shp folder](/src/resources/shp). They are transformed using [GDAL](http://www.gdal.org/) and [TopoJSON](https://github.com/mbostock/topojson/wiki) programs. The transformation process is automated in a Python script, which is also available in the [/src/py/ folder](/src/py/). This process has 5 steps:
+1. *download*: Retrieve the input data using [Eurostat GISCO API](https://gisco-services.ec.europa.eu/distribution/).
+2. *filterRenameDecompose*: Prepare input data: filter, rename attributes and decompose by NUTS level.
+3. *reprojectClipGeojson*: Clip, reproject and convert as GeoJSON.
+4. *topoGeojson*: Make TopoJSON file from GeoJSON files, simplify them with [TopoJSON Simplify](https://github.com/topojson/topojson-simplify/) program, and finally produce GeoJSON from TopoJSON.
+5. *points*: Produce point representations.
 
 ## About
 
