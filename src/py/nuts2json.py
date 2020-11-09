@@ -8,8 +8,10 @@ import ogr2ogr, subprocess, json, urllib.request
 # pts:       YEAR/GEO/PROJECTION/nutspt_<NUTS_LEVEL>.json
 ################
 
-# TODO: correct iceland aaa
+# TODO: correct extents. error in JS ?
 # TODO: brasil, russia, LI-AT, etc. issues: test -makevalid - update ogr2ogr ? use buffer(0) cleaning after reprojection?
+# ogr2ogr -f "ESRI Shapefile" [bufferedFile.shp] [origFile.shp] -dialect sqlite -sql "select ST_buffer(geometry, [1000]) as geometry FROM [origFile]"
+# https://gis.stackexchange.com/questions/263696/invalid-geometries-made-valid-dont-remain-valid
 # TODO: check xk/rs
 # TODO get areas ?
 # TODO remove -f ?
@@ -260,7 +262,7 @@ def coarseClipping():
       for geo in geos:
 
          extends = geos[geo]["crs"]["4326"]
-         marginDeg = 30.2 if(geo == "EUR") else 10
+         marginDeg = 31 if(geo == "EUR") else 20
 
          for type in ["RG", "BN"]:
             for scale in geos[geo]["scales"]:
