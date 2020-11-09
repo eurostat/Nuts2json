@@ -156,6 +156,7 @@ geos = {
 
 
 
+
 print("save data")
 Path("pub/" + version + "/").mkdir(parents=True, exist_ok=True)
 with open("pub/" + version + "/data.json", "w") as fp:
@@ -193,26 +194,6 @@ def download():
             outfile = "download/CNTR_"+type+"_"+scale+"_"+year+"_4326.geojson"
             year_ = ("2020" if year=="2021" else year)
             if not Path(outfile).exists(): urllib.request.urlretrieve(baseURL + "countries/geojson/CNTR_"+type+"_"+scale+"_"+year_+"_4326.geojson", outfile)
-
-         # NUTS
-         # outfile = "download/" + year + "_" + scale + "_NUTS.zip"
-         # if not Path(outfile).exists():
-         #    urllib.request.urlretrieve(baseURL + "nuts/download/ref-nuts-" + year + "-" + scale + ".geojson.zip", outfile)
-         #    with zipfile.ZipFile(outfile, 'r') as zip_ref:
-         #       outfolder = "download/" + year + "_" + scale + "_NUTS/"
-         #       Path(outfolder).mkdir(parents=True, exist_ok=True)
-         #       zip_ref.extractall(outfolder)
-
-         # CNTR
-         # year_ = ("2020" if year=="2021" else year)
-         # outfile = "download/" + year_ + "_" + scale + "_CNTR.zip"
-         # if not Path(outfile).exists():
-         #    urllib.request.urlretrieve(baseURL + "countries/download/ref-countries-" + year_ + "-" + scale + ".geojson.zip", outfile)
-         #    with zipfile.ZipFile(outfile, 'r') as zip_ref:
-         #       outfolder = "download/" + year_ + "_" + scale + "_CNTR/"
-         #       Path(outfolder).mkdir(parents=True, exist_ok=True)
-         #       zip_ref.extractall(outfolder)
-
 
 
 
