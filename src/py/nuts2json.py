@@ -8,7 +8,7 @@ import ogr2ogr, subprocess, json, urllib.request
 # pts:       YEAR/GEO/PROJECTION/nutspt_<NUTS_LEVEL>.json
 ################
 
-# TODO: correct iceland
+# TODO: correct iceland aaa
 # TODO: brasil, russia, LI-AT, etc. issues: test -makevalid - update ogr2ogr ? use buffer(0) cleaning after reprojection?
 # TODO: check xk/rs
 # TODO get areas ?

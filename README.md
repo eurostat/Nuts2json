@@ -11,6 +11,8 @@ For a faster creation of maps based on Nuts2json, check out [**eurostat-map.js**
 
 For a faster creation of [Dorling cartograms](http://www.dannydorling.org/wp-content/files/dannydorling_publication_id1448.pdf) based on Nuts2json, check out [**NutsDorlingCartogram**](https://github.com/eurostat/NutsDorlingCartogram).
 
+
+
 ## API
 
 Base URL: `https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1`
@@ -33,6 +35,8 @@ The parameters are:
 | `TYPE` | `nutsrg` `nutsbn` `cntrg` `cntbn` `gra` | For GeoJSON format, the feature type has to be specified. The available feature types are described below. For NUTS feature types (`nutsrg` and `nutsbn`), the `NUTS_LEVEL` to be displayed on the map has to be specified.  |
 
 For additional projections, formats, scales, etc., feel free to [ask](https://github.com/eurostat/Nuts2json/issues/new) !
+
+
 
 ### Feature types
 
@@ -64,6 +68,7 @@ Five feature types are provided:
 - The map graticule (meridian and parrallel lines) is provided as feature type `gra` with a single `id` property, which is the lat/lon of the parallel/meridian.
 
 
+
 ### NUTS regions as points
 
 NUTS regions are also provided as point geometries. These points can be used for label placement or simplified maps such as [Dorling cartograms](http://www.dannydorling.org/wp-content/files/dannydorling_publication_id1448.pdf). Since this data does not depend on the `<SCALE>` parameter, it can be retrieved directly under the `/<YEAR>/<PROJECTION>/nutspt_<NUTS_LEVEL>.json` URL pattern, as GeoJSON format.
@@ -74,6 +79,7 @@ The point features are provided with the following properties:
   - `id`: The NUTS identifier.
   - `na`: The geographical name of the region.
   - `ar`: The area of the region, in m².
+
 
 
 ### Overseas territories - map insets
@@ -101,6 +107,7 @@ The values supported for this additional **GEO** parameter are listed in the tab
 Need for another territory in this table? Feel free to [request it](https://github.com/eurostat/Nuts2json/issues/new) !
 
 
+
 ## Some examples
 
 These examples are based on [d3js](https://d3js.org/) library.
@@ -114,6 +121,8 @@ These examples are based on [d3js](https://d3js.org/) library.
 - [NUTS population change Dorling cartogram](https://observablehq.com/@jgaffuri/dorling-cartogram-population-change).
 - [NUTS Dorling cartogram](https://github.com/eurostat/NutsDorlingCartogram).
 
+
+
 ## Technical details
 
 These files are produced from the NUTS geodata provided on [Eurostat-GISCO website](http://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts). The input data are automatically downloaded from the [Eurostat GISCO API](https://gisco-services.ec.europa.eu/distribution/) and stored in a *download* folder. This data is transformed using [GDAL](http://www.gdal.org/) and [TopoJSON](https://github.com/mbostock/topojson/wiki) programs. The entire process is automated in a Python script, which is also available in the [/src/py/ folder](/src/py/). This process has 5 steps:
@@ -122,6 +131,8 @@ These files are produced from the NUTS geodata provided on [Eurostat-GISCO websi
 3. *reprojectClipGeojson*: Clip, reproject and convert as GeoJSON.
 4. *topoGeojson*: Make TopoJSON file from GeoJSON files, simplify them with [TopoJSON Simplify](https://github.com/topojson/topojson-simplify/) program, and finally produce GeoJSON from TopoJSON.
 5. *points*: Produce point representations.
+
+
 
 ## About
 
@@ -132,13 +143,19 @@ These files are produced from the NUTS geodata provided on [Eurostat-GISCO websi
 | *status* | Since 2016 |
 | *license* | [EUPL 1.2](https://github.com/eurostat/Nuts2json/blob/master/LICENSE) |
 
+
+
 ## Support and contribution
 
 Feel free to [ask support](https://github.com/eurostat/Nuts2json/issues/new), fork the project or simply star it (it's always a pleasure).
 
+
+
 ## Copyright
 
 The [Eurostat NUTS dataset](http://ec.europa.eu/eurostat/web/nuts/overview) is copyrighted. There are [specific provisions](https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units) for the usage of this dataset which must be respected. The usage of these data is subject to their acceptance. See the [Eurostat-GISCO website](http://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts) for more information.
+
+
 
 ## Disclaimer
 
