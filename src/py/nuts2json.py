@@ -155,6 +155,7 @@ geos = {
 
 
 print("save data")
+Path("pub/" + version + "/").mkdir(parents=True, exist_ok=True)
 with open("pub/" + version + "/data.json", "w") as fp:
     json.dump(geos, fp, indent=3)
 
