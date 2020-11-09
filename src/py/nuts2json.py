@@ -9,8 +9,8 @@ import ogr2ogr, subprocess, json, urllib.request
 ################
 
 # TODO: correct iceland
-# TODO: upgrade obervable viewer - check xk/rs
-# TODO: brasil, LI-AT issue: test -makevalid - update ogr2ogr ? use buffer(0) cleaning after reprojection?
+# TODO: brasil, russia, LI-AT, etc. issues: test -makevalid - update ogr2ogr ? use buffer(0) cleaning after reprojection?
+# TODO: check xk/rs
 # TODO get areas ?
 # TODO remove -f ?
 
@@ -37,7 +37,6 @@ geos = {
       "name" : "Europe",
       "crs" : {
       "4326" : { "xmin" : -25, "ymin" : 32.5, "xmax" : 46.5, "ymax" : 73.9},
-      "4258" : { "xmin" : -25, "ymin" : 32.5, "xmax" : 46.5, "ymax" : 73.9},
       "3857" : { "xmin" : -2800000, "ymin" : 3884000, "xmax" : 5200000, "ymax" : 11690000},
       "3035" : { "xmin" : 2434560, "ymin" : 1340340, "xmax" : 7512390, "ymax" : 5664590}
       },
@@ -47,9 +46,8 @@ geos = {
       "name" : "Azores",
       "crs" : {
       "4326" : { "xmin" : -32.67, "ymin" : 35.92, "xmax" : -23.89, "ymax" : 40.53},
-      "4258" : { "xmin" : -32.67, "ymin" : 35.92, "xmax" : -23.89, "ymax" : 40.53},
       "3857" : { "xmin" : -3692767, "ymin" : 4238065, "xmax" : -2526564, "ymax" : 4972707},
-      "32626" : { "xmin" : 16784, "ymin" : 4002891, "xmax" : 788999, "ymax" : 4458221}
+      "32626" : { "xmin" : 74783, "ymin" : 4020123, "xmax" : 727948, "ymax" : 4431039}
       },
       "scales" : ["01M", "03M", "10M", "20M", "60M"]
    },
@@ -57,7 +55,6 @@ geos = {
       "name" : "Madeira",
       "crs" : {
       "4326" : { "xmin" : -18.18, "ymin" : 29.73, "xmax" : -15.46, "ymax" : 33.52},
-      "4258" : { "xmin" : -18.18, "ymin" : 29.73, "xmax" : -15.46, "ymax" : 33.52},
       "3857" : { "xmin" : -1987937, "ymin" : 3483657, "xmax" : -1698033, "ymax" : 3938279},
       "32628" : { "xmin" : 189150, "ymin" : 3262646, "xmax" : 525471, "ymax" : 3697671}
       },
@@ -67,7 +64,6 @@ geos = {
       "name" : "Canary islands",
       "crs" : {
       "4326" : { "xmin" : -18.599, "ymin" : 27.131, "xmax" : -12.82, "ymax" : 29.77},
-      "4258" : { "xmin" : -18.599, "ymin" : 27.131, "xmax" : -12.82, "ymax" : 29.77},
       "3857" : { "xmin" : -2093768, "ymin" : 3148045, "xmax" : -1438191, "ymax" : 3480775},
       "32628" : { "xmin" : 79480, "ymin" : 2951914, "xmax" : 755779, "ymax" : 3306514}
       },
@@ -77,7 +73,6 @@ geos = {
       "name" : "French Guiana",
       "crs" : {
       "4326" : { "xmin" : -55, "ymin" : 1.9, "xmax" : -51.5, "ymax" : 6},
-      "4258" : { "xmin" : -55, "ymin" : 1.9, "xmax" : -51.5, "ymax" : 6},
       "3857" : { "xmin" : -6103000, "ymin" : 214000, "xmax" : -5722000, "ymax" : 660000},
       "32622" : { "xmin" : 90000, "ymin" : 224000, "xmax" : 436000, "ymax" : 647000}
       },
@@ -86,10 +81,9 @@ geos = {
    "GP" : {
       "name" : "Guadeloupe",
       "crs" : {
-      "4326" : { "xmin" : -63.519, "ymin" : 15.391, "xmax" : -60.196, "ymax" : 18.515},
-      "4258" : { "xmin" : -63.519, "ymin" : 15.391, "xmax" : -60.196, "ymax" : 18.515},
-      "3857" : { "xmin" : -7101130, "ymin" : 1734899, "xmax" : -6747739, "ymax" : 2095527},
-      "32620" : { "xmin" : 413686, "ymin" : 1696392, "xmax" : 1109654, "ymax" : 2043231}
+      "4326" : { "xmin" : -64.197, "ymin" : 13.732, "xmax" : -59.967, "ymax" : 18.813},
+      "3857" : { "xmin" : -7057292, "ymin" : 1766063, "xmax" : -6759747, "ymax" : 2071532},
+      "32620" : { "xmin" : 457264, "ymin" : 1733655, "xmax" : 742535, "ymax" : 2023133}
      },
      "scales" : ["01M", "03M", "10M", "20M", "60M"]
    },
@@ -97,7 +91,6 @@ geos = {
       "name" : "Martinique",
       "crs" : {
       "4326" : { "xmin" : -61.398, "ymin" : 14.293, "xmax" : -60.618, "ymax" : 15.059},
-      "4258" : { "xmin" : -61.398, "ymin" : 14.293, "xmax" : -60.618, "ymax" : 15.059},
       "3857" : { "xmin" : -6843610, "ymin" : 1596556, "xmax" : -6743775, "ymax" : 1692156},
       "32620" : { "xmin" : 658362, "ymin" : 1580492, "xmax" : 760525, "ymax" : 1660906}
      },
@@ -107,7 +100,6 @@ geos = {
       "name" : "Caribbean islands",
       "crs" : {
       "4326" : { "xmin" : -64.074, "ymin" : 12.816, "xmax" : -60.257, "ymax" : 18.350},
-      "4258" : { "xmin" : -64.074, "ymin" : 12.816, "xmax" : -60.257, "ymax" : 18.350},
       "3857" : { "xmin" : -7114435, "ymin" : 1438782, "xmax" : -6701775, "ymax" : 2080865},
       "32620" : { "xmin" : 390901, "ymin" : 1412066, "xmax" : 803644, "ymax" : 2038195}
      },
@@ -117,7 +109,6 @@ geos = {
       "name" : "Reunion",
       "crs" : {
       "4326" : { "xmin" : 55.087, "ymin" : -21.521, "xmax" : 55.981, "ymax" : -20.752},
-      "4258" : { "xmin" : 55.087, "ymin" : -21.521, "xmax" : 55.981, "ymax" : -20.752},
       "3857" : { "xmin" : 6118552, "ymin" : -2456745, "xmax" : 6240595, "ymax" : -2355898},
       "32740" : { "xmin" : 301152, "ymin" : 7625194, "xmax" : 397346, "ymax" : 7708036}
      },
@@ -126,10 +117,9 @@ geos = {
    "YT" : {
       "name" : "Mayotte",
       "crs" : {
-      "4326" : { "xmin" : 44.854, "ymin" : -13.112, "xmax" : 45.454, "ymax" : -12.532},
-      "4258" : { "xmin" : 44.854, "ymin" : -13.112, "xmax" : 45.454, "ymax" : -12.532},
-      "3857" : { "xmin" : 4990911, "ymin" : -1475429, "xmax" : 5056930, "ymax" : -1411884},
-      "32738" : { "xmin" : 484128, "ymin" : 8548691, "xmax" : 546084, "ymax" : 8611393}
+      "4326" : { "xmin" : 44.869, "ymin" : -13.088, "xmax" : 45.362, "ymax" : -12.590},
+      "3857" : { "xmin" : 5008923, "ymin" : -1461785, "xmax" : 5045741, "ymax" : -1415417},
+      "32738" : { "xmin" : 495615, "ymin" : 8559198, "xmax" : 535145, "ymax" : 8605147}
      },
      "scales" : ["01M", "03M", "10M", "20M", "60M"]
    },
@@ -137,7 +127,6 @@ geos = {
       "name" : "Malta",
       "crs" : {
       "4326" : { "xmin" : 14.1, "ymin" : 35.7, "xmax" : 14.6, "ymax" : 36.1},
-      "4258" : { "xmin" : 14.1, "ymin" : 35.7, "xmax" : 14.6, "ymax" : 36.1},
       "3857" : { "xmin" : 1573000, "ymin" : 4270000, "xmax" : 1632000, "ymax" : 4320000},
       "3035" : { "xmin" : 4692000, "ymin" : 1420000, "xmax" : 4750000, "ymax" : 1466000}
       },
@@ -147,7 +136,6 @@ geos = {
       "name" : "Liechtenstein",
       "crs" : {
       "4326" : { "xmin" : 9.4, "ymin" : 47, "xmax" : 9.7, "ymax" : 47.4},
-      "4258" : { "xmin" : 9.4, "ymin" : 47, "xmax" : 9.7, "ymax" : 47.4},
       "3857" : { "xmin" : 1046000, "ymin" : 5945000, "xmax" : 1079000, "ymax" : 5992000},
       "3035" : { "xmin" : 4276797, "ymin" : 2655615, "xmax" : 4300880, "ymax" : 2686748}
       },
@@ -157,7 +145,6 @@ geos = {
       "name" : "Iceland",
       "crs" : {
       "4326" : { "xmin" : -25.1, "ymin" : 62.6, "xmax" : -12.1, "ymax" : 67.7},
-      "4258" : { "xmin" : -25.1, "ymin" : 62.6, "xmax" : -12.1, "ymax" : 67.7},
       "3857" : { "xmin" : -2847407, "ymin" : 9094947, "xmax" : -1355181, "ymax" : 10129307},
       "3035" : { "xmin" : 2705235, "ymin" : 4731507, "xmax" : 3328521, "ymax" : 5193241}
       },
@@ -272,7 +259,7 @@ def coarseClipping():
       for geo in geos:
 
          extends = geos[geo]["crs"]["4326"]
-         marginDeg = 30.2 if(geo == "EUR") else 5
+         marginDeg = 30.2 if(geo == "EUR") else 10
 
          for type in ["RG", "BN"]:
             for scale in geos[geo]["scales"]:

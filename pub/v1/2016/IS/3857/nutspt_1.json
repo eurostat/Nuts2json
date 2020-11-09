@@ -3,7 +3,6 @@
 "name": "nutspt_1",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
 "features": [
-{ "type": "Feature", "properties": { "id": "ES7", "na": "CANARIAS", "ar": "7447883235" }, "geometry": { "type": "Point", "coordinates": [ -1843962.837194260442629, 3279986.402991861570626 ] } },
-{ "type": "Feature", "properties": { "id": "PT3", "na": "REGIÃO AUTÓNOMA DA MADEIRA", "ar": "800666574" }, "geometry": { "type": "Point", "coordinates": [ -1886898.764793225564063, 3859864.634628916624933 ] } }
+{ "type": "Feature", "properties": { "id": "IS0", "na": "ÍSLAND", "ar": "102696958004" }, "geometry": { "type": "Point", "coordinates": [ -2099140.505939680617303, 9544392.3595658428967 ] } }
 ]
 }
