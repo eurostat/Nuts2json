@@ -8,10 +8,9 @@ import ogr2ogr, subprocess, json, urllib.request
 # pts:       YEAR/GEO/PROJECTION/nutspt_<NUTS_LEVEL>.json
 ################
 
-# TODO clean old shps
-# TODO: upgrade viewer - check xk/rs
+# TODO: correct iceland
+# TODO: upgrade obervable viewer - check xk/rs
 # TODO: brasil, LI-AT issue: test -makevalid - update ogr2ogr ? use buffer(0) cleaning after reprojection?
-
 # TODO get areas ?
 # TODO remove -f ?
 
@@ -157,10 +156,10 @@ geos = {
    "IS" : {
       "name" : "Iceland",
       "crs" : {
-      "4326" : { "xmin" : -25, "ymin" : 62.6, "xmax" : -12, "ymax" : 67.7},
-      "4258" : { "xmin" : -25, "ymin" : 62.6, "xmax" : -12, "ymax" : 67.7},
-      "3857" : { "xmin" : -2800000, "ymin" : 9000000, "xmax" : -1360000, "ymax" : 1020000},
-      "3035" : { "xmin" : 2717398, "ymin" : 4722894, "xmax" : 3301249, "ymax" : 5171386}
+      "4326" : { "xmin" : -25.1, "ymin" : 62.6, "xmax" : -12.1, "ymax" : 67.7},
+      "4258" : { "xmin" : -25.1, "ymin" : 62.6, "xmax" : -12.1, "ymax" : 67.7},
+      "3857" : { "xmin" : -2847407, "ymin" : 9094947, "xmax" : -1355181, "ymax" : 10129307},
+      "3035" : { "xmin" : 2705235, "ymin" : 4731507, "xmax" : 3328521, "ymax" : 5193241}
       },
       "scales" : ["01M", "03M", "10M", "20M", "60M"]
    }
@@ -433,7 +432,7 @@ def points():
 
                if debug: print(year + " " + geo + " " + crs + " " + level + " - reproject PTS")
                ogr2ogr.main(["-overwrite","-f","GeoJSON",
-                 outpath + "nutspt_" + level + ".json", #TODO change to *.geojson
+                 outpath + "nutspt_" + level + ".json",
                  "tmp/pts/" + year + "/NUTS_LB_" + level + ".gpkg",
                  "-nln", "nutspt_" + level,
                  "-t_srs", "EPSG:"+crs, "-s_srs", "EPSG:4258",
