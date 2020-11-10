@@ -9,9 +9,6 @@ import ogr2ogr, subprocess, json, urllib.request
 ################
 
 # TODO: correct extents. error in JS ?
-# TODO: brasil, russia, LI-AT, etc. issues: test -makevalid - update ogr2ogr ? use buffer(0) cleaning after reprojection?
-# ogr2ogr -f "ESRI Shapefile" [bufferedFile.shp] [origFile.shp] -dialect sqlite -sql "select ST_buffer(geometry, [1000]) as geometry FROM [origFile]"
-# https://gis.stackexchange.com/questions/263696/invalid-geometries-made-valid-dont-remain-valid
 # TODO: check xk/rs
 # TODO get areas ?
 # TODO remove -f ?
@@ -25,10 +22,10 @@ version = "v1"
 # NUTS year version and, for each year, the countrie shown as stat units
 nutsData = {
    "years" : {
-      "2021" : "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME'",
-      "2016" : "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME'",
+      # "2021" : "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME'",
+      # "2016" : "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME'",
       "2013" : "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME','RS','AL'",
-      "2010" : "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME','RS','AL'",
+      # "2010" : "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME','RS','AL'",
    },
    "scales" : ["01M", "03M", "10M", "20M", "60M"]
 }
@@ -44,114 +41,114 @@ geos = {
       },
       "scales" : ["03M", "10M", "20M", "60M"]
    },
-   "PT20" : {
-      "name" : "Azores",
-      "crs" : {
-      "4326" : { "xmin" : -32.67, "ymin" : 35.92, "xmax" : -23.89, "ymax" : 40.53},
-      "3857" : { "xmin" : -3692767, "ymin" : 4238065, "xmax" : -2526564, "ymax" : 4972707},
-      "32626" : { "xmin" : 74783, "ymin" : 4020123, "xmax" : 727948, "ymax" : 4431039}
-      },
-      "scales" : ["01M", "03M", "10M", "20M"]
-   },
-    "PT30" : {
-      "name" : "Madeira",
-      "crs" : {
-      "4326" : { "xmin" : -18.18, "ymin" : 29.73, "xmax" : -15.46, "ymax" : 33.52},
-      "3857" : { "xmin" : -1987937, "ymin" : 3483657, "xmax" : -1698033, "ymax" : 3938279},
-      "32628" : { "xmin" : 189150, "ymin" : 3262646, "xmax" : 525471, "ymax" : 3697671}
-      },
-      "scales" : ["01M", "03M", "10M", "20M"]
-   },
-   "IC" : {
-      "name" : "Canary islands",
-      "crs" : {
-      "4326" : { "xmin" : -18.599, "ymin" : 27.131, "xmax" : -12.82, "ymax" : 29.77},
-      "3857" : { "xmin" : -2093768, "ymin" : 3148045, "xmax" : -1438191, "ymax" : 3480775},
-      "32628" : { "xmin" : 79480, "ymin" : 2951914, "xmax" : 755779, "ymax" : 3306514}
-      },
-      "scales" : ["01M", "03M", "10M", "20M"]
-    },
-   "GF" : {
-      "name" : "French Guiana",
-      "crs" : {
-      "4326" : { "xmin" : -55, "ymin" : 1.9, "xmax" : -51.5, "ymax" : 6},
-      "3857" : { "xmin" : -6103000, "ymin" : 214000, "xmax" : -5722000, "ymax" : 660000},
-      "32622" : { "xmin" : 90000, "ymin" : 224000, "xmax" : 436000, "ymax" : 647000}
-      },
-      "scales" : ["01M", "03M", "10M", "20M"]
-   },
-   "GP" : {
-      "name" : "Guadeloupe",
-      "crs" : {
-      "4326" : { "xmin" : -64.197, "ymin" : 13.732, "xmax" : -59.967, "ymax" : 18.813},
-      "3857" : { "xmin" : -7057292, "ymin" : 1766063, "xmax" : -6759747, "ymax" : 2071532},
-      "32620" : { "xmin" : 457264, "ymin" : 1733655, "xmax" : 742535, "ymax" : 2023133}
-     },
-     "scales" : ["01M", "03M", "10M", "20M"]
-   },
-   "MQ" : {
-      "name" : "Martinique",
-      "crs" : {
-      "4326" : { "xmin" : -61.398, "ymin" : 14.293, "xmax" : -60.618, "ymax" : 15.059},
-      "3857" : { "xmin" : -6843610, "ymin" : 1596556, "xmax" : -6743775, "ymax" : 1692156},
-      "32620" : { "xmin" : 658362, "ymin" : 1580492, "xmax" : 760525, "ymax" : 1660906}
-     },
-     "scales" : ["01M", "03M", "10M", "20M"]
-   },
-   "CARIB" : {
-      "name" : "Caribbean islands",
-      "crs" : {
-      "4326" : { "xmin" : -64.074, "ymin" : 12.816, "xmax" : -60.257, "ymax" : 18.350},
-      "3857" : { "xmin" : -7114435, "ymin" : 1438782, "xmax" : -6701775, "ymax" : 2080865},
-      "32620" : { "xmin" : 390901, "ymin" : 1412066, "xmax" : 803644, "ymax" : 2038195}
-     },
-     "scales" : ["01M", "03M", "10M", "20M"]
-   },
-   "RE" : {
-      "name" : "Reunion",
-      "crs" : {
-      "4326" : { "xmin" : 55.087, "ymin" : -21.521, "xmax" : 55.981, "ymax" : -20.752},
-      "3857" : { "xmin" : 6118552, "ymin" : -2456745, "xmax" : 6240595, "ymax" : -2355898},
-      "32740" : { "xmin" : 301152, "ymin" : 7625194, "xmax" : 397346, "ymax" : 7708036}
-     },
-     "scales" : ["01M", "03M", "10M", "20M"]
-   },
-   "YT" : {
-      "name" : "Mayotte",
-      "crs" : {
-      "4326" : { "xmin" : 44.869, "ymin" : -13.088, "xmax" : 45.362, "ymax" : -12.590},
-      "3857" : { "xmin" : 5008923, "ymin" : -1461785, "xmax" : 5045741, "ymax" : -1415417},
-      "32738" : { "xmin" : 495615, "ymin" : 8559198, "xmax" : 535145, "ymax" : 8605147}
-     },
-     "scales" : ["01M", "03M", "10M", "20M"]
-   },
-   "MT" : {
-      "name" : "Malta",
-      "crs" : {
-      "4326" : { "xmin" : 14.1, "ymin" : 35.7, "xmax" : 14.6, "ymax" : 36.1},
-      "3857" : { "xmin" : 1573000, "ymin" : 4270000, "xmax" : 1632000, "ymax" : 4320000},
-      "3035" : { "xmin" : 4692000, "ymin" : 1420000, "xmax" : 4750000, "ymax" : 1466000}
-      },
-      "scales" : ["01M", "03M", "10M", "20M"]
-   },
-   "LI" : {
-      "name" : "Liechtenstein",
-      "crs" : {
-      "4326" : { "xmin" : 9.4, "ymin" : 47, "xmax" : 9.7, "ymax" : 47.4},
-      "3857" : { "xmin" : 1046000, "ymin" : 5945000, "xmax" : 1079000, "ymax" : 5992000},
-      "3035" : { "xmin" : 4276797, "ymin" : 2655615, "xmax" : 4300880, "ymax" : 2686748}
-      },
-      "scales" : ["01M", "03M", "10M", "20M"]
-   },
-   "IS" : {
-      "name" : "Iceland",
-      "crs" : {
-      "4326" : { "xmin" : -25.1, "ymin" : 62.6, "xmax" : -12.1, "ymax" : 67.7},
-      "3857" : { "xmin" : -2847407, "ymin" : 9094947, "xmax" : -1355181, "ymax" : 10129307},
-      "3035" : { "xmin" : 2705235, "ymin" : 4731507, "xmax" : 3328521, "ymax" : 5193241}
-      },
-      "scales" : ["01M", "03M", "10M", "20M"]
-   }
+   # "PT20" : {
+   #    "name" : "Azores",
+   #    "crs" : {
+   #    "4326" : { "xmin" : -32.67, "ymin" : 35.92, "xmax" : -23.89, "ymax" : 40.53},
+   #    "3857" : { "xmin" : -3692767, "ymin" : 4238065, "xmax" : -2526564, "ymax" : 4972707},
+   #    "32626" : { "xmin" : 74783, "ymin" : 4020123, "xmax" : 727948, "ymax" : 4431039}
+   #    },
+   #    "scales" : ["01M", "03M", "10M", "20M"]
+   # },
+   #  "PT30" : {
+   #    "name" : "Madeira",
+   #    "crs" : {
+   #    "4326" : { "xmin" : -18.18, "ymin" : 29.73, "xmax" : -15.46, "ymax" : 33.52},
+   #    "3857" : { "xmin" : -1987937, "ymin" : 3483657, "xmax" : -1698033, "ymax" : 3938279},
+   #    "32628" : { "xmin" : 189150, "ymin" : 3262646, "xmax" : 525471, "ymax" : 3697671}
+   #    },
+   #    "scales" : ["01M", "03M", "10M", "20M"]
+   # },
+   # "IC" : {
+   #    "name" : "Canary islands",
+   #    "crs" : {
+   #    "4326" : { "xmin" : -18.599, "ymin" : 27.131, "xmax" : -12.82, "ymax" : 29.77},
+   #    "3857" : { "xmin" : -2093768, "ymin" : 3148045, "xmax" : -1438191, "ymax" : 3480775},
+   #    "32628" : { "xmin" : 79480, "ymin" : 2951914, "xmax" : 755779, "ymax" : 3306514}
+   #    },
+   #    "scales" : ["01M", "03M", "10M", "20M"]
+   #  },
+   # "GF" : {
+   #    "name" : "French Guiana",
+   #    "crs" : {
+   #    "4326" : { "xmin" : -55, "ymin" : 1.9, "xmax" : -51.5, "ymax" : 6},
+   #    "3857" : { "xmin" : -6103000, "ymin" : 214000, "xmax" : -5722000, "ymax" : 660000},
+   #    "32622" : { "xmin" : 90000, "ymin" : 224000, "xmax" : 436000, "ymax" : 647000}
+   #    },
+   #    "scales" : ["01M", "03M", "10M", "20M"]
+   # },
+   # "GP" : {
+   #    "name" : "Guadeloupe",
+   #    "crs" : {
+   #    "4326" : { "xmin" : -64.197, "ymin" : 13.732, "xmax" : -59.967, "ymax" : 18.813},
+   #    "3857" : { "xmin" : -7057292, "ymin" : 1766063, "xmax" : -6759747, "ymax" : 2071532},
+   #    "32620" : { "xmin" : 457264, "ymin" : 1733655, "xmax" : 742535, "ymax" : 2023133}
+   #   },
+   #   "scales" : ["01M", "03M", "10M", "20M"]
+   # },
+   # "MQ" : {
+   #    "name" : "Martinique",
+   #    "crs" : {
+   #    "4326" : { "xmin" : -61.398, "ymin" : 14.293, "xmax" : -60.618, "ymax" : 15.059},
+   #    "3857" : { "xmin" : -6843610, "ymin" : 1596556, "xmax" : -6743775, "ymax" : 1692156},
+   #    "32620" : { "xmin" : 658362, "ymin" : 1580492, "xmax" : 760525, "ymax" : 1660906}
+   #   },
+   #   "scales" : ["01M", "03M", "10M", "20M"]
+   # },
+   # "CARIB" : {
+   #    "name" : "Caribbean islands",
+   #    "crs" : {
+   #    "4326" : { "xmin" : -64.074, "ymin" : 12.816, "xmax" : -60.257, "ymax" : 18.350},
+   #    "3857" : { "xmin" : -7114435, "ymin" : 1438782, "xmax" : -6701775, "ymax" : 2080865},
+   #    "32620" : { "xmin" : 390901, "ymin" : 1412066, "xmax" : 803644, "ymax" : 2038195}
+   #   },
+   #   "scales" : ["01M", "03M", "10M", "20M"]
+   # },
+   # "RE" : {
+   #    "name" : "Reunion",
+   #    "crs" : {
+   #    "4326" : { "xmin" : 55.087, "ymin" : -21.521, "xmax" : 55.981, "ymax" : -20.752},
+   #    "3857" : { "xmin" : 6118552, "ymin" : -2456745, "xmax" : 6240595, "ymax" : -2355898},
+   #    "32740" : { "xmin" : 301152, "ymin" : 7625194, "xmax" : 397346, "ymax" : 7708036}
+   #   },
+   #   "scales" : ["01M", "03M", "10M", "20M"]
+   # },
+   # "YT" : {
+   #    "name" : "Mayotte",
+   #    "crs" : {
+   #    "4326" : { "xmin" : 44.869, "ymin" : -13.088, "xmax" : 45.362, "ymax" : -12.590},
+   #    "3857" : { "xmin" : 5008923, "ymin" : -1461785, "xmax" : 5045741, "ymax" : -1415417},
+   #    "32738" : { "xmin" : 495615, "ymin" : 8559198, "xmax" : 535145, "ymax" : 8605147}
+   #   },
+   #   "scales" : ["01M", "03M", "10M", "20M"]
+   # },
+   # "MT" : {
+   #    "name" : "Malta",
+   #    "crs" : {
+   #    "4326" : { "xmin" : 14.1, "ymin" : 35.7, "xmax" : 14.6, "ymax" : 36.1},
+   #    "3857" : { "xmin" : 1573000, "ymin" : 4270000, "xmax" : 1632000, "ymax" : 4320000},
+   #    "3035" : { "xmin" : 4692000, "ymin" : 1420000, "xmax" : 4750000, "ymax" : 1466000}
+   #    },
+   #    "scales" : ["01M", "03M", "10M", "20M"]
+   # },
+   # "LI" : {
+   #    "name" : "Liechtenstein",
+   #    "crs" : {
+   #    "4326" : { "xmin" : 9.4, "ymin" : 47, "xmax" : 9.7, "ymax" : 47.4},
+   #    "3857" : { "xmin" : 1046000, "ymin" : 5945000, "xmax" : 1079000, "ymax" : 5992000},
+   #    "3035" : { "xmin" : 4276797, "ymin" : 2655615, "xmax" : 4300880, "ymax" : 2686748}
+   #    },
+   #    "scales" : ["01M", "03M", "10M", "20M"]
+   # },
+   # "IS" : {
+   #    "name" : "Iceland",
+   #    "crs" : {
+   #    "4326" : { "xmin" : -25.1, "ymin" : 62.6, "xmax" : -12.1, "ymax" : 67.7},
+   #    "3857" : { "xmin" : -2847407, "ymin" : 9094947, "xmax" : -1355181, "ymax" : 10129307},
+   #    "3035" : { "xmin" : 2705235, "ymin" : 4731507, "xmax" : 3328521, "ymax" : 5193241}
+   #    },
+   #    "scales" : ["01M", "03M", "10M", "20M"]
+   # }
 }
 
 
@@ -209,12 +206,17 @@ def filterRenameDecompose():
            if debug: print(year + " " + scale + " CNTR RG - filter, rename attributes")
            ogr2ogr.main(["-overwrite","-f", "GPKG",
               "tmp/" + year + "_" + scale + "_CNTR_RG.gpkg",
+              "-nln", "lay", "-nlt", "MULTIPOLYGON",
               "download/CNTR_RG_"+scale+"_"+year+"_4326.geojson",
               "-sql", "SELECT CNTR_ID as id,NAME_ENGL as na FROM CNTR_RG_" + scale + "_" + year + "_4326 WHERE CNTR_ID NOT IN (" + nutsData["years"][year] + ")"])
+
+           if debug: print(year + " " + scale + " CNTR RG - clean with buffer(0)")
+           subprocess.run(["ogrinfo", "-dialect", "indirect_sqlite", "-sql", "update lay set geom=ST_Multi(ST_Buffer(geom,0))", "tmp/" + year + "_" + scale + "_CNTR_RG.gpkg"])
 
            if debug: print(year + " " + scale + " CNTR BN - filter, rename attributes")
            ogr2ogr.main(["-overwrite","-f", "GPKG",
               "tmp/" + year + "_" + scale + "_CNTR_BN.gpkg",
+              "-nln", "lay", "-nlt", "MULTILINESTRING",
               "download/CNTR_BN_"+scale+"_"+year+"_4326.geojson",
               "-sql", "SELECT CNTR_BN_ID as id,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM CNTR_BN_" + scale + "_" + year + "_4326 WHERE EU_FLAG='F' AND EFTA_FLAG='F'"])
 
@@ -223,16 +225,19 @@ def filterRenameDecompose():
                if debug: print(year + " " + scale + " NUTS RG " + level + " - filter, rename attributes")
                ogr2ogr.main(["-overwrite","-f", "GPKG",
                  "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG.gpkg",
+                 "-nln", "lay", "-nlt", "MULTIPOLYGON",
                  "download/NUTS_RG_"+scale+"_"+year+"_4326.geojson",
                  "-sql", "SELECT N.NUTS_ID as id,A.NAME_LATN as na FROM NUTS_RG_" + scale + "_" + year + "_4326 as N left join 'download/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on N.NUTS_ID = A.NUTS_ID WHERE N.LEVL_CODE = " + level])
+
+               if debug: print(year + " " + scale + " NUTS RG " + level + " - clean with buffer(0)")
+               subprocess.run(["ogrinfo", "-dialect", "indirect_sqlite", "-sql", "update lay set geom=ST_Multi(ST_Buffer(geom,0))", "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG.gpkg"])
 
                if debug: print(year + " " + scale + " NUTS BN " + level + " - filter, rename attributes")
                ogr2ogr.main(["-overwrite","-f", "GPKG",
                  "tmp/" + year + "_" + scale + "_" + level + "_NUTS_BN.gpkg",
+                 "-nln", "lay", "-nlt", "MULTILINESTRING",
                  "download/NUTS_BN_"+scale+"_"+year+"_4326.geojson",
                  "-sql", "SELECT NUTS_BN_ID as id,LEVL_CODE as lvl,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM NUTS_BN_" + scale + "_" + year + "_4326 WHERE LEVL_CODE <= " + level])
-
-
 
 
 
@@ -243,7 +248,7 @@ def coarseClipping():
       for geo in geos:
 
          extends = geos[geo]["crs"]["4326"]
-         marginDeg = 31 if(geo == "EUR") else 20
+         marginDeg = 31 if(geo == "EUR") else 10
 
          for type in ["RG", "BN"]:
             for scale in geos[geo]["scales"]:
@@ -415,6 +420,7 @@ def points():
 ######## Full process #########
 download()
 filterRenameDecompose()
+#clean()
 coarseClipping()
 reprojectClipGeojson()
 topoGeojson()
@@ -423,6 +429,7 @@ points()
 
 
 
+# NOTES
 #
 #https://gis.stackexchange.com/questions/39080/using-ogr2ogr-to-convert-gml-to-shapefile-in-python
 #import ogr2ogr
@@ -430,40 +437,4 @@ points()
 #https://pcjericks.github.io/py-gdalogr-cookbook/
 #ogr2ogr.main(["","-f", "KML", "out.kml", "data/san_andres_y_providencia_administrative.shp"])
 #GDAL_DATA ="/usr/share/gdal/2.2"
-
-
-
-
-# Prepare input data into tmp folder: filter, rename attributes, decompose by nuts level
-#def filterRenameDecomposeOld():
-   # Path("tmp/").mkdir(parents=True, exist_ok=True)
-
-   # for year in nutsData["years"]:
-   #     for scale in nutsData["scales"]:
-
-   #         print(year + " " + scale + " CNTR RG - filter, rename attributes")
-   #         ogr2ogr.main(["-overwrite","-f", "GPKG",
-   #            "tmp/" + year + "_" + scale + "_CNTR_RG.gpkg",
-   #            "src/resources/shp/" + year + "/CNTR_RG_" + scale + "_" + year + "_4326.shp",
-   #            "-sql", "SELECT CNTR_ID as id,NAME_ENGL as na FROM CNTR_RG_" + scale + "_" + year + "_4326 WHERE CNTR_ID NOT IN (" + nutsData["years"][year] + ")"])
-
-   #         print(year + " " + scale + " CNTR BN - filter, rename attributes")
-   #         ogr2ogr.main(["-overwrite","-f", "GPKG",
-   #            "tmp/" + year + "_" + scale + "_CNTR_BN.gpkg",
-   #            "src/resources/shp/" + year + "/CNTR_BN_" + scale + "_" + year + "_4326.shp",
-   #            "-sql", "SELECT CNTR_BN_ID as id,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM CNTR_BN_" + scale + "_" + year + "_4326 WHERE EU_FLAG='F' AND EFTA_FLAG='F'"])
-
-   #         for level in ["0", "1", "2", "3"]:
-
-   #             print(year + " " + scale + " NUTS RG " + level + " - filter, rename attributes")
-   #             ogr2ogr.main(["-overwrite","-f", "GPKG",
-   #               "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG.gpkg",
-   #               "src/resources/shp/" + year + "/NUTS_RG_" + scale + "_" + year + "_4326.shp",
-   #               "-sql", "SELECT N.NUTS_ID as id,A.NAME_LATN as na FROM NUTS_RG_" + scale + "_" + year + "_4326 as N left join 'src/resources/shp/" + year + "/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on N.NUTS_ID = A.NUTS_ID WHERE N.LEVL_CODE = " + level])
-
-   #             print(year + " " + scale + " NUTS BN " + level + " - filter, rename attributes")
-   #             ogr2ogr.main(["-overwrite","-f", "GPKG",
-   #               "tmp/" + year + "_" + scale + "_" + level + "_NUTS_BN.gpkg",
-   #               "src/resources/shp/" + year + "/NUTS_BN_" + scale + "_" + year + "_4326.shp",
-   #               "-sql", "SELECT NUTS_BN_ID as id,LEVL_CODE as lvl,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM NUTS_BN_" + scale + "_" + year + "_4326 WHERE LEVL_CODE <= " + level])
 
