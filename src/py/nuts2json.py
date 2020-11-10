@@ -2,16 +2,12 @@ from pathlib import Path
 import ogr2ogr, subprocess, json, urllib.request
 
 ################
-# Target structure:
+# Target structure
+#
 # topojson:  YEAR/GEO/PROJECTION/SCALE/<NUTS_LEVEL>.json
 # geojson:   YEAR/GEO/PROJECTION/SCALE/<TYPE>[_<NUTS_LEVEL>].json
 # pts:       YEAR/GEO/PROJECTION/nutspt_<NUTS_LEVEL>.json
 ################
-
-# TODO: correct extents. error in JS ?
-# TODO: check xk/rs
-# TODO get areas ?
-# TODO remove -f ?
 
 # Set to True/False to show/hide debug messages
 debug = False
@@ -19,7 +15,7 @@ debug = False
 # The Nuts2json version number
 version = "v1"
 
-# NUTS year version and, for each year, the countrie shown as stat units
+# NUTS year versions and, for each one, the countries for which NUTS/statistical units are shown
 nutsData = {
    "years" : {
       "2021" : "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME','AL'",
@@ -30,7 +26,8 @@ nutsData = {
    "scales" : ["01M", "03M", "10M", "20M", "60M"]
 }
 
-# Geographical territories for map insets, CRSs and extends
+# Geographical territories for map insets.
+# For each, the CRSs to handle and the geographical extent.
 geos = {
    "EUR" : {
       "name" : "Europe",
@@ -153,7 +150,7 @@ geos = {
 
 
 
-
+# Save information on API structure
 print("save data")
 Path("pub/" + version + "/").mkdir(parents=True, exist_ok=True)
 with open("pub/" + version + "/data.json", "w") as fp:
@@ -162,7 +159,7 @@ with open("pub/" + version + "/data.json", "w") as fp:
 
 
 
-# Download base data
+# Download base data from GISCO download API
 def download():
    print("Download")
    Path("download/").mkdir(parents=True, exist_ok=True)
@@ -195,8 +192,8 @@ def download():
 
 
 
-# Prepare input data into tmp folder: filter, rename attributes, decompose by nuts level
-def filterRenameDecompose():
+# Prepare input data into tmp folder: filter, rename attributes, decompose by nuts level and clean
+def filterRenameDecomposeClean():
    print("filterRenameDecompose")
    Path("tmp/").mkdir(parents=True, exist_ok=True)
 
@@ -319,8 +316,8 @@ def reprojectClipGeojson():
 
 
 # Make topojson file from geojson files
-# Simplify them with topojson simplify
-# Produce geojson from topojson
+# Simplify with topojson simplify
+# Produce new geojson from topojson
 # See: https://github.com/topojson/topojson-server/blob/master/README.md#geo2topo
 # See: https://github.com/topojson/topojson-simplify/blob/master/README.md#toposimplify
 # See: https://github.com/topojson/topojson-client/blob/master/README.md#topo2geo
@@ -375,7 +372,7 @@ def points():
       Path("tmp/pts/" + year + "/").mkdir(parents=True, exist_ok=True)
 
       if debug: print(year + " PTS join areas")
-      ogr2ogr.main(["-overwrite","-f", "ESRI Shapefile", #TODO: stop using SHP
+      ogr2ogr.main(["-overwrite","-f", "ESRI Shapefile", #TODO: stop using SHP ?
         "tmp/pts/" + year + "/NUTS_LB.shp",
         "download/NUTS_LB_" + year + "_4326.geojson",
         "-sql", "select LB.NUTS_ID as id, LB.LEVL_CODE as lvl, A.area as ar FROM NUTS_LB_" + year + "_4326 AS LB left join 'src/resources/nuts_areas/AREA_" + year + ".csv'.AREA_" + year + " AS A ON LB.NUTS_ID = A.nuts_id"
@@ -420,8 +417,7 @@ def points():
 
 ######## Full process #########
 download()
-filterRenameDecompose()
-#clean()
+filterRenameDecomposeClean()
 coarseClipping()
 reprojectClipGeojson()
 topoGeojson()
@@ -433,7 +429,6 @@ points()
 # NOTES
 #
 #https://gis.stackexchange.com/questions/39080/using-ogr2ogr-to-convert-gml-to-shapefile-in-python
-#import ogr2ogr
 #https://github.com/OSGeo/gdal/tree/master/gdal/swig/python
 #https://pcjericks.github.io/py-gdalogr-cookbook/
 #ogr2ogr.main(["","-f", "KML", "out.kml", "data/san_andres_y_providencia_administrative.shp"])
