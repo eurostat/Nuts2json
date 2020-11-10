@@ -103,6 +103,8 @@ The values supported for this additional **GEO** parameter are listed in the tab
 | `MT` | Malta | `3035` - [European LAEA projection](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/) |
 | `LI` | Liechtenstein | `3035` - [European LAEA projection](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/) |
 | `IS` | Iceland | `3035` - [European LAEA projection](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/) |
+| `SJ_SV` | Svalbard | `3035` - [European LAEA projection](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/) |
+| `SJ_JM` | Jan Mayen | `3035` - [European LAEA projection](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/) |
 
 Need for another territory in this table? Feel free to [request it](https://github.com/eurostat/Nuts2json/issues/new) !
 
