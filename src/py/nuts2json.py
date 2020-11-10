@@ -10,7 +10,7 @@ import ogr2ogr, subprocess, json, urllib.request
 ################
 
 # Set to True/False to show/hide debug messages
-debug = False
+debug = True
 
 # The Nuts2json version number
 version = "v1"
@@ -146,6 +146,7 @@ geos = {
       },
       "scales" : ["01M", "03M", "10M", "20M"]
    }
+#TODO add svalbard and jan mayen island
 }
 
 
@@ -374,8 +375,9 @@ def points():
       Path("tmp/pts/" + year + "/").mkdir(parents=True, exist_ok=True)
 
       if debug: print(year + " PTS join areas")
-      ogr2ogr.main(["-overwrite","-f", "ESRI Shapefile", #TODO: stop using SHP ?
-        "tmp/pts/" + year + "/NUTS_LB.shp",
+      ogr2ogr.main(["-overwrite","-f", "GeoJSON",
+        "tmp/pts/" + year + "/NUTS_LB_.gpkg",
+        "-nln", "lay",
         "download/NUTS_LB_" + year + "_4326.geojson",
         "-sql", "select LB.NUTS_ID as id, LB.LEVL_CODE as lvl, A.area as ar FROM NUTS_LB_" + year + "_4326 AS LB left join 'src/resources/nuts_areas/AREA_" + year + ".csv'.AREA_" + year + " AS A ON LB.NUTS_ID = A.nuts_id"
         ])
@@ -383,8 +385,9 @@ def points():
       if debug: print(year + " PTS join latn names")
       ogr2ogr.main(["-overwrite","-f", "GPKG",
         "tmp/pts/" + year + "/NUTS_LB.gpkg",
-        "tmp/pts/" + year + "/NUTS_LB.shp",
-        "-sql", "select LB.id as id, LB.lvl as lvl, A.NAME_LATN as na, LB.ar as ar FROM NUTS_LB AS LB left join 'download/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on LB.id = A.NUTS_ID"
+        "-nln", "lay",
+        "tmp/pts/" + year + "/NUTS_LB_.gpkg",
+        "-sql", "select LB.id as id, LB.lvl as lvl, A.NAME_LATN as na, LB.ar as ar FROM lay AS LB left join 'download/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on LB.id = A.NUTS_ID"
         ])
 
       for level in ["0", "1", "2", "3"]:
@@ -392,8 +395,9 @@ def points():
          if debug: print(year + " " + level + " - PTS decompose by NUTS level")
          ogr2ogr.main(["-overwrite","-f", "GPKG",
            "tmp/pts/" + year + "/NUTS_LB_" + level + ".gpkg",
+           "-nln", "lay",
            "tmp/pts/" + year + "/NUTS_LB.gpkg",
-           "-sql", "SELECT geom,id,na,ar FROM LB AS LB WHERE lvl=" + level
+           "-sql", "SELECT geom,id,na,ar FROM lay AS LB WHERE lvl=" + level
            ])
 
    for year in nutsData["years"]:
@@ -418,21 +422,11 @@ def points():
 
 
 ######## Full process #########
-download()
-filterRenameDecomposeClean()
-coarseClipping()
-reprojectClipGeojson()
-topoGeojson()
+# download()
+# filterRenameDecomposeClean()
+# coarseClipping()
+# reprojectClipGeojson()
+# topoGeojson()
 points()
 ##############################
-
-
-
-# NOTES
-#
-#https://gis.stackexchange.com/questions/39080/using-ogr2ogr-to-convert-gml-to-shapefile-in-python
-#https://github.com/OSGeo/gdal/tree/master/gdal/swig/python
-#https://pcjericks.github.io/py-gdalogr-cookbook/
-#ogr2ogr.main(["","-f", "KML", "out.kml", "data/san_andres_y_providencia_administrative.shp"])
-#GDAL_DATA ="/usr/share/gdal/2.2"
 
