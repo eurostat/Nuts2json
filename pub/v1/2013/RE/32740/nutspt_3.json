@@ -3,6 +3,6 @@
 "name": "nutspt_3",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32740" } },
 "features": [
-{ "type": "Feature", "properties": { "id": "FRA40", "na": "La Réunion", "ar": "2503083446" }, "geometry": { "type": "Point", "coordinates": [ 346987.28939656750299, 7663231.501201372593641 ] } }
+{ "type": "Feature", "properties": { "id": "FRA40", "na": "La Réunion", "ar": "2503083446" }, "geometry": { "type": "Point", "coordinates": [ 346987.289395915868226, 7663231.501271670684218 ] } }
 ]
 }

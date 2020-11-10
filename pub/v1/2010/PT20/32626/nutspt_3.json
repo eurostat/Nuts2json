@@ -3,6 +3,6 @@
 "name": "nutspt_3",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32626" } },
 "features": [
-{ "type": "Feature", "properties": { "id": "PT200", "na": "Região Autónoma dos Açores", "ar": "2329065276" }, "geometry": { "type": "Point", "coordinates": [ 477616.95881968352478, 4245878.819746851921082 ] } }
+{ "type": "Feature", "properties": { "id": "PT200", "na": "Região Autónoma dos Açores", "ar": "2329065276" }, "geometry": { "type": "Point", "coordinates": [ 477616.958819400751963, 4245878.819644949398935 ] } }
 ]
 }

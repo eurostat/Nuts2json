@@ -3,8 +3,8 @@
 "name": "nutspt_3",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
-{ "type": "Feature", "properties": { "id": "CH053", "na": "Appenzell Ausserrhoden", "ar": "242930861" }, "geometry": { "type": "Point", "coordinates": [ 9.4108, 47.3865 ] } },
-{ "type": "Feature", "properties": { "id": "CH054", "na": "Appenzell Innerrhoden", "ar": "172444905" }, "geometry": { "type": "Point", "coordinates": [ 9.4066, 47.3066 ] } },
-{ "type": "Feature", "properties": { "id": "LI000", "na": "Liechtenstein", "ar": "159938163" }, "geometry": { "type": "Point", "coordinates": [ 9.5536, 47.1374 ] } }
+{ "type": "Feature", "properties": { "id": "CH053", "na": "Appenzell Ausserrhoden", "ar": "242930861" }, "geometry": { "type": "Point", "coordinates": [ 9.4108, 47.386499999060163 ] } },
+{ "type": "Feature", "properties": { "id": "CH054", "na": "Appenzell Innerrhoden", "ar": "172444905" }, "geometry": { "type": "Point", "coordinates": [ 9.4066, 47.306599999059955 ] } },
+{ "type": "Feature", "properties": { "id": "LI000", "na": "Liechtenstein", "ar": "159938163" }, "geometry": { "type": "Point", "coordinates": [ 9.5536, 47.137399999059511 ] } }
 ]
 }
