@@ -10,7 +10,7 @@ import ogr2ogr, subprocess, json, urllib.request
 ################
 
 # Set to True/False to show/hide debug messages
-debug = True
+debug = False
 
 # The Nuts2json version number
 version = "v1"
@@ -145,9 +145,27 @@ geos = {
       "3035" : { "xmin" : 2705235, "ymin" : 4731507, "xmax" : 3328521, "ymax" : 5193241}
       },
       "scales" : ["01M", "03M", "10M", "20M"]
+   },
+   "SJ_SV" : {
+      "name" : "Svalbard",
+      "crs" : {
+      "4326" : { "xmin" : 7.31, "ymin" : 73.38, "xmax" : 34.84, "ymax" : 81.62},
+      "3857" : { "xmin" : 370942, "ymin" : 12238601, "xmax" : 4275361, "ymax" : 16477683},
+      "3035" : { "xmin" : 4169002, "ymin" : 5588027, "xmax" : 4881559, "ymax" : 6487832}
+      },
+      "scales" : ["01M", "03M", "10M", "20M"]
+   },
+   "SJ_JM" : {
+      "name" : "Jan Mayen",
+      "crs" : {
+      "4326" : { "xmin" : -10.26, "ymin" : 69.88, "xmax" : -6.61, "ymax" : 71.92},
+      "3857" : { "xmin" : -1169541, "ymin" : 11210247, "xmax" : -692469, "ymax" : 11604247},
+      "3035" : { "xmin" : 3575911, "ymin" : 5344013, "xmax" : 3723336, "ymax" : 5455429}
+      },
+      "scales" : ["01M", "03M", "10M", "20M"]
    }
-#TODO add svalbard and jan mayen island
 }
+
 
 
 
@@ -211,8 +229,6 @@ def filterRenameDecomposeClean():
            if debug: print(year + " " + scale + " CNTR RG - clean with buffer(0)")
            subprocess.run(["ogrinfo", "-dialect", "indirect_sqlite", "-sql", "update lay set geom=ST_Multi(ST_Buffer(geom,0))", "tmp/" + year + "_" + scale + "_CNTR_RG.gpkg"])
 
-#TODO: Warning 1: A geometry of type GEOMETRYCOLLECTION is inserted into layer lay of geometry type MULTIPOLYGON, which is not normally allowed by the GeoPackage specification, but the driver will however do it. To create a conformant GeoPackage, if using ogr2ogr, the -nlt option can be used to override the layer geometry type. This warning will no longer be emitted for this combination of layer and feature geometry type.
-
            if debug: print(year + " " + scale + " CNTR BN - filter, rename attributes")
            ogr2ogr.main(["-overwrite","-f", "GPKG",
               "tmp/" + year + "_" + scale + "_CNTR_BN.gpkg",
@@ -252,6 +268,9 @@ def coarseClipping():
 
          for type in ["RG", "BN"]:
             for scale in geos[geo]["scales"]:
+
+# TODO: fix that warning:
+# Warning 1: A geometry of type GEOMETRYCOLLECTION is inserted into layer lay of geometry type MULTIPOLYGON, which is not normally allowed by the GeoPackage specification, but the driver will however do it. To create a conformant GeoPackage, if using ogr2ogr, the -nlt option can be used to override the layer geometry type. This warning will no longer be emitted for this combination of layer and feature geometry type.
 
                if debug: print(year + " " + geo + " " + scale + " CNTR " + type + " - coarse clipping")
                ogr2ogr.main(["-overwrite","-f", "GPKG",
@@ -367,7 +386,6 @@ def topoGeojson():
 # Produce point representations
 def points():
    print("points")
-   scale = "10M" #TODO better choose that?
 
    # prepare
    for year in nutsData["years"]:
