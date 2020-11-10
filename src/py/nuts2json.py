@@ -422,11 +422,11 @@ def points():
 
 
 ######## Full process #########
-# download()
-# filterRenameDecomposeClean()
-# coarseClipping()
-# reprojectClipGeojson()
-# topoGeojson()
+download()
+filterRenameDecomposeClean()
+coarseClipping()
+reprojectClipGeojson()
+topoGeojson()
 points()
 ##############################
 
