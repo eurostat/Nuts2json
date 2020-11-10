@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<svg></svg>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://d3js.org/d3-request.v1.min.js"></script>
+<script src="https://d3js.org/topojson.v3.min.js"></script>
+<script>
+
+d3.json("https://raw.githubusercontent.com/eurostat/Nuts2json/dev/pub/v1/2021/3035/60M/3.json",
+		function(error, nuts) {
+	if (error) throw error;
+
+	//prepare SVG element
+	var width = 700, height = width*(nuts.bbox[3]-nuts.bbox[1])/(nuts.bbox[2]-nuts.bbox[0]),
+		svg = d3.select("svg").attr("width", width).attr("height", height)
+		path = d3.geoPath().projection(d3.geoIdentity()
+			.reflectY(true).fitSize([width,height], topojson.feature(nuts, nuts.objects.nutsrg)));
+			//TODO
+
+	var fs;
+
+	//draw graticule
+	fs = topojson.feature(nuts, nuts.objects.gra).features
+	if(fs)
+	svg.append("g").selectAll("path").data(fs)
+		.enter().append("path").attr("d", path).attr("class","graticule");
+
+	//draw regions
+	//countries
+	fs = topojson.feature(nuts, nuts.objects.cntrg).features;
+	if(fs)
+	svg.append("g").selectAll("path").data(fs)
+		.enter().append("path").attr("d", path).attr("class","cntrg");
+
+	//nuts
+	fs = topojson.feature(nuts, nuts.objects.nutsrg).features;
+	if(fs)
+	svg.append("g").selectAll("path").data(fs)
+		.enter().append("path").attr("d", path).attr("class","nutsrg");
+
+	//draw boundaries
+	//countries
+	fs = topojson.feature(nuts, nuts.objects.cntbn).features;
+	if(fs)
+	svg.append("g").selectAll("path").data(fs)
+		.enter().append("path").attr("d", path)
+		.attr("class",function(bn) { return "cntbn" + (bn.properties.co==="T"?" coastal":""); });
+	//nuts
+	fs = topojson.feature(nuts, nuts.objects.nutsbn).features;
+	if(fs)
+	svg.append("g").selectAll("path").data(fs)
+		.enter().append("path").attr("d", path)
+		.attr("class",function(bn) {
+			return "nutsbn" + (bn.properties.co==="T"?" coastal":"")
+				+ ((bn.properties.oth==="T" || bn.properties.lvl==0)?" white":"")
+				+ (bn.properties.lvl==3?" thin":"");
+		});
+});
+</script>

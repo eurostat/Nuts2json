@@ -1,5 +1,8 @@
 tmp/
+download/
+src/py/__pycache__
 .idea/
+.vscode/
 .settings/
 .project
 chrome.sh
