@@ -376,7 +376,6 @@ def points():
       ogr2ogr.main(["-overwrite","-f", "ESRI Shapefile",
         "tmp/pts/" + year + "/NUTS_LB.shp",
         "download/NUTS_LB_" + year + "_4326.geojson",
-        #"-nln", "_LB_",
         "-sql", "select LB.NUTS_ID as id, LB.LEVL_CODE as lvl, A.area as ar FROM NUTS_LB_" + year + "_4326 AS LB left join 'src/resources/nuts_areas/AREA_" + year + ".csv'.AREA_" + year + " AS A ON LB.NUTS_ID = A.nuts_id"
         ])
 
