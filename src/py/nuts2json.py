@@ -257,6 +257,7 @@ def coarseClipping():
                ogr2ogr.main(["-overwrite","-f", "GPKG",
                  "tmp/" + year + "_" + geo + "_" + scale + "_CNTR_" + type + ".gpkg",
                  "tmp/" + year + "_" + scale + "_CNTR_" + type + ".gpkg",
+                 "-nlt", "MULTIPOLYGON" if type=="RG" else "MULTILINESTRING",
                  #"-makevalid",
                  "-clipsrc", str(extends["xmin"]-marginDeg), str(extends["ymin"]-marginDeg), str(extends["xmax"]+marginDeg), str(extends["ymax"]+marginDeg)])
 
@@ -266,6 +267,7 @@ def coarseClipping():
                   ogr2ogr.main(["-overwrite","-f", "GPKG",
                     "tmp/" + year + "_" + geo + "_" + scale + "_" + level + "_NUTS_" + type + ".gpkg",
                     "tmp/" + year + "_" + scale + "_" + level + "_NUTS_" + type + ".gpkg",
+                    "-nlt", "MULTIPOLYGON" if type=="RG" else "MULTILINESTRING",
                     #"-makevalid",
                     "-clipsrc", str(extends["xmin"]-marginDeg), str(extends["ymin"]-marginDeg), str(extends["xmax"]+marginDeg), str(extends["ymax"]+marginDeg)])
 
@@ -373,7 +375,7 @@ def points():
       Path("tmp/pts/" + year + "/").mkdir(parents=True, exist_ok=True)
 
       if debug: print(year + " PTS join areas")
-      ogr2ogr.main(["-overwrite","-f", "ESRI Shapefile",
+      ogr2ogr.main(["-overwrite","-f", "ESRI Shapefile", #TODO: stop using SHP
         "tmp/pts/" + year + "/NUTS_LB.shp",
         "download/NUTS_LB_" + year + "_4326.geojson",
         "-sql", "select LB.NUTS_ID as id, LB.LEVL_CODE as lvl, A.area as ar FROM NUTS_LB_" + year + "_4326 AS LB left join 'src/resources/nuts_areas/AREA_" + year + ".csv'.AREA_" + year + " AS A ON LB.NUTS_ID = A.nuts_id"
