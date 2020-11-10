@@ -1,6 +1,6 @@
 # Nuts2json
 
-[Nuts2json](https://github.com/eurostat/Nuts2json) provides various reusable versions of [Eurostat NUTS dataset](http://ec.europa.eu/eurostat/web/nuts/overview) as web formats such as [TopoJSON](https://github.com/mbostock/topojson/wiki) and [GeoJSON](http://geojson.org/). It is provided to support the development of statistical web maps of [Eurostat data](http://ec.europa.eu/eurostat/) based on NUTS regions. In a way, it provides a blank map of geometries ready for use with your own data and colors.
+[Nuts2json](https://github.com/eurostat/Nuts2json) provides the [Eurostat NUTS geometries](http://ec.europa.eu/eurostat/web/nuts/overview) as web formats such as [TopoJSON](https://github.com/mbostock/topojson/wiki) and [GeoJSON](http://geojson.org/). It is provided to support the development of statistical web maps of [Eurostat data](http://ec.europa.eu/eurostat/) based on NUTS regions. In a way, it provides a blank map of geometries ready for use with your own data and cartographic style.
 
 [![Example](doc/img/sc_simple.png)](https://bl.ocks.org/jgaffuri/raw/e7e0a76a6e0f851b253d3b1c8fb17ffb?proj=3035&lvl=3&w=1000&s=20M&time=2016)
 [![Example](doc/img/sc_advanced.png)](https://bl.ocks.org/jgaffuri/raw/71d130bf5963c5ffe0a436399f401af3?proj=3035&lvl=3&w=1000&s=20M&time=2016)
@@ -22,7 +22,7 @@ URL patterns:
 - For TopoJSON format: `/<YEAR>/<PROJECTION>/<SCALE>/<NUTS_LEVEL>.json`
 - For GeoJSON format: `/<YEAR>/<PROJECTION>/<SCALE>/<TYPE>[_<NUTS_LEVEL>].json`
 
-For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2016/3035/20M/2.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2016/3035/20M/2.json) returns a TopoJSON file of 2016 NUTS regions level 2 in European LAEA projection ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) at 1:20M scale.
+For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2016/3035/20M/2.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2016/3035/20M/2.json) returns a TopoJSON file of 2016 NUTS regions level 2 in European LAEA projection ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) for 1:20M scale.
 
 The parameters are:
 
@@ -30,8 +30,8 @@ The parameters are:
 | ------------- | ------------- |-------------|
 | `YEAR` | `2021` `2016` `2013` `2010` | The NUTS version. |
 | `PROJECTION` | `3035` `3857` `4326` | The coordinate reference system EPSG code. Two projections are provided: European LAEA projection ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) and web mercator ([EPSG 3857](http://spatialreference.org/ref/sr-org/7483/)). For statistical maps, it is strongly adviced to use an equal-area projection such as `3035`. Geographic coordinates WGS84 ([EPSG 4326](http://spatialreference.org/ref/epsg/4326/)) are also provided. |
-| `SCALE` | `60M` `20M` `10M` `03M` | The intended map scale factor. The larger the value, the stronger the simplification. For example, for a map width of 1000 pixels the scale 1:20M is the most suitable. |
-| `NUTS_LEVEL` | `0` `1` `2` `3` | The NUTS level to be displayed on the map, from national (NUTS_LEVEL=`0`) to local level (NUTS_LEVEL=`3`). |
+| `SCALE` | `60M` `20M` `10M` `03M` | The intended map scale factor. The larger the value, the stronger the simplification. For example, for a map width of 1000 pixels, the scale 1:20M is the most suitable. |
+| `NUTS_LEVEL` | `0` `1` `2` `3` | The NUTS level to display, from national (NUTS_LEVEL=`0`) to local level (NUTS_LEVEL=`3`). |
 | `TYPE` | `nutsrg` `nutsbn` `cntrg` `cntbn` `gra` | For GeoJSON format, the feature type has to be specified. The available feature types are described below. For NUTS feature types (`nutsrg` and `nutsbn`), the `NUTS_LEVEL` to be displayed on the map has to be specified.  |
 
 For additional projections, formats, scales, etc., feel free to [ask](https://github.com/eurostat/Nuts2json/issues/new) !
@@ -44,7 +44,7 @@ Five feature types are provided:
 
 - NUTS regions (feature type `nutsrg`) with the following properties:
   - `id`: The NUTS identifier to be used to join Eurostat statistical figures and then assign colors to the regions.
-  - `na`: The geographical name of the region.
+  - `na`: The latin geographical name of the region.
 
 - NUTS boundaries (feature type `nutsbn`) with the following properties:
   - `id`: An identifier.
@@ -52,17 +52,17 @@ Five feature types are provided:
   - `eu`: T if the boundary separate two EU member states, F otherwise.
   - `efta`: T if the boundary touches at least one EFTA country, F otherwise.
   - `cc`: T if the boundary touches at least one Candidate Country, F otherwise.
-  - `oth`: T if the boundary touches a country wich is not EU, EFTA,CC. F otherwise.
+  - `oth`: T if the boundary touches at least one country which is not EU, EFTA,CC. F otherwise.
   - `co`: T if the boundary is coastal. F otherwise.
 
 - Non-european countries (feature type `cntrg`) with the following properties:
-  - `id`: The country identifier (2 letters code).
-  - `na`: The country name.
+  - `id`: The country identifier (2 letters ISO-code).
+  - `na`: The latin country name.
 
 - Non-european boundaries (feature type `cntbn`) with the following properties:
   - `id`: An identifier.
   - `cc`: T if the boundary touches at least one Candidate Country, F otherwise.
-  - `oth`: T if the boundary touches a country wich is not EU, EFTA,CC. F otherwise.
+  - `oth`: T if the boundary touches at least one country wich is not EU, EFTA,CC. F otherwise.
   - `co`: T if the boundary is coastal. F otherwise.
 
 - The map graticule (meridian and parrallel lines) is provided as feature type `gra` with a single `id` property, which is the lat/lon of the parallel/meridian.
@@ -77,7 +77,7 @@ For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v
 
 The point features are provided with the following properties:
   - `id`: The NUTS identifier.
-  - `na`: The geographical name of the region.
+  - `na`: The latin geographical name of the region.
   - `ar`: The area of the region, in m².
 
 
@@ -85,9 +85,9 @@ The point features are provided with the following properties:
 ### Overseas territories - map insets
 
 To add [map insets](http://wiki.gis.com/wiki/index.php/Inset_Map) showing overseas territories or detail on small countries, dedicated files can be used. To access these files, the URL patterns are the same as the ones previously defined, except an additional **GEO** parameter has to be specified here: 
-`/<YEAR>/<GEO>/<PROJECTION>`. This parameter specifies the territory of interest. For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2021/GF/32622/10M/1.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2021/GF/32622/10M/1.json) returns a TopoJSON file of 2021 NUTS regions level 1 on French Guiana overseas territory in UTM zone 22N projection at 1:10M scale.
+`.../<YEAR>/<GEO>/<PROJECTION>/...`. This parameter specifies the territory of interest. For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2021/GF/32622/10M/1.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2021/GF/32622/10M/1.json) returns a TopoJSON file of 2021 NUTS regions level 1 on French Guiana overseas territory in UTM zone 22N projection at 1:10M scale.
 
-The values supported for this additional **GEO** parameter are listed in the table below. For each of them, a specific projection is proposed, replacing the European LAEA projection when necessary. For all of them, an additional value for the `SCALE` parameter is available: `01M`, corresponding to the 1:1M scale. The scale `60M`, too coarse for these territories, is not provided.
+The values supported for this additional **GEO** parameter are listed in the table below. For each of them, a specific projection is proposed, replacing the European LAEA projection when necessary. For all of them, an additional value for the `SCALE` parameter is available, `01M`, corresponding to the 1:1M scale. The scale `60M`, too coarse for these small territories, is not provided.
 
 | **GEO** | Territory | Specific projection |
 | ------------- | ------------- | ------------- |
@@ -106,7 +106,7 @@ The values supported for this additional **GEO** parameter are listed in the tab
 | `SJ_SV` | Svalbard | `3035` - [European LAEA projection](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/) |
 | `SJ_JM` | Jan Mayen | `3035` - [European LAEA projection](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/) |
 
-Need for another territory in this table? Feel free to [request it](https://github.com/eurostat/Nuts2json/issues/new) !
+For additional territories, feel free to [ask](https://github.com/eurostat/Nuts2json/issues/new) !
 
 
 
@@ -127,12 +127,13 @@ These examples are based on [d3js](https://d3js.org/) library.
 
 ## Technical details
 
-These files are produced from the NUTS geodata provided on [Eurostat-GISCO website](http://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts). The input data are automatically downloaded from the [Eurostat GISCO API](https://gisco-services.ec.europa.eu/distribution/) and stored in a *download* folder. This data is transformed using [GDAL](http://www.gdal.org/) and [TopoJSON](https://github.com/mbostock/topojson/wiki) programs. The entire process is automated in a Python script, which is also available in the [/src/py/ folder](/src/py/). This process has 5 steps:
+These files are produced from the NUTS geodata provided on [Eurostat-GISCO website](http://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts). The input data are automatically downloaded from the [Eurostat GISCO API](https://gisco-services.ec.europa.eu/distribution/) and stored in a *download* folder. This data is transformed using [GDAL](http://www.gdal.org/) and [TopoJSON](https://github.com/mbostock/topojson/wiki) programs. The entire process is automated in a Python script, which is available in the [/src/py/ folder](/src/py/). This process has the following steps:
 1. *download*: Retrieve the input data using [Eurostat GISCO API](https://gisco-services.ec.europa.eu/distribution/).
-2. *filterRenameDecompose*: Prepare input data: filter, rename attributes and decompose by NUTS level.
-3. *reprojectClipGeojson*: Clip, reproject and convert as GeoJSON.
-4. *topoGeojson*: Make TopoJSON file from GeoJSON files, simplify them with [TopoJSON Simplify](https://github.com/topojson/topojson-simplify/) program, and finally produce GeoJSON from TopoJSON.
-5. *points*: Produce point representations.
+2. *filterRenameDecomposeClean*: Prepare input data: filter, rename attributes, decompose by NUTS level and clean some invalid geometries.
+3. *coarseClipping*: Apply a coarse data selection with clipping on the areas of interest.
+4. *reprojectClipGeojson*: Reproject, clip more precisely and convert as GeoJSON.
+5. *topoGeojson*: Make TopoJSON file from GeoJSON files, simplify them with [TopoJSON Simplify](https://github.com/topojson/topojson-simplify/) program, and finally produce GeoJSON from TopoJSON.
+6. *points*: Produce point representations.
 
 
 
