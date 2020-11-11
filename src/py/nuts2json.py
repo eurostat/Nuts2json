@@ -14,7 +14,6 @@ import ogr2ogr, subprocess, json, urllib.request
 ################
 
 
-
 # Set to True/False to show/hide debug messages
 debug = False
 
