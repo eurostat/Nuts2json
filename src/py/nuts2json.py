@@ -15,7 +15,7 @@ import ogr2ogr, subprocess, json, urllib.request
 
 
 # Set to True/False to show/hide debug messages
-debug = False
+debug = True
 
 # The Nuts2json version number
 version = "v1"
@@ -31,6 +31,7 @@ nutsData = {
    "scales" : ["01M", "03M", "10M", "20M", "60M"]
 }
 
+# TODO extract that.
 # Geographical territories for map insets.
 # For each, the CRSs to handle and the geographical extent.
 geos = {
@@ -73,9 +74,9 @@ geos = {
    "GF" : {
       "name" : "French Guiana",
       "crs" : {
-      "4326" : { "xmin" : -55, "ymin" : 1.9, "xmax" : -51.5, "ymax" : 6},
-      "3857" : { "xmin" : -6103000, "ymin" : 214000, "xmax" : -5722000, "ymax" : 660000},
-      "32622" : { "xmin" : 90000, "ymin" : 224000, "xmax" : 436000, "ymax" : 647000}
+      "4326" : { "xmin" : -56, "ymin" : 1, "xmax" : -50, "ymax" : 7},
+      "3857" : { "xmin" : -6123000, "ymin" : 194000, "xmax" : -5702000, "ymax" : 680000},
+      "32622" : { "xmin" : 70000, "ymin" : 204000, "xmax" : 456000, "ymax" : 667000}
       },
       "scales" : ["01M", "03M", "10M", "20M"]
    },
@@ -127,7 +128,7 @@ geos = {
    "MT" : {
       "name" : "Malta",
       "crs" : {
-      "4326" : { "xmin" : 14.1, "ymin" : 35.7, "xmax" : 14.6, "ymax" : 36.1},
+      "4326" : { "xmin" : 14, "ymin" : 35.4, "xmax" : 15, "ymax" : 37},
       "3857" : { "xmin" : 1573000, "ymin" : 4270000, "xmax" : 1632000, "ymax" : 4320000},
       "3035" : { "xmin" : 4692000, "ymin" : 1420000, "xmax" : 4750000, "ymax" : 1466000}
       },
@@ -136,9 +137,9 @@ geos = {
    "LI" : {
       "name" : "Liechtenstein",
       "crs" : {
-      "4326" : { "xmin" : 9.4, "ymin" : 47, "xmax" : 9.7, "ymax" : 47.4},
-      "3857" : { "xmin" : 1046000, "ymin" : 5945000, "xmax" : 1079000, "ymax" : 5992000},
-      "3035" : { "xmin" : 4276797, "ymin" : 2655615, "xmax" : 4300880, "ymax" : 2686748}
+      "4326" : { "xmin" : 9.3204, "ymin" : 46.9912, "xmax" : 9.7605, "ymax" : 47.3929},
+      "3857" : { "xmin" : 1026000, "ymin" : 5925000, "xmax" : 1099000, "ymax" : 6002000},
+      "3035" : { "xmin" : 4256797, "ymin" : 2645615, "xmax" : 4320880, "ymax" : 2696748}
       },
       "scales" : ["01M", "03M", "10M", "20M"]
    },
