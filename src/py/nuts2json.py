@@ -7,7 +7,13 @@ import ogr2ogr, subprocess, json, urllib.request
 # topojson:  YEAR/GEO/PROJECTION/SCALE/<NUTS_LEVEL>.json
 # geojson:   YEAR/GEO/PROJECTION/SCALE/<TYPE>[_<NUTS_LEVEL>].json
 # pts:       YEAR/GEO/PROJECTION/nutspt_<NUTS_LEVEL>.json
+#
+# Requirements:
+# - GDAL (ogr2ogr and ogrinfo)
+# - topojson (geo2topo, toposimplify, topo2geo)
 ################
+
+
 
 # Set to True/False to show/hide debug messages
 debug = False
