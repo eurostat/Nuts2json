@@ -348,7 +348,6 @@ def reprojectClipGeojson():
 # See: https://github.com/topojson/topojson-server/blob/master/README.md#geo2topo
 # See: https://github.com/topojson/topojson-simplify/blob/master/README.md#toposimplify
 # See: https://github.com/topojson/topojson-client/blob/master/README.md#topo2geo
-# See: https://stackoverflow.com/questions/89228/how-to-call-an-external-command
 def topoGeojson():
    print("topoGeojson")
    for year in nutsData["years"]:
