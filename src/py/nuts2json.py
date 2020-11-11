@@ -10,7 +10,7 @@ import ogr2ogr, subprocess, json, urllib.request
 #
 # Requirements:
 # - GDAL (ogr2ogr and ogrinfo)
-# - topojson (geo2topo, toposimplify, topo2geo)
+# - topojson (geo2topo, toposimplify, topo2geo). Install with nodeJS (npm install -g topojson)
 ################
 
 
