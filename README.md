@@ -135,6 +135,8 @@ These files are produced from the NUTS geodata provided on [Eurostat-GISCO websi
 5. *topoGeojson*: Make TopoJSON file from GeoJSON files, simplify them with [TopoJSON Simplify](https://github.com/topojson/topojson-simplify/) program, and finally produce GeoJSON from TopoJSON.
 6. *points*: Produce point representations.
 
+Information on the NUTS versions to cover, the scales, projections, map insets and their extents, etc. is stored in the [param.json](/src/py/param.json) file.
+
 
 
 ## About
