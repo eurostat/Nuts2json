@@ -3,6 +3,6 @@
 "name": "nutspt_1",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
 "features": [
-
+{ "type": "Feature", "properties": { "id": "PT2", "na": "REGIÃO AUTÓNOMA DOS AÇORES", "ar": "2322041627" }, "geometry": { "type": "Point", "coordinates": [ -2837611.743964099790901, 4547900.693067187443376 ] } }
 ]
 }

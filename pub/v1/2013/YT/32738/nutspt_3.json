@@ -3,6 +3,6 @@
 "name": "nutspt_3",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32738" } },
 "features": [
-
+{ "type": "Feature", "properties": { "id": "FRA50", "na": "Mayotte", "ar": "356526497" }, "geometry": { "type": "Point", "coordinates": [ 516798.624272644636221, 8582543.457333087921143 ] } }
 ]
 }

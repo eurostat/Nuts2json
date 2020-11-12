@@ -3,6 +3,6 @@
 "name": "nutspt_3",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32620" } },
 "features": [
-
+{ "type": "Feature", "properties": { "id": "FRY10", "na": "Guadeloupe", "ar": "1684967892" }, "geometry": { "type": "Point", "coordinates": [ 640290.777148555149324, 1789028.342744060093537 ] } }
 ]
 }

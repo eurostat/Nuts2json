@@ -3,6 +3,6 @@
 "name": "nutspt_1",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
 "features": [
-
+{ "type": "Feature", "properties": { "id": "ES7", "na": "CANARIAS", "ar": "7447883235" }, "geometry": { "type": "Point", "coordinates": [ -1843962.837194260442629, 3279986.402991861570626 ] } }
 ]
 }

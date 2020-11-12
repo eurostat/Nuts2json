@@ -3,6 +3,7 @@
 "name": "nutspt_3",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
 "features": [
-
+{ "type": "Feature", "properties": { "id": "MT001", "na": "Malta", "ar": "247517147" }, "geometry": { "type": "Point", "coordinates": [ 1608299.475184898357838, 4284644.188320958055556 ] } },
+{ "type": "Feature", "properties": { "id": "MT002", "na": "Gozo and Comino \/ Ghawdex u Kemmuna", "ar": "68882006" }, "geometry": { "type": "Point", "coordinates": [ 1587415.938712081406265, 4306457.116017013788223 ] } }
 ]
 }
