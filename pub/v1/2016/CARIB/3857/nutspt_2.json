@@ -3,7 +3,6 @@
 "name": "nutspt_2",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
 "features": [
-{ "type": "Feature", "properties": { "id": "FRY1", "na": "Guadeloupe", "ar": "1686581401" }, "geometry": { "type": "Point", "coordinates": [ -6867043.352208221331239, 1825299.020043102325872 ] } },
-{ "type": "Feature", "properties": { "id": "FRY2", "na": "Martinique ", "ar": "1108689576" }, "geometry": { "type": "Point", "coordinates": [ -6781015.649723181501031, 1639198.90220262366347 ] } }
+
 ]
 }

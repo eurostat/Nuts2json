@@ -3,6 +3,6 @@
 "name": "nutspt_0",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
 "features": [
-{ "type": "Feature", "properties": { "id": "MT", "na": "MALTA", "ar": "316399152" }, "geometry": { "type": "Point", "coordinates": [ 1608299.475184898357838, 4284644.188320958055556 ] } }
+
 ]
 }

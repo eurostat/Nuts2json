@@ -3,6 +3,6 @@
 "name": "nutspt_3",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
 "features": [
-{ "type": "Feature", "properties": { "id": "FRA20", "na": "Martinique", "ar": "1104125005" }, "geometry": { "type": "Point", "coordinates": [ -6792025.147362639196217, 1651451.085167564917356 ] } }
+
 ]
 }
