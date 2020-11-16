@@ -20,8 +20,6 @@ debug = True
 # The Nuts2json version number
 version = "v1"
 
-
-
 # Download base data from GISCO download API
 def download():
    print("Download")
@@ -68,6 +66,7 @@ def filterRenameDecomposeClean(doCleaning = True):
               "tmp/" + year + "_" + scale + "_CNTR_RG.gpkg",
               "-nln", "lay", "-nlt", "MULTIPOLYGON",
               "download/CNTR_RG_"+scale+"_"+year+"_4326.geojson",
+              "-a_srs", "EPSG:4326",
               "-sql", "SELECT CNTR_ID as id,NAME_ENGL as na FROM CNTR_RG_" + scale + "_" + year + "_4326 WHERE CNTR_ID NOT IN (" + nutsData["years"][year] + ")"])
 
            if(doCleaning):
@@ -79,6 +78,7 @@ def filterRenameDecomposeClean(doCleaning = True):
               "tmp/" + year + "_" + scale + "_CNTR_BN.gpkg",
               "-nln", "lay", "-nlt", "MULTILINESTRING",
               "download/CNTR_BN_"+scale+"_"+year+"_4326.geojson",
+              "-a_srs", "EPSG:4326",
               "-sql", "SELECT CNTR_BN_ID as id,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM CNTR_BN_" + scale + "_" + year + "_4326 WHERE EU_FLAG='F' AND EFTA_FLAG='F'"])
 
            for level in ["0", "1", "2", "3"]:
@@ -88,6 +88,7 @@ def filterRenameDecomposeClean(doCleaning = True):
                  "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG.gpkg",
                  "-nln", "lay", "-nlt", "MULTIPOLYGON",
                  "download/NUTS_RG_"+scale+"_"+year+"_4326.geojson",
+                 "-a_srs", "EPSG:4326",
                  "-sql", "SELECT N.NUTS_ID as id,A.NAME_LATN as na FROM NUTS_RG_" + scale + "_" + year + "_4326 as N left join 'download/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on N.NUTS_ID = A.NUTS_ID WHERE N.LEVL_CODE = " + level])
 
                if(doCleaning):
@@ -99,6 +100,7 @@ def filterRenameDecomposeClean(doCleaning = True):
                  "tmp/" + year + "_" + scale + "_" + level + "_NUTS_BN.gpkg",
                  "-nln", "lay", "-nlt", "MULTILINESTRING",
                  "download/NUTS_BN_"+scale+"_"+year+"_4326.geojson",
+                 "-a_srs", "EPSG:4326",
                  "-sql", "SELECT NUTS_BN_ID as id,LEVL_CODE as lvl,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM NUTS_BN_" + scale + "_" + year + "_4326 WHERE LEVL_CODE <= " + level])
 
 
@@ -291,6 +293,8 @@ def points():
                  "-a_srs" if(crs=="4326") else "-t_srs", "EPSG:"+crs,
                  "-clipdst", str(extends["xmin"]), str(extends["ymin"]), str(extends["xmax"]), str(extends["ymax"])
                  ])
+
+
 
 
 

@@ -3,6 +3,9 @@
 "name": "nutspt_3",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3035" } },
 "features": [
+{ "type": "Feature", "properties": { "id": "AT341", "na": "Bludenz-Bregenzer Wald", "ar": "1876709931" }, "geometry": { "type": "Point", "coordinates": [ 4315086.346154584549367, 2677439.312294179573655 ] } },
+{ "type": "Feature", "properties": { "id": "CH054", "na": "Appenzell Innerrhoden", "ar": "171944961" }, "geometry": { "type": "Point", "coordinates": [ 4277619.026818523183465, 2686780.042161299381405 ] } },
+{ "type": "Feature", "properties": { "id": "CH055", "na": "St. Gallen", "ar": "2031351026" }, "geometry": { "type": "Point", "coordinates": [ 4262929.176964725367725, 2670459.707826606463641 ] } },
 { "type": "Feature", "properties": { "id": "LI000", "na": "Liechtenstein", "ar": "159610515" }, "geometry": { "type": "Point", "coordinates": [ 4287139.672631412744522, 2669539.876416360959411 ] } }
 ]
 }

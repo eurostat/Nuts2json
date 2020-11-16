@@ -3,6 +3,6 @@
 "name": "nutspt_3",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
 "features": [
-{ "type": "Feature", "properties": { "id": "PT300", "na": "Região Autónoma da Madeira", "ar": "804080277" }, "geometry": { "type": "Point", "coordinates": [ -1887622.341483382042497, 3860221.940872645936906 ] } }
+{ "type": "Feature", "properties": { "id": "PT300", "na": "Região Autónoma da Madeira", "ar": "804080277" }, "geometry": { "type": "Point", "coordinates": [ -1887622.341483381344005, 3860221.940986281726509 ] } }
 ]
 }
