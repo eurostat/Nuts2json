@@ -298,7 +298,7 @@ def points():
 ######## Full process #########
 
 # Load parameters
-with open("src/py/param_test.json", mode="r") as fp:
+with open("src/py/param.json", mode="r") as fp:
    param = json.load(fp)
 
 # NUTS year versions and, for each one, the countries for which NUTS/statistical units are shown
@@ -319,7 +319,7 @@ with open("pub/" + version + "/data.json", "w") as fp:
 # 1
 download()
 # 2
-filterRenameDecomposeClean(False)
+filterRenameDecomposeClean()
 # 3
 coarseClipping()
 # 4
