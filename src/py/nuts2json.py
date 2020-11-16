@@ -1,5 +1,5 @@
 from pathlib import Path
-import ogr2ogr, subprocess, json, urllib.request
+import os, ogr2ogr, subprocess, json, urllib.request
 
 ################
 # Target structure
@@ -56,7 +56,7 @@ def download():
 
 
 # Prepare input data into tmp folder: filter, rename attributes, decompose by nuts level and clean
-def filterRenameDecomposeClean():
+def filterRenameDecomposeClean(doCleaning = True):
    print("filterRenameDecompose")
    Path("tmp/").mkdir(parents=True, exist_ok=True)
 
@@ -70,8 +70,9 @@ def filterRenameDecomposeClean():
               "download/CNTR_RG_"+scale+"_"+year+"_4326.geojson",
               "-sql", "SELECT CNTR_ID as id,NAME_ENGL as na FROM CNTR_RG_" + scale + "_" + year + "_4326 WHERE CNTR_ID NOT IN (" + nutsData["years"][year] + ")"])
 
-           if debug: print(year + " " + scale + " CNTR RG - clean with buffer(0)")
-           subprocess.run(["ogrinfo", "-dialect", "indirect_sqlite", "-sql", "update lay set geom=ST_Multi(ST_Buffer(geom,0))", "tmp/" + year + "_" + scale + "_CNTR_RG.gpkg"])
+           if(doCleaning):
+              if debug: print(year + " " + scale + " CNTR RG - clean with buffer(0)")
+              subprocess.run(["ogrinfo", "-dialect", "indirect_sqlite", "-sql", "update lay set geom=ST_Multi(ST_Buffer(geom,0))", "tmp/" + year + "_" + scale + "_CNTR_RG.gpkg"])
 
            if debug: print(year + " " + scale + " CNTR BN - filter, rename attributes")
            ogr2ogr.main(["-overwrite","-f", "GPKG",
@@ -89,8 +90,9 @@ def filterRenameDecomposeClean():
                  "download/NUTS_RG_"+scale+"_"+year+"_4326.geojson",
                  "-sql", "SELECT N.NUTS_ID as id,A.NAME_LATN as na FROM NUTS_RG_" + scale + "_" + year + "_4326 as N left join 'download/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on N.NUTS_ID = A.NUTS_ID WHERE N.LEVL_CODE = " + level])
 
-               if debug: print(year + " " + scale + " NUTS RG " + level + " - clean with buffer(0)")
-               subprocess.run(["ogrinfo", "-dialect", "indirect_sqlite", "-sql", "update lay set geom=ST_Multi(ST_Buffer(geom,0))", "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG.gpkg"])
+               if(doCleaning):
+                  if debug: print(year + " " + scale + " NUTS RG " + level + " - clean with buffer(0)")
+                  subprocess.run(["ogrinfo", "-dialect", "indirect_sqlite", "-sql", "update lay set geom=ST_Multi(ST_Buffer(geom,0))", "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG.gpkg"])
 
                if debug: print(year + " " + scale + " NUTS BN " + level + " - filter, rename attributes")
                ogr2ogr.main(["-overwrite","-f", "GPKG",
@@ -110,6 +112,14 @@ def coarseClipping():
          extends = geos[geo]["crs"]["4326"]
          marginDeg = 31 if(geo == "EUR") else 10
 
+         if debug: print(year + " " + geo + " graticule - coarse clipping")
+         ogr2ogr.main(["-overwrite","-f", "GPKG",
+           "tmp/" + year + "_" + geo + "_graticule.gpkg",
+           "src/resources/graticule.gpkg",
+           "-nlt", "MULTILINESTRING",
+           "-a_srs", "EPSG:4326",
+           "-clipsrc", str(extends["xmin"]-marginDeg), str(extends["ymin"]-marginDeg), str(extends["xmax"]+marginDeg), str(extends["ymax"]+marginDeg)])
+
          for type in ["RG", "BN"]:
             for scale in geos[geo]["scales"]:
 
@@ -122,6 +132,7 @@ def coarseClipping():
                  "tmp/" + year + "_" + scale + "_CNTR_" + type + ".gpkg",
                  "-nlt", "MULTIPOLYGON" if type=="RG" else "MULTILINESTRING",
                  #"-makevalid",
+                 "-a_srs", "EPSG:4326",
                  "-clipsrc", str(extends["xmin"]-marginDeg), str(extends["ymin"]-marginDeg), str(extends["xmax"]+marginDeg), str(extends["ymax"]+marginDeg)])
 
                for level in ["0", "1", "2", "3"]:
@@ -132,6 +143,7 @@ def coarseClipping():
                     "tmp/" + year + "_" + scale + "_" + level + "_NUTS_" + type + ".gpkg",
                     "-nlt", "MULTIPOLYGON" if type=="RG" else "MULTILINESTRING",
                     #"-makevalid",
+                    "-a_srs", "EPSG:4326",
                     "-clipsrc", str(extends["xmin"]-marginDeg), str(extends["ymin"]-marginDeg), str(extends["xmax"]+marginDeg), str(extends["ymax"]+marginDeg)])
 
 
@@ -144,15 +156,15 @@ def reprojectClipGeojson():
          for crs in geos[geo]["crs"]:
             outpath = "tmp/"+year+"/"+geo+"/"+crs+"/"
             Path(outpath).mkdir(parents=True, exist_ok=True)
-            extends = geos[geo]["crs"][crs]
+            extent = geos[geo]["crs"][crs]
 
             if debug: print(year + " " + geo + " " + crs + " - reproject + clip + geojson graticule")
             ogr2ogr.main(["-overwrite","-f","GeoJSON",
               outpath + "graticule.geojson",
-              "src/resources/graticule.gpkg",
-              "-t_srs", "EPSG:"+crs, "-s_srs", "EPSG:4258",
+              "tmp/" + year + "_" + geo + "_graticule.gpkg",
+              "-a_srs" if(crs=="4326") else "-t_srs", "EPSG:"+crs,
               #"-makevalid",
-              "-clipdst", str(extends["xmin"]), str(extends["ymin"]), str(extends["xmax"]), str(extends["ymax"])
+              "-clipdst", str(extent["xmin"]), str(extent["ymin"]), str(extent["xmax"]), str(extent["ymax"])
               ])
 
             for type in ["RG", "BN"]:
@@ -162,9 +174,9 @@ def reprojectClipGeojson():
                   ogr2ogr.main(["-overwrite","-f","GeoJSON",
                     outpath + scale + "_CNTR_" + type + ".geojson",
                     "tmp/" + year + "_" + geo + "_" + scale + "_CNTR_" + type + ".gpkg",
-                    "-t_srs", "EPSG:"+crs, "-s_srs", "EPSG:4258",
+                    "-a_srs" if(crs=="4326") else "-t_srs", "EPSG:"+crs,
                     #"-makevalid",
-                    "-clipdst", str(extends["xmin"]), str(extends["ymin"]), str(extends["xmax"]), str(extends["ymax"])
+                    "-clipdst", str(extent["xmin"]), str(extent["ymin"]), str(extent["xmax"]), str(extent["ymax"])
                     ])
 
                   for level in ["0", "1", "2", "3"]:
@@ -173,9 +185,9 @@ def reprojectClipGeojson():
                      ogr2ogr.main(["-overwrite","-f","GeoJSON",
                        outpath + scale + "_" + level + "_NUTS_" + type + ".geojson",
                        "tmp/" + year + "_" + geo + "_" + scale + "_" + level + "_NUTS_" + type + ".gpkg",
-                       "-t_srs", "EPSG:"+crs, "-s_srs", "EPSG:4258",
+                       "-a_srs" if(crs=="4326") else "-t_srs", "EPSG:"+crs,
                        #"-makevalid",
-                       "-clipdst", str(extends["xmin"]), str(extends["ymin"]), str(extends["xmax"]), str(extends["ymax"])
+                       "-clipdst", str(extent["xmin"]), str(extent["ymin"]), str(extent["xmax"]), str(extent["ymax"])
                        ])
 
 
@@ -276,7 +288,7 @@ def points():
                  outpath + "nutspt_" + level + ".json",
                  "tmp/pts/" + year + "/NUTS_LB_" + level + ".gpkg",
                  "-nln", "nutspt_" + level,
-                 "-t_srs", "EPSG:"+crs, "-s_srs", "EPSG:4258",
+                 "-a_srs" if(crs=="4326") else "-t_srs", "EPSG:"+crs,
                  "-clipdst", str(extends["xmin"]), str(extends["ymin"]), str(extends["xmax"]), str(extends["ymax"])
                  ])
 
@@ -286,7 +298,7 @@ def points():
 ######## Full process #########
 
 # Load parameters
-with open("src/py/param.json", mode="r") as fp:
+with open("src/py/param_test.json", mode="r") as fp:
    param = json.load(fp)
 
 # NUTS year versions and, for each one, the countries for which NUTS/statistical units are shown
@@ -302,10 +314,12 @@ Path("pub/" + version + "/").mkdir(parents=True, exist_ok=True)
 with open("pub/" + version + "/data.json", "w") as fp:
     json.dump(geos, fp, indent=3)
 
+
+
 # 1
 download()
 # 2
-filterRenameDecomposeClean()
+filterRenameDecomposeClean(False)
 # 3
 coarseClipping()
 # 4
