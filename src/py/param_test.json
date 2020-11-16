@@ -1,0 +1,38 @@
+{
+   "nutsData": {
+      "years": {
+         "2021": "'PT','ES','IE','UK','FR','IS','BE','LU','NL','CH','LI','DE','DK','IT','VA','MT','NO','SE','FI','EE','LV','LT','PL','CZ','SK','AT','SI','HU','HR','RO','BG','TR','EL','CY','MK','ME','AL'"
+      },
+      "scales": [
+         "10M"
+      ]
+   },
+   "geos": {
+      "IC": {
+         "name": "Canary islands",
+         "crs": {
+            "4326": {
+               "xmin": -18.599,
+               "ymin": 27.131,
+               "xmax": -12.82,
+               "ymax": 29.77
+            },
+            "3857": {
+               "xmin": -2093768,
+               "ymin": 3148045,
+               "xmax": -1438191,
+               "ymax": 3480775
+            },
+            "32628": {
+               "xmin": 79480,
+               "ymin": 2951914,
+               "xmax": 755779,
+               "ymax": 3306514
+            }
+         },
+         "scales": [
+            "10M"
+         ]
+      }
+   }
+}
