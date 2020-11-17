@@ -15,7 +15,7 @@ import os, ogr2ogr, subprocess, json, urllib.request
 
 
 # Set to True/False to show/hide debug messages
-debug = True
+debug = False
 
 # The Nuts2json version number
 version = "v1"
@@ -127,6 +127,7 @@ def coarseClipping():
 
 # TODO: fix that warning:
 # Warning 1: A geometry of type GEOMETRYCOLLECTION is inserted into layer lay of geometry type MULTIPOLYGON, which is not normally allowed by the GeoPackage specification, but the driver will however do it. To create a conformant GeoPackage, if using ogr2ogr, the -nlt option can be used to override the layer geometry type. This warning will no longer be emitted for this combination of layer and feature geometry type.
+# Use geojson format instead ? Or use GEOMETRYCOLLECTION as -nlt ?
 
                if debug: print(year + " " + geo + " " + scale + " CNTR " + type + " - coarse clipping")
                ogr2ogr.main(["-overwrite","-f", "GPKG",
@@ -153,6 +154,14 @@ def coarseClipping():
 # Clip, reproject and convert as geojson
 def reprojectClipGeojson():
    print("reprojectClipGeojson")
+
+# ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 6704204.8145943619 6270736.0892365789 at 6704204.8145943619 6270736.0892365789
+# ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 6698925.8271167586 6274123.3878677692 at 6698925.8271167586 6274123.3878677692
+# ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 6704204.8145943619 6270736.0892365789 at 6704204.8145943619 6270736.0892365789
+# ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 6698925.8271167586 6274123.3878677692 at 6698925.8271167586 6274123.3878677692
+# ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 2006449.3960912526 5394190.0083567379 at 2006449.3960912526 5394190.0083567379
+# ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 6228431.2353795376 2900365.3670889214 at 6228431.2353795376 2900365.3670889214
+
    for year in nutsData["years"]:
       for geo in geos:
          for crs in geos[geo]["crs"]:

@@ -683,6 +683,8 @@
 { "type": "Feature", "properties": { "id": "ES620", "na": "Murcia", "ar": "11314073330" }, "geometry": { "type": "Point", "coordinates": [ 3308726.498635567724705, 1733991.664363118819892 ] } },
 { "type": "Feature", "properties": { "id": "ES630", "na": "Ceuta", "ar": "19776994" }, "geometry": { "type": "Point", "coordinates": [ 2931760.480486169457436, 1565247.209643591661006 ] } },
 { "type": "Feature", "properties": { "id": "ES640", "na": "Melilla", "ar": "13927655" }, "geometry": { "type": "Point", "coordinates": [ 3137007.287784405052662, 1459996.575519220437855 ] } },
+{ "type": "Feature", "properties": { "id": "ES704", "na": "Fuerteventura", "ar": "1659817411" }, "geometry": { "type": "Point", "coordinates": [ 1961687.959999291691929, 973656.071779193356633 ] } },
+{ "type": "Feature", "properties": { "id": "ES708", "na": "Lanzarote", "ar": "845856248" }, "geometry": { "type": "Point", "coordinates": [ 2009261.219682765658945, 1023680.498414002358913 ] } },
 { "type": "Feature", "properties": { "id": "FI193", "na": "Keski-Suomi", "ar": "19947126481" }, "geometry": { "type": "Point", "coordinates": [ 5111035.35223903786391, 4468067.77497807238251 ] } },
 { "type": "Feature", "properties": { "id": "FI194", "na": "Etelä-Pohjanmaa", "ar": "13997076089" }, "geometry": { "type": "Point", "coordinates": [ 4987371.258301607333124, 4465074.522893918678164 ] } },
 { "type": "Feature", "properties": { "id": "FI195", "na": "Pohjanmaa", "ar": "7823759978" }, "geometry": { "type": "Point", "coordinates": [ 4935686.362952459603548, 4493993.476783155463636 ] } },

@@ -234,6 +234,7 @@
 { "type": "Feature", "properties": { "id": "PT16", "na": "Centro (PT)", "ar": "28150340244" }, "geometry": { "type": "Point", "coordinates": [ -7.9946, 40.1425 ] } },
 { "type": "Feature", "properties": { "id": "PT17", "na": "Área Metropolitana de Lisboa", "ar": "2853087749" }, "geometry": { "type": "Point", "coordinates": [ -8.8878, 38.6221 ] } },
 { "type": "Feature", "properties": { "id": "PT18", "na": "Alentejo", "ar": "31524702516" }, "geometry": { "type": "Point", "coordinates": [ -8.0017, 38.4793 ] } },
+{ "type": "Feature", "properties": { "id": "PT20", "na": "Região Autónoma dos Açores", "ar": "2322664603" }, "geometry": { "type": "Point", "coordinates": [ -25.3659, 37.7846 ] } },
 { "type": "Feature", "properties": { "id": "PT30", "na": "Região Autónoma da Madeira", "ar": "800666574" }, "geometry": { "type": "Point", "coordinates": [ -16.9503, 32.7326 ] } },
 { "type": "Feature", "properties": { "id": "RO11", "na": "Nord-Vest", "ar": "34158133230" }, "geometry": { "type": "Point", "coordinates": [ 23.3458, 47.225 ] } },
 { "type": "Feature", "properties": { "id": "RO12", "na": "Centru", "ar": "34106814404" }, "geometry": { "type": "Point", "coordinates": [ 24.8114, 46.186 ] } },

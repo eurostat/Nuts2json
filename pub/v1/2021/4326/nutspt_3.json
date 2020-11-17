@@ -1121,6 +1121,7 @@
 { "type": "Feature", "properties": { "id": "PT185", "na": "Lezíria do Tejo", "ar": "4274774675" }, "geometry": { "type": "Point", "coordinates": [ -8.6158, 39.1152 ] } },
 { "type": "Feature", "properties": { "id": "PT186", "na": "Alto Alentejo", "ar": "6083718966" }, "geometry": { "type": "Point", "coordinates": [ -7.6244, 39.2868 ] } },
 { "type": "Feature", "properties": { "id": "PT187", "na": "Alentejo Central", "ar": "7395955826" }, "geometry": { "type": "Point", "coordinates": [ -7.8568, 38.5987 ] } },
+{ "type": "Feature", "properties": { "id": "PT200", "na": "Região Autónoma dos Açores", "ar": "2322927810" }, "geometry": { "type": "Point", "coordinates": [ -25.3659, 37.7846 ] } },
 { "type": "Feature", "properties": { "id": "PT300", "na": "Região Autónoma da Madeira", "ar": "801100368" }, "geometry": { "type": "Point", "coordinates": [ -16.9503, 32.7326 ] } },
 { "type": "Feature", "properties": { "id": "RO111", "na": "Bihor", "ar": "7537868562" }, "geometry": { "type": "Point", "coordinates": [ 22.2065, 46.9461 ] } },
 { "type": "Feature", "properties": { "id": "RO112", "na": "Bistriţa-Năsăud", "ar": "5359711950" }, "geometry": { "type": "Point", "coordinates": [ 24.5271, 47.2361 ] } },

@@ -222,6 +222,8 @@
 { "type": "Feature", "properties": { "id": "ES620", "na": "Murcia", "ar": "11310059117" }, "geometry": { "type": "Point", "coordinates": [ 3304936.136825598310679, 1722837.194026614073664 ] } },
 { "type": "Feature", "properties": { "id": "ES630", "na": "Ceuta", "ar": "19750675" }, "geometry": { "type": "Point", "coordinates": [ 2932051.349841956049204, 1564648.749355863081291 ] } },
 { "type": "Feature", "properties": { "id": "ES640", "na": "Melilla", "ar": "13042238" }, "geometry": { "type": "Point", "coordinates": [ 3136960.05024911602959, 1459301.797434622654691 ] } },
+{ "type": "Feature", "properties": { "id": "ES704", "na": "Fuerteventura", "ar": "1665590830" }, "geometry": { "type": "Point", "coordinates": [ 1958711.590417589060962, 969156.202996511012316 ] } },
+{ "type": "Feature", "properties": { "id": "ES708", "na": "Lanzarote", "ar": "844487077" }, "geometry": { "type": "Point", "coordinates": [ 2009657.601336668245494, 1024688.480720415245742 ] } },
 { "type": "Feature", "properties": { "id": "AT121", "na": "Mostviertel-Eisenwurzen", "ar": "3357061921" }, "geometry": { "type": "Point", "coordinates": [ 4693006.994217210449278, 2783988.324983024969697 ] } },
 { "type": "Feature", "properties": { "id": "AT122", "na": "Niederösterreich-Süd", "ar": "3378278571" }, "geometry": { "type": "Point", "coordinates": [ 4753020.217417957261205, 2766088.457087296526879 ] } },
 { "type": "Feature", "properties": { "id": "AT123", "na": "Sankt Pölten", "ar": "1231177004" }, "geometry": { "type": "Point", "coordinates": [ 4739802.351271822117269, 2804217.313263117335737 ] } },

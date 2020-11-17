@@ -89,6 +89,7 @@
 { "type": "Feature", "properties": { "id": "PL8", "na": "MAKROREGION WSCHODNI", "ar": "63155481858" }, "geometry": { "type": "Point", "coordinates": [ 22.6288, 50.58 ] } },
 { "type": "Feature", "properties": { "id": "PL9", "na": "MAKROREGION WOJEWÓDZTWO MAZOWIECKIE", "ar": "35559487622" }, "geometry": { "type": "Point", "coordinates": [ 21.0921, 52.3675 ] } },
 { "type": "Feature", "properties": { "id": "PT1", "na": "CONTINENTE", "ar": "88785819792" }, "geometry": { "type": "Point", "coordinates": [ -7.9703, 39.6868 ] } },
+{ "type": "Feature", "properties": { "id": "PT2", "na": "REGIÃO AUTÓNOMA DOS AÇORES", "ar": "2322664603" }, "geometry": { "type": "Point", "coordinates": [ -25.3659, 37.7846 ] } },
 { "type": "Feature", "properties": { "id": "PT3", "na": "REGIÃO AUTÓNOMA DA MADEIRA", "ar": "800666574" }, "geometry": { "type": "Point", "coordinates": [ -16.9503, 32.7326 ] } },
 { "type": "Feature", "properties": { "id": "RO1", "na": "MACROREGIUNEA UNU", "ar": "68264947634" }, "geometry": { "type": "Point", "coordinates": [ 24.0679, 46.7109 ] } },
 { "type": "Feature", "properties": { "id": "RO2", "na": "MACROREGIUNEA DOI", "ar": "72591357620" }, "geometry": { "type": "Point", "coordinates": [ 27.2368, 46.1422 ] } },

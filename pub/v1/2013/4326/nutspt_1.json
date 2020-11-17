@@ -80,6 +80,7 @@
 { "type": "Feature", "properties": { "id": "PL5", "na": "REGION POLUDNIOWO-ZACHODNI", "ar": "29355404065" }, "geometry": { "type": "Point", "coordinates": [ 16.7564, 50.89 ] } },
 { "type": "Feature", "properties": { "id": "PL6", "na": "REGION PÓLNOCNY", "ar": "60172548409" }, "geometry": { "type": "Point", "coordinates": [ 19.7526, 53.7911 ] } },
 { "type": "Feature", "properties": { "id": "PT1", "na": "CONTINENTE", "ar": "88846958576" }, "geometry": { "type": "Point", "coordinates": [ -8.0271, 39.6971 ] } },
+{ "type": "Feature", "properties": { "id": "PT2", "na": "REGIÃO AUTÓNOMA DOS AÇORES", "ar": "2322041627" }, "geometry": { "type": "Point", "coordinates": [ -25.4907, 37.7765 ] } },
 { "type": "Feature", "properties": { "id": "PT3", "na": "REGIÃO AUTÓNOMA DA MADEIRA", "ar": "800481077" }, "geometry": { "type": "Point", "coordinates": [ -16.9725, 32.7364 ] } },
 { "type": "Feature", "properties": { "id": "RO1", "na": "MACROREGIUNEA UNU", "ar": "68268308224" }, "geometry": { "type": "Point", "coordinates": [ 23.9367, 46.741 ] } },
 { "type": "Feature", "properties": { "id": "RO2", "na": "MACROREGIUNEA DOI", "ar": "72588267084" }, "geometry": { "type": "Point", "coordinates": [ 27.2332, 45.9246 ] } },

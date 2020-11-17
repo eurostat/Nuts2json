@@ -88,6 +88,7 @@
 { "type": "Feature", "properties": { "id": "PL8", "na": "Makroregion wschodni", "ar": "63155505902" }, "geometry": { "type": "Point", "coordinates": [ 22.6288, 50.58 ] } },
 { "type": "Feature", "properties": { "id": "PL9", "na": "Makroregion województwo mazowieckie", "ar": "35558821446" }, "geometry": { "type": "Point", "coordinates": [ 21.0921, 52.3675 ] } },
 { "type": "Feature", "properties": { "id": "PT1", "na": "Continente", "ar": "88763640427" }, "geometry": { "type": "Point", "coordinates": [ -7.9703, 39.6868 ] } },
+{ "type": "Feature", "properties": { "id": "PT2", "na": "Região Autónoma dos Açores", "ar": "2322927810" }, "geometry": { "type": "Point", "coordinates": [ -25.3659, 37.7846 ] } },
 { "type": "Feature", "properties": { "id": "PT3", "na": "Região Autónoma da Madeira", "ar": "801100368" }, "geometry": { "type": "Point", "coordinates": [ -16.9503, 32.7326 ] } },
 { "type": "Feature", "properties": { "id": "RO1", "na": "Macroregiunea Unu", "ar": "68265523081" }, "geometry": { "type": "Point", "coordinates": [ 24.0679, 46.7109 ] } },
 { "type": "Feature", "properties": { "id": "RO2", "na": "Macroregiunea Doi", "ar": "72590775020" }, "geometry": { "type": "Point", "coordinates": [ 27.2368, 46.1422 ] } },
