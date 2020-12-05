@@ -15,7 +15,7 @@ For a faster creation of [Dorling cartograms](http://www.dannydorling.org/wp-con
 
 ## API
 
-Base URL: `https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1` (See how to use your own base URL)
+Base URL: `https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1` (See [here](#own-deployment) how to define your own base URL)
 
 URL patterns:
 
