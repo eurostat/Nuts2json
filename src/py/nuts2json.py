@@ -330,7 +330,7 @@ with open("pub/" + version + "/data.json", "w") as fp:
 
 
 # 1
-download()
+#download()
 # 2
 filterRenameDecomposeClean()
 # 3
@@ -338,7 +338,7 @@ coarseClipping()
 # 4
 reprojectClipGeojson()
 # 5
-topoGeojson()
+#topoGeojson()
 # 6
-points()
+#points()
 ##############################
