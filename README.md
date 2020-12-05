@@ -15,7 +15,7 @@ For a faster creation of [Dorling cartograms](http://www.dannydorling.org/wp-con
 
 ## API
 
-Base URL: `https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1`
+Base URL: `https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1` (See how to use your own base URL)
 
 URL patterns:
 
@@ -124,6 +124,9 @@ These examples are based on [d3js](https://d3js.org/) library.
 - [NUTS Dorling cartogram](https://github.com/eurostat/NutsDorlingCartogram).
 
 
+## Own deployment
+
+To deploy your own stable version of Nuts2json, `git clone` the repository and simply publish the `pub` folder on your own web server folder accessible under the URL of your choice. Use this new base URL `https://www.mydomain.eu/path/to/pub/v1` to access the service. You gives the possibility to select only the necessary parts of the API of interest.
 
 ## Technical details
 
