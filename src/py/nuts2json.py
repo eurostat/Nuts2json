@@ -155,13 +155,6 @@ def coarseClipping():
 def reprojectClipGeojson():
    print("reprojectClipGeojson")
 
-# ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 6704204.8145943619 6270736.0892365789 at 6704204.8145943619 6270736.0892365789
-# ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 6698925.8271167586 6274123.3878677692 at 6698925.8271167586 6274123.3878677692
-# ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 6704204.8145943619 6270736.0892365789 at 6704204.8145943619 6270736.0892365789
-# ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 6698925.8271167586 6274123.3878677692 at 6698925.8271167586 6274123.3878677692
-# ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 2006449.3960912526 5394190.0083567379 at 2006449.3960912526 5394190.0083567379
-# ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 6228431.2353795376 2900365.3670889214 at 6228431.2353795376 2900365.3670889214
-
    for year in nutsData["years"]:
       for geo in geos:
          for crs in geos[geo]["crs"]:
@@ -178,8 +171,16 @@ def reprojectClipGeojson():
               "-clipdst", str(extent["xmin"]), str(extent["ymin"]), str(extent["xmax"]), str(extent["ymax"])
               ])
 
-            for type in ["RG", "BN"]:
+            for type in [ "BN"]: ###### TODO "RG", "BN"
                for scale in geos[geo]["scales"]:
+
+                  #TODO: decompose: 1. reproject 2. buffer(0) 3. clip
+# ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 6704204.8145943619 6270736.0892365789 at 6704204.8145943619 6270736.0892365789
+# ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 6698925.8271167586 6274123.3878677692 at 6698925.8271167586 6274123.3878677692
+# ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 6704204.8145943619 6270736.0892365789 at 6704204.8145943619 6270736.0892365789
+# ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 6698925.8271167586 6274123.3878677692 at 6698925.8271167586 6274123.3878677692
+# ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 2006449.3960912526 5394190.0083567379 at 2006449.3960912526 5394190.0083567379
+# ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 6228431.2353795376 2900365.3670889214 at 6228431.2353795376 2900365.3670889214
 
                   if debug: print(year + " " + geo + " " + crs + " " + scale + " " + type + " - reproject + clip + geojson CNTR")
                   ogr2ogr.main(["-overwrite","-f","GeoJSON",
@@ -332,11 +333,11 @@ with open("pub/" + version + "/data.json", "w") as fp:
 # 1
 #download()
 # 2
-filterRenameDecomposeClean()
+#filterRenameDecomposeClean()
 # 3
-coarseClipping()
+#coarseClipping()
 # 4
-#reprojectClipGeojson()
+reprojectClipGeojson()
 # 5
 #topoGeojson()
 # 6
