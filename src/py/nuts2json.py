@@ -335,13 +335,13 @@ with open("pub/" + version + "/data.json", "w") as fp:
 
 
 # 1
-#download()
+download()
 # 2
-#filterRenameDecomposeClean()
+filterRenameDecomposeClean()
 # 3
-#coarseClipping()
+coarseClipping()
 # 4
-#reprojectClipGeojson()
+reprojectClipGeojson()
 # 5
 topoGeojson()
 # 6
