@@ -15,7 +15,7 @@ import os, ogr2ogr, subprocess, json, urllib.request
 
 
 # Set to True/False to show/hide debug messages
-debug = True
+debug = False
 
 # The Nuts2json version number
 version = "v1"
@@ -171,23 +171,15 @@ def reprojectClipGeojson(doCleaning = True):
               "-clipdst", str(extent["xmin"]), str(extent["ymin"]), str(extent["xmax"]), str(extent["ymax"])
               ])
 
-            for type in [ "RG" ]: #TODO add BN !!!!
+            for type in [ "RG", "BN" ]:
                for scale in geos[geo]["scales"]:
-
-                  #TODO: decompose: 1. reproject 2. buffer(0) 3. clip
-# ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 6704204.8145943619 6270736.0892365789 at 6704204.8145943619 6270736.0892365789
-# ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 6698925.8271167586 6274123.3878677692 at 6698925.8271167586 6274123.3878677692
-# ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 6704204.8145943619 6270736.0892365789 at 6704204.8145943619 6270736.0892365789
-# ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 6698925.8271167586 6274123.3878677692 at 6698925.8271167586 6274123.3878677692
-# ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 2006449.3960912526 5394190.0083567379 at 2006449.3960912526 5394190.0083567379
-# ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 6228431.2353795376 2900365.3670889214 at 6228431.2353795376 2900365.3670889214
 
                   if debug: print(year + " " + geo + " " + crs + " " + scale + " " + type + " - reproject CNTR")
                   ogr2ogr.main(["-overwrite","-f","GPKG",
                     outpath + scale + "_CNTR_" + type + "_reproject.gpkg",
                     "tmp/" + year + "_" + geo + "_" + scale + "_CNTR_" + type + ".gpkg",
                     #"-makevalid",
-                    "-nln", "lay",
+                    "-nln", "lay", #"-nlt", "GEOMETRYCOLLECTION",
                     "-a_srs" if(crs=="4326") else "-t_srs", "EPSG:"+crs
                     ])
 
