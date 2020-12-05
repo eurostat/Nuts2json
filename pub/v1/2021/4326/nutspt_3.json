@@ -654,6 +654,8 @@
 { "type": "Feature", "properties": { "id": "ES241", "na": "Huesca", "ar": "15637077743" }, "geometry": { "type": "Point", "coordinates": [ -0.0859, 42.2138 ] } },
 { "type": "Feature", "properties": { "id": "ES242", "na": "Teruel", "ar": "14809247640" }, "geometry": { "type": "Point", "coordinates": [ -0.8345, 40.6511 ] } },
 { "type": "Feature", "properties": { "id": "ES243", "na": "Zaragoza", "ar": "17275103128" }, "geometry": { "type": "Point", "coordinates": [ -1.055, 41.6013 ] } },
+{ "type": "Feature", "properties": { "id": "NO0B1", "na": "Jan Mayen\n   \n", "ar": null }, "geometry": { "type": "Point", "coordinates": [ -8.2488, 71.0708 ] } },
+{ "type": "Feature", "properties": { "id": "NO0B2", "na": "Svalbard", "ar": null }, "geometry": { "type": "Point", "coordinates": [ 17.889, 78.5808 ] } },
 { "type": "Feature", "properties": { "id": "ES419", "na": "Zamora", "ar": "10560739707" }, "geometry": { "type": "Point", "coordinates": [ -5.974, 41.7308 ] } },
 { "type": "Feature", "properties": { "id": "ES421", "na": "Albacete", "ar": "14926596160" }, "geometry": { "type": "Point", "coordinates": [ -1.9822, 38.8241 ] } },
 { "type": "Feature", "properties": { "id": "ES422", "na": "Ciudad Real", "ar": "19813563042" }, "geometry": { "type": "Point", "coordinates": [ -3.8946, 38.8373 ] } },

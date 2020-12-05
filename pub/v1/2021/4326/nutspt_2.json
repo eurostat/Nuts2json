@@ -322,6 +322,7 @@
 { "type": "Feature", "properties": { "id": "DED4", "na": "Chemnitz", "ar": "6524482143" }, "geometry": { "type": "Point", "coordinates": [ 12.8143, 50.7323 ] } },
 { "type": "Feature", "properties": { "id": "DED5", "na": "Leipzig", "ar": "3978072648" }, "geometry": { "type": "Point", "coordinates": [ 12.6704, 51.3583 ] } },
 { "type": "Feature", "properties": { "id": "DEE0", "na": "Sachsen-Anhalt", "ar": "20552380422" }, "geometry": { "type": "Point", "coordinates": [ 11.6996, 52.011 ] } },
+{ "type": "Feature", "properties": { "id": "NO0B", "na": "Jan Mayen and Svalbard\n   \n", "ar": null }, "geometry": { "type": "Point", "coordinates": [ 17.889, 78.5808 ] } },
 { "type": "Feature", "properties": { "id": "HR02", "na": "Panonska Hrvatska", "ar": "23202983071" }, "geometry": { "type": "Point", "coordinates": [ 17.1251, 45.5235 ] } },
 { "type": "Feature", "properties": { "id": "HR06", "na": "Sjeverna Hrvatska", "ar": "8026065467" }, "geometry": { "type": "Point", "coordinates": [ 16.3735, 46.1447 ] } },
 { "type": "Feature", "properties": { "id": "NO06", "na": "Trøndelag", "ar": "41482760437" }, "geometry": { "type": "Point", "coordinates": [ 11.2412, 63.1495 ] } },
