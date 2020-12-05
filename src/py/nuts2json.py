@@ -174,10 +174,6 @@ def reprojectClipGeojson(doCleaning = True):
             for type in [ "RG" ]: #TODO add BN !!!!
                for scale in geos[geo]["scales"]:
 
-                  #if(doCleaning & type == "RG"):
-                  #   if debug: print(year + " " + geo + " " + crs + " " + scale + " " + type + " - clean CNTR")
-                     #subprocess.run(["ogrinfo", "-dialect", "indirect_sqlite", "-sql", "update lay set geom=ST_Multi(ST_Buffer(geom,0))", "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG.gpkg"])
-
                   #TODO: decompose: 1. reproject 2. buffer(0) 3. clip
 # ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 6704204.8145943619 6270736.0892365789 at 6704204.8145943619 6270736.0892365789
 # ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 6698925.8271167586 6274123.3878677692 at 6698925.8271167586 6274123.3878677692
@@ -186,14 +182,35 @@ def reprojectClipGeojson(doCleaning = True):
 # ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 2006449.3960912526 5394190.0083567379 at 2006449.3960912526 5394190.0083567379
 # ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 6228431.2353795376 2900365.3670889214 at 6228431.2353795376 2900365.3670889214
 
-                  if debug: print(year + " " + geo + " " + crs + " " + scale + " " + type + " - reproject + clip + geojson CNTR")
+                  if debug: print(year + " " + geo + " " + crs + " " + scale + " " + type + " - reproject CNTR")
+                  ogr2ogr.main(["-overwrite","-f","GPKG",
+                    outpath + scale + "_CNTR_" + type + "_reproject.gpkg",
+                    "tmp/" + year + "_" + geo + "_" + scale + "_CNTR_" + type + ".gpkg",
+                    #"-makevalid",
+                    "-nln", "lay",
+                    "-a_srs" if(crs=="4326") else "-t_srs", "EPSG:"+crs
+                    ])
+
+                  if(doCleaning and type=="RG"):
+                     if debug: print(year + " " + geo + " " + crs + " " + scale + " " + type + " - clean CNTR")
+                     subprocess.run(["ogrinfo", "-dialect", "indirect_sqlite", "-sql", "update lay set geom=ST_Multi(ST_Buffer(geom,0))", outpath + scale + "_CNTR_" + type + "_reproject.gpkg"])
+
+                  if debug: print(year + " " + geo + " " + crs + " " + scale + " " + type + " - clip + geojson CNTR")
                   ogr2ogr.main(["-overwrite","-f","GeoJSON",
                     outpath + scale + "_CNTR_" + type + ".geojson",
-                    "tmp/" + year + "_" + geo + "_" + scale + "_CNTR_" + type + ".gpkg",
-                    "-a_srs" if(crs=="4326") else "-t_srs", "EPSG:"+crs,
+                    outpath + scale + "_CNTR_" + type + "_reproject.gpkg",
                     #"-makevalid",
                     "-clipdst", str(extent["xmin"]), str(extent["ymin"]), str(extent["xmax"]), str(extent["ymax"])
                     ])
+
+                  # if debug: print(year + " " + geo + " " + crs + " " + scale + " " + type + " - reproject + clip + geojson CNTR")
+                  # ogr2ogr.main(["-overwrite","-f","GeoJSON",
+                  #   outpath + scale + "_CNTR_" + type + ".geojson",
+                  #   "tmp/" + year + "_" + geo + "_" + scale + "_CNTR_" + type + ".gpkg",
+                  #   "-a_srs" if(crs=="4326") else "-t_srs", "EPSG:"+crs,
+                  #   #"-makevalid",
+                  #   "-clipdst", str(extent["xmin"]), str(extent["ymin"]), str(extent["xmax"]), str(extent["ymax"])
+                  #   ])
 
                   for level in ["0", "1", "2", "3"]:
 
