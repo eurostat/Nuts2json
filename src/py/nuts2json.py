@@ -152,7 +152,7 @@ def coarseClipping():
 
 
 # Clip, reproject and convert as geojson
-def reprojectClipGeojson():
+def reprojectClipGeojson(doCleaning = True):
    print("reprojectClipGeojson")
 
    for year in nutsData["years"]:
@@ -171,8 +171,12 @@ def reprojectClipGeojson():
               "-clipdst", str(extent["xmin"]), str(extent["ymin"]), str(extent["xmax"]), str(extent["ymax"])
               ])
 
-            for type in [ "BN"]: ###### TODO "RG", "BN"
+            for type in [ "RG" ]: #TODO add BN !!!!
                for scale in geos[geo]["scales"]:
+
+                  #if(doCleaning & type == "RG"):
+                  #   if debug: print(year + " " + geo + " " + crs + " " + scale + " " + type + " - clean CNTR")
+                     #subprocess.run(["ogrinfo", "-dialect", "indirect_sqlite", "-sql", "update lay set geom=ST_Multi(ST_Buffer(geom,0))", "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG.gpkg"])
 
                   #TODO: decompose: 1. reproject 2. buffer(0) 3. clip
 # ERROR 1: TopologyException: Input geom 0 is invalid: Self-intersection at or near point 6704204.8145943619 6270736.0892365789 at 6704204.8145943619 6270736.0892365789
