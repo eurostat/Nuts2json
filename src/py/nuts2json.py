@@ -179,7 +179,7 @@ def reprojectClipGeojson(doCleaning = True):
                     outpath + scale + "_CNTR_" + type + "_reproject.gpkg",
                     "tmp/" + year + "_" + geo + "_" + scale + "_CNTR_" + type + ".gpkg",
                     #"-makevalid",
-                    "-nln", "lay", #"-nlt", "GEOMETRYCOLLECTION",
+                    "-nln", "lay",
                     "-a_srs" if(crs=="4326") else "-t_srs", "EPSG:"+crs
                     ])
 
@@ -194,15 +194,6 @@ def reprojectClipGeojson(doCleaning = True):
                     #"-makevalid",
                     "-clipdst", str(extent["xmin"]), str(extent["ymin"]), str(extent["xmax"]), str(extent["ymax"])
                     ])
-
-                  # if debug: print(year + " " + geo + " " + crs + " " + scale + " " + type + " - reproject + clip + geojson CNTR")
-                  # ogr2ogr.main(["-overwrite","-f","GeoJSON",
-                  #   outpath + scale + "_CNTR_" + type + ".geojson",
-                  #   "tmp/" + year + "_" + geo + "_" + scale + "_CNTR_" + type + ".gpkg",
-                  #   "-a_srs" if(crs=="4326") else "-t_srs", "EPSG:"+crs,
-                  #   #"-makevalid",
-                  #   "-clipdst", str(extent["xmin"]), str(extent["ymin"]), str(extent["xmax"]), str(extent["ymax"])
-                  #   ])
 
                   for level in ["0", "1", "2", "3"]:
 
@@ -350,9 +341,9 @@ with open("pub/" + version + "/data.json", "w") as fp:
 # 3
 #coarseClipping()
 # 4
-reprojectClipGeojson()
+#reprojectClipGeojson()
 # 5
-#topoGeojson()
+topoGeojson()
 # 6
-#points()
+points()
 ##############################
