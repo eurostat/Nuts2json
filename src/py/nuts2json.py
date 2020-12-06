@@ -112,7 +112,7 @@ def coarseClipping():
       for geo in geos:
 
          extends = geos[geo]["crs"]["4326"]
-         marginDeg = 33 if(geo == "EUR") else 12
+         marginDeg = 33 if(geo == "EUR") else 10
 
          if debug: print(year + " " + geo + " graticule - coarse clipping")
          ogr2ogr.main(["-overwrite","-f", "GPKG",
