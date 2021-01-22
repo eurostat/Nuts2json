@@ -119,7 +119,7 @@ These examples are based on [d3js](https://d3js.org/) library.
 
 - [Basic example](https://bl.ocks.org/jgaffuri/raw/e7e0a76a6e0f851b253d3b1c8fb17ffb/) (see the [code](https://bl.ocks.org/jgaffuri/e7e0a76a6e0f851b253d3b1c8fb17ffb)).
 - [Advanced example](https://bl.ocks.org/jgaffuri/raw/71d130bf5963c5ffe0a436399f401af3/) (see the [code](https://bl.ocks.org/jgaffuri/71d130bf5963c5ffe0a436399f401af3)).
-- [Statistical map examples](https://github.com/eurostat/eurostat-map.js) based on [eurostat-map.js](https://github.com/eurostat/eurostat.js/blob/master/docs/README-map.md).
+- [Statistical map examples](https://github.com/eurostat/eurostat-map.js#examples) based on [eurostat-map.js](https://github.com/eurostat/eurostat-map.js).
 - [NUTS regions as points](https://observablehq.com/@jgaffuri/nuts-regions-as-points).
 - [NUTS regions Dorling cartogram](https://observablehq.com/@jgaffuri/dorling-cartogram).
 - [NUTS population Dorling cartogram](https://observablehq.com/@jgaffuri/dorling-cartogram-population).
