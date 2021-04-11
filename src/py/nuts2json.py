@@ -221,10 +221,11 @@ def topoGeojson():
       for geo in geos:
          for crs in geos[geo]["crs"]:
             for scale in geos[geo]["scales"]:
+               inpath = "tmp/"+year+"/"+geo+"/"+crs+"/"
+               outpath = "pub/" + version + "/" + year + "/" + ("" if geo=="EUR" else geo + "/") + crs + "/" + scale + "/"
+               Path(outpath).mkdir(parents=True, exist_ok=True)
+
                for level in ["0", "1", "2", "3"]:
-                  inpath = "tmp/"+year+"/"+geo+"/"+crs+"/"
-                  outpath = "pub/" + version + "/" + year + "/" + ("" if geo=="EUR" else geo + "/") + crs + "/" + scale + "/"
-                  Path(outpath).mkdir(parents=True, exist_ok=True)
 
                   # make topojson base files, one per nuts level
                   # quantization: q small means strong 'simplification'
@@ -250,6 +251,23 @@ def topoGeojson():
                     "cntbn=" + outpath + "cntbn.json",
                     "gra=" + outpath + "gra.json",
                     "-i", outpath + level + ".json"])
+
+               #make files with all levels
+               #TODO
+               if debug: print(year + " " + geo + " " + crs + " " + scale + " " + " - make topojson")
+               subprocess.run(["geo2topo", "-q", "20000",
+                 "nutsrg0=" + inpath + scale + "_" + "0_NUTS_RG.geojson",
+                 "nutsbn0=" + inpath + scale + "_" + "0_NUTS_BN.geojson",
+                 "nutsrg1=" + inpath + scale + "_" + "1_NUTS_RG.geojson",
+                 "nutsbn1=" + inpath + scale + "_" + "1_NUTS_BN.geojson",
+                 "nutsrg2=" + inpath + scale + "_" + "2_NUTS_RG.geojson",
+                 "nutsbn2=" + inpath + scale + "_" + "2_NUTS_BN.geojson",
+                 "nutsrg3=" + inpath + scale + "_" + "3_NUTS_RG.geojson",
+                 "nutsbn3=" + inpath + scale + "_" + "3_NUTS_BN.geojson",
+                 "cntrg=" + inpath + scale + "_CNTR_RG.geojson",
+                 "cntbn=" + inpath + scale + "_CNTR_BN.geojson",
+                 "gra=" + inpath + "graticule.geojson",
+                 "-o", inpath + "all.json"])
 
 
 
@@ -333,13 +351,13 @@ with open("pub/" + version + "/data.json", "w") as fp:
     json.dump(geos, fp, indent=3)
 
 # 1
-download()
+#download()
 # 2
-filterRenameDecomposeClean()
+#filterRenameDecomposeClean()
 # 3
-coarseClipping()
+#coarseClipping()
 # 4
-reprojectClipGeojson()
+#reprojectClipGeojson()
 # 5
 topoGeojson()
 # 6
