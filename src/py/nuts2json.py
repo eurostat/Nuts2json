@@ -254,7 +254,7 @@ def topoGeojson():
 
                #make files with all levels
                #TODO
-               if debug: print(year + " " + geo + " " + crs + " " + scale + " " + " - make topojson")
+               if debug: print(year + " " + geo + " " + crs + " " + scale + " - make topojson")
                subprocess.run(["geo2topo", "-q", "20000",
                  "nutsrg0=" + inpath + scale + "_" + "0_NUTS_RG.geojson",
                  "nutsbn0=" + inpath + scale + "_" + "0_NUTS_BN.geojson",
@@ -268,6 +268,11 @@ def topoGeojson():
                  "cntbn=" + inpath + scale + "_CNTR_BN.geojson",
                  "gra=" + inpath + "graticule.geojson",
                  "-o", inpath + "all.json"])
+
+               if debug: print(year + " " + geo + " " + crs + " " + scale + " - simplify topojson")
+               subprocess.run(["toposimplify", "-f", "-P", "0.99", "-o",
+                 outpath + "all.json",
+                 inpath + "all.json"])
 
 
 
