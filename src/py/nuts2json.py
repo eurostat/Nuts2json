@@ -356,13 +356,13 @@ with open("pub/" + version + "/data.json", "w") as fp:
     json.dump(geos, fp, indent=3)
 
 # 1
-#download()
+download()
 # 2
-#filterRenameDecomposeClean()
+filterRenameDecomposeClean()
 # 3
-#coarseClipping()
+coarseClipping()
 # 4
-#reprojectClipGeojson()
+reprojectClipGeojson()
 # 5
 topoGeojson()
 # 6
