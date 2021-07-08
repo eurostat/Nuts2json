@@ -41,7 +41,7 @@ For additional projections, formats, scales, etc., feel free to [ask](https://gi
 
 ### Feature types
 
-Five feature types are provided:
+Seven feature types are provided:
 
 - NUTS regions (feature type `nutsrg`) with the following properties:
   - `id`: The NUTS identifier to be used to join Eurostat statistical figures and then assign colors to the regions.
@@ -65,6 +65,10 @@ Five feature types are provided:
   - `cc`: T if the boundary touches at least one Candidate Country, F otherwise.
   - `oth`: T if the boundary touches at least one country wich is not EU, EFTA,CC. F otherwise.
   - `co`: T if the boundary is coastal. F otherwise.
+
+- Land mass area (feature type `land`) with no property.
+
+- Coast line (feature type `coast`) with no property.
 
 - The map graticule (meridian and parrallel lines) is provided as feature type `gra` with a single `id` property, which is the lat/lon of the parallel/meridian.
 

@@ -236,6 +236,8 @@ def topoGeojson():
                     "cntrg=" + inpath + scale + "_CNTR_RG.geojson",
                     "cntbn=" + inpath + scale + "_CNTR_BN.geojson",
                     "gra=" + inpath + "graticule.geojson",
+                    #TODO remove if not EUR
+                    #("xk=" + "src/resources/xk/"+scale+"_"+year+".json") if(geo == "EUR") else "",
                     "-o", inpath + level + ".json"])
 
                   if debug: print(year + " " + geo + " " + crs + " " + scale + " " + level + " - simplify topojson")
@@ -267,6 +269,8 @@ def topoGeojson():
                  "cntrg=" + inpath + scale + "_CNTR_RG.geojson",
                  "cntbn=" + inpath + scale + "_CNTR_BN.geojson",
                  "gra=" + inpath + "graticule.geojson",
+                 #TODO remove if not EUR
+                 #("xk=" + "src/resources/xk/"+scale+"_"+year+".json") if(geo == "EUR") else "",
                  "-o", inpath + "all.json"])
 
                if debug: print(year + " " + geo + " " + crs + " " + scale + " - simplify topojson")
