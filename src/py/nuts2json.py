@@ -15,7 +15,7 @@ import os, ogr2ogr, subprocess, json, urllib.request
 
 
 # Set to True/False to show/hide debug messages
-debug = False
+debug = True
 
 # The Nuts2json version number
 version = "v1"
