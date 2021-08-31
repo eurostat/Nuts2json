@@ -15,7 +15,7 @@ import os, ogr2ogr, subprocess, json, urllib.request
 
 
 # Set to True/False to show/hide debug messages
-debug = False
+debug = True
 
 # The Nuts2json version number
 version = "v1"
@@ -37,15 +37,15 @@ def download():
       if not Path(outfile).exists(): urllib.request.urlretrieve(baseURL + "nuts/geojson/NUTS_LB_"+year+"_4326.geojson", outfile)
 
       for scale in nutsData["scales"]:
-         if debug: print( year + " " + scale + " Download")
-
          for type in ["RG", "BN"]:
 
             # NUTS
+            if debug: print( year + " " + scale + " " + type + " NUTS Download")
             outfile = "download/NUTS_"+type+"_"+scale+"_"+year+"_4326.geojson"
             if not Path(outfile).exists(): urllib.request.urlretrieve(baseURL + "nuts/geojson/NUTS_"+type+"_"+scale+"_"+year+"_4326.geojson", outfile)
 
             # CNTR
+            if debug: print( year + " " + scale + " " + type + " CNTR Download")
             outfile = "download/CNTR_"+type+"_"+scale+"_"+year+"_4326.geojson"
             year_ = ("2020" if year=="2021" else year)
             if not Path(outfile).exists(): urllib.request.urlretrieve(baseURL + "countries/geojson/CNTR_"+type+"_"+scale+"_"+year_+"_4326.geojson", outfile)
