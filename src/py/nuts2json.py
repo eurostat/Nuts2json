@@ -18,7 +18,7 @@ import os, ogr2ogr, subprocess, json, urllib.request
 debug = True
 
 # The Nuts2json version number
-version = "v1"
+version = "v2"
 
 # Download base data from GISCO download API
 def download():
@@ -61,6 +61,7 @@ def filterRenameDecomposeClean(doCleaning = True):
    for year in nutsData["years"]:
        for scale in nutsData["scales"]:
 
+# TODO: do not filter out - add all necessary attributes
            if debug: print(year + " " + scale + " CNTR RG - filter, rename attributes")
            ogr2ogr.main(["-overwrite","-f", "GPKG",
               "tmp/" + year + "_" + scale + "_CNTR_RG.gpkg",
@@ -73,6 +74,7 @@ def filterRenameDecomposeClean(doCleaning = True):
               if debug: print(year + " " + scale + " CNTR RG - clean with buffer(0)")
               subprocess.run(["ogrinfo", "-dialect", "indirect_sqlite", "-sql", "update lay set geom=ST_Multi(ST_Buffer(geom,0))", "tmp/" + year + "_" + scale + "_CNTR_RG.gpkg"])
 
+# TODO: do not filter out - add all necessary attributes
            if debug: print(year + " " + scale + " CNTR BN - filter, rename attributes")
            ogr2ogr.main(["-overwrite","-f", "GPKG",
               "tmp/" + year + "_" + scale + "_CNTR_BN.gpkg",
@@ -236,8 +238,6 @@ def topoGeojson():
                     "cntrg=" + inpath + scale + "_CNTR_RG.geojson",
                     "cntbn=" + inpath + scale + "_CNTR_BN.geojson",
                     "gra=" + inpath + "graticule.geojson",
-                    #TODO remove if not EUR
-                    #("xk=" + "src/resources/xk/"+scale+"_"+year+".json") if(geo == "EUR") else "",
                     "-o", inpath + level + ".json"])
 
                   if debug: print(year + " " + geo + " " + crs + " " + scale + " " + level + " - simplify topojson")
@@ -269,8 +269,6 @@ def topoGeojson():
                  "cntrg=" + inpath + scale + "_CNTR_RG.geojson",
                  "cntbn=" + inpath + scale + "_CNTR_BN.geojson",
                  "gra=" + inpath + "graticule.geojson",
-                 #TODO remove if not EUR
-                 #("xk=" + "src/resources/xk/"+scale+"_"+year+".json") if(geo == "EUR") else "",
                  "-o", inpath + "all.json"])
 
                if debug: print(year + " " + geo + " " + crs + " " + scale + " - simplify topojson")
