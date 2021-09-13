@@ -15,7 +15,7 @@ For a faster creation of [Dorling cartograms](http://www.dannydorling.org/wp-con
 
 ## API
 
-Base URL: `https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1`
+Base URL: `https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v2`
 (See [here](#own-deployment) how to define your own base URL)
 
 URL patterns:
@@ -23,7 +23,7 @@ URL patterns:
 - For TopoJSON format: `/<YEAR>/<PROJECTION>/<SCALE>/<NUTS_LEVEL>.json`
 - For GeoJSON format: `/<YEAR>/<PROJECTION>/<SCALE>/<TYPE>[_<NUTS_LEVEL>].json`
 
-For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2016/3035/20M/2.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2016/3035/20M/2.json) returns a TopoJSON file of 2016 NUTS regions level 2 in European LAEA projection ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) for 1:20M scale.
+For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v2/2016/3035/20M/2.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v2/2016/3035/20M/2.json) returns a TopoJSON file of 2016 NUTS regions level 2 in European LAEA projection ([EPSG 3035](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) for 1:20M scale.
 
 The parameters are:
 
@@ -62,6 +62,8 @@ Seven feature types are provided:
 
 - Non-european boundaries (feature type `cntbn`) with the following properties:
   - `id`: An identifier.
+  - `eu`: T if the boundary separate two EU member states, F otherwise.
+  - `efta`: T if the boundary touches at least one EFTA country, F otherwise.
   - `cc`: T if the boundary touches at least one Candidate Country, F otherwise.
   - `oth`: T if the boundary touches at least one country wich is not EU, EFTA,CC. F otherwise.
   - `co`: T if the boundary is coastal. F otherwise.
@@ -78,7 +80,7 @@ Seven feature types are provided:
 
 NUTS regions are also provided as point geometries. These points can be used for label placement or simplified maps such as [Dorling cartograms](http://www.dannydorling.org/wp-content/files/dannydorling_publication_id1448.pdf). Since this data does not depend on the `<SCALE>` parameter, it can be retrieved directly under the `/<YEAR>/<PROJECTION>/nutspt_<NUTS_LEVEL>.json` URL pattern, as GeoJSON format.
 
-For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2013/4326/nutspt_2.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2013/4326/nutspt_2.json) returns a GeoJSON file of 2013 NUTS points level 2 in WGS84 ([EPSG 4326](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) geographic coordinates.
+For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v2/2013/4326/nutspt_2.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v2/2013/4326/nutspt_2.json) returns a GeoJSON file of 2013 NUTS points level 2 in WGS84 ([EPSG 4326](http://spatialreference.org/ref/epsg/etrs89-etrs-laea/)) geographic coordinates.
 
 The point features are provided with the following properties:
   - `id`: The NUTS identifier.
@@ -92,7 +94,7 @@ The point features are provided with the following properties:
 [![NUTS map insets overseas territories](doc/img/insets.png)](doc/img/insets.png)
 
 To add [map insets](http://wiki.gis.com/wiki/index.php/Inset_Map) showing overseas territories or detail on small countries, dedicated files can be used. To access these files, the URL patterns are the same as the ones previously defined, except an additional **GEO** parameter has to be specified here: 
-`.../<YEAR>/<GEO>/<PROJECTION>/...`. This parameter specifies the territory of interest. For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2021/GF/32622/10M/1.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2021/GF/32622/10M/1.json) returns a TopoJSON file of 2021 NUTS regions level 1 on French Guiana overseas territory in UTM zone 22N projection at 1:10M scale.
+`.../<YEAR>/<GEO>/<PROJECTION>/...`. This parameter specifies the territory of interest. For example, [`https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v2/2021/GF/32622/10M/1.json`](https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v2/2021/GF/32622/10M/1.json) returns a TopoJSON file of 2021 NUTS regions level 1 on French Guiana overseas territory in UTM zone 22N projection at 1:10M scale.
 
 The values supported for this additional **GEO** parameter are listed in the table below. For each of them, a specific projection is proposed, replacing the European LAEA projection when necessary. For all of them, an additional value for the `SCALE` parameter is available, `01M`, corresponding to the 1:1M scale. The scale `60M`, too coarse for these small territories, is not provided.
 
@@ -133,7 +135,7 @@ These examples are based on [d3js](https://d3js.org/) library.
 
 ## Own deployment
 
-To deploy your own stable version of Nuts2json, `git clone` the repository and simply publish the `pub` folder on your own web server folder accessible under the URL of your choice. Use the new base URL, for example `https://www.mydomain.eu/path/to/pub/v1`, to access the service. This offers the possibility to select only the necessary API elements of interest.
+To deploy your own stable version of Nuts2json, `git clone` the repository and simply publish the `pub` folder on your own web server folder accessible under the URL of your choice. Use the new base URL, for example `https://www.mydomain.eu/path/to/pub/v2`, to access the service. This offers the possibility to select only the necessary API elements of interest.
 
 ## Technical details
 

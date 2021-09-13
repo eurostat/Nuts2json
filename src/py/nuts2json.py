@@ -20,7 +20,8 @@ debug = True
 # The Nuts2json version number
 version = "v2"
 
-# Download base data from GISCO download API
+
+# Download input data from GISCO download API
 def download():
    print("Download")
    Path("download/").mkdir(parents=True, exist_ok=True)
@@ -61,27 +62,27 @@ def filterRenameDecomposeClean(doCleaning = True):
    for year in nutsData["years"]:
        for scale in nutsData["scales"]:
 
-# TODO: do not filter out - add all necessary attributes
            if debug: print(year + " " + scale + " CNTR RG - filter, rename attributes")
            ogr2ogr.main(["-overwrite","-f", "GPKG",
               "tmp/" + year + "_" + scale + "_CNTR_RG.gpkg",
               "-nln", "lay", "-nlt", "MULTIPOLYGON",
               "download/CNTR_RG_"+scale+"_"+year+"_4326.geojson",
               "-a_srs", "EPSG:4326",
-              "-sql", "SELECT CNTR_ID as id,NAME_ENGL as na FROM CNTR_RG_" + scale + "_" + year + "_4326 WHERE CNTR_ID NOT IN (" + nutsData["years"][year] + ")"])
+              "-sql", "SELECT CNTR_ID as id,NAME_ENGL as na FROM CNTR_RG_" + scale + "_" + year + "_4326"])
+              #"-sql", "SELECT CNTR_ID as id,NAME_ENGL as na FROM CNTR_RG_" + scale + "_" + year + "_4326 WHERE CNTR_ID NOT IN (" + nutsData["years"][year] + ")"])
 
            if(doCleaning):
               if debug: print(year + " " + scale + " CNTR RG - clean with buffer(0)")
               subprocess.run(["ogrinfo", "-dialect", "indirect_sqlite", "-sql", "update lay set geom=ST_Multi(ST_Buffer(geom,0))", "tmp/" + year + "_" + scale + "_CNTR_RG.gpkg"])
 
-# TODO: do not filter out - add all necessary attributes
            if debug: print(year + " " + scale + " CNTR BN - filter, rename attributes")
            ogr2ogr.main(["-overwrite","-f", "GPKG",
               "tmp/" + year + "_" + scale + "_CNTR_BN.gpkg",
               "-nln", "lay", "-nlt", "MULTILINESTRING",
               "download/CNTR_BN_"+scale+"_"+year+"_4326.geojson",
               "-a_srs", "EPSG:4326",
-              "-sql", "SELECT CNTR_BN_ID as id,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM CNTR_BN_" + scale + "_" + year + "_4326 WHERE EU_FLAG='F' AND EFTA_FLAG='F'"])
+              "-sql", "SELECT CNTR_BN_ID as id,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM CNTR_BN_" + scale + "_" + year + "_4326"])
+              #"-sql", "SELECT CNTR_BN_ID as id,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM CNTR_BN_" + scale + "_" + year + "_4326 WHERE EU_FLAG='F' AND EFTA_FLAG='F'"])
 
            for level in ["0", "1", "2", "3"]:
 
