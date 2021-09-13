@@ -1,0 +1,12 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_3",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3035" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "ITG15", "na": "Caltanissetta", "ar": "2133276439" }, "geometry": { "type": "Point", "coordinates": [ 4703021.535297865048051, 1578944.07282443693839 ] } },
+{ "type": "Feature", "properties": { "id": "ITG18", "na": "Ragusa", "ar": "1616499137" }, "geometry": { "type": "Point", "coordinates": [ 4740381.039684924297035, 1551467.324770045699552 ] } },
+{ "type": "Feature", "properties": { "id": "ITG19", "na": "Siracusa", "ar": "2110063345" }, "geometry": { "type": "Point", "coordinates": [ 4771836.737859806977212, 1568942.954391361214221 ] } },
+{ "type": "Feature", "properties": { "id": "MT001", "na": "Malta", "ar": "245777489" }, "geometry": { "type": "Point", "coordinates": [ 4724721.257566071115434, 1436760.147747699869797 ] } },
+{ "type": "Feature", "properties": { "id": "MT002", "na": "Gozo and Comino\/Għawdex u Kemmuna", "ar": "68119251" }, "geometry": { "type": "Point", "coordinates": [ 4707424.521884339861572, 1453710.384055812610313 ] } }
+]
+}

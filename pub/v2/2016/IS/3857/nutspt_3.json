@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_3",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "IS001", "na": "Höfuðborgarsvæði", "ar": "1046066605" }, "geometry": { "type": "Point", "coordinates": [ -2400003.693706660997123, 9405058.522762631997466 ] } },
+{ "type": "Feature", "properties": { "id": "IS002", "na": "Landsbyggð", "ar": "101650891399" }, "geometry": { "type": "Point", "coordinates": [ -2099140.505939680617303, 9544392.359755579382181 ] } }
+]
+}

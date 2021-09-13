@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_3",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "CH054", "na": "Appenzell Innerrhoden", "ar": "172444905" }, "geometry": { "type": "Point", "coordinates": [ 1047137.922096007037908, 5992263.378202486783266 ] } },
+{ "type": "Feature", "properties": { "id": "LI000", "na": "Liechtenstein", "ar": "159938163" }, "geometry": { "type": "Point", "coordinates": [ 1063501.887242618249729, 5964530.157861774787307 ] } }
+]
+}

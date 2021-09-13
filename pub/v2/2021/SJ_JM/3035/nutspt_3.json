@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_3",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3035" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "NO0B1", "na": "Jan Mayen", "ar": null }, "geometry": { "type": "Point", "coordinates": [ 3660063.837792383041233, 5413870.50529248919338 ] } }
+]
+}

@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_3",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32738" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "FRY50", "na": "Mayotte ", "ar": "368994336" }, "geometry": { "type": "Point", "coordinates": [ 516776.430411502253264, 8581725.140351900830865 ] } }
+]
+}

@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_0",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "LI", "na": "Liechtenstein", "ar": "159929161" }, "geometry": { "type": "Point", "coordinates": [ 1063479.623344459803775, 5964677.441193258389831 ] } }
+]
+}

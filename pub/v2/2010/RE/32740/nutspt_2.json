@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_2",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32740" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "FR94", "na": "Réunion", "ar": "2504646406" }, "geometry": { "type": "Point", "coordinates": [ 346956.231897621997632, 7663220.142138326540589 ] } }
+]
+}

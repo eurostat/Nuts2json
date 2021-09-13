@@ -1,0 +1,15 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_3",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3035" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "AT341", "na": "Bludenz-Bregenzer Wald", "ar": "1876709931" }, "geometry": { "type": "Point", "coordinates": [ 4315086.346154584549367, 2677439.312294179573655 ] } },
+{ "type": "Feature", "properties": { "id": "AT342", "na": "Rheintal-Bodenseegebiet", "ar": "743766920" }, "geometry": { "type": "Point", "coordinates": [ 4303258.819807370193303, 2699594.195500015281141 ] } },
+{ "type": "Feature", "properties": { "id": "CH051", "na": "Glarus", "ar": "686628936" }, "geometry": { "type": "Point", "coordinates": [ 4249620.990968799218535, 2654937.966495953965932 ] } },
+{ "type": "Feature", "properties": { "id": "CH053", "na": "Appenzell Ausserrhoden", "ar": "243971754" }, "geometry": { "type": "Point", "coordinates": [ 4276518.294555793516338, 2697187.567807540297508 ] } },
+{ "type": "Feature", "properties": { "id": "CH054", "na": "Appenzell Innerrhoden", "ar": "171944961" }, "geometry": { "type": "Point", "coordinates": [ 4277619.026818523183465, 2686780.042161299381405 ] } },
+{ "type": "Feature", "properties": { "id": "CH055", "na": "St. Gallen", "ar": "2031351026" }, "geometry": { "type": "Point", "coordinates": [ 4262929.176964725367725, 2670459.707826606463641 ] } },
+{ "type": "Feature", "properties": { "id": "CH057", "na": "Thurgau", "ar": "990522375" }, "geometry": { "type": "Point", "coordinates": [ 4251898.141425187699497, 2719704.54509274661541 ] } },
+{ "type": "Feature", "properties": { "id": "LI000", "na": "Liechtenstein", "ar": "159610515" }, "geometry": { "type": "Point", "coordinates": [ 4287139.672631412744522, 2669539.876416360959411 ] } }
+]
+}

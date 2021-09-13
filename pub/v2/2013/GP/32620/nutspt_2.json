@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_2",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32620" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "FRA1", "na": "Guadeloupe", "ar": "1687977647" }, "geometry": { "type": "Point", "coordinates": [ 641611.709963340661488, 1784810.144032564945519 ] } },
+{ "type": "Feature", "properties": { "id": "FRA2", "na": "Martinique", "ar": "1104125005" }, "geometry": { "type": "Point", "coordinates": [ 714505.318944387370721, 1621731.329153292113915 ] } }
+]
+}

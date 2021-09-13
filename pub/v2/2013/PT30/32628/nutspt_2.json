@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_2",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32628" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "PT30", "na": "Região Autónoma da Madeira", "ar": "800481077" }, "geometry": { "type": "Point", "coordinates": [ 312497.67960752727231, 3624434.923341814428568 ] } }
+]
+}

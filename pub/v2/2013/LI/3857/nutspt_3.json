@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_3",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "CH054", "na": "Appenzell Innerrhoden", "ar": "171944961" }, "geometry": { "type": "Point", "coordinates": [ 1049397.707759110722691, 5990047.367813607677817 ] } },
+{ "type": "Feature", "properties": { "id": "CH055", "na": "St. Gallen", "ar": "2031351026" }, "geometry": { "type": "Point", "coordinates": [ 1028035.497475881362334, 5965773.962140625342727 ] } },
+{ "type": "Feature", "properties": { "id": "LI000", "na": "Liechtenstein", "ar": "159610515" }, "geometry": { "type": "Point", "coordinates": [ 1063546.415038935607299, 5964710.171161024831235 ] } }
+]
+}

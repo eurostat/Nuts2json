@@ -1,0 +1,17 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_3",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3035" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "AT341", "na": "Bludenz-Bregenzer Wald", "ar": "1874638593" }, "geometry": { "type": "Point", "coordinates": [ 4317683.761966368183494, 2672049.479896097443998 ] } },
+{ "type": "Feature", "properties": { "id": "AT342", "na": "Rheintal-Bodenseegebiet", "ar": "745768739" }, "geometry": { "type": "Point", "coordinates": [ 4300003.515998641029, 2697494.573585608974099 ] } },
+{ "type": "Feature", "properties": { "id": "CH051", "na": "Glarus", "ar": "685947657" }, "geometry": { "type": "Point", "coordinates": [ 4249181.953472693450749, 2651422.136135749518871 ] } },
+{ "type": "Feature", "properties": { "id": "CH053", "na": "Appenzell Ausserrhoden", "ar": "242929406" }, "geometry": { "type": "Point", "coordinates": [ 4278444.028072346001863, 2697039.270518197212368 ] } },
+{ "type": "Feature", "properties": { "id": "CH054", "na": "Appenzell Innerrhoden", "ar": "172370546" }, "geometry": { "type": "Point", "coordinates": [ 4275679.974731795489788, 2689528.376936862710863 ] } },
+{ "type": "Feature", "properties": { "id": "CH055", "na": "St. Gallen", "ar": "2032686419" }, "geometry": { "type": "Point", "coordinates": [ 4273224.657001378014684, 2666963.587237991392612 ] } },
+{ "type": "Feature", "properties": { "id": "CH057", "na": "Thurgau", "ar": "989688777" }, "geometry": { "type": "Point", "coordinates": [ 4251831.729215030558407, 2717316.324036185629666 ] } },
+{ "type": "Feature", "properties": { "id": "DE27A", "na": "Lindau (Bodensee)", "ar": "362519141" }, "geometry": { "type": "Point", "coordinates": [ 4315031.161937987431884, 2719223.601133076008409 ] } },
+{ "type": "Feature", "properties": { "id": "DE27E", "na": "Oberallgäu", "ar": "1528377573" }, "geometry": { "type": "Point", "coordinates": [ 4339546.456406516954303, 2716862.425967298448086 ] } },
+{ "type": "Feature", "properties": { "id": "LI000", "na": "Liechtenstein", "ar": "159929161" }, "geometry": { "type": "Point", "coordinates": [ 4287093.991729772649705, 2669517.934225313365459 ] } }
+]
+}

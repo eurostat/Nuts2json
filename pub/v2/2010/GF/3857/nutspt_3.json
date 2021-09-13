@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_3",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "FR930", "na": "Guyane", "ar": "83891340755" }, "geometry": { "type": "Point", "coordinates": [ -5942724.224304433912039, 432629.478288056678139 ] } }
+]
+}

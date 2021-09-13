@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_1",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32622" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "FRA", "na": "DÉPARTEMENTS D'OUTRE-MER", "ar": "89349421886" }, "geometry": { "type": "Point", "coordinates": [ 265607.566820285981521, 426655.605740455328487 ] } }
+]
+}

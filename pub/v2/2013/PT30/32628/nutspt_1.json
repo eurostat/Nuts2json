@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_1",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32628" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "PT3", "na": "REGIÃO AUTÓNOMA DA MADEIRA", "ar": "800481077" }, "geometry": { "type": "Point", "coordinates": [ 315176.019371715199668, 3623785.692940953653306 ] } }
+]
+}

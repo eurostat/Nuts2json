@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_0",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3035" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "MT", "na": "Malta", "ar": "315976825" }, "geometry": { "type": "Point", "coordinates": [ 4726225.888116728514433, 1436604.610839954344556 ] } }
+]
+}

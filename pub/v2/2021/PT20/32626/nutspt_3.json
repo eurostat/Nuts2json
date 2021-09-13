@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_3",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32626" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "PT200", "na": "Região Autónoma dos Açores", "ar": "2322927810" }, "geometry": { "type": "Point", "coordinates": [ 643893.148507896112278, 4183173.791041796561331 ] } }
+]
+}

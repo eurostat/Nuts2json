@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_3",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "MT001", "na": "Malta", "ar": "246225727" }, "geometry": { "type": "Point", "coordinates": [ 1608087.968152391957119, 4284630.448823814280331 ] } },
+{ "type": "Feature", "properties": { "id": "MT002", "na": "Gozo and Comino \/ Għawdex u Kemmuna", "ar": "69751098" }, "geometry": { "type": "Point", "coordinates": [ 1587371.410915763815865, 4306622.324418703094125 ] } }
+]
+}

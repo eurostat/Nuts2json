@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_2",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32740" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "FRY4", "na": "La Réunion", "ar": "2503779167" }, "geometry": { "type": "Point", "coordinates": [ 347632.695767887460534, 7663082.476537933573127 ] } }
+]
+}

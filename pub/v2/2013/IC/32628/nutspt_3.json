@@ -1,0 +1,14 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_3",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32628" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "ES703", "na": "El Hierro", "ar": "268641793" }, "geometry": { "type": "Point", "coordinates": [ 203777.261709829152096, 3070821.013321880251169 ] } },
+{ "type": "Feature", "properties": { "id": "ES704", "na": "Fuerteventura", "ar": "1665590830" }, "geometry": { "type": "Point", "coordinates": [ 596817.431260795681737, 3141445.551557268481702 ] } },
+{ "type": "Feature", "properties": { "id": "ES705", "na": "Gran Canaria", "ar": "1561375291" }, "geometry": { "type": "Point", "coordinates": [ 441327.238394609245006, 3090665.740510877687484 ] } },
+{ "type": "Feature", "properties": { "id": "ES706", "na": "La Gomera", "ar": "369553778" }, "geometry": { "type": "Point", "coordinates": [ 281509.27758251625346, 3111741.225340105127543 ] } },
+{ "type": "Feature", "properties": { "id": "ES707", "na": "La Palma", "ar": "709052312" }, "geometry": { "type": "Point", "coordinates": [ 219870.033964375848882, 3172869.899261515587568 ] } },
+{ "type": "Feature", "properties": { "id": "ES708", "na": "Lanzarote", "ar": "844487077" }, "geometry": { "type": "Point", "coordinates": [ 631410.486150187207386, 3211140.616550765000284 ] } },
+{ "type": "Feature", "properties": { "id": "ES709", "na": "Tenerife", "ar": "2031439020" }, "geometry": { "type": "Point", "coordinates": [ 347197.164703579386696, 3126633.472330502234399 ] } }
+]
+}

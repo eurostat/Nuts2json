@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_1",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "ES7", "na": "Canarias", "ar": "7446532441" }, "geometry": { "type": "Point", "coordinates": [ -1843962.837194259278476, 3279986.403091334737837 ] } }
+]
+}

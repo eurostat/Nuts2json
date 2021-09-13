@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_1",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "FRY", "na": "RUP FR — Régions Ultrapériphériques Françaises", "ar": "89414931868" }, "geometry": { "type": "Point", "coordinates": [ -5925124.612810017541051, 436947.556230216519907 ] } }
+]
+}

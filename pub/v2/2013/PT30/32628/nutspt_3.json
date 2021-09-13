@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_3",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32628" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "ES707", "na": "La Palma", "ar": "709052312" }, "geometry": { "type": "Point", "coordinates": [ 219870.033964375848882, 3172869.899261515587568 ] } },
+{ "type": "Feature", "properties": { "id": "PT300", "na": "Região Autónoma da Madeira", "ar": "800481077" }, "geometry": { "type": "Point", "coordinates": [ 315176.019371715199668, 3623785.692940953653306 ] } }
+]
+}

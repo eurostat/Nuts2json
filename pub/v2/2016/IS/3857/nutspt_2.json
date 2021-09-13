@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_2",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "IS00", "na": "Ísland", "ar": "102696958004" }, "geometry": { "type": "Point", "coordinates": [ -2099140.505939680617303, 9544392.359755579382181 ] } }
+]
+}

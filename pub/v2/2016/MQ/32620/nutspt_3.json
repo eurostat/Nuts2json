@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_3",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32620" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "FRY20", "na": "Martinique ", "ar": "1108689576" }, "geometry": { "type": "Point", "coordinates": [ 724653.46302900754381, 1611319.759464539587498 ] } }
+]
+}

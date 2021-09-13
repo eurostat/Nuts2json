@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "nutspt_2",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "id": "CH05", "na": "Ostschweiz", "ar": "11522108042" }, "geometry": { "type": "Point", "coordinates": [ 1051946.924098276533186, 5927379.839414640329778 ] } },
+{ "type": "Feature", "properties": { "id": "LI00", "na": "Liechtenstein", "ar": "159938163" }, "geometry": { "type": "Point", "coordinates": [ 1063501.887242618249729, 5964530.157861774787307 ] } }
+]
+}
