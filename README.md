@@ -68,10 +68,6 @@ Seven feature types are provided:
   - `oth`: T if the boundary touches at least one country wich is not EU, EFTA,CC. F otherwise.
   - `co`: T if the boundary is coastal. F otherwise.
 
-- Land mass area (feature type `land`) with no property.
-
-- Coast line (feature type `coast`) with no property.
-
 - The map graticule (meridian and parrallel lines) is provided as feature type `gra` with a single `id` property, which is the lat/lon of the parallel/meridian.
 
 
