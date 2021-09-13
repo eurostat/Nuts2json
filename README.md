@@ -41,7 +41,7 @@ For additional projections, formats, scales, etc., feel free to [ask](https://gi
 
 ### Feature types
 
-Seven feature types are provided:
+The following feature types are provided:
 
 - NUTS regions (feature type `nutsrg`) with the following properties:
   - `id`: The NUTS identifier to be used to join Eurostat statistical figures and then assign colors to the regions.
@@ -56,11 +56,11 @@ Seven feature types are provided:
   - `oth`: T if the boundary touches at least one country which is not EU, EFTA,CC. F otherwise.
   - `co`: T if the boundary is coastal. F otherwise.
 
-- Non-european countries (feature type `cntrg`) with the following properties:
+- Countries (feature type `cntrg`) with the following properties:
   - `id`: The country identifier (2 letters ISO-code).
   - `na`: The latin country name.
 
-- Non-european boundaries (feature type `cntbn`) with the following properties:
+- Country boundaries (feature type `cntbn`) with the following properties:
   - `id`: An identifier.
   - `eu`: T if the boundary separate two EU member states, F otherwise.
   - `efta`: T if the boundary touches at least one EFTA country, F otherwise.
