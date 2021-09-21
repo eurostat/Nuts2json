@@ -1,8 +1,10 @@
 import os, json
 
-## Reduce geometric precision of GeoJSON data
+# Reduce geometric precision of GeoJSON data
 
-def reduceFile(filePath, nbDec):
+# simplify: find "coordinates"
+
+def reduceGeoJSONFile(filePath, nbDec):
     with open(filePath, mode="r") as fp:
         data = json.load(fp)
     reduceGeoJSON(data, nbDec)
@@ -26,29 +28,40 @@ def reduceFeature(f, nbDec):
 
 def reduceGeometry(g, nbDec):
     type = g["type"]
+    if(type == "Point"): reducePoint(g, nbDec)
     if(type == "LineString"): reduceLineString(g, nbDec)
+    if(type == "Polygon"): reducePolygon(g, nbDec)
     else: print("Not supported geometry type: " + type)
+
+# https://datatracker.ietf.org/doc/html/rfc7946#appendix-A.1
+
+def reducePoint(pt, nbDec):
+    reduceCoordinate(pt["coordinates"], nbDec)
 
 def reduceLineString(ls, nbDec):
     reduceCoordinates(ls["coordinates"], nbDec)
 
+def reducePolygon(poly, nbDec):
+    reduceCoordinatesX(poly["coordinates"], nbDec)
+
+
+# reduce an array of coordinates
 def reduceCoordinates(cs, nbDec):
     for i in range(len(cs)):
-        for j in range(len(cs[i])):
-            c = cs[i][j]
-            c = round(c, nbDec)
-            cs[i][j] = c
+        reduceCoordinate(cs[i], nbDec)
 
-#2.1.1. Positions
-#2.1.2. Point
-#2.1.3. MultiPoint
-#2.1.4. 
-#2.1.5. MultiLineString
-#2.1.6. Polygon
-#2.1.7. MultiPolygon
-#2.1.8 Geometry Collection
+# reduce an array of arrays of coordinates
+def reduceCoordinatesX(css, nbDec):
+    for i in range(len(css)):
+        reduceCoordinates(css[i], nbDec)
+
+# reduce a coordinate
+def reduceCoordinate(c, nbDec):
+    for i in range(len(c)):
+        c[i] = round(c[i], nbDec)
 
 
 
-data = reduceFile("pub/v2/2021/3035/03M/nutsbn_0.json", 1)
-#print(data)
+# Test
+data = reduceGeoJSONFile("pub/v2/2021/3035/03M/nutsbn_0.json", 1)
+print(data)
