@@ -2,47 +2,42 @@ import os, json
 
 ## Reduce geometric precision of GeoJSON data
 
-def reduceFile(filePath):
+def reduceFile(filePath, nbDec):
     with open(filePath, mode="r") as fp:
         data = json.load(fp)
-    return reduceGeoJSON(data)
+    reduceGeoJSON(data, nbDec)
+    return data
 
 
-def reduceGeoJSON(data):
+def reduceGeoJSON(data, nbDec):
     type = data["type"]
-    if(type == "FeatureCollection"): reduceFeatureCollection(data)
-    if(type == "Feature"): reduceFeature(data)
-    if(type == "Geometry"): reduceGeometry(data)
+    if(type == "FeatureCollection"): reduceFeatureCollection(data, nbDec)
+    if(type == "Feature"): reduceFeature(data, nbDec)
+    if(type == "Geometry"): reduceGeometry(data, nbDec)
 
 
 
-
-def reduceFeatureCollection(fc):
+def reduceFeatureCollection(fc, nbDec):
     for i in range(len(fc["features"])):
-        f = fc["features"][i]
-        reduceFeature(f)
-        fc["features"][i] = f
+        reduceFeature(fc["features"][i], nbDec)
 
-def reduceFeature(f):
-    g = f["geometry"]
-    reduceGeometry(g)
-    f["geometry"] = g
+def reduceFeature(f, nbDec):
+    reduceGeometry(f["geometry"], nbDec)
 
-def reduceGeometry(g):
+def reduceGeometry(g, nbDec):
     type = g["type"]
-    if(type == "LineString"): reduceLineString(g)
+    if(type == "LineString"): reduceLineString(g, nbDec)
     else: print("Not supported geometry type: " + type)
 
-def reduceLineString(ls):
-    cs = ls["coordinates"]
-    reduceCoordinates(cs)
-    ls["coordinates"] = cs
+def reduceLineString(ls, nbDec):
+    reduceCoordinates(ls["coordinates"], nbDec)
 
-def reduceCoordinates(cs):
+def reduceCoordinates(cs, nbDec):
     for i in range(len(cs)):
         for j in range(len(cs[i])):
             c = cs[i][j]
-            print(c)
+            c = round(c, nbDec)
+            cs[i][j] = c
 
 #2.1.1. Positions
 #2.1.2. Point
@@ -55,4 +50,5 @@ def reduceCoordinates(cs):
 
 
 
-reduceFile("pub/v2/2021/3035/03M/nutsbn_0.json")
+data = reduceFile("pub/v2/2021/3035/03M/nutsbn_0.json", 1)
+#print(data)
