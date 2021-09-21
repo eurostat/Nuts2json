@@ -40,6 +40,9 @@ def reduceLineString(ls):
 
 def reduceCoordinates(cs):
     for i in range(len(cs)):
+        for j in range(len(cs[i])):
+            c = cs[i][j]
+            print(c)
 
 #2.1.1. Positions
 #2.1.2. Point
