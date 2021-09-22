@@ -2,8 +2,6 @@ import json
 
 # Reduce geometric precision of GeoJSON data
 
-# simplify: find "coordinates"
-
 def reduceGeoJSONFile(filePath, nbDec):
     with open(filePath, mode="r") as fp:
         data = json.load(fp)
@@ -14,28 +12,28 @@ def reduceGeoJSONFile(filePath, nbDec):
 def reduceGeoJSON(data, nbDec):
     for key in data:
         data_ = data[key]
-        if key == "coordinates": reduceCoordinates(data_, nbDec)
+        if key == "coordinates": reduceCoordinatesRec(data_, nbDec)
         elif isinstance(data_, list):
             for i in range(len(data_)): reduceGeoJSON(data_[i], nbDec)
         elif isinstance(data_, dict): reduceGeoJSON(data_, nbDec)
 
 
 
-# reduce an array of coordinates
-def reduceCoordinates(cs, nbDec):
-    print(cs)
+# reduce coordinates
+def reduceCoordinatesRec(cs, nbDec):
     if len(cs)==0: return
     c = cs[0]
     if isinstance(c, list):
-        print("A")
+        for i in range(len(cs)):
+            reduceCoordinatesRec(cs[i], nbDec)
     else:
-        print("XXX")
+        reduceCoordinates(cs, nbDec)
 
-    #for i in range(len(cs)):
-    #    reduceCoordinate(cs[i], nbDec)
+# reduce a list of coordinates
+def reduceCoordinates(cs, nbDec):
+    for i in range(len(cs)):
+        reduceCoordinate(cs[i], nbDec)
 
-# reduce an array of arrays of coordinates
-def reduceCoordinatesX(css, nbDec):
     for i in range(len(css)):
         reduceCoordinates(css[i], nbDec)
 
