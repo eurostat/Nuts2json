@@ -1,4 +1,4 @@
-import os, json
+import json
 
 # Reduce geometric precision of GeoJSON data
 
@@ -12,43 +12,27 @@ def reduceGeoJSONFile(filePath, nbDec):
 
 
 def reduceGeoJSON(data, nbDec):
-    type = data["type"]
-    if(type == "FeatureCollection"): reduceFeatureCollection(data, nbDec)
-    if(type == "Feature"): reduceFeature(data, nbDec)
-    if(type == "Geometry"): reduceGeometry(data, nbDec)
+    for key in data:
+        data_ = data[key]
+        if key == "coordinates": reduceCoordinates(data_, nbDec)
+        elif isinstance(data_, list):
+            for i in range(len(data_)): reduceGeoJSON(data_[i], nbDec)
+        elif isinstance(data_, dict): reduceGeoJSON(data_, nbDec)
 
-
-
-def reduceFeatureCollection(fc, nbDec):
-    for i in range(len(fc["features"])):
-        reduceFeature(fc["features"][i], nbDec)
-
-def reduceFeature(f, nbDec):
-    reduceGeometry(f["geometry"], nbDec)
-
-def reduceGeometry(g, nbDec):
-    type = g["type"]
-    if(type == "Point"): reducePoint(g, nbDec)
-    if(type == "LineString"): reduceLineString(g, nbDec)
-    if(type == "Polygon"): reducePolygon(g, nbDec)
-    else: print("Not supported geometry type: " + type)
-
-# https://datatracker.ietf.org/doc/html/rfc7946#appendix-A.1
-
-def reducePoint(pt, nbDec):
-    reduceCoordinate(pt["coordinates"], nbDec)
-
-def reduceLineString(ls, nbDec):
-    reduceCoordinates(ls["coordinates"], nbDec)
-
-def reducePolygon(poly, nbDec):
-    reduceCoordinatesX(poly["coordinates"], nbDec)
 
 
 # reduce an array of coordinates
 def reduceCoordinates(cs, nbDec):
-    for i in range(len(cs)):
-        reduceCoordinate(cs[i], nbDec)
+    print(cs)
+    if len(cs)==0: return
+    c = cs[0]
+    if isinstance(c, list):
+        print("A")
+    else:
+        print("XXX")
+
+    #for i in range(len(cs)):
+    #    reduceCoordinate(cs[i], nbDec)
 
 # reduce an array of arrays of coordinates
 def reduceCoordinatesX(css, nbDec):
@@ -64,4 +48,4 @@ def reduceCoordinate(c, nbDec):
 
 # Test
 data = reduceGeoJSONFile("pub/v2/2021/3035/03M/nutsbn_0.json", 1)
-print(data)
+#print(data)
