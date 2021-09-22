@@ -1,5 +1,5 @@
 from pathlib import Path
-import os, ogr2ogr, subprocess, json, urllib.request
+import ogr2ogr, subprocess, json, urllib.request, reduceGeoJSON
 
 ################
 # Target structure
@@ -215,6 +215,7 @@ def reprojectClipGeojson(doCleaning = True):
 # Make topojson file from geojson files
 # Simplify with topojson simplify
 # Produce new geojson from topojson
+# Reduce geojson
 # See: https://github.com/topojson/topojson-server/blob/master/README.md#geo2topo
 # See: https://github.com/topojson/topojson-simplify/blob/master/README.md#toposimplify
 # See: https://github.com/topojson/topojson-client/blob/master/README.md#topo2geo
@@ -255,8 +256,16 @@ def topoGeojson():
                     "gra=" + outpath + "gra.json",
                     "-i", outpath + level + ".json"])
 
+                  if debug: print(year + " " + geo + " " + crs + " " + scale + " " + level + " - reduce geojson")
+                  nbDec = 0
+                  if crs=="4326": nbDec=3
+                  reduceGeoJSONFile(outpath + "nutsrg_" + level + ".json", nbDec, outpath + "nutsrg_" + level + ".json")
+                  reduceGeoJSONFile(outpath + "nutsbn_" + level + ".json", nbDec, outpath + "nutsbn_" + level + ".json")
+                  reduceGeoJSONFile(outpath + "cntrg.json", nbDec, outpath + "cntrg.json")
+                  reduceGeoJSONFile(outpath + "cntbn.json", nbDec, outpath + "cntbn.json")
+                  reduceGeoJSONFile(outpath + "gra.json", nbDec, outpath + "gra.json")
+
                #make files with all levels
-               #TODO
                if debug: print(year + " " + geo + " " + crs + " " + scale + " - make topojson")
                subprocess.run(["geo2topo", "-q", "20000",
                  "nutsrg0=" + inpath + scale + "_" + "0_NUTS_RG.geojson",
