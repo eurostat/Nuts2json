@@ -34,11 +34,9 @@ def reduceCoordinates(cs, nbDec):
     for i in range(len(cs)):
         reduceCoordinate(cs[i], nbDec)
 
-    for i in range(len(css)):
-        reduceCoordinates(css[i], nbDec)
-
 # reduce a coordinate
 def reduceCoordinate(c, nbDec):
+    print(c)
     for i in range(len(c)):
         c[i] = round(c[i], nbDec)
 
