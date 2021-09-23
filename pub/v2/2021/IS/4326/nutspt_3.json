@@ -1,9 +1,1 @@
-{
-"type": "FeatureCollection",
-"name": "nutspt_3",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-"features": [
-{ "type": "Feature", "properties": { "id": "IS001", "na": "Höfuðborgarsvæði", "ar": "1045727586" }, "geometry": { "type": "Point", "coordinates": [ -21.5596, 64.2169 ] } },
-{ "type": "Feature", "properties": { "id": "IS002", "na": "Landsbyggð", "ar": "101633661422" }, "geometry": { "type": "Point", "coordinates": [ -18.8569, 64.756 ] } }
-]
-}
+{"type": "FeatureCollection", "name": "nutspt_3", "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:OGC:1.3:CRS84"}}, "features": [{"type": "Feature", "properties": {"id": "IS001", "na": "H\u00f6fu\u00f0borgarsv\u00e6\u00f0i", "ar": "1045727586"}, "geometry": {"type": "Point", "coordinates": [-21.56, 64.217]}}, {"type": "Feature", "properties": {"id": "IS002", "na": "Landsbygg\u00f0", "ar": "101633661422"}, "geometry": {"type": "Point", "coordinates": [-18.857, 64.756]}}]}

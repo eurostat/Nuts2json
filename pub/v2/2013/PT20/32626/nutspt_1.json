@@ -1,8 +1,1 @@
-{
-"type": "FeatureCollection",
-"name": "nutspt_1",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32626" } },
-"features": [
-{ "type": "Feature", "properties": { "id": "PT2", "na": "REGIÃO AUTÓNOMA DOS AÇORES", "ar": "2322041627" }, "geometry": { "type": "Point", "coordinates": [ 632917.537248745094985, 4182090.276150180026889 ] } }
-]
-}
+{"type": "FeatureCollection", "name": "nutspt_1", "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:EPSG::32626"}}, "features": [{"type": "Feature", "properties": {"id": "PT2", "na": "REGI\u00c3O AUT\u00d3NOMA DOS A\u00c7ORES", "ar": "2322041627"}, "geometry": {"type": "Point", "coordinates": [632918.0, 4182090.0]}}]}

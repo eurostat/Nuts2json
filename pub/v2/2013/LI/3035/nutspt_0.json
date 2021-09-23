@@ -1,8 +1,1 @@
-{
-"type": "FeatureCollection",
-"name": "nutspt_0",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3035" } },
-"features": [
-{ "type": "Feature", "properties": { "id": "LI", "na": "LIECHTENSTEIN", "ar": "159610515" }, "geometry": { "type": "Point", "coordinates": [ 4287139.672631412744522, 2669539.876416360959411 ] } }
-]
-}
+{"type": "FeatureCollection", "name": "nutspt_0", "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:EPSG::3035"}}, "features": [{"type": "Feature", "properties": {"id": "LI", "na": "LIECHTENSTEIN", "ar": "159610515"}, "geometry": {"type": "Point", "coordinates": [4287140.0, 2669540.0]}}]}

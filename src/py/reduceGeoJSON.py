@@ -50,6 +50,12 @@ def reduceCoordinatesRec(cs, nbDec):
     if len(cs)==0: return
 
     # get first element
+    c = cs[0]
+    if not isinstance(c, list):
+        reduceCoordinate(cs, nbDec)
+        return;
+
+    # get first element - one level below
     c = cs[0][0]
 
     # if it is a list, reduce the components (recursively)

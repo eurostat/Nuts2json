@@ -1,8 +1,1 @@
-{
-"type": "FeatureCollection",
-"name": "nutspt_3",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32738" } },
-"features": [
-
-]
-}
+{"type": "FeatureCollection", "name": "nutspt_3", "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:EPSG::32738"}}, "features": []}

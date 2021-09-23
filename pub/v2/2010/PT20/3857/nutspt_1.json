@@ -1,8 +1,1 @@
-{
-"type": "FeatureCollection",
-"name": "nutspt_1",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
-"features": [
-{ "type": "Feature", "properties": { "id": "PT2", "na": "Região Autónoma dos Açores", "ar": "2329065276" }, "geometry": { "type": "Point", "coordinates": [ -3034146.304959623143077, 4630520.884191145189106 ] } }
-]
-}
+{"type": "FeatureCollection", "name": "nutspt_1", "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:EPSG::3857"}}, "features": [{"type": "Feature", "properties": {"id": "PT2", "na": "Regi\u00e3o Aut\u00f3noma dos A\u00e7ores", "ar": "2329065276"}, "geometry": {"type": "Point", "coordinates": [-3034146.0, 4630521.0]}}]}
