@@ -1,1 +1,1 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"id": "SJ", "na": "Svalbard and Jan Mayen"}, "geometry": {"type": "Polygon", "coordinates": [[[3653877.0, 5404939.0], [3623749.0, 5400386.0], [3673535.0, 5418986.0], [3667394.0, 5406189.0], [3653877.0, 5404939.0]]]}}]}
+{"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"id": "SJ", "na": "Svalbard and Jan Mayen"}, "geometry": {"type": "Polygon", "coordinates": [[[3653877, 5404939], [3623749, 5400386], [3673535, 5418986], [3667394, 5406189], [3653877, 5404939]]]}}]}

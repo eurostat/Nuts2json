@@ -1,1 +1,1 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"id": "10W"}, "geometry": {"type": "LineString", "coordinates": [[3575911, 5364543.0], [3596154.0, 5424217.0], [3606801.0, 5455429]]}}]}
+{"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"id": "10W"}, "geometry": {"type": "LineString", "coordinates": [[3575911, 5364543], [3596154, 5424217], [3606801, 5455429]]}}]}

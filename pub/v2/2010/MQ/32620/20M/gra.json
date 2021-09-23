@@ -1,1 +1,1 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"id": "60W"}, "geometry": {"type": "LineString", "coordinates": [[824604.0, 1500000], [823980.0, 1549777.0], [823267.0, 1605143.0], [822530.0, 1660508.0], [821768.0, 1715886.0], [821282.0, 1750000]]}}]}
+{"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"id": "60W"}, "geometry": {"type": "LineString", "coordinates": [[824604, 1500000], [823980, 1549777], [823267, 1605143], [822530, 1660508], [821768, 1715886], [821282, 1750000]]}}]}
