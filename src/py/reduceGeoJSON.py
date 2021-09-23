@@ -1,16 +1,19 @@
-############
-# 
-# Reduce geometric precision of GeoJSON data.
-# Round the coordinates to a specified number of decimals.
-# Warning: This can result in invalid geometries.
-# 
-############
+"""
+Reduce geometric precision of GeoJSON data: Round the coordinates to a specified number of decimals.
+Warning: This can result in invalid geometries (self overlaping linestrings for example).
+"""
 
 import json
 
-
-# Reduce geometric precision of a file
 def reduceGeoJSONFile(filePath, nbDec, outFilePath=""):
+    """
+    Reduce geometric precision of a GeoJSON file by rounding its coordinates.
+
+    Args:
+        filePath (str): The file location.
+        nbDec (int): The number of decimals.
+        outFilePath (str): The output file location. If not specified, the input file is overriden.
+    """
 
     # Open file
     with open(filePath, mode="r") as fp:
@@ -19,15 +22,27 @@ def reduceGeoJSONFile(filePath, nbDec, outFilePath=""):
     # Apply reduction
     reduceGeoJSON(data, nbDec)
 
+    # Get output file path
+    if not outFilePath: outFilePath = filePath
+
     # Save output
-    if not(outFilePath): outFilePath = filePath
     with open(outFilePath, "w") as fp:
         json.dump(data, fp)
 
 
 
+
+
 # Reduce geometric precision of geojson structure
 def reduceGeoJSON(data, nbDec):
+    """
+    Reduce geometric precision of a GeoJSON data by rounding its coordinates.
+
+    Args:
+        data (dict): The GeoJSON data.
+        nbDec (int): The number of decimals.
+    """
+
     for key in data:
         data_ = data[key]
 
@@ -43,8 +58,17 @@ def reduceGeoJSON(data, nbDec):
 
 
 
-# reduce coordinates
+
+
 def reduceCoordinatesRec(cs, nbDec):
+    """
+    Reduce geometric precision of a GeoJSON coordinates by rounding its values.
+    If a list of lists is used, then the function is called recursivelly.
+
+    Args:
+        cs (list): The GeoJSON coordinates.
+        nbDec (int): The number of decimals.
+    """
 
     # empty list
     if len(cs)==0: return
@@ -70,18 +94,42 @@ def reduceCoordinatesRec(cs, nbDec):
 
 
 
-# reduce a list of coordinates
-# TODO: remove duplicate vertices, if any
 def reduceCoordinates(cs, nbDec):
+    """
+    Reduce geometric precision of a GeoJSON coordinates by rounding its values.
+    The input is supposed to be a list of coordinates.
+
+    Args:
+        cs (list): The GeoJSON coordinates.
+        nbDec (int): The number of decimals.
+    """
+
+    # TODO: remove duplicate vertices, if any
     for i in range(len(cs)):
         reduceCoordinate(cs[i], nbDec)
 
-# reduce a coordinate
+
+
+
 def reduceCoordinate(c, nbDec):
+    """
+    Reduce geometric precision of a GeoJSON coordinate by rounding its values.
+    The input is supposed to be a list of values.
+
+    Args:
+        cs (list): The GeoJSON coordinate.
+        nbDec (int): The number of decimals.
+    """
+
     for i in range(len(c)):
         c[i] = round(c[i], nbDec)
         if nbDec == 0: c[i] = int(c[i])
-#TODO make it possible to round also 32455 to 32000
+        #TODO make it possible to round also 32455 to 32000
+
+
+
+
+
 
 
 
