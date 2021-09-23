@@ -20,11 +20,9 @@ def reduceGeoJSONFile(filePath, nbDec, outFilePath=""):
     reduceGeoJSON(data, nbDec)
 
     # Save output
-    if outFilePath:
-        with open(outFilePath, "w") as fp:
-            json.dump(data, fp)
-
-    return data
+    if not(outFilePath): outFilePath = filePath
+    with open(outFilePath, "w") as fp:
+        json.dump(data, fp)
 
 
 
