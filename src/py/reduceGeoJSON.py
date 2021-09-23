@@ -10,7 +10,7 @@ import json
 
 
 # Reduce geometric precision of a file
-def reduceGeoJSONFile(filePath, nbDec, outFilePath):
+def reduceGeoJSONFile(filePath, nbDec, outFilePath=""):
 
     # Open file
     with open(filePath, mode="r") as fp:
