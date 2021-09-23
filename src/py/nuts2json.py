@@ -259,11 +259,11 @@ def topoGeojson():
                   if debug: print(year + " " + geo + " " + crs + " " + scale + " " + level + " - reduce geojson")
                   nbDec = 0
                   if crs=="4326": nbDec=3
-                  reduceGeoJSONFile(outpath + "nutsrg_" + level + ".json", nbDec)
-                  reduceGeoJSONFile(outpath + "nutsbn_" + level + ".json", nbDec)
-                  reduceGeoJSONFile(outpath + "cntrg.json", nbDec)
-                  reduceGeoJSONFile(outpath + "cntbn.json", nbDec)
-                  reduceGeoJSONFile(outpath + "gra.json", nbDec)
+                  reduceGeoJSON.reduceGeoJSONFile(outpath + "nutsrg_" + level + ".json", nbDec)
+                  reduceGeoJSON.reduceGeoJSONFile(outpath + "nutsbn_" + level + ".json", nbDec)
+                  reduceGeoJSON.reduceGeoJSONFile(outpath + "cntrg.json", nbDec)
+                  reduceGeoJSON.reduceGeoJSONFile(outpath + "cntbn.json", nbDec)
+                  reduceGeoJSON.reduceGeoJSONFile(outpath + "gra.json", nbDec)
 
                #make files with all levels
                if debug: print(year + " " + geo + " " + crs + " " + scale + " - make topojson")
@@ -346,7 +346,7 @@ def points():
                if debug: print(year + " " + geo + " " + crs + " " + level + " - reduce PTS")
                nbDec = 0
                if crs=="4326": nbDec=3
-               reduceGeoJSONFile(outpath + "nutspt_" + level + ".json", nbDec)
+               reduceGeoJSON.reduceGeoJSONFile(outpath + "nutspt_" + level + ".json", nbDec)
 
 
 
