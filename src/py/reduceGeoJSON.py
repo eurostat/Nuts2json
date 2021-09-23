@@ -51,6 +51,8 @@ def reduceCoordinatesRec(cs, nbDec):
 
     # get first element
     c = cs[0]
+
+    # if the first element is not a list, the cs is a coordinate
     if not isinstance(c, list):
         reduceCoordinate(cs, nbDec)
         return;
@@ -78,10 +80,13 @@ def reduceCoordinates(cs, nbDec):
 def reduceCoordinate(c, nbDec):
     for i in range(len(c)):
         c[i] = round(c[i], nbDec)
+        if nbDec == 0: c[i] = int(c[i])
 #TODO make it possible to round also 32455 to 32000
 
 
-# Test
+
+
+# Tests
 #filePath = "pub/v2/2021/3035/03M/nutsbn_0.json"
 #data = reduceGeoJSONFile(filePath, 2)
 

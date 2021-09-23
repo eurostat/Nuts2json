@@ -384,4 +384,3 @@ with open("pub/" + version + "/data.json", "w") as fp:
 # 6
 points()
 ##############################
-
