@@ -135,10 +135,10 @@
          "name": "French Guiana",
          "crs": {
             "4326": {
-               "xmin": -56,
-               "ymin": 1,
-               "xmax": -50,
-               "ymax": 7
+               "xmin": -55.9,
+               "ymin": 1.1,
+               "xmax": -50.1,
+               "ymax": 6.9
             },
             "3857": {
                "xmin": -6123000,
