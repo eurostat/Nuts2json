@@ -72,7 +72,7 @@ def reduceCoordinates(cs, nbDec):
 def reduceCoordinate(c, nbDec):
     for i in range(len(c)):
         c[i] = round(c[i], nbDec)
-
+#TODO make it possible to round also 32455 to 32000
 
 
 # Test
