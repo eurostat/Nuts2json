@@ -135,17 +135,20 @@ To deploy your own stable version of Nuts2json, `git clone` the repository and s
 
 ## Technical details
 
-These files are produced from the NUTS geodata provided on [Eurostat-GISCO website](http://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts). The input data are automatically downloaded from the [Eurostat GISCO API](https://gisco-services.ec.europa.eu/distribution/) and stored in a *download* folder. This data is transformed using [GDAL](http://www.gdal.org/) and [TopoJSON](https://github.com/mbostock/topojson/wiki) programs. The entire process is automated in a Python script, which is available in the [/src/py/ folder](/src/py/). This process has the following steps:
-1. *download*: Retrieve the input data using [Eurostat GISCO API](https://gisco-services.ec.europa.eu/distribution/).
-2. *filterRenameDecomposeClean*: Prepare input data: filter, rename attributes, decompose by NUTS level and clean some invalid geometries.
-3. *coarseClipping*: Apply a coarse data selection with clipping on the areas of interest.
-4. *reprojectClipGeojson*: Reproject, clip more precisely and convert as GeoJSON.
-5. *topoGeojson*: Make TopoJSON file from GeoJSON files, simplify them with [TopoJSON Simplify](https://github.com/topojson/topojson-simplify/) program, and finally produce GeoJSON from TopoJSON.
+These files are produced from the NUTS geodata provided on [Eurostat-GISCO website](http://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts). The entire process is automated in a [Python](https://www.python.org/) script, which is available in the [/src/py/ folder](/src/py/). This process has the following steps:
+1. *download*: Retrieve the input data from [Eurostat GISCO API](https://gisco-services.ec.europa.eu/distribution/) and stored it in a *download* folder.
+2. *filterRenameDecomposeClean*: Prepare input data using [GDAL](http://www.gdal.org/): filter, rename attributes, decompose by NUTS level and clean some invalid geometries.
+3. *coarseClipping*: Apply a coarse data selection with clipping on the areas of interest (using [GDAL](http://www.gdal.org/)).
+4. *reprojectClipGeojson*: Reproject, clip more precisely and convert as GeoJSON (using [GDAL](http://www.gdal.org/)).
+5. *topoGeojson*: Make TopoJSON file from GeoJSON files, simplify them with [TopoJSON Simplify](https://github.com/topojson/topojson-simplify/) program, and finally produce simplified GeoJSON from TopoJSON.
 6. *points*: Produce point representations.
 
 Information on the NUTS versions to cover, the scales, projections, map insets and their extents, etc. is stored in the [param.json](/src/py/param.json) file.
 
-
+The software needed to run this process are the following:
+- [Python](https://www.python.org/), version 3.8.2 (or higher)
+- [GDAL](http://www.gdal.org/), version 3.0.4 (or higher)
+- [TopoJSON](https://github.com/mbostock/topojson/wiki), version 2.0
 
 ## About
 
