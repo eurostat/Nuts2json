@@ -374,7 +374,6 @@ with open("pub/" + version + "/data.json", "w") as fp:
 # 1
 download()
 # 2
-"""
 filterRenameDecomposeClean()
 # 3
 coarseClipping()
@@ -385,4 +384,3 @@ topoGeojson()
 # 6
 points()
 ##############################
-"""
