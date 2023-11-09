@@ -1,2 +1,0 @@
-Do not use this! It is a deprecated version. It will disappear at some point.
-Check: https://github.com/eurostat/Nuts2json
