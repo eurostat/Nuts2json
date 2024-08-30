@@ -394,13 +394,13 @@ with open("pub/" + version + "/data.json", "w") as fp:
 # 1
 download()
 # 2
-filterRenameDecomposeClean()
+#filterRenameDecomposeClean()
 # 3
-coarseClipping()
+#coarseClipping()
 # 4
-reprojectClipGeojson()
+#reprojectClipGeojson()
 # 5
-topoGeojson()
+#topoGeojson()
 # 6
-points()
+#points()
 ##############################
