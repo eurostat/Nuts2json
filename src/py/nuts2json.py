@@ -45,15 +45,17 @@ def download():
          for type in ["RG", "BN"]:
 
             # NUTS
-            if debug: print( year + " " + scale + " " + type + " NUTS Download")
             outfile = "download/NUTS_"+type+"_"+scale+"_"+year+"_4326.geojson"
-            if not Path(outfile).exists(): urllib.request.urlretrieve(baseURL + "nuts/geojson/NUTS_"+type+"_"+scale+"_"+year+"_4326.geojson", outfile)
+            url = baseURL + "nuts/geojson/NUTS_"+type+"_"+scale+"_"+year+"_4326.geojson"
+            if debug: print( year + " " + scale + " " + type + " NUTS Download", url)
+            if not Path(outfile).exists(): urllib.request.urlretrieve(url, outfile)
 
             # CNTR
-            if debug: print( year + " " + scale + " " + type + " CNTR Download")
             outfile = "download/CNTR_"+type+"_"+scale+"_"+year+"_4326.geojson"
             year_ = ("2020" if year=="2021" else year)
-            if not Path(outfile).exists(): urllib.request.urlretrieve(baseURL + "countries/geojson/CNTR_"+type+"_"+scale+"_"+year_+"_4326.geojson", outfile)
+            url = baseURL + "countries/geojson/CNTR_"+type+"_"+scale+"_"+year_+"_4326.geojson"
+            if debug: print( year + " " + scale + " " + type + " CNTR Download", url)
+            if not Path(outfile).exists(): urllib.request.urlretrieve(url, outfile)
 
 
 
