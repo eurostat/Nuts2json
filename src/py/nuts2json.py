@@ -21,8 +21,23 @@ debug = True
 version = "v2"
 
 
+def download_from_url(url, outfile, timeout=50):
+   try:
+      # Open the URL with a specified timeout
+      with urllib.request.urlopen(url, timeout=timeout) as response:
+         with open(outfile, 'wb') as out_file: out_file.write(response.read())
+      print("Download complete!")
+   except urllib.error.HTTPError as e:
+      print(f"HTTP Error: {e.code} - {e.reason}")
+   except urllib.error.URLError as e:
+      print(f"URL Error: {e.reason}")
+   except Exception as e:
+      print(f"An error occurred: {e}")
+
+
+
 # Download input data from GISCO download API
-def download():
+def download(timeout=5000):
    print("Download")
    Path("download/").mkdir(parents=True, exist_ok=True)
    baseURL = "https://gisco-services.ec.europa.eu/distribution/v2/"
@@ -33,13 +48,13 @@ def download():
       outfile = "download/NUTS_AT_"+year+".csv"
       url = baseURL + "nuts/csv/NUTS_AT_"+year+".csv"
       if debug: print( year + " AT Download", url)
-      if not Path(outfile).exists(): urllib.request.urlretrieve(url, outfile)
+      if not Path(outfile).exists(): download_from_url(url, outfile, timeout)
 
       # NUTS LB
       outfile = "download/NUTS_LB_"+year+"_4326.geojson"
       url = baseURL + "nuts/geojson/NUTS_LB_"+year+"_4326.geojson"
       if debug: print( year + " LB Download", url)
-      if not Path(outfile).exists(): urllib.request.urlretrieve(url, outfile)
+      if not Path(outfile).exists(): download_from_url(url, outfile, timeout)
 
       for scale in nutsData["scales"]:
          for type in ["RG", "BN"]:
@@ -48,14 +63,14 @@ def download():
             outfile = "download/NUTS_"+type+"_"+scale+"_"+year+"_4326.geojson"
             url = baseURL + "nuts/geojson/NUTS_"+type+"_"+scale+"_"+year+"_4326.geojson"
             if debug: print( year + " " + scale + " " + type + " NUTS Download", url)
-            if not Path(outfile).exists(): urllib.request.urlretrieve(url, outfile)
+            if not Path(outfile).exists(): download_from_url(url, outfile, timeout)
 
             # CNTR
             outfile = "download/CNTR_"+type+"_"+scale+"_"+year+"_4326.geojson"
             year_ = ("2020" if year=="2021" else year)
             url = baseURL + "countries/geojson/CNTR_"+type+"_"+scale+"_"+year_+"_4326.geojson"
             if debug: print( year + " " + scale + " " + type + " CNTR Download", url)
-            if not Path(outfile).exists(): urllib.request.urlretrieve(url, outfile)
+            if not Path(outfile).exists(): download_from_url(url, outfile, timeout)
 
 
 
