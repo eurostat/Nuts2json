@@ -25,16 +25,20 @@ version = "v2"
 def download():
    print("Download")
    Path("download/").mkdir(parents=True, exist_ok=True)
-   baseURL = "http://gisco-services.ec.europa.eu/distribution/v2/"
+   baseURL = "https://gisco-services.ec.europa.eu/distribution/v2/"
 
    for year in nutsData["years"]:
 
       if debug: print( year + " AT Download")
       outfile = "download/NUTS_AT_"+year+".csv"
+      #print(baseURL + "nuts/csv/NUTS_AT_"+year+".csv")
+      #https://gisco-services.ec.europa.eu/distribution/v2/nuts/shp/NUTS_RG_20M_2021_3035.shp.zip
       if not Path(outfile).exists(): urllib.request.urlretrieve(baseURL + "nuts/csv/NUTS_AT_"+year+".csv", outfile)
 
       # NUTS LB
       outfile = "download/NUTS_LB_"+year+"_4326.geojson"
+      #print(baseURL + "nuts/geojson/NUTS_LB_"+year+"_4326.geojson")
+      #https://gisco-services.ec.europa.eu/distribution/v2/nuts/geojson/NUTS_LB_2021_4326.geojson
       if not Path(outfile).exists(): urllib.request.urlretrieve(baseURL + "nuts/geojson/NUTS_LB_"+year+"_4326.geojson", outfile)
 
       for scale in nutsData["scales"]:
