@@ -29,17 +29,17 @@ def download():
 
    for year in nutsData["years"]:
 
-      if debug: print( year + " AT Download")
+      #AT
       outfile = "download/NUTS_AT_"+year+".csv"
-      #print(baseURL + "nuts/csv/NUTS_AT_"+year+".csv")
-      #https://gisco-services.ec.europa.eu/distribution/v2/nuts/shp/NUTS_RG_20M_2021_3035.shp.zip
-      if not Path(outfile).exists(): urllib.request.urlretrieve(baseURL + "nuts/csv/NUTS_AT_"+year+".csv", outfile)
+      url = baseURL + "nuts/csv/NUTS_AT_"+year+".csv"
+      if debug: print( year + " AT Download", url)
+      if not Path(outfile).exists(): urllib.request.urlretrieve(url, outfile)
 
       # NUTS LB
       outfile = "download/NUTS_LB_"+year+"_4326.geojson"
-      #print(baseURL + "nuts/geojson/NUTS_LB_"+year+"_4326.geojson")
-      #https://gisco-services.ec.europa.eu/distribution/v2/nuts/geojson/NUTS_LB_2021_4326.geojson
-      if not Path(outfile).exists(): urllib.request.urlretrieve(baseURL + "nuts/geojson/NUTS_LB_"+year+"_4326.geojson", outfile)
+      url = baseURL + "nuts/geojson/NUTS_LB_"+year+"_4326.geojson"
+      if debug: print( year + " LB Download", url)
+      if not Path(outfile).exists(): urllib.request.urlretrieve(url, outfile)
 
       for scale in nutsData["scales"]:
          for type in ["RG", "BN"]:
