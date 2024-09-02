@@ -1,5 +1,6 @@
 from pathlib import Path
 import ogr2ogr, subprocess, json, urllib.request, reduceGeoJSON
+import os
 
 ################
 # Target structure
@@ -93,7 +94,7 @@ def filterRenameDecomposeClean(doCleaning = True):
               "tmp/" + year + "_" + scale + "_CNTR_RG.gpkg",
               "tmp/" + year + "_" + scale + "_CNTR_RG_.gpkg",
               "-sql", "SELECT geom,CNTR_ID as id, NAME_ENGL as na FROM lay"])
-
+           os.remove("tmp/" + year + "_" + scale + "_CNTR_RG_.gpkg")
 
            if(doCleaning):
               if debug: print(year + " " + scale + " CNTR RG - clean with buffer(0)")
@@ -109,16 +110,21 @@ def filterRenameDecomposeClean(doCleaning = True):
               "tmp/" + year + "_" + scale + "_CNTR_BN.gpkg",
               "tmp/" + year + "_" + scale + "_CNTR_BN_.gpkg",
               "-sql", "SELECT geom,CNTR_BN_ID as id,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM lay"])
+           os.remove("tmp/" + year + "_" + scale + "_CNTR_BN_.gpkg")
 
            for level in ["0", "1", "2", "3"]:
 
                if debug: print(year + " " + scale + " NUTS RG " + level + " - filter, rename attributes")
                ogr2ogr.main(["-overwrite","-f", "GPKG",
-                 "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG.gpkg",
+                 "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG_.gpkg",
                  "-nln", "lay", "-nlt", "MULTIPOLYGON",
                  "download/NUTS_RG_"+scale+"_"+year+"_4326.gpkg",
                  "-a_srs", "EPSG:4326"])
-                 #"-sql", "SELECT N.NUTS_ID as id,A.NAME_LATN as na FROM NUTS_RG_" + scale + "_" + year + "_4326.gpkg as N left join 'download/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on N.NUTS_ID = A.NUTS_ID WHERE N.LEVL_CODE = " + level])
+               ogr2ogr.main(["-overwrite","-f", "GPKG",
+                 "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG.gpkg",
+                 "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG_.gpkg",
+                 "-sql", "SELECT geom,N.NUTS_ID as id,A.NAME_LATN as na FROM lay as N left join '/download/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on N.NUTS_ID = A.NUTS_ID WHERE N.LEVL_CODE = " + level])
+               os.remove("tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG_.gpkg")
 
                if(doCleaning):
                   if debug: print(year + " " + scale + " NUTS RG " + level + " - clean with buffer(0)")
