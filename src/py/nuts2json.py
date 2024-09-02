@@ -85,13 +85,14 @@ def filterRenameDecomposeClean(doCleaning = True):
 
            if debug: print(year + " " + scale + " CNTR RG - filter, rename attributes")
            ogr2ogr.main(["-overwrite","-f", "GPKG",
-              "tmp/" + year + "_" + scale + "_CNTR_RG.gpkg",
+              "tmp/" + year + "_" + scale + "_CNTR_RG_.gpkg",
               "-nln", "lay", "-nlt", "MULTIPOLYGON",
               "download/CNTR_RG_"+scale+"_"+year+"_4326.gpkg",
-              "-a_srs", "EPSG:4326",
-              #"-select", "CNTR_ID,NAME_ENGL",
-              "-sql", "SELECT CNTR_ID as id, NAME_ENGL as na FROM CNTR_RG_" + scale + "_" + year + "_4326"])
-           #ogr2ogr -f GPKG output.gpkg input.geojson -nln lay -select aaa,bbb -sql "SELECT aaa AS a, bbb AS b FROM input"
+              "-a_srs", "EPSG:4326"])
+           ogr2ogr.main(["-overwrite","-f", "GPKG",
+              "tmp/" + year + "_" + scale + "_CNTR_RG.gpkg",
+              "tmp/" + year + "_" + scale + "_CNTR_RG_.gpkg",
+              "-sql", "SELECT geom,CNTR_ID as id, NAME_ENGL as na FROM lay"])
 
 
            if(doCleaning):
@@ -100,11 +101,14 @@ def filterRenameDecomposeClean(doCleaning = True):
 
            if debug: print(year + " " + scale + " CNTR BN - filter, rename attributes")
            ogr2ogr.main(["-overwrite","-f", "GPKG",
-              "tmp/" + year + "_" + scale + "_CNTR_BN.gpkg",
+              "tmp/" + year + "_" + scale + "_CNTR_BN_.gpkg",
               "-nln", "lay", "-nlt", "MULTILINESTRING",
               "download/CNTR_BN_"+scale+"_"+year+"_4326.gpkg",
-              "-a_srs", "EPSG:4326",
-              "-sql", "SELECT CNTR_BN_ID as id,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM CNTR_BN_" + scale + "_" + year + "_4326"])
+              "-a_srs", "EPSG:4326"])
+           ogr2ogr.main(["-overwrite","-f", "GPKG",
+              "tmp/" + year + "_" + scale + "_CNTR_BN.gpkg",
+              "tmp/" + year + "_" + scale + "_CNTR_BN_.gpkg",
+              "-sql", "SELECT geom,CNTR_BN_ID as id,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM lay"])
 
            for level in ["0", "1", "2", "3"]:
 
@@ -113,8 +117,8 @@ def filterRenameDecomposeClean(doCleaning = True):
                  "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG.gpkg",
                  "-nln", "lay", "-nlt", "MULTIPOLYGON",
                  "download/NUTS_RG_"+scale+"_"+year+"_4326.gpkg",
-                 "-a_srs", "EPSG:4326",
-                 "-sql", "SELECT N.NUTS_ID as id,A.NAME_LATN as na FROM NUTS_RG_" + scale + "_" + year + "_4326 as N left join 'download/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on N.NUTS_ID = A.NUTS_ID WHERE N.LEVL_CODE = " + level])
+                 "-a_srs", "EPSG:4326"])
+                 #"-sql", "SELECT N.NUTS_ID as id,A.NAME_LATN as na FROM NUTS_RG_" + scale + "_" + year + "_4326.gpkg as N left join 'download/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on N.NUTS_ID = A.NUTS_ID WHERE N.LEVL_CODE = " + level])
 
                if(doCleaning):
                   if debug: print(year + " " + scale + " NUTS RG " + level + " - clean with buffer(0)")
@@ -125,8 +129,8 @@ def filterRenameDecomposeClean(doCleaning = True):
                  "tmp/" + year + "_" + scale + "_" + level + "_NUTS_BN.gpkg",
                  "-nln", "lay", "-nlt", "MULTILINESTRING",
                  "download/NUTS_BN_"+scale+"_"+year+"_4326.gpkg",
-                 "-a_srs", "EPSG:4326",
-                 "-sql", "SELECT NUTS_BN_ID as id,LEVL_CODE as lvl,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM NUTS_BN_" + scale + "_" + year + "_4326 WHERE LEVL_CODE <= " + level])
+                 "-a_srs", "EPSG:4326"])
+                 #"-sql", "SELECT NUTS_BN_ID as id,LEVL_CODE as lvl,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM NUTS_BN_" + scale + "_" + year + "_4326.gpkg WHERE LEVL_CODE <= " + level])
 
 
 
