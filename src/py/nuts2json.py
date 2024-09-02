@@ -50,8 +50,8 @@ def download(timeout=30000):
       if not Path(outfile).exists(): download_from_url(url, outfile, timeout)
 
       # NUTS LB
-      outfile = "download/NUTS_LB_"+year+"_4326.geojson"
-      url = baseURL + "nuts/geojson/NUTS_LB_"+year+"_4326.geojson"
+      outfile = "download/NUTS_LB_"+year+"_4326.gpkg"
+      url = baseURL + "nuts/gpkg/NUTS_LB_"+year+"_4326.gpkg"
       if debug: print( year + " LB Download", url)
       if not Path(outfile).exists(): download_from_url(url, outfile, timeout)
 
@@ -59,15 +59,15 @@ def download(timeout=30000):
          for type in ["RG", "BN"]:
 
             # NUTS
-            outfile = "download/NUTS_"+type+"_"+scale+"_"+year+"_4326.geojson"
-            url = baseURL + "nuts/geojson/NUTS_"+type+"_"+scale+"_"+year+"_4326.geojson"
+            outfile = "download/NUTS_"+type+"_"+scale+"_"+year+"_4326.gpkg"
+            url = baseURL + "nuts/gpkg/NUTS_"+type+"_"+scale+"_"+year+"_4326.gpkg"
             if debug: print( year + " " + scale + " " + type + " NUTS Download", url)
             if not Path(outfile).exists(): download_from_url(url, outfile, timeout)
 
             # CNTR
-            outfile = "download/CNTR_"+type+"_"+scale+"_"+year+"_4326.geojson"
+            outfile = "download/CNTR_"+type+"_"+scale+"_"+year+"_4326.gpkg"
             year_ = ("2020" if year=="2021" else year)
-            url = baseURL + "countries/geojson/CNTR_"+type+"_"+scale+"_"+year_+"_4326.geojson"
+            url = baseURL + "countries/gpkg/CNTR_"+type+"_"+scale+"_"+year_+"_4326.gpkg"
             if debug: print( year + " " + scale + " " + type + " CNTR Download", url)
             if not Path(outfile).exists(): download_from_url(url, outfile, timeout)
 
@@ -87,7 +87,7 @@ def filterRenameDecomposeClean(doCleaning = True):
            ogr2ogr.main(["-overwrite","-f", "GPKG",
               "tmp/" + year + "_" + scale + "_CNTR_RG.gpkg",
               "-nln", "lay", "-nlt", "MULTIPOLYGON",
-              "download/CNTR_RG_"+scale+"_"+year+"_4326.geojson",
+              "download/CNTR_RG_"+scale+"_"+year+"_4326.gpkg",
               "-a_srs", "EPSG:4326",
               #"-select", "CNTR_ID,NAME_ENGL",
               "-sql", "SELECT CNTR_ID as id, NAME_ENGL as na FROM CNTR_RG_" + scale + "_" + year + "_4326"])
@@ -102,7 +102,7 @@ def filterRenameDecomposeClean(doCleaning = True):
            ogr2ogr.main(["-overwrite","-f", "GPKG",
               "tmp/" + year + "_" + scale + "_CNTR_BN.gpkg",
               "-nln", "lay", "-nlt", "MULTILINESTRING",
-              "download/CNTR_BN_"+scale+"_"+year+"_4326.geojson",
+              "download/CNTR_BN_"+scale+"_"+year+"_4326.gpkg",
               "-a_srs", "EPSG:4326",
               "-sql", "SELECT CNTR_BN_ID as id,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM CNTR_BN_" + scale + "_" + year + "_4326"])
 
@@ -112,7 +112,7 @@ def filterRenameDecomposeClean(doCleaning = True):
                ogr2ogr.main(["-overwrite","-f", "GPKG",
                  "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG.gpkg",
                  "-nln", "lay", "-nlt", "MULTIPOLYGON",
-                 "download/NUTS_RG_"+scale+"_"+year+"_4326.geojson",
+                 "download/NUTS_RG_"+scale+"_"+year+"_4326.gpkg",
                  "-a_srs", "EPSG:4326",
                  "-sql", "SELECT N.NUTS_ID as id,A.NAME_LATN as na FROM NUTS_RG_" + scale + "_" + year + "_4326 as N left join 'download/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on N.NUTS_ID = A.NUTS_ID WHERE N.LEVL_CODE = " + level])
 
@@ -124,7 +124,7 @@ def filterRenameDecomposeClean(doCleaning = True):
                ogr2ogr.main(["-overwrite","-f", "GPKG",
                  "tmp/" + year + "_" + scale + "_" + level + "_NUTS_BN.gpkg",
                  "-nln", "lay", "-nlt", "MULTILINESTRING",
-                 "download/NUTS_BN_"+scale+"_"+year+"_4326.geojson",
+                 "download/NUTS_BN_"+scale+"_"+year+"_4326.gpkg",
                  "-a_srs", "EPSG:4326",
                  "-sql", "SELECT NUTS_BN_ID as id,LEVL_CODE as lvl,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM NUTS_BN_" + scale + "_" + year + "_4326 WHERE LEVL_CODE <= " + level])
 
