@@ -404,9 +404,9 @@ with open("pub/" + version + "/data.json", "w") as fp:
     json.dump(geos, fp, indent=3)
 
 # 1
-#download()
+download()
 # 2
-filterRenameDecomposeClean(False)
+#filterRenameDecomposeClean(False)
 # 3
 #coarseClipping()
 # 4
