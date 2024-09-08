@@ -58,6 +58,7 @@ def download(timeout=30000):
       if debug: print( year + " LB Download", url)
       if not Path(outfile).exists(): download_from_url(url, outfile, timeout)
 
+
       for scale in nutsData["scales"]:
          for type in ["RG", "BN"]:
 
