@@ -205,60 +205,57 @@ def coarseClipping():
 
 
 
-# Clip, reproject and convert as geojson
-def reprojectClipGeojson(doCleaning = True):
-   print("reprojectClipGeojson")
 
-   for year in nutsData["years"]:
-      for geo in geos:
-         for crs in geos[geo]["crs"]:
-            outpath = "tmp/"+year+"/"+geo+"/"+crs+"/"
-            Path(outpath).mkdir(parents=True, exist_ok=True)
-            extent = geos[geo]["crs"][crs]
+def reprojectClipGeojson(doCleaning=True):
+    print("reprojectClipGeojson")
 
-            if debug: print(year + " " + geo + " " + crs + " - reproject + clip + geojson graticule")
-            ogr2ogr.main(["-overwrite","-f","GeoJSON",
-              outpath + "graticule.geojson",
-              "tmp/" + year + "_" + geo + "_graticule.gpkg",
-              "-a_srs" if(crs=="4326") else "-t_srs", "EPSG:"+crs,
-              #"-makevalid",
-              "-clipdst", str(extent["xmin"]), str(extent["ymin"]), str(extent["xmax"]), str(extent["ymax"])
-              ])
+    for year in nutsData["years"]:
+        for geo in geos:
+            for crs in geos[geo]["crs"]:
+                # Create output directories
+                outpath = f"tmp/{year}/{geo}/{crs}/"
+                Path(outpath).mkdir(parents=True, exist_ok=True)
+                extent = geos[geo]["crs"][crs]
 
-            for type in [ "RG", "BN" ]:
-               for scale in geos[geo]["scales"]:
+                # Define the bounding box for clipping
+                bbox = box(extent["xmin"], extent["ymin"], extent["xmax"], extent["ymax"])
+                bbox_gdf = gpd.GeoDataFrame({"geometry": [bbox]}, crs="EPSG:"+crs)
 
-                  if debug: print(year + " " + geo + " " + crs + " " + scale + " " + type + " - reproject CNTR")
-                  ogr2ogr.main(["-overwrite","-f","GPKG",
-                    outpath + scale + "_CNTR_" + type + "_reproject.gpkg",
-                    "tmp/" + year + "_" + geo + "_" + scale + "_CNTR_" + type + ".gpkg",
-                    #"-makevalid",
-                    "-nln", "lay",
-                    "-a_srs" if(crs=="4326") else "-t_srs", "EPSG:"+crs
-                    ])
+                # Graticule processing
+                if debug: print(f"{year} {geo} {crs} - reproject + clip + geojson graticule")
+                gdf_graticule = gpd.read_file(f"tmp/{year}_{geo}_graticule.gpkg")
+                if crs != "4326": gdf_graticule = gdf_graticule.to_crs(epsg=int(crs))
 
-                  if(doCleaning and type=="RG"):
-                     if debug: print(year + " " + geo + " " + crs + " " + scale + " " + type + " - clean CNTR")
-                     subprocess.run(["ogrinfo", "-dialect", "indirect_sqlite", "-sql", "update lay set geom=ST_Multi(ST_Buffer(geom,0))", outpath + scale + "_CNTR_" + type + "_reproject.gpkg"])
+                gdf_graticule_clipped = gpd.clip(gdf_graticule, bbox_gdf)
+                gdf_graticule_clipped.to_file(f"{outpath}graticule.geojson", driver="GeoJSON")
 
-                  if debug: print(year + " " + geo + " " + crs + " " + scale + " " + type + " - clip + geojson CNTR")
-                  ogr2ogr.main(["-overwrite","-f","GeoJSON",
-                    outpath + scale + "_CNTR_" + type + ".geojson",
-                    outpath + scale + "_CNTR_" + type + "_reproject.gpkg",
-                    #"-makevalid",
-                    "-clipdst", str(extent["xmin"]), str(extent["ymin"]), str(extent["xmax"]), str(extent["ymax"])
-                    ])
+                for type in ["RG", "BN"]:
+                    for scale in geos[geo]["scales"]:
+                        # Reproject and save CNTR layers
+                        if debug: print(f"{year} {geo} {crs} {scale} {type} - reproject CNTR")
+                        gdf_cntr = gpd.read_file(f"tmp/{year}_{geo}_{scale}_CNTR_{type}.gpkg")
+                        gdf_cntr_reprojected = gdf_cntr.to_crs(epsg=int(crs))
+                        gdf_cntr_reprojected.to_file(f"{outpath}{scale}_CNTR_{type}_reproject.gpkg", driver="GPKG")
 
-                  for level in ["0", "1", "2", "3"]:
+                        # Optionally clean with buffer(0) for RG type
+                        if doCleaning and type == "RG":
+                            if debug: print(f"{year} {geo} {crs} {scale} {type} - clean CNTR")
+                            gdf_cntr_reprojected['geometry'] = gdf_cntr_reprojected.buffer(0)
+                            gdf_cntr_reprojected.to_file(f"{outpath}{scale}_CNTR_{type}_reproject.gpkg", driver="GPKG")
 
-                     if debug: print(year + " " + geo + " " + crs + " " + scale + " " + type + " " + level + " - reproject + clip + geojson NUTS")
-                     ogr2ogr.main(["-overwrite","-f","GeoJSON",
-                       outpath + scale + "_" + level + "_NUTS_" + type + ".geojson",
-                       "tmp/" + year + "_" + geo + "_" + scale + "_" + level + "_NUTS_" + type + ".gpkg",
-                       "-a_srs" if(crs=="4326") else "-t_srs", "EPSG:"+crs,
-                       #"-makevalid",
-                       "-clipdst", str(extent["xmin"]), str(extent["ymin"]), str(extent["xmax"]), str(extent["ymax"])
-                       ])
+                        # Clip and save as GeoJSON
+                        if debug: print(f"{year} {geo} {crs} {scale} {type} - clip + geojson CNTR")
+                        gdf_cntr_clipped = gpd.clip(gdf_cntr_reprojected, bbox_gdf)
+                        gdf_cntr_clipped.to_file(f"{outpath}{scale}_CNTR_{type}.geojson", driver="GeoJSON")
+
+                        for level in ["0", "1", "2", "3"]:
+                            # Reproject, clip, and save NUTS layers as GeoJSON
+                            if debug: print(f"{year} {geo} {crs} {scale} {type} {level} - reproject + clip + geojson NUTS")
+                            gdf_nuts = gpd.read_file(f"tmp/{year}_{geo}_{scale}_{level}_NUTS_{type}.gpkg")
+                            gdf_nuts_reprojected = gdf_nuts.to_crs(epsg=int(crs))
+                            gdf_nuts_clipped = gpd.clip(gdf_nuts_reprojected, bbox_gdf)
+                            gdf_nuts_clipped.to_file(f"{outpath}{scale}_{level}_NUTS_{type}.geojson", driver="GeoJSON")
+
 
 
 
@@ -427,11 +424,11 @@ with open("pub/" + version + "/data.json", "w") as fp:
 # 2
 #filterRenameDecomposeClean()
 # 3
-coarseClipping()
+#coarseClipping()
 # 4
 #reprojectClipGeojson()
 # 5
-#topoGeojson()
+topoGeojson()
 # 6
 #points()
 ##############################
