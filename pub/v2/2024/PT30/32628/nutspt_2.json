@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "name": "nutspt_2", "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:EPSG::32628"}}, "features": [{"type": "Feature", "properties": {"id": "PT30", "na": "Regi\u00e3o Aut\u00f3noma da Madeira", "ar": 799971647}, "geometry": {"type": "Point", "coordinates": [315173, 3623790]}}]}

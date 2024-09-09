@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"id": 2, "lvl": 0, "eu": "T", "efta": "F", "cc": "F", "oth": "F", "co": "T"}, "geometry": {"type": "LineString", "coordinates": [[504961, 8593258], [511122, 8598577], [524748, 8588154], [522717, 8573777], [513958, 8566832], [504961, 8593258]]}}]}

@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "name": "nutspt_3", "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:EPSG::3857"}}, "features": [{"type": "Feature", "properties": {"id": "FRY40", "na": "La R\u00e9union", "ar": 2505645209}, "geometry": {"type": "Point", "coordinates": [6181857, -2407778]}}]}

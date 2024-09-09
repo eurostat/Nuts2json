@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "name": "nutspt_2", "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:EPSG::3857"}}, "features": [{"type": "Feature", "properties": {"id": "NO0B", "na": "Svalbard og Jan Mayen", "ar": 61108249141}, "geometry": {"type": "Point", "coordinates": [1487338, 14829106]}}]}
