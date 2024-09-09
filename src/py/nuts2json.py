@@ -401,68 +401,6 @@ def points():
                     reduceGeoJSON.reduceGeoJSONFile(f"{outpath}nutspt_{level}.json", nbDec)
 
 
-# Produce point representations
-def pointsXXX():
-   print("points")
-
-   # prepare
-   for year in nutsData["years"]:
-
-      Path("tmp/pts/" + year + "/").mkdir(parents=True, exist_ok=True)
-
-      if debug: print(year + " PTS join areas")
-      ogr2ogr.main(["-overwrite","-f", "GeoJSON",
-        "tmp/pts/" + year + "/NUTS_LB_.gpkg",
-        "-nln", "lay",
-        "download/NUTS_LB_" + year + "_4326.geojson",
-        "-sql", "select LB.NUTS_ID as id, LB.LEVL_CODE as lvl, A.area as ar FROM NUTS_LB_" + year + "_4326 AS LB left join 'src/resources/nuts_areas/AREA_" + year + ".csv'.AREA_" + year + " AS A ON LB.NUTS_ID = A.nuts_id"
-        ])
-
-      if debug: print(year + " PTS join latn names")
-      ogr2ogr.main(["-overwrite","-f", "GPKG",
-        "tmp/pts/" + year + "/NUTS_LB.gpkg",
-        "-nln", "lay",
-        "tmp/pts/" + year + "/NUTS_LB_.gpkg",
-        "-sql", "select LB.id as id, LB.lvl as lvl, A.NAME_LATN as na, LB.ar as ar FROM lay AS LB left join 'download/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on LB.id = A.NUTS_ID"
-        ])
-
-      for level in ["0", "1", "2", "3"]:
-
-         if debug: print(year + " " + level + " - PTS decompose by NUTS level")
-         ogr2ogr.main(["-overwrite","-f", "GPKG",
-           "tmp/pts/" + year + "/NUTS_LB_" + level + ".gpkg",
-           "-nln", "lay",
-           "tmp/pts/" + year + "/NUTS_LB.gpkg",
-           "-sql", "SELECT geom,id,na,ar FROM lay AS LB WHERE lvl=" + level
-           ])
-
-   for year in nutsData["years"]:
-      for geo in geos:
-         for crs in geos[geo]["crs"]:
-            extends = geos[geo]["crs"][crs]
-
-            outpath = "pub/" + version + "/" + year + "/" + ("" if geo=="EUR" else geo + "/") + crs + "/"
-            Path(outpath).mkdir(parents=True, exist_ok=True)
-
-            for level in ["0", "1", "2", "3"]:
-
-               if debug: print(year + " " + geo + " " + crs + " " + level + " - reproject PTS")
-               ogr2ogr.main(["-overwrite","-f","GeoJSON",
-                 outpath + "nutspt_" + level + ".json",
-                 "tmp/pts/" + year + "/NUTS_LB_" + level + ".gpkg",
-                 "-nln", "nutspt_" + level,
-                 "-a_srs" if(crs=="4326") else "-t_srs", "EPSG:"+crs,
-                 "-clipdst", str(extends["xmin"]), str(extends["ymin"]), str(extends["xmax"]), str(extends["ymax"])
-                 ])
-
-               if debug: print(year + " " + geo + " " + crs + " " + level + " - reduce PTS")
-               nbDec = 0
-               if crs=="4326": nbDec=3
-               reduceGeoJSON.reduceGeoJSONFile(outpath + "nutspt_" + level + ".json", nbDec)
-
-
-
-
 
 ######## Full process #########
 
@@ -484,15 +422,15 @@ with open("pub/" + version + "/data.json", "w") as fp:
     json.dump(geos, fp, indent=3)
 
 # 1
-#download()
+download()
 # 2
-#filterRenameDecomposeClean()
+filterRenameDecomposeClean()
 # 3
-#coarseClipping()
+coarseClipping()
 # 4
-#reprojectClipGeojson()
+reprojectClipGeojson()
 # 5
-#topoGeojson()
+topoGeojson()
 # 6
 points()
 ##############################
