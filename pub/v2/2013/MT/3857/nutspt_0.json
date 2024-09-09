@@ -1,1 +1,1 @@
-{"type": "FeatureCollection", "name": "nutspt_0", "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:EPSG::3857"}}, "features": [{"type": "Feature", "properties": {"id": "MT", "na": "MALTA", "ar": "316399152"}, "geometry": {"type": "Point", "coordinates": [1608299, 4284644]}}]}
+{"type": "FeatureCollection", "name": "nutspt_0", "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:EPSG::3857"}}, "features": [{"type": "Feature", "properties": {"id": "MT", "na": "MALTA", "ar": 316399152}, "geometry": {"type": "Point", "coordinates": [1608302, 4284646]}}]}

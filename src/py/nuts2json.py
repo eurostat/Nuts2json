@@ -368,8 +368,6 @@ def points():
             gdf_level = gdf_lb[gdf_lb["LEVL_CODE"] == int(level)]
             gdf_level[["geometry", "id", "na", "ar"]].to_file(f"tmp/pts/{year}/NUTS_LB_{level}.gpkg", driver="GPKG")
 
-    return
-
     # Reproject and clip
     for year in nutsData["years"]:
         for geo in geos:
@@ -382,7 +380,7 @@ def points():
 
                 # Define clipping box
                 bbox = box(extends["xmin"], extends["ymin"], extends["xmax"], extends["ymax"])
-                bbox_gdf = gpd.GeoDataFrame({"geometry": [bbox]}, crs="EPSG:4326")
+                bbox_gdf = gpd.GeoDataFrame({"geometry": [bbox]}, crs="EPSG:" + crs)
 
                 for level in ["0", "1", "2", "3"]:
                     if debug: print(f"{year} {geo} {crs} {level} - reproject PTS")

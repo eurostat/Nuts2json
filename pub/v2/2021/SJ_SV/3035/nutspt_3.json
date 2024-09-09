@@ -1,1 +1,1 @@
-{"type": "FeatureCollection", "name": "nutspt_3", "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:EPSG::3035"}}, "features": [{"type": "Feature", "properties": {"id": "NO0B2", "na": "Svalbard", "ar": null}, "geometry": {"type": "Point", "coordinates": [4499818, 6156642]}}]}
+{"type": "FeatureCollection", "name": "nutspt_3", "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:EPSG::3035"}}, "features": [{"type": "Feature", "properties": {"id": "NO0B2", "na": "Svalbard", "ar": null}, "geometry": {"type": "Point", "coordinates": [4499817, 6156645]}}]}
