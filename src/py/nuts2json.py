@@ -1,5 +1,5 @@
 from pathlib import Path
-import subprocess, json, urllib.request, reduceGeoJSON #, ogr2ogr
+import subprocess, json, urllib.request, reduceGeoJSON
 import geopandas as gpd
 import pandas as pd
 from shapely.ops import unary_union
@@ -338,6 +338,73 @@ def topoGeojson():
 
 # Produce point representations
 def points():
+    print("points")
+
+    # Prepare points data
+    for year in nutsData["years"]:
+        Path(f"tmp/pts/{year}/").mkdir(parents=True, exist_ok=True)
+
+        # Load NUTS_LB data as GeoDataFrame
+        if debug: print(f"{year} PTS join areas")
+        gdf_lb = gpd.read_file(f"download/NUTS_LB_{year}_4326.gpkg")
+
+        # Load area data from CSV and join with GeoDataFrame
+        area_df = pd.read_csv(f"src/resources/nuts_areas/AREA_{year}.csv")
+        gdf_lb = gdf_lb.merge(area_df, left_on="NUTS_ID", right_on="nuts_id", how="left")
+
+        #if debug: print(f"{year} PTS join latn names")
+        # Load name data and join
+        #nuts_at_df = pd.read_csv(f"download/NUTS_AT_{year}.csv")
+        #gdf_lb = gdf_lb.merge(nuts_at_df, left_on="NUTS_ID", right_on="NUTS_ID", how="left")
+
+        gdf_lb = gdf_lb[['geometry', 'NUTS_ID', 'LEVL_CODE', 'NAME_LATN', 'area']].rename(columns={'NUTS_ID': 'id', 'NAME_LATN': 'na', 'area': 'ar'})
+
+        # Save the resulting GeoDataFrame to a temporary file
+        gdf_lb.to_file(f"tmp/pts/{year}/NUTS_LB.gpkg", driver="GPKG")
+
+        # Decompose by NUTS level and save
+        for level in ["0", "1", "2", "3"]:
+            if debug: print(f"{year} {level} - PTS decompose by NUTS level")
+            gdf_level = gdf_lb[gdf_lb["LEVL_CODE"] == int(level)]
+            gdf_level[["geometry", "id", "na", "ar"]].to_file(f"tmp/pts/{year}/NUTS_LB_{level}.gpkg", driver="GPKG")
+
+    return
+
+    # Reproject and clip
+    for year in nutsData["years"]:
+        for geo in geos:
+            for crs in geos[geo]["crs"]:
+                extends = geos[geo]["crs"][crs]
+
+                # Create output path
+                outpath = f"pub/{version}/{year}/{'' if geo == 'EUR' else geo + '/'}{crs}/"
+                Path(outpath).mkdir(parents=True, exist_ok=True)
+
+                # Define clipping box
+                bbox = box(extends["xmin"], extends["ymin"], extends["xmax"], extends["ymax"])
+                bbox_gdf = gpd.GeoDataFrame({"geometry": [bbox]}, crs="EPSG:4326")
+
+                for level in ["0", "1", "2", "3"]:
+                    if debug: print(f"{year} {geo} {crs} {level} - reproject PTS")
+                    gdf_pts = gpd.read_file(f"tmp/pts/{year}/NUTS_LB_{level}.gpkg")
+
+                    # Reproject the GeoDataFrame
+                    gdf_pts_reprojected = gdf_pts.to_crs(epsg=int(crs))
+
+                    # Clip the GeoDataFrame to the bounding box
+                    gdf_pts_clipped = gpd.clip(gdf_pts_reprojected, bbox_gdf)
+
+                    # Save the clipped data as GeoJSON
+                    gdf_pts_clipped.to_file(f"{outpath}nutspt_{level}.json", driver="GeoJSON")
+
+                    # Reduce precision if necessary
+                    if debug: print(f"{year} {geo} {crs} {level} - reduce PTS")
+                    nbDec = 3 if crs == "4326" else 0
+                    reduceGeoJSON.reduceGeoJSONFile(f"{outpath}nutspt_{level}.json", nbDec)
+
+
+# Produce point representations
+def pointsXXX():
    print("points")
 
    # prepare
@@ -427,7 +494,7 @@ with open("pub/" + version + "/data.json", "w") as fp:
 # 4
 #reprojectClipGeojson()
 # 5
-topoGeojson()
+#topoGeojson()
 # 6
-#points()
+points()
 ##############################
