@@ -1,6 +1,10 @@
-from pathlib import Path
-import ogr2ogr, subprocess, json, urllib.request, reduceGeoJSON
 import os
+from pathlib import Path
+import subprocess, json, urllib.request, reduceGeoJSON #, ogr2ogr
+import geopandas as gpd
+import pandas as pd
+from shapely.ops import unary_union
+from shapely.geometry import MultiPolygon, MultiLineString
 
 ################
 # Target structure
@@ -78,8 +82,124 @@ def download(timeout=30000):
 
 
 
+def filterRenameDecomposeClean(doCleaning=True):
+    print("filterRenameDecompose")
+    Path("tmp/").mkdir(parents=True, exist_ok=True)
+
+    for year in nutsData["years"]:
+        for scale in nutsData["scales"]:
+
+            if debug: print(year + " " + scale + " CNTR RG - filter, rename attributes")
+            # Load the geopackage and filter/rename columns
+            gdf_cntr_rg = gpd.read_file(f"download/CNTR_RG_{scale}_{year}_4326.gpkg")
+            gdf_cntr_rg = gdf_cntr_rg[['geometry', 'CNTR_ID', 'NAME_ENGL']].rename(columns={'CNTR_ID': 'id', 'NAME_ENGL': 'na'})
+
+            if doCleaning:
+                if debug: print(year + " " + scale + " CNTR RG - clean with buffer(0)")
+                # Clean geometries using buffer(0)
+                gdf_cntr_rg['geometry'] = gdf_cntr_rg['geometry'].buffer(0)
+
+            # Save the filtered geopackage
+            gdf_cntr_rg.to_file(f"tmp/{year}_{scale}_CNTR_RG.gpkg", driver="GPKG")
+
+            if debug: print(year + " " + scale + " CNTR BN - filter, rename attributes")
+            # Load CNTR BN geopackage, filter, and rename
+            gdf_cntr_bn = gpd.read_file(f"download/CNTR_BN_{scale}_{year}_4326.gpkg")
+            gdf_cntr_bn = gdf_cntr_bn[['geometry', 'CNTR_BN_ID', 'EU_FLAG', 'EFTA_FLAG', 'CC_FLAG', 'OTHR_FLAG', 'COAS_FLAG']].rename(
+                columns={'CNTR_BN_ID': 'id', 'EU_FLAG': 'eu', 'EFTA_FLAG': 'efta', 'CC_FLAG': 'cc', 'OTHR_FLAG': 'oth', 'COAS_FLAG': 'co'})
+
+            # Save the filtered geopackage
+            gdf_cntr_bn.to_file(f"tmp/{year}_{scale}_CNTR_BN.gpkg", driver="GPKG")
+
+            for level in ["0", "1", "2", "3"]:
+
+                if debug: print(year + " " + scale + " NUTS RG " + level + " - filter, rename attributes")
+                # Load NUTS RG geopackage, filter, and join CSV for additional attributes
+                gdf_nuts_rg = gpd.read_file(f"download/NUTS_RG_{scale}_{year}_4326.gpkg")
+                gdf_nuts_rg = gdf_nuts_rg[gdf_nuts_rg['LEVL_CODE'] == int(level)]
+                #csv_data = pd.read_csv(f"download/NUTS_AT_{year}.csv")
+                #gdf_nuts_rg = gdf_nuts_rg.merge(csv_data[['NUTS_ID', 'NAME_LATN']], on='NUTS_ID', how='left')
+                #print(csv_data)
+                #gdf_nuts_rg = gdf_nuts_rg[['NUTS_ID', 'NAME_LATN', 'geometry']].rename(columns={'NUTS_ID': 'id', 'NAME_LATN': 'na'})
+                gdf_nuts_rg = gdf_nuts_rg[['geometry', 'NUTS_ID', 'NAME_LATN']].rename(columns={'NUTS_ID': 'id', 'NAME_LATN': 'na'})
+
+                if doCleaning:
+                    if debug: print(year + " " + scale + " NUTS RG " + level + " - clean with buffer(0)")
+                    gdf_nuts_rg['geometry'] = gdf_nuts_rg['geometry'].buffer(0)
+
+                # Save the filtered geopackage
+                gdf_nuts_rg.to_file(f"tmp/{year}_{scale}_{level}_NUTS_RG.gpkg", driver="GPKG")
+
+                if debug: print(year + " " + scale + " NUTS BN " + level + " - filter, rename attributes")
+                # Load NUTS BN geopackage, filter, and rename
+                gdf_nuts_bn = gpd.read_file(f"download/NUTS_BN_{scale}_{year}_4326.gpkg")
+                gdf_nuts_bn = gdf_nuts_bn[gdf_nuts_bn['LEVL_CODE'] <= int(level)]
+                gdf_nuts_bn = gdf_nuts_bn[['geometry', 'NUTS_BN_ID', 'LEVL_CODE', 'EU_FLAG', 'EFTA_FLAG', 'CC_FLAG', 'OTHR_FLAG', 'COAS_FLAG']].rename(
+                    columns={'NUTS_BN_ID': 'id', 'LEVL_CODE': 'lvl', 'EU_FLAG': 'eu', 'EFTA_FLAG': 'efta', 'CC_FLAG': 'cc', 'OTHR_FLAG': 'oth', 'COAS_FLAG': 'co'})
+
+                # Save the filtered geopackage
+                gdf_nuts_bn.to_file(f"tmp/{year}_{scale}_{level}_NUTS_BN.gpkg", driver="GPKG")
+
+                continue
+
+
 # Prepare input data into tmp folder: filter, rename attributes, decompose by nuts level and clean
-def filterRenameDecomposeClean(doCleaning = True):
+def filterRenameDecomposeCleanYYY(doCleaning = True):
+   print("filterRenameDecompose")
+   Path("tmp/").mkdir(parents=True, exist_ok=True)
+
+   for year in nutsData["years"]:
+       for scale in nutsData["scales"]:
+
+           if debug: print(year + " " + scale + " CNTR RG - filter, rename attributes")
+           ogr2ogr.main(["-overwrite","-f", "GPKG",
+              "tmp/" + year + "_" + scale + "_CNTR_RG.gpkg",
+              "-nln", "lay", "-nlt", "MULTIPOLYGON",
+              "download/CNTR_RG_"+scale+"_"+year+"_4326.gpkg",
+              "-a_srs", "EPSG:4326",
+              "-sql", "SELECT CNTR_ID as id,NAME_ENGL as na FROM CNTR_RG_" + scale + "_" + year + "_4326"])
+              #"-sql", "SELECT CNTR_ID as id,NAME_ENGL as na FROM CNTR_RG_" + scale + "_" + year + "_4326 WHERE CNTR_ID NOT IN (" + nutsData["years"][year] + ")"])
+
+           if(doCleaning):
+              if debug: print(year + " " + scale + " CNTR RG - clean with buffer(0)")
+              subprocess.run(["ogrinfo", "-dialect", "indirect_sqlite", "-sql", "update lay set geom=ST_Multi(ST_Buffer(geom,0))", "tmp/" + year + "_" + scale + "_CNTR_RG.gpkg"])
+
+           if debug: print(year + " " + scale + " CNTR BN - filter, rename attributes")
+           ogr2ogr.main(["-overwrite","-f", "GPKG",
+              "tmp/" + year + "_" + scale + "_CNTR_BN.gpkg",
+              "-nln", "lay", "-nlt", "MULTILINESTRING",
+              "download/CNTR_BN_"+scale+"_"+year+"_4326.gpkg",
+              "-a_srs", "EPSG:4326",
+              "-sql", "SELECT CNTR_BN_ID as id,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM CNTR_BN_" + scale + "_" + year + "_4326"])
+              #"-sql", "SELECT CNTR_BN_ID as id,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM CNTR_BN_" + scale + "_" + year + "_4326 WHERE EU_FLAG='F' AND EFTA_FLAG='F'"])
+
+           for level in ["0", "1", "2", "3"]:
+
+               if debug: print(year + " " + scale + " NUTS RG " + level + " - filter, rename attributes")
+               ogr2ogr.main(["-overwrite","-f", "GPKG",
+                 "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG.gpkg",
+                 "-nln", "lay", "-nlt", "MULTIPOLYGON",
+                 "download/NUTS_RG_"+scale+"_"+year+"_4326.gpkg",
+                 "-a_srs", "EPSG:4326",
+                 "-sql", "SELECT N.NUTS_ID as id,A.NAME_LATN as na FROM NUTS_RG_" + scale + "_" + year + "_4326 as N left join 'download/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on N.NUTS_ID = A.NUTS_ID WHERE N.LEVL_CODE = " + level])
+
+               if(doCleaning):
+                  if debug: print(year + " " + scale + " NUTS RG " + level + " - clean with buffer(0)")
+                  subprocess.run(["ogrinfo", "-dialect", "indirect_sqlite", "-sql", "update lay set geom=ST_Multi(ST_Buffer(geom,0))", "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG.gpkg"])
+
+               if debug: print(year + " " + scale + " NUTS BN " + level + " - filter, rename attributes")
+               ogr2ogr.main(["-overwrite","-f", "GPKG",
+                 "tmp/" + year + "_" + scale + "_" + level + "_NUTS_BN.gpkg",
+                 "-nln", "lay", "-nlt", "MULTILINESTRING",
+                 "download/NUTS_BN_"+scale+"_"+year+"_4326.gpkg",
+                 "-a_srs", "EPSG:4326",
+                 "-sql", "SELECT NUTS_BN_ID as id,LEVL_CODE as lvl,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM NUTS_BN_" + scale + "_" + year + "_4326 WHERE LEVL_CODE <= " + level])
+
+
+
+
+# Prepare input data into tmp folder: filter, rename attributes, decompose by nuts level and clean
+def filterRenameDecomposeCleanXXXXX(doCleaning = True):
    print("filterRenameDecompose")
    Path("tmp/").mkdir(parents=True, exist_ok=True)
 
@@ -407,9 +527,9 @@ with open("pub/" + version + "/data.json", "w") as fp:
     json.dump(geos, fp, indent=3)
 
 # 1
-download()
+#download()
 # 2
-#filterRenameDecomposeClean(False)
+filterRenameDecomposeClean()
 # 3
 #coarseClipping()
 # 4
