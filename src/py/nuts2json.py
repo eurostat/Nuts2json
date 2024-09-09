@@ -1,4 +1,3 @@
-import os
 from pathlib import Path
 import subprocess, json, urllib.request, reduceGeoJSON #, ogr2ogr
 import geopandas as gpd
