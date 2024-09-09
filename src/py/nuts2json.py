@@ -4,7 +4,7 @@ import subprocess, json, urllib.request, reduceGeoJSON #, ogr2ogr
 import geopandas as gpd
 import pandas as pd
 from shapely.ops import unary_union
-from shapely.geometry import MultiPolygon, MultiLineString
+from shapely.geometry import box, MultiPolygon, Polygon, MultiLineString, LineString
 
 ################
 # Target structure
@@ -143,169 +143,65 @@ def filterRenameDecomposeClean(doCleaning=True):
                 continue
 
 
-# Prepare input data into tmp folder: filter, rename attributes, decompose by nuts level and clean
-def filterRenameDecomposeCleanYYY(doCleaning = True):
-   print("filterRenameDecompose")
-   Path("tmp/").mkdir(parents=True, exist_ok=True)
-
-   for year in nutsData["years"]:
-       for scale in nutsData["scales"]:
-
-           if debug: print(year + " " + scale + " CNTR RG - filter, rename attributes")
-           ogr2ogr.main(["-overwrite","-f", "GPKG",
-              "tmp/" + year + "_" + scale + "_CNTR_RG.gpkg",
-              "-nln", "lay", "-nlt", "MULTIPOLYGON",
-              "download/CNTR_RG_"+scale+"_"+year+"_4326.gpkg",
-              "-a_srs", "EPSG:4326",
-              "-sql", "SELECT CNTR_ID as id,NAME_ENGL as na FROM CNTR_RG_" + scale + "_" + year + "_4326"])
-              #"-sql", "SELECT CNTR_ID as id,NAME_ENGL as na FROM CNTR_RG_" + scale + "_" + year + "_4326 WHERE CNTR_ID NOT IN (" + nutsData["years"][year] + ")"])
-
-           if(doCleaning):
-              if debug: print(year + " " + scale + " CNTR RG - clean with buffer(0)")
-              subprocess.run(["ogrinfo", "-dialect", "indirect_sqlite", "-sql", "update lay set geom=ST_Multi(ST_Buffer(geom,0))", "tmp/" + year + "_" + scale + "_CNTR_RG.gpkg"])
-
-           if debug: print(year + " " + scale + " CNTR BN - filter, rename attributes")
-           ogr2ogr.main(["-overwrite","-f", "GPKG",
-              "tmp/" + year + "_" + scale + "_CNTR_BN.gpkg",
-              "-nln", "lay", "-nlt", "MULTILINESTRING",
-              "download/CNTR_BN_"+scale+"_"+year+"_4326.gpkg",
-              "-a_srs", "EPSG:4326",
-              "-sql", "SELECT CNTR_BN_ID as id,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM CNTR_BN_" + scale + "_" + year + "_4326"])
-              #"-sql", "SELECT CNTR_BN_ID as id,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM CNTR_BN_" + scale + "_" + year + "_4326 WHERE EU_FLAG='F' AND EFTA_FLAG='F'"])
-
-           for level in ["0", "1", "2", "3"]:
-
-               if debug: print(year + " " + scale + " NUTS RG " + level + " - filter, rename attributes")
-               ogr2ogr.main(["-overwrite","-f", "GPKG",
-                 "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG.gpkg",
-                 "-nln", "lay", "-nlt", "MULTIPOLYGON",
-                 "download/NUTS_RG_"+scale+"_"+year+"_4326.gpkg",
-                 "-a_srs", "EPSG:4326",
-                 "-sql", "SELECT N.NUTS_ID as id,A.NAME_LATN as na FROM NUTS_RG_" + scale + "_" + year + "_4326 as N left join 'download/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on N.NUTS_ID = A.NUTS_ID WHERE N.LEVL_CODE = " + level])
-
-               if(doCleaning):
-                  if debug: print(year + " " + scale + " NUTS RG " + level + " - clean with buffer(0)")
-                  subprocess.run(["ogrinfo", "-dialect", "indirect_sqlite", "-sql", "update lay set geom=ST_Multi(ST_Buffer(geom,0))", "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG.gpkg"])
-
-               if debug: print(year + " " + scale + " NUTS BN " + level + " - filter, rename attributes")
-               ogr2ogr.main(["-overwrite","-f", "GPKG",
-                 "tmp/" + year + "_" + scale + "_" + level + "_NUTS_BN.gpkg",
-                 "-nln", "lay", "-nlt", "MULTILINESTRING",
-                 "download/NUTS_BN_"+scale+"_"+year+"_4326.gpkg",
-                 "-a_srs", "EPSG:4326",
-                 "-sql", "SELECT NUTS_BN_ID as id,LEVL_CODE as lvl,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM NUTS_BN_" + scale + "_" + year + "_4326 WHERE LEVL_CODE <= " + level])
-
-
-
-
-# Prepare input data into tmp folder: filter, rename attributes, decompose by nuts level and clean
-def filterRenameDecomposeCleanXXXXX(doCleaning = True):
-   print("filterRenameDecompose")
-   Path("tmp/").mkdir(parents=True, exist_ok=True)
-
-   for year in nutsData["years"]:
-       for scale in nutsData["scales"]:
-
-
-           if debug: print(year + " " + scale + " CNTR RG - filter, rename attributes")
-           ogr2ogr.main(["-overwrite","-f", "GPKG",
-              "tmp/" + year + "_" + scale + "_CNTR_RG_.gpkg",
-              "-nln", "lay", "-nlt", "MULTIPOLYGON",
-              "download/CNTR_RG_"+scale+"_"+year+"_4326.gpkg",
-              "-a_srs", "EPSG:4326"])
-           ogr2ogr.main(["-overwrite","-f", "GPKG",
-              "tmp/" + year + "_" + scale + "_CNTR_RG.gpkg",
-              "tmp/" + year + "_" + scale + "_CNTR_RG_.gpkg",
-              "-sql", "SELECT geom,CNTR_ID as id, NAME_ENGL as na FROM lay"])
-           os.remove("tmp/" + year + "_" + scale + "_CNTR_RG_.gpkg")
-
-           if(doCleaning):
-              if debug: print(year + " " + scale + " CNTR RG - clean with buffer(0)")
-              subprocess.run(["ogrinfo", "-dialect", "indirect_sqlite", "-sql", "update lay set geom=ST_Multi(ST_Buffer(geom,0))", "tmp/" + year + "_" + scale + "_CNTR_RG.gpkg"])
-
-           if debug: print(year + " " + scale + " CNTR BN - filter, rename attributes")
-           ogr2ogr.main(["-overwrite","-f", "GPKG",
-              "tmp/" + year + "_" + scale + "_CNTR_BN_.gpkg",
-              "-nln", "lay", "-nlt", "MULTILINESTRING",
-              "download/CNTR_BN_"+scale+"_"+year+"_4326.gpkg",
-              "-a_srs", "EPSG:4326"])
-           ogr2ogr.main(["-overwrite","-f", "GPKG",
-              "tmp/" + year + "_" + scale + "_CNTR_BN.gpkg",
-              "tmp/" + year + "_" + scale + "_CNTR_BN_.gpkg",
-              "-sql", "SELECT geom,CNTR_BN_ID as id,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM lay"])
-           os.remove("tmp/" + year + "_" + scale + "_CNTR_BN_.gpkg")
-
-           for level in ["0", "1", "2", "3"]:
-
-               if debug: print(year + " " + scale + " NUTS RG " + level + " - filter, rename attributes")
-               ogr2ogr.main(["-overwrite","-f", "GPKG",
-                 "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG_.gpkg",
-                 "-nln", "lay", "-nlt", "MULTIPOLYGON",
-                 "download/NUTS_RG_"+scale+"_"+year+"_4326.gpkg",
-                 "-a_srs", "EPSG:4326"])
-               ogr2ogr.main(["-overwrite","-f", "GPKG",
-                 "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG.gpkg",
-                 "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG_.gpkg",
-                 "-sql", "SELECT geom,N.NUTS_ID as id,A.NAME_LATN as na FROM lay as N left join '/download/NUTS_AT_" + year + ".csv'.NUTS_AT_" + year + " as A on N.NUTS_ID = A.NUTS_ID WHERE N.LEVL_CODE = " + level])
-               os.remove("tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG_.gpkg")
-
-               if(doCleaning):
-                  if debug: print(year + " " + scale + " NUTS RG " + level + " - clean with buffer(0)")
-                  subprocess.run(["ogrinfo", "-dialect", "indirect_sqlite", "-sql", "update lay set geom=ST_Multi(ST_Buffer(geom,0))", "tmp/" + year + "_" + scale + "_" + level + "_NUTS_RG.gpkg"])
-
-               if debug: print(year + " " + scale + " NUTS BN " + level + " - filter, rename attributes")
-               ogr2ogr.main(["-overwrite","-f", "GPKG",
-                 "tmp/" + year + "_" + scale + "_" + level + "_NUTS_BN.gpkg",
-                 "-nln", "lay", "-nlt", "MULTILINESTRING",
-                 "download/NUTS_BN_"+scale+"_"+year+"_4326.gpkg",
-                 "-a_srs", "EPSG:4326"])
-                 #"-sql", "SELECT NUTS_BN_ID as id,LEVL_CODE as lvl,EU_FLAG as eu,EFTA_FLAG as efta,CC_FLAG as cc,OTHR_FLAG as oth,COAS_FLAG as co FROM NUTS_BN_" + scale + "_" + year + "_4326.gpkg WHERE LEVL_CODE <= " + level])
-
-
-
 # Perform coarse clipping by region, to improve reprojection process
 def coarseClipping():
-   print("coarseClipping")
-   for year in nutsData["years"]:
-      for geo in geos:
+    print("coarseClipping")
 
-         extends = geos[geo]["crs"]["4326"]
-         marginDeg = 33 if(geo == "EUR") else 10
+    for year in nutsData["years"]:
+        for geo in geos:
 
-         if debug: print(year + " " + geo + " graticule - coarse clipping")
-         ogr2ogr.main(["-overwrite","-f", "GPKG",
-           "tmp/" + year + "_" + geo + "_graticule.gpkg",
-           "src/resources/graticule.gpkg",
-           "-nlt", "MULTILINESTRING",
-           "-a_srs", "EPSG:4326",
-           "-clipsrc", str(extends["xmin"]-marginDeg), str(extends["ymin"]-marginDeg), str(extends["xmax"]+marginDeg), str(extends["ymax"]+marginDeg)])
+            # Define the bounding box (clipsrc equivalent)
+            extends = geos[geo]["crs"]["4326"]
+            marginDeg = 33 if geo == "EUR" else 10
+            bbox = box(extends["xmin"] - marginDeg, extends["ymin"] - marginDeg,
+                       extends["xmax"] + marginDeg, extends["ymax"] + marginDeg)
 
-         for type in ["RG", "BN"]:
-            for scale in geos[geo]["scales"]:
+            # Convert bbox to a GeoDataFrame for clipping
+            bbox_gdf = gpd.GeoDataFrame({"geometry": [bbox]}, crs="EPSG:4326")
 
-# TODO: fix that warning:
-# Warning 1: A geometry of type GEOMETRYCOLLECTION is inserted into layer lay of geometry type MULTIPOLYGON, which is not normally allowed by the GeoPackage specification, but the driver will however do it. To create a conformant GeoPackage, if using ogr2ogr, the -nlt option can be used to override the layer geometry type. This warning will no longer be emitted for this combination of layer and feature geometry type.
-# Use geojson format instead ? Or use GEOMETRYCOLLECTION as -nlt ?
+            if debug: print(f"{year} {geo} graticule - coarse clipping")
+            # Load the graticule and perform clipping
+            gdf_graticule = gpd.read_file("src/resources/graticule.gpkg")
+            gdf_graticule_clipped = gpd.clip(gdf_graticule, bbox_gdf)
+            gdf_graticule_clipped['geometry'] = gdf_graticule_clipped['geometry'].apply(lambda geom: MultiLineString([geom]) if isinstance(geom, LineString) else geom)
+            gdf_graticule_clipped.to_file(f"tmp/{year}_{geo}_graticule.gpkg", driver="GPKG") #, geometry_type="MULTILINESTRING"
 
-               if debug: print(year + " " + geo + " " + scale + " CNTR " + type + " - coarse clipping")
-               ogr2ogr.main(["-overwrite","-f", "GPKG",
-                 "tmp/" + year + "_" + geo + "_" + scale + "_CNTR_" + type + ".gpkg",
-                 "tmp/" + year + "_" + scale + "_CNTR_" + type + ".gpkg",
-                 "-nlt", "MULTIPOLYGON" if type=="RG" else "MULTILINESTRING",
-                 #"-makevalid",
-                 "-a_srs", "EPSG:4326",
-                 "-clipsrc", str(extends["xmin"]-marginDeg), str(extends["ymin"]-marginDeg), str(extends["xmax"]+marginDeg), str(extends["ymax"]+marginDeg)])
+            for type in ["RG", "BN"]:
+                for scale in geos[geo]["scales"]:
 
-               for level in ["0", "1", "2", "3"]:
+                    # Handle the clipping and geometry type for CNTR layers
+                    if debug: print(f"{year} {geo} {scale} CNTR {type} - coarse clipping")
+                    gdf_cntr = gpd.read_file(f"tmp/{year}_{scale}_CNTR_{type}.gpkg")
+                    #TODO should not be necessary once corrected at gisco
+                    gdf_cntr.set_crs("EPSG:4326", allow_override=True, inplace=True)
 
-                  if debug: print(year + " " + geo + " " + scale + " NUTS " + type + " - coarse clipping")
-                  ogr2ogr.main(["-overwrite","-f", "GPKG",
-                    "tmp/" + year + "_" + geo + "_" + scale + "_" + level + "_NUTS_" + type + ".gpkg",
-                    "tmp/" + year + "_" + scale + "_" + level + "_NUTS_" + type + ".gpkg",
-                    "-nlt", "MULTIPOLYGON" if type=="RG" else "MULTILINESTRING",
-                    #"-makevalid",
-                    "-a_srs", "EPSG:4326",
-                    "-clipsrc", str(extends["xmin"]-marginDeg), str(extends["ymin"]-marginDeg), str(extends["xmax"]+marginDeg), str(extends["ymax"]+marginDeg)])
+                    # Clip the data with the bounding box
+                    gdf_cntr_clipped = gpd.clip(gdf_cntr, bbox_gdf)
+
+                    # force multi geometry
+                    if type == "BN": gdf_cntr_clipped['geometry'] = gdf_cntr_clipped['geometry'].apply(lambda geom: MultiLineString([geom]) if isinstance(geom, LineString) else geom)
+                    else: gdf_cntr_clipped['geometry'] = gdf_cntr_clipped['geometry'].apply(lambda geom: MultiPolygon([geom]) if isinstance(geom, Polygon) else geom)
+
+                    # Save the clipped geopackage
+                    gdf_cntr_clipped.to_file(f"tmp/{year}_{geo}_{scale}_CNTR_{type}.gpkg", driver="GPKG")
+
+                    # Perform the clipping for each NUTS level
+                    for level in ["0", "1", "2", "3"]:
+
+                        if debug: print(f"{year} {geo} {scale} NUTS {type} - coarse clipping")
+                        gdf_nuts = gpd.read_file(f"tmp/{year}_{scale}_{level}_NUTS_{type}.gpkg")
+                        #TODO should not be necessary once corrected at gisco
+                        gdf_nuts.set_crs("EPSG:4326", allow_override=True, inplace=True)
+
+                        # Clip the data with the bounding box
+                        gdf_nuts_clipped = gpd.clip(gdf_nuts, bbox_gdf)
+                        
+                        # force multi geometry
+                        if type == "BN": gdf_nuts_clipped['geometry'] = gdf_nuts_clipped['geometry'].apply(lambda geom: MultiLineString([geom]) if isinstance(geom, LineString) else geom)
+                        else: gdf_nuts_clipped['geometry'] = gdf_nuts_clipped['geometry'].apply(lambda geom: MultiPolygon([geom]) if isinstance(geom, Polygon) else geom)
+
+                        # Save the clipped geopackage
+                        gdf_nuts_clipped.to_file(f"tmp/{year}_{geo}_{scale}_{level}_NUTS_{type}.gpkg", driver="GPKG")
 
 
 
@@ -529,9 +425,9 @@ with open("pub/" + version + "/data.json", "w") as fp:
 # 1
 #download()
 # 2
-filterRenameDecomposeClean()
+#filterRenameDecomposeClean()
 # 3
-#coarseClipping()
+coarseClipping()
 # 4
 #reprojectClipGeojson()
 # 5
