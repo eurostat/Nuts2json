@@ -13,7 +13,6 @@ from shapely.geometry import box, MultiPolygon, Polygon, MultiLineString, LineSt
 # pts:       YEAR/GEO/PROJECTION/nutspt_<NUTS_LEVEL>.json
 #
 # Requirements:
-# - GDAL (ogr2ogr and ogrinfo)
 # - topojson (geo2topo, toposimplify, topo2geo). Install with nodeJS (npm install -g topojson)
 ################
 
