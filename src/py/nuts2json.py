@@ -48,33 +48,30 @@ def download(timeout=30000):
    for year in nutsData["years"]:
 
       #AT
-      outfile = "download/NUTS_AT_"+year+".csv"
-      url = baseURL + "nuts/csv/NUTS_AT_"+year+".csv"
-      if debug: print( year + " AT Download", url)
-      if not Path(outfile).exists(): download_from_url(url, outfile, timeout)
+      file = "NUTS_AT_"+year+".csv"
+      if debug: print( year + " AT Download", baseURL + "nuts/csv/" + file)
+      if not Path("download/"+file).exists(): download_from_url(baseURL + "nuts/csv/" + file, "download/"+file, timeout)
 
       # NUTS LB
-      outfile = "download/NUTS_LB_"+year+"_4326.gpkg"
-      url = baseURL + "nuts/gpkg/NUTS_LB_"+year+"_4326.gpkg"
-      if debug: print( year + " LB Download", url)
-      if not Path(outfile).exists(): download_from_url(url, outfile, timeout)
+      file = "NUTS_LB_"+year+"_4326.gpkg"
+      if debug: print( year + " LB Download", baseURL + "nuts/gpkg/" + file)
+      if not Path("download/"+file).exists(): download_from_url(baseURL + "nuts/gpkg/" + file, "download/"+file, timeout)
 
 
       for scale in nutsData["scales"]:
          for type in ["RG", "BN"]:
 
             # NUTS
-            outfile = "download/NUTS_"+type+"_"+scale+"_"+year+"_4326.gpkg"
-            url = baseURL + "nuts/gpkg/NUTS_"+type+"_"+scale+"_"+year+"_4326.gpkg"
-            if debug: print( year + " " + scale + " " + type + " NUTS Download", url)
-            if not Path(outfile).exists(): download_from_url(url, outfile, timeout)
+            file = "NUTS_"+type+"_"+scale+"_"+year+"_4326.gpkg"
+            if debug: print( year + " " + scale + " " + type + " NUTS Download", baseURL + "nuts/gpkg/" + file)
+            if not Path("download/"+file).exists(): download_from_url(baseURL + "nuts/gpkg/" + file, "download/"+file, timeout)
 
             # CNTR
-            outfile = "download/CNTR_"+type+"_"+scale+"_"+year+"_4326.gpkg"
+            file = "CNTR_"+type+"_"+scale+"_"+year+"_4326.gpkg"
             year_ = ("2020" if year=="2021" else year)
             url = baseURL + "countries/gpkg/CNTR_"+type+"_"+scale+"_"+year_+"_4326.gpkg"
             if debug: print( year + " " + scale + " " + type + " CNTR Download", url)
-            if not Path(outfile).exists(): download_from_url(url, outfile, timeout)
+            if not Path("download/"+file).exists(): download_from_url(url, "download/"+file, timeout)
 
 
 
