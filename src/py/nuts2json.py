@@ -2,7 +2,6 @@ from pathlib import Path
 import subprocess, json, urllib.request, reduceGeoJSON
 import geopandas as gpd
 import pandas as pd
-from shapely.ops import unary_union
 from shapely.geometry import box, MultiPolygon, Polygon, MultiLineString, LineString
 
 ################
