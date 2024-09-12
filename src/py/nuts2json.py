@@ -26,6 +26,7 @@ debug = True
 version = "v2"
 
 
+# save data from url to file
 def download_from_url(url, outfile, timeout=50):
    if Path(outfile).exists(): return
    if debug: print(url)
@@ -86,7 +87,7 @@ def download(timeout=30000):
 
 
 
-
+# Prepare data: select attributes, rename them, decompose files by level
 def filterRenameDecomposeClean(doCleaning=True):
     print("filterRenameDecompose")
     Path("tmp/").mkdir(parents=True, exist_ok=True)
