@@ -211,7 +211,7 @@ def coarseClipping():
 
 
 
-
+# produce input geojson files, reprojected and clipped
 def reprojectClipGeojson(doCleaning=True):
     print("reprojectClipGeojson")
 
