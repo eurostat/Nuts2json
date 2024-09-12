@@ -1,8 +1,10 @@
 from pathlib import Path
 import subprocess, json, urllib.request, reduceGeoJSON
+import requests
 import geopandas as gpd
 import pandas as pd
 from shapely.geometry import box, MultiPolygon, Polygon, MultiLineString, LineString
+import time
 
 ################
 # Target structure
@@ -24,6 +26,11 @@ version = "v2"
 
 
 def download_from_url(url, outfile, timeout=50):
+   url = url + "?_=" + str(int(time.time()))
+   response = requests.get(url, headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache'})
+   with open(outfile, "wb") as file:
+       file.write(response.content)
+   '''
    try:
       # Open the URL with a specified timeout
       with urllib.request.urlopen(url, timeout=timeout) as response:
@@ -36,6 +43,7 @@ def download_from_url(url, outfile, timeout=50):
       print(f"URL Error: {e.reason}")
    except Exception as e:
       print(f"An error occurred: {e}")
+    '''
 
 
 
@@ -418,7 +426,6 @@ with open("pub/" + version + "/data.json", "w") as fp:
 
 # 1
 download()
-#exit()
 # 2
 filterRenameDecomposeClean()
 # 3
