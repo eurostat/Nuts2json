@@ -1,1 +1,1 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"id": "FR", "na": "France"}, "geometry": {"type": "Polygon", "coordinates": [[[687805, 1632857], [723722, 1629706], [736500, 1601080], [708573, 1603680], [687805, 1632857]]]}}]}
+{"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"id": "FR", "na": "France"}, "geometry": {"type": "Polygon", "coordinates": [[[687801, 1632857], [723717, 1629706], [736502, 1601080], [708573, 1603680], [687801, 1632857]]]}}]}
