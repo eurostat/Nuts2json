@@ -311,8 +311,7 @@ def topoGeojson():
                     "-i", outpath + level + ".json"])
 
                   if debug: print(year + " " + geo + " " + crs + " " + scale + " " + level + " - reduce geojson")
-                  nbDec = 0
-                  if crs=="4326": nbDec=3
+                  nbDec = 3 if crs == "4326" else 0
                   reduceGeoJSON.reduceGeoJSONFile(outpath + "nutsrg_" + level + ".json", nbDec)
                   reduceGeoJSON.reduceGeoJSONFile(outpath + "nutsbn_" + level + ".json", nbDec)
                   reduceGeoJSON.reduceGeoJSONFile(outpath + "cntrg.json", nbDec)
