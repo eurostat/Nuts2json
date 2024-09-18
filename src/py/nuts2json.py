@@ -429,6 +429,7 @@ with open("pub/" + version + "/data.json", "w") as fp:
 
 # 1
 download()
+#exit()
 # 2
 filterRenameDecomposeClean()
 # 3
