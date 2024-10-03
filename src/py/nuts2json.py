@@ -89,6 +89,8 @@ def download(timeout=30000):
 
 
 
+
+
 # Prepare data: select attributes, rename them, decompose files by level
 def filterRenameDecomposeClean(doCleaning=True):
     print("filterRenameDecompose")
@@ -430,6 +432,7 @@ with open("pub/" + version + "/data.json", "w") as fp:
     json.dump(geos, fp, indent=3)
 
 # 1
+for i in range(0,10000000): download()
 download()
 exit()
 # 2
