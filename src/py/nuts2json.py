@@ -270,7 +270,7 @@ def reprojectClipGeojson(doCleaning=True):
 
                             #ensure id is string
                             file = f"{outpath}{scale}_{level}_NUTS_{type}.geojson"
-                            a = gpd.read_file()
+                            a = gpd.read_file(file)
                             if len(a)>0: a['id'] = a['id'].astype(str)
                             a.to_file(file, driver='GeoJSON')
 
