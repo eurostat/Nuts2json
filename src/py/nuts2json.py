@@ -270,7 +270,7 @@ def reprojectClipGeojson(doCleaning=True):
 
                             #ensure id is string
                             a = gpd.read_file(f"{outpath}{scale}_{level}_NUTS_{type}.geojson")
-                            a['id'] = a['id'].astype(str)
+                            if len(a)>0: a['id'] = a['id'].astype(str)
                             a.to_file(f"{outpath}{scale}_{level}_NUTS_{type}.geojson", driver='GeoJSON')
 
 
@@ -438,12 +438,12 @@ with open("pub/" + version + "/data.json", "w") as fp:
 
 # 1
 #while True: download()
-download()
+#download()
 #exit()
 # 2
-filterRenameDecomposeClean()
+#filterRenameDecomposeClean()
 # 3
-coarseClipping()
+#coarseClipping()
 # 4
 reprojectClipGeojson()
 # 5
