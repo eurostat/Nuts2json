@@ -1,5 +1,5 @@
 from pathlib import Path
-import subprocess, json, reduceGeoJSON #, urllib.request
+import subprocess, json, reduceGeoJSON, urllib.request
 import requests
 import geopandas as gpd
 import pandas as pd
@@ -31,11 +31,14 @@ def download_from_url(url, outfile, timeout=50):
    if Path(outfile).exists(): return
    if debug: print(url)
 
+   '''
    url = url + "?_=" + str(int(time.time()))
    response = requests.get(url, headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache'})
    with open(outfile, "wb") as file:
        file.write(response.content)
+
    '''
+
    try:
       # Open the URL with a specified timeout
       with urllib.request.urlopen(url, timeout=timeout) as response:
@@ -48,7 +51,6 @@ def download_from_url(url, outfile, timeout=50):
       print(f"URL Error: {e.reason}")
    except Exception as e:
       print(f"An error occurred: {e}")
-    '''
 
 
 
