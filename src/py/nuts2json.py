@@ -432,7 +432,7 @@ with open("pub/" + version + "/data.json", "w") as fp:
     json.dump(geos, fp, indent=3)
 
 # 1
-#for i in range(0,10000000): download()
+#while True: download()
 download()
 #exit()
 # 2
