@@ -1,10 +1,10 @@
 from pathlib import Path
 import subprocess, json, reduceGeoJSON, urllib.request
-import requests
+#import requests
 import geopandas as gpd
 import pandas as pd
 from shapely.geometry import box, MultiPolygon, Polygon, MultiLineString, LineString
-import time
+#import time
 
 ################
 # Target structure
