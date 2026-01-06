@@ -1,0 +1,144 @@
+x-commons:
+  common-responses: &common-responses
+    '400':
+      $ref: '#/components/responses/400BadRequest'
+    '429':
+      $ref: '#/components/responses/429TooManyRequests'
+    '503':
+      $ref: '#/components/responses/503ServiceUnavailable'
+    default:
+      $ref: '#/components/responses/default'
+
+openapi: 3.0.0
+info:
+  version: "1.0.0"
+  title: |-
+    Eurostat NUTS API.
+  x-summary: >-
+    EU Github Nuts Maps (nuts, coastal lines)
+  description: |
+    #### Documentazione
+    The main goal of GISCO's various activities and long-term projects is to better integrate statistical and geospatial information at the EU level.
+
+  termsOfService: 'https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units'
+  contact:
+    email: robipolli@gmail.com
+    name: Roberto Polli
+    url: https://twitter.com/ioggstream
+  x-audience:
+    - public
+  x-api-id: 00000000-0000-0000-0000-000000000000
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+
+  x-lifecycle:
+    published: 1970-01-01
+    deprecated: 2050-01-01
+    retired: 2050-06-01
+    maturity: published
+
+tags:
+  - name: public
+    description: Retrieve informations
+    externalDocs:
+      url: http://docs.my-api.com/pet-operations.htm
+servers:
+  - description: Development server
+    url:  https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v1/2016/3035/20M/2.json
+paths:
+
+  /{year}/{projection}/{scale}/{id}.json:
+    get:
+      parameters:
+      - $ref: '#/components/parameters/Year'
+      - $ref: '#/components/parameters/Projection'
+      - $ref: '#/components/parameters/Scale'
+      - $ref: '#/components/parameters/Id'
+      responses:
+        "200":
+          description: ok
+          content:
+            application/geo+json:
+              schema:
+                type: object
+components:
+  parameters:
+    Type:
+      in: path
+      name: scale
+      required: true
+      schema:
+        type: string
+        enum:
+        - nutsrg
+        - nutsbn
+        - cntrg
+        - cntbn
+        - gra
+    NutsLevel:
+      in: path
+      name: scale
+      required: true
+      schema:
+        type: string
+        enum:
+        - 0
+        - 1
+        - 2
+        - 3
+    Scale:
+      in: path
+      name: scale
+      required: true
+      schema:
+        type: string
+        enum:
+          - 03M
+          - 10M
+          - 20M
+          - 60M
+
+    Projection:
+      in: path
+      name: projection
+      required: true
+      schema:
+        type: string
+        enum:
+          - 3035
+          - 3857
+          - 4326
+    Year:
+      in: path
+      name: year
+      required: true
+      schema:
+        type: string
+        enum:
+          - 2010
+          - 2013
+          - 2016
+          - 2021
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+        example: NUTS_BN_01M_2021_3035
+
+
+  responses:
+    # Predefined error codes for this API
+    400BadRequest:
+      $ref: 'https://teamdigitale.github.io/openapi/0.0.7/definitions.yaml#/responses/400BadRequest'
+    404NotFound:
+      $ref: 'https://teamdigitale.github.io/openapi/0.0.7/definitions.yaml#/responses/404NotFound'
+    429TooManyRequests:
+      $ref: 'https://teamdigitale.github.io/openapi/0.0.7/definitions.yaml#/responses/429TooManyRequests'
+    503ServiceUnavailable:
+      $ref: 'https://teamdigitale.github.io/openapi/0.0.7/definitions.yaml#/responses/503ServiceUnavailable'
+    default:
+      $ref: 'https://teamdigitale.github.io/openapi/0.0.7/definitions.yaml#/responses/default'
+
