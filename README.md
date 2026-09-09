@@ -55,6 +55,7 @@ The following feature types are provided:
   - `cc`: T if the boundary touches at least one Candidate Country, F otherwise.
   - `oth`: T if the boundary touches at least one country which is not EU, EFTA,CC. F otherwise.
   - `co`: T if the boundary is coastal. F otherwise.
+  - `left` and `right`: The code of the NUTS 3 regions delimited by the boundary.
 
 - Countries (feature type `cntrg`) with the following properties:
   - `id`: The country identifier (2 letters ISO-code).
@@ -67,6 +68,7 @@ The following feature types are provided:
   - `cc`: T if the boundary touches at least one Candidate Country, F otherwise.
   - `oth`: T if the boundary touches at least one country wich is not EU, EFTA,CC. F otherwise.
   - `co`: T if the boundary is coastal. F otherwise.
+  - `ps`: The political status of the boundary. 0 for normal boundaries, 5 for disputed, -1 when unknown.
 
 - The map graticule (meridian and parrallel lines) is provided as feature type `gra` with a single `id` property, which is the lat/lon of the parallel/meridian.
 
