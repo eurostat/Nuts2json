@@ -156,7 +156,7 @@ def filterRenameDecomposeClean(doCleaning=True):
                 if year in ["2010", "2013", "2016", "2021"]:
                     gdf_nuts_bn['LEFT_NUTS3'] = -1  # Fill with -1
                     gdf_nuts_bn['RGHT_NUTS3'] = -1  # Fill with -1
-                gdf_nuts_bn = gdf_nuts_bn[['geometry', 'NUTS_BN_ID', 'LEVL_CODE', 'EU_FLAG', 'EFTA_FLAG', 'CC_FLAG', 'OTHR_FLAG', 'COAS_FLAG']].rename(
+                gdf_nuts_bn = gdf_nuts_bn[['geometry', 'NUTS_BN_ID', 'LEVL_CODE', 'EU_FLAG', 'EFTA_FLAG', 'CC_FLAG', 'OTHR_FLAG', 'COAS_FLAG', 'LEFT_NUTS3', 'RGHT_NUTS3']].rename(
                     columns={'NUTS_BN_ID': 'id', 'LEVL_CODE': 'lvl', 'EU_FLAG': 'eu', 'EFTA_FLAG': 'efta', 'CC_FLAG': 'cc', 'OTHR_FLAG': 'oth', 'COAS_FLAG': 'co', 'LEFT_NUTS3': 'left', 'RGHT_NUTS3': 'right'})
 
                 # Save the filtered geopackage
