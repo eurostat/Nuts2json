@@ -123,7 +123,7 @@ def filterRenameDecomposeClean(doCleaning=True):
             if debug: print(year + " " + scale + " CNTR BN - filter, rename attributes")
             # Load CNTR BN geopackage, filter, and rename
             gdf_cntr_bn = gpd.read_file(f"download/CNTR_BN_{scale}_{year}_4326.gpkg")
-            if year == "2010" or year == "2016": gdf_cntr_bn['POL_STAT'] = -1  # Fill with -1 for 2010 or 2013
+            if year in ["2010","2013"]: gdf_cntr_bn['POL_STAT'] = -1  # Fill with -1 for 2010 or 2013
             gdf_cntr_bn = gdf_cntr_bn[['geometry', 'CNTR_BN_ID', 'EU_FLAG', 'EFTA_FLAG', 'CC_FLAG', 'OTHR_FLAG', 'COAS_FLAG', 'POL_STAT']].rename(
                 columns={'CNTR_BN_ID': 'id', 'EU_FLAG': 'eu', 'EFTA_FLAG': 'efta', 'CC_FLAG': 'cc', 'OTHR_FLAG': 'oth', 'COAS_FLAG': 'co', 'POL_STAT': 'ps'})
 
