@@ -6,6 +6,12 @@ import pandas as pd
 from shapely.geometry import box, MultiPolygon, Polygon, MultiLineString, LineString
 #import time
 
+# POL_STAT ps
+# 2016 2021 2024
+# LEFT_NUTS3 RGHT_NUTS3 left right
+# 2024
+
+
 ################
 # Target structure
 #
@@ -117,6 +123,7 @@ def filterRenameDecomposeClean(doCleaning=True):
             if debug: print(year + " " + scale + " CNTR BN - filter, rename attributes")
             # Load CNTR BN geopackage, filter, and rename
             gdf_cntr_bn = gpd.read_file(f"download/CNTR_BN_{scale}_{year}_4326.gpkg")
+            #TODO add POL_STAT. fill with -1 if 2010 or 2023
             gdf_cntr_bn = gdf_cntr_bn[['geometry', 'CNTR_BN_ID', 'EU_FLAG', 'EFTA_FLAG', 'CC_FLAG', 'OTHR_FLAG', 'COAS_FLAG']].rename(
                 columns={'CNTR_BN_ID': 'id', 'EU_FLAG': 'eu', 'EFTA_FLAG': 'efta', 'CC_FLAG': 'cc', 'OTHR_FLAG': 'oth', 'COAS_FLAG': 'co'})
 
