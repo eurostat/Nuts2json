@@ -123,9 +123,9 @@ def filterRenameDecomposeClean(doCleaning=True):
             if debug: print(year + " " + scale + " CNTR BN - filter, rename attributes")
             # Load CNTR BN geopackage, filter, and rename
             gdf_cntr_bn = gpd.read_file(f"download/CNTR_BN_{scale}_{year}_4326.gpkg")
-            #TODO add POL_STAT. fill with -1 if 2010 or 2023
-            gdf_cntr_bn = gdf_cntr_bn[['geometry', 'CNTR_BN_ID', 'EU_FLAG', 'EFTA_FLAG', 'CC_FLAG', 'OTHR_FLAG', 'COAS_FLAG']].rename(
-                columns={'CNTR_BN_ID': 'id', 'EU_FLAG': 'eu', 'EFTA_FLAG': 'efta', 'CC_FLAG': 'cc', 'OTHR_FLAG': 'oth', 'COAS_FLAG': 'co'})
+            if year == "2010" or year == "2016": gdf_cntr_bn['POL_STAT'] = -1  # Fill with -1 for 2010 or 2013
+            gdf_cntr_bn = gdf_cntr_bn[['geometry', 'CNTR_BN_ID', 'EU_FLAG', 'EFTA_FLAG', 'CC_FLAG', 'OTHR_FLAG', 'COAS_FLAG', 'POL_STAT']].rename(
+                columns={'CNTR_BN_ID': 'id', 'EU_FLAG': 'eu', 'EFTA_FLAG': 'efta', 'CC_FLAG': 'cc', 'OTHR_FLAG': 'oth', 'COAS_FLAG': 'co', 'POL_STAT': 'ps'})
 
             # Save the filtered geopackage
             gdf_cntr_bn.to_file(f"tmp/{year}_{scale}_CNTR_BN.gpkg", driver="GPKG")
@@ -153,8 +153,11 @@ def filterRenameDecomposeClean(doCleaning=True):
                 # Load NUTS BN geopackage, filter, and rename
                 gdf_nuts_bn = gpd.read_file(f"download/NUTS_BN_{scale}_{year}_4326.gpkg")
                 gdf_nuts_bn = gdf_nuts_bn[gdf_nuts_bn['LEVL_CODE'] <= int(level)]
+                if year in ["2010", "2013", "2016", "2021"]:
+                    gdf_nuts_bn['LEFT_NUTS3'] = -1  # Fill with -1
+                    gdf_nuts_bn['RGHT_NUTS3'] = -1  # Fill with -1
                 gdf_nuts_bn = gdf_nuts_bn[['geometry', 'NUTS_BN_ID', 'LEVL_CODE', 'EU_FLAG', 'EFTA_FLAG', 'CC_FLAG', 'OTHR_FLAG', 'COAS_FLAG']].rename(
-                    columns={'NUTS_BN_ID': 'id', 'LEVL_CODE': 'lvl', 'EU_FLAG': 'eu', 'EFTA_FLAG': 'efta', 'CC_FLAG': 'cc', 'OTHR_FLAG': 'oth', 'COAS_FLAG': 'co'})
+                    columns={'NUTS_BN_ID': 'id', 'LEVL_CODE': 'lvl', 'EU_FLAG': 'eu', 'EFTA_FLAG': 'efta', 'CC_FLAG': 'cc', 'OTHR_FLAG': 'oth', 'COAS_FLAG': 'co', 'LEFT_NUTS3': 'left', 'RGHT_NUTS3': 'right'})
 
                 # Save the filtered geopackage
                 gdf_nuts_bn.to_file(f"tmp/{year}_{scale}_{level}_NUTS_BN.gpkg", driver="GPKG")
