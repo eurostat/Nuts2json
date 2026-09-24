@@ -6,11 +6,6 @@ import pandas as pd
 from shapely.geometry import box, MultiPolygon, Polygon, MultiLineString, LineString
 #import time
 
-# POL_STAT ps
-# 2016 2021 2024
-# LEFT_NUTS3 RGHT_NUTS3 left right
-# 2024
-
 
 ################
 # Target structure
