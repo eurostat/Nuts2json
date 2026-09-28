@@ -63,6 +63,7 @@ def download(timeout=30000):
    print("Download")
    Path("download/").mkdir(parents=True, exist_ok=True)
 
+
    for year in nutsData["years"]:
 
       #AT
